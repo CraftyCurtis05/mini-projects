@@ -1,0 +1,29 @@
+/* HTML Document */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+}
+
+/* Header Component */
+header {
+  background-color: #dadae2;
+}
+
+/* Navbar Component */
+nav {
+  border: 1px solid rgb(206, 206, 206);
+}
+
+/* Jumbotron Component */
+.jumbotron {
+  height: 35vw;
+  background: url('assets/home/temp_portrait.jpg') no-repeat center center;
+  background-size: 100vw auto;
+}
+
+/* Footer Component */
+footer {
+  background-color: #dadae2;
+}

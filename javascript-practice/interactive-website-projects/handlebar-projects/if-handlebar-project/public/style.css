@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    position: relative;
+  }
+  
+  .bg {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bg-convo {
+    width: 120%;
+  }
+  
+  #debate {
+    font-family: Verdana;
+    font-size: 2em;
+    margin: 35% 30% 0 20%;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    min-width: 180px;
+    position: absolute;
+  }
+    
+  
+  @media screen and (max-width: 450px){
+    .bg {
+      position: absolute;
+      z-index: -1;
+      width: 450px;
+    }
+  
+    .bg-convo {
+      width: 450px;
+    }
+    
+    #debate {
+      font-family: Verdana;
+      font-size: 2em;
+      margin: 115px 130px 0 90px;
+      text-align: center;
+      width: 225px;
+      height: 100%;
+      position: absolute;
+    }
+  }

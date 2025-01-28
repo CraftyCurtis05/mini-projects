@@ -1,0 +1,1 @@
+//insert into restaurant (id, name, address, city, state, zipCode, phone, url, overall_score, egg_score) values (hibernate_sequence.nextval, 'Bareburger', '313 W 57th St', 'New York', 'NY', '10019', '212-685-2273', 'https://www.bareburger.com/', 5, 5);

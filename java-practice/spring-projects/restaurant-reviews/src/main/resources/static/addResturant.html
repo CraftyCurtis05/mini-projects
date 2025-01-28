@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Add Restaurant</title>
+
+        <script>
+            function addRestaurant() {
+                const name = document.getElementById('name').value;
+                const street = document.getElementById('street').value;
+                const city = document.getElementById('city').value;
+                const state = document.getElementById('state').value;
+                const zipcode = document.getElementById('zipcode').value;
+                const phone = document.getElementById('phone').value;
+                const website = document.getElementById('website').value;
+                const cuisine = document.getElementById('cuisine').value;
+
+                fetch('http://localhost:3001/restaurants', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        name: name,
+                        street: street,
+                        city: city,
+                        state: state,
+                        zipCode: zipcode,
+                        phone: phone,
+                        websiteURL: website,
+                        cuisineType: cuisine
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+
+                .then(response => {
+                    console.log('Response Status:', response.status);
+                    return response.text().then(text => {
+                        if (!response.ok) {
+                            throw new Error(`Network response was not ok: ${response.statusText} - ${text}`);
+                        }
+                        return JSON.parse(text);
+                    });
+                })
+                .then(data => {
+                    const responseField = document.getElementById('responseField');
+                    responseField.innerHTML = JSON.stringify(data);
+                })
+                .catch(error => {
+                    const responseField = document.getElementById('responseField');
+                    responseField.innerHTML = 'Error: ' + error.message;
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2 id="restaurant_label">Add Restaurant</h2>
+
+        <label>Restaurant name: <input id="name" required></label><br>
+        <label>Street: <input id="street" required></label><br>
+        <label>City: <input id="city" required></label><br>
+        <label>State: <input id="state" required></label><br>
+        <label>Zip Code: <input id="zipcode" required></label><br>
+        <label>Phone: <input id="phone" required></label><br>
+        <label>Website: <input id="website" required></label><br>
+        <label>Cuisine: <input id="cuisine" required></label><br>
+
+        <button onclick="addRestaurant()">Submit</button>
+
+        <h2 id="response_label">JSON Response:</h2>
+        <div id="responseField"></div>
+    </body>
+</html>

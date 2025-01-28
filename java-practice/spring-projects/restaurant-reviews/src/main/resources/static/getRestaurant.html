@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Get restaurant</title>
+
+        <script>
+            function getRestaurant() {
+                const restaurantId = document.getElementById('restaurant_id').value;
+
+                fetch(`http://localhost:3001/restaurants/${restaurantId.value}`, {
+                    method: 'GET',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => {
+                        console.log('Response Status:', response.status);
+                        return response.text().then(text => {
+                            if (!response.ok) {
+                                throw new Error(`Network response was not ok: ${response.statusText} - ${text}`);
+                            }
+                            return JSON.parse(text);
+                        });
+                    })
+                    .then(data => {
+                        const responseField = document.getElementById('responseField');
+                        responseField.innerHTML = JSON.stringify(data);
+                    })
+                    .catch(error => {
+                        const responseField = document.getElementById('responseField');
+                        responseField.innerHTML = 'Error: ' + error.message;
+                    });
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2 id="restaurant_label">Get a restaurant</h2>
+
+        <label>Restaurant Id: <input id="restaurant_id"></label>
+
+        <button onclick="getRestaurant()">Submit</button>
+
+        <h2 id="response_label">Json Response:</h2>
+        <div id="responseField"></div>
+    </body>
+</html>

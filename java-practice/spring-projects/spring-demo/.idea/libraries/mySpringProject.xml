@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mySpringProject">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mySpringProject.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

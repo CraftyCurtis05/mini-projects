@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>J.Curtis Portfolio</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="app.js"></script>
+    <!-- CSS -->
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body class="vw-100">
+
+    <!-- Header Component -->
+    <header class="row d-flex flex-row-reverse" id="top">  
+      <!-- Social Media Icons -->
+      <a class="p-2" href="https://www.hackerrank.com/profile/craftycurtis05">
+        <img class="w-75" src="assets/icons/hackerrank_icon.png">
+      </a>
+      <a class="p-2" href="https://www.codecademy.com/profiles/CraftyCurtis05">
+        <img class="w-75" src="assets/icons/codecademy_icon.png">
+      </a>
+      <a class="p-2" href="https://github.com/CraftyCurtis05">
+        <img class="w-75" src="assets/icons/github_icon.png">
+      </a>
+      <a class="p-2" href="https://www.linkedin.com/in/jcurtisdeveloper/">
+        <img class="w-75" src="assets/icons/linkedin_icon.png">
+      </a>
+    </header>
+
+    <!-- Navbar Component -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img id="header-logo" src="assets/logo/logo_blk_01.png" alt="logo">
+        </a> 
+        <!-- Navbar Toggler Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar Links List-->
+        <section class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="education.html">Education</a>
+            </li>
+            <li class="nav-item">  
+              <a class="nav-link" href="experience.html">Experience</a>
+            </li>
+            <li class="nav-item">  
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">  
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>  
+          </ul>
+        </section>
+      </div>
+    </nav>
+
+    <!-- Jumbotron Component -->
+    <section class="jumbotron">
+      <!-- Full-Stack Dev Paragraph -->
+      <div class="paragraph text-dark text-left">
+        <h1 class="display-4">Full-Stack Developer</h1>
+        <p class="lead">Versatile with experience in Java, Python, JavaScript, PostgreSQL, <br> 
+           SQL + multiple frameworks - such as Spring, Bootstrap, Vue3 - <br> 
+           building seamless, data-driven applications from <br> 
+           front-end to back-end.</p>  
+      </div>
+      <!-- UI/UX Designer Paragraph -->
+      <div class="paragraph text-dark text-right">
+        <h1 class="display-4">UI/UX Designer</h1>
+        <p class="lead">Creative with experience in Adobe Suite, CAD, HTML5 <br> 
+           + CSS - crafting captivating, user-friendly designs by <br>
+           blending innovation with an understanding <br>
+           of aesthetics and functionality.</p>
+      </div>
+    </section>
+
+    <!-- Main Component -->
+    <main>
+      <p>FILL THIS WITH SOMETHING INTERESTING</p>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="container col-12">
+      <!-- Footer Info Container -->
+       <div class="footer-info container">
+        <!-- Back To Top Button -->
+        <a id="top-link" href="#top">
+          <img src="assets/icons/top_arrow.png"/>
+        </a>
+        <!-- Social Media Container -->
+        <section class="social container row">
+          <!-- Social Media Icons -->
+          <a href="https://github.com/CraftyCurtis05">
+            <img id="footer-icons" class="img-responsive" src="assets/icons/github_icon.png">
+          </a>
+          <a href="https://www.linkedin.com/in/jcurtisdeveloper/">
+            <img id="footer-icons" class="img-responsive" src="assets/icons/linkedin_icon.png">
+          </a>
+          <a href="https://www.codecademy.com/profiles/CraftyCurtis05">
+            <img id="footer-icons" class="img-responsive" src="assets/icons/codecademy_icon.png">
+          </a>
+          <a href="https://www.hackerrank.com/profile/craftycurtis05">
+            <img id="footer-icons" class="img-responsive" src="assets/icons/hackerrank_icon.png">
+          </a>
+        </section>
+        <!-- Footer Copyright -->
+        <p class="copyright text-secondary">&copy; 2024 jennifer curtis</p>
+      </div>  
+    </footer>
+
+    <!-- Bootstrap's JavaScript Files -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

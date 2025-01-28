@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>J.Curtis Portfolio</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="app.js"></script>
+    <!-- CSS -->
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <!-- Header Component -->
+    <header class="row" id="top">  
+      <!-- Social Media Container -->
+      <section class="social container">
+        <!-- Social Media Icons -->
+        <a href="https://github.com/CraftyCurtis05">
+          <img id="header-icons" class="img-responsive" src="assets/icons/github_icon.png">
+        </a>
+        <a href="https://www.linkedin.com/in/jcurtisdeveloper/">
+          <img id="header-icons" class="img-responsive" src="assets/icons/linkedin_icon.png">
+        </a>
+        <a href="https://www.codecademy.com/profiles/CraftyCurtis05">
+          <img id="header-icons" class="img-responsive" src="assets/icons/codecademy_icon.png">
+        </a>
+        <a href="https://www.hackerrank.com/profile/craftycurtis05">
+          <img id="header-icons" class="img-responsive" src="assets/icons/hackerrank_icon.png">
+        </a>
+      </section>
+    </header>
+
+    <!-- Navbar Component -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand img-fluid" href="index.html">
+          <img id="header-logo" class="img-responsive" src="assets/logo/logo_blk_01.png" alt="logo">
+        </a> 
+        <!-- Navbar Toggler Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar Links List-->
+        <section class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="education.html">Education</a>
+            </li>
+            <li class="nav-item">  
+              <a class="nav-link" href="experience.html">Experience</a>
+            </li>
+            <li class="nav-item">  
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">  
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>  
+          </ul>
+        </section>
+      </div>
+    </nav>
+
+    <!-- About Me -->
+    <main class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-6">
+          <!-- <img src="portfolio_portrait_temp.jpg"/> -->
+          <p>Enthusiastic and detail-oriented entry-level web developer with a strong foundation in full-stack development, recently completing Tech Elevator's Java Bootcamp, where I gained hands-on experience with the Java, Vue3, and PostgreSQL stack. I have successfully completed multiple projects, including leading teams in developing a store locator web application and an inventory management system, demonstrating my leadership and mentoring abilities.<br><br>
+          With a background in business management, I bring excellent communication, conflict resolution, and customer retention skills to the table, ensuring a collaborative and productive team environment. My journey in education includes studying general studies at Marion Technical College before transferring to Ohio State University for Architecture, where I developed a keen eye for detail and creative problem-solving.<br><br>
+          In addition to my technical skills, I am passionate about 3D sketching and modeling, which complements my CAD experience. I thrive in team settings and am eager to contribute to innovative projects while continuing to grow as a developer.</p>
+        </div>  
+      </div>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="container col-12">
+      <!-- Footer Info Container -->
+       <div class="footer-info container">
+        <!-- Back To Top Button -->
+        <a id="top-link" href="#top">
+          <img src="assets/icons/top_arrow.png"/>
+        </a>
+        <!-- Social Media Container -->
+        <section class="social container row">
+          <!-- Social Media Icons -->
+          <a href="https://github.com/CraftyCurtis05">
+            <img id="footer-icons" class="img-responsive" src="assets/icons/github_icon.png">
+          </a>
+          <a href="https://www.linkedin.com/in/jcurtisdeveloper/">
+            <img id="footer-icons" class="img-responsive" src="assets/icons/linkedin_icon.png">
+          </a>
+          <a href="https://www.codecademy.com/profiles/CraftyCurtis05">
+            <img id="footer-icons" class="img-responsive" src="assets/icons/codecademy_icon.png">
+          </a>
+          <a href="https://www.hackerrank.com/profile/craftycurtis05">
+            <img id="footer-icons" class="img-responsive" src="assets/icons/hackerrank_icon.png">
+          </a>
+        </section>
+        <!-- Footer Copyright -->
+        <p class="copyright text-secondary">&copy; 2024 jennifer curtis</p>
+      </div>  
+    </footer>
+
+    <!-- Bootstrap's JavaScript Files -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

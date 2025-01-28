@@ -1,0 +1,176 @@
+body, html {
+    font-family: Helvetica;
+    font-size: 22px;
+    color: seashell;
+    background-color: black;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    background-color: black;
+    border-bottom: 1px solid seashell;
+    width: 100%;
+    height: 69px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .left {
+    display: flex;
+    margin-left: 10px;
+}
+
+header #logo {
+    height: 50px;
+}
+
+header .right {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+
+header p {
+    text-decoration: underline;
+    padding-inline: 15px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.top {
+    width: 1200px;
+    height: 700px;
+}
+
+.top img {
+    position: absolute;
+    width: 1200px;
+    height: 700px;
+    opacity: .9;
+}
+
+.top #mission {
+    position: absolute;
+    background-color: black;
+    text-align: center;
+    width: 1200px;
+    height: 110px;
+    top: 335px;
+}
+
+#mission h2, #mission h4 {
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+}
+
+.middle {
+    position: absolute;
+    width: 1000px;
+    text-align: center;
+    padding-top: 750px;
+}
+
+.middle #month {
+    line-height: .8;
+}
+
+.middle #images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle img {
+    width: 300px;
+    height: 200px;
+    padding-inline: 15px;
+}
+
+.middle p {
+    margin: 10px;
+    padding-bottom: 15px;
+}
+
+.bottom {
+    height: 500px;
+    width: 1200px;
+    padding-top: 755px;
+   
+}
+
+.bottom img {
+    position: absolute;
+    height: 550px;
+    width: 1200px;
+    opacity: .9;
+}
+
+.bottom .locations {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    top: 1570px;
+}
+
+.bottom .addresses {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 100px;
+    top: 65px;
+}
+
+.bottom .address {
+    height: 265px;
+    width: 300px;
+    background-color: black;
+    opacity: 1;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.address p {
+    padding: 5px;
+}
+
+footer {
+    position: absolute;
+    height: 225px;
+    width: 100%;
+    padding-top: 40px;
+}
+
+footer #contact {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact h2, #contact h5 {
+    padding: 20px;
+    margin: 0;
+}
+
+footer #copyright {
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
