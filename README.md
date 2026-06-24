@@ -1,147 +1,157 @@
-# Codecademy Mini Projects
+# Codecademy Practice Projects
 
-Welcome to my collection of mini projects completed as part of Codecademy's courses. These projects are organized by different technologies and categories, showcasing my progress and skills in **HTML**, **CSS**, **Java**, and **JavaScript**. Explore the folders below to find projects by topic and the technologies used.
+### Software Development Learning Repository
 
----
+A collection of projects completed while studying software development through Codecademy coursework and independent practice.
 
-## Introduction
+This repository documents hands-on exercises, coding challenges, and small applications developed while building foundational skills in Java, JavaScript, HTML, CSS, responsive design, API integration, and Spring development.
 
-This repository contains mini projects from various Codecademy courses that I've completed. The projects cover a wide range of technologies including **HTML**, **CSS**, **Java**, and **JavaScript**, and are organized by specific practice topics like **Bootstrap**, **Flexbox**, **Async/Await**, and more. This structure helps me showcase the skills learned and serves as a reference for future projects.
-
----
-
-## Project Structure
-
-The projects are organized into folders based on their category. Below is the folder structure:
-
-/codecademy-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;/html-css-practice <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/bootstrap-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/adhoc-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/my_portfolio-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/flexbox-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/tea-cosy-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/grid-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/html-css-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/dev-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... <br>
-&nbsp;&nbsp;&nbsp;&nbsp;/java-practice <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/spring-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/gold-medal-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/hello-world-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/restaurant-reviews-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/spring-demo-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/spring-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/travel-adventures-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... <br>
-&nbsp;&nbsp;&nbsp;&nbsp;/javascript-practice <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/async-await-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/dinner-async-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/dinner-try-catch-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/class-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/library-class-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/school-class-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/interactive-website-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/event-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/chore-door-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/color-generator-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/keyboard-events-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/mouse-events-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/piano-player-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/handlebar-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/each-handlebar-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/hello-handlebar-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/if-handlebar-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/this-handlebar-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/musicon-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/module-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/encryptor-module-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/hello-module-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/salary-module-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/secret-module-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/shape-module-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/water-cf-module-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/p5.js-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/tutorial-p5.js-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/promise-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/sunglasses-promise-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/request-projects <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/film-finder-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/get-request-handling-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/post-request-handling-project <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;practice.js <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... <br>
-        
----
-
-## Categories
-
-### HTML & CSS Practice
-This section includes projects focusing on HTML and CSS techniques. It covers various layout and design approaches such as **Bootstrap**, **Flexbox**, and **Grid**.
-
-#### Bootstrap Projects
-- **Adhoc Project**: A simple project using Bootstrap to create a responsive layout.
-- **My Portfolio Project**: A portfolio website using Bootstrap components for structure.
-
-#### Flexbox Projects
-- **Tea Cosy Project**: A layout project using Flexbox to create a tea cosy design.
-
-#### Grid Projects
-- **Grid Projects**: Explore layouts built using **CSS Grid**.
-
-#### HTML & CSS Projects
-- **Dev Project**: A project practicing HTML and CSS styling for a developer portfolio.
+Rather than representing a single application, this repository serves as a record of technical growth across multiple technologies and development concepts.
 
 ---
 
-### Java Practice
-In this section, the projects are focused on Java programming, with several Spring-based projects that include common Java web application patterns.
+## Repository Overview
 
-#### Spring Projects
-- **Gold Medal Project**: A Spring project simulating a medal tally system.
-- **Hello World Project**: A simple Spring-based "Hello World" app.
-- **Restaurant Reviews Project**: A Spring application for managing restaurant reviews.
-- **Spring Demo Project**: A demonstration of Spring Boot functionality.
-- **Travel Adventures Project**: A project managing travel adventures with Spring.
+This repository contains dozens of projects spanning front-end development, back-end development, object-oriented programming, asynchronous JavaScript, responsive web design, and Spring application development.
+
+Projects are organized by technology and learning topic to demonstrate progression across multiple areas of software development.
 
 ---
 
-### JavaScript Practice
-This section contains projects that use JavaScript for dynamic, interactive websites, modules, and events.
+## Technologies Explored
 
-#### Async/Await Projects
-- **Dinner Async Project**: Using async/await to handle asynchronous code in a dinner ordering app.
-- **Dinner Try Catch Project**: Handling asynchronous errors with try/catch.
+### Front-End Development
 
-#### Class Projects
-- **Library Class Project**: A class-based project simulating a library system.
-- **School Class Project**: A class-based project managing school assignments.
+- HTML5
+- CSS3
+- Bootstrap
+- Flexbox
+- CSS Grid
+- Responsive Design
 
-#### Interactive Website Projects
+### JavaScript Development
 
-##### Event Projects
-- **Chore Door Project**: An interactive game using keyboard and mouse events.
-- **Color Generator Project**: A project that generates random colors based on user interaction.
+- ES6+
+- DOM Manipulation
+- Events
+- Async / Await
+- Promises
+- Modules
+- API Requests
+- Handlebars.js
 
-##### Handlebar Projects
-- **Each Handlebar Project**: A project using the Handlebars.js each helper.
-- **Hello Handlebar Project**: A simple Hello World project using Handlebars.
+### Java Development
 
-- **Musicon Project**: A music player web app built with JavaScript.
-
-#### Module Projects
-- **Encryptor Module Project**: A module that encrypts and decrypts text.
-- **Salary Module Project**: A module for calculating salaries based on certain input criteria.
-
-#### Other JavaScript Projects
-- **Film Finder Project**: A JavaScript project to search for movies using an API.
-- **Sunglasses Promise Project**: A project using promises to manage async operations.
+- Java Fundamentals
+- Object-Oriented Programming
+- Spring Framework
+- Spring Boot
+- REST APIs
+- Application Architecture
 
 ---
 
-## Prerequisites
+## Learning Areas
 
-Before starting any of the Java or JavaScript projects, you’ll need the following:
+### User Interface Development
 
-- A code editor (e.g., **VS Code**)
-- For JavaScript or Java projects, ensure you have **Node.js** installed, or set up a local Java environment.
+Projects focused on:
+
+- Responsive layouts
+- Navigation systems
+- Component structure
+- User interaction
+- Visual design principles
+
+### JavaScript Programming
+
+Projects focused on:
+
+- Event handling
+- State management
+- Asynchronous programming
+- API communication
+- Modular code organization
+
+### Java & Spring Development
+
+Projects focused on:
+
+- Object-oriented programming
+- Spring Boot applications
+- REST services
+- Application structure
+- Backend development fundamentals
+
+---
+
+## Representative Projects
+
+### Front-End
+
+- Portfolio Website
+- Tea Cozy
+- Adhoc
+- Developer Landing Pages
+- Bootstrap Layout Projects
+
+### JavaScript
+
+- Film Finder
+- Musicon
+- Chore Door
+- Color Generator
+- Async/Await Exercises
+- Module-Based Applications
+
+### Java & Spring
+
+- Restaurant Reviews
+- Travel Adventures
+- Gold Medal Tracker
+- Spring Demo Applications
+- REST API Practice Projects
+
+---
+
+## Skills Demonstrated
+
+- Software Development Fundamentals
+- Responsive Web Design
+- Front-End Development
+- Back-End Development
+- Object-Oriented Programming
+- API Integration
+- Asynchronous Programming
+- Problem Solving
+- Debugging
+- Application Architecture
+- Git & Version Control
+
+---
+
+## Why This Repository Exists
+
+This repository represents the practical exercises and projects completed while building a foundation in software development.
+
+It demonstrates:
+
+- Consistent technical learning
+- Hands-on coding experience
+- Exposure to multiple technologies
+- Progressive skill development
+- Commitment to continuous improvement
+
+---
+
+## Author
+
+**Jennifer Curtis**
+
+Business Systems Analyst | Full-Stack Developer
+
+Portfolio: https://jennifercurtis.me
+
+LinkedIn: https://linkedin.com/in/jcurtisdeveloper
+
+GitHub: https://github.com/craftycurtis05
