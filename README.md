@@ -2,25 +2,35 @@
 
 ### Software Development Learning Repository
 
-A collection of projects completed while studying software development through Codecademy coursework and independent practice.
+The Codecademy Practice Projects repository is a collection of hands-on exercises and mini applications completed while studying software development through Codecademy coursework and independent practice.
 
-This repository documents hands-on exercises, coding challenges, and small applications developed while building foundational skills in Java, JavaScript, HTML, CSS, responsive design, API integration, and Spring development.
+The repository demonstrates continuous learning across frontend development, backend development, object-oriented programming, responsive web design, API integration, and Spring application development.
 
-Rather than representing a single application, this repository serves as a record of technical growth across multiple technologies and development concepts.
+Rather than representing a single application, this repository documents technical growth through progressively more complex programming concepts and practical coding exercises.
 
 ---
 
 ## Repository Overview
 
-This repository contains dozens of projects spanning front-end development, back-end development, object-oriented programming, asynchronous JavaScript, responsive web design, and Spring application development.
+This repository contains projects covering multiple areas of software development and is organized by technology and learning topic.
 
-Projects are organized by technology and learning topic to demonstrate progression across multiple areas of software development.
+Projects include practice in:
+
+- Frontend web development
+- JavaScript programming
+- Java application development
+- Spring Framework
+- REST APIs
+- Responsive web design
+- Software architecture fundamentals
+
+Together, these projects demonstrate consistent technical learning and hands-on software development experience.
 
 ---
 
-## Technologies Explored
+## Learning Areas
 
-### Front-End Development
+### Frontend Development
 
 - HTML5
 - CSS3
@@ -33,7 +43,7 @@ Projects are organized by technology and learning topic to demonstrate progressi
 
 - ES6+
 - DOM Manipulation
-- Events
+- Event Handling
 - Async / Await
 - Promises
 - Modules
@@ -51,60 +61,26 @@ Projects are organized by technology and learning topic to demonstrate progressi
 
 ---
 
-## Learning Areas
-
-### User Interface Development
-
-Projects focused on:
-
-- Responsive layouts
-- Navigation systems
-- Component structure
-- User interaction
-- Visual design principles
-
-### JavaScript Programming
-
-Projects focused on:
-
-- Event handling
-- State management
-- Asynchronous programming
-- API communication
-- Modular code organization
-
-### Java & Spring Development
-
-Projects focused on:
-
-- Object-oriented programming
-- Spring Boot applications
-- REST services
-- Application structure
-- Backend development fundamentals
-
----
-
 ## Representative Projects
 
-### Front-End
+### Frontend Projects
 
 - Portfolio Website
 - Tea Cozy
 - Adhoc
-- Developer Landing Pages
 - Bootstrap Layout Projects
+- Responsive Design Exercises
 
-### JavaScript
+### JavaScript Projects
 
 - Film Finder
 - Musicon
 - Chore Door
 - Color Generator
-- Async/Await Exercises
+- Async / Await Exercises
 - Module-Based Applications
 
-### Java & Spring
+### Java & Spring Projects
 
 - Restaurant Reviews
 - Travel Adventures
@@ -118,9 +94,10 @@ Projects focused on:
 
 - Software Development Fundamentals
 - Responsive Web Design
-- Front-End Development
-- Back-End Development
+- Frontend Development
+- Backend Development
 - Object-Oriented Programming
+- REST API Development
 - API Integration
 - Asynchronous Programming
 - Problem Solving
@@ -130,17 +107,26 @@ Projects focused on:
 
 ---
 
-## Why This Repository Exists
+## Technical Focus
 
-This repository represents the practical exercises and projects completed while building a foundation in software development.
+This repository highlights continued development across multiple programming languages, frameworks, and software engineering concepts.
 
-It demonstrates:
+Key areas of growth include:
 
-- Consistent technical learning
-- Hands-on coding experience
-- Exposure to multiple technologies
-- Progressive skill development
-- Commitment to continuous improvement
+- Writing clean, maintainable code
+- Building responsive user interfaces
+- Developing RESTful applications
+- Applying object-oriented programming principles
+- Working with APIs and asynchronous programming
+- Strengthening problem-solving and debugging skills
+
+---
+
+## Repository Purpose
+
+This repository serves as a learning archive documenting the progression of technical skills developed through structured coursework and independent practice.
+
+While many of the projects are intentionally small in scope, together they demonstrate consistent learning, practical coding experience, and a commitment to continuous professional development.
 
 ---
 
@@ -150,8 +136,8 @@ It demonstrates:
 
 Business Systems Analyst | Full-Stack Developer
 
-Portfolio: https://jennifercurtis.me
+🌐 **Portfolio:** [jennifercurtis.me](https://jennifercurtis.me)
 
-LinkedIn: https://linkedin.com/in/jcurtisdeveloper
+💼 **LinkedIn:** [linkedin.com/in/jcurtisdeveloper](https://linkedin.com/in/jcurtisdeveloper)
 
-GitHub: https://github.com/craftycurtis05
+💻 **GitHub:** [github.com/craftycurtis05](https://github.com/craftycurtis05)
