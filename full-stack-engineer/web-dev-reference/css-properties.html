@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Core document metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A searchable reference for common CSS properties including typography, color, layout, Flexbox, Grid, effects, and responsive design.">
+    <meta name="author" content="Jennifer Curtis">
+    <meta name="creator" content="Jennifer Curtis">
+    <meta name="application-name" content="Web Development Reference">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Progressive loading-screen enhancement -->
+  <script src="assets/js/loader-init.js"></script>
+    <title>CSS Properties Reference | Web Dev Reference</title>
+    <!-- Browser and installed-app appearance -->
+    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Social sharing metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Web Development Reference">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="CSS Properties Reference | Web Dev Reference">
+    <meta property="og:description" content="A searchable reference for common CSS properties including typography, color, layout, Flexbox, Grid, effects, and responsive design.">
+    <meta property="og:image" content="assets/images/icon-512.png">
+    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CSS Properties Reference | Web Dev Reference">
+    <meta name="twitter:description" content="A searchable reference for common CSS properties including typography, color, layout, Flexbox, Grid, effects, and responsive design.">
+    <meta name="twitter:image" content="assets/images/icon-512.png">
+    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <!-- App manifest and icons -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <!-- Shared site styles and fonts -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap">
+    <!-- Structured metadata -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "CSS Properties",
+        "description": "A searchable reference for common CSS properties including typography, color, layout, Flexbox, Grid, effects, and responsive design.",
+        "inLanguage": "en-US",
+        "dateModified": "2026-08-19",
+        "author": {
+          "@type": "Person",
+          "name": "Jennifer Curtis",
+          "url": "https://jennifercurtis.me"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Web Development Reference"
+        }
+      }
+        
+    </script>
+  </head>
+  <body data-author-note="When a layout feels difficult to control, check the box model and containing layout context before adding more offsets or fixed dimensions." data-category="CSS" data-footer="Common CSS Properties Cheat Sheet" data-level="Beginner–Intermediate" data-page="properties" data-page-label="CSS Properties" data-related="[{&quot;label&quot;:&quot;CSS Selectors&quot;,&quot;href&quot;:&quot;css-selectors.html&quot;},{&quot;label&quot;:&quot;Responsive Grid Pattern&quot;,&quot;href&quot;:&quot;patterns.html#grid-layout&quot;}]" data-search-placeholder="Try: flex, margin, color..." data-toc="true">
+
+    <div class="site-loader" id="site-loader" aria-hidden="true">
+      <div class="site-loader-content">
+        <div class="site-loader-mark" aria-hidden="true">
+          <span class="loader-dot loader-dot-teal"></span>
+          <span class="loader-dot loader-dot-blue"></span>
+          <span class="loader-dot loader-dot-green"></span>
+        </div>
+
+        <p class="site-loader-label">Web Dev Reference</p>
+      </div>
+    </div>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div data-site-nav=""></div>
+    <header class="hero">
+      <h1>Common CSS Properties</h1>
+      <p class="subtitle">A quick reference for frequently used CSS styling and layout properties.</p>
+      <div class="hero-meta">
+        <span class="badge badge-category">CSS</span>
+        <span class="badge badge-level">Beginner–Intermediate</span>
+      </div>
+    </header>
+    <main id="main-content">
+      <section aria-labelledby="color-background-title" class="reference-section" id="color-background">
+        <h2 class="section-title" id="color-background-title">Color &amp; Background</h2>
+        <p class="section-description">CSS color and background properties, their names, and their purposes.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">CSS color and background properties, their names, and their purposes.</caption>
+            <thead>
+              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="color-background-item-color">
+                <th scope="row"><code>color</code></th>
+                <td>Text Color</td>
+                <td>Sets the foreground text color.</td>
+                <td class="example-cell"><code>color: #3c88a3;</code></td>
+              </tr>
+              <tr id="color-background-item-background-color">
+                <th scope="row"><code>background-color</code></th>
+                <td>Background Color</td>
+                <td>Sets an element's background color.</td>
+                <td class="example-cell"><code>background-color: #ffffff;</code></td>
+              </tr>
+              <tr id="color-background-item-background-image">
+                <th scope="row"><code>background-image</code></th>
+                <td>Background Image</td>
+                <td>Sets one or more background images or gradients.</td>
+                <td class="example-cell"><code>background-image: url('image.jpg');</code></td>
+              </tr>
+              <tr id="color-background-item-background-repeat">
+                <th scope="row"><code>background-repeat</code></th>
+                <td>Background Repeat</td>
+                <td>Controls whether a background image repeats.</td>
+                <td class="example-cell"><code>background-repeat: no-repeat;</code></td>
+              </tr>
+              <tr id="color-background-item-background-position">
+                <th scope="row"><code>background-position</code></th>
+                <td>Background Position</td>
+                <td>Sets the starting position of a background image.</td>
+                <td class="example-cell"><code>background-position: center;</code></td>
+              </tr>
+              <tr id="color-background-item-background-size">
+                <th scope="row"><code>background-size</code></th>
+                <td>Background Size</td>
+                <td>Controls the rendered size of a background image.</td>
+                <td class="example-cell"><code>background-size: cover;</code></td>
+              </tr>
+              <tr id="color-background-item-opacity">
+                <th scope="row"><code>opacity</code></th>
+                <td>Opacity</td>
+                <td>Sets the transparency of an entire element from <code>0</code> to <code>1</code> .</td>
+                <td class="example-cell"><code>opacity: 0.8;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="typography-title" class="reference-section" id="typography">
+        <h2 class="section-title" id="typography-title">Typography</h2>
+        <p class="section-description">CSS typography properties, their names, and how they control text appearance and spacing.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">CSS typography properties, their names, and how they control text appearance and spacing.</caption>
+            <thead>
+              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="typography-item-font-family">
+                <th scope="row"><code>font-family</code></th>
+                <td>Font Family</td>
+                <td>Sets the typeface and fallback font stack.</td>
+                <td class="example-cell"><code>font-family: "Inter", Arial, sans-serif;</code></td>
+              </tr>
+              <tr id="typography-item-font-size">
+                <th scope="row"><code>font-size</code></th>
+                <td>Font Size</td>
+                <td>Controls text size.</td>
+                <td class="example-cell"><code>font-size: 1rem;</code></td>
+              </tr>
+              <tr id="typography-item-font-weight">
+                <th scope="row"><code>font-weight</code></th>
+                <td>Font Weight</td>
+                <td>Controls text thickness.</td>
+                <td class="example-cell"><code>font-weight: 600;</code></td>
+              </tr>
+              <tr id="typography-item-font-style">
+                <th scope="row"><code>font-style</code></th>
+                <td>Font Style</td>
+                <td>Controls normal, italic, or oblique styling.</td>
+                <td class="example-cell"><code>font-style: italic;</code></td>
+              </tr>
+              <tr id="typography-item-line-height">
+                <th scope="row"><code>line-height</code></th>
+                <td>Line Height</td>
+                <td>Controls spacing between lines of text.</td>
+                <td class="example-cell"><code>line-height: 1.6;</code></td>
+              </tr>
+              <tr id="typography-item-letter-spacing">
+                <th scope="row"><code>letter-spacing</code></th>
+                <td>Letter Spacing</td>
+                <td>Adjusts spacing between characters.</td>
+                <td class="example-cell"><code>letter-spacing: 0.05em;</code></td>
+              </tr>
+              <tr id="typography-item-word-spacing">
+                <th scope="row"><code>word-spacing</code></th>
+                <td>Word Spacing</td>
+                <td>Adjusts spacing between words.</td>
+                <td class="example-cell"><code>word-spacing: 0.7em;</code></td>
+              </tr>
+              <tr id="typography-item-text-align">
+                <th scope="row"><code>text-align</code></th>
+                <td>Text Alignment</td>
+                <td>Aligns inline content horizontally.</td>
+                <td class="example-cell"><code>text-align: center;</code></td>
+              </tr>
+              <tr id="typography-item-text-decoration">
+                <th scope="row"><code>text-decoration</code></th>
+                <td>Text Decoration</td>
+                <td>Controls underlines, overlines, and line-through.</td>
+                <td class="example-cell"><code>text-decoration: underline;</code></td>
+              </tr>
+              <tr id="typography-item-text-transform">
+                <th scope="row"><code>text-transform</code></th>
+                <td>Text Transform</td>
+                <td>Controls capitalization.</td>
+                <td class="example-cell"><code>text-transform: uppercase;</code></td>
+              </tr>
+              <tr id="typography-item-white-space">
+                <th scope="row"><code>white-space</code></th>
+                <td>White Space</td>
+                <td>Controls whitespace collapsing and text wrapping.</td>
+                <td class="example-cell"><code>white-space: nowrap;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="box-model-title" class="reference-section" id="box-model">
+        <h2 class="section-title" id="box-model-title">Box Model &amp; Sizing</h2>
+        <p class="section-description">
+          CSS box model and sizing properties, their names, and how they control element dimensions and spacing.
+        </p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">
+              CSS box model and sizing properties, their names, and how they control element dimensions and spacing.
+            </caption>
+            <thead>
+              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="box-model-item-width">
+                <th scope="row"><code>width</code></th>
+                <td>Width</td>
+                <td>Sets an element's width.</td>
+                <td class="example-cell"><code>width: 100%;</code></td>
+              </tr>
+              <tr id="box-model-item-height">
+                <th scope="row"><code>height</code></th>
+                <td>Height</td>
+                <td>Sets an element's height.</td>
+                <td class="example-cell"><code>height: 300px;</code></td>
+              </tr>
+              <tr id="box-model-item-min-width-max-width">
+                <th scope="row"><code>min-width / max-width</code></th>
+                <td>Width Limits</td>
+                <td>Set minimum and maximum allowed widths.</td>
+                <td class="example-cell"><code>min-width: 100px; max-width: 500px;</code></td>
+              </tr>
+              <tr id="box-model-item-min-height-max-height">
+                <th scope="row"><code>min-height / max-height</code></th>
+                <td>Height Limits</td>
+                <td>Set minimum and maximum allowed heights.</td>
+                <td class="example-cell"><code>min-height: 100px; max-height: 500px;</code></td>
+              </tr>
+              <tr id="box-model-item-margin">
+                <th scope="row"><code>margin</code></th>
+                <td>Outer Spacing</td>
+                <td>Creates space outside an element's border.</td>
+                <td class="example-cell"><code>margin: 2rem auto;</code></td>
+              </tr>
+              <tr id="box-model-item-padding">
+                <th scope="row"><code>padding</code></th>
+                <td>Inner Spacing</td>
+                <td>Creates space between content and the element's border.</td>
+                <td class="example-cell"><code>padding: 1rem 1.5rem;</code></td>
+              </tr>
+              <tr id="box-model-item-border">
+                <th scope="row"><code>border</code></th>
+                <td>Border</td>
+                <td>Shorthand for border width, style, and color.</td>
+                <td class="example-cell"><code>border: 1px solid #000;</code></td>
+              </tr>
+              <tr id="box-model-item-border-radius">
+                <th scope="row"><code>border-radius</code></th>
+                <td>Corner Radius</td>
+                <td>Rounds element corners.</td>
+                <td class="example-cell"><code>border-radius: 0.5rem;</code></td>
+              </tr>
+              <tr id="box-model-item-box-sizing">
+                <th scope="row"><code>box-sizing</code></th>
+                <td>Box Sizing</td>
+                <td>Controls how declared width and height are calculated.</td>
+                <td class="example-cell"><code>box-sizing: border-box;</code></td>
+              </tr>
+              <tr id="box-model-item-overflow">
+                <th scope="row"><code>overflow</code></th>
+                <td>Overflow</td>
+                <td>Controls content that extends beyond an element's box.</td>
+                <td class="example-cell"><code>overflow: hidden;</code></td>
+              </tr>
+              <tr id="box-model-item-box-shadow">
+                <th scope="row"><code>box-shadow</code></th>
+                <td>Box Shadow</td>
+                <td>Adds one or more shadows around an element.</td>
+                <td class="example-cell"><code>box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="display-positioning-title" class="reference-section" id="display-positioning">
+        <h2 class="section-title" id="display-positioning-title">Display &amp; Positioning</h2>
+        <p class="section-description">
+          CSS display and positioning properties, their names, and how they control element layout and placement.
+        </p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">
+              CSS display and positioning properties, their names, and how they control element layout and placement.
+            </caption>
+            <thead>
+              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="display-positioning-item-display">
+                <th scope="row"><code>display</code></th>
+                <td>Display Type</td>
+                <td>Controls layout behavior such as block, inline, flex, grid, or none.</td>
+                <td class="example-cell"><code>display: flex;</code></td>
+              </tr>
+              <tr id="display-positioning-item-position">
+                <th scope="row"><code>position</code></th>
+                <td>Positioning Mode</td>
+                <td>Sets static, relative, absolute, fixed, or sticky positioning.</td>
+                <td class="example-cell"><code>position: relative;</code></td>
+              </tr>
+              <tr id="display-positioning-item-top-right-bottom-left">
+                <th scope="row"><code>top / right / bottom / left</code></th>
+                <td>Offsets</td>
+                <td>Offset a positioned element from the corresponding edge.</td>
+                <td class="example-cell"><code>top: 10px; left: 20px;</code></td>
+              </tr>
+              <tr id="display-positioning-item-inset">
+                <th scope="row"><code>inset</code></th>
+                <td>Inset Shorthand</td>
+                <td>Shorthand for top, right, bottom, and left offsets.</td>
+                <td class="example-cell"><code>inset: 10px 20px;</code></td>
+              </tr>
+              <tr id="display-positioning-item-z-index">
+                <th scope="row"><code>z-index</code></th>
+                <td>Stacking Order</td>
+                <td>Controls how overlapping stacking contexts are layered.</td>
+                <td class="example-cell"><code>z-index: 10;</code></td>
+              </tr>
+              <tr id="display-positioning-item-visibility">
+                <th scope="row"><code>visibility</code></th>
+                <td>Visibility</td>
+                <td>Hides or shows an element while preserving layout space when hidden.</td>
+                <td class="example-cell"><code>visibility: hidden;</code></td>
+              </tr>
+              <tr id="display-positioning-item-float">
+                <th scope="row"><code>float</code></th>
+                <td>Float</td>
+                <td>Moves an element left or right and allows inline content to wrap around it.</td>
+                <td class="example-cell"><code>float: left;</code></td>
+              </tr>
+              <tr id="display-positioning-item-clear">
+                <th scope="row"><code>clear</code></th>
+                <td>Clear Float</td>
+                <td>Controls whether an element may sit beside floated elements.</td>
+                <td class="example-cell"><code>clear: left;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="flexbox-title" class="reference-section" id="flexbox">
+        <h2 class="section-title" id="flexbox-title">Flexbox</h2>
+        <p class="section-description">CSS Flexbox properties, their names, and how they control flex container and item layout.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">CSS Flexbox properties, their names, and how they control flex container and item layout.</caption>
+            <thead>
+              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="flexbox-item-display-flex">
+                <th scope="row"><code>display: flex</code></th>
+                <td>Flex Container</td>
+                <td>Creates a Flexbox formatting context.</td>
+                <td class="example-cell"><code>display: flex;</code></td>
+              </tr>
+              <tr id="flexbox-item-flex-direction">
+                <th scope="row"><code>flex-direction</code></th>
+                <td>Main Axis Direction</td>
+                <td>Sets the direction of the main axis.</td>
+                <td class="example-cell"><code>flex-direction: column;</code></td>
+              </tr>
+              <tr id="flexbox-item-flex-wrap">
+                <th scope="row"><code>flex-wrap</code></th>
+                <td>Flex Wrapping</td>
+                <td>Controls whether items stay on one line or wrap.</td>
+                <td class="example-cell"><code>flex-wrap: wrap;</code></td>
+              </tr>
+              <tr id="flexbox-item-justify-content">
+                <th scope="row"><code>justify-content</code></th>
+                <td>Main-Axis Alignment</td>
+                <td>Distributes items along the main axis.</td>
+                <td class="example-cell"><code>justify-content: space-between;</code></td>
+              </tr>
+              <tr id="flexbox-item-align-items">
+                <th scope="row"><code>align-items</code></th>
+                <td>Cross-Axis Alignment</td>
+                <td>Aligns items along the cross axis.</td>
+                <td class="example-cell"><code>align-items: center;</code></td>
+              </tr>
+              <tr id="flexbox-item-align-content">
+                <th scope="row"><code>align-content</code></th>
+                <td>Wrapped-Line Alignment</td>
+                <td>Aligns multiple flex lines along the cross axis.</td>
+                <td class="example-cell"><code>align-content: space-around;</code></td>
+              </tr>
+              <tr id="flexbox-item-gap">
+                <th scope="row"><code>gap</code></th>
+                <td>Gap</td>
+                <td>Sets consistent spacing between flex or grid items.</td>
+                <td class="example-cell"><code>gap: 1rem;</code></td>
+              </tr>
+              <tr id="flexbox-item-flex-grow">
+                <th scope="row"><code>flex-grow</code></th>
+                <td>Flex Grow</td>
+                <td>Controls how much an item may grow.</td>
+                <td class="example-cell"><code>flex-grow: 1;</code></td>
+              </tr>
+              <tr id="flexbox-item-flex-shrink">
+                <th scope="row"><code>flex-shrink</code></th>
+                <td>Flex Shrink</td>
+                <td>Controls how much an item may shrink.</td>
+                <td class="example-cell"><code>flex-shrink: 1;</code></td>
+              </tr>
+              <tr id="flexbox-item-flex-basis">
+                <th scope="row"><code>flex-basis</code></th>
+                <td>Flex Basis</td>
+                <td>Sets an item's initial main-axis size.</td>
+                <td class="example-cell"><code>flex-basis: auto;</code></td>
+              </tr>
+              <tr id="flexbox-item-flex">
+                <th scope="row"><code>flex</code></th>
+                <td>Flex Shorthand</td>
+                <td>Shorthand for grow, shrink, and basis.</td>
+                <td class="example-cell"><code>flex: 1 1 auto;</code></td>
+              </tr>
+              <tr id="flexbox-item-align-self">
+                <th scope="row"><code>align-self</code></th>
+                <td>Individual Alignment</td>
+                <td>Overrides <code>align-items</code> for one item.</td>
+                <td class="example-cell"><code>align-self: center;</code></td>
+              </tr>
+              <tr id="flexbox-item-order">
+                <th scope="row"><code>order</code></th>
+                <td>Visual Order</td>
+                <td>Changes the visual order of a flex or grid item.</td>
+                <td class="example-cell"><code>order: 1;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="css-grid-title" class="reference-section" id="css-grid">
+        <h2 class="section-title" id="css-grid-title">CSS Grid</h2>
+        <p class="section-description">CSS Grid properties, their names, and how they control grid layout and item placement.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">CSS Grid properties, their names, and how they control grid layout and item placement.</caption>
+            <thead>
+              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="css-grid-item-display-grid">
+                <th scope="row"><code>display: grid</code></th>
+                <td>Grid Container</td>
+                <td>Creates a CSS Grid formatting context.</td>
+                <td class="example-cell"><code>display: grid;</code></td>
+              </tr>
+              <tr id="css-grid-item-grid-template-columns">
+                <th scope="row"><code>grid-template-columns</code></th>
+                <td>Grid Columns</td>
+                <td>Defines grid column tracks.</td>
+                <td class="example-cell"><code>grid-template-columns: repeat(3, 1fr);</code></td>
+              </tr>
+              <tr id="css-grid-item-grid-template-rows">
+                <th scope="row"><code>grid-template-rows</code></th>
+                <td>Grid Rows</td>
+                <td>Defines grid row tracks.</td>
+                <td class="example-cell"><code>grid-template-rows: 100px auto;</code></td>
+              </tr>
+              <tr id="css-grid-item-grid-template-areas">
+                <th scope="row"><code>grid-template-areas</code></th>
+                <td>Named Grid Areas</td>
+                <td>Defines a visual layout using named grid areas.</td>
+                <td class="example-cell"><code>grid-template-areas: "header header" "sidebar main";</code></td>
+              </tr>
+              <tr id="css-grid-item-grid-column">
+                <th scope="row"><code>grid-column</code></th>
+                <td>Column Placement</td>
+                <td>Controls where a grid item starts and ends across columns.</td>
+                <td class="example-cell"><code>grid-column: 1 / 3;</code></td>
+              </tr>
+              <tr id="css-grid-item-grid-row">
+                <th scope="row"><code>grid-row</code></th>
+                <td>Row Placement</td>
+                <td>Controls where a grid item starts and ends across rows.</td>
+                <td class="example-cell"><code>grid-row: 1 / 2;</code></td>
+              </tr>
+              <tr id="css-grid-item-grid-area">
+                <th scope="row"><code>grid-area</code></th>
+                <td>Grid Area</td>
+                <td>Sets a named area or shorthand row/column placement.</td>
+                <td class="example-cell"><code>grid-area: header;</code></td>
+              </tr>
+              <tr id="css-grid-item-gap">
+                <th scope="row"><code>gap</code></th>
+                <td>Grid Gap</td>
+                <td>Sets spacing between grid tracks.</td>
+                <td class="example-cell"><code>gap: 1rem;</code></td>
+              </tr>
+              <tr id="css-grid-item-justify-items">
+                <th scope="row"><code>justify-items</code></th>
+                <td>Inline Alignment</td>
+                <td>Aligns items within grid areas along the inline axis.</td>
+                <td class="example-cell"><code>justify-items: center;</code></td>
+              </tr>
+              <tr id="css-grid-item-align-items">
+                <th scope="row"><code>align-items</code></th>
+                <td>Block Alignment</td>
+                <td>Aligns items within grid areas along the block axis.</td>
+                <td class="example-cell"><code>align-items: center;</code></td>
+              </tr>
+              <tr id="css-grid-item-place-items">
+                <th scope="row"><code>place-items</code></th>
+                <td>Alignment Shorthand</td>
+                <td>Shorthand for align-items and justify-items.</td>
+                <td class="example-cell"><code>place-items: center;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="effects-interaction-title" class="reference-section" id="effects-interaction">
+        <h2 class="section-title" id="effects-interaction-title">Effects &amp; Interaction</h2>
+        <p class="section-description">CSS visual effect and interaction properties, their names, and their purposes.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">CSS visual effect and interaction properties, their names, and their purposes.</caption>
+            <thead>
+              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="effects-interaction-item-cursor">
+                <th scope="row"><code>cursor</code></th>
+                <td>Cursor</td>
+                <td>Controls pointer appearance.</td>
+                <td class="example-cell"><code>cursor: pointer;</code></td>
+              </tr>
+              <tr id="effects-interaction-item-transform">
+                <th scope="row"><code>transform</code></th>
+                <td>Transform</td>
+                <td>Moves, rotates, scales, or skews an element.</td>
+                <td class="example-cell"><code>transform: rotate(45deg);</code></td>
+              </tr>
+              <tr id="effects-interaction-item-transform-origin">
+                <th scope="row"><code>transform-origin</code></th>
+                <td>Transform Origin</td>
+                <td>Sets the point around which a transform occurs.</td>
+                <td class="example-cell"><code>transform-origin: center;</code></td>
+              </tr>
+              <tr id="effects-interaction-item-transition">
+                <th scope="row"><code>transition</code></th>
+                <td>Transition</td>
+                <td>Animates changes between property values.</td>
+                <td class="example-cell"><code>transition: all 0.3s ease;</code></td>
+              </tr>
+              <tr id="effects-interaction-item-animation">
+                <th scope="row"><code>animation</code></th>
+                <td>Animation</td>
+                <td>Applies a keyframe animation.</td>
+                <td class="example-cell"><code>animation: slideIn 0.5s ease-in-out;</code></td>
+              </tr>
+              <tr id="effects-interaction-item-filter">
+                <th scope="row"><code>filter</code></th>
+                <td>Filter</td>
+                <td>Applies graphical effects such as blur or grayscale.</td>
+                <td class="example-cell"><code>filter: blur(5px);</code></td>
+              </tr>
+              <tr id="effects-interaction-item-outline">
+                <th scope="row"><code>outline</code></th>
+                <td>Outline</td>
+                <td>Draws a line outside the border; useful for focus indicators.</td>
+                <td class="example-cell"><code>outline: 2px solid blue;</code></td>
+              </tr>
+              <tr id="effects-interaction-item-pointer-events">
+                <th scope="row"><code>pointer-events</code></th>
+                <td>Pointer Events</td>
+                <td>Controls whether an element receives pointer input.</td>
+                <td class="example-cell"><code>pointer-events: auto;</code></td>
+              </tr>
+              <tr id="effects-interaction-item-user-select">
+                <th scope="row"><code>user-select</code></th>
+                <td>Text Selection</td>
+                <td>Controls whether users can select text.</td>
+                <td class="example-cell"><code>user-select: none;</code></td>
+              </tr>
+              <tr id="effects-interaction-item-accent-color">
+                <th scope="row"><code>accent-color</code></th>
+                <td>Form Accent Color</td>
+                <td>Sets the accent color of compatible native form controls.</td>
+                <td class="example-cell"><code>accent-color: blue;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="responsive-tools-title" class="reference-section" id="responsive-tools">
+        <h2 class="section-title" id="responsive-tools-title">Responsive Tools</h2>
+        <p class="section-description">
+          CSS responsive design rules, functions, and properties used to adapt layouts to different screen sizes and conditions.
+        </p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">
+              CSS responsive design rules, functions, and properties used to adapt layouts to different screen sizes and conditions.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Property / Rule</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="responsive-tools-item-media">
+                <th scope="row"><code>@media</code></th>
+                <td>Media Query</td>
+                <td>Applies CSS when media conditions match.</td>
+                <td class="example-cell"><code>@media (max-width: 600px) { ... }</code></td>
+              </tr>
+              <tr id="responsive-tools-item-clamp">
+                <th scope="row"><code>clamp()</code></th>
+                <td>Responsive Clamp</td>
+                <td>Constrains a fluid value between a minimum and maximum.</td>
+                <td class="example-cell"><code>clamp(1rem, 2.5vw, 2rem);</code></td>
+              </tr>
+              <tr id="responsive-tools-item-min">
+                <th scope="row"><code>min()</code></th>
+                <td>Minimum Function</td>
+                <td>Uses the smallest value from a list.</td>
+                <td class="example-cell"><code>min(100px, 20vw);</code></td>
+              </tr>
+              <tr id="responsive-tools-item-max">
+                <th scope="row"><code>max()</code></th>
+                <td>Maximum Function</td>
+                <td>Uses the largest value from a list.</td>
+                <td class="example-cell"><code>max(100px, 20vw);</code></td>
+              </tr>
+              <tr id="responsive-tools-item-object-fit">
+                <th scope="row"><code>object-fit</code></th>
+                <td>Media Fit</td>
+                <td>Controls how images or videos fit their content box.</td>
+                <td class="example-cell"><code>object-fit: cover;</code></td>
+              </tr>
+              <tr id="responsive-tools-item-aspect-ratio">
+                <th scope="row"><code>aspect-ratio</code></th>
+                <td>Aspect Ratio</td>
+                <td>Defines a preferred width-to-height ratio.</td>
+                <td class="example-cell"><code>aspect-ratio: 16 / 9;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer=""></div>
+  <script src="assets/js/search-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/chrome.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/references.js"></script>
+  <script src="assets/js/dialogs.js"></script>
+  <script src="assets/js/patterns-ui.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/site.js"></script>
+  </body>
+</html>

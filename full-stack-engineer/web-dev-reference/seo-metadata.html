@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Core document metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical reference for page titles, descriptions, canonical URLs, robots directives, Open Graph metadata, social cards, structured data, favicons, and manifests.">
+    <meta name="author" content="Jennifer Curtis">
+    <meta name="creator" content="Jennifer Curtis">
+    <meta name="application-name" content="Web Development Reference">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Progressive loading-screen enhancement -->
+  <script src="assets/js/loader-init.js"></script>
+
+    <title>SEO &amp; Metadata Reference</title>
+
+    <!-- Browser and installed-app appearance -->
+    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Social sharing metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Web Development Reference">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="SEO &amp; Metadata Reference">
+    <meta property="og:description" content="A practical reference for page titles, descriptions, canonical URLs, robots directives, Open Graph metadata, social cards, structured data, favicons, and manifests.">
+    <meta property="og:image" content="assets/images/icon-512.png">
+    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SEO &amp; Metadata Reference">
+    <meta name="twitter:description" content="A practical reference for page titles, descriptions, canonical URLs, robots directives, Open Graph metadata, social cards, structured data, favicons, and manifests.">
+    <meta name="twitter:image" content="assets/images/icon-512.png">
+    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+
+    <!-- App manifest and icons -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <!-- Shared site styles and fonts -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
+    >
+
+    <!-- Structured metadata -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "SEO & Metadata",
+  "description": "A practical reference for page titles, descriptions, canonical URLs, robots directives, Open Graph metadata, social cards, structured data, favicons, and manifests.",
+  "inLanguage": "en-US",
+  "dateModified": "2026-08-19",
+  "author": {
+    "@type": "Person",
+    "name": "Jennifer Curtis",
+    "url": "https://jennifercurtis.me"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Web Development Reference"
+  }
+}
+    </script>
+  </head>
+
+  <body
+    data-page="seo"
+    data-page-label="SEO &amp; Metadata"
+    data-category="Web Platform"
+    data-level="Beginner–Intermediate"
+    data-footer="SEO &amp; Metadata Cheat Sheet"
+    data-search-placeholder="Try: description, canonical, og:title, JSON-LD..."
+    data-author-note="Metadata should describe the page users actually receive. Unique titles and descriptions are more useful than stuffing every possible keyword into every page."
+    data-related="[{&quot;label&quot;:&quot;HTML Tags&quot;,&quot;href&quot;:&quot;html-tags.html#document-metadata&quot;},{&quot;label&quot;:&quot;Web Performance&quot;,&quot;href&quot;:&quot;web-performance.html&quot;}]"
+    data-toc="true"
+  >
+
+    <div class="site-loader" id="site-loader" aria-hidden="true">
+      <div class="site-loader-content">
+        <div class="site-loader-mark" aria-hidden="true">
+          <span class="loader-dot loader-dot-teal"></span>
+          <span class="loader-dot loader-dot-blue"></span>
+          <span class="loader-dot loader-dot-green"></span>
+        </div>
+
+        <p class="site-loader-label">Web Dev Reference</p>
+      </div>
+    </div>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div data-site-nav></div>
+
+    <header class="hero">
+      <h1>SEO &amp; Metadata Reference</h1>
+      <p class="subtitle">A quick reference for document metadata that helps browsers, search engines, social platforms, and installed web experiences understand a page.</p>
+
+      <div class="hero-meta">
+        <span class="badge badge-category">Web Platform</span>
+        <span class="badge badge-level">Beginner–Intermediate</span>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="reference-section" id="core-metadata" aria-labelledby="core-metadata-title">
+        <h2 class="section-title" id="core-metadata-title">Core Document Metadata</h2>
+        <p class="section-description">Metadata every production page commonly needs to describe itself and render correctly.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Metadata every production page commonly needs to describe itself and render correctly.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="core-metadata-item-item">
+                <th scope="row"><code>&lt;title&gt;</code></th>
+                <td>Document title</td>
+                <td>Sets the browser-tab title and is commonly used as the search-result title.</td>
+                <td class="example-cell"><code>&lt;title&gt;CSS Grid Reference | Web Dev Reference&lt;/title&gt;</code></td>
+              </tr>
+              <tr id="core-metadata-item-meta-name-description">
+                <th scope="row"><code>meta[name=&quot;description&quot;]</code></th>
+                <td>Page description</td>
+                <td>Provides a concise page summary used by search/social systems in some contexts.</td>
+                <td class="example-cell"><code>&lt;meta name=&quot;description&quot; content=&quot;A practical CSS Grid reference.&quot;&gt;</code></td>
+              </tr>
+              <tr id="core-metadata-item-meta-name-viewport">
+                <th scope="row"><code>meta[name=&quot;viewport&quot;]</code></th>
+                <td>Viewport configuration</td>
+                <td>Tells mobile browsers how to size the layout viewport.</td>
+                <td class="example-cell"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></td>
+              </tr>
+              <tr id="core-metadata-item-html-lang">
+                <th scope="row"><code>html[lang]</code></th>
+                <td>Document language</td>
+                <td>Identifies the primary language for browsers, search systems, and assistive technology.</td>
+                <td class="example-cell"><code>&lt;html lang=&quot;en&quot;&gt;</code></td>
+              </tr>
+              <tr id="core-metadata-item-meta-name-robots">
+                <th scope="row"><code>meta[name=&quot;robots&quot;]</code></th>
+                <td>Crawler directives</td>
+                <td>Supplies indexing/following directives to compliant crawlers.</td>
+                <td class="example-cell"><code>&lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="canonical-social" aria-labelledby="canonical-social-title">
+        <h2 class="section-title" id="canonical-social-title">Canonical &amp; Social Metadata</h2>
+        <p class="section-description">Metadata used to identify preferred URLs and social-preview content.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Metadata used to identify preferred URLs and social-preview content.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="canonical-social-item-rel-canonical">
+                <th scope="row"><code>rel=&quot;canonical&quot;</code></th>
+                <td>Canonical URL</td>
+                <td>Identifies the preferred URL for substantially duplicate pages.</td>
+                <td class="example-cell"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://example.com/css-grid&quot;&gt;</code></td>
+              </tr>
+              <tr id="canonical-social-item-og-title">
+                <th scope="row"><code>og:title</code></th>
+                <td>Open Graph title</td>
+                <td>Sets the title used by many social preview systems.</td>
+                <td class="example-cell"><code>&lt;meta property=&quot;og:title&quot; content=&quot;CSS Grid Reference&quot;&gt;</code></td>
+              </tr>
+              <tr id="canonical-social-item-og-description">
+                <th scope="row"><code>og:description</code></th>
+                <td>Open Graph description</td>
+                <td>Sets the social-preview summary.</td>
+                <td class="example-cell"><code>&lt;meta property=&quot;og:description&quot; content=&quot;A practical CSS Grid reference.&quot;&gt;</code></td>
+              </tr>
+              <tr id="canonical-social-item-og-image">
+                <th scope="row"><code>og:image</code></th>
+                <td>Open Graph image</td>
+                <td>Specifies the image used in supported social previews.</td>
+                <td class="example-cell"><code>&lt;meta property=&quot;og:image&quot; content=&quot;https://example.com/share.png&quot;&gt;</code></td>
+              </tr>
+              <tr id="canonical-social-item-twitter-card">
+                <th scope="row"><code>twitter:card</code></th>
+                <td>Twitter/X card type</td>
+                <td>Selects the general card layout supported by Twitter/X metadata.</td>
+                <td class="example-cell"><code>&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="structured-data" aria-labelledby="structured-data-title">
+        <h2 class="section-title" id="structured-data-title">Structured Data</h2>
+        <p class="section-description">Machine-readable schema markup for describing page entities and relationships.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Machine-readable schema markup for describing page entities and relationships.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="structured-data-item-json-ld">
+                <th scope="row"><code>JSON-LD</code></th>
+                <td>Linked-data script</td>
+                <td>Embeds structured data in a script block without changing visible content.</td>
+                <td class="example-cell"><code>&lt;script type=&quot;application/ld+json&quot;&gt;{ ... }&lt;/script&gt;</code></td>
+              </tr>
+              <tr id="structured-data-item-website">
+                <th scope="row"><code>WebSite</code></th>
+                <td>Website schema</td>
+                <td>Describes the overall website entity.</td>
+                <td class="example-cell"><code>&quot;@type&quot;: &quot;WebSite&quot;</code></td>
+              </tr>
+              <tr id="structured-data-item-techarticle">
+                <th scope="row"><code>TechArticle</code></th>
+                <td>Technical article schema</td>
+                <td>Describes technical/reference article content.</td>
+                <td class="example-cell"><code>&quot;@type&quot;: &quot;TechArticle&quot;</code></td>
+              </tr>
+              <tr id="structured-data-item-author">
+                <th scope="row"><code>author</code></th>
+                <td>Author entity</td>
+                <td>Associates the content with a Person or Organization.</td>
+                <td class="example-cell"><code>&quot;author&quot;: { &quot;@type&quot;: &quot;Person&quot;, &quot;name&quot;: &quot;Jennifer Curtis&quot; }</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="icons-manifest" aria-labelledby="icons-manifest-title">
+        <h2 class="section-title" id="icons-manifest-title">Icons &amp; Web App Metadata</h2>
+        <p class="section-description">Files and links that provide browser icons and installable-web-app information.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Files and links that provide browser icons and installable-web-app information.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="icons-manifest-item-rel-icon">
+                <th scope="row"><code>rel=&quot;icon&quot;</code></th>
+                <td>Favicon</td>
+                <td>Provides an icon for browser tabs, bookmarks, and other UI.</td>
+                <td class="example-cell"><code>&lt;link rel=&quot;icon&quot; href=&quot;/favicon.png&quot;&gt;</code></td>
+              </tr>
+              <tr id="icons-manifest-item-rel-apple-touch-icon">
+                <th scope="row"><code>rel=&quot;apple-touch-icon&quot;</code></th>
+                <td>Apple touch icon</td>
+                <td>Provides an icon used for Apple home-screen shortcuts.</td>
+                <td class="example-cell"><code>&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;/apple-touch-icon.png&quot;&gt;</code></td>
+              </tr>
+              <tr id="icons-manifest-item-rel-manifest">
+                <th scope="row"><code>rel=&quot;manifest&quot;</code></th>
+                <td>Web app manifest</td>
+                <td>Links metadata for an installable web experience.</td>
+                <td class="example-cell"><code>&lt;link rel=&quot;manifest&quot; href=&quot;/site.webmanifest&quot;&gt;</code></td>
+              </tr>
+              <tr id="icons-manifest-item-theme-color">
+                <th scope="row"><code>theme-color</code></th>
+                <td>Browser UI color</td>
+                <td>Suggests a color for supported browser/window UI.</td>
+                <td class="example-cell"><code>&lt;meta name=&quot;theme-color&quot; content=&quot;#3c88a3&quot;&gt;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+
+  <script src="assets/js/search-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/chrome.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/references.js"></script>
+  <script src="assets/js/dialogs.js"></script>
+  <script src="assets/js/patterns-ui.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/site.js"></script>
+  </body>
+</html>

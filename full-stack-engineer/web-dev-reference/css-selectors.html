@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Core document metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical CSS selectors reference covering combinators, attributes, pseudo-classes, pseudo-elements, specificity, and the cascade.">
+    <meta name="author" content="Jennifer Curtis">
+    <meta name="creator" content="Jennifer Curtis">
+    <meta name="application-name" content="Web Development Reference">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Progressive loading-screen enhancement -->
+  <script src="assets/js/loader-init.js"></script>
+    <title>CSS Selectors &amp; Specificity | Web Dev Reference</title>
+    <!-- Browser and installed-app appearance -->
+    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Social sharing metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Web Development Reference">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="CSS Selectors &amp; Specificity | Web Dev Reference">
+    <meta property="og:description" content="A practical CSS selectors reference covering combinators, attributes, pseudo-classes, pseudo-elements, specificity, and the cascade.">
+    <meta property="og:image" content="assets/images/icon-512.png">
+    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CSS Selectors &amp; Specificity | Web Dev Reference">
+    <meta name="twitter:description" content="A practical CSS selectors reference covering combinators, attributes, pseudo-classes, pseudo-elements, specificity, and the cascade.">
+    <meta name="twitter:image" content="assets/images/icon-512.png">
+    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <!-- App manifest and icons -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <!-- Shared site styles and fonts -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap">
+    <!-- Structured metadata -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "CSS Selectors & Specificity",
+        "description": "A practical CSS selectors reference covering combinators, attributes, pseudo-classes, pseudo-elements, specificity, and the cascade.",
+        "inLanguage": "en-US",
+        "dateModified": "2026-08-19",
+        "author": {
+          "@type": "Person",
+          "name": "Jennifer Curtis",
+          "url": "https://jennifercurtis.me"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Web Development Reference"
+        }
+      }
+        
+    </script>
+  </head>
+  <body data-author-note="If you keep increasing specificity to make a rule win, inspect the cascade and stylesheet structure before reaching for &lt;code&gt;!important&lt;/code&gt;." data-category="CSS" data-footer="CSS Selectors &amp; Specificity Cheat Sheet" data-level="Beginner–Intermediate" data-page="selectors" data-page-label="CSS Selectors" data-related="[{&quot;label&quot;:&quot;CSS Properties&quot;,&quot;href&quot;:&quot;css-properties.html&quot;},{&quot;label&quot;:&quot;Focus-visible Pattern&quot;,&quot;href&quot;:&quot;patterns.html#focus-visible-pattern&quot;}]" data-search-placeholder="Try: hover, class, specificity..." data-toc="true">
+
+    <div class="site-loader" id="site-loader" aria-hidden="true">
+      <div class="site-loader-content">
+        <div class="site-loader-mark" aria-hidden="true">
+          <span class="loader-dot loader-dot-teal"></span>
+          <span class="loader-dot loader-dot-blue"></span>
+          <span class="loader-dot loader-dot-green"></span>
+        </div>
+
+        <p class="site-loader-label">Web Dev Reference</p>
+      </div>
+    </div>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div data-site-nav=""></div>
+    <header class="hero">
+      <h1>CSS Selectors &amp; Specificity</h1>
+      <p class="subtitle">A quick reference for targeting elements and understanding the CSS cascade.</p>
+      <div class="hero-meta">
+        <span class="badge badge-category">CSS</span>
+        <span class="badge badge-level">Beginner–Intermediate</span>
+      </div>
+    </header>
+    <main id="main-content">
+      <section aria-labelledby="basic-selectors-title" class="reference-section" id="basic-selectors">
+        <h2 class="section-title" id="basic-selectors-title">Basic Selectors</h2>
+        <p class="section-description">Basic CSS selectors, their names, and what elements they select.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Basic CSS selectors, their names, and what elements they select.</caption>
+            <thead>
+              <tr><th scope="col">Selector</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="basic-selectors-item-item">
+                <th scope="row"><code>*</code></th>
+                <td>Universal Selector</td>
+                <td>Selects every element. Specificity: <code>0-0-0</code> .</td>
+                <td class="example-cell"><code>*</code></td>
+              </tr>
+              <tr id="basic-selectors-item-element">
+                <th scope="row"><code>element</code></th>
+                <td>Type Selector</td>
+                <td>Selects every matching element. Specificity: <code>0-0-1</code> .</td>
+                <td class="example-cell"><code>div</code></td>
+              </tr>
+              <tr id="basic-selectors-item-class">
+                <th scope="row"><code>.class</code></th>
+                <td>Class Selector</td>
+                <td>Selects elements with a matching class. Specificity: <code>0-1-0</code> .</td>
+                <td class="example-cell"><code>.my-class</code></td>
+              </tr>
+              <tr id="basic-selectors-item-id">
+                <th scope="row"><code>#id</code></th>
+                <td>ID Selector</td>
+                <td>Selects the element with a matching ID. Specificity: <code>1-0-0</code> .</td>
+                <td class="example-cell"><code>#my-id</code></td>
+              </tr>
+              <tr id="basic-selectors-item-selector1-selector2">
+                <th scope="row"><code>selector1, selector2</code></th>
+                <td>Selector List</td>
+                <td>Applies the same rule to multiple selectors.</td>
+                <td class="example-cell"><code>div, p</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="combinators-title" class="reference-section" id="combinators">
+        <h2 class="section-title" id="combinators-title">Combinators</h2>
+        <p class="section-description">CSS combinators, their names, and how they select related elements.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">CSS combinators, their names, and how they select related elements.</caption>
+            <thead>
+              <tr><th scope="col">Selector</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="combinators-item-a-b">
+                <th scope="row"><code>A B</code></th>
+                <td>Descendant</td>
+                <td>Selects B elements anywhere inside A.</td>
+                <td class="example-cell"><code>div p</code></td>
+              </tr>
+              <tr id="combinators-item-a-b-2">
+                <th scope="row"><code>A &gt; B</code></th>
+                <td>Child</td>
+                <td>Selects B elements that are direct children of A.</td>
+                <td class="example-cell"><code>div &gt; p</code></td>
+              </tr>
+              <tr id="combinators-item-a-b-3">
+                <th scope="row"><code>A + B</code></th>
+                <td>Adjacent Sibling</td>
+                <td>Selects the first B immediately following A.</td>
+                <td class="example-cell"><code>div + p</code></td>
+              </tr>
+              <tr id="combinators-item-a-b-4">
+                <th scope="row"><code>A ~ B</code></th>
+                <td>General Sibling</td>
+                <td>Selects matching B siblings that follow A.</td>
+                <td class="example-cell"><code>div ~ p</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="attribute-selectors-title" class="reference-section" id="attribute-selectors">
+        <h2 class="section-title" id="attribute-selectors-title">Attribute Selectors</h2>
+        <p class="section-description">CSS attribute selectors, their names, and how they match element attributes.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">CSS attribute selectors, their names, and how they match element attributes.</caption>
+            <thead>
+              <tr><th scope="col">Selector</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="attribute-selectors-item-attr">
+                <th scope="row"><code>[attr]</code></th>
+                <td>Attribute Present</td>
+                <td>Selects elements containing the named attribute.</td>
+                <td class="example-cell"><code>[href]</code></td>
+              </tr>
+              <tr id="attribute-selectors-item-attr-value">
+                <th scope="row"><code>[attr="value"]</code></th>
+                <td>Exact Value</td>
+                <td>Selects elements whose attribute exactly matches the value.</td>
+                <td class="example-cell"><code>[href="https://example.com"]</code></td>
+              </tr>
+              <tr id="attribute-selectors-item-attr-value-2">
+                <th scope="row"><code>[attr^="value"]</code></th>
+                <td>Begins With</td>
+                <td>Matches attribute values beginning with specified text.</td>
+                <td class="example-cell"><code>[href^="https://"]</code></td>
+              </tr>
+              <tr id="attribute-selectors-item-attr-value-3">
+                <th scope="row"><code>[attr$="value"]</code></th>
+                <td>Ends With</td>
+                <td>Matches attribute values ending with specified text.</td>
+                <td class="example-cell"><code>[href$=".com"]</code></td>
+              </tr>
+              <tr id="attribute-selectors-item-attr-value-4">
+                <th scope="row"><code>[attr*="value"]</code></th>
+                <td>Contains</td>
+                <td>Matches attribute values containing specified text.</td>
+                <td class="example-cell"><code>[href*="example"]</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="pseudo-classes-title" class="reference-section" id="pseudo-classes">
+        <h2 class="section-title" id="pseudo-classes-title">Pseudo-classes</h2>
+        <p class="section-description">CSS pseudo-classes, their names, and the element states or conditions they select.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">CSS pseudo-classes, their names, and the element states or conditions they select.</caption>
+            <thead>
+              <tr><th scope="col">Selector</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="pseudo-classes-item-hover">
+                <th scope="row"><code>:hover</code></th>
+                <td>Hover</td>
+                <td>Matches an element while the pointer is over it.</td>
+                <td class="example-cell"><code>div:hover</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-focus">
+                <th scope="row"><code>:focus</code></th>
+                <td>Focus</td>
+                <td>Matches the currently focused element.</td>
+                <td class="example-cell"><code>input:focus</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-focus-visible">
+                <th scope="row"><code>:focus-visible</code></th>
+                <td>Visible Focus</td>
+                <td>Matches focus when a visible focus indicator is appropriate.</td>
+                <td class="example-cell"><code>input:focus-visible</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-active">
+                <th scope="row"><code>:active</code></th>
+                <td>Active</td>
+                <td>Matches an element while it is being activated.</td>
+                <td class="example-cell"><code>button:active</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-visited">
+                <th scope="row"><code>:visited</code></th>
+                <td>Visited Link</td>
+                <td>Matches a link whose destination has been visited.</td>
+                <td class="example-cell"><code>a:visited</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-checked">
+                <th scope="row"><code>:checked</code></th>
+                <td>Checked</td>
+                <td>Matches selected checkboxes, radio buttons, and options.</td>
+                <td class="example-cell"><code>input:checked</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-first-child">
+                <th scope="row"><code>:first-child</code></th>
+                <td>First Child</td>
+                <td>Matches an element that is the first child of its parent.</td>
+                <td class="example-cell"><code>div:first-child</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-last-child">
+                <th scope="row"><code>:last-child</code></th>
+                <td>Last Child</td>
+                <td>Matches an element that is the last child of its parent.</td>
+                <td class="example-cell"><code>div:last-child</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-nth-child">
+                <th scope="row"><code>:nth-child()</code></th>
+                <td>Nth Child</td>
+                <td>Matches elements based on sibling position.</td>
+                <td class="example-cell"><code>div:nth-child(2)</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-not">
+                <th scope="row"><code>:not()</code></th>
+                <td>Negation</td>
+                <td>Matches elements that do not satisfy the selector in parentheses.</td>
+                <td class="example-cell"><code>div:not(.exclude)</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-is">
+                <th scope="row"><code>:is()</code></th>
+                <td>Matches Any</td>
+                <td>Matches an element if any selector in its list matches.</td>
+                <td class="example-cell"><code>div:is(.class1, .class2)</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-where">
+                <th scope="row"><code>:where()</code></th>
+                <td>Zero-Specificity Group</td>
+                <td>Works like <code>:is()</code> but contributes zero specificity.</td>
+                <td class="example-cell"><code>div:where(.class1, .class2)</code></td>
+              </tr>
+              <tr id="pseudo-classes-item-has">
+                <th scope="row"><code>:has()</code></th>
+                <td>Relational Selector</td>
+                <td>Matches an element based on related elements.</td>
+                <td class="example-cell"><code>div:has(.class1)</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="pseudo-elements-title" class="reference-section" id="pseudo-elements">
+        <h2 class="section-title" id="pseudo-elements-title">Pseudo-elements</h2>
+        <p class="section-description">CSS pseudo-elements, their names, and the parts of elements they style.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">CSS pseudo-elements, their names, and the parts of elements they style.</caption>
+            <thead>
+              <tr><th scope="col">Selector</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="pseudo-elements-item-before">
+                <th scope="row"><code>::before</code></th>
+                <td>Before</td>
+                <td>Creates generated content before an element's content.</td>
+                <td class="example-cell"><code>div::before</code></td>
+              </tr>
+              <tr id="pseudo-elements-item-after">
+                <th scope="row"><code>::after</code></th>
+                <td>After</td>
+                <td>Creates generated content after an element's content.</td>
+                <td class="example-cell"><code>div::after</code></td>
+              </tr>
+              <tr id="pseudo-elements-item-first-letter">
+                <th scope="row"><code>::first-letter</code></th>
+                <td>First Letter</td>
+                <td>Styles the first letter of a block.</td>
+                <td class="example-cell"><code>div::first-letter</code></td>
+              </tr>
+              <tr id="pseudo-elements-item-first-line">
+                <th scope="row"><code>::first-line</code></th>
+                <td>First Line</td>
+                <td>Styles the first formatted line of a block.</td>
+                <td class="example-cell"><code>div::first-line</code></td>
+              </tr>
+              <tr id="pseudo-elements-item-selection">
+                <th scope="row"><code>::selection</code></th>
+                <td>Selection</td>
+                <td>Styles text selected by the user.</td>
+                <td class="example-cell"><code>div::selection</code></td>
+              </tr>
+              <tr id="pseudo-elements-item-placeholder">
+                <th scope="row"><code>::placeholder</code></th>
+                <td>Placeholder</td>
+                <td>Styles placeholder text in form controls.</td>
+                <td class="example-cell"><code>div::placeholder</code></td>
+              </tr>
+              <tr id="pseudo-elements-item-marker">
+                <th scope="row"><code>::marker</code></th>
+                <td>List Marker</td>
+                <td>Styles the marker of a list item.</td>
+                <td class="example-cell"><code>div::marker</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="specificity-title" class="reference-section" id="specificity">
+        <h2 class="section-title" id="specificity-title">Specificity</h2>
+        <p class="section-description">CSS selector patterns, their specificity values, and how they affect rule priority.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">CSS selector patterns, their specificity values, and how they affect rule priority.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Pattern</th>
+                <th scope="col">Specificity</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="specificity-item-inline-style">
+                <th scope="row"><code>Inline style</code></th>
+                <td>1-0-0-0</td>
+                <td>Styles written in an element's <code>style</code> attribute.</td>
+                <td class="example-cell"><code>div{ color: red; }</code></td>
+              </tr>
+              <tr id="specificity-item-id">
+                <th scope="row"><code>#id</code></th>
+                <td>1-0-0</td>
+                <td>Each ID selector adds one to the ID column.</td>
+                <td class="example-cell"><code>#my-id</code></td>
+              </tr>
+              <tr id="specificity-item-class-attr-hover">
+                <th scope="row"><code>.class, [attr], :hover</code></th>
+                <td>0-1-0</td>
+                <td>Classes, attributes, and pseudo-classes add to the class column.</td>
+                <td class="example-cell"><code>.my-class</code></td>
+              </tr>
+              <tr id="specificity-item-element-before">
+                <th scope="row"><code>element, ::before</code></th>
+                <td>0-0-1</td>
+                <td>Type selectors and pseudo-elements add to the type column.</td>
+                <td class="example-cell"><code>div::before</code></td>
+              </tr>
+              <tr id="specificity-item-item">
+                <th scope="row"><code>*</code></th>
+                <td>0-0-0</td>
+                <td>The universal selector adds no specificity.</td>
+                <td class="example-cell"><code>*</code></td>
+              </tr>
+              <tr id="specificity-item-where">
+                <th scope="row"><code>:where()</code></th>
+                <td>0-0-0</td>
+                <td>The entire selector contributes zero specificity.</td>
+                <td class="example-cell"><code>:where(div)</code></td>
+              </tr>
+              <tr id="specificity-item-important">
+                <th scope="row"><code>!important</code></th>
+                <td>Cascade Override</td>
+                <td>Not part of specificity; it changes declaration importance.</td>
+                <td class="example-cell"><code>div{ color: red !important; }</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="cascade-tie-breaking-title" class="reference-section" id="cascade-tie-breaking">
+        <h2 class="section-title" id="cascade-tie-breaking-title">Cascade &amp; Tie-Breaking</h2>
+        <p class="section-description">CSS cascade rules and the factors used to determine which declaration takes precedence.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">CSS cascade rules and the factors used to determine which declaration takes precedence.</caption>
+            <thead>
+              <tr><th scope="col">Rule</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="cascade-tie-breaking-item-importance">
+                <th scope="row"><code>Importance</code></th>
+                <td>Important vs. Normal</td>
+                <td>Important declarations generally outrank normal declarations.</td>
+                <td class="example-cell"><code>div{ color: red !important; }</code></td>
+              </tr>
+              <tr id="cascade-tie-breaking-item-origin-layer">
+                <th scope="row"><code>Origin / layer</code></th>
+                <td>Cascade Origin &amp; Layer</td>
+                <td>Origin and cascade layers are considered before specificity.</td>
+                <td class="example-cell"><code>div{ color: red; }</code></td>
+              </tr>
+              <tr id="cascade-tie-breaking-item-specificity">
+                <th scope="row"><code>Specificity</code></th>
+                <td>Selector Weight</td>
+                <td>More specific selectors win when other cascade factors are equal.</td>
+                <td class="example-cell"><code>div#my-id</code></td>
+              </tr>
+              <tr id="cascade-tie-breaking-item-source-order">
+                <th scope="row"><code>Source order</code></th>
+                <td>Later Rule</td>
+                <td>If specificity is equal, the later declaration wins.</td>
+                <td class="example-cell"><code>div{ color: blue; }</code></td>
+              </tr>
+              <tr id="cascade-tie-breaking-item-inheritance">
+                <th scope="row"><code>Inheritance</code></th>
+                <td>Inherited Value</td>
+                <td>Some properties inherit from ancestors when no direct value is set.</td>
+                <td class="example-cell"><code>div{ color: inherit; }</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer=""></div>
+  <script src="assets/js/search-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/chrome.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/references.js"></script>
+  <script src="assets/js/dialogs.js"></script>
+  <script src="assets/js/patterns-ui.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/site.js"></script>
+  </body>
+</html>

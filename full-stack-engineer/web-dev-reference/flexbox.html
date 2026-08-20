@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Core document metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A visual CSS Flexbox reference covering axes, containers, alignment, wrapping, gaps, flex sizing, ordering, and common layout patterns.">
+    <meta name="author" content="Jennifer Curtis">
+    <meta name="creator" content="Jennifer Curtis">
+    <meta name="application-name" content="Web Development Reference">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Progressive loading-screen enhancement -->
+  <script src="assets/js/loader-init.js"></script>
+
+    <title>CSS Flexbox Reference</title>
+
+    <!-- Browser and installed-app appearance -->
+    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Social sharing metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Web Development Reference">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="CSS Flexbox Reference">
+    <meta property="og:description" content="A visual CSS Flexbox reference covering axes, containers, alignment, wrapping, gaps, flex sizing, ordering, and common layout patterns.">
+    <meta property="og:image" content="assets/images/icon-512.png">
+    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CSS Flexbox Reference">
+    <meta name="twitter:description" content="A visual CSS Flexbox reference covering axes, containers, alignment, wrapping, gaps, flex sizing, ordering, and common layout patterns.">
+    <meta name="twitter:image" content="assets/images/icon-512.png">
+    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+
+    <!-- App manifest and icons -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <!-- Shared site styles and fonts -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
+    >
+
+    <!-- Structured metadata -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Flexbox",
+  "description": "A visual CSS Flexbox reference covering axes, containers, alignment, wrapping, gaps, flex sizing, ordering, and common layout patterns.",
+  "inLanguage": "en-US",
+  "dateModified": "2026-08-19",
+  "author": {
+    "@type": "Person",
+    "name": "Jennifer Curtis",
+    "url": "https://jennifercurtis.me"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Web Development Reference"
+  }
+}
+    </script>
+  </head>
+
+  <body
+    data-page="flexbox"
+    data-page-label="Flexbox"
+    data-category="CSS"
+    data-level="Beginner–Intermediate"
+    data-footer="Flexbox Cheat Sheet"
+    data-search-placeholder="Try: justify-content, gap, flex-grow, wrap..."
+    data-author-note="If Flexbox alignment feels backwards, check flex-direction first. justify-content follows the main axis; align-items follows the cross axis."
+    data-related="[{&quot;label&quot;:&quot;CSS Properties&quot;,&quot;href&quot;:&quot;css-properties.html#flexbox&quot;},{&quot;label&quot;:&quot;CSS Grid&quot;,&quot;href&quot;:&quot;css-grid.html&quot;},{&quot;label&quot;:&quot;Responsive Design&quot;,&quot;href&quot;:&quot;responsive-design.html&quot;}]"
+    data-toc="true"
+  >
+
+    <div class="site-loader" id="site-loader" aria-hidden="true">
+      <div class="site-loader-content">
+        <div class="site-loader-mark" aria-hidden="true">
+          <span class="loader-dot loader-dot-teal"></span>
+          <span class="loader-dot loader-dot-blue"></span>
+          <span class="loader-dot loader-dot-green"></span>
+        </div>
+
+        <p class="site-loader-label">Web Dev Reference</p>
+      </div>
+    </div>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div data-site-nav></div>
+
+    <header class="hero">
+      <h1>CSS Flexbox Reference</h1>
+      <p class="subtitle">A focused reference for one-dimensional layout, alignment, wrapping, sizing, and common Flexbox patterns.</p>
+
+      <div class="hero-meta">
+        <span class="badge badge-category">CSS</span>
+        <span class="badge badge-level">Beginner–Intermediate</span>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="reference-section" id="flex-container" aria-labelledby="flex-container-title">
+        <h2 class="section-title" id="flex-container-title">Flex Container</h2>
+        <p class="section-description">Properties applied to the parent element that establish and control the flex layout.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Properties applied to the parent element that establish and control the flex layout.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="flex-container-item-display">
+                <th scope="row"><code>display</code></th>
+                <td>Create flex context</td>
+                <td>Turns direct children into flex items.</td>
+                <td class="example-cell"><code>display: flex;</code></td>
+              </tr>
+              <tr id="flex-container-item-flex-direction">
+                <th scope="row"><code>flex-direction</code></th>
+                <td>Main-axis direction</td>
+                <td>Controls row/column direction and reversals.</td>
+                <td class="example-cell"><code>flex-direction: row;</code></td>
+              </tr>
+              <tr id="flex-container-item-flex-wrap">
+                <th scope="row"><code>flex-wrap</code></th>
+                <td>Wrapping</td>
+                <td>Controls whether items remain on one line or wrap.</td>
+                <td class="example-cell"><code>flex-wrap: wrap;</code></td>
+              </tr>
+              <tr id="flex-container-item-flex-flow">
+                <th scope="row"><code>flex-flow</code></th>
+                <td>Direction + wrap</td>
+                <td>Shorthand for flex-direction and flex-wrap.</td>
+                <td class="example-cell"><code>flex-flow: row wrap;</code></td>
+              </tr>
+              <tr id="flex-container-item-gap">
+                <th scope="row"><code>gap</code></th>
+                <td>Item spacing</td>
+                <td>Creates consistent space between flex items.</td>
+                <td class="example-cell"><code>gap: 1rem;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="alignment" aria-labelledby="alignment-title">
+        <h2 class="section-title" id="alignment-title">Alignment</h2>
+        <p class="section-description">Properties for distributing items along the main and cross axes.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Properties for distributing items along the main and cross axes.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="alignment-item-justify-content">
+                <th scope="row"><code>justify-content</code></th>
+                <td>Main-axis alignment</td>
+                <td>Distributes items along the main axis.</td>
+                <td class="example-cell"><code>justify-content: space-between;</code></td>
+              </tr>
+              <tr id="alignment-item-align-items">
+                <th scope="row"><code>align-items</code></th>
+                <td>Cross-axis alignment</td>
+                <td>Aligns flex items across the cross axis.</td>
+                <td class="example-cell"><code>align-items: center;</code></td>
+              </tr>
+              <tr id="alignment-item-align-content">
+                <th scope="row"><code>align-content</code></th>
+                <td>Line alignment</td>
+                <td>Distributes multiple wrapped flex lines when extra cross-axis space exists.</td>
+                <td class="example-cell"><code>align-content: start;</code></td>
+              </tr>
+              <tr id="alignment-item-align-self">
+                <th scope="row"><code>align-self</code></th>
+                <td>Individual alignment</td>
+                <td>Overrides align-items for one flex item.</td>
+                <td class="example-cell"><code>align-self: flex-end;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="flex-items" aria-labelledby="flex-items-title">
+        <h2 class="section-title" id="flex-items-title">Flex Item Sizing</h2>
+        <p class="section-description">Properties applied to flex items to control growth, shrinking, initial size, and ordering.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Properties applied to flex items to control growth, shrinking, initial size, and ordering.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="flex-items-item-flex-grow">
+                <th scope="row"><code>flex-grow</code></th>
+                <td>Growth factor</td>
+                <td>Controls how extra main-axis space is distributed.</td>
+                <td class="example-cell"><code>flex-grow: 1;</code></td>
+              </tr>
+              <tr id="flex-items-item-flex-shrink">
+                <th scope="row"><code>flex-shrink</code></th>
+                <td>Shrink factor</td>
+                <td>Controls how items shrink when space is limited.</td>
+                <td class="example-cell"><code>flex-shrink: 0;</code></td>
+              </tr>
+              <tr id="flex-items-item-flex-basis">
+                <th scope="row"><code>flex-basis</code></th>
+                <td>Initial main size</td>
+                <td>Sets an item&#x27;s initial main-axis size before free-space distribution.</td>
+                <td class="example-cell"><code>flex-basis: 18rem;</code></td>
+              </tr>
+              <tr id="flex-items-item-flex">
+                <th scope="row"><code>flex</code></th>
+                <td>Flex shorthand</td>
+                <td>Shorthand for grow, shrink, and basis.</td>
+                <td class="example-cell"><code>flex: 1 1 18rem;</code></td>
+              </tr>
+              <tr id="flex-items-item-order">
+                <th scope="row"><code>order</code></th>
+                <td>Visual order</td>
+                <td>Changes visual order without changing source order.</td>
+                <td class="example-cell"><code>order: 2;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="common-flex-patterns" aria-labelledby="common-flex-patterns-title">
+        <h2 class="section-title" id="common-flex-patterns-title">Common Flexbox Patterns</h2>
+        <p class="section-description">Short patterns for frequently needed interface arrangements.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Short patterns for frequently needed interface arrangements.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="common-flex-patterns-item-center">
+                <th scope="row"><code>center</code></th>
+                <td>Center both axes</td>
+                <td>Centers one or more items horizontally and vertically in a row layout.</td>
+                <td class="example-cell"><code>display: flex; justify-content: center; align-items: center;</code></td>
+              </tr>
+              <tr id="common-flex-patterns-item-split-nav">
+                <th scope="row"><code>split-nav</code></th>
+                <td>Split navigation</td>
+                <td>Pushes two groups to opposite ends of the main axis.</td>
+                <td class="example-cell"><code>display: flex; justify-content: space-between; align-items: center;</code></td>
+              </tr>
+              <tr id="common-flex-patterns-item-wrapping-cards">
+                <th scope="row"><code>wrapping-cards</code></th>
+                <td>Wrapping cards</td>
+                <td>Creates wrapping items with a preferred minimum width.</td>
+                <td class="example-cell"><code>display: flex; flex-wrap: wrap; gap: 1rem;</code></td>
+              </tr>
+              <tr id="common-flex-patterns-item-push-item">
+                <th scope="row"><code>push-item</code></th>
+                <td>Push one item</td>
+                <td>Uses auto margin to consume remaining main-axis space.</td>
+                <td class="example-cell"><code>margin-inline-start: auto;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+
+  <script src="assets/js/search-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/chrome.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/references.js"></script>
+  <script src="assets/js/dialogs.js"></script>
+  <script src="assets/js/patterns-ui.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/site.js"></script>
+  </body>
+</html>

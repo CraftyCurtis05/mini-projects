@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Core document metadata -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Practical, accessible HTML, CSS, and JavaScript patterns with live demonstrations, complete code, accessibility notes, and related references." name="description"/>
+  <meta content="Jennifer Curtis" name="author"/>
+  <meta content="Jennifer Curtis" name="creator"/>
+  <meta content="Web Development Reference" name="application-name"/>
+  <meta content="index, follow" name="robots"/>
+  <meta content="strict-origin-when-cross-origin" name="referrer"/>
+  <meta content="light dark" name="color-scheme"/>
+  <title>
+   HTML &amp; CSS Patterns | Web Dev Reference
+  </title>
+  <!-- Progressive loading-screen enhancement -->
+  <script src="assets/js/loader-init.js">
+  </script>
+  <!-- Browser and installed-app appearance -->
+  <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+  <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+  <meta content="Web Dev Ref" name="apple-mobile-web-app-title"/>
+  <meta content="yes" name="mobile-web-app-capable"/>
+  <!-- Social sharing metadata -->
+  <meta content="website" property="og:type"/>
+  <meta content="Web Development Reference" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="HTML &amp; CSS Patterns | Web Dev Reference" property="og:title"/>
+  <meta content="Practical, accessible HTML, CSS, and JavaScript patterns with live demonstrations, complete code, accessibility notes, and related references." property="og:description"/>
+  <meta content="assets/images/icon-512.png" property="og:image"/>
+  <meta content="Jennifer Curtis Web Development Reference logo" property="og:image:alt"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="HTML &amp; CSS Patterns | Web Dev Reference" name="twitter:title"/>
+  <meta content="Practical, accessible HTML, CSS, and JavaScript patterns with live demonstrations, complete code, accessibility notes, and related references." name="twitter:description"/>
+  <meta content="assets/images/icon-512.png" name="twitter:image"/>
+  <meta content="Jennifer Curtis Web Development Reference logo" name="twitter:image:alt"/>
+  <!-- App manifest and icons -->
+  <link href="site.webmanifest" rel="manifest"/>
+  <link href="assets/images/favicon-32.png" rel="icon" type="image/png"/>
+  <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <!-- Shared site styles and fonts -->
+  <link href="assets/css/main.css" rel="stylesheet"/>
+  <link href="https://use.typekit.net/qik2tak.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+  <!-- Structured metadata -->
+  <script type="application/ld+json">
+   {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "HTML & CSS Patterns",
+        "description": "Practical, accessible HTML and CSS patterns showing complete semantic structures, forms, layouts, components, and responsive techniques.",
+        "inLanguage": "en-US",
+        "dateModified": "2026-08-19",
+        "author": {
+          "@type": "Person",
+          "name": "Jennifer Curtis",
+          "url": "https://jennifercurtis.me"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Web Development Reference"
+        }
+      }
+  </script>
+ </head>
+ <body data-author-note="Patterns are starting points, not rigid templates. Keep the semantic structure, then adapt spacing, content, and visual details to the interface you are building." data-category="HTML + CSS" data-footer="HTML &amp; CSS Patterns" data-level="Practical" data-page="patterns" data-page-label="Patterns" data-related='[{"label":"HTML Tags","href":"html-tags.html"},{"label":"CSS Properties","href":"css-properties.html"},{"label":"CSS Selectors","href":"css-selectors.html"}]' data-search-placeholder="Try: modal, API, form, grid, theme, toast..." data-toc="true">
+  <div aria-hidden="true" class="site-loader" id="site-loader">
+   <div class="site-loader-content">
+    <div aria-hidden="true" class="site-loader-mark">
+     <span class="loader-dot loader-dot-teal">
+     </span>
+     <span class="loader-dot loader-dot-blue">
+     </span>
+     <span class="loader-dot loader-dot-green">
+     </span>
+    </div>
+    <p class="site-loader-label">
+     Web Dev Reference
+    </p>
+   </div>
+  </div>
+  <a class="skip-link" href="#main-content">
+   Skip to main content
+  </a>
+  <div data-site-nav="">
+  </div>
+  <header class="hero">
+   <h1>
+    HTML &amp; CSS Patterns
+   </h1>
+   <p class="subtitle">
+    Practical examples that combine HTML and CSS into reusable, accessible patterns.
+   </p>
+   <div class="hero-meta">
+    <span class="badge badge-category">
+     HTML + CSS
+    </span>
+    <span class="badge badge-level">
+     Practical
+    </span>
+   </div>
+  </header>
+  <main id="main-content">
+   <section aria-labelledby="semantic-page-title" class="pattern-section" id="semantic-page">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 01
+     </p>
+     <h2 id="semantic-page-title">
+      Semantic Page Structure
+     </h2>
+     <p>
+      A basic page hierarchy using native semantic landmarks.
+     </p>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View complete example
+     </summary>
+     <pre><code>&lt;body&gt;
+        &lt;header&gt;
+          &lt;h1&gt;Page Title&lt;/h1&gt;
+        &lt;/header&gt;
+      
+        &lt;nav aria-label="Main navigation"&gt;
+          &lt;a href="/"&gt;Home&lt;/a&gt;
+          &lt;a href="/about"&gt;About&lt;/a&gt;
+        &lt;/nav&gt;
+      
+        &lt;main&gt;
+          &lt;section&gt;
+            &lt;h2&gt;Featured Content&lt;/h2&gt;
+            &lt;p&gt;Page content...&lt;/p&gt;
+          &lt;/section&gt;
+        &lt;/main&gt;
+      
+        &lt;footer&gt;
+          &lt;p&gt;Copyright 2026&lt;/p&gt;
+        &lt;/footer&gt;
+      &lt;/body&gt;</code></pre>
+    </details>
+   </section>
+   <section aria-labelledby="accessible-table-title" class="pattern-section" id="accessible-table">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 02
+     </p>
+     <h2 id="accessible-table-title">
+      Accessible Data Table
+     </h2>
+     <p>
+      A table using a caption, column headers, and row headers.
+     </p>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View complete example
+     </summary>
+     <pre><code>&lt;table&gt;
+        &lt;caption&gt;
+          Monthly project hours
+        &lt;/caption&gt;
+      
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th scope="col"&gt;Project&lt;/th&gt;
+            &lt;th scope="col"&gt;Hours&lt;/th&gt;
+            &lt;th scope="col"&gt;Status&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+      
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;th scope="row"&gt;Portfolio&lt;/th&gt;
+            &lt;td&gt;12&lt;/td&gt;
+            &lt;td&gt;Complete&lt;/td&gt;
+          &lt;/tr&gt;
+      
+          &lt;tr&gt;
+            &lt;th scope="row"&gt;Reference Site&lt;/th&gt;
+            &lt;td&gt;18&lt;/td&gt;
+            &lt;td&gt;In Progress&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;</code></pre>
+    </details>
+   </section>
+   <section aria-labelledby="accessible-form-title" class="pattern-section" id="accessible-form">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 03
+     </p>
+     <h2 id="accessible-form-title">
+      Accessible Contact Form
+     </h2>
+     <p>
+      A simple form with explicit labels, appropriate input types, and required fields.
+     </p>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View complete example
+     </summary>
+     <pre><code>&lt;form&gt;
+        &lt;div&gt;
+          &lt;label for="name"&gt;
+            Name
+          &lt;/label&gt;
+      
+          &lt;input
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="name"
+            required
+          /&gt;
+        &lt;/div&gt;
+      
+        &lt;div&gt;
+          &lt;label for="email"&gt;
+            Email
+          &lt;/label&gt;
+      
+          &lt;input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            required
+          /&gt;
+        &lt;/div&gt;
+      
+        &lt;div&gt;
+          &lt;label for="message"&gt;
+            Message
+          &lt;/label&gt;
+      
+          &lt;textarea
+            id="message"
+            name="message"
+            rows="5"
+          &gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+      
+        &lt;button type="submit"&gt;
+          Send Message
+        &lt;/button&gt;
+      &lt;/form&gt;</code></pre>
+    </details>
+   </section>
+   <section aria-labelledby="flexbox-layout-title" class="pattern-section" id="flexbox-layout">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 04
+     </p>
+     <h2 id="flexbox-layout-title">
+      Responsive Flexbox Navigation
+     </h2>
+     <p>
+      A horizontal navigation layout that can wrap when space becomes limited.
+     </p>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View complete example
+     </summary>
+     <pre><code>.navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      
+        gap: 1rem;
+      
+        padding: 1rem 2rem;
+      }
+      
+      .navigation ul {
+        display: flex;
+        flex-wrap: wrap;
+      
+        gap: 0.75rem;
+      
+        margin: 0;
+        padding: 0;
+      
+        list-style: none;
+      }</code></pre>
+    </details>
+   </section>
+   <section aria-labelledby="grid-layout-title" class="pattern-section" id="grid-layout">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 05
+     </p>
+     <h2 id="grid-layout-title">
+      Responsive CSS Grid
+     </h2>
+     <p>
+      A reusable grid that automatically adjusts the number of columns based on available space.
+     </p>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View complete example
+     </summary>
+     <pre><code>.card-grid {
+        display: grid;
+      
+        grid-template-columns:
+          repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+          );
+      
+        gap: 1.5rem;
+      }</code></pre>
+    </details>
+   </section>
+   <section aria-labelledby="responsive-card-title" class="pattern-section" id="responsive-card">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 06
+     </p>
+     <h2 id="responsive-card-title">
+      Responsive Reference Card
+     </h2>
+     <p>
+      A card pattern using your reference site's existing spacing, border, and brand colors.
+     </p>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View HTML
+     </summary>
+     <pre><code>&lt;article class="card"&gt;
+        &lt;h3&gt;CSS Grid&lt;/h3&gt;
+      
+        &lt;p&gt;
+          Learn how grid tracks, gaps,
+          and placement work together.
+        &lt;/p&gt;
+      
+        &lt;a href="#"&gt;
+          View Reference
+        &lt;/a&gt;
+      &lt;/article&gt;</code></pre>
+    </details>
+    <details class="pattern-example">
+     <summary>
+      View CSS
+     </summary>
+     <pre><code>.card {
+        padding: 1.5rem;
+      
+        background: #ffffff;
+      
+        border: 1px solid #b9dce5;
+        border-top: 5px solid #3c88a3;
+        border-radius: 0.75rem;
+      }
+      
+      .card h3 {
+        color: #3c88a3;
+      }
+      
+      .card a {
+        color: #4eabcc;
+        font-weight: 600;
+      }</code></pre>
+    </details>
+   </section>
+   <section aria-labelledby="accessible-navigation-title" class="pattern-section" id="accessible-navigation">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 07
+     </p>
+     <h2 id="accessible-navigation-title">
+      Accessible Navigation
+     </h2>
+     <p>
+      A landmark-based navigation pattern with a clear accessible name and current-page state.
+     </p>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View complete example
+     </summary>
+     <pre><code>&lt;nav aria-label="Main navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href="/"&gt;Home&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="/reference" aria-current="page"&gt;
+        Reference
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+    </details>
+   </section>
+   <section aria-labelledby="skip-link-pattern-title" class="pattern-section" id="skip-link-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 08
+     </p>
+     <h2 id="skip-link-pattern-title">
+      Skip Navigation Link
+     </h2>
+     <p>
+      A keyboard-friendly shortcut that lets users bypass repeated navigation and move directly to the main content.
+     </p>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View complete example
+     </summary>
+     <pre><code>&lt;a class="skip-link" href="#main-content"&gt;
+  Skip to main content
+&lt;/a&gt;
+
+&lt;main id="main-content"&gt;
+  ...
+&lt;/main&gt;</code></pre>
+    </details>
+   </section>
+   <section aria-labelledby="focus-visible-pattern-title" class="pattern-section" id="focus-visible-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 09
+     </p>
+     <h2 id="focus-visible-pattern-title">
+      Visible Keyboard Focus
+     </h2>
+     <p>
+      A focus treatment that clearly identifies interactive elements for keyboard users without relying on color alone.
+     </p>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View complete example
+     </summary>
+     <pre><code>:focus-visible {
+  outline: 3px solid #276a80;
+  outline-offset: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :focus-visible {
+    outline-color: #baf553;
+  }
+}</code></pre>
+    </details>
+   </section>
+   <section aria-labelledby="reduced-motion-pattern-title" class="pattern-section" id="reduced-motion-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 10
+     </p>
+     <h2 id="reduced-motion-pattern-title">
+      Reduced Motion Preference
+     </h2>
+     <p>
+      A progressive enhancement that respects operating-system preferences for reduced animation and smooth scrolling.
+     </p>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View complete example
+     </summary>
+     <pre><code>@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}</code></pre>
+    </details>
+   </section>
+   <section aria-labelledby="dialog-pattern-title" class="pattern-section" id="dialog-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 11
+     </p>
+     <h2 id="dialog-pattern-title">
+      Accessible Modal Dialog
+     </h2>
+     <p>
+      Uses the native dialog element for a focused task while preserving keyboard interaction and a clear close action.
+     </p>
+     <div class="pattern-meta">
+      <span class="badge badge-category">
+       HTML + JavaScript
+      </span>
+      <span class="badge badge-level">
+       Intermediate
+      </span>
+     </div>
+    </div>
+    <div aria-label="Accessible Modal Dialog live demonstration" class="pattern-live-demo">
+     <p class="pattern-demo-label">
+      Live result
+     </p>
+     <div class="demo-centered">
+      <button aria-controls="demo-confirm-dialog" aria-haspopup="dialog" class="demo-button" data-demo-open-dialog="" id="demo-open-dialog" type="button">
+       Open dialog
+      </button>
+     </div>
+     <dialog aria-labelledby="demo-dialog-title" class="demo-dialog" data-demo-dialog="" id="demo-confirm-dialog">
+      <h3 id="demo-dialog-title">
+       Save changes?
+      </h3>
+      <p>
+       Your changes are ready to save.
+      </p>
+      <div class="demo-actions">
+       <button class="demo-button demo-button-secondary" data-demo-close-dialog="" type="button" value="cancel">
+        Cancel
+       </button>
+       <button class="demo-button" data-demo-close-dialog="" type="button" value="confirm">
+        Save
+       </button>
+      </div>
+     </dialog>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View HTML
+     </summary>
+     <pre><code data-language="HTML">&lt;button type="button" id="open-dialog"&gt;
+  Open dialog
+&lt;/button&gt;
+
+&lt;dialog id="confirm-dialog" aria-labelledby="dialog-title"&gt;
+  &lt;h2 id="dialog-title"&gt;Save changes?&lt;/h2&gt;
+  &lt;p&gt;Your changes are ready to save.&lt;/p&gt;
+  &lt;button type="button" id="close-dialog"&gt;Cancel&lt;/button&gt;
+&lt;/dialog&gt;</code></pre>
+    </details>
+    <details class="pattern-example">
+     <summary>
+      View JavaScript
+     </summary>
+     <pre><code data-language="JavaScript">const dialog = document.querySelector("#confirm-dialog");
+
+document.querySelector("#open-dialog").addEventListener("click", () =&gt; {
+  dialog.showModal();
+});
+
+document.querySelector("#close-dialog").addEventListener("click", () =&gt; {
+  dialog.close();
+});</code></pre>
+    </details>
+    <aside class="pattern-accessibility-note">
+     <h3>
+      Accessibility notes
+     </h3>
+     <ul>
+      <li>
+       Prefer the native dialog element when its behavior fits the interaction.
+      </li>
+      <li>
+       Give the dialog an accessible name with a visible heading.
+      </li>
+      <li>
+       Always provide an obvious close/cancel control.
+      </li>
+      <li>
+       Test focus movement, Escape behavior, and return focus after closing.
+      </li>
+     </ul>
+    </aside>
+    <nav aria-label="Related references for Accessible Modal Dialog" class="pattern-related">
+     <h3>
+      Related references
+     </h3>
+     <ul>
+      <li>
+       <a href="html-tags.html">
+        HTML Tags →
+       </a>
+      </li>
+      <li>
+       <a href="dom-events.html">
+        DOM &amp; Events →
+       </a>
+      </li>
+      <li>
+       <a href="accessibility.html">
+        Accessibility →
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </section>
+   <section aria-labelledby="api-results-pattern-title" class="pattern-section" id="api-results-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 12
+     </p>
+     <h2 id="api-results-pattern-title">
+      Fetch + API Results
+     </h2>
+     <p>
+      Demonstrates loading, success, empty, and error states for asynchronous data instead of leaving users with a blank interface.
+     </p>
+     <div class="pattern-meta">
+      <span class="badge badge-category">
+       JavaScript + API
+      </span>
+      <span class="badge badge-level">
+       Intermediate
+      </span>
+     </div>
+    </div>
+    <div aria-label="Fetch + API Results live demonstration" class="pattern-live-demo">
+     <p class="pattern-demo-label">
+      Live result
+     </p>
+     <div class="demo-api" data-demo-api="">
+      <div class="demo-actions">
+       <button class="demo-button" data-api-state="success" type="button">
+        Load results
+       </button>
+       <button class="demo-button demo-button-secondary" data-api-state="empty" type="button">
+        Show empty
+       </button>
+       <button class="demo-button demo-button-secondary" data-api-state="error" type="button">
+        Show error
+       </button>
+      </div>
+      <div class="demo-api-status" data-api-status="" role="status">
+       Choose a state to preview the result.
+      </div>
+     </div>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View JavaScript
+     </summary>
+     <pre><code data-language="JavaScript">async function loadProjects() {
+  setStatus("Loading…");
+
+  try {
+    const response = await fetch("/api/projects");
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const projects = await response.json();
+
+    if (!projects.length) {
+      setStatus("No projects found.");
+      return;
+    }
+
+    renderProjects(projects);
+  } catch (error) {
+    setStatus("Projects could not be loaded.");
+  }
+}</code></pre>
+    </details>
+    <aside class="pattern-accessibility-note">
+     <h3>
+      Accessibility notes
+     </h3>
+     <ul>
+      <li>
+       Expose loading and error states as text, not only animation or color.
+      </li>
+      <li>
+       Use a status region for important asynchronous updates.
+      </li>
+      <li>
+       Do not treat every non-2xx response as valid data; check response.ok.
+      </li>
+      <li>
+       Provide an understandable empty state when the request succeeds but returns no items.
+      </li>
+     </ul>
+    </aside>
+    <nav aria-label="Related references for Fetch + API Results" class="pattern-related">
+     <h3>
+      Related references
+     </h3>
+     <ul>
+      <li>
+       <a href="http-apis.html">
+        HTTP &amp; APIs →
+       </a>
+      </li>
+      <li>
+       <a href="javascript-reference.html">
+        JavaScript →
+       </a>
+      </li>
+      <li>
+       <a href="web-performance.html">
+        Web Performance →
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </section>
+   <section aria-labelledby="filter-list-pattern-title" class="pattern-section" id="filter-list-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 13
+     </p>
+     <h2 id="filter-list-pattern-title">
+      Searchable / Filterable List
+     </h2>
+     <p>
+      Filters a small set of items as the user types and reports how many entries remain.
+     </p>
+     <div class="pattern-meta">
+      <span class="badge badge-category">
+       JavaScript + DOM
+      </span>
+      <span class="badge badge-level">
+       Beginner–Intermediate
+      </span>
+     </div>
+    </div>
+    <div aria-label="Searchable / Filterable List live demonstration" class="pattern-live-demo">
+     <p class="pattern-demo-label">
+      Live result
+     </p>
+     <div class="demo-filter" data-demo-filter="">
+      <label for="demo-filter-input">
+       Filter skills
+      </label>
+      <input class="demo-input" data-filter-input="" id="demo-filter-input" placeholder="Try: css or java" type="search"/>
+      <p aria-live="polite" class="demo-status" data-filter-status="">
+       5 items
+      </p>
+      <ul class="demo-filter-list" data-filter-list="">
+       <li>
+        HTML semantics
+       </li>
+       <li>
+        CSS Grid
+       </li>
+       <li>
+        Flexbox
+       </li>
+       <li>
+        JavaScript
+       </li>
+       <li>
+        Accessibility
+       </li>
+      </ul>
+     </div>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View JavaScript
+     </summary>
+     <pre><code data-language="JavaScript">const input = document.querySelector("#skill-filter");
+const items = [...document.querySelectorAll(".skill-list li")];
+const status = document.querySelector("#filter-status");
+
+input.addEventListener("input", () =&gt; {
+  const query = input.value.trim().toLowerCase();
+  let visible = 0;
+
+  items.forEach((item) =&gt; {
+    const matches = item.textContent.toLowerCase().includes(query);
+    item.hidden = !matches;
+    if (matches) visible += 1;
+  });
+
+  status.textContent = `${visible} item${visible === 1 ? "" : "s"}`;
+});</code></pre>
+    </details>
+    <aside class="pattern-accessibility-note">
+     <h3>
+      Accessibility notes
+     </h3>
+     <ul>
+      <li>
+       Associate the search field with a visible label.
+      </li>
+      <li>
+       Announce changing result counts through a polite live region.
+      </li>
+      <li>
+       Use the hidden attribute for nonmatching items so assistive technology receives the same filtered result set.
+      </li>
+      <li>
+       Keep filtering immediate for small local lists; debounce only when the work is genuinely expensive.
+      </li>
+     </ul>
+    </aside>
+    <nav aria-label="Related references for Searchable / Filterable List" class="pattern-related">
+     <h3>
+      Related references
+     </h3>
+     <ul>
+      <li>
+       <a href="dom-events.html">
+        DOM &amp; Events →
+       </a>
+      </li>
+      <li>
+       <a href="javascript-reference.html">
+        JavaScript →
+       </a>
+      </li>
+      <li>
+       <a href="accessibility.html">
+        Accessibility →
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </section>
+   <section aria-labelledby="accordion-pattern-title" class="pattern-section" id="accordion-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 14
+     </p>
+     <h2 id="accordion-pattern-title">
+      Accordion / FAQ
+     </h2>
+     <p>
+      Uses native details and summary elements for disclosure behavior without custom JavaScript.
+     </p>
+     <div class="pattern-meta">
+      <span class="badge badge-category">
+       HTML
+      </span>
+      <span class="badge badge-level">
+       Beginner
+      </span>
+     </div>
+    </div>
+    <div aria-label="Accordion / FAQ live demonstration" class="pattern-live-demo">
+     <p class="pattern-demo-label">
+      Live result
+     </p>
+     <div class="demo-accordion">
+      <details>
+       <summary>
+        What does semantic HTML mean?
+       </summary>
+       <p>
+        It means choosing elements based on the meaning and role of the content.
+       </p>
+      </details>
+      <details>
+       <summary>
+        Do I need JavaScript for this accordion?
+       </summary>
+       <p>
+        No. Native details and summary already provide disclosure behavior.
+       </p>
+      </details>
+     </div>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View HTML
+     </summary>
+     <pre><code data-language="HTML">&lt;details&gt;
+  &lt;summary&gt;What does semantic HTML mean?&lt;/summary&gt;
+  &lt;p&gt;
+    Choose elements based on the meaning and role
+    of the content.
+  &lt;/p&gt;
+&lt;/details&gt;</code></pre>
+    </details>
+    <aside class="pattern-accessibility-note">
+     <h3>
+      Accessibility notes
+     </h3>
+     <ul>
+      <li>
+       Use summary as the interactive label; do not put the control on a separate div.
+      </li>
+      <li>
+       The native disclosure is keyboard accessible without custom scripting.
+      </li>
+      <li>
+       Keep each summary concise enough that users can scan the closed accordion.
+      </li>
+      <li>
+       Do not use an accordion when all content needs to be compared simultaneously.
+      </li>
+     </ul>
+    </aside>
+    <nav aria-label="Related references for Accordion / FAQ" class="pattern-related">
+     <h3>
+      Related references
+     </h3>
+     <ul>
+      <li>
+       <a href="html-tags.html">
+        HTML Tags →
+       </a>
+      </li>
+      <li>
+       <a href="pseudo-classes-elements.html">
+        Pseudo-classes &amp; Elements →
+       </a>
+      </li>
+      <li>
+       <a href="accessibility.html">
+        Accessibility →
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </section>
+   <section aria-labelledby="theme-pattern-title" class="pattern-section" id="theme-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 15
+     </p>
+     <h2 id="theme-pattern-title">
+      Accessible Theme Toggle
+     </h2>
+     <p>
+      Uses a real button, CSS custom properties, and persistent user preference to switch the visual theme.
+     </p>
+     <div class="pattern-meta">
+      <span class="badge badge-category">
+       CSS + JavaScript
+      </span>
+      <span class="badge badge-level">
+       Intermediate
+      </span>
+     </div>
+    </div>
+    <div aria-label="Accessible Theme Toggle live demonstration" class="pattern-live-demo">
+     <p class="pattern-demo-label">
+      Live result
+     </p>
+     <div class="demo-theme-card" data-demo-theme="light" data-demo-theme-card="">
+      <div class="demo-theme-header">
+       <strong>
+        Theme preview
+       </strong>
+       <span aria-live="polite" class="demo-theme-state" data-demo-theme-state="">
+        Light
+       </span>
+      </div>
+      <p>
+       This preview switches independently from the site's current theme.
+      </p>
+      <div class="demo-theme-sample">
+       <span class="demo-theme-sample-title">
+        Reference card
+       </span>
+       <span class="demo-theme-sample-copy">
+        Readable text, borders, surfaces, and accents all update together.
+       </span>
+      </div>
+      <button aria-label="Switch theme preview to dark mode" aria-pressed="false" class="demo-button" data-demo-theme-toggle="" type="button">
+       Switch sample to dark
+      </button>
+     </div>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View JavaScript
+     </summary>
+     <pre><code data-language="JavaScript">const toggle = document.querySelector("#theme-toggle");
+const root = document.documentElement;
+
+toggle.addEventListener("click", () =&gt; {
+  const nextTheme =
+    root.dataset.theme === "dark" ? "light" : "dark";
+
+  root.dataset.theme = nextTheme;
+  localStorage.setItem("theme", nextTheme);
+});</code></pre>
+    </details>
+    <details class="pattern-example">
+     <summary>
+      View CSS
+     </summary>
+     <pre><code data-language="CSS">:root {
+  --background: #ffffff;
+  --text: #1c2529;
+}
+
+html[data-theme="dark"] {
+  --background: #11191d;
+  --text: #f4f8f9;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+}</code></pre>
+    </details>
+    <aside class="pattern-accessibility-note">
+     <h3>
+      Accessibility notes
+     </h3>
+     <ul>
+      <li>
+       Use a native button for the theme control.
+      </li>
+      <li>
+       Ensure both themes independently meet text and focus contrast requirements.
+      </li>
+      <li>
+       Honor an existing saved choice; otherwise consider the operating-system preference.
+      </li>
+      <li>
+       Theme should not be the only way information or state is communicated.
+      </li>
+     </ul>
+    </aside>
+    <nav aria-label="Related references for Accessible Theme Toggle" class="pattern-related">
+     <h3>
+      Related references
+     </h3>
+     <ul>
+      <li>
+       <a href="css-properties.html">
+        CSS Properties →
+       </a>
+      </li>
+      <li>
+       <a href="javascript-reference.html">
+        JavaScript →
+       </a>
+      </li>
+      <li>
+       <a href="accessibility.html">
+        Accessibility →
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </section>
+   <section aria-labelledby="toast-pattern-title" class="pattern-section" id="toast-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 16
+     </p>
+     <h2 id="toast-pattern-title">
+      Toast / Status Message
+     </h2>
+     <p>
+      Shows short nonblocking feedback after an action while keeping the message available to assistive technology.
+     </p>
+     <div class="pattern-meta">
+      <span class="badge badge-category">
+       JavaScript + Accessibility
+      </span>
+      <span class="badge badge-level">
+       Intermediate
+      </span>
+     </div>
+    </div>
+    <div aria-label="Toast / Status Message live demonstration" class="pattern-live-demo">
+     <p class="pattern-demo-label">
+      Live result
+     </p>
+     <div class="demo-centered">
+      <button class="demo-button" data-demo-toast-button="" type="button">
+       Save changes
+      </button>
+      <div aria-live="polite" class="demo-toast" data-demo-toast="" hidden="" role="status">
+       ✓ Changes saved.
+      </div>
+     </div>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View HTML
+     </summary>
+     <pre><code data-language="HTML">&lt;button type="button" id="save-button"&gt;
+  Save changes
+&lt;/button&gt;
+
+&lt;div id="save-status" role="status" aria-live="polite"&gt;&lt;/div&gt;</code></pre>
+    </details>
+    <details class="pattern-example">
+     <summary>
+      View JavaScript
+     </summary>
+     <pre><code data-language="JavaScript">saveButton.addEventListener("click", async () =&gt; {
+  await saveChanges();
+  saveStatus.textContent = "Changes saved.";
+});</code></pre>
+    </details>
+    <aside class="pattern-accessibility-note">
+     <h3>
+      Accessibility notes
+     </h3>
+     <ul>
+      <li>
+       Use role=status or a polite live region for nonurgent confirmation.
+      </li>
+      <li>
+       Do not move keyboard focus to a routine toast.
+      </li>
+      <li>
+       Keep the message visible long enough to be perceived.
+      </li>
+      <li>
+       For failures requiring user action, place persistent error text near the affected control rather than relying only on a disappearing toast.
+      </li>
+     </ul>
+    </aside>
+    <nav aria-label="Related references for Toast / Status Message" class="pattern-related">
+     <h3>
+      Related references
+     </h3>
+     <ul>
+      <li>
+       <a href="dom-events.html">
+        DOM &amp; Events →
+       </a>
+      </li>
+      <li>
+       <a href="forms-validation.html">
+        Forms &amp; Validation →
+       </a>
+      </li>
+      <li>
+       <a href="accessibility.html">
+        Accessibility →
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </section>
+   <section aria-labelledby="loading-pattern-title" class="pattern-section" id="loading-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 17
+     </p>
+     <h2 id="loading-pattern-title">
+      Loading State / Skeleton
+     </h2>
+     <p>
+      Uses a restrained loading placeholder while preserving the final layout and respecting reduced-motion preferences.
+     </p>
+     <div class="pattern-meta">
+      <span class="badge badge-category">
+       CSS
+      </span>
+      <span class="badge badge-level">
+       Intermediate
+      </span>
+     </div>
+    </div>
+    <div aria-label="Loading State / Skeleton live demonstration" class="pattern-live-demo">
+     <p class="pattern-demo-label">
+      Live result
+     </p>
+     <div class="demo-loading-card" data-demo-loading-card="" data-demo-loading-state="loading">
+      <div aria-live="polite" class="demo-loading-region" data-demo-loading-region="">
+       <div class="demo-skeleton demo-skeleton-title">
+       </div>
+       <div class="demo-skeleton">
+       </div>
+       <div class="demo-skeleton demo-skeleton-short">
+       </div>
+      </div>
+      <button class="demo-button" data-demo-loading-toggle="" type="button">
+       Show loaded content
+      </button>
+     </div>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View CSS
+     </summary>
+     <pre><code data-language="CSS">.skeleton {
+  border-radius: 0.35rem;
+  background: linear-gradient(
+    90deg,
+    var(--surface-alt),
+    var(--highlight),
+    var(--surface-alt)
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shift 1.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}</code></pre>
+    </details>
+    <aside class="pattern-accessibility-note">
+     <h3>
+      Accessibility notes
+     </h3>
+     <ul>
+      <li>
+       Loading animation is supplementary; the interface should still expose useful loading text when needed.
+      </li>
+      <li>
+       Preserve approximate final dimensions to reduce layout shift.
+      </li>
+      <li>
+       Disable nonessential shimmer animation when reduced motion is requested.
+      </li>
+      <li>
+       Avoid indefinite loading states; surface an error or retry path when the operation fails.
+      </li>
+     </ul>
+    </aside>
+    <nav aria-label="Related references for Loading State / Skeleton" class="pattern-related">
+     <h3>
+      Related references
+     </h3>
+     <ul>
+      <li>
+       <a href="web-performance.html">
+        Web Performance →
+       </a>
+      </li>
+      <li>
+       <a href="responsive-design.html">
+        Responsive Design →
+       </a>
+      </li>
+      <li>
+       <a href="accessibility.html">
+        Accessibility →
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </section>
+   <section aria-labelledby="empty-state-pattern-title" class="pattern-section" id="empty-state-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 18
+     </p>
+     <h2 id="empty-state-pattern-title">
+      Empty State
+     </h2>
+     <p>
+      Explains why content is absent and gives the user a useful next action rather than showing an unexplained blank region.
+     </p>
+     <div class="pattern-meta">
+      <span class="badge badge-category">
+       UX + HTML
+      </span>
+      <span class="badge badge-level">
+       Beginner
+      </span>
+     </div>
+    </div>
+    <div aria-label="Empty State live demonstration" class="pattern-live-demo">
+     <p class="pattern-demo-label">
+      Live result
+     </p>
+     <div class="demo-empty-state">
+      <span aria-hidden="true" class="demo-empty-icon">
+       ◇
+      </span>
+      <h3>
+       No saved references yet
+      </h3>
+      <p>
+       Save useful entries and they will appear here for quick access.
+      </p>
+      <a class="demo-button" href="css-properties.html">
+       Browse CSS properties
+      </a>
+     </div>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View HTML
+     </summary>
+     <pre><code data-language="HTML">&lt;section class="empty-state" aria-labelledby="empty-title"&gt;
+  &lt;h2 id="empty-title"&gt;No saved references yet&lt;/h2&gt;
+  &lt;p&gt;
+    Save useful entries and they will appear here
+    for quick access.
+  &lt;/p&gt;
+  &lt;a href="/references"&gt;Browse references&lt;/a&gt;
+&lt;/section&gt;</code></pre>
+    </details>
+    <aside class="pattern-accessibility-note">
+     <h3>
+      Accessibility notes
+     </h3>
+     <ul>
+      <li>
+       Explain the empty condition in text rather than with an icon alone.
+      </li>
+      <li>
+       When possible, provide a relevant next action.
+      </li>
+      <li>
+       Use a heading if the empty state represents a meaningful page or region.
+      </li>
+      <li>
+       Keep decorative icons hidden from assistive technology when the text already communicates the meaning.
+      </li>
+     </ul>
+    </aside>
+    <nav aria-label="Related references for Empty State" class="pattern-related">
+     <h3>
+      Related references
+     </h3>
+     <ul>
+      <li>
+       <a href="patterns.html">
+        Patterns →
+       </a>
+      </li>
+      <li>
+       <a href="html-tags.html">
+        HTML Tags →
+       </a>
+      </li>
+      <li>
+       <a href="accessibility.html">
+        Accessibility →
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </section>
+   <section aria-labelledby="form-feedback-pattern-title" class="pattern-section" id="form-feedback-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 19
+     </p>
+     <h2 id="form-feedback-pattern-title">
+      Form Success &amp; Error Feedback
+     </h2>
+     <p>
+      Keeps validation messages close to the field they describe and provides an overall submission status.
+     </p>
+     <div class="pattern-meta">
+      <span class="badge badge-category">
+       Forms + Accessibility
+      </span>
+      <span class="badge badge-level">
+       Intermediate
+      </span>
+     </div>
+    </div>
+    <div aria-label="Form Success &amp; Error Feedback live demonstration" class="pattern-live-demo">
+     <p class="pattern-demo-label">
+      Live result
+     </p>
+     <form class="demo-form" data-demo-form="" novalidate="">
+      <label for="demo-email">
+       Email
+      </label>
+      <input aria-describedby="demo-email-error" class="demo-input" id="demo-email" required="" type="email"/>
+      <p class="demo-field-message" id="demo-email-error">
+      </p>
+      <button class="demo-button" type="submit">
+       Submit
+      </button>
+      <p aria-live="polite" class="demo-status" data-demo-form-status="" role="status">
+      </p>
+     </form>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View JavaScript
+     </summary>
+     <pre><code data-language="JavaScript">form.addEventListener("submit", (event) =&gt; {
+  event.preventDefault();
+
+  if (!email.validity.valid) {
+    emailError.textContent = "Enter a valid email address.";
+    email.focus();
+    return;
+  }
+
+  emailError.textContent = "";
+  formStatus.textContent = "Form submitted successfully.";
+});</code></pre>
+    </details>
+    <aside class="pattern-accessibility-note">
+     <h3>
+      Accessibility notes
+     </h3>
+     <ul>
+      <li>
+       Put specific error text next to the related control and connect it with aria-describedby.
+      </li>
+      <li>
+       Do not communicate invalid state only with red borders or icons.
+      </li>
+      <li>
+       Move focus only when it helps the user recover from a failed submission.
+      </li>
+      <li>
+       Use a status region for successful submission feedback that does not require focus.
+      </li>
+     </ul>
+    </aside>
+    <nav aria-label="Related references for Form Success &amp; Error Feedback" class="pattern-related">
+     <h3>
+      Related references
+     </h3>
+     <ul>
+      <li>
+       <a href="forms-validation.html">
+        Forms &amp; Validation →
+       </a>
+      </li>
+      <li>
+       <a href="dom-events.html">
+        DOM &amp; Events →
+       </a>
+      </li>
+      <li>
+       <a href="accessibility.html">
+        Accessibility →
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </section>
+   <section aria-labelledby="breadcrumb-pattern-title" class="pattern-section" id="breadcrumb-pattern">
+    <div class="pattern-heading">
+     <p class="pattern-number">
+      Pattern 20
+     </p>
+     <h2 id="breadcrumb-pattern-title">
+      Breadcrumb Navigation
+     </h2>
+     <p>
+      Communicates a page's location within a hierarchy and provides quick navigation to parent levels.
+     </p>
+     <div class="pattern-meta">
+      <span class="badge badge-category">
+       HTML + Accessibility
+      </span>
+      <span class="badge badge-level">
+       Beginner
+      </span>
+     </div>
+    </div>
+    <div aria-label="Breadcrumb Navigation live demonstration" class="pattern-live-demo">
+     <p class="pattern-demo-label">
+      Live result
+     </p>
+     <nav aria-label="Breadcrumb" class="demo-breadcrumb">
+      <ol>
+       <li>
+        <a href="index.html">
+         Home
+        </a>
+       </li>
+       <li>
+        <a href="css-properties.html">
+         CSS
+        </a>
+       </li>
+       <li aria-current="page">
+        Grid
+       </li>
+      </ol>
+     </nav>
+    </div>
+    <details class="pattern-example">
+     <summary>
+      View HTML
+     </summary>
+     <pre><code data-language="HTML">&lt;nav aria-label="Breadcrumb"&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/css"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+    &lt;li aria-current="page"&gt;Grid&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+    </details>
+    <aside class="pattern-accessibility-note">
+     <h3>
+      Accessibility notes
+     </h3>
+     <ul>
+      <li>
+       Give the breadcrumb navigation an accessible name.
+      </li>
+      <li>
+       Use an ordered list because the sequence represents a hierarchy.
+      </li>
+      <li>
+       Mark the current location with aria-current=page.
+      </li>
+      <li>
+       Treat visual separators as decorative so they are not redundantly announced.
+      </li>
+     </ul>
+    </aside>
+    <nav aria-label="Related references for Breadcrumb Navigation" class="pattern-related">
+     <h3>
+      Related references
+     </h3>
+     <ul>
+      <li>
+       <a href="html-tags.html">
+        HTML Tags →
+       </a>
+      </li>
+      <li>
+       <a href="accessibility.html">
+        Accessibility →
+       </a>
+      </li>
+      <li>
+       <a href="seo-metadata.html">
+        SEO &amp; Metadata →
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </section>
+  </main>
+  <div data-site-footer="">
+  </div>
+  <script src="assets/js/search-index.js">
+  </script>
+  <script src="assets/js/core.js">
+  </script>
+  <script src="assets/js/chrome.js">
+  </script>
+  <script src="assets/js/theme.js">
+  </script>
+  <script src="assets/js/search.js">
+  </script>
+  <script src="assets/js/references.js">
+  </script>
+  <script src="assets/js/dialogs.js">
+  </script>
+  <script src="assets/js/patterns-ui.js">
+  </script>
+  <!-- Isolated controller for the live theme-toggle pattern -->
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/site.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Core document metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical HTTP and API reference covering requests, methods, status codes, headers, JSON, REST concepts, fetch, async/await, errors, and CORS.">
+    <meta name="author" content="Jennifer Curtis">
+    <meta name="creator" content="Jennifer Curtis">
+    <meta name="application-name" content="Web Development Reference">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Progressive loading-screen enhancement -->
+  <script src="assets/js/loader-init.js"></script>
+
+    <title>HTTP &amp; APIs Reference</title>
+
+    <!-- Browser and installed-app appearance -->
+    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Social sharing metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Web Development Reference">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="HTTP &amp; APIs Reference">
+    <meta property="og:description" content="A practical HTTP and API reference covering requests, methods, status codes, headers, JSON, REST concepts, fetch, async/await, errors, and CORS.">
+    <meta property="og:image" content="assets/images/icon-512.png">
+    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="HTTP &amp; APIs Reference">
+    <meta name="twitter:description" content="A practical HTTP and API reference covering requests, methods, status codes, headers, JSON, REST concepts, fetch, async/await, errors, and CORS.">
+    <meta name="twitter:image" content="assets/images/icon-512.png">
+    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+
+    <!-- App manifest and icons -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <!-- Shared site styles and fonts -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
+    >
+
+    <!-- Structured metadata -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "HTTP & APIs",
+  "description": "A practical HTTP and API reference covering requests, methods, status codes, headers, JSON, REST concepts, fetch, async/await, errors, and CORS.",
+  "inLanguage": "en-US",
+  "dateModified": "2026-08-19",
+  "author": {
+    "@type": "Person",
+    "name": "Jennifer Curtis",
+    "url": "https://jennifercurtis.me"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Web Development Reference"
+  }
+}
+    </script>
+  </head>
+
+  <body
+    data-page="http"
+    data-page-label="HTTP &amp; APIs"
+    data-category="Web Platform"
+    data-level="Intermediate"
+    data-footer="HTTP &amp; APIs Cheat Sheet"
+    data-search-placeholder="Try: GET, 404, fetch, JSON, CORS..."
+    data-author-note="When an API request fails, separate transport problems from application problems: inspect the URL, method, status code, response headers, and response body before changing code."
+    data-related="[{&quot;label&quot;:&quot;JavaScript Reference&quot;,&quot;href&quot;:&quot;javascript-reference.html&quot;},{&quot;label&quot;:&quot;DOM &amp; Events&quot;,&quot;href&quot;:&quot;dom-events.html&quot;},{&quot;label&quot;:&quot;Web Security&quot;,&quot;href&quot;:&quot;web-security.html&quot;}]"
+    data-toc="true"
+  >
+
+    <div class="site-loader" id="site-loader" aria-hidden="true">
+      <div class="site-loader-content">
+        <div class="site-loader-mark" aria-hidden="true">
+          <span class="loader-dot loader-dot-teal"></span>
+          <span class="loader-dot loader-dot-blue"></span>
+          <span class="loader-dot loader-dot-green"></span>
+        </div>
+
+        <p class="site-loader-label">Web Dev Reference</p>
+      </div>
+    </div>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div data-site-nav></div>
+
+    <header class="hero">
+      <h1>HTTP &amp; APIs Reference</h1>
+      <p class="subtitle">A quick reference for how browsers and applications exchange data over HTTP and work with web APIs.</p>
+
+      <div class="hero-meta">
+        <span class="badge badge-category">Web Platform</span>
+        <span class="badge badge-level">Intermediate</span>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="reference-section" id="http-methods" aria-labelledby="http-methods-title">
+        <h2 class="section-title" id="http-methods-title">HTTP Methods</h2>
+        <p class="section-description">Common request methods and the intent they usually communicate.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Common request methods and the intent they usually communicate.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="http-methods-item-get">
+                <th scope="row"><code>GET</code></th>
+                <td>Read resource</td>
+                <td>Requests a representation of a resource without intending to modify it.</td>
+                <td class="example-cell"><code>GET /api/users/42</code></td>
+              </tr>
+              <tr id="http-methods-item-post">
+                <th scope="row"><code>POST</code></th>
+                <td>Create/process</td>
+                <td>Submits data for processing or commonly creates a new subordinate resource.</td>
+                <td class="example-cell"><code>POST /api/users</code></td>
+              </tr>
+              <tr id="http-methods-item-put">
+                <th scope="row"><code>PUT</code></th>
+                <td>Replace resource</td>
+                <td>Commonly sends a complete replacement representation to a known resource URI.</td>
+                <td class="example-cell"><code>PUT /api/users/42</code></td>
+              </tr>
+              <tr id="http-methods-item-patch">
+                <th scope="row"><code>PATCH</code></th>
+                <td>Partial update</td>
+                <td>Applies partial modifications to a resource.</td>
+                <td class="example-cell"><code>PATCH /api/users/42</code></td>
+              </tr>
+              <tr id="http-methods-item-delete">
+                <th scope="row"><code>DELETE</code></th>
+                <td>Delete resource</td>
+                <td>Requests removal of the target resource.</td>
+                <td class="example-cell"><code>DELETE /api/users/42</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="status-codes" aria-labelledby="status-codes-title">
+        <h2 class="section-title" id="status-codes-title">Common Status Codes</h2>
+        <p class="section-description">Frequently encountered HTTP response status codes.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Frequently encountered HTTP response status codes.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="status-codes-item-200">
+                <th scope="row"><code>200</code></th>
+                <td>OK</td>
+                <td>The request succeeded.</td>
+                <td class="example-cell"><code>200 OK</code></td>
+              </tr>
+              <tr id="status-codes-item-201">
+                <th scope="row"><code>201</code></th>
+                <td>Created</td>
+                <td>A new resource was created successfully.</td>
+                <td class="example-cell"><code>201 Created</code></td>
+              </tr>
+              <tr id="status-codes-item-204">
+                <th scope="row"><code>204</code></th>
+                <td>No Content</td>
+                <td>The request succeeded and has no response body.</td>
+                <td class="example-cell"><code>204 No Content</code></td>
+              </tr>
+              <tr id="status-codes-item-400">
+                <th scope="row"><code>400</code></th>
+                <td>Bad Request</td>
+                <td>The server could not process the request because of client input or syntax.</td>
+                <td class="example-cell"><code>400 Bad Request</code></td>
+              </tr>
+              <tr id="status-codes-item-401">
+                <th scope="row"><code>401</code></th>
+                <td>Unauthorized</td>
+                <td>Authentication is required or has failed.</td>
+                <td class="example-cell"><code>401 Unauthorized</code></td>
+              </tr>
+              <tr id="status-codes-item-403">
+                <th scope="row"><code>403</code></th>
+                <td>Forbidden</td>
+                <td>The server understood the request but refuses authorization.</td>
+                <td class="example-cell"><code>403 Forbidden</code></td>
+              </tr>
+              <tr id="status-codes-item-404">
+                <th scope="row"><code>404</code></th>
+                <td>Not Found</td>
+                <td>The requested resource was not found.</td>
+                <td class="example-cell"><code>404 Not Found</code></td>
+              </tr>
+              <tr id="status-codes-item-409">
+                <th scope="row"><code>409</code></th>
+                <td>Conflict</td>
+                <td>The request conflicts with the current state of the resource.</td>
+                <td class="example-cell"><code>409 Conflict</code></td>
+              </tr>
+              <tr id="status-codes-item-500">
+                <th scope="row"><code>500</code></th>
+                <td>Internal Server Error</td>
+                <td>The server encountered an unexpected condition.</td>
+                <td class="example-cell"><code>500 Internal Server Error</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="headers-json" aria-labelledby="headers-json-title">
+        <h2 class="section-title" id="headers-json-title">Headers &amp; JSON</h2>
+        <p class="section-description">Common metadata and data formats used in API requests and responses.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Common metadata and data formats used in API requests and responses.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="headers-json-item-content-type">
+                <th scope="row"><code>Content-Type</code></th>
+                <td>Representation type</td>
+                <td>Describes the media type of the request or response content.</td>
+                <td class="example-cell"><code>Content-Type: application/json</code></td>
+              </tr>
+              <tr id="headers-json-item-accept">
+                <th scope="row"><code>Accept</code></th>
+                <td>Preferred response type</td>
+                <td>Tells the server which response media types the client can handle.</td>
+                <td class="example-cell"><code>Accept: application/json</code></td>
+              </tr>
+              <tr id="headers-json-item-authorization">
+                <th scope="row"><code>Authorization</code></th>
+                <td>Credentials</td>
+                <td>Carries authentication credentials according to an authentication scheme.</td>
+                <td class="example-cell"><code>Authorization: Bearer &lt;token&gt;</code></td>
+              </tr>
+              <tr id="headers-json-item-json-stringify">
+                <th scope="row"><code>JSON.stringify()</code></th>
+                <td>Serialize JSON</td>
+                <td>Converts a JavaScript value to a JSON string.</td>
+                <td class="example-cell"><code>body: JSON.stringify({ name: &quot;Jennifer&quot; })</code></td>
+              </tr>
+              <tr id="headers-json-item-response-json">
+                <th scope="row"><code>response.json()</code></th>
+                <td>Parse JSON response</td>
+                <td>Reads a response body and parses it as JSON.</td>
+                <td class="example-cell"><code>const data = await response.json();</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="fetch-async" aria-labelledby="fetch-async-title">
+        <h2 class="section-title" id="fetch-async-title">Fetch &amp; Async Requests</h2>
+        <p class="section-description">Browser APIs and patterns for making asynchronous HTTP requests.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Browser APIs and patterns for making asynchronous HTTP requests.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="fetch-async-item-fetch">
+                <th scope="row"><code>fetch()</code></th>
+                <td>HTTP request</td>
+                <td>Starts a network request and returns a Promise for a Response.</td>
+                <td class="example-cell"><code>const response = await fetch(&quot;/api/users&quot;);</code></td>
+              </tr>
+              <tr id="fetch-async-item-async">
+                <th scope="row"><code>async</code></th>
+                <td>Async function</td>
+                <td>Allows a function to use await and always returns a Promise.</td>
+                <td class="example-cell"><code>async function loadUsers() { }</code></td>
+              </tr>
+              <tr id="fetch-async-item-await">
+                <th scope="row"><code>await</code></th>
+                <td>Await promise</td>
+                <td>Pauses an async function until a Promise settles.</td>
+                <td class="example-cell"><code>const response = await fetch(url);</code></td>
+              </tr>
+              <tr id="fetch-async-item-response-ok">
+                <th scope="row"><code>response.ok</code></th>
+                <td>Success-range check</td>
+                <td>True when the response status is in the 200–299 range.</td>
+                <td class="example-cell"><code>if (!response.ok) throw new Error(`HTTP ${response.status}`);</code></td>
+              </tr>
+              <tr id="fetch-async-item-abortcontroller">
+                <th scope="row"><code>AbortController</code></th>
+                <td>Cancel request</td>
+                <td>Provides a signal that can abort fetch and other supported operations.</td>
+                <td class="example-cell"><code>const controller = new AbortController();</code></td>
+              </tr>
+              <tr id="fetch-async-item-cors">
+                <th scope="row"><code>CORS</code></th>
+                <td>Cross-origin policy</td>
+                <td>HTTP-header mechanism controlling which cross-origin browser requests may access a response.</td>
+                <td class="example-cell"><code>Access-Control-Allow-Origin: https://example.com</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+
+  <script src="assets/js/search-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/chrome.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/references.js"></script>
+  <script src="assets/js/dialogs.js"></script>
+  <script src="assets/js/patterns-ui.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/site.js"></script>
+  </body>
+</html>

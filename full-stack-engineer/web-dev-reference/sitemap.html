@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Core document metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A complete site map for Jennifer Curtis's Web Development Reference, organized by HTML, CSS, JavaScript, tools, patterns, and accessibility."
+    >
+    <meta name="author" content="Jennifer Curtis">
+    <meta name="creator" content="Jennifer Curtis">
+    <meta name="application-name" content="Web Development Reference">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Progressive loading-screen enhancement -->
+  <script src="assets/js/loader-init.js"></script>
+
+    <title>Site Map | Web Dev Reference</title>
+
+    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
+    >
+  </head>
+
+  <body
+    data-page="sitemap"
+    data-page-label="Site Map"
+    data-category="Navigation"
+    data-level="All References"
+    data-footer="Web Development Reference"
+  >
+    <div class="site-loader" id="site-loader" aria-hidden="true">
+      <div class="site-loader-content">
+        <div class="site-loader-mark" aria-hidden="true">
+          <span class="loader-dot loader-dot-teal"></span>
+          <span class="loader-dot loader-dot-blue"></span>
+          <span class="loader-dot loader-dot-green"></span>
+        </div>
+        <p class="site-loader-label">Web Dev Reference</p>
+      </div>
+    </div>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div data-site-nav></div>
+
+    <header class="hero">
+      <h1>Site Map</h1>
+      <p class="subtitle">
+        Browse the complete Web Development Reference by topic.
+      </p>
+
+      <div class="hero-meta">
+        <span class="badge badge-category">Navigation</span>
+        <span class="badge badge-level">All References</span>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <p class="sitemap-intro">
+        This site map provides a direct path to every major reference,
+        pattern, accessibility guide, and developer-tool page in the project.
+      </p>
+
+      <div class="sitemap-grid">
+        <section class="sitemap-group" aria-labelledby="sitemap-core">
+          <h2 id="sitemap-core">Core Reference</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="html-tables.html">HTML Tables</a></li>
+            <li><a href="html-tags.html">HTML Tags</a></li>
+            <li><a href="forms-validation.html">Forms &amp; Validation</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </section>
+
+        <section class="sitemap-group" aria-labelledby="sitemap-css">
+          <h2 id="sitemap-css">CSS</h2>
+          <ul>
+            <li><a href="css-selectors.html">CSS Selectors</a></li>
+            <li><a href="css-properties.html">CSS Properties</a></li>
+            <li><a href="flexbox.html">Flexbox</a></li>
+            <li><a href="css-grid.html">CSS Grid</a></li>
+            <li><a href="responsive-design.html">Responsive Design</a></li>
+            <li><a href="css-units-functions.html">CSS Units &amp; Functions</a></li>
+            <li><a href="pseudo-classes-elements.html">Pseudo-classes &amp; Pseudo-elements</a></li>
+          </ul>
+        </section>
+
+        <section class="sitemap-group" aria-labelledby="sitemap-js">
+          <h2 id="sitemap-js">JavaScript &amp; Browser APIs</h2>
+          <ul>
+            <li><a href="javascript-reference.html">JavaScript Reference</a></li>
+            <li><a href="dom-events.html">DOM &amp; Events</a></li>
+            <li><a href="http-apis.html">HTTP &amp; APIs</a></li>
+          </ul>
+        </section>
+
+        <section class="sitemap-group" aria-labelledby="sitemap-tools">
+          <h2 id="sitemap-tools">Developer Toolkit</h2>
+          <ul>
+            <li><a href="git-github.html">Git &amp; GitHub</a></li>
+            <li><a href="terminal-cli.html">Terminal &amp; CLI</a></li>
+            <li><a href="debugging.html">Debugging</a></li>
+            <li><a href="web-performance.html">Web Performance</a></li>
+            <li><a href="seo-metadata.html">SEO &amp; Metadata</a></li>
+            <li><a href="web-security.html">Web Security Basics</a></li>
+            <li><a href="developer-notes.html">Jennifer's Developer Notes</a></li>
+          </ul>
+        </section>
+
+        <section class="sitemap-group" aria-labelledby="sitemap-patterns">
+          <h2 id="sitemap-patterns">Patterns &amp; Utilities</h2>
+          <ul>
+            <li><a href="patterns.html">HTML, CSS &amp; JavaScript Patterns</a></li>
+            <li><a href="404.html">404 Page Preview</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="sitemap-utility">
+        <p>
+          Need something specific? Use the site-wide Search control in the
+          navigation to search every indexed reference entry.
+        </p>
+      </aside>
+    </main>
+
+    <div data-site-footer></div>
+
+  <script src="assets/js/search-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/chrome.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/references.js"></script>
+  <script src="assets/js/dialogs.js"></script>
+  <script src="assets/js/patterns-ui.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/site.js"></script>
+  </body>
+</html>

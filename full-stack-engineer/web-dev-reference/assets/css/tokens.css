@@ -1,0 +1,86 @@
+/* =========================================================
+   Web Development Reference
+   Design tokens and theme values
+
+   Keep reusable visual decisions here. Component styles should
+   reference these custom properties instead of repeating font stacks
+   or theme-specific values.
+   ========================================================= */
+
+:root {
+  /*Brand colors*/
+  --teal: #3c88a3;
+  --blue: #4eabcc;
+  --green: #8bcc45;
+  --mint: #bfffcd;
+  --sky: #69d4f5;
+  --lime: #baf553;
+  --white: #ffffff;
+  --black: #000000;
+  /*Typography*/
+  --font-body: "Inter", sans-serif;
+  --font-ui: "Montserrat", sans-serif;
+  --font-display: "All Gothic Round", sans-serif;
+  --font-brand: "Amandine Bold", serif;
+  --font-code: "Source Code Pro", monospace;
+  /*Light theme*/
+  --background: #f6fafb;
+  --surface: #ffffff;
+  --surface-alt: #eef7fa;
+  --text-primary: #1c2529;
+  --text-secondary: #526168;
+  --border: #b9dce5;
+  --border-strong: #3c88a3;
+  --nav-background: #ffffff;
+  --nav-text: #263b43;
+  --nav-hover: #eef7fa;
+  --table-header-background: #3c88a3;
+  --table-header-text: #ffffff;
+  --code-background: #e3f5f8;
+  --code-text: #276a80;
+  --highlight: #bfffcd;
+  --section-heading-background: #bfffcd;
+  --section-heading-text: #276a80;
+  --footer-background: #f1f7f8;
+  --footer-text: #263b43;
+  --focus-ring: #276a80;
+  --shadow: rgba(0, 0, 0, 0.08);
+  /*Interface polish*/
+  --scrollbar-track: #e7f1f4;
+  --scrollbar-thumb: #3c88a3;
+  --scrollbar-thumb-hover: #4eabcc;
+  --selection-background: #baf553;
+  --selection-text: #1c2529;
+  --progress-track: rgba(60, 136, 163, 0.14);
+  --progress-fill: #baf553;
+}
+
+html[data-theme="dark"] {
+  --background: #11191d;
+  --surface: #182329;
+  --surface-alt: #1e2e35;
+  --text-primary: #f4f8f9;
+  --text-secondary: #b8c7cc;
+  --border: #315a68;
+  --border-strong: #69d4f5;
+  --nav-background: #10181c;
+  --nav-text: #f4f8f9;
+  --nav-hover: #1e2e35;
+  --code-background: #203a43;
+  --code-text: #69d4f5;
+  --highlight: #294d3b;
+  --section-heading-background: #203a43;
+  --section-heading-text: #bfffcd;
+  --footer-background: #10181c;
+  --footer-text: #d8e4e8;
+  --focus-ring: #baf553;
+  --shadow: rgba(0, 0, 0, 0.35);
+  /*Interface polish*/
+  --scrollbar-track: #10181c;
+  --scrollbar-thumb: #4eabcc;
+  --scrollbar-thumb-hover: #69d4f5;
+  --selection-background: #baf553;
+  --selection-text: #11191d;
+  --progress-track: rgba(105, 212, 245, 0.14);
+  --progress-fill: #baf553;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "web-development-reference",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Searchable, accessible web development reference built with semantic HTML, CSS, and vanilla JavaScript.",
+  "scripts": {
+    "serve": "http-server . -p 8080 -c-1",
+    "format": "prettier --write \"**/*.{html,css,js,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json,md,yml,yaml}\"",
+    "lint": "eslint assets/js --ignore-pattern search-index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:a11y": "start-server-and-test \"npm run serve\" http://127.0.0.1:8080 \"pa11y-ci\"",
+    "check": "npm run format:check && npm run lint && npm run test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^16.0.0",
+    "http-server": "^14.1.1",
+    "jsdom": "^26.0.0",
+    "pa11y-ci": "^4.0.1",
+    "prettier": "^3.0.0",
+    "start-server-and-test": "^2.0.0",
+    "vitest": "^3.0.0"
+  }
+}

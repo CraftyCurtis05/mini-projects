@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Core document metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical debugging reference for HTML, CSS, JavaScript, networking, forms, Git, browser DevTools, and systematic problem isolation.">
+    <meta name="author" content="Jennifer Curtis">
+    <meta name="creator" content="Jennifer Curtis">
+    <meta name="application-name" content="Web Development Reference">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Progressive loading-screen enhancement -->
+  <script src="assets/js/loader-init.js"></script>
+
+    <title>Web Debugging Reference</title>
+
+    <!-- Browser and installed-app appearance -->
+    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Social sharing metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Web Development Reference">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Web Debugging Reference">
+    <meta property="og:description" content="A practical debugging reference for HTML, CSS, JavaScript, networking, forms, Git, browser DevTools, and systematic problem isolation.">
+    <meta property="og:image" content="assets/images/icon-512.png">
+    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Web Debugging Reference">
+    <meta name="twitter:description" content="A practical debugging reference for HTML, CSS, JavaScript, networking, forms, Git, browser DevTools, and systematic problem isolation.">
+    <meta name="twitter:image" content="assets/images/icon-512.png">
+    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+
+    <!-- App manifest and icons -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <!-- Shared site styles and fonts -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
+    >
+
+    <!-- Structured metadata -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Debugging",
+  "description": "A practical debugging reference for HTML, CSS, JavaScript, networking, forms, Git, browser DevTools, and systematic problem isolation.",
+  "inLanguage": "en-US",
+  "dateModified": "2026-08-19",
+  "author": {
+    "@type": "Person",
+    "name": "Jennifer Curtis",
+    "url": "https://jennifercurtis.me"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Web Development Reference"
+  }
+}
+    </script>
+  </head>
+
+  <body
+    data-page="debugging"
+    data-page-label="Debugging"
+    data-category="Developer Workflow"
+    data-level="All Levels"
+    data-footer="Debugging Cheat Sheet"
+    data-search-placeholder="Try: CSS not applying, image, console, network..."
+    data-author-note="Debugging gets faster when I stop asking “why is it broken?” and ask “what is the first assumption I can prove or disprove?” Start with the earliest point where reality differs from expectation."
+    data-related="[{&quot;label&quot;:&quot;JavaScript Reference&quot;,&quot;href&quot;:&quot;javascript-reference.html&quot;},{&quot;label&quot;:&quot;Git &amp; GitHub&quot;,&quot;href&quot;:&quot;git-github.html&quot;},{&quot;label&quot;:&quot;HTTP &amp; APIs&quot;,&quot;href&quot;:&quot;http-apis.html&quot;}]"
+    data-toc="true"
+  >
+
+    <div class="site-loader" id="site-loader" aria-hidden="true">
+      <div class="site-loader-content">
+        <div class="site-loader-mark" aria-hidden="true">
+          <span class="loader-dot loader-dot-teal"></span>
+          <span class="loader-dot loader-dot-blue"></span>
+          <span class="loader-dot loader-dot-green"></span>
+        </div>
+
+        <p class="site-loader-label">Web Dev Reference</p>
+      </div>
+    </div>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div data-site-nav></div>
+
+    <header class="hero">
+      <h1>Web Debugging Reference</h1>
+      <p class="subtitle">A troubleshooting guide for turning “it doesn&#x27;t work” into a smaller, testable question.</p>
+
+      <div class="hero-meta">
+        <span class="badge badge-category">Developer Workflow</span>
+        <span class="badge badge-level">All Levels</span>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="reference-section" id="html-css-debugging" aria-labelledby="html-css-debugging-title">
+        <h2 class="section-title" id="html-css-debugging-title">HTML &amp; CSS Troubleshooting</h2>
+        <p class="section-description">Common front-end symptoms and the first checks that usually narrow the problem.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Common front-end symptoms and the first checks that usually narrow the problem.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="html-css-debugging-item-css-not-applying">
+                <th scope="row"><code>CSS not applying</code></th>
+                <td>Stylesheet/selectors</td>
+                <td>Check the stylesheet path, selector match, spelling, cascade, specificity, and DevTools Styles panel.</td>
+                <td class="example-cell"><code>Inspect the element → Styles → verify the rule is loaded and not overridden.</code></td>
+              </tr>
+              <tr id="html-css-debugging-item-image-not-loading">
+                <th scope="row"><code>Image not loading</code></th>
+                <td>Asset path</td>
+                <td>Check the requested URL, filename/case, extension, Network panel, and relative path.</td>
+                <td class="example-cell"><code>Open DevTools → Network → filter Img → inspect the failed request.</code></td>
+              </tr>
+              <tr id="html-css-debugging-item-layout-overflowing">
+                <th scope="row"><code>Layout overflowing</code></th>
+                <td>Sizing/box model</td>
+                <td>Inspect computed widths, min-width, white-space, intrinsic content, and overflow.</td>
+                <td class="example-cell"><code>Temporarily add * { outline: 1px solid red; }</code></td>
+              </tr>
+              <tr id="html-css-debugging-item-flex-alignment-wrong">
+                <th scope="row"><code>Flex alignment wrong</code></th>
+                <td>Axis/context</td>
+                <td>Confirm display:flex is on the parent and identify main/cross axis from flex-direction.</td>
+                <td class="example-cell"><code>Check flex-direction before changing justify-content or align-items.</code></td>
+              </tr>
+              <tr id="html-css-debugging-item-grid-item-misplaced">
+                <th scope="row"><code>Grid item misplaced</code></th>
+                <td>Tracks/placement</td>
+                <td>Inspect explicit tracks, line numbers, named areas, and item placement.</td>
+                <td class="example-cell"><code>DevTools Grid overlay can expose tracks and line numbers.</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="javascript-debugging" aria-labelledby="javascript-debugging-title">
+        <h2 class="section-title" id="javascript-debugging-title">JavaScript Troubleshooting</h2>
+        <p class="section-description">Checks for runtime errors, state, execution order, and DOM assumptions.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Checks for runtime errors, state, execution order, and DOM assumptions.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="javascript-debugging-item-script-not-running">
+                <th scope="row"><code>Script not running</code></th>
+                <td>Loading/execution</td>
+                <td>Check the Console, script URL, type/module settings, and the first thrown error.</td>
+                <td class="example-cell"><code>DevTools → Console; fix the first error before later symptoms.</code></td>
+              </tr>
+              <tr id="javascript-debugging-item-null-element">
+                <th scope="row"><code>null element</code></th>
+                <td>DOM selection</td>
+                <td>Verify the selector and whether the element exists when the query runs.</td>
+                <td class="example-cell"><code>console.log(document.querySelector(&quot;.target&quot;));</code></td>
+              </tr>
+              <tr id="javascript-debugging-item-wrong-value">
+                <th scope="row"><code>wrong value</code></th>
+                <td>State/data flow</td>
+                <td>Log or inspect the value at the point it changes rather than only at the final symptom.</td>
+                <td class="example-cell"><code>console.log({ before, input, result });</code></td>
+              </tr>
+              <tr id="javascript-debugging-item-event-not-firing">
+                <th scope="row"><code>event not firing</code></th>
+                <td>Listener/event path</td>
+                <td>Check listener registration, event name, target element, disabled state, and propagation.</td>
+                <td class="example-cell"><code>console.log(&quot;listener attached&quot;, button);</code></td>
+              </tr>
+              <tr id="javascript-debugging-item-async-failure">
+                <th scope="row"><code>async failure</code></th>
+                <td>Promise/network error</td>
+                <td>Inspect rejected promises, HTTP response status, and exception handling.</td>
+                <td class="example-cell"><code>try { await loadData(); } catch (error) { console.error(error); }</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="network-api-debugging" aria-labelledby="network-api-debugging-title">
+        <h2 class="section-title" id="network-api-debugging-title">Network &amp; API Troubleshooting</h2>
+        <p class="section-description">A sequence for separating client code, network, HTTP, and server-response problems.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">A sequence for separating client code, network, HTTP, and server-response problems.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="network-api-debugging-item-request-missing">
+                <th scope="row"><code>request missing</code></th>
+                <td>Network initiation</td>
+                <td>If no request appears, the client likely never issued it or execution stopped first.</td>
+                <td class="example-cell"><code>DevTools → Network → preserve log → trigger the action.</code></td>
+              </tr>
+              <tr id="network-api-debugging-item-404-response">
+                <th scope="row"><code>404 response</code></th>
+                <td>URL/resource</td>
+                <td>Check path, base URL, route parameters, spelling, and server route configuration.</td>
+                <td class="example-cell"><code>Inspect Request URL and compare it with the API route.</code></td>
+              </tr>
+              <tr id="network-api-debugging-item-401-403">
+                <th scope="row"><code>401 / 403</code></th>
+                <td>Authentication/authorization</td>
+                <td>Check whether credentials are present and whether the authenticated user has permission.</td>
+                <td class="example-cell"><code>Inspect Authorization/cookies without exposing secrets.</code></td>
+              </tr>
+              <tr id="network-api-debugging-item-cors-error">
+                <th scope="row"><code>CORS error</code></th>
+                <td>Browser cross-origin policy</td>
+                <td>Check the server response headers and whether the requested origin/method/header is permitted.</td>
+                <td class="example-cell"><code>Inspect the preflight/request response headers in Network.</code></td>
+              </tr>
+              <tr id="network-api-debugging-item-unexpected-json">
+                <th scope="row"><code>unexpected JSON</code></th>
+                <td>Response contract</td>
+                <td>Inspect the raw response body and Content-Type before assuming the client parser is wrong.</td>
+                <td class="example-cell"><code>Network → Response/Preview</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="debugging-process" aria-labelledby="debugging-process-title">
+        <h2 class="section-title" id="debugging-process-title">Systematic Debugging Process</h2>
+        <p class="section-description">A repeatable workflow for reducing uncertainty.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">A repeatable workflow for reducing uncertainty.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="debugging-process-item-reproduce">
+                <th scope="row"><code>reproduce</code></th>
+                <td>Make it repeatable</td>
+                <td>Define the exact steps and conditions that consistently produce the problem.</td>
+                <td class="example-cell"><code>Write the smallest repeatable sequence.</code></td>
+              </tr>
+              <tr id="debugging-process-item-observe">
+                <th scope="row"><code>observe</code></th>
+                <td>Collect evidence</td>
+                <td>Use DevTools, logs, status codes, computed styles, and state inspection.</td>
+                <td class="example-cell"><code>Record expected vs actual behavior.</code></td>
+              </tr>
+              <tr id="debugging-process-item-isolate">
+                <th scope="row"><code>isolate</code></th>
+                <td>Reduce scope</td>
+                <td>Remove unrelated code or create the smallest case that still fails.</td>
+                <td class="example-cell"><code>Comment out half the path, then narrow again.</code></td>
+              </tr>
+              <tr id="debugging-process-item-test-assumption">
+                <th scope="row"><code>test assumption</code></th>
+                <td>One variable at a time</td>
+                <td>Change one relevant assumption and observe the result.</td>
+                <td class="example-cell"><code>Verify selector → verify element → verify event → verify callback.</code></td>
+              </tr>
+              <tr id="debugging-process-item-confirm-fix">
+                <th scope="row"><code>confirm fix</code></th>
+                <td>Check regression</td>
+                <td>Repeat the original steps and test nearby behavior after the change.</td>
+                <td class="example-cell"><code>Re-run the original reproduction and related cases.</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+
+  <script src="assets/js/search-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/chrome.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/references.js"></script>
+  <script src="assets/js/dialogs.js"></script>
+  <script src="assets/js/patterns-ui.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/site.js"></script>
+  </body>
+</html>

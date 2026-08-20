@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Core document metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A searchable DOM and browser-events reference covering element selection, traversal, creation, classes, attributes, events, delegation, and forms.">
+    <meta name="author" content="Jennifer Curtis">
+    <meta name="creator" content="Jennifer Curtis">
+    <meta name="application-name" content="Web Development Reference">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Progressive loading-screen enhancement -->
+  <script src="assets/js/loader-init.js"></script>
+
+    <title>DOM &amp; Events Reference</title>
+
+    <!-- Browser and installed-app appearance -->
+    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Social sharing metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Web Development Reference">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="DOM &amp; Events Reference">
+    <meta property="og:description" content="A searchable DOM and browser-events reference covering element selection, traversal, creation, classes, attributes, events, delegation, and forms.">
+    <meta property="og:image" content="assets/images/icon-512.png">
+    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="DOM &amp; Events Reference">
+    <meta name="twitter:description" content="A searchable DOM and browser-events reference covering element selection, traversal, creation, classes, attributes, events, delegation, and forms.">
+    <meta name="twitter:image" content="assets/images/icon-512.png">
+    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+
+    <!-- App manifest and icons -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <!-- Shared site styles and fonts -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
+    >
+
+    <!-- Structured metadata -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "DOM & Events",
+  "description": "A searchable DOM and browser-events reference covering element selection, traversal, creation, classes, attributes, events, delegation, and forms.",
+  "inLanguage": "en-US",
+  "dateModified": "2026-08-19",
+  "author": {
+    "@type": "Person",
+    "name": "Jennifer Curtis",
+    "url": "https://jennifercurtis.me"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Web Development Reference"
+  }
+}
+    </script>
+  </head>
+
+  <body
+    data-page="dom"
+    data-page-label="DOM &amp; Events"
+    data-category="JavaScript"
+    data-level="Beginner–Intermediate"
+    data-footer="DOM &amp; Events Cheat Sheet"
+    data-search-placeholder="Try: querySelector, classList, click, preventDefault..."
+    data-author-note="Before changing the DOM, make sure you know whether you need to change content, state, or structure. Keeping those responsibilities separate makes interactions easier to maintain."
+    data-related="[{&quot;label&quot;:&quot;JavaScript Reference&quot;,&quot;href&quot;:&quot;javascript-reference.html&quot;},{&quot;label&quot;:&quot;Forms &amp; Validation&quot;,&quot;href&quot;:&quot;forms-validation.html&quot;},{&quot;label&quot;:&quot;Debugging&quot;,&quot;href&quot;:&quot;debugging.html&quot;}]"
+    data-toc="true"
+  >
+
+    <div class="site-loader" id="site-loader" aria-hidden="true">
+      <div class="site-loader-content">
+        <div class="site-loader-mark" aria-hidden="true">
+          <span class="loader-dot loader-dot-teal"></span>
+          <span class="loader-dot loader-dot-blue"></span>
+          <span class="loader-dot loader-dot-green"></span>
+        </div>
+
+        <p class="site-loader-label">Web Dev Reference</p>
+      </div>
+    </div>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div data-site-nav></div>
+
+    <header class="hero">
+      <h1>DOM &amp; Events Reference</h1>
+      <p class="subtitle">A practical reference for selecting, changing, creating, and responding to elements in the browser.</p>
+
+      <div class="hero-meta">
+        <span class="badge badge-category">JavaScript</span>
+        <span class="badge badge-level">Beginner–Intermediate</span>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="reference-section" id="selecting-elements" aria-labelledby="selecting-elements-title">
+        <h2 class="section-title" id="selecting-elements-title">Selecting Elements</h2>
+        <p class="section-description">Browser APIs for locating elements before reading or changing them.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Browser APIs for locating elements before reading or changing them.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="selecting-elements-item-document-queryselector">
+                <th scope="row"><code>document.querySelector()</code></th>
+                <td>First CSS match</td>
+                <td>Returns the first element matching a CSS selector.</td>
+                <td class="example-cell"><code>const button = document.querySelector(&quot;.save-button&quot;);</code></td>
+              </tr>
+              <tr id="selecting-elements-item-document-queryselectorall">
+                <th scope="row"><code>document.querySelectorAll()</code></th>
+                <td>All CSS matches</td>
+                <td>Returns a static NodeList of matching elements.</td>
+                <td class="example-cell"><code>const cards = document.querySelectorAll(&quot;.card&quot;);</code></td>
+              </tr>
+              <tr id="selecting-elements-item-document-getelementbyid">
+                <th scope="row"><code>document.getElementById()</code></th>
+                <td>Element by ID</td>
+                <td>Returns the element with a matching id.</td>
+                <td class="example-cell"><code>const main = document.getElementById(&quot;main-content&quot;);</code></td>
+              </tr>
+              <tr id="selecting-elements-item-closest">
+                <th scope="row"><code>.closest()</code></th>
+                <td>Closest ancestor</td>
+                <td>Finds the nearest matching element starting from the current element.</td>
+                <td class="example-cell"><code>event.target.closest(&quot;[data-action]&quot;)</code></td>
+              </tr>
+              <tr id="selecting-elements-item-matches">
+                <th scope="row"><code>.matches()</code></th>
+                <td>Selector test</td>
+                <td>Checks whether an element matches a CSS selector.</td>
+                <td class="example-cell"><code>element.matches(&quot;.active&quot;)</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="reading-changing" aria-labelledby="reading-changing-title">
+        <h2 class="section-title" id="reading-changing-title">Reading &amp; Changing Elements</h2>
+        <p class="section-description">Properties and methods for changing text, classes, attributes, and styles.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Properties and methods for changing text, classes, attributes, and styles.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="reading-changing-item-textcontent">
+                <th scope="row"><code>.textContent</code></th>
+                <td>Text content</td>
+                <td>Reads or replaces an element&#x27;s text.</td>
+                <td class="example-cell"><code>status.textContent = &quot;Saved&quot;;</code></td>
+              </tr>
+              <tr id="reading-changing-item-innerhtml">
+                <th scope="row"><code>.innerHTML</code></th>
+                <td>HTML content</td>
+                <td>Reads or replaces parsed HTML; use carefully with untrusted input.</td>
+                <td class="example-cell"><code>container.innerHTML = &quot;&lt;strong&gt;Ready&lt;/strong&gt;&quot;;</code></td>
+              </tr>
+              <tr id="reading-changing-item-classlist-add">
+                <th scope="row"><code>.classList.add()</code></th>
+                <td>Add class</td>
+                <td>Adds one or more CSS classes.</td>
+                <td class="example-cell"><code>card.classList.add(&quot;is-active&quot;);</code></td>
+              </tr>
+              <tr id="reading-changing-item-classlist-toggle">
+                <th scope="row"><code>.classList.toggle()</code></th>
+                <td>Toggle class</td>
+                <td>Adds or removes a class based on its current or supplied state.</td>
+                <td class="example-cell"><code>menu.classList.toggle(&quot;is-open&quot;);</code></td>
+              </tr>
+              <tr id="reading-changing-item-setattribute">
+                <th scope="row"><code>.setAttribute()</code></th>
+                <td>Set attribute</td>
+                <td>Creates or updates an HTML attribute.</td>
+                <td class="example-cell"><code>button.setAttribute(&quot;aria-expanded&quot;, &quot;true&quot;);</code></td>
+              </tr>
+              <tr id="reading-changing-item-dataset">
+                <th scope="row"><code>.dataset</code></th>
+                <td>Data attributes</td>
+                <td>Reads or writes data-* attributes through a DOMStringMap.</td>
+                <td class="example-cell"><code>const id = button.dataset.itemId;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="creating-elements" aria-labelledby="creating-elements-title">
+        <h2 class="section-title" id="creating-elements-title">Creating &amp; Removing Elements</h2>
+        <p class="section-description">Methods for constructing and changing document structure.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Methods for constructing and changing document structure.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="creating-elements-item-document-createelement">
+                <th scope="row"><code>document.createElement()</code></th>
+                <td>Create element</td>
+                <td>Creates a new element without inserting it yet.</td>
+                <td class="example-cell"><code>const li = document.createElement(&quot;li&quot;);</code></td>
+              </tr>
+              <tr id="creating-elements-item-append">
+                <th scope="row"><code>.append()</code></th>
+                <td>Append nodes</td>
+                <td>Adds nodes or strings at the end of an element.</td>
+                <td class="example-cell"><code>list.append(li);</code></td>
+              </tr>
+              <tr id="creating-elements-item-prepend">
+                <th scope="row"><code>.prepend()</code></th>
+                <td>Prepend nodes</td>
+                <td>Adds nodes or strings at the beginning of an element.</td>
+                <td class="example-cell"><code>list.prepend(li);</code></td>
+              </tr>
+              <tr id="creating-elements-item-before">
+                <th scope="row"><code>.before()</code></th>
+                <td>Insert before</td>
+                <td>Inserts nodes before an element.</td>
+                <td class="example-cell"><code>card.before(message);</code></td>
+              </tr>
+              <tr id="creating-elements-item-remove">
+                <th scope="row"><code>.remove()</code></th>
+                <td>Remove element</td>
+                <td>Removes an element from the document.</td>
+                <td class="example-cell"><code>notification.remove();</code></td>
+              </tr>
+              <tr id="creating-elements-item-documentfragment">
+                <th scope="row"><code>DocumentFragment</code></th>
+                <td>Batch DOM updates</td>
+                <td>Temporarily groups nodes before inserting them together.</td>
+                <td class="example-cell"><code>const fragment = document.createDocumentFragment();</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="events" aria-labelledby="events-title">
+        <h2 class="section-title" id="events-title">Events</h2>
+        <p class="section-description">APIs for responding to user interaction and browser activity.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">APIs for responding to user interaction and browser activity.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="events-item-addeventlistener">
+                <th scope="row"><code>.addEventListener()</code></th>
+                <td>Event listener</td>
+                <td>Runs a callback when the requested event occurs.</td>
+                <td class="example-cell"><code>button.addEventListener(&quot;click&quot;, handleClick);</code></td>
+              </tr>
+              <tr id="events-item-event-target">
+                <th scope="row"><code>event.target</code></th>
+                <td>Event origin</td>
+                <td>References the element where the event started.</td>
+                <td class="example-cell"><code>const clicked = event.target;</code></td>
+              </tr>
+              <tr id="events-item-event-currenttarget">
+                <th scope="row"><code>event.currentTarget</code></th>
+                <td>Listener element</td>
+                <td>References the element whose listener is currently running.</td>
+                <td class="example-cell"><code>const button = event.currentTarget;</code></td>
+              </tr>
+              <tr id="events-item-event-preventdefault">
+                <th scope="row"><code>event.preventDefault()</code></th>
+                <td>Prevent default</td>
+                <td>Stops the browser&#x27;s default behavior when appropriate.</td>
+                <td class="example-cell"><code>event.preventDefault();</code></td>
+              </tr>
+              <tr id="events-item-event-stoppropagation">
+                <th scope="row"><code>event.stopPropagation()</code></th>
+                <td>Stop propagation</td>
+                <td>Stops an event from continuing through the event path.</td>
+                <td class="example-cell"><code>event.stopPropagation();</code></td>
+              </tr>
+              <tr id="events-item-event-delegation">
+                <th scope="row"><code>event delegation</code></th>
+                <td>Parent listener pattern</td>
+                <td>Handles many child interactions from one stable ancestor.</td>
+                <td class="example-cell"><code>list.addEventListener(&quot;click&quot;, event =&gt; event.target.closest(&quot;button&quot;));</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-section" id="forms-events" aria-labelledby="forms-events-title">
+        <h2 class="section-title" id="forms-events-title">Forms &amp; Input Events</h2>
+        <p class="section-description">Common events and values used with interactive form controls.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Common events and values used with interactive form controls.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="forms-events-item-input">
+                <th scope="row"><code>input</code></th>
+                <td>Live input event</td>
+                <td>Fires whenever a control&#x27;s value changes through user input.</td>
+                <td class="example-cell"><code>search.addEventListener(&quot;input&quot;, filterResults);</code></td>
+              </tr>
+              <tr id="forms-events-item-change">
+                <th scope="row"><code>change</code></th>
+                <td>Committed change</td>
+                <td>Fires when a value is committed, depending on the control.</td>
+                <td class="example-cell"><code>select.addEventListener(&quot;change&quot;, updateView);</code></td>
+              </tr>
+              <tr id="forms-events-item-submit">
+                <th scope="row"><code>submit</code></th>
+                <td>Form submission</td>
+                <td>Fires on the form when submission is requested.</td>
+                <td class="example-cell"><code>form.addEventListener(&quot;submit&quot;, handleSubmit);</code></td>
+              </tr>
+              <tr id="forms-events-item-formdata">
+                <th scope="row"><code>FormData</code></th>
+                <td>Form value collection</td>
+                <td>Collects successful form controls into key/value pairs.</td>
+                <td class="example-cell"><code>const data = new FormData(form);</code></td>
+              </tr>
+              <tr id="forms-events-item-value">
+                <th scope="row"><code>.value</code></th>
+                <td>Control value</td>
+                <td>Reads or sets the current value of many form controls.</td>
+                <td class="example-cell"><code>const email = emailInput.value.trim();</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+
+  <script src="assets/js/search-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/chrome.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/references.js"></script>
+  <script src="assets/js/dialogs.js"></script>
+  <script src="assets/js/patterns-ui.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/site.js"></script>
+  </body>
+</html>

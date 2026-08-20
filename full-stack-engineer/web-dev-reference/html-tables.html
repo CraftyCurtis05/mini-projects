@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Core document metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An accessible HTML tables reference covering table structure, elements, attributes, semantics, examples, and reusable patterns.">
+    <meta name="author" content="Jennifer Curtis">
+    <meta name="creator" content="Jennifer Curtis">
+    <meta name="application-name" content="Web Development Reference">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Progressive loading-screen enhancement -->
+  <script src="assets/js/loader-init.js"></script>
+    <title>HTML Tables Reference | Web Dev Reference</title>
+    <!-- Browser and installed-app appearance -->
+    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Social sharing metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Web Development Reference">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="HTML Tables Reference | Web Dev Reference">
+    <meta property="og:description" content="An accessible HTML tables reference covering table structure, elements, attributes, semantics, examples, and reusable patterns.">
+    <meta property="og:image" content="assets/images/icon-512.png">
+    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="HTML Tables Reference | Web Dev Reference">
+    <meta name="twitter:description" content="An accessible HTML tables reference covering table structure, elements, attributes, semantics, examples, and reusable patterns.">
+    <meta name="twitter:image" content="assets/images/icon-512.png">
+    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <!-- App manifest and icons -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <!-- Shared site styles and fonts -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap">
+    <!-- Structured metadata -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "HTML Tables",
+        "description": "An accessible HTML tables reference covering table structure, elements, attributes, semantics, examples, and reusable patterns.",
+        "inLanguage": "en-US",
+        "dateModified": "2026-08-19",
+        "author": {
+          "@type": "Person",
+          "name": "Jennifer Curtis",
+          "url": "https://jennifercurtis.me"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Web Development Reference"
+        }
+      }
+        
+    </script>
+  </head>
+  <body data-author-note="When a cell identifies a row or column, use a &lt;code&gt;&amp;lt;th&amp;gt;&lt;/code&gt; with an appropriate &lt;code&gt;scope&lt;/code&gt; instead of styling a &lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt; to look like a header." data-category="HTML" data-footer="HTML Tables Cheat Sheet" data-level="Beginner" data-page="tables" data-page-label="HTML Tables" data-related="[{&quot;label&quot;:&quot;HTML Tags&quot;,&quot;href&quot;:&quot;html-tags.html&quot;},{&quot;label&quot;:&quot;Accessible Table Pattern&quot;,&quot;href&quot;:&quot;patterns.html#accessible-table&quot;}]" data-search-placeholder="Try: table, colspan, scope..." data-toc="true">
+
+    <div class="site-loader" id="site-loader" aria-hidden="true">
+      <div class="site-loader-content">
+        <div class="site-loader-mark" aria-hidden="true">
+          <span class="loader-dot loader-dot-teal"></span>
+          <span class="loader-dot loader-dot-blue"></span>
+          <span class="loader-dot loader-dot-green"></span>
+        </div>
+
+        <p class="site-loader-label">Web Dev Reference</p>
+      </div>
+    </div>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div data-site-nav=""></div>
+    <header class="hero">
+      <h1>HTML Tables Reference</h1>
+      <p class="subtitle">A quick reference for HTML table elements, attributes, and structure.</p>
+      <div class="hero-meta"><span class="badge badge-category">HTML</span> <span class="badge badge-level">Beginner</span></div>
+    </header>
+    <main id="main-content">
+      <section aria-labelledby="table-tags-title" class="reference-section" id="table-tags">
+        <h2 class="section-title" id="table-tags-title">Table Tags</h2>
+        <p class="section-description">HTML table elements, their names, and their purposes.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">HTML table elements, their names, and their purposes.</caption>
+            <thead>
+              <tr><th scope="col">Tag</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr id="table-tags-item-table">
+                <th scope="row"><code>&lt;table&gt;</code></th>
+                <td>Table</td>
+                <td>Defines an HTML table and contains all of the table's content.</td>
+                <td class="example-cell"><code>&lt;table&gt;...&lt;/table&gt;</code></td>
+              </tr>
+              <tr id="table-tags-item-caption">
+                <th scope="row"><code>&lt;caption&gt;</code></th>
+                <td>Table Caption</td>
+                <td>Adds a title or description to a table.</td>
+                <td class="example-cell"><code>&lt;caption&gt;...&lt;/caption&gt;</code></td>
+              </tr>
+              <tr id="table-tags-item-thead">
+                <th scope="row"><code>&lt;thead&gt;</code></th>
+                <td>Table Head</td>
+                <td>Groups rows containing column headings.</td>
+                <td class="example-cell"><code>&lt;thead&gt;...&lt;/thead&gt;</code></td>
+              </tr>
+              <tr id="table-tags-item-tbody">
+                <th scope="row"><code>&lt;tbody&gt;</code></th>
+                <td>Table Body</td>
+                <td>Groups the table's main data rows.</td>
+                <td class="example-cell"><code>&lt;tbody&gt;...&lt;/tbody&gt;</code></td>
+              </tr>
+              <tr id="table-tags-item-tfoot">
+                <th scope="row"><code>&lt;tfoot&gt;</code></th>
+                <td>Table Footer</td>
+                <td>Groups footer or summary rows such as totals or averages.</td>
+                <td class="example-cell"><code>&lt;tfoot&gt;...&lt;/tfoot&gt;</code></td>
+              </tr>
+              <tr id="table-tags-item-tr">
+                <th scope="row"><code>&lt;tr&gt;</code></th>
+                <td>Table Row</td>
+                <td>Creates a horizontal row of table cells.</td>
+                <td class="example-cell"><code>&lt;tr&gt;...&lt;/tr&gt;</code></td>
+              </tr>
+              <tr id="table-tags-item-th">
+                <th scope="row"><code>&lt;th&gt;</code></th>
+                <td>Table Header</td>
+                <td>Defines a header cell used to label a row or column.</td>
+                <td class="example-cell"><code>&lt;th&gt;...&lt;/th&gt;</code></td>
+              </tr>
+              <tr id="table-tags-item-td">
+                <th scope="row"><code>&lt;td&gt;</code></th>
+                <td>Table Data</td>
+                <td>Defines a standard data cell.</td>
+                <td class="example-cell"><code>&lt;td&gt;...&lt;/td&gt;</code></td>
+              </tr>
+              <tr id="table-tags-item-colgroup">
+                <th scope="row"><code>&lt;colgroup&gt;</code></th>
+                <td>Column Group</td>
+                <td>Groups columns so they can share formatting or column properties.</td>
+                <td class="example-cell"><code>&lt;colgroup&gt;...&lt;/colgroup&gt;</code></td>
+              </tr>
+              <tr id="table-tags-item-col">
+                <th scope="row"><code>&lt;col&gt;</code></th>
+                <td>Table Column</td>
+                <td>Defines properties for one or more columns within a <code>&lt;colgroup&gt;</code> .</td>
+                <td class="example-cell"><code>&lt;col&gt;...&lt;/col&gt;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="table-attributes-title" class="reference-section" id="table-attributes">
+        <h2 class="section-title" id="table-attributes-title">Table Attributes</h2>
+        <p class="section-description">HTML table attributes, their names, and how they affect table structure.</p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">HTML table attributes, their names, and how they affect table structure.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Attribute</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="table-attributes-item-colspan">
+                <th scope="row"><code>colspan</code></th>
+                <td>Column Span</td>
+                <td>Specifies how many columns a <code>&lt;td&gt;</code> or <code>&lt;th&gt;</code> spans horizontally.</td>
+                <td class="example-cell"><code>&lt;td colspan="2"&gt;...&lt;/td&gt;</code></td>
+              </tr>
+              <tr id="table-attributes-item-rowspan">
+                <th scope="row"><code>rowspan</code></th>
+                <td>Row Span</td>
+                <td>Specifies how many rows a <code>&lt;td&gt;</code> or <code>&lt;th&gt;</code> spans vertically.</td>
+                <td class="example-cell"><code>&lt;td rowspan="3"&gt;...&lt;/td&gt;</code></td>
+              </tr>
+              <tr id="table-attributes-item-scope">
+                <th scope="row"><code>scope</code></th>
+                <td>Header Scope</td>
+                <td>Identifies whether a <code>&lt;th&gt;</code> applies to a row, column, row group, or column group.</td>
+                <td class="example-cell"><code>&lt;th scope="col"&gt;...&lt;/th&gt;</code></td>
+              </tr>
+              <tr id="table-attributes-item-headers">
+                <th scope="row"><code>headers</code></th>
+                <td>Header Association</td>
+                <td>Associates a table cell with one or more header cells using header IDs.</td>
+                <td class="example-cell"><code>&lt;td headers="header1 header2"&gt;...&lt;/td&gt;</code></td>
+              </tr>
+              <tr id="table-attributes-item-span">
+                <th scope="row"><code>span</code></th>
+                <td>Column Span</td>
+                <td>Specifies how many consecutive columns a <code>&lt;col&gt;</code> or <code>&lt;colgroup&gt;</code> represents.</td>
+                <td class="example-cell"><code>&lt;col span="3"&gt;...&lt;/col&gt;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer=""></div>
+  <script src="assets/js/search-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/chrome.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/references.js"></script>
+  <script src="assets/js/dialogs.js"></script>
+  <script src="assets/js/patterns-ui.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/site.js"></script>
+  </body>
+</html>

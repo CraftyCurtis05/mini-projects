@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Core document metadata -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="A practical command-line reference covering navigation, files, directories, searching, pipes, redirection, environment variables, processes, and common developer commands." name="description"/>
+<meta content="Jennifer Curtis" name="author"/>
+<meta content="Jennifer Curtis" name="creator"/>
+<meta content="Web Development Reference" name="application-name"/>
+<meta content="index, follow" name="robots"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="light dark" name="color-scheme"/>
+<!-- Progressive loading-screen enhancement -->
+<script src="assets/js/loader-init.js"></script>
+<title>Terminal &amp; CLI Reference</title>
+<!-- Browser and installed-app appearance -->
+<meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="Web Dev Ref" name="apple-mobile-web-app-title"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<!-- Social sharing metadata -->
+<meta content="website" property="og:type"/>
+<meta content="Web Development Reference" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Terminal &amp; CLI Reference" property="og:title"/>
+<meta content="A practical command-line reference covering navigation, files, directories, searching, pipes, redirection, environment variables, processes, and common developer commands." property="og:description"/>
+<meta content="assets/images/icon-512.png" property="og:image"/>
+<meta content="Jennifer Curtis Web Development Reference logo" property="og:image:alt"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Terminal &amp; CLI Reference" name="twitter:title"/>
+<meta content="A practical command-line reference covering navigation, files, directories, searching, pipes, redirection, environment variables, processes, and common developer commands." name="twitter:description"/>
+<meta content="assets/images/icon-512.png" name="twitter:image"/>
+<meta content="Jennifer Curtis Web Development Reference logo" name="twitter:image:alt"/>
+<!-- App manifest and icons -->
+<link href="site.webmanifest" rel="manifest"/>
+<link href="assets/images/favicon-32.png" rel="icon" type="image/png"/>
+<link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<!-- Shared site styles and fonts -->
+<link href="assets/css/main.css" rel="stylesheet"/>
+<link href="https://use.typekit.net/qik2tak.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Structured metadata -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Terminal & CLI",
+  "description": "A practical command-line reference covering navigation, files, directories, searching, pipes, redirection, environment variables, processes, and common developer commands.",
+  "inLanguage": "en-US",
+  "dateModified": "2026-08-19",
+  "author": {
+    "@type": "Person",
+    "name": "Jennifer Curtis",
+    "url": "https://jennifercurtis.me"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Web Development Reference"
+  }
+}
+    </script>
+</head>
+<body data-author-note="Before running a destructive command, confirm the current directory and the exact path you are targeting. A quick pwd and ls can save a lot of recovery work." data-category="Developer Tools" data-footer="Terminal &amp; CLI Cheat Sheet" data-level="Beginner" data-page="terminal" data-page-label="Terminal &amp; CLI" data-related='[{"label":"Git &amp; GitHub","href":"git-github.html"},{"label":"Debugging","href":"debugging.html"}]' data-search-placeholder="Try: cd, grep, pipe, env, mkdir..." data-toc="true">
+<div aria-hidden="true" class="site-loader" id="site-loader">
+<div class="site-loader-content">
+<div aria-hidden="true" class="site-loader-mark">
+<span class="loader-dot loader-dot-teal"></span>
+<span class="loader-dot loader-dot-blue"></span>
+<span class="loader-dot loader-dot-green"></span>
+</div>
+<p class="site-loader-label">Web Dev Reference</p>
+</div>
+</div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div data-site-nav=""></div>
+<header class="hero">
+<h1>Terminal &amp; CLI Reference</h1>
+<p class="subtitle">A quick reference for navigating files, composing commands, inspecting output, and working efficiently from a terminal.</p>
+<div class="hero-meta">
+<span class="badge badge-category">Developer Tools</span>
+<span class="badge badge-level">Beginner</span>
+</div>
+</header>
+<main id="main-content">
+<section aria-labelledby="navigation-title" class="reference-section" id="navigation">
+<h2 class="section-title" id="navigation-title">Navigation</h2>
+<p class="section-description">Commands for understanding and changing your location in the filesystem.</p>
+<div class="table-wrapper">
+<table class="reference-table">
+<caption class="sr-only">Commands for understanding and changing your location in the filesystem.</caption>
+<thead>
+<tr>
+<th scope="col">Term / Syntax</th>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr id="navigation-item-pwd">
+<th scope="row"><code>pwd</code></th>
+<td>Print working directory</td>
+<td>Displays the current directory path.</td>
+<td class="example-cell"><code>pwd</code></td>
+</tr>
+<tr id="navigation-item-ls">
+<th scope="row"><code>ls</code></th>
+<td>List directory</td>
+<td>Lists files and directories.</td>
+<td class="example-cell"><code>ls -la</code></td>
+</tr>
+<tr id="navigation-item-cd">
+<th scope="row"><code>cd</code></th>
+<td>Change directory</td>
+<td>Moves the shell to another directory.</td>
+<td class="example-cell"><code>cd projects/reference-site</code></td>
+</tr>
+<tr id="navigation-cd">
+<th scope="row"><code>cd ..</code></th>
+<td>Parent directory</td>
+<td>Moves one level up the directory tree.</td>
+<td class="example-cell"><code>cd ..</code></td>
+</tr>
+<tr id="navigation-item-item">
+<th scope="row"><code>~</code></th>
+<td>Home directory</td>
+<td>Shell shorthand commonly representing the current user's home directory.</td>
+<td class="example-cell"><code>cd ~</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section aria-labelledby="files-directories-title" class="reference-section" id="files-directories">
+<h2 class="section-title" id="files-directories-title">Files &amp; Directories</h2>
+<p class="section-description">Common commands for creating, copying, moving, and removing filesystem entries.</p>
+<div class="table-wrapper">
+<table class="reference-table">
+<caption class="sr-only">Common commands for creating, copying, moving, and removing filesystem entries.</caption>
+<thead>
+<tr>
+<th scope="col">Term / Syntax</th>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr id="files-directories-item-mkdir">
+<th scope="row"><code>mkdir</code></th>
+<td>Create directory</td>
+<td>Creates a directory.</td>
+<td class="example-cell"><code>mkdir assets</code></td>
+</tr>
+<tr id="files-directories-item-touch">
+<th scope="row"><code>touch</code></th>
+<td>Create/update file</td>
+<td>Creates an empty file or updates timestamps on many Unix-like systems.</td>
+<td class="example-cell"><code>touch README.md</code></td>
+</tr>
+<tr id="files-directories-item-cp">
+<th scope="row"><code>cp</code></th>
+<td>Copy</td>
+<td>Copies files or directories when used with appropriate options.</td>
+<td class="example-cell"><code>cp index.html index.backup.html</code></td>
+</tr>
+<tr id="files-directories-item-mv">
+<th scope="row"><code>mv</code></th>
+<td>Move/rename</td>
+<td>Moves or renames files and directories.</td>
+<td class="example-cell"><code>mv old-name.js app.js</code></td>
+</tr>
+<tr id="files-directories-item-rm">
+<th scope="row"><code>rm</code></th>
+<td>Remove file</td>
+<td>Deletes files; use recursive options cautiously.</td>
+<td class="example-cell"><code>rm old-file.txt</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section aria-labelledby="inspect-search-title" class="reference-section" id="inspect-search">
+<h2 class="section-title" id="inspect-search-title">Inspecting &amp; Searching</h2>
+<p class="section-description">Commands for reading files and searching text/output.</p>
+<div class="table-wrapper">
+<table class="reference-table">
+<caption class="sr-only">Commands for reading files and searching text/output.</caption>
+<thead>
+<tr>
+<th scope="col">Term / Syntax</th>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr id="inspect-search-item-cat">
+<th scope="row"><code>cat</code></th>
+<td>Print file</td>
+<td>Writes file contents to standard output.</td>
+<td class="example-cell"><code>cat README.md</code></td>
+</tr>
+<tr id="inspect-search-item-less">
+<th scope="row"><code>less</code></th>
+<td>Paged viewer</td>
+<td>Displays text one screen at a time with navigation/search.</td>
+<td class="example-cell"><code>less server.log</code></td>
+</tr>
+<tr id="inspect-search-item-grep">
+<th scope="row"><code>grep</code></th>
+<td>Search text</td>
+<td>Searches input for lines matching a pattern.</td>
+<td class="example-cell"><code>grep -n "error" server.log</code></td>
+</tr>
+<tr id="inspect-search-item-find">
+<th scope="row"><code>find</code></th>
+<td>Find files</td>
+<td>Searches directory trees using conditions such as name or type.</td>
+<td class="example-cell"><code>find . -name "*.js"</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section aria-labelledby="pipes-redirects-title" class="reference-section" id="pipes-redirects">
+<h2 class="section-title" id="pipes-redirects-title">Pipes &amp; Redirection</h2>
+<p class="section-description">Shell operators for composing commands and controlling standard input/output.</p>
+<div class="table-wrapper">
+<table class="reference-table">
+<caption class="sr-only">Shell operators for composing commands and controlling standard input/output.</caption>
+<thead>
+<tr>
+<th scope="col">Term / Syntax</th>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pipes-redirects-item-item">
+<th scope="row"><code>|</code></th>
+<td>Pipe</td>
+<td>Sends one command's standard output to another command's standard input.</td>
+<td class="example-cell"><code>cat app.log | grep "ERROR"</code></td>
+</tr>
+<tr id="pipes-redirects-item">
+<th scope="row"><code>&gt;</code></th>
+<td>Overwrite redirect</td>
+<td>Writes standard output to a file, replacing its existing contents.</td>
+<td class="example-cell"><code>npm test &gt; test-output.txt</code></td>
+</tr>
+<tr id="pipes-redirects-item-2">
+<th scope="row"><code>&gt;&gt;</code></th>
+<td>Append redirect</td>
+<td>Appends standard output to a file.</td>
+<td class="example-cell"><code>echo "done" &gt;&gt; build.log</code></td>
+</tr>
+<tr id="pipes-redirects-2">
+<th scope="row"><code>2&gt;</code></th>
+<td>Error redirect</td>
+<td>Redirects standard error in common shells.</td>
+<td class="example-cell"><code>command 2&gt; errors.log</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section aria-labelledby="environment-processes-title" class="reference-section" id="environment-processes">
+<h2 class="section-title" id="environment-processes-title">Environment &amp; Processes</h2>
+<p class="section-description">Commands and syntax for environment variables and running processes.</p>
+<div class="table-wrapper">
+<table class="reference-table">
+<caption class="sr-only">Commands and syntax for environment variables and running processes.</caption>
+<thead>
+<tr>
+<th scope="col">Term / Syntax</th>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr id="environment-processes-item-env">
+<th scope="row"><code>env</code></th>
+<td>Environment</td>
+<td>Displays environment variables in many Unix-like shells.</td>
+<td class="example-cell"><code>env</code></td>
+</tr>
+<tr id="environment-processes-item-export">
+<th scope="row"><code>export</code></th>
+<td>Set exported variable</td>
+<td>Sets a shell variable for child processes in many shells.</td>
+<td class="example-cell"><code>export NODE_ENV=development</code></td>
+</tr>
+<tr id="environment-processes-item-echo">
+<th scope="row"><code>echo</code></th>
+<td>Print value</td>
+<td>Prints text or expanded shell values.</td>
+<td class="example-cell"><code>echo "$PATH"</code></td>
+</tr>
+<tr id="environment-processes-item-ctrl-c">
+<th scope="row"><code>Ctrl+C</code></th>
+<td>Interrupt process</td>
+<td>Common terminal shortcut for sending an interrupt signal to the foreground process.</td>
+<td class="example-cell"><code>Press Ctrl+C</code></td>
+</tr>
+<tr id="environment-processes-item-npm-scripts">
+<th scope="row"><code>npm scripts</code></th>
+<td>Project commands</td>
+<td>Runs scripts defined in a Node project's package.json.</td>
+<td class="example-cell"><code>npm run dev</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<div data-site-footer=""></div>
+<script src="assets/js/search-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/chrome.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/references.js"></script>
+  <script src="assets/js/dialogs.js"></script>
+  <script src="assets/js/patterns-ui.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
