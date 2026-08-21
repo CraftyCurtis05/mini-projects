@@ -1,127 +1,68 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A defensive web-security reference covering XSS, safe DOM updates, HTTPS, cookies, storage, CSRF concepts, CSP, secrets, input validation, and dependency hygiene.">
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="My front-end security reference for XSS, safe DOM updates, HTTPS, cookies, storage, CSP, secrets, and dependencies." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
-
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
     <title>Web Security Basics</title>
-
     <!-- Browser and installed-app appearance -->
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
 
-    <!-- Social sharing metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Web Development Reference">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Web Security Basics">
-    <meta property="og:description" content="A defensive web-security reference covering XSS, safe DOM updates, HTTPS, cookies, storage, CSRF concepts, CSP, secrets, input validation, and dependency hygiene.">
-    <meta property="og:image" content="assets/images/icon-512.png">
-    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="website" property="og:type"/>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Web Security Basics">
-    <meta name="twitter:description" content="A defensive web-security reference covering XSS, safe DOM updates, HTTPS, cookies, storage, CSRF concepts, CSP, secrets, input validation, and dependency hygiene.">
-    <meta name="twitter:image" content="assets/images/icon-512.png">
-    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="Web Security Basics" property="og:title"/>
+    <meta content="My front-end security reference for XSS, safe DOM updates, HTTPS, cookies, storage, CSP, secrets, and dependencies." property="og:description"/>
+    <meta content="assets/images/app-icon-512.png" property="og:image"/>
 
     <!-- App manifest and icons -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
     <!-- Shared site styles and fonts -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
-    >
-
-    <!-- Structured metadata -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "Web Security Basics",
-  "description": "A defensive web-security reference covering XSS, safe DOM updates, HTTPS, cookies, storage, CSRF concepts, CSP, secrets, input validation, and dependency hygiene.",
-  "inLanguage": "en-US",
-  "dateModified": "2026-08-19",
-  "author": {
-    "@type": "Person",
-    "name": "Jennifer Curtis",
-    "url": "https://jennifercurtis.me"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Web Development Reference"
-  }
-}
-    </script>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
   </head>
-
-  <body
-    data-page="security"
-    data-page-label="Web Security Basics"
-    data-category="Web Platform"
-    data-level="Intermediate"
-    data-footer="Web Security Basics Cheat Sheet"
-    data-search-placeholder="Try: XSS, CSP, cookie, CSRF, localStorage..."
-    data-author-note="Treat all external input as data, not markup or code. Validation improves correctness; escaping and context-appropriate output handling protect the rendering boundary."
-    data-related="[{&quot;label&quot;:&quot;DOM &amp; Events&quot;,&quot;href&quot;:&quot;dom-events.html#reading-changing&quot;},{&quot;label&quot;:&quot;HTTP &amp; APIs&quot;,&quot;href&quot;:&quot;http-apis.html&quot;}]"
-    data-toc="true"
-  >
-
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+  <body data-author-note="The security reminder I keep coming back to is that outside input is just data. I do not trust it, turn it into HTML, or put secrets in front-end code where the browser can expose them." data-category="Web Platform" data-footer="Web Security Basics Cheat Sheet" data-level="Intermediate" data-page="security" data-page-label="Web Security Basics" data-related='[{"label":"DOM &amp; Events","href":"dom-events.html#reading-changing"},{"label":"HTTP &amp; APIs","href":"http-apis.html"}]' data-search-placeholder="Try: XSS, CSP, cookie, CSRF, localStorage..." data-toc="true">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
-
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <div data-site-nav></div>
-
+    <div data-site-nav=""></div>
     <header class="hero">
       <h1>Web Security Basics</h1>
-      <p class="subtitle">A defensive reference for common browser and front-end security concepts every web developer should recognize.</p>
-
+      <p class="subtitle">
+      The front-end security basics I want in the back of my mind while building.
+      </p>
       <div class="hero-meta">
         <span class="badge badge-category">Web Platform</span>
         <span class="badge badge-level">Intermediate</span>
       </div>
     </header>
-
     <main id="main-content">
-      <section class="reference-section" id="xss-output" aria-labelledby="xss-output-title">
+      <section aria-labelledby="xss-output-title" class="reference-section" id="xss-output">
         <h2 class="section-title" id="xss-output-title">XSS &amp; Safe Output</h2>
-        <p class="section-description">Defensive concepts for keeping untrusted values from becoming executable markup or script.</p>
-
+        <p class="section-description">
+        Defensive concepts for keeping untrusted values from becoming executable markup or script.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Defensive concepts for keeping untrusted values from becoming executable markup or script.</caption>
-
+            <caption class="sr-only">
+            Defensive concepts for keeping untrusted values from becoming executable markup or
+            script.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -130,7 +71,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="xss-output-item-textcontent">
                 <th scope="row"><code>textContent</code></th>
@@ -148,27 +88,34 @@
                 <th scope="row"><code>escaping</code></th>
                 <td>Context-aware output</td>
                 <td>Encodes special characters appropriately for the destination context.</td>
-                <td class="example-cell"><code>Render untrusted text as text, not concatenated HTML.</code></td>
+                <td class="example-cell">
+                <code>Render untrusted text as text, not concatenated HTML.</code>
+                </td>
               </tr>
               <tr id="xss-output-item-sanitization">
                 <th scope="row"><code>sanitization</code></th>
                 <td>Remove unsafe markup</td>
-                <td>Uses a trusted sanitization approach when user-controlled HTML must be allowed.</td>
+                <td>
+                Uses a trusted sanitization approach when user-controlled HTML must be allowed.
+                </td>
                 <td class="example-cell"><code>Sanitize allowed HTML before insertion.</code></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="transport-auth" aria-labelledby="transport-auth-title">
-        <h2 class="section-title" id="transport-auth-title">Transport, Cookies &amp; Authentication</h2>
-        <p class="section-description">Browser concepts involved in protecting sessions and credentials.</p>
-
+      <section aria-labelledby="transport-auth-title" class="reference-section" id="transport-auth">
+        <h2 class="section-title" id="transport-auth-title">
+        Transport, Cookies &amp; Authentication
+        </h2>
+        <p class="section-description">
+        Browser concepts involved in protecting sessions and credentials.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Browser concepts involved in protecting sessions and credentials.</caption>
-
+            <caption class="sr-only">
+            Browser concepts involved in protecting sessions and credentials.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -177,7 +124,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="transport-auth-item-https">
                 <th scope="row"><code>HTTPS</code></th>
@@ -207,15 +153,16 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="browser-security" aria-labelledby="browser-security-title">
+      <section aria-labelledby="browser-security-title" class="reference-section" id="browser-security">
         <h2 class="section-title" id="browser-security-title">Browser Security Controls</h2>
-        <p class="section-description">Policies and browser boundaries that reduce common attack surfaces.</p>
-
+        <p class="section-description">
+        Policies and browser boundaries that reduce common attack surfaces.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Policies and browser boundaries that reduce common attack surfaces.</caption>
-
+            <caption class="sr-only">
+            Policies and browser boundaries that reduce common attack surfaces.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -224,45 +171,58 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="browser-security-item-csp">
                 <th scope="row"><code>CSP</code></th>
                 <td>Content Security Policy</td>
                 <td>Restricts which sources can load or execute content.</td>
-                <td class="example-cell"><code>Content-Security-Policy: default-src &#x27;self&#x27;</code></td>
+                <td class="example-cell">
+                <code>Content-Security-Policy: default-src 'self'</code>
+                </td>
               </tr>
               <tr id="browser-security-item-cors">
                 <th scope="row"><code>CORS</code></th>
                 <td>Cross-origin resource sharing</td>
                 <td>Controls which origins browser scripts may use to access a response.</td>
-                <td class="example-cell"><code>Access-Control-Allow-Origin: https://example.com</code></td>
+                <td class="example-cell">
+                <code>Access-Control-Allow-Origin: https://example.com</code>
+                </td>
               </tr>
               <tr id="browser-security-item-csrf">
                 <th scope="row"><code>CSRF</code></th>
                 <td>Cross-site request forgery</td>
-                <td>An attack where a user&#x27;s authenticated browser is tricked into sending an unwanted state-changing request.</td>
-                <td class="example-cell"><code>Use appropriate SameSite cookies and server-side CSRF defenses.</code></td>
+                <td>
+                An attack where a user's authenticated browser is tricked into sending an unwanted
+                state-changing request.
+                </td>
+                <td class="example-cell">
+                <code>Use appropriate SameSite cookies and server-side CSRF defenses.</code>
+                </td>
               </tr>
               <tr id="browser-security-item-rel-noopener">
                 <th scope="row"><code>rel=noopener</code></th>
                 <td>Opener isolation</td>
-                <td>Prevents a newly opened page from receiving a reference to the opening window.</td>
-                <td class="example-cell"><code>target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;</code></td>
+                <td>
+                Prevents a newly opened page from receiving a reference to the opening window.
+                </td>
+                <td class="example-cell">
+                <code>target="_blank" rel="noopener noreferrer"</code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="storage-secrets" aria-labelledby="storage-secrets-title">
-        <h2 class="section-title" id="storage-secrets-title">Storage, Secrets &amp; Dependencies</h2>
+      <section aria-labelledby="storage-secrets-title" class="reference-section" id="storage-secrets">
+        <h2 class="section-title" id="storage-secrets-title">
+        Storage, Secrets &amp; Dependencies
+        </h2>
         <p class="section-description">Rules of thumb for data stored or shipped to the browser.</p>
-
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Rules of thumb for data stored or shipped to the browser.</caption>
-
+            <caption class="sr-only">
+            Rules of thumb for data stored or shipped to the browser.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -271,25 +231,33 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="storage-secrets-item-localstorage">
                 <th scope="row"><code>localStorage</code></th>
                 <td>Persistent origin storage</td>
-                <td>Stores strings accessible to JavaScript on the origin; do not treat it as secret storage.</td>
-                <td class="example-cell"><code>localStorage.setItem(&quot;theme&quot;, &quot;dark&quot;);</code></td>
+                <td>
+                Stores strings accessible to JavaScript on the origin; do not treat it as secret
+                storage.
+                </td>
+                <td class="example-cell">
+                <code>localStorage.setItem("theme", "dark");</code>
+                </td>
               </tr>
               <tr id="storage-secrets-item-sessionstorage">
                 <th scope="row"><code>sessionStorage</code></th>
                 <td>Tab-scoped storage</td>
                 <td>Stores strings for the lifetime of the browser tab/session.</td>
-                <td class="example-cell"><code>sessionStorage.setItem(&quot;draft&quot;, value);</code></td>
+                <td class="example-cell">
+                <code>sessionStorage.setItem("draft", value);</code>
+                </td>
               </tr>
               <tr id="storage-secrets-item-api-secret">
                 <th scope="row"><code>API secret</code></th>
                 <td>Server-side secret</td>
                 <td>Private credentials must not be embedded in browser-delivered source code.</td>
-                <td class="example-cell"><code>Keep private API keys on trusted server-side infrastructure.</code></td>
+                <td class="example-cell">
+                <code>Keep private API keys on trusted server-side infrastructure.</code>
+                </td>
               </tr>
               <tr id="storage-secrets-item-dependency-audit">
                 <th scope="row"><code>dependency audit</code></th>
@@ -302,18 +270,15 @@
         </div>
       </section>
     </main>
-
-    <div data-site-footer></div>
-
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

@@ -1,127 +1,65 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A practical web performance reference covering loading, images, fonts, JavaScript, CSS, rendering, Core Web Vitals concepts, caching, and measurement.">
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="My web performance reference for loading, images, fonts, JavaScript, rendering, caching, metrics, and measurement." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
-
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
     <title>Web Performance Reference</title>
-
     <!-- Browser and installed-app appearance -->
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
 
-    <!-- Social sharing metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Web Development Reference">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Web Performance Reference">
-    <meta property="og:description" content="A practical web performance reference covering loading, images, fonts, JavaScript, CSS, rendering, Core Web Vitals concepts, caching, and measurement.">
-    <meta property="og:image" content="assets/images/icon-512.png">
-    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="website" property="og:type"/>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Web Performance Reference">
-    <meta name="twitter:description" content="A practical web performance reference covering loading, images, fonts, JavaScript, CSS, rendering, Core Web Vitals concepts, caching, and measurement.">
-    <meta name="twitter:image" content="assets/images/icon-512.png">
-    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="Web Performance Reference" property="og:title"/>
+    <meta content="My web performance reference for loading, images, fonts, JavaScript, rendering, caching, metrics, and measurement." property="og:description"/>
+    <meta content="assets/images/app-icon-512.png" property="og:image"/>
 
     <!-- App manifest and icons -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
     <!-- Shared site styles and fonts -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
-    >
-
-    <!-- Structured metadata -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "Web Performance",
-  "description": "A practical web performance reference covering loading, images, fonts, JavaScript, CSS, rendering, Core Web Vitals concepts, caching, and measurement.",
-  "inLanguage": "en-US",
-  "dateModified": "2026-08-19",
-  "author": {
-    "@type": "Person",
-    "name": "Jennifer Curtis",
-    "url": "https://jennifercurtis.me"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Web Development Reference"
-  }
-}
-    </script>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
   </head>
-
-  <body
-    data-page="performance"
-    data-page-label="Web Performance"
-    data-category="Web Platform"
-    data-level="Intermediate"
-    data-footer="Web Performance Cheat Sheet"
-    data-search-placeholder="Try: lazy, preload, LCP, CLS, cache..."
-    data-author-note="Optimize what users actually experience. Measure before and after changes so performance work is tied to a real bottleneck instead of a guess."
-    data-related="[{&quot;label&quot;:&quot;Responsive Design&quot;,&quot;href&quot;:&quot;responsive-design.html&quot;},{&quot;label&quot;:&quot;SEO &amp; Metadata&quot;,&quot;href&quot;:&quot;seo-metadata.html&quot;}]"
-    data-toc="true"
-  >
-
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+  <body data-author-note="I try to measure before optimizing. Images, fonts, and JavaScript are the first things I check because they are easy for me to make heavier than they need to be without noticing." data-category="Web Platform" data-footer="Web Performance Cheat Sheet" data-level="Intermediate" data-page="performance" data-page-label="Web Performance" data-related='[{"label":"Responsive Design","href":"responsive-design.html"},{"label":"SEO &amp; Metadata","href":"seo-metadata.html"}]' data-search-placeholder="Try: lazy, preload, LCP, CLS, cache..." data-toc="true">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
-
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <div data-site-nav></div>
-
+    <div data-site-nav=""></div>
     <header class="hero">
       <h1>Web Performance Reference</h1>
-      <p class="subtitle">A focused reference for making pages load quickly, render smoothly, and remain responsive to user interaction.</p>
-
+      <p class="subtitle">The performance checks I want to remember before I start optimizing.</p>
       <div class="hero-meta">
         <span class="badge badge-category">Web Platform</span>
         <span class="badge badge-level">Intermediate</span>
       </div>
     </header>
-
     <main id="main-content">
-      <section class="reference-section" id="loading-resources" aria-labelledby="loading-resources-title">
+      <section aria-labelledby="loading-resources-title" class="reference-section" id="loading-resources">
         <h2 class="section-title" id="loading-resources-title">Loading Resources</h2>
-        <p class="section-description">HTML and browser techniques for prioritizing or deferring work.</p>
-
+        <p class="section-description">
+        HTML and browser techniques for prioritizing or deferring work.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">HTML and browser techniques for prioritizing or deferring work.</caption>
-
+            <caption class="sr-only">
+            HTML and browser techniques for prioritizing or deferring work.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -130,51 +68,66 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="loading-resources-item-defer">
                 <th scope="row"><code>defer</code></th>
                 <td>Deferred script</td>
-                <td>Downloads a classic external script without blocking parsing and executes after parsing.</td>
-                <td class="example-cell"><code>&lt;script src=&quot;app.js&quot; defer&gt;&lt;/script&gt;</code></td>
+                <td>
+                Downloads a classic external script without blocking parsing and executes after
+                parsing.
+                </td>
+                <td class="example-cell">
+                <code>&lt;script src="app.js" defer&gt;&lt;/script&gt;</code>
+                </td>
               </tr>
               <tr id="loading-resources-item-type-module">
                 <th scope="row"><code>type=module</code></th>
                 <td>JavaScript module</td>
                 <td>Module scripts are deferred by default and use module loading semantics.</td>
-                <td class="example-cell"><code>&lt;script type=&quot;module&quot; src=&quot;app.js&quot;&gt;&lt;/script&gt;</code></td>
+                <td class="example-cell">
+                <code>&lt;script type="module" src="app.js"&gt;&lt;/script&gt;</code>
+                </td>
               </tr>
               <tr id="loading-resources-item-preload">
                 <th scope="row"><code>preload</code></th>
                 <td>High-priority resource hint</td>
                 <td>Tells the browser a resource will be needed soon by the current page.</td>
-                <td class="example-cell"><code>&lt;link rel=&quot;preload&quot; href=&quot;font.woff2&quot; as=&quot;font&quot; crossorigin&gt;</code></td>
+                <td class="example-cell">
+                <code>&lt;link rel="preload" href="font.woff2" as="font" crossorigin&gt;</code>
+                </td>
               </tr>
               <tr id="loading-resources-item-preconnect">
                 <th scope="row"><code>preconnect</code></th>
                 <td>Connection hint</td>
                 <td>Starts connection setup early for an important origin.</td>
-                <td class="example-cell"><code>&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;</code></td>
+                <td class="example-cell">
+                <code>
+                &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+                </code>
+                </td>
               </tr>
               <tr id="loading-resources-item-loading-lazy">
-                <th scope="row"><code>loading=&quot;lazy&quot;</code></th>
+                <th scope="row"><code>loading="lazy"</code></th>
                 <td>Lazy loading</td>
                 <td>Defers loading eligible off-screen images or iframes.</td>
-                <td class="example-cell"><code>&lt;img src=&quot;photo.jpg&quot; loading=&quot;lazy&quot; alt=&quot;&quot;&gt;</code></td>
+                <td class="example-cell">
+                <code>&lt;img src="photo.jpg" loading="lazy" alt=""&gt;</code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="images-fonts" aria-labelledby="images-fonts-title">
+      <section aria-labelledby="images-fonts-title" class="reference-section" id="images-fonts">
         <h2 class="section-title" id="images-fonts-title">Images &amp; Fonts</h2>
-        <p class="section-description">Techniques for reducing media transfer size and avoiding unstable rendering.</p>
-
+        <p class="section-description">
+        Techniques for reducing media transfer size and avoiding unstable rendering.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Techniques for reducing media transfer size and avoiding unstable rendering.</caption>
-
+            <caption class="sr-only">
+            Techniques for reducing media transfer size and avoiding unstable rendering.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -183,19 +136,22 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="images-fonts-item-width-height">
                 <th scope="row"><code>width + height</code></th>
                 <td>Image dimensions</td>
                 <td>Intrinsic dimensions help browsers reserve space before images load.</td>
-                <td class="example-cell"><code>&lt;img src=&quot;photo.jpg&quot; width=&quot;800&quot; height=&quot;600&quot; alt=&quot;...&quot;&gt;</code></td>
+                <td class="example-cell">
+                <code>&lt;img src="photo.jpg" width="800" height="600" alt="..."&gt;</code>
+                </td>
               </tr>
               <tr id="images-fonts-item-srcset">
                 <th scope="row"><code>srcset</code></th>
                 <td>Responsive sources</td>
                 <td>Allows the browser to choose an appropriately sized image candidate.</td>
-                <td class="example-cell"><code>&lt;img srcset=&quot;small.jpg 480w, large.jpg 1200w&quot; ...&gt;</code></td>
+                <td class="example-cell">
+                <code>&lt;img srcset="small.jpg 480w, large.jpg 1200w" ...&gt;</code>
+                </td>
               </tr>
               <tr id="images-fonts-item-font-display">
                 <th scope="row"><code>font-display</code></th>
@@ -207,21 +163,24 @@
                 <th scope="row"><code>subset fonts</code></th>
                 <td>Smaller font payload</td>
                 <td>Serving only needed glyphs/weights can reduce font downloads.</td>
-                <td class="example-cell"><code>Use only required font weights and character sets.</code></td>
+                <td class="example-cell">
+                <code>Use only required font weights and character sets.</code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="rendering-js" aria-labelledby="rendering-js-title">
+      <section aria-labelledby="rendering-js-title" class="reference-section" id="rendering-js">
         <h2 class="section-title" id="rendering-js-title">Rendering &amp; JavaScript</h2>
-        <p class="section-description">Patterns that reduce unnecessary rendering and main-thread work.</p>
-
+        <p class="section-description">
+        Patterns that reduce unnecessary rendering and main-thread work.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Patterns that reduce unnecessary rendering and main-thread work.</caption>
-
+            <caption class="sr-only">
+            Patterns that reduce unnecessary rendering and main-thread work.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -230,7 +189,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="rendering-js-item-transform">
                 <th scope="row"><code>transform</code></th>
@@ -248,12 +206,16 @@
                 <th scope="row"><code>passive listener</code></th>
                 <td>Scroll listener hint</td>
                 <td>Tells the browser a listener will not cancel the event.</td>
-                <td class="example-cell"><code>addEventListener(&quot;scroll&quot;, update, { passive: true });</code></td>
+                <td class="example-cell">
+                <code>addEventListener("scroll", update, { passive: true });</code>
+                </td>
               </tr>
               <tr id="rendering-js-item-intersectionobserver">
                 <th scope="row"><code>IntersectionObserver</code></th>
                 <td>Visibility observation</td>
-                <td>Efficiently observes visibility changes without continuous geometry polling.</td>
+                <td>
+                Efficiently observes visibility changes without continuous geometry polling.
+                </td>
                 <td class="example-cell"><code>new IntersectionObserver(handleEntries);</code></td>
               </tr>
               <tr id="rendering-js-item-debounce">
@@ -266,15 +228,14 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="performance-metrics" aria-labelledby="performance-metrics-title">
+      <section aria-labelledby="performance-metrics-title" class="reference-section" id="performance-metrics">
         <h2 class="section-title" id="performance-metrics-title">Performance Metrics</h2>
         <p class="section-description">Common user-experience metrics and diagnostic concepts.</p>
-
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Common user-experience metrics and diagnostic concepts.</caption>
-
+            <caption class="sr-only">
+            Common user-experience metrics and diagnostic concepts.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -283,25 +244,32 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="performance-metrics-item-lcp">
                 <th scope="row"><code>LCP</code></th>
                 <td>Largest Contentful Paint</td>
                 <td>Measures loading performance for the largest visible content element.</td>
-                <td class="example-cell"><code>Aim to keep primary content loading quickly.</code></td>
+                <td class="example-cell">
+                <code>Aim to keep primary content loading quickly.</code>
+                </td>
               </tr>
               <tr id="performance-metrics-item-inp">
                 <th scope="row"><code>INP</code></th>
                 <td>Interaction to Next Paint</td>
                 <td>Measures responsiveness across user interactions.</td>
-                <td class="example-cell"><code>Keep interaction handlers and main-thread work short.</code></td>
+                <td class="example-cell">
+                <code>Keep interaction handlers and main-thread work short.</code>
+                </td>
               </tr>
               <tr id="performance-metrics-item-cls">
                 <th scope="row"><code>CLS</code></th>
                 <td>Cumulative Layout Shift</td>
                 <td>Measures unexpected visual instability.</td>
-                <td class="example-cell"><code>Reserve media/ad space and avoid inserting content above existing content.</code></td>
+                <td class="example-cell">
+                <code>
+                Reserve media/ad space and avoid inserting content above existing content.
+                </code>
+                </td>
               </tr>
               <tr id="performance-metrics-item-devtools-performance">
                 <th scope="row"><code>DevTools Performance</code></th>
@@ -312,7 +280,10 @@
               <tr id="performance-metrics-item-lighthouse">
                 <th scope="row"><code>Lighthouse</code></th>
                 <td>Automated audit</td>
-                <td>Provides automated performance and quality diagnostics; use with manual measurement.</td>
+                <td>
+                Provides automated performance and quality diagnostics; use with manual
+                measurement.
+                </td>
                 <td class="example-cell"><code>Run Lighthouse in browser DevTools.</code></td>
               </tr>
             </tbody>
@@ -320,18 +291,15 @@
         </div>
       </section>
     </main>
-
-    <div data-site-footer></div>
-
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

@@ -1,11 +1,9 @@
-/* =========================================================
-   Web Development Reference
-   Global search and saved-reference dialogs
-   ========================================================= */
+/* Site search and saved-reference dialogs. */
 
+/* Dialog markup */
 function renderDialogs() {
   document.body.insertAdjacentHTML(
-    "beforeend",
+    'beforeend',
     `
       <dialog
         class="site-dialog"
@@ -45,7 +43,7 @@ function renderDialogs() {
           id="global-search-status"
           aria-live="polite"
         >
-          Start typing to search ${SEARCH_INDEX.length} reference entries.
+          Start typing to search ${searchIndex.length} reference entries.
         </p>
 
         <ul
@@ -87,33 +85,23 @@ function renderDialogs() {
     `
   );
 
-  document
-    .querySelectorAll("[data-close-dialog]")
-    .forEach((button) => {
-      button.addEventListener("click", () => {
-        button.closest("dialog")?.close();
-      });
+  document.querySelectorAll('[data-close-dialog]').forEach(button => {
+    button.addEventListener('click', () => {
+      button.closest('dialog')?.close();
     });
+  });
 
-  document
-    .getElementById("global-search-button")
-    ?.addEventListener("click", openSearchDialog);
+  document.getElementById('global-search-button')?.addEventListener('click', openSearchDialog);
 
-  document
-    .getElementById("saved-button")
-    ?.addEventListener("click", () => {
-      renderSavedResults();
-      document.getElementById("saved-dialog")?.showModal();
-    });
+  document.getElementById('saved-button')?.addEventListener('click', () => {
+    renderSavedResults();
+    document.getElementById('saved-dialog')?.showModal();
+  });
 
-  document
-    .getElementById("global-search-input")
-    ?.addEventListener("input", updateGlobalSearch);
+  document.getElementById('global-search-input')?.addEventListener('input', updateGlobalSearch);
 
-  document.addEventListener("keydown", (event) => {
-    const usesSearchShortcut =
-      (event.ctrlKey || event.metaKey) &&
-      event.key.toLowerCase() === "k";
+  document.addEventListener('keydown', event => {
+    const usesSearchShortcut = (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k';
 
     if (!usesSearchShortcut) {
       return;
@@ -124,9 +112,10 @@ function renderDialogs() {
   });
 }
 
+/* Global search */
 function openSearchDialog() {
-  const dialog = document.getElementById("global-search-dialog");
-  const input = document.getElementById("global-search-input");
+  const dialog = document.getElementById('global-search-dialog');
+  const input = document.getElementById('global-search-input');
 
   if (!dialog || !input) {
     return;
@@ -140,9 +129,9 @@ function openSearchDialog() {
 }
 
 function updateGlobalSearch() {
-  const input = document.getElementById("global-search-input");
-  const results = document.getElementById("global-search-results");
-  const status = document.getElementById("global-search-status");
+  const input = document.getElementById('global-search-input');
+  const results = document.getElementById('global-search-results');
+  const status = document.getElementById('global-search-status');
 
   if (!input || !results || !status) {
     return;
@@ -151,16 +140,16 @@ function updateGlobalSearch() {
   const rawQuery = input.value.trim();
   const query = rawQuery.toLowerCase();
 
-  results.innerHTML = "";
+  results.innerHTML = '';
 
   if (!query) {
-    status.textContent =
-      `Start typing to search ${SEARCH_INDEX.length} reference entries.`;
+    status.textContent = `Start typing to search ${searchIndex.length} reference entries.`;
     return;
   }
 
-  const matches = SEARCH_INDEX
-    .filter((item) => {
+  // I use one search index here so the dialog can search the whole site instead of just this page.
+  const matches = searchIndex
+    .filter(item => {
       const searchableText = [
         item.title,
         item.subtitle,
@@ -169,7 +158,7 @@ function updateGlobalSearch() {
         item.section,
         item.page
       ]
-        .join(" ")
+        .join(' ')
         .toLowerCase();
 
       return searchableText.includes(query);
@@ -177,32 +166,33 @@ function updateGlobalSearch() {
     .slice(0, 40);
 
   status.textContent =
-    `${matches.length} result${matches.length === 1 ? "" : "s"} ` +
-    `shown for “${rawQuery}”.`;
+    `${matches.length} result${matches.length === 1 ? '' : 's'} ` + `shown for “${rawQuery}”.`;
 
   if (!matches.length) {
-    results.innerHTML =
-      '<li class="empty-state">No matching references found.</li>';
+    results.innerHTML = '<li class="empty-state">No matching references found.</li>';
     return;
   }
 
   results.innerHTML = matches
-    .map((item) => `
+    .map(
+      item => `
       <li>
         <a class="search-result" href="${item.href}">
           <span class="result-meta">
-            ${escapeHTML(item.page)} · ${escapeHTML(item.section)}
+            ${escapeHtml(item.page)} · ${escapeHtml(item.section)}
           </span>
-          <strong>${escapeHTML(item.title)}</strong>
-          <span>${escapeHTML(item.subtitle || item.description)}</span>
+          <strong>${escapeHtml(item.title)}</strong>
+          <span>${escapeHtml(item.subtitle || item.description)}</span>
         </a>
       </li>
-    `)
-    .join("");
+    `
+    )
+    .join('');
 }
 
+/* Saved references dialog */
 function renderSavedResults() {
-  const results = document.getElementById("saved-results");
+  const results = document.getElementById('saved-results');
 
   if (!results) {
     return;
@@ -219,15 +209,17 @@ function renderSavedResults() {
   }
 
   results.innerHTML = favorites
-    .map((item) => `
+    .map(
+      item => `
       <li>
         <a class="search-result" href="${item.href}">
           <span class="result-meta">
-            ${escapeHTML(item.page)} · ${escapeHTML(item.section)}
+            ${escapeHtml(item.page)} · ${escapeHtml(item.section)}
           </span>
-          <strong>${escapeHTML(item.title)}</strong>
+          <strong>${escapeHtml(item.title)}</strong>
         </a>
       </li>
-    `)
-    .join("");
+    `
+    )
+    .join('');
 }

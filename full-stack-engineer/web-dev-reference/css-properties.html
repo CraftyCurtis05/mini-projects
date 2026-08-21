@@ -1,89 +1,49 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A searchable reference for common CSS properties including typography, color, layout, Flexbox, Grid, effects, and responsive design.">
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="My reference for common CSS properties used for text, color, spacing, layout, positioning, and effects." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
     <title>CSS Properties Reference | Web Dev Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- Social sharing metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Web Development Reference">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="CSS Properties Reference | Web Dev Reference">
-    <meta property="og:description" content="A searchable reference for common CSS properties including typography, color, layout, Flexbox, Grid, effects, and responsive design.">
-    <meta property="og:image" content="assets/images/icon-512.png">
-    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="CSS Properties Reference | Web Dev Reference">
-    <meta name="twitter:description" content="A searchable reference for common CSS properties including typography, color, layout, Flexbox, Grid, effects, and responsive design.">
-    <meta name="twitter:image" content="assets/images/icon-512.png">
-    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
-    <!-- App manifest and icons -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-    <!-- Shared site styles and fonts -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap">
-    <!-- Structured metadata -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "CSS Properties",
-        "description": "A searchable reference for common CSS properties including typography, color, layout, Flexbox, Grid, effects, and responsive design.",
-        "inLanguage": "en-US",
-        "dateModified": "2026-08-19",
-        "author": {
-          "@type": "Person",
-          "name": "Jennifer Curtis",
-          "url": "https://jennifercurtis.me"
-        },
-        "isPartOf": {
-          "@type": "WebSite",
-          "name": "Web Development Reference"
-        }
-      }
-        
-    </script>
-  </head>
-  <body data-author-note="When a layout feels difficult to control, check the box model and containing layout context before adding more offsets or fixed dimensions." data-category="CSS" data-footer="Common CSS Properties Cheat Sheet" data-level="Beginner–Intermediate" data-page="properties" data-page-label="CSS Properties" data-related="[{&quot;label&quot;:&quot;CSS Selectors&quot;,&quot;href&quot;:&quot;css-selectors.html&quot;},{&quot;label&quot;:&quot;Responsive Grid Pattern&quot;,&quot;href&quot;:&quot;patterns.html#grid-layout&quot;}]" data-search-placeholder="Try: flex, margin, color..." data-toc="true">
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
 
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+    <meta content="website" property="og:type"/>
+
+    <meta content="CSS Properties Reference | Web Dev Reference" property="og:title"/>
+    <meta content="My reference for common CSS properties used for text, color, spacing, layout, positioning, and effects." property="og:description"/>
+    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+
+    <!-- App manifest and icons -->
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <!-- Shared site styles and fonts -->
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+  </head>
+  <body data-author-note="When a CSS property seems like it is doing nothing, I check the parent, display type, box model, and cascade before adding another rule. One of those is usually the real problem." data-category="CSS" data-footer="Common CSS Properties Cheat Sheet" data-level="Beginner–Intermediate" data-page="properties" data-page-label="CSS Properties" data-related='[{"label":"CSS Selectors","href":"css-selectors.html"},{"label":"Responsive Grid Pattern","href":"patterns.html#grid-layout"}]' data-search-placeholder="Try: flex, margin, color..." data-toc="true">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
-
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div data-site-nav=""></div>
     <header class="hero">
       <h1>Common CSS Properties</h1>
-      <p class="subtitle">A quick reference for frequently used CSS styling and layout properties.</p>
+      <p class="subtitle">The CSS properties I look up most often.</p>
       <div class="hero-meta">
         <span class="badge badge-category">CSS</span>
         <span class="badge badge-level">Beginner–Intermediate</span>
@@ -92,12 +52,21 @@
     <main id="main-content">
       <section aria-labelledby="color-background-title" class="reference-section" id="color-background">
         <h2 class="section-title" id="color-background-title">Color &amp; Background</h2>
-        <p class="section-description">CSS color and background properties, their names, and their purposes.</p>
+        <p class="section-description">
+        CSS color and background properties, their names, and their purposes.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">CSS color and background properties, their names, and their purposes.</caption>
+            <caption class="sr-only">
+            CSS color and background properties, their names, and their purposes.
+            </caption>
             <thead>
-              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+              <tr>
+                <th scope="col">Property</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
             </thead>
             <tbody>
               <tr id="color-background-item-color">
@@ -139,7 +108,13 @@
               <tr id="color-background-item-opacity">
                 <th scope="row"><code>opacity</code></th>
                 <td>Opacity</td>
-                <td>Sets the transparency of an entire element from <code>0</code> to <code>1</code> .</td>
+                <td>
+                Sets the transparency of an entire element from
+                <code>0</code>
+                to
+                <code>1</code>
+                .
+                </td>
                 <td class="example-cell"><code>opacity: 0.8;</code></td>
               </tr>
             </tbody>
@@ -148,12 +123,22 @@
       </section>
       <section aria-labelledby="typography-title" class="reference-section" id="typography">
         <h2 class="section-title" id="typography-title">Typography</h2>
-        <p class="section-description">CSS typography properties, their names, and how they control text appearance and spacing.</p>
+        <p class="section-description">
+        CSS typography properties, their names, and how they control text appearance and spacing.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">CSS typography properties, their names, and how they control text appearance and spacing.</caption>
+            <caption class="sr-only">
+            CSS typography properties, their names, and how they control text appearance and
+            spacing.
+            </caption>
             <thead>
-              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+              <tr>
+                <th scope="col">Property</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
             </thead>
             <tbody>
               <tr id="typography-item-font-family">
@@ -229,15 +214,22 @@
       <section aria-labelledby="box-model-title" class="reference-section" id="box-model">
         <h2 class="section-title" id="box-model-title">Box Model &amp; Sizing</h2>
         <p class="section-description">
-          CSS box model and sizing properties, their names, and how they control element dimensions and spacing.
+        CSS box model and sizing properties, their names, and how they control element dimensions
+        and spacing.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-              CSS box model and sizing properties, their names, and how they control element dimensions and spacing.
+            CSS box model and sizing properties, their names, and how they control element
+            dimensions and spacing.
             </caption>
             <thead>
-              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+              <tr>
+                <th scope="col">Property</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
             </thead>
             <tbody>
               <tr id="box-model-item-width">
@@ -313,15 +305,22 @@
       <section aria-labelledby="display-positioning-title" class="reference-section" id="display-positioning">
         <h2 class="section-title" id="display-positioning-title">Display &amp; Positioning</h2>
         <p class="section-description">
-          CSS display and positioning properties, their names, and how they control element layout and placement.
+        CSS display and positioning properties, their names, and how they control element layout
+        and placement.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-              CSS display and positioning properties, their names, and how they control element layout and placement.
+            CSS display and positioning properties, their names, and how they control element
+            layout and placement.
             </caption>
             <thead>
-              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+              <tr>
+                <th scope="col">Property</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
             </thead>
             <tbody>
               <tr id="display-positioning-item-display">
@@ -378,12 +377,22 @@
       </section>
       <section aria-labelledby="flexbox-title" class="reference-section" id="flexbox">
         <h2 class="section-title" id="flexbox-title">Flexbox</h2>
-        <p class="section-description">CSS Flexbox properties, their names, and how they control flex container and item layout.</p>
+        <p class="section-description">
+        CSS Flexbox properties, their names, and how they control flex container and item layout.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">CSS Flexbox properties, their names, and how they control flex container and item layout.</caption>
+            <caption class="sr-only">
+            CSS Flexbox properties, their names, and how they control flex container and item
+            layout.
+            </caption>
             <thead>
-              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+              <tr>
+                <th scope="col">Property</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
             </thead>
             <tbody>
               <tr id="flexbox-item-display-flex">
@@ -455,7 +464,11 @@
               <tr id="flexbox-item-align-self">
                 <th scope="row"><code>align-self</code></th>
                 <td>Individual Alignment</td>
-                <td>Overrides <code>align-items</code> for one item.</td>
+                <td>
+                Overrides
+                <code>align-items</code>
+                for one item.
+                </td>
                 <td class="example-cell"><code>align-self: center;</code></td>
               </tr>
               <tr id="flexbox-item-order">
@@ -470,12 +483,21 @@
       </section>
       <section aria-labelledby="css-grid-title" class="reference-section" id="css-grid">
         <h2 class="section-title" id="css-grid-title">CSS Grid</h2>
-        <p class="section-description">CSS Grid properties, their names, and how they control grid layout and item placement.</p>
+        <p class="section-description">
+        CSS Grid properties, their names, and how they control grid layout and item placement.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">CSS Grid properties, their names, and how they control grid layout and item placement.</caption>
+            <caption class="sr-only">
+            CSS Grid properties, their names, and how they control grid layout and item placement.
+            </caption>
             <thead>
-              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+              <tr>
+                <th scope="col">Property</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
             </thead>
             <tbody>
               <tr id="css-grid-item-display-grid">
@@ -500,7 +522,9 @@
                 <th scope="row"><code>grid-template-areas</code></th>
                 <td>Named Grid Areas</td>
                 <td>Defines a visual layout using named grid areas.</td>
-                <td class="example-cell"><code>grid-template-areas: "header header" "sidebar main";</code></td>
+                <td class="example-cell">
+                <code>grid-template-areas: "header header" "sidebar main";</code>
+                </td>
               </tr>
               <tr id="css-grid-item-grid-column">
                 <th scope="row"><code>grid-column</code></th>
@@ -550,12 +574,21 @@
       </section>
       <section aria-labelledby="effects-interaction-title" class="reference-section" id="effects-interaction">
         <h2 class="section-title" id="effects-interaction-title">Effects &amp; Interaction</h2>
-        <p class="section-description">CSS visual effect and interaction properties, their names, and their purposes.</p>
+        <p class="section-description">
+        CSS visual effect and interaction properties, their names, and their purposes.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">CSS visual effect and interaction properties, their names, and their purposes.</caption>
+            <caption class="sr-only">
+            CSS visual effect and interaction properties, their names, and their purposes.
+            </caption>
             <thead>
-              <tr><th scope="col">Property</th> <th scope="col">Name</th> <th scope="col">Description</th> <th scope="col">Example</th></tr>
+              <tr>
+                <th scope="col">Property</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
             </thead>
             <tbody>
               <tr id="effects-interaction-item-cursor">
@@ -625,12 +658,14 @@
       <section aria-labelledby="responsive-tools-title" class="reference-section" id="responsive-tools">
         <h2 class="section-title" id="responsive-tools-title">Responsive Tools</h2>
         <p class="section-description">
-          CSS responsive design rules, functions, and properties used to adapt layouts to different screen sizes and conditions.
+        CSS responsive design rules, functions, and properties used to adapt layouts to different
+        screen sizes and conditions.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-              CSS responsive design rules, functions, and properties used to adapt layouts to different screen sizes and conditions.
+            CSS responsive design rules, functions, and properties used to adapt layouts to
+            different screen sizes and conditions.
             </caption>
             <thead>
               <tr>
@@ -683,15 +718,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

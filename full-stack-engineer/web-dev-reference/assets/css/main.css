@@ -1,18 +1,9 @@
-/* =========================================================
-   Web Development Reference
-   Stylesheet entry point
+/* Shared stylesheet entry point.
+   Import order matters because later files can override earlier styles. */
 
-   Import order matters: foundations first, then page/component styles.
-   ========================================================= */
-
-@import url("./tokens.css");
-
-@import url("./base.css");
-
-@import url("./navigation.css");
-
-@import url("./reference.css");
-
-@import url("./patterns.css");
-
-@import url("./components.css");
+@import url('./variables.css');
+@import url('./global.css');
+@import url('./navigation.css');
+@import url('./references.css');
+@import url('./patterns.css');
+@import url('./components.css');

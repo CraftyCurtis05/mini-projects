@@ -1,127 +1,67 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A searchable DOM and browser-events reference covering element selection, traversal, creation, classes, attributes, events, delegation, and forms.">
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="My DOM and events reference for selecting elements, changing the page, creating elements, handling events, and forms." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
-
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
     <title>DOM &amp; Events Reference</title>
-
     <!-- Browser and installed-app appearance -->
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
 
-    <!-- Social sharing metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Web Development Reference">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="DOM &amp; Events Reference">
-    <meta property="og:description" content="A searchable DOM and browser-events reference covering element selection, traversal, creation, classes, attributes, events, delegation, and forms.">
-    <meta property="og:image" content="assets/images/icon-512.png">
-    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="website" property="og:type"/>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="DOM &amp; Events Reference">
-    <meta name="twitter:description" content="A searchable DOM and browser-events reference covering element selection, traversal, creation, classes, attributes, events, delegation, and forms.">
-    <meta name="twitter:image" content="assets/images/icon-512.png">
-    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="DOM &amp; Events Reference" property="og:title"/>
+    <meta content="My DOM and events reference for selecting elements, changing the page, creating elements, handling events, and forms." property="og:description"/>
+    <meta content="assets/images/app-icon-512.png" property="og:image"/>
 
     <!-- App manifest and icons -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
     <!-- Shared site styles and fonts -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
-    >
-
-    <!-- Structured metadata -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "DOM & Events",
-  "description": "A searchable DOM and browser-events reference covering element selection, traversal, creation, classes, attributes, events, delegation, and forms.",
-  "inLanguage": "en-US",
-  "dateModified": "2026-08-19",
-  "author": {
-    "@type": "Person",
-    "name": "Jennifer Curtis",
-    "url": "https://jennifercurtis.me"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Web Development Reference"
-  }
-}
-    </script>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
   </head>
-
-  <body
-    data-page="dom"
-    data-page-label="DOM &amp; Events"
-    data-category="JavaScript"
-    data-level="Beginner–Intermediate"
-    data-footer="DOM &amp; Events Cheat Sheet"
-    data-search-placeholder="Try: querySelector, classList, click, preventDefault..."
-    data-author-note="Before changing the DOM, make sure you know whether you need to change content, state, or structure. Keeping those responsibilities separate makes interactions easier to maintain."
-    data-related="[{&quot;label&quot;:&quot;JavaScript Reference&quot;,&quot;href&quot;:&quot;javascript-reference.html&quot;},{&quot;label&quot;:&quot;Forms &amp; Validation&quot;,&quot;href&quot;:&quot;forms-validation.html&quot;},{&quot;label&quot;:&quot;Debugging&quot;,&quot;href&quot;:&quot;debugging.html&quot;}]"
-    data-toc="true"
-  >
-
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+  <body data-author-note="I have to remind myself that querySelector returns one match and querySelectorAll returns a NodeList. With events, I also check event.target versus event.currentTarget before blaming the wrong element." data-category="JavaScript" data-footer="DOM &amp; Events Cheat Sheet" data-level="Beginner–Intermediate" data-page="dom" data-page-label="DOM &amp; Events" data-related='[{"label":"JavaScript Reference","href":"javascript-reference.html"},{"label":"Forms &amp; Validation","href":"forms-validation.html"},{"label":"Debugging","href":"debugging.html"}]' data-search-placeholder="Try: querySelector, classList, click, preventDefault..." data-toc="true">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
-
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <div data-site-nav></div>
-
+    <div data-site-nav=""></div>
     <header class="hero">
       <h1>DOM &amp; Events Reference</h1>
-      <p class="subtitle">A practical reference for selecting, changing, creating, and responding to elements in the browser.</p>
-
+      <p class="subtitle">
+      My reference for selecting elements, changing the DOM, and handling events.
+      </p>
       <div class="hero-meta">
         <span class="badge badge-category">JavaScript</span>
         <span class="badge badge-level">Beginner–Intermediate</span>
       </div>
     </header>
-
     <main id="main-content">
-      <section class="reference-section" id="selecting-elements" aria-labelledby="selecting-elements-title">
+      <section aria-labelledby="selecting-elements-title" class="reference-section" id="selecting-elements">
         <h2 class="section-title" id="selecting-elements-title">Selecting Elements</h2>
-        <p class="section-description">Browser APIs for locating elements before reading or changing them.</p>
-
+        <p class="section-description">
+        Browser APIs for locating elements before reading or changing them.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Browser APIs for locating elements before reading or changing them.</caption>
-
+            <caption class="sr-only">
+            Browser APIs for locating elements before reading or changing them.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -130,51 +70,59 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="selecting-elements-item-document-queryselector">
                 <th scope="row"><code>document.querySelector()</code></th>
                 <td>First CSS match</td>
                 <td>Returns the first element matching a CSS selector.</td>
-                <td class="example-cell"><code>const button = document.querySelector(&quot;.save-button&quot;);</code></td>
+                <td class="example-cell">
+                <code>const button = document.querySelector(".save-button");</code>
+                </td>
               </tr>
               <tr id="selecting-elements-item-document-queryselectorall">
                 <th scope="row"><code>document.querySelectorAll()</code></th>
                 <td>All CSS matches</td>
                 <td>Returns a static NodeList of matching elements.</td>
-                <td class="example-cell"><code>const cards = document.querySelectorAll(&quot;.card&quot;);</code></td>
+                <td class="example-cell">
+                <code>const cards = document.querySelectorAll(".card");</code>
+                </td>
               </tr>
               <tr id="selecting-elements-item-document-getelementbyid">
                 <th scope="row"><code>document.getElementById()</code></th>
                 <td>Element by ID</td>
                 <td>Returns the element with a matching id.</td>
-                <td class="example-cell"><code>const main = document.getElementById(&quot;main-content&quot;);</code></td>
+                <td class="example-cell">
+                <code>const main = document.getElementById("main-content");</code>
+                </td>
               </tr>
               <tr id="selecting-elements-item-closest">
                 <th scope="row"><code>.closest()</code></th>
                 <td>Closest ancestor</td>
                 <td>Finds the nearest matching element starting from the current element.</td>
-                <td class="example-cell"><code>event.target.closest(&quot;[data-action]&quot;)</code></td>
+                <td class="example-cell">
+                <code>event.target.closest("[data-action]")</code>
+                </td>
               </tr>
               <tr id="selecting-elements-item-matches">
                 <th scope="row"><code>.matches()</code></th>
                 <td>Selector test</td>
                 <td>Checks whether an element matches a CSS selector.</td>
-                <td class="example-cell"><code>element.matches(&quot;.active&quot;)</code></td>
+                <td class="example-cell"><code>element.matches(".active")</code></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="reading-changing" aria-labelledby="reading-changing-title">
+      <section aria-labelledby="reading-changing-title" class="reference-section" id="reading-changing">
         <h2 class="section-title" id="reading-changing-title">Reading &amp; Changing Elements</h2>
-        <p class="section-description">Properties and methods for changing text, classes, attributes, and styles.</p>
-
+        <p class="section-description">
+        Properties and methods for changing text, classes, attributes, and styles.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Properties and methods for changing text, classes, attributes, and styles.</caption>
-
+            <caption class="sr-only">
+            Properties and methods for changing text, classes, attributes, and styles.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -183,37 +131,44 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="reading-changing-item-textcontent">
                 <th scope="row"><code>.textContent</code></th>
                 <td>Text content</td>
-                <td>Reads or replaces an element&#x27;s text.</td>
-                <td class="example-cell"><code>status.textContent = &quot;Saved&quot;;</code></td>
+                <td>Reads or replaces an element's text.</td>
+                <td class="example-cell"><code>status.textContent = "Saved";</code></td>
               </tr>
               <tr id="reading-changing-item-innerhtml">
                 <th scope="row"><code>.innerHTML</code></th>
                 <td>HTML content</td>
                 <td>Reads or replaces parsed HTML; use carefully with untrusted input.</td>
-                <td class="example-cell"><code>container.innerHTML = &quot;&lt;strong&gt;Ready&lt;/strong&gt;&quot;;</code></td>
+                <td class="example-cell">
+                <code>container.innerHTML = "&lt;strong&gt;Ready&lt;/strong&gt;";</code>
+                </td>
               </tr>
               <tr id="reading-changing-item-classlist-add">
                 <th scope="row"><code>.classList.add()</code></th>
                 <td>Add class</td>
                 <td>Adds one or more CSS classes.</td>
-                <td class="example-cell"><code>card.classList.add(&quot;is-active&quot;);</code></td>
+                <td class="example-cell">
+                <code>card.classList.add("is-active");</code>
+                </td>
               </tr>
               <tr id="reading-changing-item-classlist-toggle">
                 <th scope="row"><code>.classList.toggle()</code></th>
                 <td>Toggle class</td>
                 <td>Adds or removes a class based on its current or supplied state.</td>
-                <td class="example-cell"><code>menu.classList.toggle(&quot;is-open&quot;);</code></td>
+                <td class="example-cell">
+                <code>menu.classList.toggle("is-open");</code>
+                </td>
               </tr>
               <tr id="reading-changing-item-setattribute">
                 <th scope="row"><code>.setAttribute()</code></th>
                 <td>Set attribute</td>
                 <td>Creates or updates an HTML attribute.</td>
-                <td class="example-cell"><code>button.setAttribute(&quot;aria-expanded&quot;, &quot;true&quot;);</code></td>
+                <td class="example-cell">
+                <code>button.setAttribute("aria-expanded", "true");</code>
+                </td>
               </tr>
               <tr id="reading-changing-item-dataset">
                 <th scope="row"><code>.dataset</code></th>
@@ -225,15 +180,14 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="creating-elements" aria-labelledby="creating-elements-title">
+      <section aria-labelledby="creating-elements-title" class="reference-section" id="creating-elements">
         <h2 class="section-title" id="creating-elements-title">Creating &amp; Removing Elements</h2>
         <p class="section-description">Methods for constructing and changing document structure.</p>
-
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Methods for constructing and changing document structure.</caption>
-
+            <caption class="sr-only">
+            Methods for constructing and changing document structure.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -242,13 +196,14 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="creating-elements-item-document-createelement">
                 <th scope="row"><code>document.createElement()</code></th>
                 <td>Create element</td>
                 <td>Creates a new element without inserting it yet.</td>
-                <td class="example-cell"><code>const li = document.createElement(&quot;li&quot;);</code></td>
+                <td class="example-cell">
+                <code>const li = document.createElement("li");</code>
+                </td>
               </tr>
               <tr id="creating-elements-item-append">
                 <th scope="row"><code>.append()</code></th>
@@ -278,21 +233,24 @@
                 <th scope="row"><code>DocumentFragment</code></th>
                 <td>Batch DOM updates</td>
                 <td>Temporarily groups nodes before inserting them together.</td>
-                <td class="example-cell"><code>const fragment = document.createDocumentFragment();</code></td>
+                <td class="example-cell">
+                <code>const fragment = document.createDocumentFragment();</code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="events" aria-labelledby="events-title">
+      <section aria-labelledby="events-title" class="reference-section" id="events">
         <h2 class="section-title" id="events-title">Events</h2>
-        <p class="section-description">APIs for responding to user interaction and browser activity.</p>
-
+        <p class="section-description">
+        APIs for responding to user interaction and browser activity.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">APIs for responding to user interaction and browser activity.</caption>
-
+            <caption class="sr-only">
+            APIs for responding to user interaction and browser activity.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -301,13 +259,14 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="events-item-addeventlistener">
                 <th scope="row"><code>.addEventListener()</code></th>
                 <td>Event listener</td>
                 <td>Runs a callback when the requested event occurs.</td>
-                <td class="example-cell"><code>button.addEventListener(&quot;click&quot;, handleClick);</code></td>
+                <td class="example-cell">
+                <code>button.addEventListener("click", handleClick);</code>
+                </td>
               </tr>
               <tr id="events-item-event-target">
                 <th scope="row"><code>event.target</code></th>
@@ -324,7 +283,7 @@
               <tr id="events-item-event-preventdefault">
                 <th scope="row"><code>event.preventDefault()</code></th>
                 <td>Prevent default</td>
-                <td>Stops the browser&#x27;s default behavior when appropriate.</td>
+                <td>Stops the browser's default behavior when appropriate.</td>
                 <td class="example-cell"><code>event.preventDefault();</code></td>
               </tr>
               <tr id="events-item-event-stoppropagation">
@@ -337,21 +296,26 @@
                 <th scope="row"><code>event delegation</code></th>
                 <td>Parent listener pattern</td>
                 <td>Handles many child interactions from one stable ancestor.</td>
-                <td class="example-cell"><code>list.addEventListener(&quot;click&quot;, event =&gt; event.target.closest(&quot;button&quot;));</code></td>
+                <td class="example-cell">
+                <code>
+                list.addEventListener("click", event =&gt; event.target.closest("button"));
+                </code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="forms-events" aria-labelledby="forms-events-title">
+      <section aria-labelledby="forms-events-title" class="reference-section" id="forms-events">
         <h2 class="section-title" id="forms-events-title">Forms &amp; Input Events</h2>
-        <p class="section-description">Common events and values used with interactive form controls.</p>
-
+        <p class="section-description">
+        Common events and values used with interactive form controls.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Common events and values used with interactive form controls.</caption>
-
+            <caption class="sr-only">
+            Common events and values used with interactive form controls.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -360,25 +324,30 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="forms-events-item-input">
                 <th scope="row"><code>input</code></th>
                 <td>Live input event</td>
-                <td>Fires whenever a control&#x27;s value changes through user input.</td>
-                <td class="example-cell"><code>search.addEventListener(&quot;input&quot;, filterResults);</code></td>
+                <td>Fires whenever a control's value changes through user input.</td>
+                <td class="example-cell">
+                <code>search.addEventListener("input", filterResults);</code>
+                </td>
               </tr>
               <tr id="forms-events-item-change">
                 <th scope="row"><code>change</code></th>
                 <td>Committed change</td>
                 <td>Fires when a value is committed, depending on the control.</td>
-                <td class="example-cell"><code>select.addEventListener(&quot;change&quot;, updateView);</code></td>
+                <td class="example-cell">
+                <code>select.addEventListener("change", updateView);</code>
+                </td>
               </tr>
               <tr id="forms-events-item-submit">
                 <th scope="row"><code>submit</code></th>
                 <td>Form submission</td>
                 <td>Fires on the form when submission is requested.</td>
-                <td class="example-cell"><code>form.addEventListener(&quot;submit&quot;, handleSubmit);</code></td>
+                <td class="example-cell">
+                <code>form.addEventListener("submit", handleSubmit);</code>
+                </td>
               </tr>
               <tr id="forms-events-item-formdata">
                 <th scope="row"><code>FormData</code></th>
@@ -397,18 +366,15 @@
         </div>
       </section>
     </main>
-
-    <div data-site-footer></div>
-
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

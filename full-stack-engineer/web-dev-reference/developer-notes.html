@@ -1,127 +1,65 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Jennifer Curtis&#x27;s practical web-development notes: mental models, reminders, debugging habits, accessibility decisions, and small lessons worth keeping close.">
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="My personal web development reminders for HTML, CSS, JavaScript, debugging, accessibility, and workflow." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
-
-    <title>Jennifer&#x27;s Developer Notes</title>
-
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
+    <title>Jennifer's Developer Notes</title>
     <!-- Browser and installed-app appearance -->
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
 
-    <!-- Social sharing metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Web Development Reference">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Jennifer&#x27;s Developer Notes">
-    <meta property="og:description" content="Jennifer Curtis&#x27;s practical web-development notes: mental models, reminders, debugging habits, accessibility decisions, and small lessons worth keeping close.">
-    <meta property="og:image" content="assets/images/icon-512.png">
-    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="website" property="og:type"/>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Jennifer&#x27;s Developer Notes">
-    <meta name="twitter:description" content="Jennifer Curtis&#x27;s practical web-development notes: mental models, reminders, debugging habits, accessibility decisions, and small lessons worth keeping close.">
-    <meta name="twitter:image" content="assets/images/icon-512.png">
-    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="Jennifer's Developer Notes" property="og:title"/>
+    <meta content="My personal web development reminders for HTML, CSS, JavaScript, debugging, accessibility, and workflow." property="og:description"/>
+    <meta content="assets/images/app-icon-512.png" property="og:image"/>
 
     <!-- App manifest and icons -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
     <!-- Shared site styles and fonts -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
-    >
-
-    <!-- Structured metadata -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "Developer Notes",
-  "description": "Jennifer Curtis's practical web-development notes: mental models, reminders, debugging habits, accessibility decisions, and small lessons worth keeping close.",
-  "inLanguage": "en-US",
-  "dateModified": "2026-08-19",
-  "author": {
-    "@type": "Person",
-    "name": "Jennifer Curtis",
-    "url": "https://jennifercurtis.me"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Web Development Reference"
-  }
-}
-    </script>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
   </head>
-
-  <body
-    data-page="notes"
-    data-page-label="Developer Notes"
-    data-category="Personal Reference"
-    data-level="All Levels"
-    data-footer="Developer Notes Cheat Sheet"
-    data-search-placeholder="Try: rem, flexbox, semantics, debugging..."
-    data-author-note="This page is intentionally opinionated. These notes are not replacements for specifications; they are the mental shortcuts and reminders I use while building."
-    data-related="[{&quot;label&quot;:&quot;Debugging&quot;,&quot;href&quot;:&quot;debugging.html&quot;},{&quot;label&quot;:&quot;Patterns&quot;,&quot;href&quot;:&quot;patterns.html&quot;},{&quot;label&quot;:&quot;Accessibility&quot;,&quot;href&quot;:&quot;accessibility.html&quot;}]"
-    data-toc="true"
-  >
-
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+  <body data-author-note="This is basically my &#x27;I know I learned this before&#x27; page. If I keep looking something up between projects, it probably belongs here." data-category="Personal Reference" data-footer="Developer Notes Cheat Sheet" data-level="All Levels" data-page="notes" data-page-label="Developer Notes" data-related='[{"label":"Debugging","href":"debugging.html"},{"label":"Patterns","href":"patterns.html"},{"label":"Accessibility","href":"accessibility.html"}]' data-search-placeholder="Try: rem, flexbox, semantics, debugging..." data-toc="true">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
-
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <div data-site-nav></div>
-
+    <div data-site-nav=""></div>
     <header class="hero">
-      <h1>Jennifer&#x27;s Developer Notes</h1>
-      <p class="subtitle">Personal mental models and reminders I want available when syntax alone isn&#x27;t the problem.</p>
-
+      <h1>Jennifer's Developer Notes</h1>
+      <p class="subtitle">Things I have learned, forgotten, and needed to look up again.</p>
       <div class="hero-meta">
         <span class="badge badge-category">Personal Reference</span>
         <span class="badge badge-level">All Levels</span>
       </div>
     </header>
-
     <main id="main-content">
-      <section class="reference-section" id="html-notes" aria-labelledby="html-notes-title">
+      <section aria-labelledby="html-notes-title" class="reference-section" id="html-notes">
         <h2 class="section-title" id="html-notes-title">HTML &amp; Semantics</h2>
-        <p class="section-description">Reminders for choosing structure based on meaning rather than appearance.</p>
-
+        <p class="section-description">
+        Reminders for choosing structure based on meaning rather than appearance.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Reminders for choosing structure based on meaning rather than appearance.</caption>
-
+            <caption class="sr-only">
+            Reminders for choosing structure based on meaning rather than appearance.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -130,45 +68,65 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="html-notes-item-button-vs-link">
                 <th scope="row"><code>button vs link</code></th>
                 <td>Action vs navigation</td>
-                <td>Use a button for an action in the current interface and a link when the user is going somewhere.</td>
-                <td class="example-cell"><code>&lt;button&gt;Save&lt;/button&gt; vs &lt;a href=&quot;/projects&quot;&gt;Projects&lt;/a&gt;</code></td>
+                <td>
+                Use a button for an action in the current interface and a link when the user is
+                going somewhere.
+                </td>
+                <td class="example-cell">
+                <code>
+                &lt;button&gt;Save&lt;/button&gt; vs &lt;a
+                href="/projects"&gt;Projects&lt;/a&gt;
+                </code>
+                </td>
               </tr>
               <tr id="html-notes-item-section-vs-div">
                 <th scope="row"><code>section vs div</code></th>
                 <td>Meaningful section</td>
-                <td>Use section when content forms a meaningful titled section; use div when you only need grouping.</td>
-                <td class="example-cell"><code>If the group has a real heading/topic, section may be appropriate.</code></td>
+                <td>
+                Use section when content forms a meaningful titled section; use div when you only
+                need grouping.
+                </td>
+                <td class="example-cell">
+                <code>If the group has a real heading/topic, section may be appropriate.</code>
+                </td>
               </tr>
               <tr id="html-notes-item-headings">
                 <th scope="row"><code>headings</code></th>
                 <td>Document outline</td>
                 <td>Choose heading levels from document hierarchy, then size them with CSS.</td>
-                <td class="example-cell"><code>Do not choose &lt;h4&gt; just because you want smaller text.</code></td>
+                <td class="example-cell">
+                <code>Do not choose &lt;h4&gt; just because you want smaller text.</code>
+                </td>
               </tr>
               <tr id="html-notes-item-native-first">
                 <th scope="row"><code>native first</code></th>
                 <td>Prefer native semantics</td>
-                <td>Use native elements and attributes before recreating their behavior with ARIA and JavaScript.</td>
-                <td class="example-cell"><code>&lt;button&gt; already provides keyboard/button semantics.</code></td>
+                <td>
+                Use native elements and attributes before recreating their behavior with ARIA and
+                JavaScript.
+                </td>
+                <td class="example-cell">
+                <code>&lt;button&gt; already provides keyboard/button semantics.</code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="css-notes" aria-labelledby="css-notes-title">
+      <section aria-labelledby="css-notes-title" class="reference-section" id="css-notes">
         <h2 class="section-title" id="css-notes-title">CSS &amp; Layout</h2>
-        <p class="section-description">Mental models for sizing, spacing, Flexbox, Grid, and responsive decisions.</p>
-
+        <p class="section-description">
+        Mental models for sizing, spacing, Flexbox, Grid, and responsive decisions.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Mental models for sizing, spacing, Flexbox, Grid, and responsive decisions.</caption>
-
+            <caption class="sr-only">
+            Mental models for sizing, spacing, Flexbox, Grid, and responsive decisions.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -177,7 +135,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="css-notes-item-margin-vs-padding">
                 <th scope="row"><code>margin vs padding</code></th>
@@ -188,40 +145,56 @@
               <tr id="css-notes-item-rem-vs-em">
                 <th scope="row"><code>rem vs em</code></th>
                 <td>Document vs component scale</td>
-                <td>Use rem for root-relative sizing and em when a value should intentionally scale with its component.</td>
+                <td>
+                Use rem for root-relative sizing and em when a value should intentionally scale
+                with its component.
+                </td>
                 <td class="example-cell"><code>font-size: 1rem; padding: .75em 1em;</code></td>
               </tr>
               <tr id="css-notes-item-flexbox-axes">
                 <th scope="row"><code>Flexbox axes</code></th>
                 <td>Direction first</td>
-                <td>When alignment surprises me, I check flex-direction before touching alignment properties.</td>
-                <td class="example-cell"><code>justify-content = main axis; align-items = cross axis</code></td>
+                <td>
+                When alignment surprises me, I check flex-direction before touching alignment
+                properties.
+                </td>
+                <td class="example-cell">
+                <code>justify-content = main axis; align-items = cross axis</code>
+                </td>
               </tr>
               <tr id="css-notes-item-grid-tracks">
                 <th scope="row"><code>Grid tracks</code></th>
                 <td>Structure first</td>
                 <td>Define the track system before forcing individual items into place.</td>
-                <td class="example-cell"><code>grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));</code></td>
+                <td class="example-cell">
+                <code>grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));</code>
+                </td>
               </tr>
               <tr id="css-notes-item-breakpoints">
                 <th scope="row"><code>breakpoints</code></th>
                 <td>Content-driven</td>
-                <td>Add a breakpoint when the content stops working well, not because a device list says to.</td>
-                <td class="example-cell"><code>Resize until the layout needs a structural change.</code></td>
+                <td>
+                Add a breakpoint when the content stops working well, not because a device list
+                says to.
+                </td>
+                <td class="example-cell">
+                <code>Resize until the layout needs a structural change.</code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="javascript-notes" aria-labelledby="javascript-notes-title">
+      <section aria-labelledby="javascript-notes-title" class="reference-section" id="javascript-notes">
         <h2 class="section-title" id="javascript-notes-title">JavaScript &amp; DOM</h2>
-        <p class="section-description">Reminders for keeping browser behavior understandable and maintainable.</p>
-
+        <p class="section-description">
+        Reminders for keeping browser behavior understandable and maintainable.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Reminders for keeping browser behavior understandable and maintainable.</caption>
-
+            <caption class="sr-only">
+            Reminders for keeping browser behavior understandable and maintainable.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -230,45 +203,60 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="javascript-notes-item-small-functions">
                 <th scope="row"><code>small functions</code></th>
                 <td>Clear data flow</td>
-                <td>Prefer functions with one clear responsibility over long handlers that mutate many unrelated things.</td>
+                <td>
+                Prefer functions with one clear responsibility over long handlers that mutate many
+                unrelated things.
+                </td>
                 <td class="example-cell"><code>filterRows(query); updateStatus(count);</code></td>
               </tr>
               <tr id="javascript-notes-item-dom-state">
                 <th scope="row"><code>DOM state</code></th>
                 <td>Classes over scattered styles</td>
-                <td>When possible, express visual state with classes/data attributes and let CSS own appearance.</td>
-                <td class="example-cell"><code>element.classList.toggle(&quot;is-open&quot;);</code></td>
+                <td>
+                When possible, express visual state with classes/data attributes and let CSS own
+                appearance.
+                </td>
+                <td class="example-cell">
+                <code>element.classList.toggle("is-open");</code>
+                </td>
               </tr>
               <tr id="javascript-notes-item-event-delegation">
                 <th scope="row"><code>event delegation</code></th>
                 <td>Stable parent listeners</td>
-                <td>Delegation is useful for repeated/dynamic children when one parent can interpret the clicked target.</td>
-                <td class="example-cell"><code>list.addEventListener(&quot;click&quot;, handleListClick);</code></td>
+                <td>
+                Delegation is useful for repeated/dynamic children when one parent can interpret
+                the clicked target.
+                </td>
+                <td class="example-cell">
+                <code>list.addEventListener("click", handleListClick);</code>
+                </td>
               </tr>
               <tr id="javascript-notes-item-async-errors">
                 <th scope="row"><code>async errors</code></th>
                 <td>Handle boundaries</td>
                 <td>Catch errors where you can meaningfully recover, report, or add context.</td>
-                <td class="example-cell"><code>try { await save(); } catch (error) { showStatus(error.message); }</code></td>
+                <td class="example-cell">
+                <code>try { await save(); } catch (error) { showStatus(error.message); }</code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="workflow-notes" aria-labelledby="workflow-notes-title">
+      <section aria-labelledby="workflow-notes-title" class="reference-section" id="workflow-notes">
         <h2 class="section-title" id="workflow-notes-title">Debugging &amp; Workflow</h2>
-        <p class="section-description">Habits that reduce the amount of guessing involved in fixing problems.</p>
-
+        <p class="section-description">
+        Habits that reduce the amount of guessing involved in fixing problems.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Habits that reduce the amount of guessing involved in fixing problems.</caption>
-
+            <caption class="sr-only">
+            Habits that reduce the amount of guessing involved in fixing problems.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -277,49 +265,59 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="workflow-notes-item-first-error">
                 <th scope="row"><code>first error</code></th>
                 <td>Fix earliest failure</td>
-                <td>Later errors can be symptoms. Start with the first meaningful error in the console/log.</td>
+                <td>
+                Later errors can be symptoms. Start with the first meaningful error in the
+                console/log.
+                </td>
                 <td class="example-cell"><code>Console → first stack trace → source line</code></td>
               </tr>
               <tr id="workflow-notes-item-inspect-before-edit">
                 <th scope="row"><code>inspect before edit</code></th>
                 <td>Collect evidence first</td>
-                <td>Use computed styles, Network, DOM inspection, and logs before making random changes.</td>
-                <td class="example-cell"><code>Expected vs actual is more useful than guessing.</code></td>
+                <td>
+                Use computed styles, Network, DOM inspection, and logs before making random
+                changes.
+                </td>
+                <td class="example-cell">
+                <code>Expected vs actual is more useful than guessing.</code>
+                </td>
               </tr>
               <tr id="workflow-notes-item-one-change">
                 <th scope="row"><code>one change</code></th>
                 <td>Test one variable</td>
-                <td>Change one relevant assumption at a time so the result teaches you something.</td>
-                <td class="example-cell"><code>Selector first, then state, then event, then callback.</code></td>
+                <td>
+                Change one relevant assumption at a time so the result teaches you something.
+                </td>
+                <td class="example-cell">
+                <code>Selector first, then state, then event, then callback.</code>
+                </td>
               </tr>
               <tr id="workflow-notes-item-commit-small">
                 <th scope="row"><code>commit small</code></th>
                 <td>Readable history</td>
                 <td>Smaller focused commits are easier to review, revert, and understand later.</td>
-                <td class="example-cell"><code>git commit -m &quot;Add accessible search status&quot;</code></td>
+                <td class="example-cell">
+                <code>git commit -m "Add accessible search status"</code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
     </main>
-
-    <div data-site-footer></div>
-
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

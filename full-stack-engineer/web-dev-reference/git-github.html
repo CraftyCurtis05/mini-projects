@@ -1,127 +1,67 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A practical Git and GitHub command reference covering repositories, staging, commits, branches, remotes, syncing, history, recovery, and collaboration.">
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="My Git and GitHub reference for commits, branches, remotes, syncing, history, recovery, and everyday commands." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
-
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
     <title>Git &amp; GitHub Reference</title>
-
     <!-- Browser and installed-app appearance -->
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
 
-    <!-- Social sharing metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Web Development Reference">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Git &amp; GitHub Reference">
-    <meta property="og:description" content="A practical Git and GitHub command reference covering repositories, staging, commits, branches, remotes, syncing, history, recovery, and collaboration.">
-    <meta property="og:image" content="assets/images/icon-512.png">
-    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="website" property="og:type"/>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Git &amp; GitHub Reference">
-    <meta name="twitter:description" content="A practical Git and GitHub command reference covering repositories, staging, commits, branches, remotes, syncing, history, recovery, and collaboration.">
-    <meta name="twitter:image" content="assets/images/icon-512.png">
-    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="Git &amp; GitHub Reference" property="og:title"/>
+    <meta content="My Git and GitHub reference for commits, branches, remotes, syncing, history, recovery, and everyday commands." property="og:description"/>
+    <meta content="assets/images/app-icon-512.png" property="og:image"/>
 
     <!-- App manifest and icons -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
     <!-- Shared site styles and fonts -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
-    >
-
-    <!-- Structured metadata -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "Git & GitHub",
-  "description": "A practical Git and GitHub command reference covering repositories, staging, commits, branches, remotes, syncing, history, recovery, and collaboration.",
-  "inLanguage": "en-US",
-  "dateModified": "2026-08-19",
-  "author": {
-    "@type": "Person",
-    "name": "Jennifer Curtis",
-    "url": "https://jennifercurtis.me"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Web Development Reference"
-  }
-}
-    </script>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
   </head>
-
-  <body
-    data-page="git"
-    data-page-label="Git &amp; GitHub"
-    data-category="Developer Tools"
-    data-level="Beginner–Intermediate"
-    data-footer="Git &amp; GitHub Cheat Sheet"
-    data-search-placeholder="Try: commit, branch, pull, restore, rebase..."
-    data-author-note="Before running a recovery command, check git status and git log. Knowing what Git thinks the current state is can prevent a small mistake from becoming a bigger one."
-    data-related="[{&quot;label&quot;:&quot;Terminal &amp; CLI&quot;,&quot;href&quot;:&quot;terminal-cli.html&quot;},{&quot;label&quot;:&quot;Debugging&quot;,&quot;href&quot;:&quot;debugging.html&quot;}]"
-    data-toc="true"
-  >
-
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+  <body data-author-note="I start with git status because it tells me what state I am actually in. I also keep commit, push, and pull separate in my head: commit saves locally, push sends commits up, and pull brings remote changes down." data-category="Developer Tools" data-footer="Git &amp; GitHub Cheat Sheet" data-level="Beginner–Intermediate" data-page="git" data-page-label="Git &amp; GitHub" data-related='[{"label":"Terminal &amp; CLI","href":"terminal-cli.html"},{"label":"Debugging","href":"debugging.html"}]' data-search-placeholder="Try: commit, branch, pull, restore, rebase..." data-toc="true">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
-
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <div data-site-nav></div>
-
+    <div data-site-nav=""></div>
     <header class="hero">
       <h1>Git &amp; GitHub Reference</h1>
-      <p class="subtitle">A quick reference for everyday version-control commands and common Git/GitHub workflows.</p>
-
+      <p class="subtitle">
+      The Git and GitHub commands I am most likely to forget between projects.
+      </p>
       <div class="hero-meta">
         <span class="badge badge-category">Developer Tools</span>
         <span class="badge badge-level">Beginner–Intermediate</span>
       </div>
     </header>
-
     <main id="main-content">
-      <section class="reference-section" id="repository-basics" aria-labelledby="repository-basics-title">
+      <section aria-labelledby="repository-basics-title" class="reference-section" id="repository-basics">
         <h2 class="section-title" id="repository-basics-title">Repository Basics</h2>
-        <p class="section-description">Commands for creating, inspecting, and recording changes in a repository.</p>
-
+        <p class="section-description">
+        Commands for creating, inspecting, and recording changes in a repository.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Commands for creating, inspecting, and recording changes in a repository.</caption>
-
+            <caption class="sr-only">
+            Commands for creating, inspecting, and recording changes in a repository.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -130,7 +70,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="repository-basics-item-git-init">
                 <th scope="row"><code>git init</code></th>
@@ -154,7 +93,9 @@
                 <th scope="row"><code>git commit</code></th>
                 <td>Create commit</td>
                 <td>Records the staged snapshot with a message.</td>
-                <td class="example-cell"><code>git commit -m &quot;Add search filter&quot;</code></td>
+                <td class="example-cell">
+                <code>git commit -m "Add search filter"</code>
+                </td>
               </tr>
               <tr id="repository-basics-item-git-diff">
                 <th scope="row"><code>git diff</code></th>
@@ -172,15 +113,16 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="branches" aria-labelledby="branches-title">
+      <section aria-labelledby="branches-title" class="reference-section" id="branches">
         <h2 class="section-title" id="branches-title">Branches</h2>
-        <p class="section-description">Commands for creating, switching, merging, and cleaning up branches.</p>
-
+        <p class="section-description">
+        Commands for creating, switching, merging, and cleaning up branches.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Commands for creating, switching, merging, and cleaning up branches.</caption>
-
+            <caption class="sr-only">
+            Commands for creating, switching, merging, and cleaning up branches.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -189,7 +131,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="branches-item-git-branch">
                 <th scope="row"><code>git branch</code></th>
@@ -225,15 +166,16 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="remotes-sync" aria-labelledby="remotes-sync-title">
+      <section aria-labelledby="remotes-sync-title" class="reference-section" id="remotes-sync">
         <h2 class="section-title" id="remotes-sync-title">Remotes &amp; Syncing</h2>
-        <p class="section-description">Commands for connecting local work with remote repositories such as GitHub.</p>
-
+        <p class="section-description">
+        Commands for connecting local work with remote repositories such as GitHub.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Commands for connecting local work with remote repositories such as GitHub.</caption>
-
+            <caption class="sr-only">
+            Commands for connecting local work with remote repositories such as GitHub.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -242,7 +184,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="remotes-sync-item-git-remote-v">
                 <th scope="row"><code>git remote -v</code></th>
@@ -254,7 +195,9 @@
                 <th scope="row"><code>git remote add</code></th>
                 <td>Add remote</td>
                 <td>Connects a named remote repository.</td>
-                <td class="example-cell"><code>git remote add origin https://github.com/user/repo.git</code></td>
+                <td class="example-cell">
+                <code>git remote add origin https://github.com/user/repo.git</code>
+                </td>
               </tr>
               <tr id="remotes-sync-item-git-fetch">
                 <th scope="row"><code>git fetch</code></th>
@@ -284,15 +227,16 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="history-recovery" aria-labelledby="history-recovery-title">
+      <section aria-labelledby="history-recovery-title" class="reference-section" id="history-recovery">
         <h2 class="section-title" id="history-recovery-title">History &amp; Recovery</h2>
-        <p class="section-description">Commands for inspecting history and safely undoing common local changes.</p>
-
+        <p class="section-description">
+        Commands for inspecting history and safely undoing common local changes.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Commands for inspecting history and safely undoing common local changes.</caption>
-
+            <caption class="sr-only">
+            Commands for inspecting history and safely undoing common local changes.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -301,7 +245,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="history-recovery-item-git-log">
                 <th scope="row"><code>git log</code></th>
@@ -331,7 +274,7 @@
                 <th scope="row"><code>git stash</code></th>
                 <td>Temporarily store changes</td>
                 <td>Saves uncommitted changes so the working tree can be cleaned temporarily.</td>
-                <td class="example-cell"><code>git stash push -m &quot;WIP search&quot;</code></td>
+                <td class="example-cell"><code>git stash push -m "WIP search"</code></td>
               </tr>
               <tr id="history-recovery-item-git-stash-pop">
                 <th scope="row"><code>git stash pop</code></th>
@@ -344,18 +287,15 @@
         </div>
       </section>
     </main>
-
-    <div data-site-footer></div>
-
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

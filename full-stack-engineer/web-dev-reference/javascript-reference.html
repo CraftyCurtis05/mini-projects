@@ -1,413 +1,422 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-<!-- Core document metadata -->
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="A practical JavaScript reference covering values, variables, control flow, functions, arrays, objects, modern syntax, modules, and error handling." name="description"/>
-<meta content="Jennifer Curtis" name="author"/>
-<meta content="Jennifer Curtis" name="creator"/>
-<meta content="Web Development Reference" name="application-name"/>
-<meta content="index, follow" name="robots"/>
-<meta content="strict-origin-when-cross-origin" name="referrer"/>
-<meta content="light dark" name="color-scheme"/>
-<!-- Progressive loading-screen enhancement -->
-<script src="assets/js/loader-init.js"></script>
-<title>JavaScript Reference</title>
-<!-- Browser and installed-app appearance -->
-<meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-<meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
-<meta content="Web Dev Ref" name="apple-mobile-web-app-title"/>
-<meta content="yes" name="mobile-web-app-capable"/>
-<!-- Social sharing metadata -->
-<meta content="website" property="og:type"/>
-<meta content="Web Development Reference" property="og:site_name"/>
-<meta content="en_US" property="og:locale"/>
-<meta content="JavaScript Reference" property="og:title"/>
-<meta content="A practical JavaScript reference covering values, variables, control flow, functions, arrays, objects, modern syntax, modules, and error handling." property="og:description"/>
-<meta content="assets/images/icon-512.png" property="og:image"/>
-<meta content="Jennifer Curtis Web Development Reference logo" property="og:image:alt"/>
-<meta content="summary" name="twitter:card"/>
-<meta content="JavaScript Reference" name="twitter:title"/>
-<meta content="A practical JavaScript reference covering values, variables, control flow, functions, arrays, objects, modern syntax, modules, and error handling." name="twitter:description"/>
-<meta content="assets/images/icon-512.png" name="twitter:image"/>
-<meta content="Jennifer Curtis Web Development Reference logo" name="twitter:image:alt"/>
-<!-- App manifest and icons -->
-<link href="site.webmanifest" rel="manifest"/>
-<link href="assets/images/favicon-32.png" rel="icon" type="image/png"/>
-<link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
-<!-- Shared site styles and fonts -->
-<link href="assets/css/main.css" rel="stylesheet"/>
-<link href="https://use.typekit.net/qik2tak.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
-<!-- Structured metadata -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "JavaScript Reference",
-  "description": "A practical JavaScript reference covering values, variables, control flow, functions, arrays, objects, modern syntax, modules, and error handling.",
-  "inLanguage": "en-US",
-  "dateModified": "2026-08-19",
-  "author": {
-    "@type": "Person",
-    "name": "Jennifer Curtis",
-    "url": "https://jennifercurtis.me"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Web Development Reference"
-  }
-}
-    </script>
-</head>
-<body data-author-note="When JavaScript feels complicated, reduce the problem to values moving through small functions. Clear data flow is usually easier to debug than clever syntax." data-category="JavaScript" data-footer="JavaScript Reference Cheat Sheet" data-level="Beginner–Intermediate" data-page="javascript" data-page-label="JavaScript Reference" data-related='[{"label":"DOM &amp; Events","href":"dom-events.html"},{"label":"HTTP &amp; APIs","href":"http-apis.html"},{"label":"Debugging","href":"debugging.html"}]' data-search-placeholder="Try: const, map, function, destructuring..." data-toc="true">
-<div aria-hidden="true" class="site-loader" id="site-loader">
-<div class="site-loader-content">
-<div aria-hidden="true" class="site-loader-mark">
-<span class="loader-dot loader-dot-teal"></span>
-<span class="loader-dot loader-dot-blue"></span>
-<span class="loader-dot loader-dot-green"></span>
-</div>
-<p class="site-loader-label">Web Dev Reference</p>
-</div>
-</div>
-<a class="skip-link" href="#main-content">Skip to main content</a>
-<div data-site-nav=""></div>
-<header class="hero">
-<h1>JavaScript Reference</h1>
-<p class="subtitle">A quick reference for core JavaScript syntax, data structures, functions, and modern language features.</p>
-<div class="hero-meta">
-<span class="badge badge-category">JavaScript</span>
-<span class="badge badge-level">Beginner–Intermediate</span>
-</div>
-</header>
-<main id="main-content">
-<section aria-labelledby="variables-types-title" class="reference-section" id="variables-types">
-<h2 class="section-title" id="variables-types-title">Variables &amp; Data Types</h2>
-<p class="section-description">Core JavaScript values and declarations used to store and work with data.</p>
-<div class="table-wrapper">
-<table class="reference-table">
-<caption class="sr-only">Core JavaScript values and declarations used to store and work with data.</caption>
-<thead>
-<tr>
-<th scope="col">Term / Syntax</th>
-<th scope="col">Name</th>
-<th scope="col">Description</th>
-<th scope="col">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr id="variables-types-item-let">
-<th scope="row"><code>let</code></th>
-<td>Block-scoped variable</td>
-<td>Declares a variable whose value can be reassigned.</td>
-<td class="example-cell"><code>let count = 1;</code></td>
-</tr>
-<tr id="variables-types-item-const">
-<th scope="row"><code>const</code></th>
-<td>Block-scoped constant</td>
-<td>Declares a binding that cannot be reassigned.</td>
-<td class="example-cell"><code>const siteName = "Web Dev Reference";</code></td>
-</tr>
-<tr id="variables-types-item-string">
-<th scope="row"><code>string</code></th>
-<td>Text value</td>
-<td>Represents textual data.</td>
-<td class="example-cell"><code>const name = "Jennifer";</code></td>
-</tr>
-<tr id="variables-types-item-number">
-<th scope="row"><code>number</code></th>
-<td>Numeric value</td>
-<td>Represents integer and floating-point numbers.</td>
-<td class="example-cell"><code>const score = 98.5;</code></td>
-</tr>
-<tr id="variables-types-item-boolean">
-<th scope="row"><code>boolean</code></th>
-<td>True/false value</td>
-<td>Represents one of two logical states.</td>
-<td class="example-cell"><code>const isVisible = true;</code></td>
-</tr>
-<tr id="variables-types-item-null">
-<th scope="row"><code>null</code></th>
-<td>Intentional empty value</td>
-<td>Represents the intentional absence of a value.</td>
-<td class="example-cell"><code>const selectedItem = null;</code></td>
-</tr>
-<tr id="variables-types-item-undefined">
-<th scope="row"><code>undefined</code></th>
-<td>Missing value</td>
-<td>Commonly represents a declared value that has not been assigned.</td>
-<td class="example-cell"><code>let result;</code></td>
-</tr>
-<tr id="variables-types-item-typeof">
-<th scope="row"><code>typeof</code></th>
-<td>Type operator</td>
-<td>Returns a string describing a value's JavaScript type.</td>
-<td class="example-cell"><code>typeof 42; // "number"</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section aria-labelledby="control-flow-title" class="reference-section" id="control-flow">
-<h2 class="section-title" id="control-flow-title">Operators &amp; Control Flow</h2>
-<p class="section-description">Expressions and statements used to compare values, make decisions, and repeat work.</p>
-<div class="table-wrapper">
-<table class="reference-table">
-<caption class="sr-only">Expressions and statements used to compare values, make decisions, and repeat work.</caption>
-<thead>
-<tr>
-<th scope="col">Term / Syntax</th>
-<th scope="col">Name</th>
-<th scope="col">Description</th>
-<th scope="col">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr id="control-flow-item-item">
-<th scope="row"><code>===</code></th>
-<td>Strict equality</td>
-<td>Compares value and type without coercion.</td>
-<td class="example-cell"><code>status === "ready"</code></td>
-</tr>
-<tr id="control-flow-item">
-<th scope="row"><code>!==</code></th>
-<td>Strict inequality</td>
-<td>Returns true when value or type differs.</td>
-<td class="example-cell"><code>count !== 0</code></td>
-</tr>
-<tr id="control-flow-item-2">
-<th scope="row"><code>&amp;&amp;</code></th>
-<td>Logical AND</td>
-<td>Returns truthy only when both operands are truthy.</td>
-<td class="example-cell"><code>isLoggedIn &amp;&amp; isAdmin</code></td>
-</tr>
-<tr id="control-flow-item-3">
-<th scope="row"><code>||</code></th>
-<td>Logical OR</td>
-<td>Returns the first truthy operand.</td>
-<td class="example-cell"><code>displayName || "Guest"</code></td>
-</tr>
-<tr id="control-flow-item-4">
-<th scope="row"><code>??</code></th>
-<td>Nullish coalescing</td>
-<td>Uses a fallback only when the left value is null or undefined.</td>
-<td class="example-cell"><code>username ?? "Guest"</code></td>
-</tr>
-<tr id="control-flow-item-if-else">
-<th scope="row"><code>if / else</code></th>
-<td>Conditional statement</td>
-<td>Runs different blocks based on a condition.</td>
-<td class="example-cell"><code>if (score &gt;= 70) { pass(); } else { retry(); }</code></td>
-</tr>
-<tr id="control-flow-item-switch">
-<th scope="row"><code>switch</code></th>
-<td>Multi-branch conditional</td>
-<td>Matches one expression against multiple cases.</td>
-<td class="example-cell"><code>switch (theme) { case "dark": applyDark(); break; }</code></td>
-</tr>
-<tr id="control-flow-item-for-of">
-<th scope="row"><code>for...of</code></th>
-<td>Iterable loop</td>
-<td>Loops through iterable values such as arrays.</td>
-<td class="example-cell"><code>for (const item of items) { console.log(item); }</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section aria-labelledby="functions-title" class="reference-section" id="functions">
-<h2 class="section-title" id="functions-title">Functions</h2>
-<p class="section-description">Reusable blocks of behavior for organizing logic and transforming values.</p>
-<div class="table-wrapper">
-<table class="reference-table">
-<caption class="sr-only">Reusable blocks of behavior for organizing logic and transforming values.</caption>
-<thead>
-<tr>
-<th scope="col">Term / Syntax</th>
-<th scope="col">Name</th>
-<th scope="col">Description</th>
-<th scope="col">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr id="functions-item-function">
-<th scope="row"><code>function</code></th>
-<td>Function declaration</td>
-<td>Creates a named reusable function.</td>
-<td class="example-cell"><code>function greet(name) { return `Hi ${name}`; }</code></td>
-</tr>
-<tr id="functions-item-item">
-<th scope="row"><code>=&gt;</code></th>
-<td>Arrow function</td>
-<td>Provides concise function syntax and lexical this behavior.</td>
-<td class="example-cell"><code>const double = value =&gt; value * 2;</code></td>
-</tr>
-<tr id="functions-item-return">
-<th scope="row"><code>return</code></th>
-<td>Return value</td>
-<td>Ends a function and sends a value back to the caller.</td>
-<td class="example-cell"><code>return total;</code></td>
-</tr>
-<tr id="functions-item-default-parameter">
-<th scope="row"><code>default parameter</code></th>
-<td>Fallback argument</td>
-<td>Provides a value when an argument is omitted or undefined.</td>
-<td class="example-cell"><code>function greet(name = "Guest") { }</code></td>
-</tr>
-<tr id="functions-item-rest-parameter">
-<th scope="row"><code>rest parameter</code></th>
-<td>Collect arguments</td>
-<td>Collects remaining arguments into an array.</td>
-<td class="example-cell"><code>function sum(...numbers) { }</code></td>
-</tr>
-<tr id="functions-item-callback">
-<th scope="row"><code>callback</code></th>
-<td>Function argument</td>
-<td>Passes a function to another function for later use.</td>
-<td class="example-cell"><code>items.forEach(item =&gt; console.log(item));</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section aria-labelledby="arrays-objects-title" class="reference-section" id="arrays-objects">
-<h2 class="section-title" id="arrays-objects-title">Arrays &amp; Objects</h2>
-<p class="section-description">Common structures for collections, records, transformation, and lookup.</p>
-<div class="table-wrapper">
-<table class="reference-table">
-<caption class="sr-only">Common structures for collections, records, transformation, and lookup.</caption>
-<thead>
-<tr>
-<th scope="col">Term / Syntax</th>
-<th scope="col">Name</th>
-<th scope="col">Description</th>
-<th scope="col">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr id="arrays-objects-item-item">
-<th scope="row"><code>[]</code></th>
-<td>Array</td>
-<td>Stores an ordered collection of values.</td>
-<td class="example-cell"><code>const skills = ["HTML", "CSS", "JavaScript"];</code></td>
-</tr>
-<tr id="arrays-objects-item">
-<th scope="row"><code>{}</code></th>
-<td>Object</td>
-<td>Stores key/value properties.</td>
-<td class="example-cell"><code>const user = { name: "Jennifer", role: "Developer" };</code></td>
-</tr>
-<tr id="arrays-objects-item-map">
-<th scope="row"><code>.map()</code></th>
-<td>Array mapping</td>
-<td>Creates a new array by transforming each item.</td>
-<td class="example-cell"><code>const names = users.map(user =&gt; user.name);</code></td>
-</tr>
-<tr id="arrays-objects-item-filter">
-<th scope="row"><code>.filter()</code></th>
-<td>Array filtering</td>
-<td>Creates a new array containing matching items.</td>
-<td class="example-cell"><code>const active = users.filter(user =&gt; user.active);</code></td>
-</tr>
-<tr id="arrays-objects-item-find">
-<th scope="row"><code>.find()</code></th>
-<td>Find item</td>
-<td>Returns the first array item matching a condition.</td>
-<td class="example-cell"><code>const admin = users.find(user =&gt; user.role === "admin");</code></td>
-</tr>
-<tr id="arrays-objects-item-reduce">
-<th scope="row"><code>.reduce()</code></th>
-<td>Reduce collection</td>
-<td>Combines array values into one accumulated result.</td>
-<td class="example-cell"><code>const total = prices.reduce((sum, price) =&gt; sum + price, 0);</code></td>
-</tr>
-<tr id="arrays-objects-item-destructuring">
-<th scope="row"><code>destructuring</code></th>
-<td>Extract values</td>
-<td>Pulls properties or items into variables.</td>
-<td class="example-cell"><code>const { name, role } = user;</code></td>
-</tr>
-<tr id="arrays-objects-item-spread">
-<th scope="row"><code>spread</code></th>
-<td>Copy/merge syntax</td>
-<td>Expands iterable items or object properties.</td>
-<td class="example-cell"><code>const updated = { ...user, active: true };</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section aria-labelledby="modern-js-title" class="reference-section" id="modern-js">
-<h2 class="section-title" id="modern-js-title">Modern JavaScript</h2>
-<p class="section-description">Language features commonly used in modern front-end projects.</p>
-<div class="table-wrapper">
-<table class="reference-table">
-<caption class="sr-only">Language features commonly used in modern front-end projects.</caption>
-<thead>
-<tr>
-<th scope="col">Term / Syntax</th>
-<th scope="col">Name</th>
-<th scope="col">Description</th>
-<th scope="col">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr id="modern-js-item-template-literal">
-<th scope="row"><code>template literal</code></th>
-<td>Interpolated string</td>
-<td>Creates strings with embedded expressions.</td>
-<td class="example-cell"><code>const message = `Hello, ${name}!`;</code></td>
-</tr>
-<tr id="modern-js-item-item">
-<th scope="row"><code>?.</code></th>
-<td>Optional chaining</td>
-<td>Safely accesses nested properties that may be missing.</td>
-<td class="example-cell"><code>user.profile?.avatar</code></td>
-</tr>
-<tr id="modern-js-item-export">
-<th scope="row"><code>export</code></th>
-<td>Module export</td>
-<td>Makes values available to another module.</td>
-<td class="example-cell"><code>export function formatDate(date) { }</code></td>
-</tr>
-<tr id="modern-js-item-import">
-<th scope="row"><code>import</code></th>
-<td>Module import</td>
-<td>Loads exported values from another module.</td>
-<td class="example-cell"><code>import { formatDate } from "./utils.js";</code></td>
-</tr>
-<tr id="modern-js-item-try-catch">
-<th scope="row"><code>try / catch</code></th>
-<td>Error handling</td>
-<td>Handles errors thrown during an operation.</td>
-<td class="example-cell"><code>try { parseData(); } catch (error) { console.error(error); }</code></td>
-</tr>
-<tr id="modern-js-item-throw">
-<th scope="row"><code>throw</code></th>
-<td>Throw error</td>
-<td>Creates or rethrows an error condition.</td>
-<td class="example-cell"><code>throw new Error("Invalid value");</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-</main>
-<div data-site-footer=""></div>
-<script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
-</body>
+  <head>
+    <!-- Core document metadata -->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="My JavaScript reference for values, variables, control flow, functions, arrays, objects, modules, and modern syntax." name="description"/>
+
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
+    <title>JavaScript Reference</title>
+    <!-- Browser and installed-app appearance -->
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+
+    <meta content="website" property="og:type"/>
+
+    <meta content="JavaScript Reference" property="og:title"/>
+    <meta content="My JavaScript reference for values, variables, control flow, functions, arrays, objects, modules, and modern syntax." property="og:description"/>
+    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+
+    <!-- App manifest and icons -->
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <!-- Shared site styles and fonts -->
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+  </head>
+  <body data-author-note="The JavaScript details I forget fastest are what mutates the original value and what returns a new one. I also check scope and the actual data type before assuming the function itself is wrong." data-category="JavaScript" data-footer="JavaScript Reference Cheat Sheet" data-level="Beginner–Intermediate" data-page="javascript" data-page-label="JavaScript Reference" data-related='[{"label":"DOM &amp; Events","href":"dom-events.html"},{"label":"HTTP &amp; APIs","href":"http-apis.html"},{"label":"Debugging","href":"debugging.html"}]' data-search-placeholder="Try: const, map, function, destructuring..." data-toc="true">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
+      <div class="site-loader-content">
+        <div aria-hidden="true" class="site-loader-mark">
+          <span class="loader-dot loader-dot-teal"></span>
+          <span class="loader-dot loader-dot-blue"></span>
+          <span class="loader-dot loader-dot-green"></span>
+        </div>
+        <p class="site-loader-label">Web Dev Reference</p>
+      </div>
+    </div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div data-site-nav=""></div>
+    <header class="hero">
+      <h1>JavaScript Reference</h1>
+      <p class="subtitle">The JavaScript syntax and concepts I am most likely to look up again.</p>
+      <div class="hero-meta">
+        <span class="badge badge-category">JavaScript</span>
+        <span class="badge badge-level">Beginner–Intermediate</span>
+      </div>
+    </header>
+    <main id="main-content">
+      <section aria-labelledby="variables-types-title" class="reference-section" id="variables-types">
+        <h2 class="section-title" id="variables-types-title">Variables &amp; Data Types</h2>
+        <p class="section-description">
+        Core JavaScript values and declarations used to store and work with data.
+        </p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">
+            Core JavaScript values and declarations used to store and work with data.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="variables-types-item-let">
+                <th scope="row"><code>let</code></th>
+                <td>Block-scoped variable</td>
+                <td>Declares a variable whose value can be reassigned.</td>
+                <td class="example-cell"><code>let count = 1;</code></td>
+              </tr>
+              <tr id="variables-types-item-const">
+                <th scope="row"><code>const</code></th>
+                <td>Block-scoped constant</td>
+                <td>Declares a binding that cannot be reassigned.</td>
+                <td class="example-cell"><code>const siteName = "Web Dev Reference";</code></td>
+              </tr>
+              <tr id="variables-types-item-string">
+                <th scope="row"><code>string</code></th>
+                <td>Text value</td>
+                <td>Represents textual data.</td>
+                <td class="example-cell"><code>const name = "Jennifer";</code></td>
+              </tr>
+              <tr id="variables-types-item-number">
+                <th scope="row"><code>number</code></th>
+                <td>Numeric value</td>
+                <td>Represents integer and floating-point numbers.</td>
+                <td class="example-cell"><code>const score = 98.5;</code></td>
+              </tr>
+              <tr id="variables-types-item-boolean">
+                <th scope="row"><code>boolean</code></th>
+                <td>True/false value</td>
+                <td>Represents one of two logical states.</td>
+                <td class="example-cell"><code>const isVisible = true;</code></td>
+              </tr>
+              <tr id="variables-types-item-null">
+                <th scope="row"><code>null</code></th>
+                <td>Intentional empty value</td>
+                <td>Represents the intentional absence of a value.</td>
+                <td class="example-cell"><code>const selectedItem = null;</code></td>
+              </tr>
+              <tr id="variables-types-item-undefined">
+                <th scope="row"><code>undefined</code></th>
+                <td>Missing value</td>
+                <td>Commonly represents a declared value that has not been assigned.</td>
+                <td class="example-cell"><code>let result;</code></td>
+              </tr>
+              <tr id="variables-types-item-typeof">
+                <th scope="row"><code>typeof</code></th>
+                <td>Type operator</td>
+                <td>Returns a string describing a value's JavaScript type.</td>
+                <td class="example-cell"><code>typeof 42; // "number"</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="control-flow-title" class="reference-section" id="control-flow">
+        <h2 class="section-title" id="control-flow-title">Operators &amp; Control Flow</h2>
+        <p class="section-description">
+        Expressions and statements used to compare values, make decisions, and repeat work.
+        </p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">
+            Expressions and statements used to compare values, make decisions, and repeat work.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="control-flow-item-item">
+                <th scope="row"><code>===</code></th>
+                <td>Strict equality</td>
+                <td>Compares value and type without coercion.</td>
+                <td class="example-cell"><code>status === "ready"</code></td>
+              </tr>
+              <tr id="control-flow-item">
+                <th scope="row"><code>!==</code></th>
+                <td>Strict inequality</td>
+                <td>Returns true when value or type differs.</td>
+                <td class="example-cell"><code>count !== 0</code></td>
+              </tr>
+              <tr id="control-flow-item-2">
+                <th scope="row"><code>&amp;&amp;</code></th>
+                <td>Logical AND</td>
+                <td>Returns truthy only when both operands are truthy.</td>
+                <td class="example-cell"><code>isLoggedIn &amp;&amp; isAdmin</code></td>
+              </tr>
+              <tr id="control-flow-item-3">
+                <th scope="row"><code>||</code></th>
+                <td>Logical OR</td>
+                <td>Returns the first truthy operand.</td>
+                <td class="example-cell"><code>displayName || "Guest"</code></td>
+              </tr>
+              <tr id="control-flow-item-4">
+                <th scope="row"><code>??</code></th>
+                <td>Nullish coalescing</td>
+                <td>Uses a fallback only when the left value is null or undefined.</td>
+                <td class="example-cell"><code>username ?? "Guest"</code></td>
+              </tr>
+              <tr id="control-flow-item-if-else">
+                <th scope="row"><code>if / else</code></th>
+                <td>Conditional statement</td>
+                <td>Runs different blocks based on a condition.</td>
+                <td class="example-cell">
+                <code>if (score &gt;= 70) { pass(); } else { retry(); }</code>
+                </td>
+              </tr>
+              <tr id="control-flow-item-switch">
+                <th scope="row"><code>switch</code></th>
+                <td>Multi-branch conditional</td>
+                <td>Matches one expression against multiple cases.</td>
+                <td class="example-cell">
+                <code>switch (theme) { case "dark": applyDark(); break; }</code>
+                </td>
+              </tr>
+              <tr id="control-flow-item-for-of">
+                <th scope="row"><code>for...of</code></th>
+                <td>Iterable loop</td>
+                <td>Loops through iterable values such as arrays.</td>
+                <td class="example-cell">
+                <code>for (const item of items) { console.log(item); }</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="functions-title" class="reference-section" id="functions">
+        <h2 class="section-title" id="functions-title">Functions</h2>
+        <p class="section-description">
+        Reusable blocks of behavior for organizing logic and transforming values.
+        </p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">
+            Reusable blocks of behavior for organizing logic and transforming values.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="functions-item-function">
+                <th scope="row"><code>function</code></th>
+                <td>Function declaration</td>
+                <td>Creates a named reusable function.</td>
+                <td class="example-cell">
+                <code>function greet(name) { return `Hi ${name}`; }</code>
+                </td>
+              </tr>
+              <tr id="functions-item-item">
+                <th scope="row"><code>=&gt;</code></th>
+                <td>Arrow function</td>
+                <td>Provides concise function syntax and lexical this behavior.</td>
+                <td class="example-cell"><code>const double = value =&gt; value * 2;</code></td>
+              </tr>
+              <tr id="functions-item-return">
+                <th scope="row"><code>return</code></th>
+                <td>Return value</td>
+                <td>Ends a function and sends a value back to the caller.</td>
+                <td class="example-cell"><code>return total;</code></td>
+              </tr>
+              <tr id="functions-item-default-parameter">
+                <th scope="row"><code>default parameter</code></th>
+                <td>Fallback argument</td>
+                <td>Provides a value when an argument is omitted or undefined.</td>
+                <td class="example-cell"><code>function greet(name = "Guest") { }</code></td>
+              </tr>
+              <tr id="functions-item-rest-parameter">
+                <th scope="row"><code>rest parameter</code></th>
+                <td>Collect arguments</td>
+                <td>Collects remaining arguments into an array.</td>
+                <td class="example-cell"><code>function sum(...numbers) { }</code></td>
+              </tr>
+              <tr id="functions-item-callback">
+                <th scope="row"><code>callback</code></th>
+                <td>Function argument</td>
+                <td>Passes a function to another function for later use.</td>
+                <td class="example-cell">
+                <code>items.forEach(item =&gt; console.log(item));</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="arrays-objects-title" class="reference-section" id="arrays-objects">
+        <h2 class="section-title" id="arrays-objects-title">Arrays &amp; Objects</h2>
+        <p class="section-description">
+        Common structures for collections, records, transformation, and lookup.
+        </p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">
+            Common structures for collections, records, transformation, and lookup.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="arrays-objects-item-item">
+                <th scope="row"><code>[]</code></th>
+                <td>Array</td>
+                <td>Stores an ordered collection of values.</td>
+                <td class="example-cell">
+                <code>const skills = ["HTML", "CSS", "JavaScript"];</code>
+                </td>
+              </tr>
+              <tr id="arrays-objects-item">
+                <th scope="row"><code>{}</code></th>
+                <td>Object</td>
+                <td>Stores key/value properties.</td>
+                <td class="example-cell">
+                <code>const user = { name: "Jennifer", role: "Developer" };</code>
+                </td>
+              </tr>
+              <tr id="arrays-objects-item-map">
+                <th scope="row"><code>.map()</code></th>
+                <td>Array mapping</td>
+                <td>Creates a new array by transforming each item.</td>
+                <td class="example-cell">
+                <code>const names = users.map(user =&gt; user.name);</code>
+                </td>
+              </tr>
+              <tr id="arrays-objects-item-filter">
+                <th scope="row"><code>.filter()</code></th>
+                <td>Array filtering</td>
+                <td>Creates a new array containing matching items.</td>
+                <td class="example-cell">
+                <code>const active = users.filter(user =&gt; user.active);</code>
+                </td>
+              </tr>
+              <tr id="arrays-objects-item-find">
+                <th scope="row"><code>.find()</code></th>
+                <td>Find item</td>
+                <td>Returns the first array item matching a condition.</td>
+                <td class="example-cell">
+                <code>const admin = users.find(user =&gt; user.role === "admin");</code>
+                </td>
+              </tr>
+              <tr id="arrays-objects-item-reduce">
+                <th scope="row"><code>.reduce()</code></th>
+                <td>Reduce collection</td>
+                <td>Combines array values into one accumulated result.</td>
+                <td class="example-cell">
+                <code>const total = prices.reduce((sum, price) =&gt; sum + price, 0);</code>
+                </td>
+              </tr>
+              <tr id="arrays-objects-item-destructuring">
+                <th scope="row"><code>destructuring</code></th>
+                <td>Extract values</td>
+                <td>Pulls properties or items into variables.</td>
+                <td class="example-cell"><code>const { name, role } = user;</code></td>
+              </tr>
+              <tr id="arrays-objects-item-spread">
+                <th scope="row"><code>spread</code></th>
+                <td>Copy/merge syntax</td>
+                <td>Expands iterable items or object properties.</td>
+                <td class="example-cell">
+                <code>const updated = { ...user, active: true };</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="modern-js-title" class="reference-section" id="modern-js">
+        <h2 class="section-title" id="modern-js-title">Modern JavaScript</h2>
+        <p class="section-description">
+        Language features commonly used in modern front-end projects.
+        </p>
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">
+            Language features commonly used in modern front-end projects.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="modern-js-item-template-literal">
+                <th scope="row"><code>template literal</code></th>
+                <td>Interpolated string</td>
+                <td>Creates strings with embedded expressions.</td>
+                <td class="example-cell"><code>const message = `Hello, ${name}!`;</code></td>
+              </tr>
+              <tr id="modern-js-item-item">
+                <th scope="row"><code>?.</code></th>
+                <td>Optional chaining</td>
+                <td>Safely accesses nested properties that may be missing.</td>
+                <td class="example-cell"><code>user.profile?.avatar</code></td>
+              </tr>
+              <tr id="modern-js-item-export">
+                <th scope="row"><code>export</code></th>
+                <td>Module export</td>
+                <td>Makes values available to another module.</td>
+                <td class="example-cell"><code>export function formatDate(date) { }</code></td>
+              </tr>
+              <tr id="modern-js-item-import">
+                <th scope="row"><code>import</code></th>
+                <td>Module import</td>
+                <td>Loads exported values from another module.</td>
+                <td class="example-cell"><code>import { formatDate } from "./utils.js";</code></td>
+              </tr>
+              <tr id="modern-js-item-try-catch">
+                <th scope="row"><code>try / catch</code></th>
+                <td>Error handling</td>
+                <td>Handles errors thrown during an operation.</td>
+                <td class="example-cell">
+                <code>try { parseData(); } catch (error) { console.error(error); }</code>
+                </td>
+              </tr>
+              <tr id="modern-js-item-throw">
+                <th scope="row"><code>throw</code></th>
+                <td>Throw error</td>
+                <td>Creates or rethrows an error condition.</td>
+                <td class="example-cell"><code>throw new Error("Invalid value");</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </body>
 </html>

@@ -1,106 +1,179 @@
-/* =========================================================
-   Web Development Reference
-   Reference TOC, favorites, and row-level interactions
-   ========================================================= */
+/* Notes, related links, and saved references. */
 
+/* Jennifer's notes */
 function renderAuthorNote() {
-  const encoded = body.dataset.authorNote;
-  const main = document.getElementById("main-content");
-  if (!encoded || !main) {
+  const note = bodyElement.dataset.authorNote;
+  const main = document.getElementById('main-content');
+
+  if (!note || !main) {
     return;
   }
-  const note = encoded;
-  const toc = main.querySelector(".page-toc");
-  const html = `<aside class="author-note"><span class="author-note-label"><span aria-hidden="true">★</span> Jennifer's Note</span><p>${note}</p></aside>`;
-  if (toc) toc.insertAdjacentHTML("afterend", html); else main.insertAdjacentHTML("afterbegin", html);
+
+  const noteHTML = `
+    <aside class="author-note">
+      <span class="author-note-label">
+        <span aria-hidden="true">★</span>
+        Jennifer's Note
+      </span>
+      <p>${escapeHtml(note)}</p>
+    </aside>
+  `;
+
+  const toc = main.querySelector('.page-toc');
+
+  if (toc) {
+    toc.insertAdjacentHTML('afterend', noteHTML);
+  } else {
+    main.insertAdjacentHTML('afterbegin', noteHTML);
+  }
 }
 
+/* Related references */
 function renderRelatedReferences() {
-  if (!body.dataset.related) {
+  const related = bodyElement.dataset.related;
+  const main = document.getElementById('main-content');
+
+  if (!related || !main) {
     return;
   }
-  const main = document.getElementById("main-content");
-  if (!main) {
+
+  let items;
+
+  try {
+    items = JSON.parse(related);
+  } catch {
     return;
   }
-  let items = [];
-  try { items = JSON.parse(body.dataset.related); } catch { return; }
+
   if (!items.length) {
     return;
   }
-  const links = items.map(({ label, href }) => `<li><a href="${href}">${escapeHTML(label)} <span aria-hidden="true">→</span></a></li>`).join("");
-  main.insertAdjacentHTML("beforeend", `<aside class="related-references" aria-labelledby="related-title"><h2 id="related-title">Related references</h2><ul>${links}</ul></aside>`);
+
+  const links = items
+    .map(
+      ({ label, href }) => `
+        <li>
+          <a href="${href}">
+            ${escapeHtml(label)}
+            <span aria-hidden="true">→</span>
+          </a>
+        </li>
+      `
+    )
+    .join('');
+
+  main.insertAdjacentHTML(
+    'beforeend',
+    `
+      <aside
+        class="related-references"
+        aria-labelledby="related-title"
+      >
+        <h2 id="related-title">Related references</h2>
+        <ul>${links}</ul>
+      </aside>
+    `
+  );
 }
 
-/* ---------- Favorites ---------- */
+/* Saved references */
+
+// I keep saved items in the same shape whether they came from a table or a Pattern.
 function favoriteRecordForElement(element) {
-  const isPattern = element.classList.contains("pattern-section");
-  const title = isPattern
-    ? element.querySelector("h2")?.textContent.trim()
-    : element.querySelector("th[scope='row']")?.textContent.trim();
-  if (!title) return null;
-  const page = currentPageLabel();
-  const section = element.closest(".reference-section, .pattern-section")?.querySelector("h2")?.textContent.trim() || page;
-  return { id: `${body.dataset.page}:${element.id}`, title, page, section, href: `${location.pathname.split('/').pop() || 'index.html'}#${element.id}` };
-}
+  const isPattern = element.classList.contains('pattern-section');
 
-function isFavorite(id) { return getFavorites().some((item) => item.id === id); }
+  const title = isPattern
+    ? element.querySelector('h2')?.textContent.trim()
+    : element.querySelector("th[scope='row']")?.textContent.trim();
+
+  if (!title) {
+    return null;
+  }
+
+  const page = currentPageLabel();
+  const sectionHeading = element
+    .closest('.reference-section, .pattern-section')
+    ?.querySelector('h2');
+
+  return {
+    id: `${bodyElement.dataset.page}:${element.id}`,
+    title,
+    page,
+    section: sectionHeading?.textContent.trim() || page,
+    href: `${location.pathname.split('/').pop() || 'index.html'}#${element.id}`
+  };
+}
 
 function toggleFavorite(record) {
-  let favorites = getFavorites();
-  favorites = favorites.some((item) => item.id === record.id)
-    ? favorites.filter((item) => item.id !== record.id)
+  const favorites = getFavorites();
+  const alreadySaved = favorites.some(item => item.id === record.id);
+
+  const updatedFavorites = alreadySaved
+    ? favorites.filter(item => item.id !== record.id)
     : [...favorites, record];
-  saveFavorites(favorites);
+
+  saveFavorites(updatedFavorites);
   refreshFavoriteButtons();
   renderSavedResults();
 }
 
-function addFavoriteButtons() {
-  document.querySelectorAll(".reference-table tbody tr[id]").forEach((row) => {
-    const cell = row.querySelector("th[scope='row']");
-    if (!cell || cell.querySelector(".favorite-button")) {
-      return;
-    }
-    const record = favoriteRecordForElement(row);
-    if (!record) {
-      return;
-    }
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "favorite-button";
-    button.dataset.favoriteId = record.id;
-    button.setAttribute("aria-label", `Save ${record.title}`);
-    button.addEventListener("click", () => toggleFavorite(record));
-    cell.append(button);
+function createFavoriteButton(record, extraClass = '') {
+  const button = document.createElement('button');
+
+  button.type = 'button';
+  button.className = `favorite-button ${extraClass}`.trim();
+  button.dataset.favoriteId = record.id;
+  button.setAttribute('aria-label', `Save ${record.title}`);
+
+  button.addEventListener('click', () => {
+    toggleFavorite(record);
   });
 
-  document.querySelectorAll(".pattern-section[id]").forEach((section) => {
-    const heading = section.querySelector(".pattern-heading");
-    if (!heading || heading.querySelector(".favorite-button")) {
+  return button;
+}
+
+function addFavoriteButtons() {
+  document.querySelectorAll('.reference-table tbody tr[id]').forEach(row => {
+    const cell = row.querySelector("th[scope='row']");
+
+    if (!cell || cell.querySelector('.favorite-button')) {
       return;
     }
-    const record = favoriteRecordForElement(section);
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "favorite-button pattern-favorite";
-    button.dataset.favoriteId = record.id;
-    button.setAttribute("aria-label", `Save ${record.title}`);
-    button.addEventListener("click", () => toggleFavorite(record));
-    heading.append(button);
+
+    const record = favoriteRecordForElement(row);
+
+    if (record) {
+      cell.append(createFavoriteButton(record));
+    }
   });
+
+  document.querySelectorAll('.pattern-section[id]').forEach(section => {
+    const heading = section.querySelector('.pattern-heading');
+
+    if (!heading || heading.querySelector('.favorite-button')) {
+      return;
+    }
+
+    const record = favoriteRecordForElement(section);
+
+    if (record) {
+      heading.append(createFavoriteButton(record, 'pattern-favorite'));
+    }
+  });
+
   refreshFavoriteButtons();
 }
 
 function refreshFavoriteButtons() {
-  const favoriteIds = new Set(getFavorites().map((item) => item.id));
-  document.querySelectorAll(".favorite-button").forEach((button) => {
+  // I turn the saved IDs into a Set because I only need to know whether each one exists.
+  const favoriteIds = new Set(getFavorites().map(item => item.id));
+
+  document.querySelectorAll('.favorite-button').forEach(button => {
     const saved = favoriteIds.has(button.dataset.favoriteId);
-    button.classList.toggle("is-saved", saved);
-    button.textContent = saved ? "★" : "☆";
-    button.setAttribute("aria-pressed", String(saved));
-    button.setAttribute("title", saved ? "Remove from saved references" : "Save reference");
+
+    button.classList.toggle('is-saved', saved);
+    button.textContent = saved ? '★' : '☆';
+    button.setAttribute('aria-pressed', String(saved));
+    button.setAttribute('title', saved ? 'Remove from saved references' : 'Save reference');
   });
 }
-
-/* ---------- Dialogs: global search and saved references ---------- */

@@ -1,127 +1,67 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A practical CSS Grid reference covering tracks, template areas, placement, implicit grids, alignment, responsive functions, and reusable layouts.">
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="My CSS Grid reference for tracks, template areas, placement, alignment, sizing, and responsive layouts." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
-
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
     <title>CSS Grid Reference</title>
-
     <!-- Browser and installed-app appearance -->
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
 
-    <!-- Social sharing metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Web Development Reference">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="CSS Grid Reference">
-    <meta property="og:description" content="A practical CSS Grid reference covering tracks, template areas, placement, implicit grids, alignment, responsive functions, and reusable layouts.">
-    <meta property="og:image" content="assets/images/icon-512.png">
-    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="website" property="og:type"/>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="CSS Grid Reference">
-    <meta name="twitter:description" content="A practical CSS Grid reference covering tracks, template areas, placement, implicit grids, alignment, responsive functions, and reusable layouts.">
-    <meta name="twitter:image" content="assets/images/icon-512.png">
-    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="CSS Grid Reference" property="og:title"/>
+    <meta content="My CSS Grid reference for tracks, template areas, placement, alignment, sizing, and responsive layouts." property="og:description"/>
+    <meta content="assets/images/app-icon-512.png" property="og:image"/>
 
     <!-- App manifest and icons -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
     <!-- Shared site styles and fonts -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
-    >
-
-    <!-- Structured metadata -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "CSS Grid",
-  "description": "A practical CSS Grid reference covering tracks, template areas, placement, implicit grids, alignment, responsive functions, and reusable layouts.",
-  "inLanguage": "en-US",
-  "dateModified": "2026-08-19",
-  "author": {
-    "@type": "Person",
-    "name": "Jennifer Curtis",
-    "url": "https://jennifercurtis.me"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Web Development Reference"
-  }
-}
-    </script>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
   </head>
-
-  <body
-    data-page="grid"
-    data-page-label="CSS Grid"
-    data-category="CSS"
-    data-level="Intermediate"
-    data-footer="CSS Grid Cheat Sheet"
-    data-search-placeholder="Try: repeat, minmax, grid-area, auto-fit..."
-    data-author-note="Grid becomes much easier when you think in tracks first and items second. Define the layout structure, then place content into it."
-    data-related="[{&quot;label&quot;:&quot;CSS Properties&quot;,&quot;href&quot;:&quot;css-properties.html#css-grid&quot;},{&quot;label&quot;:&quot;Flexbox&quot;,&quot;href&quot;:&quot;flexbox.html&quot;},{&quot;label&quot;:&quot;Responsive Design&quot;,&quot;href&quot;:&quot;responsive-design.html&quot;}]"
-    data-toc="true"
-  >
-
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+  <body data-author-note="Grid clicks again for me when I remember it works in two dimensions. I define the rows and columns first, then place items instead of trying to move everything with margins." data-category="CSS" data-footer="CSS Grid Cheat Sheet" data-level="Intermediate" data-page="grid" data-page-label="CSS Grid" data-related='[{"label":"CSS Properties","href":"css-properties.html#css-grid"},{"label":"Flexbox","href":"flexbox.html"},{"label":"Responsive Design","href":"responsive-design.html"}]' data-search-placeholder="Try: repeat, minmax, grid-area, auto-fit..." data-toc="true">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
-
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <div data-site-nav></div>
-
+    <div data-site-nav=""></div>
     <header class="hero">
       <h1>CSS Grid Reference</h1>
-      <p class="subtitle">A focused reference for two-dimensional layouts, tracks, placement, areas, and responsive grid patterns.</p>
-
+      <p class="subtitle">
+      My reference for Grid tracks, placement, sizing, and responsive layouts.
+      </p>
       <div class="hero-meta">
         <span class="badge badge-category">CSS</span>
         <span class="badge badge-level">Intermediate</span>
       </div>
     </header>
-
     <main id="main-content">
-      <section class="reference-section" id="grid-container" aria-labelledby="grid-container-title">
+      <section aria-labelledby="grid-container-title" class="reference-section" id="grid-container">
         <h2 class="section-title" id="grid-container-title">Grid Container</h2>
-        <p class="section-description">Properties that establish a grid and define its rows, columns, and gaps.</p>
-
+        <p class="section-description">
+        Properties that establish a grid and define its rows, columns, and gaps.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Properties that establish a grid and define its rows, columns, and gaps.</caption>
-
+            <caption class="sr-only">
+            Properties that establish a grid and define its rows, columns, and gaps.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -130,7 +70,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="grid-container-item-display">
                 <th scope="row"><code>display</code></th>
@@ -160,21 +99,24 @@
                 <th scope="row"><code>grid-template-areas</code></th>
                 <td>Named layout</td>
                 <td>Defines a visual template using named areas.</td>
-                <td class="example-cell"><code>grid-template-areas: &quot;header header&quot; &quot;nav main&quot;;</code></td>
+                <td class="example-cell">
+                <code>grid-template-areas: "header header" "nav main";</code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="grid-sizing" aria-labelledby="grid-sizing-title">
+      <section aria-labelledby="grid-sizing-title" class="reference-section" id="grid-sizing">
         <h2 class="section-title" id="grid-sizing-title">Track Sizing Functions</h2>
-        <p class="section-description">Values and functions for creating flexible and responsive grid tracks.</p>
-
+        <p class="section-description">
+        Values and functions for creating flexible and responsive grid tracks.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Values and functions for creating flexible and responsive grid tracks.</caption>
-
+            <caption class="sr-only">
+            Values and functions for creating flexible and responsive grid tracks.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -183,7 +125,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="grid-sizing-item-fr">
                 <th scope="row"><code>fr</code></th>
@@ -201,7 +142,9 @@
                 <th scope="row"><code>minmax()</code></th>
                 <td>Track range</td>
                 <td>Allows a track to flex between minimum and maximum sizes.</td>
-                <td class="example-cell"><code>grid-template-columns: minmax(16rem, 1fr) 2fr;</code></td>
+                <td class="example-cell">
+                <code>grid-template-columns: minmax(16rem, 1fr) 2fr;</code>
+                </td>
               </tr>
               <tr id="grid-sizing-item-auto-fit">
                 <th scope="row"><code>auto-fit</code></th>
@@ -219,15 +162,16 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="grid-placement" aria-labelledby="grid-placement-title">
+      <section aria-labelledby="grid-placement-title" class="reference-section" id="grid-placement">
         <h2 class="section-title" id="grid-placement-title">Grid Item Placement</h2>
-        <p class="section-description">Properties for positioning items across rows, columns, and named areas.</p>
-
+        <p class="section-description">
+        Properties for positioning items across rows, columns, and named areas.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Properties for positioning items across rows, columns, and named areas.</caption>
-
+            <caption class="sr-only">
+            Properties for positioning items across rows, columns, and named areas.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -236,18 +180,17 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="grid-placement-item-grid-column">
                 <th scope="row"><code>grid-column</code></th>
                 <td>Column placement</td>
-                <td>Controls an item&#x27;s column start and end lines.</td>
+                <td>Controls an item's column start and end lines.</td>
                 <td class="example-cell"><code>grid-column: 1 / 3;</code></td>
               </tr>
               <tr id="grid-placement-item-grid-row">
                 <th scope="row"><code>grid-row</code></th>
                 <td>Row placement</td>
-                <td>Controls an item&#x27;s row start and end lines.</td>
+                <td>Controls an item's row start and end lines.</td>
                 <td class="example-cell"><code>grid-row: 2 / 4;</code></td>
               </tr>
               <tr id="grid-placement-item-grid-area">
@@ -266,15 +209,16 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="grid-alignment" aria-labelledby="grid-alignment-title">
+      <section aria-labelledby="grid-alignment-title" class="reference-section" id="grid-alignment">
         <h2 class="section-title" id="grid-alignment-title">Grid Alignment</h2>
-        <p class="section-description">Properties for aligning items and the entire grid within available space.</p>
-
+        <p class="section-description">
+        Properties for aligning items and the entire grid within available space.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Properties for aligning items and the entire grid within available space.</caption>
-
+            <caption class="sr-only">
+            Properties for aligning items and the entire grid within available space.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -283,7 +227,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="grid-alignment-item-justify-items">
                 <th scope="row"><code>justify-items</code></th>
@@ -320,18 +263,15 @@
         </div>
       </section>
     </main>
-
-    <div data-site-footer></div>
-
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

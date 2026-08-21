@@ -1,57 +1,87 @@
 # Web Development Reference
 
-A multi-page web development reference built with semantic HTML, CSS, and
-vanilla JavaScript.
+A multi-page reference I built with HTML, CSS, and vanilla JavaScript for the things I keep looking up while I work on other projects.
 
-I started the project as a personal cheat sheet and expanded it into a
-searchable reference for HTML, CSS, JavaScript, accessibility, Git, APIs,
-debugging, performance, security, and common UI patterns.
+I started with an HTML tables cheat sheet because I kept looking up the same things. It grew as I learned more and noticed which concepts I was still going back to between projects.
 
-## What the project demonstrates
+## Main Features
 
-- semantic, accessible HTML
-- responsive CSS and reusable design tokens
 - light and dark themes
-- page-level and site-wide search
+- page search and site-wide search
 - saved references using `localStorage`
-- native dialogs and expandable examples
-- interactive JavaScript patterns
-- keyboard and reduced-motion support
-- custom 404 and sitemap pages
-- a small automated test/lint/accessibility workflow
+- table of contents on longer pages
+- copy buttons for code examples
+- interactive examples on the Patterns page
+- custom 404 and site map pages
+- keyboard, focus, and reduced-motion support
 
-## Project structure
+## What I Practiced
+
+I built this project to keep the front-end topics I forget or look up often in one place. While building it, I practiced:
+
+- semantic HTML and accessible page structure
+- responsive layouts with Flexbox, Grid, and media queries
+- reusable CSS variables, components, and interaction states
+- vanilla JavaScript for DOM updates, dialogs, search, themes, and page utilities
+- `localStorage` for saved references and theme preferences
+- keyboard focus, reduced motion, labels, status messages, and other accessibility details
+- organizing a multi-page project so I can come back later and understand my own code
+- debugging and checking behavior across shared and page-specific scripts
+
+I kept the project framework-free on purpose. I wanted the reference itself to stay easy to open, read, edit, and understand without a build step.
+
+## Performance Checks
+
+Before publishing a new version, I check the deployed site in Lighthouse and look for obvious problems instead of optimizing just for a score. My main checks are:
+
+- Performance, Accessibility, Best Practices, and SEO in Lighthouse
+- image dimensions and file sizes
+- unexpected layout movement while the page loads
+- scripts that block the initial page unnecessarily
+- keyboard navigation and visible focus
+- reduced-motion behavior
+- broken links and console errors
+
+## Why I Structured It This Way
+
+The site uses separate CSS and JavaScript files by responsibility instead of putting everything into one large file. Shared layout and utilities are reused across pages, while the Patterns page keeps its interactive examples in its own script. I used vanilla JavaScript because this project does not need a framework, and keeping it simple makes the reference easier for me to maintain.
+
+The site-wide search data lives in `searchData.js`. It is separate from the search behavior so the data and the code that uses it are easier to find.
+
+## Project Structure
 
 ```text
 assets/
 ├── css/
-│   ├── main.css        # stylesheet entry point
-│   ├── tokens.css      # colors, fonts, and theme values
-│   ├── base.css        # document defaults and accessibility
-│   ├── navigation.css  # navigation, breadcrumbs, and hero
-│   ├── reference.css   # search, TOC, tables, and favorites
-│   ├── patterns.css    # patterns, code examples, and demos
-│   └── components.css  # footer, utilities, 404, loader, sitemap
+│   ├── main.css
+│   ├── variables.css
+│   ├── global.css
+│   ├── navigation.css
+│   ├── references.css
+│   ├── patterns.css
+│   └── components.css
 │
 └── js/
-    ├── core.js         # shared configuration and helpers
-    ├── chrome.js       # navigation, breadcrumbs, and footer
-    ├── theme.js        # light/dark theme
-    ├── search.js       # page search
-    ├── references.js   # TOC, favorites, reference behavior
-    ├── dialogs.js      # site search and saved-item dialogs
-    ├── patterns-ui.js  # live Pattern examples
-    ├── ui.js           # copy, loader, progress, Back to Top
-    ├── loader-init.js  # enables the loader before first paint
-    ├── site.js         # starts shared site behavior
-    └── search-index.js # generated search data
+    ├── shared.js
+    ├── layout.js
+    ├── theme.js
+    ├── search.js
+    ├── references.js
+    ├── dialogs.js
+    ├── patterns.js
+    ├── utilities.js
+    ├── loader.js
+    ├── searchData.js
+    └── main.js
 ```
 
-`site.js` is the single startup point for shared behavior. Keeping
-initialization in one place avoids duplicate event listeners and makes the
-application easier to debug.
+The HTML files contain the reference content. I keep shared CSS and JavaScript inside
+`assets` so I do not have to repeat the same navigation, footer, theme, search, and
+utility code on every page.
 
-## Running locally
+## Running the Project
+
+The easiest way to run it locally is VS Code Live Server.
 
 If Node.js is installed:
 
@@ -60,63 +90,30 @@ npm install
 npm run serve
 ```
 
-You can also open the HTML files directly for basic browsing, although a local
-server is better for testing the complete project.
-
-## Useful development commands
+## Development Commands
 
 ```bash
 npm run format
 npm run lint
-npm test
-npm run test:a11y
 npm run check
 ```
 
-The automated accessibility checks are regression tools. They do not replace
-manual keyboard, zoom/reflow, contrast, or screen-reader testing.
+## Editing Notes
 
-## Editing guidelines
+- Shared colors and fonts are in `assets/css/variables.css`.
+- General page styles are in `assets/css/global.css`.
+- CSS is grouped by the part of the site it styles.
+- JavaScript is grouped by what it does.
+- `main.js` starts the shared site features.
+- `patterns.js` is only loaded on the Patterns page.
+- `searchData.js` contains the site-wide search data. I update it when the reference content changes.
 
-- Keep page content in the individual HTML files.
-- Put shared colors and typography in `tokens.css`.
-- Add CSS to the file that matches the feature being styled.
-- Keep shared JavaScript behavior in the matching feature file.
-- Start shared behavior only from `site.js`.
-- Keep comments focused on decisions, edge cases, or non-obvious behavior.
-- Do not hand-edit `search-index.js`; it contains generated search data.
+## Fonts
 
-## Back to Top behavior
+The site uses Inter for body text, Montserrat for headings and interface text, and Source Code Pro for code examples.
 
-The Back to Top control is created once by `ui.js` and appended directly to
-`body`. It uses `position: fixed` and appears shortly after the user begins
-scrolling.
+The Google Fonts stylesheet is still needed because Inter, Montserrat, and Source Code Pro are used throughout the site.
 
-A previous page-entry animation applied `transform` to `body`. Transformed
-ancestors change the positioning behavior of fixed descendants, so that
-animation was removed.
+## AI Assistance
 
-## Accessibility
-
-The project uses semantic landmarks, table captions and header scopes, visible
-focus styles, labels, live regions for changing status, reduced-motion
-handling, native controls where practical, and keyboard-friendly interactions.
-
-## Deployment
-
-The site is static and can be deployed with GitHub Pages, Netlify, Cloudflare
-Pages, or a similar host.
-
-Before publishing:
-
-1. run the quality checks
-2. manually test keyboard navigation and both themes
-3. verify the custom 404 behavior
-4. update production URLs in metadata and the XML sitemap template
-
-## AI assistance
-
-I used AI as a development assistant for brainstorming, debugging, code review,
-accessibility review, refactoring, and some content expansion. I reviewed the
-implementation, made the project decisions, and understand the code I am
-publishing.
+I used AI as a development assistant for brainstorming, debugging, accessibility checks, code review, and cleanup. I went back through the project, changed what did not sound or feel like me, and made sure I understand the code I am publishing.

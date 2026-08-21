@@ -1,127 +1,65 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A focused CSS reference for state, structural, functional, form, relational pseudo-classes and common pseudo-elements.">
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="My CSS reference for interaction states, structural and relational pseudo-classes, and common pseudo-elements." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
-
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
     <title>CSS Pseudo-classes &amp; Pseudo-elements</title>
-
     <!-- Browser and installed-app appearance -->
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
 
-    <!-- Social sharing metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Web Development Reference">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="CSS Pseudo-classes &amp; Pseudo-elements">
-    <meta property="og:description" content="A focused CSS reference for state, structural, functional, form, relational pseudo-classes and common pseudo-elements.">
-    <meta property="og:image" content="assets/images/icon-512.png">
-    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="website" property="og:type"/>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="CSS Pseudo-classes &amp; Pseudo-elements">
-    <meta name="twitter:description" content="A focused CSS reference for state, structural, functional, form, relational pseudo-classes and common pseudo-elements.">
-    <meta name="twitter:image" content="assets/images/icon-512.png">
-    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="CSS Pseudo-classes &amp; Pseudo-elements" property="og:title"/>
+    <meta content="My CSS reference for interaction states, structural and relational pseudo-classes, and common pseudo-elements." property="og:description"/>
+    <meta content="assets/images/app-icon-512.png" property="og:image"/>
 
     <!-- App manifest and icons -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
     <!-- Shared site styles and fonts -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
-    >
-
-    <!-- Structured metadata -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "Pseudo-classes & Elements",
-  "description": "A focused CSS reference for state, structural, functional, form, relational pseudo-classes and common pseudo-elements.",
-  "inLanguage": "en-US",
-  "dateModified": "2026-08-19",
-  "author": {
-    "@type": "Person",
-    "name": "Jennifer Curtis",
-    "url": "https://jennifercurtis.me"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Web Development Reference"
-  }
-}
-    </script>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
   </head>
-
-  <body
-    data-page="pseudos"
-    data-page-label="Pseudo-classes &amp; Elements"
-    data-category="CSS"
-    data-level="Intermediate"
-    data-footer="Pseudo-classes &amp; Elements Cheat Sheet"
-    data-search-placeholder="Try: focus-visible, has, nth-child, before..."
-    data-author-note="Pseudo-classes describe a state or relationship; pseudo-elements target a special part or generated box. That distinction helps make the syntax easier to remember."
-    data-related="[{&quot;label&quot;:&quot;CSS Selectors&quot;,&quot;href&quot;:&quot;css-selectors.html&quot;},{&quot;label&quot;:&quot;Accessibility&quot;,&quot;href&quot;:&quot;accessibility.html&quot;}]"
-    data-toc="true"
-  >
-
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+  <body data-author-note="My shortcut is that a pseudo-class is usually a state or relationship, like :hover or :first-child. A pseudo-element is a piece of the element, like ::before or ::after." data-category="CSS" data-footer="Pseudo-classes &amp; Elements Cheat Sheet" data-level="Intermediate" data-page="pseudos" data-page-label="Pseudo-classes &amp; Elements" data-related='[{"label":"CSS Selectors","href":"css-selectors.html"},{"label":"Accessibility","href":"accessibility.html"}]' data-search-placeholder="Try: focus-visible, has, nth-child, before..." data-toc="true">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
-
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <div data-site-nav></div>
-
+    <div data-site-nav=""></div>
     <header class="hero">
       <h1>CSS Pseudo-classes &amp; Pseudo-elements</h1>
-      <p class="subtitle">A focused reference for selecting states and structural relationships, plus styling generated or special element parts.</p>
-
+      <p class="subtitle">My reference for CSS states, relationships, and pseudo-elements.</p>
       <div class="hero-meta">
         <span class="badge badge-category">CSS</span>
         <span class="badge badge-level">Intermediate</span>
       </div>
     </header>
-
     <main id="main-content">
-      <section class="reference-section" id="interaction-pseudos" aria-labelledby="interaction-pseudos-title">
+      <section aria-labelledby="interaction-pseudos-title" class="reference-section" id="interaction-pseudos">
         <h2 class="section-title" id="interaction-pseudos-title">Interaction &amp; Link States</h2>
-        <p class="section-description">Pseudo-classes commonly used for links, pointer interaction, and keyboard focus.</p>
-
+        <p class="section-description">
+        Pseudo-classes commonly used for links, pointer interaction, and keyboard focus.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Pseudo-classes commonly used for links, pointer interaction, and keyboard focus.</caption>
-
+            <caption class="sr-only">
+            Pseudo-classes commonly used for links, pointer interaction, and keyboard focus.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -130,13 +68,14 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="interaction-pseudos-item-hover">
                 <th scope="row"><code>:hover</code></th>
                 <td>Pointer hover</td>
                 <td>Matches while a pointing device is over the element.</td>
-                <td class="example-cell"><code>a:hover { text-decoration-thickness: 2px; }</code></td>
+                <td class="example-cell">
+                <code>a:hover { text-decoration-thickness: 2px; }</code>
+                </td>
               </tr>
               <tr id="interaction-pseudos-item-focus">
                 <th scope="row"><code>:focus</code></th>
@@ -148,33 +87,40 @@
                 <th scope="row"><code>:focus-visible</code></th>
                 <td>Visible focus</td>
                 <td>Matches focus when a visible focus indicator is appropriate.</td>
-                <td class="example-cell"><code>button:focus-visible { outline: 3px solid #baf553; }</code></td>
+                <td class="example-cell">
+                <code>button:focus-visible { outline: 3px solid #baf553; }</code>
+                </td>
               </tr>
               <tr id="interaction-pseudos-item-active">
                 <th scope="row"><code>:active</code></th>
                 <td>Activation state</td>
                 <td>Matches while an element is being activated.</td>
-                <td class="example-cell"><code>button:active { transform: translateY(1px); }</code></td>
+                <td class="example-cell">
+                <code>button:active { transform: translateY(1px); }</code>
+                </td>
               </tr>
               <tr id="interaction-pseudos-item-visited">
                 <th scope="row"><code>:visited</code></th>
                 <td>Visited link</td>
-                <td>Matches links whose destination has been visited, subject to privacy restrictions.</td>
+                <td>
+                Matches links whose destination has been visited, subject to privacy restrictions.
+                </td>
                 <td class="example-cell"><code>a:visited { color: rebeccapurple; }</code></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="structural-pseudos" aria-labelledby="structural-pseudos-title">
+      <section aria-labelledby="structural-pseudos-title" class="reference-section" id="structural-pseudos">
         <h2 class="section-title" id="structural-pseudos-title">Structural Pseudo-classes</h2>
-        <p class="section-description">Selectors based on an element&#x27;s position or type among siblings.</p>
-
+        <p class="section-description">
+        Selectors based on an element's position or type among siblings.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Selectors based on an element&#x27;s position or type among siblings.</caption>
-
+            <caption class="sr-only">
+            Selectors based on an element's position or type among siblings.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -183,25 +129,26 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="structural-pseudos-item-first-child">
                 <th scope="row"><code>:first-child</code></th>
                 <td>First child</td>
-                <td>Matches an element that is its parent&#x27;s first child.</td>
+                <td>Matches an element that is its parent's first child.</td>
                 <td class="example-cell"><code>li:first-child { margin-top: 0; }</code></td>
               </tr>
               <tr id="structural-pseudos-item-last-child">
                 <th scope="row"><code>:last-child</code></th>
                 <td>Last child</td>
-                <td>Matches an element that is its parent&#x27;s last child.</td>
+                <td>Matches an element that is its parent's last child.</td>
                 <td class="example-cell"><code>li:last-child { margin-bottom: 0; }</code></td>
               </tr>
               <tr id="structural-pseudos-item-nth-child">
                 <th scope="row"><code>:nth-child()</code></th>
                 <td>Nth child</td>
                 <td>Matches children using a numeric or An+B pattern.</td>
-                <td class="example-cell"><code>tr:nth-child(even) { background: #f6fafb; }</code></td>
+                <td class="example-cell">
+                <code>tr:nth-child(even) { background: #f6fafb; }</code>
+                </td>
               </tr>
               <tr id="structural-pseudos-item-first-of-type">
                 <th scope="row"><code>:first-of-type</code></th>
@@ -219,15 +166,18 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="functional-pseudos" aria-labelledby="functional-pseudos-title">
-        <h2 class="section-title" id="functional-pseudos-title">Functional &amp; Relational Pseudo-classes</h2>
-        <p class="section-description">Functions that group, exclude, or select based on related elements.</p>
-
+      <section aria-labelledby="functional-pseudos-title" class="reference-section" id="functional-pseudos">
+        <h2 class="section-title" id="functional-pseudos-title">
+        Functional &amp; Relational Pseudo-classes
+        </h2>
+        <p class="section-description">
+        Functions that group, exclude, or select based on related elements.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Functions that group, exclude, or select based on related elements.</caption>
-
+            <caption class="sr-only">
+            Functions that group, exclude, or select based on related elements.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -236,7 +186,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="functional-pseudos-item-not">
                 <th scope="row"><code>:not()</code></th>
@@ -247,34 +196,41 @@
               <tr id="functional-pseudos-item-is">
                 <th scope="row"><code>:is()</code></th>
                 <td>Selector grouping</td>
-                <td>Matches if any selector in its list matches and adopts the most specific argument.</td>
+                <td>
+                Matches if any selector in its list matches and adopts the most specific argument.
+                </td>
                 <td class="example-cell"><code>:is(h1, h2, h3) { line-height: 1.2; }</code></td>
               </tr>
               <tr id="functional-pseudos-item-where">
                 <th scope="row"><code>:where()</code></th>
                 <td>Zero-specificity grouping</td>
                 <td>Groups selectors without adding specificity from its arguments.</td>
-                <td class="example-cell"><code>:where(nav, footer) a { text-decoration: none; }</code></td>
+                <td class="example-cell">
+                <code>:where(nav, footer) a { text-decoration: none; }</code>
+                </td>
               </tr>
               <tr id="functional-pseudos-item-has">
                 <th scope="row"><code>:has()</code></th>
                 <td>Relational selector</td>
                 <td>Matches an element when a relative selector matches from it.</td>
-                <td class="example-cell"><code>.field:has(:invalid) { border-color: crimson; }</code></td>
+                <td class="example-cell">
+                <code>.field:has(:invalid) { border-color: crimson; }</code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="pseudo-elements" aria-labelledby="pseudo-elements-title">
+      <section aria-labelledby="pseudo-elements-title" class="reference-section" id="pseudo-elements">
         <h2 class="section-title" id="pseudo-elements-title">Common Pseudo-elements</h2>
-        <p class="section-description">Special generated boxes or portions of an element that can be styled.</p>
-
+        <p class="section-description">
+        Special generated boxes or portions of an element that can be styled.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Special generated boxes or portions of an element that can be styled.</caption>
-
+            <caption class="sr-only">
+            Special generated boxes or portions of an element that can be styled.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -283,24 +239,27 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="pseudo-elements-item-before">
                 <th scope="row"><code>::before</code></th>
                 <td>Generated first child</td>
                 <td>Creates a generated pseudo-element before element content.</td>
-                <td class="example-cell"><code>.note::before { content: &quot;Tip&quot;; }</code></td>
+                <td class="example-cell">
+                <code>.note::before { content: "Tip"; }</code>
+                </td>
               </tr>
               <tr id="pseudo-elements-item-after">
                 <th scope="row"><code>::after</code></th>
                 <td>Generated last child</td>
                 <td>Creates a generated pseudo-element after element content.</td>
-                <td class="example-cell"><code>a.external::after { content: &quot; ↗&quot;; }</code></td>
+                <td class="example-cell">
+                <code>a.external::after { content: " ↗"; }</code>
+                </td>
               </tr>
               <tr id="pseudo-elements-item-marker">
                 <th scope="row"><code>::marker</code></th>
                 <td>List marker</td>
-                <td>Styles a list item&#x27;s marker.</td>
+                <td>Styles a list item's marker.</td>
                 <td class="example-cell"><code>li::marker { color: #8bcc45; }</code></td>
               </tr>
               <tr id="pseudo-elements-item-placeholder">
@@ -313,31 +272,32 @@
                 <th scope="row"><code>::selection</code></th>
                 <td>Selected text</td>
                 <td>Styles user-selected text.</td>
-                <td class="example-cell"><code>::selection { background: #baf553; color: #11191d; }</code></td>
+                <td class="example-cell">
+                <code>::selection { background: #baf553; color: #11191d; }</code>
+                </td>
               </tr>
               <tr id="pseudo-elements-item-first-letter">
                 <th scope="row"><code>::first-letter</code></th>
                 <td>First letter</td>
                 <td>Styles the first typographic letter of a block.</td>
-                <td class="example-cell"><code>article p:first-of-type::first-letter { font-size: 2em; }</code></td>
+                <td class="example-cell">
+                <code>article p:first-of-type::first-letter { font-size: 2em; }</code>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
     </main>
-
-    <div data-site-footer></div>
-
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

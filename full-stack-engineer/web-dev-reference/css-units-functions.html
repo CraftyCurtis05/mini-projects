@@ -1,127 +1,67 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A CSS sizing reference covering absolute and relative units, viewport and container units, percentages, fractions, and calculation functions.">
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="My reference for CSS units, percentages, viewport and container units, fractions, and sizing functions." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
-
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
     <title>CSS Units &amp; Functions</title>
-
     <!-- Browser and installed-app appearance -->
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
 
-    <!-- Social sharing metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Web Development Reference">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="CSS Units &amp; Functions">
-    <meta property="og:description" content="A CSS sizing reference covering absolute and relative units, viewport and container units, percentages, fractions, and calculation functions.">
-    <meta property="og:image" content="assets/images/icon-512.png">
-    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="website" property="og:type"/>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="CSS Units &amp; Functions">
-    <meta name="twitter:description" content="A CSS sizing reference covering absolute and relative units, viewport and container units, percentages, fractions, and calculation functions.">
-    <meta name="twitter:image" content="assets/images/icon-512.png">
-    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="CSS Units &amp; Functions" property="og:title"/>
+    <meta content="My reference for CSS units, percentages, viewport and container units, fractions, and sizing functions." property="og:description"/>
+    <meta content="assets/images/app-icon-512.png" property="og:image"/>
 
     <!-- App manifest and icons -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
     <!-- Shared site styles and fonts -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
-    >
-
-    <!-- Structured metadata -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "CSS Units & Functions",
-  "description": "A CSS sizing reference covering absolute and relative units, viewport and container units, percentages, fractions, and calculation functions.",
-  "inLanguage": "en-US",
-  "dateModified": "2026-08-19",
-  "author": {
-    "@type": "Person",
-    "name": "Jennifer Curtis",
-    "url": "https://jennifercurtis.me"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Web Development Reference"
-  }
-}
-    </script>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
   </head>
-
-  <body
-    data-page="units"
-    data-page-label="CSS Units &amp; Functions"
-    data-category="CSS"
-    data-level="Beginner–Intermediate"
-    data-footer="CSS Units &amp; Functions Cheat Sheet"
-    data-search-placeholder="Try: rem, em, dvh, fr, clamp..."
-    data-author-note="I reach for rem for document-level sizing, em when a value should scale with its component, and percentages or fr when the value belongs to layout rather than typography."
-    data-related="[{&quot;label&quot;:&quot;Responsive Design&quot;,&quot;href&quot;:&quot;responsive-design.html&quot;},{&quot;label&quot;:&quot;CSS Properties&quot;,&quot;href&quot;:&quot;css-properties.html&quot;}]"
-    data-toc="true"
-  >
-
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+  <body data-author-note="I still mix up em and rem if I have not used them in a while. rem follows the root font size. em follows the font size in its current context, so it can compound when components are nested. For layout I usually reach for %, fr, min(), max(), or clamp()." data-category="CSS" data-footer="CSS Units &amp; Functions Cheat Sheet" data-level="Beginner–Intermediate" data-page="units" data-page-label="CSS Units &amp; Functions" data-related='[{"label":"Responsive Design","href":"responsive-design.html"},{"label":"CSS Properties","href":"css-properties.html"}]' data-search-placeholder="Try: rem, em, dvh, fr, clamp..." data-toc="true">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
-
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <div data-site-nav></div>
-
+    <div data-site-nav=""></div>
     <header class="hero">
       <h1>CSS Units &amp; Functions</h1>
-      <p class="subtitle">A quick reference for choosing CSS units and functions that scale predictably across layouts and text.</p>
-
+      <p class="subtitle">The CSS units and functions I am most likely to need again.</p>
       <div class="hero-meta">
         <span class="badge badge-category">CSS</span>
         <span class="badge badge-level">Beginner–Intermediate</span>
       </div>
     </header>
-
     <main id="main-content">
-      <section class="reference-section" id="absolute-relative" aria-labelledby="absolute-relative-title">
-        <h2 class="section-title" id="absolute-relative-title">Absolute &amp; Font-relative Units</h2>
-        <p class="section-description">Common units for fixed measurements and typography-aware sizing.</p>
-
+      <section aria-labelledby="absolute-relative-title" class="reference-section" id="absolute-relative">
+        <h2 class="section-title" id="absolute-relative-title">
+        Absolute &amp; Font-relative Units
+        </h2>
+        <p class="section-description">
+        Common units for fixed measurements and typography-aware sizing.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Common units for fixed measurements and typography-aware sizing.</caption>
-
+            <caption class="sr-only">
+            Common units for fixed measurements and typography-aware sizing.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -130,7 +70,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="absolute-relative-item-px">
                 <th scope="row"><code>px</code></th>
@@ -141,13 +80,13 @@
               <tr id="absolute-relative-item-rem">
                 <th scope="row"><code>rem</code></th>
                 <td>Root-em unit</td>
-                <td>Relative to the root element&#x27;s font size.</td>
+                <td>Relative to the root element's font size.</td>
                 <td class="example-cell"><code>padding: 1.5rem;</code></td>
               </tr>
               <tr id="absolute-relative-item-em">
                 <th scope="row"><code>em</code></th>
                 <td>Element-relative unit</td>
-                <td>Relative to the current element&#x27;s computed font size for most properties.</td>
+                <td>Relative to the current element's computed font size for most properties.</td>
                 <td class="example-cell"><code>margin-top: 1em;</code></td>
               </tr>
               <tr id="absolute-relative-item-ch">
@@ -159,22 +98,23 @@
               <tr id="absolute-relative-item-lh">
                 <th scope="row"><code>lh</code></th>
                 <td>Line-height unit</td>
-                <td>Relative to the element&#x27;s computed line-height.</td>
+                <td>Relative to the element's computed line-height.</td>
                 <td class="example-cell"><code>margin-block: 1lh;</code></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="layout-units" aria-labelledby="layout-units-title">
+      <section aria-labelledby="layout-units-title" class="reference-section" id="layout-units">
         <h2 class="section-title" id="layout-units-title">Layout &amp; Percentage Units</h2>
-        <p class="section-description">Units tied to parent dimensions, grid space, or proportions.</p>
-
+        <p class="section-description">
+        Units tied to parent dimensions, grid space, or proportions.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Units tied to parent dimensions, grid space, or proportions.</caption>
-
+            <caption class="sr-only">
+            Units tied to parent dimensions, grid space, or proportions.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -183,7 +123,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="layout-units-item-item">
                 <th scope="row"><code>%</code></th>
@@ -207,15 +146,16 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="viewport-container" aria-labelledby="viewport-container-title">
+      <section aria-labelledby="viewport-container-title" class="reference-section" id="viewport-container">
         <h2 class="section-title" id="viewport-container-title">Viewport &amp; Container Units</h2>
-        <p class="section-description">Units that respond to viewport or query-container dimensions.</p>
-
+        <p class="section-description">
+        Units that respond to viewport or query-container dimensions.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Units that respond to viewport or query-container dimensions.</caption>
-
+            <caption class="sr-only">
+            Units that respond to viewport or query-container dimensions.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -224,7 +164,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="viewport-container-item-vw">
                 <th scope="row"><code>vw</code></th>
@@ -253,22 +192,19 @@
               <tr id="viewport-container-item-cqi">
                 <th scope="row"><code>cqi</code></th>
                 <td>Container inline size</td>
-                <td>Represents 1% of the query container&#x27;s inline size.</td>
+                <td>Represents 1% of the query container's inline size.</td>
                 <td class="example-cell"><code>font-size: 5cqi;</code></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="css-functions" aria-labelledby="css-functions-title">
+      <section aria-labelledby="css-functions-title" class="reference-section" id="css-functions">
         <h2 class="section-title" id="css-functions-title">Sizing &amp; Calculation Functions</h2>
         <p class="section-description">Functions that combine or constrain values.</p>
-
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">Functions that combine or constrain values.</caption>
-
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -277,7 +213,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="css-functions-item-calc">
                 <th scope="row"><code>calc()</code></th>
@@ -308,18 +243,15 @@
         </div>
       </section>
     </main>
-
-    <div data-site-footer></div>
-
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

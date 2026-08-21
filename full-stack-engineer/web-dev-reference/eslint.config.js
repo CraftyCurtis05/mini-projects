@@ -1,25 +1,25 @@
-import js from "@eslint/js";
-import globals from "globals";
+import js from '@eslint/js';
+import globals from 'globals';
 
 export default [
   {
-    ignores: ["node_modules/**", "coverage/**", "assets/js/search-index.js"]
+    ignores: ['node_modules/**', 'assets/js/searchData.js']
   },
   {
-    files: ["assets/js/**/*.js"],
+    files: ['assets/js/**/*.js'],
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "script",
+      ecmaVersion: 'latest',
+      sourceType: 'script',
       globals: {
         ...globals.browser
       }
     },
     rules: {
       ...js.configs.recommended.rules,
-      "no-unused-vars": ["warn", {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^(initialize|render|open|update|escape|get|save|current)"
-      }]
+
+      // These browser scripts share globals across files, so ESLint cannot see every definition.
+      'no-undef': 'off',
+      'no-unused-vars': 'warn'
     }
   }
 ];

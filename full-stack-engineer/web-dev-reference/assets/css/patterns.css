@@ -1,7 +1,4 @@
-/* =========================================================
-   Patterns page
-   Pattern layout, code examples, and live demonstration styles
-   ========================================================= */
+/* Pattern examples, code blocks, dialogs, and live demo styles. */
 
 /* Pattern layout and code examples */
 
@@ -11,9 +8,9 @@
   padding: 2rem;
   border: 1px solid var(--border);
   border-left: 6px solid var(--green);
-  border-radius: .75rem;
+  border-radius: 0.75rem;
   background: var(--surface);
-  box-shadow: 0 6px 20px var(--shadow);
+  box-shadow: 0 5px 16px var(--shadow);
 }
 
 .pattern-heading {
@@ -23,19 +20,19 @@
 }
 
 .pattern-number {
-  margin: 0 0 .35rem;
+  margin: 0 0 0.35rem;
   color: var(--green);
   font-family: var(--font-code);
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .pattern-heading h2 {
-  margin: 0 0 .6rem;
+  margin: 0 0 0.6rem;
   color: var(--teal);
-  font-family: var(--font-display);
+  font-family: var(--font-ui);
   font-size: 1.8rem;
   line-height: 1.2;
 }
@@ -54,22 +51,27 @@
 .pattern-example {
   margin-top: 1rem;
   border: 1px solid var(--border);
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   background: var(--code-background);
   overflow: hidden;
 }
 
 .pattern-example summary {
-  padding: .8rem 1rem;
+  padding: 0.8rem 1rem;
   color: var(--teal);
   font-family: var(--font-ui);
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.pattern-example summary:hover {
-  color: var(--blue);
+.pattern-example summary:hover,
+.pattern-example summary:focus-visible {
+  background: var(--highlight);
+  color: var(--teal);
 }
 
 .pattern-example[open] summary {
@@ -88,7 +90,7 @@
   padding: 1.1rem 1.25rem;
   background: transparent;
   color: var(--code-text);
-  font-size: .86rem;
+  font-size: 0.86rem;
   font-weight: 500;
   line-height: 1.65;
   white-space: pre;
@@ -103,21 +105,36 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: .45rem .65rem;
+  padding: 0.45rem 0.65rem;
   border-bottom: 1px solid var(--border);
   background: var(--surface-alt);
   color: var(--text-secondary);
-  font-size: .72rem;
+  font-size: 0.72rem;
 }
 
 .copy-button {
-  padding: .28rem .55rem;
+  padding: 0.28rem 0.55rem;
   border: 1px solid var(--border);
-  border-radius: .35rem;
+  border-radius: 0.35rem;
   background: var(--surface);
   color: var(--teal);
   font-weight: 700;
   cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.copy-button:hover,
+.copy-button:focus-visible {
+  border-color: var(--lime);
+  background: var(--highlight);
+  transform: translateY(-1px);
+}
+
+.copy-button:active {
+  transform: translateY(0);
 }
 
 .copy-button:hover {
@@ -132,18 +149,18 @@
 /* Dialogs and global search */
 
 .site-dialog {
-  width: min(760px,calc(100% - 2rem));
-  max-height: min(80vh,760px);
+  width: min(760px, calc(100% - 2rem));
+  max-height: min(80vh, 760px);
   padding: 0;
   border: 1px solid var(--border);
   border-radius: 1rem;
   background: var(--surface);
   color: var(--text-primary);
-  box-shadow: 0 20px 60px rgba(0,0,0,.28);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
 }
 
 .site-dialog::backdrop {
-  background: rgba(8,16,20,.66);
+  background: rgba(8, 16, 20, 0.66);
   backdrop-filter: blur(3px);
 }
 
@@ -152,23 +169,23 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.25rem 1.25rem .8rem;
+  padding: 1.25rem 1.25rem 0.8rem;
 }
 
 .dialog-header h2 {
   margin: 0;
   color: var(--teal);
-  font-family: var(--font-display);
+  font-family: var(--font-ui);
   font-size: 1.7rem;
 }
 
 .eyebrow {
-  margin: 0 0 .2rem;
+  margin: 0 0 0.2rem;
   color: var(--green);
   font-family: var(--font-code);
-  font-size: .72rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -189,30 +206,30 @@
 }
 
 .dialog-status {
-  margin: .65rem 1.25rem;
+  margin: 0.65rem 1.25rem;
   color: var(--text-secondary);
-  font-size: .82rem;
+  font-size: 0.82rem;
 }
 
 .search-results {
   max-height: 52vh;
   margin: 0;
-  padding: .5rem 1rem 1rem;
+  padding: 0.5rem 1rem 1rem;
   overflow: auto;
   list-style: none;
 }
 
 .search-results li + li {
-  margin-top: .45rem;
+  margin-top: 0.45rem;
 }
 
 .search-result {
   display: flex;
   flex-direction: column;
-  gap: .15rem;
-  padding: .75rem .85rem;
+  gap: 0.15rem;
+  padding: 0.75rem 0.85rem;
   border: 1px solid var(--border);
-  border-radius: .55rem;
+  border-radius: 0.55rem;
   background: var(--surface-alt);
   text-decoration: none;
 }
@@ -228,7 +245,7 @@
 .result-meta {
   color: var(--text-secondary);
   font-family: var(--font-code);
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 .empty-state {
@@ -251,11 +268,7 @@
   padding: 1.25rem;
   border: 1px solid var(--border);
   border-radius: 0.75rem;
-  background: linear-gradient(
-      145deg,
-      var(--surface-alt),
-      var(--surface)
-    );
+  background: linear-gradient(145deg, var(--surface-alt), var(--surface));
 }
 
 .pattern-demo-label {
@@ -428,7 +441,7 @@
 }
 
 .demo-theme-card {
-  /*Local theme variables keep this demo independent from the site theme.*/
+  /* I keep this demo theme separate so testing it does not change the whole site. */
   --demo-background: #ffffff;
   --demo-surface: #f6fafb;
   --demo-text: #1c2529;
@@ -444,12 +457,10 @@
   background: var(--demo-background);
   color: var(--demo-text);
   box-shadow: 0 8px 22px var(--shadow);
-  transition: background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.demo-theme-card[data-demo-theme="dark"] {
+.demo-theme-card[data-demo-theme='dark'] {
   --demo-background: #182329;
   --demo-surface: #203038;
   --demo-text: #f4f8f9;
@@ -515,7 +526,7 @@
   color: #ffffff;
 }
 
-.demo-theme-card[data-demo-theme="dark"] .demo-button {
+.demo-theme-card[data-demo-theme='dark'] .demo-button {
   color: #11191d;
 }
 
@@ -536,7 +547,7 @@
   box-shadow: 0 8px 20px var(--shadow);
 }
 
-html[data-theme="dark"] .demo-toast {
+html[data-theme='dark'] .demo-toast {
   background: var(--highlight);
   color: var(--mint);
 }
@@ -549,12 +560,7 @@ html[data-theme="dark"] .demo-toast {
   height: 14px;
   margin-bottom: 0.75rem;
   border-radius: 999px;
-  background: linear-gradient(
-      90deg,
-      var(--surface-alt),
-      var(--highlight),
-      var(--surface-alt)
-    );
+  background: linear-gradient(90deg, var(--surface-alt), var(--highlight), var(--surface-alt));
   background-size: 200% 100%;
   animation: demo-skeleton-shift 1.4s linear infinite;
 }
@@ -622,7 +628,7 @@ html[data-theme="dark"] .demo-toast {
   font-weight: 600;
 }
 
-html[data-theme="dark"] .demo-field-message {
+html[data-theme='dark'] .demo-field-message {
   color: #ffaaaa;
 }
 
@@ -643,7 +649,7 @@ html[data-theme="dark"] .demo-field-message {
 }
 
 .demo-breadcrumb li:not(:last-child)::after {
-  content: "›";
+  content: '›';
   color: var(--green);
   font-weight: 700;
 }

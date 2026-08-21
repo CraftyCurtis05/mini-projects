@@ -1,28 +1,37 @@
-/* =========================================================
-   Web Development Reference
-   Site-wide light/dark theme behavior
-   ========================================================= */
+/* Light and dark theme. */
 
 function initializeTheme() {
-  const savedTheme = localStorage.getItem("theme");
-  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  root.dataset.theme = ["dark", "light"].includes(savedTheme) ? savedTheme : systemTheme;
+  // I keep the saved choice first, then fall back to the browser preference.
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  const toggle = document.getElementById("theme-toggle");
-  if (!toggle) return;
-  updateThemeButton(toggle);
-  toggle.addEventListener("click", () => {
-    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", root.dataset.theme);
-    updateThemeButton(toggle);
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    rootElement.dataset.theme = savedTheme;
+  } else {
+    rootElement.dataset.theme = prefersDarkTheme ? 'dark' : 'light';
+  }
+
+  const themeToggle = document.getElementById('theme-toggle');
+
+  if (!themeToggle) {
+    return;
+  }
+
+  updateThemeButton(themeToggle);
+
+  themeToggle.addEventListener('click', () => {
+    rootElement.dataset.theme = rootElement.dataset.theme === 'dark' ? 'light' : 'dark';
+
+    localStorage.setItem('theme', rootElement.dataset.theme);
+    updateThemeButton(themeToggle);
   });
 }
 
-function updateThemeButton(toggle) {
-  const isDark = root.dataset.theme === "dark";
+function updateThemeButton(themeToggle) {
+  const isDarkTheme = rootElement.dataset.theme === 'dark';
+  const buttonLabel = isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme';
 
-  toggle.setAttribute("aria-pressed", String(isDark));
-  toggle.setAttribute("title", isDark ? "Use light theme" : "Use dark theme");
+  themeToggle.setAttribute('aria-pressed', String(isDarkTheme));
+  themeToggle.setAttribute('aria-label', buttonLabel);
+  themeToggle.setAttribute('title', buttonLabel);
 }
-
-/* ---------- Page search ---------- */

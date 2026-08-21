@@ -1,52 +1,27 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="A complete site map for Jennifer Curtis's Web Development Reference, organized by HTML, CSS, JavaScript, tools, patterns, and accessibility."
-    >
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="All pages in my Web Development Reference, grouped by HTML, CSS, JavaScript, tools, patterns, and accessibility." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
-
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
     <title>Site Map | Web Dev Reference</title>
-
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
-    >
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
   </head>
-
-  <body
-    data-page="sitemap"
-    data-page-label="Site Map"
-    data-category="Navigation"
-    data-level="All References"
-    data-footer="Web Development Reference"
-  >
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+  <body data-category="Navigation" data-footer="Web Development Reference" data-level="All References" data-page="sitemap" data-page-label="Site Map">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
@@ -54,31 +29,23 @@
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <div data-site-nav></div>
-
+    <div data-site-nav=""></div>
     <header class="hero">
       <h1>Site Map</h1>
-      <p class="subtitle">
-        Browse the complete Web Development Reference by topic.
-      </p>
-
+      <p class="subtitle">Every reference page in one place.</p>
       <div class="hero-meta">
         <span class="badge badge-category">Navigation</span>
         <span class="badge badge-level">All References</span>
       </div>
     </header>
-
     <main id="main-content">
       <p class="sitemap-intro">
-        This site map provides a direct path to every major reference,
-        pattern, accessibility guide, and developer-tool page in the project.
+      This site map provides a direct path to every major reference, pattern, accessibility guide,
+      and developer-tool page in the project.
       </p>
-
       <div class="sitemap-grid">
-        <section class="sitemap-group" aria-labelledby="sitemap-core">
+        <section aria-labelledby="sitemap-core" class="sitemap-group">
           <h2 id="sitemap-core">Core Reference</h2>
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -88,8 +55,7 @@
             <li><a href="accessibility.html">Accessibility</a></li>
           </ul>
         </section>
-
-        <section class="sitemap-group" aria-labelledby="sitemap-css">
+        <section aria-labelledby="sitemap-css" class="sitemap-group">
           <h2 id="sitemap-css">CSS</h2>
           <ul>
             <li><a href="css-selectors.html">CSS Selectors</a></li>
@@ -101,8 +67,7 @@
             <li><a href="pseudo-classes-elements.html">Pseudo-classes &amp; Pseudo-elements</a></li>
           </ul>
         </section>
-
-        <section class="sitemap-group" aria-labelledby="sitemap-js">
+        <section aria-labelledby="sitemap-js" class="sitemap-group">
           <h2 id="sitemap-js">JavaScript &amp; Browser APIs</h2>
           <ul>
             <li><a href="javascript-reference.html">JavaScript Reference</a></li>
@@ -110,8 +75,7 @@
             <li><a href="http-apis.html">HTTP &amp; APIs</a></li>
           </ul>
         </section>
-
-        <section class="sitemap-group" aria-labelledby="sitemap-tools">
+        <section aria-labelledby="sitemap-tools" class="sitemap-group">
           <h2 id="sitemap-tools">Developer Toolkit</h2>
           <ul>
             <li><a href="git-github.html">Git &amp; GitHub</a></li>
@@ -123,8 +87,7 @@
             <li><a href="developer-notes.html">Jennifer's Developer Notes</a></li>
           </ul>
         </section>
-
-        <section class="sitemap-group" aria-labelledby="sitemap-patterns">
+        <section aria-labelledby="sitemap-patterns" class="sitemap-group">
           <h2 id="sitemap-patterns">Patterns &amp; Utilities</h2>
           <ul>
             <li><a href="patterns.html">HTML, CSS &amp; JavaScript Patterns</a></li>
@@ -132,26 +95,22 @@
           </ul>
         </section>
       </div>
-
       <aside class="sitemap-utility">
         <p>
-          Need something specific? Use the site-wide Search control in the
-          navigation to search every indexed reference entry.
+        Need something specific? Use the site-wide Search control in the navigation to search
+        every indexed reference entry.
         </p>
       </aside>
     </main>
-
-    <div data-site-footer></div>
-
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

@@ -1,99 +1,58 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="The requested Web Development Reference page could not be found. Return home, search the reference, or choose a related topic."
-    >
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="noindex, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="The requested Web Development Reference page could not be found. Search the site or return to the home page." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
-
-    <title>404 — Page Not Found | Web Dev Reference</title>
-
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
+    <title>404: Page Not Found | Web Dev Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
 
     <!-- App manifest and icons -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
     <!-- Shared site styles and fonts -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
-    >
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
   </head>
-
-  <body
-    data-page="404"
-    data-page-label="Page Not Found"
-    data-category="Navigation"
-    data-level="404"
-    data-footer="Web Development Reference"
-  >
-
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+  <body data-category="Navigation" data-footer="Web Development Reference" data-level="404" data-page="404" data-page-label="Page Not Found">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
-
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <div data-site-nav></div>
-
-    <main id="main-content" class="not-found-main">
-      <section class="not-found-panel" aria-labelledby="not-found-title">
-        <p class="not-found-code" aria-hidden="true">404</p>
+    <div data-site-nav=""></div>
+    <main class="not-found-main" id="main-content">
+      <section aria-labelledby="not-found-title" class="not-found-panel">
+        <p aria-hidden="true" class="not-found-code">404</p>
         <p class="not-found-kicker">Selector not found.</p>
-
         <h1 id="not-found-title">This page isn't in the DOM.</h1>
-
         <p class="not-found-copy">
-          The address may have changed, the link may be outdated, or the page
-          may never have existed. Return home, search the complete reference,
-          or jump to one of the main topics below.
+        The address may have changed, the link may be outdated, or the page may never have
+        existed. Return home, search the complete reference, or jump to one of the main topics
+        below.
         </p>
-
         <div class="not-found-actions">
           <a class="button-link button-link-primary" href="index.html">Return home</a>
-
-          <button
-            class="button-link button-link-secondary"
-            id="not-found-search"
-            type="button"
-          >
-            Search reference
+          <button class="button-link button-link-secondary" id="not-found-search" type="button">
+          Search reference
           </button>
         </div>
-
-        <nav class="not-found-links" aria-label="Popular reference pages">
+        <nav aria-label="Popular reference pages" class="not-found-links">
           <h2>Popular references</h2>
-
           <ul>
             <li><a href="html-tags.html">HTML Tags</a></li>
             <li><a href="css-properties.html">CSS Properties</a></li>
@@ -102,22 +61,18 @@
             <li><a href="patterns.html">Patterns</a></li>
           </ul>
         </nav>
-
         <p class="not-found-path" id="not-found-path"></p>
       </section>
     </main>
-
-    <div data-site-footer></div>
-
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

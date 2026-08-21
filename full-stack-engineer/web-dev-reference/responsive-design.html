@@ -1,127 +1,67 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A modern responsive-design reference covering mobile-first CSS, media and container queries, fluid sizing, responsive images, viewport units, and reflow.">
-    <meta name="author" content="Jennifer Curtis">
-    <meta name="creator" content="Jennifer Curtis">
-    <meta name="application-name" content="Web Development Reference">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="My responsive design reference for media queries, container queries, fluid sizing, responsive images, and reflow." name="description"/>
 
-    <!-- Progressive loading-screen enhancement -->
-  <script src="assets/js/loader-init.js"></script>
-
+    <meta content="light dark" name="color-scheme"/>
+    <script src="assets/js/loader.js" defer></script>
     <title>Responsive Design Reference</title>
-
     <!-- Browser and installed-app appearance -->
-    <meta name="theme-color" content="#3c88a3" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#10181c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-title" content="Web Dev Ref">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
 
-    <!-- Social sharing metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Web Development Reference">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Responsive Design Reference">
-    <meta property="og:description" content="A modern responsive-design reference covering mobile-first CSS, media and container queries, fluid sizing, responsive images, viewport units, and reflow.">
-    <meta property="og:image" content="assets/images/icon-512.png">
-    <meta property="og:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="website" property="og:type"/>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Responsive Design Reference">
-    <meta name="twitter:description" content="A modern responsive-design reference covering mobile-first CSS, media and container queries, fluid sizing, responsive images, viewport units, and reflow.">
-    <meta name="twitter:image" content="assets/images/icon-512.png">
-    <meta name="twitter:image:alt" content="Jennifer Curtis Web Development Reference logo">
+    <meta content="Responsive Design Reference" property="og:title"/>
+    <meta content="My responsive design reference for media queries, container queries, fluid sizing, responsive images, and reflow." property="og:description"/>
+    <meta content="assets/images/app-icon-512.png" property="og:image"/>
 
     <!-- App manifest and icons -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
     <!-- Shared site styles and fonts -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qik2tak.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Source+Code+Pro:wght@500;600&display=swap"
-    >
-
-    <!-- Structured metadata -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "Responsive Design",
-  "description": "A modern responsive-design reference covering mobile-first CSS, media and container queries, fluid sizing, responsive images, viewport units, and reflow.",
-  "inLanguage": "en-US",
-  "dateModified": "2026-08-19",
-  "author": {
-    "@type": "Person",
-    "name": "Jennifer Curtis",
-    "url": "https://jennifercurtis.me"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Web Development Reference"
-  }
-}
-    </script>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
   </head>
-
-  <body
-    data-page="responsive"
-    data-page-label="Responsive Design"
-    data-category="CSS"
-    data-level="Intermediate"
-    data-footer="Responsive Design Cheat Sheet"
-    data-search-placeholder="Try: media, container, clamp, picture..."
-    data-author-note="Choose breakpoints when the content needs them, not because a particular device width is popular. Responsive design is about preserving usability as available space changes."
-    data-related="[{&quot;label&quot;:&quot;CSS Units &amp; Functions&quot;,&quot;href&quot;:&quot;css-units-functions.html&quot;},{&quot;label&quot;:&quot;Flexbox&quot;,&quot;href&quot;:&quot;flexbox.html&quot;},{&quot;label&quot;:&quot;CSS Grid&quot;,&quot;href&quot;:&quot;css-grid.html&quot;}]"
-    data-toc="true"
-  >
-
-    <div class="site-loader" id="site-loader" aria-hidden="true">
+  <body data-author-note="I try not to pick breakpoints from a phone or tablet list. I shrink the page until the layout actually stops working well, then add the breakpoint there." data-category="CSS" data-footer="Responsive Design Cheat Sheet" data-level="Intermediate" data-page="responsive" data-page-label="Responsive Design" data-related='[{"label":"CSS Units &amp; Functions","href":"css-units-functions.html"},{"label":"Flexbox","href":"flexbox.html"},{"label":"CSS Grid","href":"css-grid.html"}]' data-search-placeholder="Try: media, container, clamp, picture..." data-toc="true">
+    <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
-        <div class="site-loader-mark" aria-hidden="true">
+        <div aria-hidden="true" class="site-loader-mark">
           <span class="loader-dot loader-dot-teal"></span>
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
-
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
-
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <div data-site-nav></div>
-
+    <div data-site-nav=""></div>
     <header class="hero">
       <h1>Responsive Design Reference</h1>
-      <p class="subtitle">A practical reference for building layouts that adapt to content, containers, screens, zoom, and user preferences.</p>
-
+      <p class="subtitle">
+      My reminders for media queries, fluid sizing, images, and flexible layouts.
+      </p>
       <div class="hero-meta">
         <span class="badge badge-category">CSS</span>
         <span class="badge badge-level">Intermediate</span>
       </div>
     </header>
-
     <main id="main-content">
-      <section class="reference-section" id="responsive-foundations" aria-labelledby="responsive-foundations-title">
+      <section aria-labelledby="responsive-foundations-title" class="reference-section" id="responsive-foundations">
         <h2 class="section-title" id="responsive-foundations-title">Responsive Foundations</h2>
-        <p class="section-description">Core techniques for flexible layouts and content-first breakpoints.</p>
-
+        <p class="section-description">
+        Core techniques for flexible layouts and content-first breakpoints.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Core techniques for flexible layouts and content-first breakpoints.</caption>
-
+            <caption class="sr-only">
+            Core techniques for flexible layouts and content-first breakpoints.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -130,12 +70,13 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="responsive-foundations-item-mobile-first">
                 <th scope="row"><code>mobile first</code></th>
                 <td>Progressive layout</td>
-                <td>Starts with small-screen styles and adds enhancements as space becomes available.</td>
+                <td>
+                Starts with small-screen styles and adds enhancements as space becomes available.
+                </td>
                 <td class="example-cell"><code>@media (min-width: 48rem) { ... }</code></td>
               </tr>
               <tr id="responsive-foundations-item-max-width">
@@ -166,15 +107,16 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="media-queries" aria-labelledby="media-queries-title">
+      <section aria-labelledby="media-queries-title" class="reference-section" id="media-queries">
         <h2 class="section-title" id="media-queries-title">Media Queries</h2>
-        <p class="section-description">Conditional styles based on viewport/media characteristics and user preferences.</p>
-
+        <p class="section-description">
+        Conditional styles based on viewport/media characteristics and user preferences.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Conditional styles based on viewport/media characteristics and user preferences.</caption>
-
+            <caption class="sr-only">
+            Conditional styles based on viewport/media characteristics and user preferences.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -183,7 +125,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="media-queries-item-media-min-width">
                 <th scope="row"><code>@media (min-width)</code></th>
@@ -200,14 +141,18 @@
               <tr id="media-queries-item-prefers-color-scheme">
                 <th scope="row"><code>prefers-color-scheme</code></th>
                 <td>Theme preference</td>
-                <td>Detects the user&#x27;s light/dark operating-system preference.</td>
-                <td class="example-cell"><code>@media (prefers-color-scheme: dark) { ... }</code></td>
+                <td>Detects the user's light/dark operating-system preference.</td>
+                <td class="example-cell">
+                <code>@media (prefers-color-scheme: dark) { ... }</code>
+                </td>
               </tr>
               <tr id="media-queries-item-prefers-reduced-motion">
                 <th scope="row"><code>prefers-reduced-motion</code></th>
                 <td>Motion preference</td>
                 <td>Detects a request to minimize nonessential motion.</td>
-                <td class="example-cell"><code>@media (prefers-reduced-motion: reduce) { ... }</code></td>
+                <td class="example-cell">
+                <code>@media (prefers-reduced-motion: reduce) { ... }</code>
+                </td>
               </tr>
               <tr id="media-queries-item-prefers-contrast">
                 <th scope="row"><code>prefers-contrast</code></th>
@@ -219,15 +164,16 @@
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="container-queries" aria-labelledby="container-queries-title">
+      <section aria-labelledby="container-queries-title" class="reference-section" id="container-queries">
         <h2 class="section-title" id="container-queries-title">Container Queries</h2>
-        <p class="section-description">Styles based on a component&#x27;s available container size rather than the whole viewport.</p>
-
+        <p class="section-description">
+        Styles based on a component's available container size rather than the whole viewport.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Styles based on a component&#x27;s available container size rather than the whole viewport.</caption>
-
+            <caption class="sr-only">
+            Styles based on a component's available container size rather than the whole viewport.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -236,7 +182,6 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="container-queries-item-container-type">
                 <th scope="row"><code>container-type</code></th>
@@ -253,28 +198,29 @@
               <tr id="container-queries-item-container">
                 <th scope="row"><code>@container</code></th>
                 <td>Container query</td>
-                <td>Applies styles based on the query container&#x27;s dimensions.</td>
+                <td>Applies styles based on the query container's dimensions.</td>
                 <td class="example-cell"><code>@container (min-width: 32rem) { ... }</code></td>
               </tr>
               <tr id="container-queries-item-cqi">
                 <th scope="row"><code>cqi</code></th>
                 <td>Container inline unit</td>
-                <td>Represents 1% of a query container&#x27;s inline size.</td>
+                <td>Represents 1% of a query container's inline size.</td>
                 <td class="example-cell"><code>font-size: clamp(1rem, 4cqi, 2rem);</code></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <section class="reference-section" id="responsive-media" aria-labelledby="responsive-media-title">
+      <section aria-labelledby="responsive-media-title" class="reference-section" id="responsive-media">
         <h2 class="section-title" id="responsive-media-title">Responsive Images &amp; Media</h2>
-        <p class="section-description">HTML and CSS tools for loading and sizing media appropriately.</p>
-
+        <p class="section-description">
+        HTML and CSS tools for loading and sizing media appropriately.
+        </p>
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">HTML and CSS tools for loading and sizing media appropriately.</caption>
-
+            <caption class="sr-only">
+            HTML and CSS tools for loading and sizing media appropriately.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -283,25 +229,35 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
-
             <tbody>
               <tr id="responsive-media-item-srcset">
                 <th scope="row"><code>srcset</code></th>
                 <td>Image candidates</td>
                 <td>Provides multiple image sources and lets the browser choose.</td>
-                <td class="example-cell"><code>&lt;img srcset=&quot;small.jpg 480w, large.jpg 1200w&quot; ...&gt;</code></td>
+                <td class="example-cell">
+                <code>&lt;img srcset="small.jpg 480w, large.jpg 1200w" ...&gt;</code>
+                </td>
               </tr>
               <tr id="responsive-media-item-sizes">
                 <th scope="row"><code>sizes</code></th>
                 <td>Expected display size</td>
-                <td>Describes how much layout width an image will occupy at different conditions.</td>
-                <td class="example-cell"><code>sizes=&quot;(min-width: 60rem) 50vw, 100vw&quot;</code></td>
+                <td>
+                Describes how much layout width an image will occupy at different conditions.
+                </td>
+                <td class="example-cell">
+                <code>sizes="(min-width: 60rem) 50vw, 100vw"</code>
+                </td>
               </tr>
               <tr id="responsive-media-item-item">
                 <th scope="row"><code>&lt;picture&gt;</code></th>
                 <td>Art direction</td>
                 <td>Lets different image sources be selected with source/media conditions.</td>
-                <td class="example-cell"><code>&lt;picture&gt;&lt;source media=&quot;(min-width: 60rem)&quot; srcset=&quot;wide.jpg&quot;&gt;...&lt;/picture&gt;</code></td>
+                <td class="example-cell">
+                <code>
+                &lt;picture&gt;&lt;source media="(min-width: 60rem)"
+                srcset="wide.jpg"&gt;...&lt;/picture&gt;
+                </code>
+                </td>
               </tr>
               <tr id="responsive-media-item-object-fit">
                 <th scope="row"><code>object-fit</code></th>
@@ -320,18 +276,15 @@
         </div>
       </section>
     </main>
-
-    <div data-site-footer></div>
-
-  <script src="assets/js/search-index.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/chrome.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/search.js"></script>
-  <script src="assets/js/references.js"></script>
-  <script src="assets/js/dialogs.js"></script>
-  <script src="assets/js/patterns-ui.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/site.js"></script>
+    <div data-site-footer=""></div>
+    <script src="assets/js/searchData.js" defer></script>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/references.js" defer></script>
+    <script src="assets/js/dialogs.js" defer></script>
+    <script src="assets/js/utilities.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>
