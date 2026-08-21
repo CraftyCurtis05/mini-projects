@@ -1,3 +1,5 @@
+/* Handlebars If: JavaScript for the behavior I practiced in this project. */
+
 const source = document.getElementById('ifHelper').innerHTML;
 const template = Handlebars.compile(source);
 

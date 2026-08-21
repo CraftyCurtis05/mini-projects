@@ -1,4 +1,4 @@
-/* secret-messages.js */ 
+/* secret-messages.js */
 import { toggleHiddenElement, changeToFunkyColor } from '../modules/dom-functions.js';
 // OR
 // import domFunctions from '../modules/dom-functions.js';

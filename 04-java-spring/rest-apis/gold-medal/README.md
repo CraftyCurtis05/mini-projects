@@ -1,35 +1,51 @@
-# Gold Medal Metrics Challenge Project
+# Gold Medal API
 
-### Overview
-In this project, you will use Spring Data JPA to power an Olympics analytics web app.
+A Spring Boot API project that works with country and medal data through controllers, repositories, and model classes.
 
-### Testing
-You can use cURL to manually test your API endpoints.
+This is one of my Codecademy practice projects, so I keep it small and focused on the concept I was learning at the time.
 
-Here are some example cURL requests and responses.
+## What I Practiced
 
-#### Get countries, sorted by name in ascending order 
+- REST endpoints
+- Spring controllers
+- repositories and entities
+- organizing API response models
 
-```shell
-curl --request GET "http://localhost:3001/countries?sort_by=name&ascending=y"                                   
+## Built With
 
-{"countries":[{"name":"Afghanistan","code":"AFG","gdp":594.32,"population":32526562,"medals":0},...]}
+- HTML
+- CSS
+- JavaScript
+- Java
+- Spring Boot
+- Maven
+
+## Project Structure
+
+```text
+├── .mvn/
+├── solution/
+├── src/
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── README.md
 ```
 
-#### Get the details for the United States Olympic team
+## Small UI I Added
 
-```shell
-curl --request GET "http://localhost:3001/countries/united%20states"                                            
+The course files already include a larger frontend, so I did not replace it. I added `simple.html`, `simple.css`, and `simple.js` as a smaller API explorer that I can understand quickly when I come back to the Spring code. After the app starts, it is available at `http://localhost:3001/simple.html`.
 
-{"name":"United States","gdp":"56115.72","population":"321418820","numberMedals":"2477","numberSummerWins":"2302","percentageTotalSummerWins":"21.957268","yearFirstSummerWin":"1896","numberWinterWins":"175","percentageTotalWinterWins":"9.1098385","yearFirstWinterWin":"1924","numberEventsWonByFemaleAthletes":"747","numberEventsWonByMaleAthletes":"1730"}
+I kept the interface small on purpose so the original concept is still the part I am practicing.
 
-```
+## UI Theme
 
-#### Get the list of Gold medal winners for the United States Olympic team, sorted by the athlete's name in descending order
+I used muted gold tones here because the API is about medal data, but kept the colors softer so the results stay readable.
 
-```shell
-curl --request GET "http://localhost:3001/countries/united%20states/medals?sort_by=name&ascending=n"            
+## Running the Project
 
-{"medals":[{"year":1968,"city":"Mexico","season":"Summer","name":"ZORN, Zachary","country":"United States","gender":"Men","sport":"Aquatics","discipline":"Swimming","event":"4X100M Freestyle Relay"},...]}
-```
+Run the project with `./mvnw spring-boot:run` on macOS/Linux or `mvnw.cmd spring-boot:run` on Windows.
 
+## Notes
+
+I keep this project in my learning repository so I can look back at the code and see how I approached the concept when I first practiced it. I try to leave the code readable instead of making a small course exercise more complicated than it needs to be.

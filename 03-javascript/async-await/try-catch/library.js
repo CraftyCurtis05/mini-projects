@@ -1,26 +1,26 @@
-// This function returns true 50% of the time.
-let randomSuccess = () => {
-    let num = Math.random();
-    if (num < .5 ){
-      return true;
-    } else {
-      return false;
-    }
-   };
-   
-   // This function returns a promise that resolves half of the time and rejects half of the time
-   let cookBeanSouffle = () => {
-    return new Promise((resolve, reject) => {
-      console.log('Fingers crossed... Putting the Bean Souffle in the oven');
-      setTimeout(()=>{
-        let success = randomSuccess();
-        if(success){
-          resolve('Bean Souffle');
-        } else {
-          reject('Dinner is ruined!');
-        }
-      }, 1000);
-    });
-   };
-   
-   module.exports = cookBeanSouffle;
+/* Promise helper for the async try/catch exercise. */
+
+function randomSuccess() {
+  return Math.random() < 0.5;
+}
+
+function cookBeanSouffle() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (randomSuccess()) {
+        resolve("Bean souffle");
+        return;
+      }
+
+      reject(new Error("Dinner is ruined!"));
+    }, 1000);
+  });
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = cookBeanSouffle;
+}
+
+if (typeof window !== "undefined") {
+  window.cookBeanSouffle = cookBeanSouffle;
+}

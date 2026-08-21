@@ -1,14 +1,16 @@
+/* Handlebars This: styles for this practice project. */
+
 body {
     background-color: #0F1931;
   }
-  
+
   h1 {
     color: white;
     font-family: Verdana;
     font-weight: normal;
     text-align: center;
   }
-  
+
   .card {
     background-color: white;
     border-radius: 5px;

@@ -1,34 +1,42 @@
-// Information to reach API
-const url = 'https://api.datamuse.com/words?';
-const queryParams = 'rel_jja=';
+/* GET Request Practice: request word suggestions and display the response. */
 
-// Selecting page elements
-const inputField = document.querySelector('#input');
-const submit = document.querySelector('#submit');
-const responseField = document.querySelector('#responseField');
+const url = "https://api.datamuse.com/words?";
+const queryParams = "rel_jja=";
 
-// Asynchronous function
-const getSuggestions = async () => {
-  const wordQuery = inputField.value;
-  const endpoint = `${url}${queryParams}${wordQuery}`;
+const form = document.querySelector("#form");
+const inputField = document.querySelector("#input");
+const responseField = document.querySelector("#responseField");
+
+async function getSuggestions() {
+  const wordQuery = inputField.value.trim();
+
+  if (!wordQuery) {
+    responseField.innerHTML = "<p>Enter a word to get suggestions.</p>";
+    return;
+  }
+
+  const endpoint = `${url}${queryParams}${encodeURIComponent(wordQuery)}`;
+
   try {
-    const response = await fetch(endpoint, {cache: 'no-cache'});
-    if (response.ok) {
-      const jsonResponse = await response.json();
-      renderResponse(jsonResponse);
+    const response = await fetch(endpoint, { cache: "no-cache" });
+
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
     }
+
+    const jsonResponse = await response.json();
+    renderResponse(jsonResponse);
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    responseField.innerHTML =
+      "<p>Something went wrong while getting suggestions. Try again.</p>";
   }
 }
 
-// Clear previous results and display results to webpage
-const displaySuggestions = (event) => {
+function displaySuggestions(event) {
   event.preventDefault();
-  while(responseField.firstChild){
-    responseField.removeChild(responseField.firstChild)
-  }
+  responseField.innerHTML = "";
   getSuggestions();
 }
 
-submit.addEventListener('click', displaySuggestions);
+form.addEventListener("submit", displaySuggestions);

@@ -1,3 +1,5 @@
+/* Handlebars This: JavaScript for the behavior I practiced in this project. */
+
 const source = document.getElementById('languagesTemp').innerHTML;
 const template = Handlebars.compile(source);
 
@@ -10,7 +12,7 @@ const context = {
     {
       name:'CSS',
       modern: true
-    }, 
+    },
     {
       name: 'JavaScript',
       modern: true

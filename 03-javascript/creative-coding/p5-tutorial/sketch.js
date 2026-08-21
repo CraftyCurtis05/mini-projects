@@ -4,7 +4,7 @@ function setup() {
     // TODO: Create canvas 500px wide and 500px high
     createCanvas(500, 500);
   }
-  
+
   function draw() {
     // TODO: Create wall drawing inside draw() function
     // Inside the draw() function:
@@ -13,13 +13,13 @@ function setup() {
     // TODO: Use a for loop to draw 10 vertical lines
     const width = 500;
     const height = 500;
-  
+
     for(let posX = 0; posX < 10; posX++) {
       stroke(125);
       strokeWeight(10);
       line(width/50 + posX * 25, 0, width/50 + posX * 25, height/2);
     }
-  
+
     // Draw polka dots:
     // TODO: Set no stroke and fill color
     // TODO: Use nested for loops to draw a grid of circles
@@ -36,7 +36,7 @@ function setup() {
         }
       }
     }
-  
+
     // Draw checkered squares:
     // TODO: Set fill color
     // TODO: Use nested for loops to draw rows of squares
@@ -51,7 +51,7 @@ function setup() {
         }
       }
     }
-    
+
     // Draw parallel diagonal lines:
     // TODO: Set stroke color and weight
     // TODO: Use a for loop to draw diagonal lines
@@ -64,7 +64,7 @@ function setup() {
     line(width/2 + 5, height - i * 25, width/2 + i * 25, height);
     line(width/2 + 5 + i * 25, height/2, width, height - i * 25);
   }
-  
+
     // TODO: Draw borders around canvas
     stroke('black');
     strokeWeight(15);
@@ -72,7 +72,7 @@ function setup() {
     line(width, 0, width, height);
     line(width, height, 0, height);
     line(0, height, 0, 0);
-  
+
       // TODO: Draw horizontal and vertical guidelines
     strokeWeight(9);
     line(250, 0, 250, 500);

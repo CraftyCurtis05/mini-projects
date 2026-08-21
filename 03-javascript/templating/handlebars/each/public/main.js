@@ -1,3 +1,5 @@
+/* Handlebars Each: JavaScript for the behavior I practiced in this project. */
+
 const source = document.getElementById('eachHelper').innerHTML;
 const template = Handlebars.compile(source);
 

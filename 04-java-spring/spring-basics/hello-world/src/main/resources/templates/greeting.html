@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Getting Started: Serving Web Content</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    </head>
-
-    <body>
-        <p th:text="|Hello, ${name}!|" />
-    </body>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spring Greeting Result</title>
+  <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+  <main>
+    <section class="project-card">
+      <h1 th:text="|Hello, ${name}!|">Hello, World!</h1>
+      <p class="project-intro">
+        This value came from the request parameter through the Spring controller.
+      </p>
+      <a th:href="@{/}">Try another name</a>
+    </section>
+  </main>
+</body>
 </html>

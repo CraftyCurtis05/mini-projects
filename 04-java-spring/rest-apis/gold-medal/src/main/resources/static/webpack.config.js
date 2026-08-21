@@ -1,3 +1,5 @@
+/* Gold Medal API: JavaScript for the behavior I practiced in this project. */
+
 var path = require('path');
 var webpack = require('webpack');
 
@@ -23,4 +25,3 @@ module.exports = {
   },
   devtool: 'source-map'
 };
-

@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Random Color Generator</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:400,700"
+    rel="stylesheet"
+  >
 </head>
 
 <body>
-  <section id='container'>
-    <img src='http://pngimg.com/uploads/rainbow/rainbow_PNG5580.png'/>
+  <main id="container">
+    <div class="rainbow" aria-hidden="true"></div>
+
     <h1>Random Color Generator</h1>
     <p>Find your new favorite color!</p>
-    <button id='color-button'>Pick a Color</button>
-    <button id='next-button'>Mystery Color</button>
-  </section>
- <script  src="main.js"></script>
 
+    <div class="button-group">
+      <button type="button" id="color-button">Pick a Color</button>
+      <button type="button" id="next-button">Mystery Color</button>
+    </div>
+
+    <p class="hint">
+      Mystery Color works with a click, or scroll over it to try the original wheel event.
+    </p>
+  </main>
+
+  <script src="main.js"></script>
 </body>
 </html>

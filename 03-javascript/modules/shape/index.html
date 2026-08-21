@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shape Area Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="project-card">
+      <h1>Shape Area Calculator</h1>
+      <p class="project-intro">
+        I added a small calculator so the module functions have something visual
+        to work with.
+      </p>
+
+      <form id="shape-form">
+        <label for="shape">Shape</label>
+        <select id="shape">
+          <option value="circle">Circle</option>
+          <option value="square">Square</option>
+        </select>
+
+        <label for="measurement">Radius or side length</label>
+        <input id="measurement" type="number" min="0" step="any" required>
+
+        <button type="submit">Calculate area</button>
+      </form>
+
+      <p id="result" class="result" aria-live="polite">Choose a shape and enter a measurement.</p>
+    </section>
+  </main>
+
+  <script src="shape-area.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>

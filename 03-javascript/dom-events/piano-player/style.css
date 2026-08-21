@@ -1,114 +1,260 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: #ffc63f;
+/* Piano Player: simple keyboard styling for the DOM events exercise. */
+
+:root {
+  --background: #f6efe2;
+  --surface: #fffdf8;
+  --text: #1d2433;
+  --muted: #697080;
+  --gold: #e7b84b;
+  --purple: #7354a8;
+  --purple-dark: #4e3975;
+  --red: #c95e55;
+  --border: #d7c8b1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem 1rem;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.page {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.player-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--gold);
+  border-radius: 0.8rem;
+  background: var(--surface);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 8%);
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  color: var(--purple-dark);
+}
+
+h1 {
+  margin-bottom: 0.35rem;
+  text-align: center;
+}
+
+.intro {
+  margin-top: 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.keyboard-help {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 1.5rem 0;
+}
+
+.keyboard-help span {
+  padding: 0.25rem 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.piano {
+  position: relative;
+  display: flex;
+  width: min(100%, 520px);
+  height: 230px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.key {
+  position: relative;
+  border: 2px solid var(--text);
+  font: inherit;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+}
+
+.white-key {
+  flex: 1;
+  height: 220px;
+  background: #ffffff;
+  color: var(--text);
+}
+
+.black-key {
+  z-index: 2;
+  width: 7%;
+  height: 130px;
+  margin-right: -3.5%;
+  margin-left: -3.5%;
+  background: var(--text);
+  color: #ffffff;
+}
+
+.key.is-active {
+  background: var(--purple);
+  color: #ffffff;
+}
+
+.key:focus-visible {
+  outline: 4px solid var(--gold);
+  outline-offset: 3px;
+  z-index: 3;
+}
+
+.keynote,
+.black-keynote,
+.shortcut {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.keynote {
+  bottom: 2rem;
+}
+
+.black-keynote {
+  bottom: 2rem;
+}
+
+.shortcut {
+  bottom: 0.45rem;
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+.song-card {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  background: #fff7df;
+}
+
+.song-card h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.lyrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.lyric-column {
+  width: 80px;
+  text-align: center;
+}
+
+.word,
+.note {
+  display: block;
+}
+
+.word {
+  min-height: 38px;
+  padding: 0.45rem 0.25rem;
+  border-radius: 0.35rem;
+  background: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.note {
+  margin-top: 0.4rem;
+  color: var(--red);
+  font-weight: 700;
+}
+
+.optional-column[hidden] {
+  display: none;
+}
+
+.song-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.song-controls button {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--purple);
+  border-radius: 0.4rem;
+  background: var(--purple);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.song-controls button:hover,
+.song-controls button:focus-visible {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--text);
+}
+
+.status {
+  margin: 1.5rem 0 0;
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 0.45rem;
+  background: #ffffff;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .piano {
+    height: 190px;
   }
-  .title{
-    font-size: 36px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    padding: 0;
-    color: #141c3a;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
+
+  .white-key {
+    height: 180px;
   }
-  #demo{
-    text-align: center;
-    font-size: 18px;
-    margin-top: 15px;
-    color: #141c3a;
-    letter-spacing: 1px;
-    font-style: italic;
+
+  .black-key {
+    height: 105px;
   }
-  .piano{
-    width: 305px;
-    height: 210px;
-    display: block;
-    margin: 0 auto;
-    background-color: #fd4d3f;
-    margin-top: 30px;
-  }
-  .key{
-    width: 30px;
-    height: 200px;
-    display: inline-block;
-    border: solid #141c3a 2px;
-    box-shadow: 2px 5px;
-    background-color: white;
-    color: #141c3a;
-  }
-  .black-key{
-    width: 25px;
-    height: 100px;
-    display: inline-block;
-    background-color: #141c3a;
-    color: white;
-    position: absolute;
-    margin-left: -12px;
-    padding: 0px;
-  }
-  .keynote{
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    margin-top: 175px;
-    color: #141c3a;
-  }
-  .black-keynote{
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    margin-top: 75px;
-  }
-  #lyrics{
-    width: 400px;
-    height: 240px;
-    display: block;
-    margin: 0 auto;
-    padding-left: 20px;
-    margin-top: 50px;
-    background-color: #fd4d3f;
-  }
-  #column-one, #column-two, #column-three, #column-four, #column-five, #column-six, #column-optional{
-    width: 90px;
-    display: inline-block;
-    text-align: center;
-    margin-top: 30px;
-  }
-  #column-optional{
+
+  .keyboard-help {
     display: none;
   }
-  #word-one, #word-two, #word-three, #word-four, #word-five, #word-six, #word-optional{
-    background-color: white;
-    width: 90px;
-    height: 25px;
-    padding-top: 10px;
-    letter-spacing: 5px;
-    color: #141c3a;
+
+  .keynote {
+    bottom: 1.7rem;
   }
-  #letter-note-one, #letter-note-two, #letter-note-three, #letter-note-four, #letter-note-five, #letter-note-six, #letter-note-optional{
-    color: white;
-    width: 25px;
-    height: 25px;
-    margin-top: 15px;
-    margin-left: 35px;
+
+  .black-keynote {
+    bottom: 1.7rem;
   }
-  #first-next-line, #second-next-line, #third-next-line, #fourth-next-line{
-    width: 80px;
-    height: 40px;
-    font-size: 16px;
-    position: absolute;
-    margin-top: 30px;
-    margin-left: 10px;
-    border: none;
-    background-color: #ffc63f;
-    color: #141c3a;
-    letter-spacing: 1px;
-    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
   }
+}

@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
-    <head>
-        <title>Spring Security Example</title>
-    </head>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spring Greeting</title>
+  <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+  <main>
+    <section class="project-card">
+      <h1>Spring Greeting</h1>
+      <p class="project-intro">
+        I added this form so I can send a request to my controller and see the
+        model value come back through Thymeleaf.
+      </p>
 
-    <body>
-        <h1>Welcome!</h1>
-
-        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
-    </body>
+      <form th:action="@{/greeting}" method="get">
+        <label for="name">Your name</label>
+        <input id="name" name="name" required>
+        <button type="submit">Show greeting</button>
+      </form>
+    </section>
+  </main>
+</body>
 </html>

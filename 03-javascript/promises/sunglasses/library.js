@@ -1,22 +1,28 @@
-const checkAvailability = (itemName, distributorName) => {
-    console.log(`Checking availability of ${itemName} at ${distributorName}...`);
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (restockSuccess()) {
-                console.log(`${itemName} are in stock at ${distributorName}`)
-                resolve(itemName);
-            } else {
-                reject(`Error: ${itemName} is unavailable from ${distributorName} at this time.`);
-            }
-        }, 1000);
-    });
-};
+/* Helper supplied for the Promise availability exercise. */
 
-module.exports = { checkAvailability };
-
-
-// This is a function that returns true 80% of the time
-// We're using it to simulate a request to the distributor being successful this often
 function restockSuccess() {
-    return (Math.random() > .2);
+  return Math.random() > 0.2;
+}
+
+function checkAvailability(itemName, distributorName) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (restockSuccess()) {
+        resolve(itemName);
+        return;
+      }
+
+      reject(
+        new Error(`${itemName} is unavailable from ${distributorName} right now.`)
+      );
+    }, 1000);
+  });
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { checkAvailability };
+}
+
+if (typeof window !== "undefined") {
+  window.checkAvailability = checkAvailability;
 }

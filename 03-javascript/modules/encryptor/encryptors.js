@@ -6,9 +6,9 @@ module.exports.symbolCipher = symbolCipher;
 module.exports.reverseCipher = reverseCipher;
 
 // export { caesarCipher, symbolCipher, reverseCipher };
-// const resources = { 
-//   valueA, 
-//   valueB 
+// const resources = {
+//   valueA,
+//   valueB
 // }
 // export { resources as default };
 // OR

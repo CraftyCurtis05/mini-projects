@@ -1,3 +1,5 @@
+/* Gold Medal API: JavaScript for the behavior I practiced in this project. */
+
 import React from 'react';
 import { Redirect } from 'react-router';
 

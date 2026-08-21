@@ -42,7 +42,7 @@ const context = {
       }
     ]
   };
-  
+
   // Handlebar template variables
   const compiledHtml = template(context);
 

@@ -1,20 +1,24 @@
-// This variable stores the "Pick a Color" button
-let button = document.getElementById('color-button');
+/* Color Generator: change button colors from simple DOM events. */
 
-// This variable stores the "Mystery Color" button
-let mysteryButton = document.getElementById('next-button');
+const colorButton = document.querySelector("#color-button");
+const mysteryButton = document.querySelector("#next-button");
 
-// This random number function will create color codes for the randomColor variable
-const colorValue = () => {
+function colorValue() {
   return Math.floor(Math.random() * 256);
 }
 
-// Uses random number function to generate a random color variable and set a target event's background color to the random color
-const colorChange = (event) => {
-  let randomColor = 'rgb(' + colorValue() + ',' + colorValue() + ',' + colorValue() + ')';
-  event.target.style.backgroundColor = randomColor;
+function randomColor() {
+  return `rgb(${colorValue()}, ${colorValue()}, ${colorValue()})`;
 }
 
-// Button event handling and set functions
-button.onclick = colorChange;
-mysteryButton.onwheel = colorChange;
+function colorChange(event) {
+  event.currentTarget.style.backgroundColor = randomColor();
+}
+
+// The first button practices a normal click event.
+colorButton.addEventListener("click", colorChange);
+
+// The original Codecademy exercise uses the wheel event here.
+// I also keep click support because that is what I naturally expect a button to do.
+mysteryButton.addEventListener("wheel", colorChange);
+mysteryButton.addEventListener("click", colorChange);

@@ -1,50 +1,128 @@
-html{
-    height: 100%;
-    background-color: rgb(18, 24, 42);
-    color: white;
-    font-family: 'Helvetica', sans-serif;
+/* WorkAround Salary Explorer: simple dashboard styles for this module exercise. */
+
+:root {
+  --bg: #101827;
+  --surface: #182337;
+  --surface-soft: #223049;
+  --text: #f7fbff;
+  --muted: #b8c5d1;
+  --primary: #53c7d8;
+  --accent: #baf553;
+  --border: #415269;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem 1rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.page-heading {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.25rem;
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-heading h1 {
+  margin: 0 0 0.25rem;
+  color: var(--accent);
+}
+
+.page-heading p:last-child {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.option-group,
+.results {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  background: var(--surface);
+}
+
+.option-group {
+  margin: 0;
+}
+
+.option-group legend,
+.results h2 {
+  padding: 0 0.25rem;
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.results h2 {
+  margin-top: 0;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.6rem 0;
+  padding: 0.45rem;
+  border-radius: 0.35rem;
+}
+
+.option:hover {
+  background: var(--surface-soft);
+}
+
+.option input {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.option label {
+  cursor: pointer;
+}
+
+.option input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.results {
+  margin-top: 1rem;
+}
+
+.results p {
+  margin: 0.45rem 0;
+}
+
+@media (max-width: 640px) {
+  .input-grid {
+    grid-template-columns: 1fr;
   }
-  
-  body{
-    height: 100%;
-  }
-  
-  main{
-    display: flex;
-    margin: 15% 2%;
-  }
-  
-  section{
-    width: 100%;
-    border: 1px solid white;
-    padding: 12px;
-  }
-  
-  h3{
-    height: 2em;
-  }
-  
-  .option{
-    margin-bottom: 0.5em;
-  }
-  
-  input{
-    margin-right: 7px;
-  }
-  
-  #roleInputs{
-    flex-grow: 1;
-  }
-  
-  #companyInputs{
-    flex-grow: 1;
-  }
-  
-  #resultsContainer{
-    flex-grow: 2; 
-  }
-  
-  input{
-    background-color: rgb(18, 24, 42);
-    border-color: white;
-  }
+}

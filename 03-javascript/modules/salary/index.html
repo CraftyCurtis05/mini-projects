@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>WorkAround</title>
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <script type="module" src="main.js" defer></script>
-  </head>
-  <body>
-    <main>
-      <!-- The roles and companies <section>s are dynamically created in main.js with renderInputButtons() -->
-      <section id="resultsContainer">
-        <h3>Details:</h3>
-        <p id="salarySelected"> ... </p>
-        <p id="salaryAverageByRole"> ... </p>
-        <p id="salaryAverageByCompany"> ... </p>
-        <p id="salaryAverageIndustry"> ... </p>
-      </section>
-    </main>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WorkAround Salary Explorer</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <main>
+    <header class="page-heading">
+      <p class="eyebrow">JavaScript module practice</p>
+      <h1>WorkAround Salary Explorer</h1>
+      <p>
+        Select a company and role to compare the salary data from the exercise.
+      </p>
+    </header>
+
+    <div id="inputContainer" class="input-grid"></div>
+
+    <section id="resultsContainer" class="results" aria-live="polite">
+      <h2>Salary Details</h2>
+      <p id="salarySelected">Select a company and a role to see the results.</p>
+      <p id="salaryAverageByRole"></p>
+      <p id="salaryAverageByCompany"></p>
+      <p id="salaryAverageIndustry"></p>
+    </section>
+  </main>
+
+  <script src="modules/salaryData.js"></script>
+  <script src="modules/utilities.js"></script>
+  <script src="modules/workAroundModule.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>

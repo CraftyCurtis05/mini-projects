@@ -1,3 +1,5 @@
+/* Tea Cozy: styles for this practice project. */
+
 body, html {
     font-family: Helvetica;
     font-size: 22px;
@@ -110,7 +112,7 @@ main {
     height: 500px;
     width: 1200px;
     padding-top: 755px;
-   
+
 }
 
 .bottom img {

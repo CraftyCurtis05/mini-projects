@@ -1,3 +1,5 @@
+/* JavaScript Fundamentals Practice: JavaScript for the behavior I practiced in this project. */
+
 console.log("I'm learning about");
 
 for (let idx=0; idx < 999999999; idx++) {}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gold Medal API Explorer</title>
+  <link rel="stylesheet" href="simple.css">
+</head>
+<body>
+  <main>
+    <section class="project-card">
+      <h1>Gold Medal API Explorer</h1>
+      <p class="project-intro">
+        I added this small page so I can call my Spring API without needing to
+        test every endpoint with curl.
+      </p>
+
+      <form id="country-form">
+        <label for="country">Country</label>
+        <select id="country" required>
+          <option value="">Loading countries...</option>
+        </select>
+        <button type="submit">View details</button>
+      </form>
+
+      <div id="result" class="result" aria-live="polite">Choose a country to see its medal data.</div>
+    </section>
+  </main>
+
+  <script src="simple.js"></script>
+</body>
+</html>

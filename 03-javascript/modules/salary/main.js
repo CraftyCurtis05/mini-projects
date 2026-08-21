@@ -1,74 +1,89 @@
-// TODO: Add your import statements here.
-import { getRoles, getCompanies } from './modules/salaryData.js';
-import { formatNumber } from './modules/utilities.js';
-import { 
-  getAverageSalaryByRole, 
-  getAverageSalaryByCompany,
-  getSalaryAtCompany,
-  getIndustryAverageSalary
- } from './modules/workAroundModule.js';
+/* WorkAround: connect the salary data and calculations to the browser UI. */
 
-// TODO: Get the companies and roles using the salaryData module.
-const companies = getCompanies();
-const roles = getRoles();
+(() => {
+  const { getRoles, getCompanies } = window.WorkAroundData;
+  const { formatNumber } = window.WorkAroundUtils;
+  const {
+    getAverageSalaryByRole,
+    getAverageSalaryByCompany,
+    getSalaryAtCompany,
+    getIndustryAverageSalary,
+  } = window.WorkAroundCalculations;
 
-// Create input buttons for every company and role represented in the data.
-renderInputButtons(companies, 'company');
-renderInputButtons(roles, 'role');
+  const companies = getCompanies();
+  const roles = getRoles();
 
-// This function will create a new <section> with radio
-// inputs based on the data provided in the labels array.
-function renderInputButtons(labels, groupName) {
-  const container = document.createElement('section');
-  container.setAttribute('id', `${groupName}Inputs`);
+  const inputContainer = document.querySelector("#inputContainer");
+  const salarySelected = document.querySelector("#salarySelected");
+  const salaryAverageByRole = document.querySelector("#salaryAverageByRole");
+  const salaryAverageByCompany = document.querySelector("#salaryAverageByCompany");
+  const salaryAverageIndustry = document.querySelector("#salaryAverageIndustry");
 
-  let header = document.createElement('h3');
-  header.innerText = `Select a ${groupName}`;
-  container.appendChild(header);
+  function renderOptions(labels, groupName) {
+    const fieldset = document.createElement("fieldset");
+    fieldset.className = "option-group";
 
-  labels.forEach(label => { // For each label...
-    // Create the radio input element.
-    let divElement = document.createElement('div');
-    divElement.setAttribute('class', 'option');
+    const legend = document.createElement("legend");
+    legend.textContent = `Select a ${groupName}`;
+    fieldset.appendChild(legend);
 
-    let inputElement = document.createElement('input');
-    inputElement.setAttribute('type', 'radio');
-    inputElement.setAttribute('name', groupName);
-    inputElement.setAttribute('value', label);
-    divElement.appendChild(inputElement);
+    labels.forEach((label, index) => {
+      const option = document.createElement("div");
+      option.className = "option";
 
-    // Create a label for that radio input element.
-    let labelElement = document.createElement('label');
-    labelElement.setAttribute('for', label);
-    labelElement.innerText = label;
-    divElement.appendChild(labelElement);
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = groupName;
+      input.value = label;
+      input.id = `${groupName}-${index}`;
 
-    // Update the results when the input is selected.
-    inputElement.addEventListener('click', updateResults);
+      const labelElement = document.createElement("label");
+      labelElement.htmlFor = input.id;
+      labelElement.textContent = label;
 
-    container.appendChild(divElement);
-  });
+      input.addEventListener("change", updateResults);
 
-  document.querySelector('main').prepend(container);
-}
+      option.append(input, labelElement);
+      fieldset.appendChild(option);
+    });
 
-function updateResults(){
-  // Get the current selected company and role from the radio button inputs.
-  const company = document.querySelector("input[name='company']:checked").value;
-  const role = document.querySelector("input[name='role']:checked").value;
+    inputContainer.appendChild(fieldset);
+  }
 
-  // If either the company or role is unselected, return.
-  if (!company || !role) { return; }
+  function updateResults() {
+    const companyInput = document.querySelector("input[name='company']:checked");
+    const roleInput = document.querySelector("input[name='role']:checked");
 
-  // TODO: Use the workAroundModule functions to calculate the needed data.
-  const averageSalaryByRole = formatNumber(getAverageSalaryByRole(role));
-  const averageSalaryByCompany = formatNumber(getAverageSalaryByCompany(company));
-  const salary = formatNumber(getSalaryAtCompany(role, company));
-  const industryAverageSalary = formatNumber(getIndustryAverageSalary());
+    // I wait for both choices before calculating anything.
+    if (!companyInput || !roleInput) {
+      salarySelected.textContent =
+        "Select a company and a role to see the results.";
+      return;
+    }
 
-  // Render them to the screen.
-  document.getElementById('salarySelected').innerText = `The salary for ${role}s at ${company} is \$${salary}`;
-  document.getElementById('salaryAverageByRole').innerText = `The industry average salary for ${role} positions is \$${averageSalaryByRole}`;
-  document.getElementById('salaryAverageByCompany').innerText = `The average salary at ${company} is \$${averageSalaryByCompany}`;
-  document.getElementById('salaryAverageIndustry').innerText = `The average salary in the Tech industry is \$${industryAverageSalary}`;
-}
+    const company = companyInput.value;
+    const role = roleInput.value;
+    const salary = getSalaryAtCompany(role, company);
+
+    if (salary === null) {
+      salarySelected.textContent =
+        "I could not find that company and role combination.";
+      return;
+    }
+
+    salarySelected.textContent =
+      `The salary for ${role} at ${company} is $${formatNumber(salary)}.`;
+
+    salaryAverageByRole.textContent =
+      `Average for ${role}: $${formatNumber(getAverageSalaryByRole(role))}.`;
+
+    salaryAverageByCompany.textContent =
+      `Average at ${company}: $${formatNumber(getAverageSalaryByCompany(company))}.`;
+
+    salaryAverageIndustry.textContent =
+      `Average across all salaries: $${formatNumber(getIndustryAverageSalary())}.`;
+  }
+
+  renderOptions(companies, "company");
+  renderOptions(roles, "role");
+})();

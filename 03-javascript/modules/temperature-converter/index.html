@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="project-card">
+      <h1>Temperature Converter</h1>
+      <p class="project-intro">
+        The calculations still live in the converter module. This page just gives
+        me a quick way to use them without typing values in the terminal.
+      </p>
+
+      <form id="converter-form">
+        <div class="row">
+          <div>
+            <label for="temperature">Temperature</label>
+            <input id="temperature" type="number" step="any" required>
+          </div>
+
+          <div>
+            <label for="direction">Convert</label>
+            <select id="direction">
+              <option value="c-to-f">Celsius to Fahrenheit</option>
+              <option value="f-to-c">Fahrenheit to Celsius</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit">Convert</button>
+      </form>
+
+      <p id="result" class="result" aria-live="polite">Enter a temperature to start.</p>
+    </section>
+  </main>
+
+  <script src="converters.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>

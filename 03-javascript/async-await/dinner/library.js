@@ -1,33 +1,38 @@
-let cookBeans = () => {
-    return new Promise ((resolve, reject) => {
-     setTimeout(()=>{
-       resolve('beans');
-     }, 1000);
-   });
-  };
-  
-  let steamBroccoli = () => {
-   return new Promise ((resolve, reject) => {
-     setTimeout(()=>{
-       resolve('broccoli');
-     }, 1000);
-   });
-  };
-  
-  let cookRice = () => {
-   return new Promise ((resolve, reject) => {
-     setTimeout(()=>{
-       resolve('rice');
-     }, 1000);
-   });
-  };
-  
-  let bakeChicken = () => {
-   return new Promise ((resolve, reject) => {
-     setTimeout(()=>{
-       resolve('chicken');
-     }, 1000);
-   });
-  };
-  
-  module.exports = {cookBeans, steamBroccoli, cookRice, bakeChicken};
+/* Small Promise helpers used by the dinner async/await exercise. */
+
+function makeFood(name) {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(name), 1000);
+  });
+}
+
+function cookBeans() {
+  return makeFood("beans");
+}
+
+function steamBroccoli() {
+  return makeFood("broccoli");
+}
+
+function cookRice() {
+  return makeFood("rice");
+}
+
+function bakeChicken() {
+  return makeFood("chicken");
+}
+
+const dinnerFunctions = {
+  cookBeans,
+  steamBroccoli,
+  cookRice,
+  bakeChicken,
+};
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = dinnerFunctions;
+}
+
+if (typeof window !== "undefined") {
+  window.dinnerFunctions = dinnerFunctions;
+}

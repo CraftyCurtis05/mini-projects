@@ -1,3 +1,5 @@
+/* Gold Medal API: JavaScript for the behavior I practiced in this project. */
+
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 

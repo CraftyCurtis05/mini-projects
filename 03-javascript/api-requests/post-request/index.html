@@ -1,36 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Byte Size</title>
-  <link rel="stylesheet" type="text/css" href="public/style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POST Request Practice</title>
+  <link rel="stylesheet" href="public/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400|Source+Sans+Pro" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <img src="https://content.codecademy.com/courses/intermediate-javascript-requests/bytesize_logo.svg" class="logo" />
-
+    <h2 class="logo-text">POST Request</h2>
   </header>
+
   <main id="main">
     <div class="container">
-
-      <h1>Enter a URL</h1>
+      <h1>Create a Practice Post</h1>
 
       <form id="form" autocomplete="off">
-        <input type="text" id="input" value="">
-        <button id="shorten">Shorten</button>
+        <label for="titleInput">Post title</label>
+        <input
+          type="text"
+          id="titleInput"
+          placeholder="What are you practicing?"
+          required
+        >
+
+        <label for="bodyInput">Post body</label>
+        <textarea
+          id="bodyInput"
+          rows="4"
+          placeholder="Add a short message"
+          required
+        ></textarea>
+
+        <button type="submit" id="submit">Send POST</button>
       </form>
 
-      <div id="responseField">
-
-      </div>
-
+      <div id="responseField" aria-live="polite"></div>
     </div>
   </main>
-  <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
-  <script src="public/main.js"></script>
+
   <script src="public/helperFunctions.js"></script>
+  <script src="public/main.js"></script>
 </body>
 </html>

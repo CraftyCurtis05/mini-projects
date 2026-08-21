@@ -1,3 +1,5 @@
+/* Keyboard Events: JavaScript for the behavior I practiced in this project. */
+
 let ball = document.getElementById('float-circle');
 
 // This function changes the ball's bottom style-property to 250px

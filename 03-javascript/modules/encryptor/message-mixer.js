@@ -18,8 +18,8 @@ process.stdin.on('data', (userInput) => {
 the user chose when they ran the program. */
 function getEncryptionMethod() {
   let encryptionMethod;
-  
-  const encryptionType = process.argv[2];  
+
+  const encryptionType = process.argv[2];
   if (encryptionType === 'symbol') {
     encryptionMethod = symbolCipher;
   } else if (encryptionType === 'reverse') {
@@ -28,10 +28,10 @@ function getEncryptionMethod() {
     let amount = Number(process.argv[3]);
     if (Number.isNaN(amount)) {
       process.stdout.write(`Try again with a valid amount argument. \n`)
-      process.exit();  
+      process.exit();
     }
     encryptionMethod = (str) => caesarCipher(str, amount);
-  } 
+  }
   else {
     process.stdout.write(`Try again with a valid encryption type. \n`)
     process.exit();
@@ -43,7 +43,7 @@ function getEncryptionMethod() {
 
 /* Helper function for displaying the encrypted message to the user. */
 function displayEncryptedMessage(encryptionMethod, userInput) {
-  let str = userInput.toString().trim();    
+  let str = userInput.toString().trim();
   let output = encryptionMethod(str);
   process.stdout.write(`\nHere is your encrypted message:\n> ${output}\n`)
   process.exit();

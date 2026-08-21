@@ -1,3 +1,5 @@
+/* Handlebars Hello: JavaScript for the behavior I practiced in this project. */
+
 const source = document.getElementById('greet').innerHTML;
 
 const template = Handlebars.compile(source);

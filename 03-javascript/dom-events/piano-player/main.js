@@ -1,119 +1,222 @@
-// The keys and notes variables store the piano keys
-const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'high-c-key', 'c-sharp-key', 'd-sharp-key', 'f-sharp-key', 'g-sharp-key', 'a-sharp-key'];
-const notes = [];
-keys.forEach(function(key){
-  notes.push(document.getElementById(key));
-})
+/* Piano Player: DOM events, keyboard input, and simple Web Audio notes. */
 
-// Write named functions that change the color of the keys below
-const keyPlay = () => {
-  event.target.style.backgroundColor = 'purple';
+const noteFrequencies = {
+  C4: 261.63,
+  "C#4": 277.18,
+  D4: 293.66,
+  "D#4": 311.13,
+  E4: 329.63,
+  F4: 349.23,
+  "F#4": 369.99,
+  G4: 392.0,
+  "G#4": 415.3,
+  A4: 440.0,
+  "A#4": 466.16,
+  B4: 493.88,
+  C5: 523.25,
+};
+
+const keyboardMap = {
+  a: "c-key",
+  w: "c-sharp-key",
+  s: "d-key",
+  e: "d-sharp-key",
+  d: "e-key",
+  f: "f-key",
+  t: "f-sharp-key",
+  g: "g-key",
+  y: "g-sharp-key",
+  h: "a-key",
+  u: "a-sharp-key",
+  j: "b-key",
+  k: "high-c-key",
+};
+
+const pianoKeys = [...document.querySelectorAll(".piano .key")];
+const status = document.querySelector("#status");
+
+let audioContext;
+
+function getAudioContext() {
+  if (!audioContext) {
+    audioContext = new AudioContext();
+  }
+
+  return audioContext;
 }
 
-const keyReturn = () => {
-  event.target.style.backgroundColor = '';
+function playTone(noteName) {
+  const frequency = noteFrequencies[noteName];
+
+  if (!frequency) {
+    return;
+  }
+
+  const context = getAudioContext();
+  const oscillator = context.createOscillator();
+  const gain = context.createGain();
+
+  oscillator.type = "sine";
+  oscillator.frequency.value = frequency;
+
+  gain.gain.setValueAtTime(0.15, context.currentTime);
+  gain.gain.exponentialRampToValueAtTime(
+    0.001,
+    context.currentTime + 0.45
+  );
+
+  oscillator.connect(gain);
+  gain.connect(context.destination);
+
+  oscillator.start();
+  oscillator.stop(context.currentTime + 0.45);
 }
 
-// Write a named function with event handler properties
-const play = (note) => {
-  note.addEventListener('mousedown', keyPlay);
-  note.addEventListener('mouseup', keyReturn);
+function pressKey(key) {
+  if (!key || key.classList.contains("is-active")) {
+    return;
+  }
+
+  key.classList.add("is-active");
+  playTone(key.dataset.note);
+  status.textContent = `Playing ${key.dataset.note}.`;
 }
 
-// Write a loop that runs the array elements through the function
-notes.forEach(play);
+function releaseKey(key) {
+  if (!key) {
+    return;
+  }
 
-// These variables store the buttons that progress the user through the lyrics
-let nextOne = document.getElementById('first-next-line');
-let nextTwo = document.getElementById('second-next-line');
-let nextThree = document.getElementById('third-next-line');
-let startOver = document.getElementById('fourth-next-line');
-
-// These variables store the notes that will be changed to guide user through the song
-let noteOne = document.getElementById('letter-note-one');
-let noteTwo = document.getElementById('letter-note-two');
-let noteThree = document.getElementById('letter-note-three');
-let noteFour = document.getElementById('letter-note-four');
-let noteFive = document.getElementById('letter-note-five');
-let noteSix = document.getElementById('letter-note-six');
-
-// These variables store the words to the song that will be changed to guide user through song lyrics
-let wordOne = document.getElementById('word-one');
-let wordTwo = document.getElementById('word-two');
-let wordThree = document.getElementById('word-three');
-let wordFour = document.getElementById('word-four'); 
-let wordFive = document.getElementById('word-five');
-let wordSix = document.getElementById('word-six');
-
-// This variable stores the '-END' lyric element
-let lastLyric = document.getElementById('column-optional');
-
-// These statements are "hiding" all the progress buttons, but the first one
-nextOne.hidden = false;
-nextTwo.hidden = true;
-nextThree.hidden = true;
-startOver.hidden= true;
-
-// Write anonymous event handler property and function for the first progress button
-nextOne.onclick = function() {
-  nextTwo.hidden = false;
-  nextOne.hidden = true;
-
-  noteFive.innerHTML = 'D';
-  noteSix.innerHTML = 'C';
+  key.classList.remove("is-active");
 }
 
-// Write anonymous event handler property and function for the second progress button
-nextTwo.onclick = function() {
-  nextThree.hidden = false;
-  nextTwo.hidden = true;
+// Each piano button gets the same pointer behavior.
+pianoKeys.forEach(key => {
+  key.addEventListener("pointerdown", () => pressKey(key));
+  key.addEventListener("pointerup", () => releaseKey(key));
+  key.addEventListener("pointerleave", () => releaseKey(key));
 
-  wordFive.innerHTML = 'DEAR';
-  wordSix.innerHTML = 'FRI';
-  lastLyric.style.display = 'inline-block'; // Display END
+  // Keyboard activation through Enter or Space still works like a normal button.
+  key.addEventListener("click", event => {
+    if (event.detail === 0) {
+      pressKey(key);
+      setTimeout(() => releaseKey(key), 180);
+    }
+  });
+});
 
-  noteThree.innerHTML = 'G';
-  notefour.innerHTML = 'E';
-  noteFive.innerHTML = 'C';
-  noteSix.innerHTML = 'B';
+// I keep a separate key map so the computer keyboard feels like a small piano.
+document.addEventListener("keydown", event => {
+  if (event.repeat) {
+    return;
+  }
+
+  const keyId = keyboardMap[event.key.toLowerCase()];
+  const pianoKey = keyId ? document.querySelector(`#${keyId}`) : null;
+
+  if (pianoKey) {
+    event.preventDefault();
+    pressKey(pianoKey);
+  }
+});
+
+document.addEventListener("keyup", event => {
+  const keyId = keyboardMap[event.key.toLowerCase()];
+  const pianoKey = keyId ? document.querySelector(`#${keyId}`) : null;
+
+  if (pianoKey) {
+    releaseKey(pianoKey);
+  }
+});
+
+/* Song guide */
+
+const nextOne = document.querySelector("#first-next-line");
+const nextTwo = document.querySelector("#second-next-line");
+const nextThree = document.querySelector("#third-next-line");
+const startOver = document.querySelector("#fourth-next-line");
+
+const noteOne = document.querySelector("#letter-note-one");
+const noteTwo = document.querySelector("#letter-note-two");
+const noteThree = document.querySelector("#letter-note-three");
+const noteFour = document.querySelector("#letter-note-four");
+const noteFive = document.querySelector("#letter-note-five");
+const noteSix = document.querySelector("#letter-note-six");
+
+const wordOne = document.querySelector("#word-one");
+const wordTwo = document.querySelector("#word-two");
+const wordThree = document.querySelector("#word-three");
+const wordFour = document.querySelector("#word-four");
+const wordFive = document.querySelector("#word-five");
+const wordSix = document.querySelector("#word-six");
+
+const lastLyric = document.querySelector("#column-optional");
+
+function showOnly(buttonToShow) {
+  [nextOne, nextTwo, nextThree, startOver].forEach(button => {
+    button.hidden = button !== buttonToShow;
+  });
 }
 
-// Write anonymous event handler property and function for the third progress button
-nextThree.onclick = function() {
-  startOver.hidden = false;
-  nextThree.hidden = true;
+function showLineOne() {
+  wordOne.textContent = "HAP-";
+  wordTwo.textContent = "PY";
+  wordThree.textContent = "BIRTH-";
+  wordFour.textContent = "DAY";
+  wordFive.textContent = "TO";
+  wordSix.textContent = "YOU";
 
-  wordOne.innerHTML = 'HAP-';
-  wordTwo.innerHTML = 'PY';
-  wordThree.innerHTML = 'BIRTH';
-  wordFour.innerHTML = 'DAY';
-  wordFive.innerHTML = 'TO';
-  wordSix.innerHTML = 'YOU!';
+  noteOne.textContent = "G";
+  noteTwo.textContent = "G";
+  noteThree.textContent = "A";
+  noteFour.textContent = "G";
+  noteFive.textContent = "C";
+  noteSix.textContent = "B";
 
-  noteOne.innerHTML = 'F';
-  noteTwo.innerHTML = 'F';
-  noteThree.innerHTML = 'E';
-  noteFour.innerHTML = 'C';
-  noteFive.innerHTML = 'D';
-  noteSix.innerHTML = 'C';
-
-  lastLyric.style.display = 'none';
+  lastLyric.hidden = true;
+  showOnly(nextOne);
 }
 
-// This is the event handler property and function for the startOver button
-startOver.onclick = function() {
-  nextOne.hidden = false;
-  startOver.hidden = true;
-  document.getElementById('word-one').innerHTML = 'HAP-';
-  document.getElementById('letter-note-one').innerHTML = 'G';
-  document.getElementById('word-two').innerHTML = 'PY';
-  document.getElementById('letter-note-two').innerHTML = 'G';
-  document.getElementById('word-three').innerHTML = 'BIRTH-';
-  document.getElementById('letter-note-three').innerHTML = 'A';
-  document.getElementById('word-four').innerHTML = 'DAY';
-  document.getElementById('letter-note-four').innerHTML = 'G';
-  document.getElementById('word-five').innerHTML = 'TO';
-  document.getElementById('letter-note-five').innerHTML = 'C';
-  document.getElementById('word-six').innerHTML = 'YOU!';
-  document.getElementById('letter-note-six').innerHTML = 'B';
-}
+nextOne.addEventListener("click", () => {
+  noteFive.textContent = "D";
+  noteSix.textContent = "C";
+
+  lastLyric.hidden = true;
+  showOnly(nextTwo);
+});
+
+nextTwo.addEventListener("click", () => {
+  wordFive.textContent = "DEAR";
+  wordSix.textContent = "FRI";
+
+  noteThree.textContent = "G";
+  noteFour.textContent = "E";
+  noteFive.textContent = "C";
+  noteSix.textContent = "B";
+
+  lastLyric.hidden = false;
+  showOnly(nextThree);
+});
+
+nextThree.addEventListener("click", () => {
+  wordOne.textContent = "HAP-";
+  wordTwo.textContent = "PY";
+  wordThree.textContent = "BIRTH";
+  wordFour.textContent = "DAY";
+  wordFive.textContent = "TO";
+  wordSix.textContent = "YOU!";
+
+  noteOne.textContent = "F";
+  noteTwo.textContent = "F";
+  noteThree.textContent = "E";
+  noteFour.textContent = "C";
+  noteFive.textContent = "D";
+  noteSix.textContent = "C";
+
+  lastLyric.hidden = true;
+  showOnly(startOver);
+});
+
+startOver.addEventListener("click", showLineOne);
+
+showLineOne();

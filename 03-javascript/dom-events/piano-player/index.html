@@ -1,93 +1,157 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piano Player</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <p class='title'>Piano Player</p>
-  <p id='demo'>Follow the song below to play  the piano.</p>
-  <section class="piano">
-    <section id='c-key' class="key">
-      <section class='keynote'>C</section>
-    </section>
-    <section id='c-sharp-key' class="black-key">
-      <section class='black-keynote'>C#</section>
-    </section>
-    <section id='d-key' class="key">
-      <section class='keynote'>D</section>
-    </section>
-    <section id='d-sharp-key' class="black-key">
-      <section class='black-keynote'>D#</section>
-    </section>
-    <section id='e-key' class="key">
-      <section class='keynote'>E</section>
-    </section>
-    <section id='f-key' class="key">
-      <section class='keynote'>F</section>
-    </section>
-    <section id='f-sharp-key' class="black-key">
-      <section class='black-keynote'>F#</section>
-    </section>
-    <section id='g-key' class="key">
-      <section class='keynote'>G</section>
-    </section>
-    <section id='g-sharp-key' class="black-key">
-      <section class='black-keynote'>G#</section>
-    </section>
-    <section id='a-key' class="key">
-      <section class='keynote'>A</section>
-    </section>
-    <section id='a-sharp-key' class="black-key">
-      <section class='black-keynote'>A#</section>
-    </section>
-    <section id='b-key' class="key">
-      <section class='keynote'>B</section>
-    </section>
-    <section id='high-c-key' class="key">
-      <div class='keynote'>C</div>
-    </section>
-  </section>
+  <main class="page">
+    <section class="player-card">
+      <h1>Piano Player</h1>
+      <p class="intro">
+        Follow the notes below or use the keyboard shortcuts to play the piano.
+      </p>
 
-  <section id='lyrics'>
-    <section id='column-one'>
-      <section id="word-one">HAP-</section>
-      <section id="letter-note-one">G</section>
-    </section>
-    <section id='column-two'>
-      <section id="word-two">PY</section>
-      <section id="letter-note-two">G</section>
-    </section>
-    <section id='column-three'>
-      <section id="word-three">BIRTH-</section>
-      <section id="letter-note-three">A</section>
-    </section>
-    <section id='column-four'>
-      <section id="word-four">DAY</section>
-      <section id="letter-note-four">G</section>
-    </section>
-    <section id='column-five'>
-      <section id="word-five">TO</section>
-      <section id="letter-note-five">C</section>
-    </section>
-    <section id='column-six'>
-      <section id="word-six">YOU</section>
-      <section id="letter-note-six">B</section>
-    </section>
-    <section id='column-optional' class='column-optional'>
-      <section id="word-optional">END</section>
-      <section id="letter-note-optional">A</section>
-    </section>
+      <div class="keyboard-help" aria-label="Keyboard shortcuts">
+        <span>A = C</span>
+        <span>W = C#</span>
+        <span>S = D</span>
+        <span>E = D#</span>
+        <span>D = E</span>
+        <span>F = F</span>
+        <span>T = F#</span>
+        <span>G = G</span>
+        <span>Y = G#</span>
+        <span>H = A</span>
+        <span>U = A#</span>
+        <span>J = B</span>
+        <span>K = High C</span>
+      </div>
 
-    <button id="first-next-line">Line 2</button>
-    <button id="second-next-line">Line 3</button>
-    <button id="third-next-line">Line 4</button>
-    <button id="fourth-next-line">Reset</button>
-  </section>
+      <div class="piano" aria-label="Interactive piano">
+        <button type="button" id="c-key" class="key white-key" data-note="C4">
+          <span class="keynote">C</span>
+          <span class="shortcut">A</span>
+        </button>
 
-  <script  src="main.js"></script>
+        <button type="button" id="c-sharp-key" class="key black-key" data-note="C#4">
+          <span class="black-keynote">C#</span>
+          <span class="shortcut">W</span>
+        </button>
 
+        <button type="button" id="d-key" class="key white-key" data-note="D4">
+          <span class="keynote">D</span>
+          <span class="shortcut">S</span>
+        </button>
+
+        <button type="button" id="d-sharp-key" class="key black-key" data-note="D#4">
+          <span class="black-keynote">D#</span>
+          <span class="shortcut">E</span>
+        </button>
+
+        <button type="button" id="e-key" class="key white-key" data-note="E4">
+          <span class="keynote">E</span>
+          <span class="shortcut">D</span>
+        </button>
+
+        <button type="button" id="f-key" class="key white-key" data-note="F4">
+          <span class="keynote">F</span>
+          <span class="shortcut">F</span>
+        </button>
+
+        <button type="button" id="f-sharp-key" class="key black-key" data-note="F#4">
+          <span class="black-keynote">F#</span>
+          <span class="shortcut">T</span>
+        </button>
+
+        <button type="button" id="g-key" class="key white-key" data-note="G4">
+          <span class="keynote">G</span>
+          <span class="shortcut">G</span>
+        </button>
+
+        <button type="button" id="g-sharp-key" class="key black-key" data-note="G#4">
+          <span class="black-keynote">G#</span>
+          <span class="shortcut">Y</span>
+        </button>
+
+        <button type="button" id="a-key" class="key white-key" data-note="A4">
+          <span class="keynote">A</span>
+          <span class="shortcut">H</span>
+        </button>
+
+        <button type="button" id="a-sharp-key" class="key black-key" data-note="A#4">
+          <span class="black-keynote">A#</span>
+          <span class="shortcut">U</span>
+        </button>
+
+        <button type="button" id="b-key" class="key white-key" data-note="B4">
+          <span class="keynote">B</span>
+          <span class="shortcut">J</span>
+        </button>
+
+        <button type="button" id="high-c-key" class="key white-key" data-note="C5">
+          <span class="keynote">C</span>
+          <span class="shortcut">K</span>
+        </button>
+      </div>
+
+      <section class="song-card" aria-labelledby="song-title">
+        <h2 id="song-title">Happy Birthday</h2>
+
+        <div id="lyrics" class="lyrics">
+          <div class="lyric-column">
+            <span id="word-one" class="word">HAP-</span>
+            <span id="letter-note-one" class="note">G</span>
+          </div>
+
+          <div class="lyric-column">
+            <span id="word-two" class="word">PY</span>
+            <span id="letter-note-two" class="note">G</span>
+          </div>
+
+          <div class="lyric-column">
+            <span id="word-three" class="word">BIRTH-</span>
+            <span id="letter-note-three" class="note">A</span>
+          </div>
+
+          <div class="lyric-column">
+            <span id="word-four" class="word">DAY</span>
+            <span id="letter-note-four" class="note">G</span>
+          </div>
+
+          <div class="lyric-column">
+            <span id="word-five" class="word">TO</span>
+            <span id="letter-note-five" class="note">C</span>
+          </div>
+
+          <div class="lyric-column">
+            <span id="word-six" class="word">YOU</span>
+            <span id="letter-note-six" class="note">B</span>
+          </div>
+
+          <div id="column-optional" class="lyric-column optional-column">
+            <span id="word-optional" class="word">END</span>
+            <span id="letter-note-optional" class="note">A</span>
+          </div>
+        </div>
+
+        <div class="song-controls">
+          <button type="button" id="first-next-line">Line 2</button>
+          <button type="button" id="second-next-line">Line 3</button>
+          <button type="button" id="third-next-line">Line 4</button>
+          <button type="button" id="fourth-next-line">Reset</button>
+        </div>
+      </section>
+
+      <p id="status" class="status" aria-live="polite">
+        Click a piano key or use A, W, S, E, D, F, T, G, Y, H, U, J, and K.
+      </p>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
 </body>
 </html>

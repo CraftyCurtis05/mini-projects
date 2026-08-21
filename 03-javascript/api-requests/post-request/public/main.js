@@ -1,41 +1,45 @@
-// information to reach API
-const apiKey = 'd585e074c7bb4f79b845396efb5d0f00';
-const url = 'https://api.rebrandly.com/v1/links';
+/* POST Request Practice: send JSON data and display the returned response. */
 
-// Some page elements
-const inputField = document.querySelector('#input');
-const shortenButton = document.querySelector('#shorten');
-const responseField = document.querySelector('#responseField');
+const url = "https://jsonplaceholder.typicode.com/posts";
 
-// Asynchronous functions
-const shortenUrl = async () => {
-	const urlToShorten = inputField.value;
-  const data = JSON.stringify({destination: urlToShorten});
+const form = document.querySelector("#form");
+const titleInput = document.querySelector("#titleInput");
+const bodyInput = document.querySelector("#bodyInput");
+const responseField = document.querySelector("#responseField");
+
+async function createPost() {
+  const postData = {
+    userId: 1,
+    title: titleInput.value.trim(),
+    body: bodyInput.value.trim(),
+  };
+
   try {
     const response = await fetch(url, {
-      method: 'POST',
-      body: data,
+      method: "POST",
       headers: {
-        'Content-type': 'application/json',
-        'apikey': apiKey
-      }
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postData),
     });
-		if(response.ok){
-      const jsonResponse = await response.json();
-      renderResponse(jsonResponse);
+
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
     }
+
+    const jsonResponse = await response.json();
+    renderResponse(jsonResponse);
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    responseField.innerHTML =
+      "<p>Something went wrong while sending the request. Try again.</p>";
   }
 }
 
-// Clear page and call Asynchronous functions
-const displayShortUrl = (event) => {
+function displayPost(event) {
   event.preventDefault();
-  while(responseField.firstChild){
-    responseField.removeChild(responseField.firstChild);
-  }
-  shortenUrl();
+  responseField.innerHTML = "";
+  createPost();
 }
 
-shortenButton.addEventListener('click', displayShortUrl);
+form.addEventListener("submit", displayPost);

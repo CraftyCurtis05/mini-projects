@@ -1,10 +1,23 @@
-/* shape-area.js */
-const PI = Math.PI;
-// A=πrr
-module.exports.circleArea = function(radiusLength) {
-    return (radiusLength * radiusLength) * PI;
-};
-// A=a2
-module.exports.squareArea = function(sideLength) {
-    return Math.pow(sideLength, 2);
-};
+/* Area functions shared by the Node.js and browser examples. */
+
+function circleArea(radius) {
+  return Math.PI * radius * radius;
+}
+
+function squareArea(side) {
+  return side * side;
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    circleArea,
+    squareArea,
+  };
+}
+
+if (typeof window !== "undefined") {
+  window.shapeArea = {
+    circleArea,
+    squareArea,
+  };
+}

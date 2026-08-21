@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travel Adventures</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="project-card">
+      <h1>Travel Adventures</h1>
+      <p class="project-intro">
+        This small UI reads the seeded adventure data through the Spring controller
+        and lets me filter the results by country.
+      </p>
+
+      <form id="filter-form">
+        <label for="country">Country</label>
+        <input id="country" placeholder="Try China, France, or Japan">
+        <div class="actions">
+          <button type="submit">Filter</button>
+          <button type="button" id="show-all">Show all</button>
+        </div>
+      </form>
+
+      <div id="status" class="status" aria-live="polite">Loading adventures...</div>
+      <ul id="adventure-list" class="item-list"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

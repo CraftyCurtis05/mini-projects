@@ -1,3 +1,5 @@
+/* Gold Medal API: JavaScript for the behavior I practiced in this project. */
+
 import React from 'react';
 import GoldMedalMetrics from '../utils/GoldMedalMetrics';
 
@@ -80,7 +82,7 @@ class CountryDetail extends React.Component {
         </tr>
         <tr>
           <td className="table-descriptor"># OF EVENTS WON BY FEMALE ATHLETES</td>
-          <td className="table-descriptor"># OF EVENTS WON BY MALE ATHLETES</td> 
+          <td className="table-descriptor"># OF EVENTS WON BY MALE ATHLETES</td>
         </tr>
         <tr>
           <td className="table-value">{this.state.countryDetails.numberEventsWonByFemaleAthletes}</td>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library Classes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="project-card">
+      <h1>Library Classes</h1>
+      <p class="project-intro">
+        I added this small interface so I can see the class objects change instead
+        of only logging them to the console.
+      </p>
+
+      <form id="media-form">
+        <div class="row">
+          <div>
+            <label for="media-type">Media type</label>
+            <select id="media-type">
+              <option value="book">Book</option>
+              <option value="movie">Movie</option>
+              <option value="cd">CD</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="media-title">Title</label>
+            <input id="media-title" required>
+          </div>
+        </div>
+
+        <button type="submit">Add to catalog</button>
+      </form>
+
+      <div class="output">
+        <h2>Catalog</h2>
+        <ul id="catalog-list" class="item-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

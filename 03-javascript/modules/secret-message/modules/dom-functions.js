@@ -15,12 +15,11 @@ export const changeToFunkyColor = (domElement) => {
     domElement.style.background = `rgb(${r}, ${g}, ${b})`;
 }
 
-// OR 
-// const resources = { 
-//   toggleHiddenElement, 
+// OR
+// const resources = {
+//   toggleHiddenElement,
 //   changeToFunkyColor
 // }
 // export default resources;
 // OR
 // export { toggleHiddenElement, changeToFunkyColor };
-

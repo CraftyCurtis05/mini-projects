@@ -1,24 +1,35 @@
-let {cookBeans, steamBroccoli, cookRice, bakeChicken} = require('./library.js')
+/* Dinner Async/Await: start the independent cooking tasks together. */
 
-// Await Promise.all():
-async function serveDinnerAgain(){
-  let foodArray = await Promise.all([steamBroccoli(), cookRice(), bakeChicken(), cookBeans()]); 
-  
-  console.log(`Dinner is served. We're having ${foodArray[0]}, ${foodArray[1]}, ${foodArray[2]}, and ${foodArray[3]}.`);
+const dinner =
+  typeof window !== "undefined"
+    ? window.dinnerFunctions
+    : require("./library.js");
+
+async function cookDinner() {
+  return Promise.all([
+    dinner.steamBroccoli(),
+    dinner.cookRice(),
+    dinner.bakeChicken(),
+    dinner.cookBeans(),
+  ]);
 }
 
-serveDinnerAgain();
+const cookButton =
+  typeof document !== "undefined"
+    ? document.querySelector("#cook-button")
+    : null;
 
-let {cookBeans, steamBroccoli, cookRice, bakeChicken} = require('./library.js')
+if (cookButton) {
+  const status = document.querySelector("#status");
 
+  cookButton.addEventListener("click", async () => {
+    status.textContent = "Cooking everything at the same time...";
 
-// Handling Independent Promises: 
-async function serveDinner() {
- const vegetablePromise = steamBroccoli();
- const starchPromise = cookRice();
- const proteinPromise = bakeChicken();
- const sidePromise = cookBeans();
- console.log(`Dinner is served. We're having ${await vegetablePromise}, ${await starchPromise}, ${await proteinPromise}, and ${await sidePromise}.`);
+    const foods = await cookDinner();
+    status.textContent = `Dinner is served: ${foods.join(", ")}.`;
+  });
+} else {
+  cookDinner().then(foods => {
+    console.log(`Dinner is served: ${foods.join(", ")}.`);
+  });
 }
-
-serveDinner();

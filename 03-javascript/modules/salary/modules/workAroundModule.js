@@ -1,50 +1,43 @@
-// Add your imports here.
-import { 
-    getDataByRole, 
-    getDataByCompany 
-  } from './salaryData.js';
-  import salaryData from './salaryData.js';
-  
-  // Add exports here.
-  export { 
-    getAverageSalaryByRole, 
+/* Salary calculations kept separate from the page behavior. */
+
+(() => {
+  const {
+    salaryData,
+    getDataByRole,
+    getDataByCompany,
+  } = window.WorkAroundData;
+
+  function calculateAverage(numbers) {
+    const total = numbers.reduce((sum, number) => sum + number, 0);
+    return total / numbers.length;
+  }
+
+  function getAverageSalaryByRole(role) {
+    const salaries = getDataByRole(role).map(item => item.salary);
+    return calculateAverage(salaries);
+  }
+
+  function getAverageSalaryByCompany(company) {
+    const salaries = getDataByCompany(company).map(item => item.salary);
+    return calculateAverage(salaries);
+  }
+
+  function getSalaryAtCompany(role, company) {
+    const match = salaryData.find(
+      item => item.role === role && item.company === company
+    );
+
+    return match ? match.salary : null;
+  }
+
+  function getIndustryAverageSalary() {
+    return calculateAverage(salaryData.map(item => item.salary));
+  }
+
+  window.WorkAroundCalculations = {
+    getAverageSalaryByRole,
     getAverageSalaryByCompany,
     getSalaryAtCompany,
-    getIndustryAverageSalary
-  }
-  
-  // Replace the empty array with the appropriate imported function/value
-  const getAverageSalaryByRole = role => {
-    const roleData = getDataByRole(role);
-    const salariesOfRole = roleData.map(obj => obj.salary);
-    return calculateAverage(salariesOfRole);
-  }
-  
-  // Replace the empty array with the appropriate imported function/value
-  const getAverageSalaryByCompany = company => {
-    const companyData = getDataByCompany(company);
-    const salariesAtCompany = companyData.map(obj => obj.salary);
-    return calculateAverage(salariesAtCompany);
-  }
-  
-  // Replace the empty array with the appropriate imported function/value
-  const getSalaryAtCompany = (role, company) => {
-    const companyData = getDataByCompany(company);
-    const roleAtCompany = companyData.find(obj => obj.role === role);
-    return roleAtCompany.salary;
-  }
-  
-  // Replace the empty array with the appropriate imported function/value
-  const getIndustryAverageSalary = () => {
-    const allSalaries = salaryData.map(obj => obj.salary);
-    return calculateAverage(allSalaries);
-  }
-  
-  
-  // Helper Function. Do not edit.
-  // Note: This function does not need to be exported since it is only used by the functions contained within this module.
-  function calculateAverage(arrayOfNumbers) {
-    let total = 0;
-    arrayOfNumbers.forEach(number => total += number);
-    return (total / arrayOfNumbers.length).toFixed(2);
-  }
+    getIndustryAverageSalary,
+  };
+})();

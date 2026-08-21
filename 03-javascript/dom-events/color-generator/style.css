@@ -1,64 +1,97 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Nunito';
+/* Color Generator: bright styles for a small DOM event project. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  background: #f6f1ff;
+  color: #141c3a;
+}
+
+#container {
+  width: min(680px, 92%);
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #fd4d3f;
+  text-align: center;
+  box-shadow: 0 10px 24px rgb(20 28 58 / 12%);
+}
+
+.rainbow {
+  width: 180px;
+  height: 90px;
+  margin: 0 auto 1.5rem;
+  border-radius: 180px 180px 0 0;
+  background:
+    radial-gradient(
+      circle at 50% 100%,
+      transparent 0 26%,
+      #7b61ff 27% 34%,
+      #4c9aff 35% 42%,
+      #4ac982 43% 50%,
+      #f6d54a 51% 58%,
+      #f59a45 59% 66%,
+      #ef5d5d 67% 74%,
+      transparent 75%
+    );
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+p {
+  margin: 0 0 1.5rem;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.button-group {
+  display: grid;
+  gap: 0.75rem;
+  width: min(350px, 100%);
+  margin: 0 auto;
+}
+
+button {
+  min-height: 64px;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  background: #141c3a;
+  color: #ffffff;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+button:hover,
+button:focus-visible {
+  border-color: #fff275;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.hint {
+  margin: 1rem auto 0;
+  color: #fff8e8;
+  font-size: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition: none;
   }
-  img{
-    width: 200px;
-    display: block;
-    margin: 0 auto;
-    padding-top: 10px;
-    margin-bottom: 30px;
-  }
-  #container{
-    margin: 0;
-    width: 100vw;
-    height: 600px;
-    background: #fd4d3f;
-    margin: 0 auto;
-  }
-  h1{
-    font-size: 30px;
-    width: 450px;
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 100px;
-    color: #141c3a;
-  }
-  p{
-    font-size: 20px;
-    width: 400px;
-    text-align: center;
-    font-weight: 400;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    color: white;
-  }
-  #color-button{
-    width: 350px;
-    height: 100px;
-    border: none;
-    font-size: 24px;
-    background-color: #141c3a;
-    color: white;
-    display: block;
-    margin: 0 auto;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 5px;
-    font-family: 'Nunito';
-  
-  }
-  #next-button{
-    width: 350px;
-    height: 100px;
-    border: none;
-    font-size: 24px;
-    background-color: #141c3a;
-    color: white;
-    display: block;
-    margin: 0 auto;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Nunito';
-  }
+}

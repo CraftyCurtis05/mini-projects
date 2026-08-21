@@ -1,3 +1,5 @@
+/* Broadway: styles for this practice project. */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -91,8 +93,8 @@ footer p {
   letter-spacing: 1.3px;
   padding: 10px 20px;
   text-decoration: none;
-  text-transform: uppercase;  
-  margin-bottom: 20px;      
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .supporting {
@@ -137,7 +139,7 @@ footer p {
   text-transform: uppercase;
   padding: 10px;
   margin-bottom: 10px;
-  border: 2px solid #333333; 
+  border: 2px solid #333333;
 }
 
 @media (max-width: 500px) {
