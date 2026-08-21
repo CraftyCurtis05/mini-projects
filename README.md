@@ -1,143 +1,73 @@
-# Codecademy Practice Projects
+# Codecademy Projects
 
-### Software Development Learning Repository
+Projects and practice exercises from my Codecademy Full-Stack Engineer coursework and related learning.
 
-The Codecademy Practice Projects repository is a collection of hands-on exercises and mini applications completed while studying software development through Codecademy coursework and independent practice.
+I organize this repository by the main skill I was practicing instead of by the course section where the project originally appeared. That makes it easier for me to find examples later and makes the repo easier to scan.
 
-The repository demonstrates continuous learning across frontend development, backend development, object-oriented programming, responsive web design, API integration, and Spring application development.
+## Project Organization
 
-Rather than representing a single application, this repository documents technical growth through progressively more complex programming concepts and practical coding exercises.
+```text
+01-html/
+├── structure/
+├── semantics/
+└── tables/
 
----
+02-css/
+├── foundations/
+├── selectors-visual-rules/
+├── box-model/
+├── display-positioning/
+├── colors/
+├── typography/
+├── flexbox/
+└── css-frameworks/
+    └── bootstrap/
 
-## Repository Overview
+03-javascript/
+├── fundamentals/
+├── dom-events/
+├── classes-oop/
+├── modules/
+├── promises/
+├── async-await/
+├── api-requests/
+├── templating/
+│   └── handlebars/
+└── creative-coding/
 
-This repository contains projects covering multiple areas of software development and is organized by technology and learning topic.
+04-java-spring/
+├── spring-basics/
+├── rest-apis/
+└── larger-projects/
 
-Projects include practice in:
+05-personal-projects/
+└── web-dev-reference/
+```
 
-- Frontend web development
-- JavaScript programming
-- Java application development
-- Spring Framework
-- REST APIs
-- Responsive web design
-- Software architecture fundamentals
+## What I Am Practicing
 
-Together, these projects demonstrate consistent technical learning and hands-on software development experience.
+### HTML
 
----
+Page structure, semantic HTML, tables, and choosing elements based on what the content means.
 
-## Learning Areas
+### CSS
 
-### Frontend Development
+Selectors, the box model, positioning, color, typography, Flexbox, Bootstrap, and general page styling.
 
-- HTML5
-- CSS3
-- Bootstrap
-- Flexbox
-- CSS Grid
-- Responsive Design
+### JavaScript
 
-### JavaScript Development
+DOM events, classes, modules, promises, async/await, API requests, templating, and interactive browser projects.
 
-- ES6+
-- DOM Manipulation
-- Event Handling
-- Async / Await
-- Promises
-- Modules
-- API Requests
-- Handlebars.js
+### Java & Spring
 
-### Java Development
+Spring Boot basics, controllers, repositories, entities, REST APIs, Maven project structure, and larger application organization.
 
-- Java Fundamentals
-- Object-Oriented Programming
-- Spring Framework
-- Spring Boot
-- REST APIs
-- Application Architecture
+### Personal Projects
 
----
+Projects that grew beyond a single course exercise. My Web Development Reference is kept here because I built it from the concepts I wanted to keep using and reviewing.
 
-## Representative Projects
+## Notes
 
-### Frontend Projects
+Most folders contain small learning projects, not production applications. I keep them because they show the concepts I was practicing at different points in the course.
 
-- Portfolio Website
-- Tea Cozy
-- Adhoc
-- Bootstrap Layout Projects
-- Responsive Design Exercises
-
-### JavaScript Projects
-
-- Film Finder
-- Musicon
-- Chore Door
-- Color Generator
-- Async / Await Exercises
-- Module-Based Applications
-
-### Java & Spring Projects
-
-- Restaurant Reviews
-- Travel Adventures
-- Gold Medal Tracker
-- Spring Demo Applications
-- REST API Practice Projects
-
----
-
-## Skills Demonstrated
-
-- Software Development Fundamentals
-- Responsive Web Design
-- Frontend Development
-- Backend Development
-- Object-Oriented Programming
-- REST API Development
-- API Integration
-- Asynchronous Programming
-- Problem Solving
-- Debugging
-- Application Architecture
-- Git & Version Control
-
----
-
-## Technical Focus
-
-This repository highlights continued development across multiple programming languages, frameworks, and software engineering concepts.
-
-Key areas of growth include:
-
-- Writing clean, maintainable code
-- Building responsive user interfaces
-- Developing RESTful applications
-- Applying object-oriented programming principles
-- Working with APIs and asynchronous programming
-- Strengthening problem-solving and debugging skills
-
----
-
-## Repository Purpose
-
-This repository serves as a learning archive documenting the progression of technical skills developed through structured coursework and independent practice.
-
-While many of the projects are intentionally small in scope, together they demonstrate consistent learning, practical coding experience, and a commitment to continuous professional development.
-
----
-
-## Author
-
-**Jennifer Curtis**
-
-Business Systems Analyst | Full-Stack Developer
-
-🌐 **Portfolio:** [jennifercurtis.me](https://jennifercurtis.me)
-
-💼 **LinkedIn:** [linkedin.com/in/jcurtisdeveloper](https://linkedin.com/in/jcurtisdeveloper)
-
-💻 **GitHub:** [github.com/craftycurtis05](https://github.com/craftycurtis05)
+Generated build output and editor-specific folders such as `target/` and `.idea/` are intentionally ignored so the repository stays focused on source code.

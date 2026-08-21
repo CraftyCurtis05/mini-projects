@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Java / Maven build output
+target/
+*.class
+
+# IDE and editor files
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local archives / exports
+*.zip
