@@ -49,12 +49,12 @@ function renderNavigation() {
         aria-label="Web Development Reference home"
       >
         <img
-          src="/assets/images/logo-black.png"
+          src="/assets/images/logo-black.webp"
           alt=""
           class="nav-logo logo-light"
         >
         <img
-          src="/assets/images/logo-white.png"
+          src="/assets/images/logo-white.webp"
           alt=""
           class="nav-logo logo-dark"
         >
@@ -236,12 +236,12 @@ function renderFooter() {
         aria-label="Visit Jennifer Curtis portfolio, opens in a new tab"
       >
         <img
-          src="/assets/images/logo-black.png"
+          src="/assets/images/logo-black.webp"
           alt=""
           class="footer-logo logo-light"
         >
         <img
-          src="/assets/images/logo-white.png"
+          src="/assets/images/logo-white.webp"
           alt=""
           class="footer-logo logo-dark"
         >

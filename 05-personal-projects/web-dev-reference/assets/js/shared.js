@@ -17,10 +17,22 @@ const pages = [
   { key: 'flexbox', label: 'Flexbox', href: '/references/css/flexbox.html' },
   { key: 'grid', label: 'CSS Grid', href: '/references/css/css-grid.html' },
   { key: 'responsive', label: 'Responsive Design', href: '/references/css/responsive-design.html' },
-  { key: 'units', label: 'CSS Units & Functions', href: '/references/css/css-units-functions.html' },
-  { key: 'pseudos', label: 'Pseudo-classes & Elements', href: '/references/css/pseudo-classes-elements.html' },
+  {
+    key: 'units',
+    label: 'CSS Units & Functions',
+    href: '/references/css/css-units-functions.html'
+  },
+  {
+    key: 'pseudos',
+    label: 'Pseudo-classes & Elements',
+    href: '/references/css/pseudo-classes-elements.html'
+  },
 
-  { key: 'javascript', label: 'JavaScript Reference', href: '/references/javascript/javascript-reference.html'},
+  {
+    key: 'javascript',
+    label: 'JavaScript Reference',
+    href: '/references/javascript/javascript-reference.html'
+  },
   { key: 'dom', label: 'DOM & Events', href: '/references/javascript/dom-events.html' },
   { key: 'http', label: 'HTTP & APIs', href: '/references/javascript/http-apis.html' },
 
