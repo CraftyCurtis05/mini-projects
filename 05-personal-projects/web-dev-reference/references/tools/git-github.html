@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My Git and GitHub reference for commits, branches, remotes, syncing, history, recovery, and everyday commands." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My Git and GitHub reference for commits, branches, remotes, syncing, history, recovery, and everyday commands."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>Git &amp; GitHub Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="Git &amp; GitHub Reference" property="og:title"/>
-    <meta content="My Git and GitHub reference for commits, branches, remotes, syncing, history, recovery, and everyday commands." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="Git &amp; GitHub Reference" property="og:title" />
+    <meta
+      content="My Git and GitHub reference for commits, branches, remotes, syncing, history, recovery, and everyday commands."
+      property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="I start with git status because it tells me what state I am actually in. I also keep commit, push, and pull separate in my head: commit saves locally, push sends commits up, and pull brings remote changes down." data-category="Developer Tools" data-footer="Git &amp; GitHub Cheat Sheet" data-level="Beginner–Intermediate" data-page="git" data-page-label="Git &amp; GitHub" data-related='[{"label":"Terminal &amp; CLI","href":"references/tools/terminal-cli.html"},{"label":"Debugging","href":"references/tools/debugging.html"}]' data-search-placeholder="Try: commit, branch, pull, restore, rebase..." data-toc="true">
+  <body
+    data-author-note="I start with git status because it tells me what state I am actually in. I also keep commit, push, and pull separate in my head: commit saves locally, push sends commits up, and pull brings remote changes down."
+    data-category="Developer Tools"
+    data-footer="Git &amp; GitHub Cheat Sheet"
+    data-level="Beginner–Intermediate"
+    data-page="git"
+    data-page-label="Git &amp; GitHub"
+    data-related='[{"label":"Terminal &amp; CLI","href":"terminal-cli.html"},{"label":"Debugging","href":"debugging.html"}]'
+    data-search-placeholder="Try: commit, branch, pull, restore, rebase..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -44,7 +63,7 @@
     <header class="hero">
       <h1>Git &amp; GitHub Reference</h1>
       <p class="subtitle">
-      The Git and GitHub commands I am most likely to forget between projects.
+        The Git and GitHub commands I am most likely to forget between projects.
       </p>
       <div class="hero-meta">
         <span class="badge badge-category">Developer Tools</span>
@@ -52,15 +71,19 @@
       </div>
     </header>
     <main id="main-content">
-      <section aria-labelledby="repository-basics-title" class="reference-section" id="repository-basics">
+      <section
+        aria-labelledby="repository-basics-title"
+        class="reference-section"
+        id="repository-basics"
+      >
         <h2 class="section-title" id="repository-basics-title">Repository Basics</h2>
         <p class="section-description">
-        Commands for creating, inspecting, and recording changes in a repository.
+          Commands for creating, inspecting, and recording changes in a repository.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Commands for creating, inspecting, and recording changes in a repository.
+              Commands for creating, inspecting, and recording changes in a repository.
             </caption>
             <thead>
               <tr>
@@ -94,7 +117,7 @@
                 <td>Create commit</td>
                 <td>Records the staged snapshot with a message.</td>
                 <td class="example-cell">
-                <code>git commit -m "Add search filter"</code>
+                  <code>git commit -m "Add search filter"</code>
                 </td>
               </tr>
               <tr id="repository-basics-item-git-diff">
@@ -116,12 +139,12 @@
       <section aria-labelledby="branches-title" class="reference-section" id="branches">
         <h2 class="section-title" id="branches-title">Branches</h2>
         <p class="section-description">
-        Commands for creating, switching, merging, and cleaning up branches.
+          Commands for creating, switching, merging, and cleaning up branches.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Commands for creating, switching, merging, and cleaning up branches.
+              Commands for creating, switching, merging, and cleaning up branches.
             </caption>
             <thead>
               <tr>
@@ -169,12 +192,12 @@
       <section aria-labelledby="remotes-sync-title" class="reference-section" id="remotes-sync">
         <h2 class="section-title" id="remotes-sync-title">Remotes &amp; Syncing</h2>
         <p class="section-description">
-        Commands for connecting local work with remote repositories such as GitHub.
+          Commands for connecting local work with remote repositories such as GitHub.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Commands for connecting local work with remote repositories such as GitHub.
+              Commands for connecting local work with remote repositories such as GitHub.
             </caption>
             <thead>
               <tr>
@@ -196,7 +219,7 @@
                 <td>Add remote</td>
                 <td>Connects a named remote repository.</td>
                 <td class="example-cell">
-                <code>git remote add origin https://github.com/user/repo.git</code>
+                  <code>git remote add origin https://github.com/user/repo.git</code>
                 </td>
               </tr>
               <tr id="remotes-sync-item-git-fetch">
@@ -227,15 +250,19 @@
           </table>
         </div>
       </section>
-      <section aria-labelledby="history-recovery-title" class="reference-section" id="history-recovery">
+      <section
+        aria-labelledby="history-recovery-title"
+        class="reference-section"
+        id="history-recovery"
+      >
         <h2 class="section-title" id="history-recovery-title">History &amp; Recovery</h2>
         <p class="section-description">
-        Commands for inspecting history and safely undoing common local changes.
+          Commands for inspecting history and safely undoing common local changes.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Commands for inspecting history and safely undoing common local changes.
+              Commands for inspecting history and safely undoing common local changes.
             </caption>
             <thead>
               <tr>
@@ -288,14 +315,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

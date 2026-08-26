@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My CSS reference for interaction states, structural and relational pseudo-classes, and common pseudo-elements." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My CSS reference for interaction states, structural and relational pseudo-classes, and common pseudo-elements."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>CSS Pseudo-classes &amp; Pseudo-elements</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="CSS Pseudo-classes &amp; Pseudo-elements" property="og:title"/>
-    <meta content="My CSS reference for interaction states, structural and relational pseudo-classes, and common pseudo-elements." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="CSS Pseudo-classes &amp; Pseudo-elements" property="og:title" />
+    <meta
+      content="My CSS reference for interaction states, structural and relational pseudo-classes, and common pseudo-elements."
+      property="og:description"
+    />
+    <meta content="assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="My shortcut is that a pseudo-class is usually a state or relationship, like :hover or :first-child. A pseudo-element is a piece of the element, like ::before or ::after." data-category="CSS" data-footer="Pseudo-classes &amp; Elements Cheat Sheet" data-level="Intermediate" data-page="pseudos" data-page-label="Pseudo-classes &amp; Elements" data-related='[{"label":"CSS Selectors","href":"references/css/css-selectors.html"},{"label":"Accessibility","href":"references/html/accessibility.html"}]' data-search-placeholder="Try: focus-visible, has, nth-child, before..." data-toc="true">
+  <body
+    data-author-note="My shortcut is that a pseudo-class is usually a state or relationship, like :hover or :first-child. A pseudo-element is a piece of the element, like ::before or ::after."
+    data-category="CSS"
+    data-footer="Pseudo-classes &amp; Elements Cheat Sheet"
+    data-level="Intermediate"
+    data-page="pseudos"
+    data-page-label="Pseudo-classes &amp; Elements"
+    data-related='[{"label":"CSS Selectors","href":"css-selectors.html"},{"label":"Accessibility","href":"../html/accessibility.html"}]'
+    data-search-placeholder="Try: focus-visible, has, nth-child, before..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -50,15 +69,19 @@
       </div>
     </header>
     <main id="main-content">
-      <section aria-labelledby="interaction-pseudos-title" class="reference-section" id="interaction-pseudos">
+      <section
+        aria-labelledby="interaction-pseudos-title"
+        class="reference-section"
+        id="interaction-pseudos"
+      >
         <h2 class="section-title" id="interaction-pseudos-title">Interaction &amp; Link States</h2>
         <p class="section-description">
-        Pseudo-classes commonly used for links, pointer interaction, and keyboard focus.
+          Pseudo-classes commonly used for links, pointer interaction, and keyboard focus.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Pseudo-classes commonly used for links, pointer interaction, and keyboard focus.
+              Pseudo-classes commonly used for links, pointer interaction, and keyboard focus.
             </caption>
             <thead>
               <tr>
@@ -74,7 +97,7 @@
                 <td>Pointer hover</td>
                 <td>Matches while a pointing device is over the element.</td>
                 <td class="example-cell">
-                <code>a:hover { text-decoration-thickness: 2px; }</code>
+                  <code>a:hover { text-decoration-thickness: 2px; }</code>
                 </td>
               </tr>
               <tr id="interaction-pseudos-item-focus">
@@ -88,7 +111,7 @@
                 <td>Visible focus</td>
                 <td>Matches focus when a visible focus indicator is appropriate.</td>
                 <td class="example-cell">
-                <code>button:focus-visible { outline: 3px solid #baf553; }</code>
+                  <code>button:focus-visible { outline: 3px solid #baf553; }</code>
                 </td>
               </tr>
               <tr id="interaction-pseudos-item-active">
@@ -96,14 +119,14 @@
                 <td>Activation state</td>
                 <td>Matches while an element is being activated.</td>
                 <td class="example-cell">
-                <code>button:active { transform: translateY(1px); }</code>
+                  <code>button:active { transform: translateY(1px); }</code>
                 </td>
               </tr>
               <tr id="interaction-pseudos-item-visited">
                 <th scope="row"><code>:visited</code></th>
                 <td>Visited link</td>
                 <td>
-                Matches links whose destination has been visited, subject to privacy restrictions.
+                  Matches links whose destination has been visited, subject to privacy restrictions.
                 </td>
                 <td class="example-cell"><code>a:visited { color: rebeccapurple; }</code></td>
               </tr>
@@ -111,15 +134,19 @@
           </table>
         </div>
       </section>
-      <section aria-labelledby="structural-pseudos-title" class="reference-section" id="structural-pseudos">
+      <section
+        aria-labelledby="structural-pseudos-title"
+        class="reference-section"
+        id="structural-pseudos"
+      >
         <h2 class="section-title" id="structural-pseudos-title">Structural Pseudo-classes</h2>
         <p class="section-description">
-        Selectors based on an element's position or type among siblings.
+          Selectors based on an element's position or type among siblings.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Selectors based on an element's position or type among siblings.
+              Selectors based on an element's position or type among siblings.
             </caption>
             <thead>
               <tr>
@@ -147,7 +174,7 @@
                 <td>Nth child</td>
                 <td>Matches children using a numeric or An+B pattern.</td>
                 <td class="example-cell">
-                <code>tr:nth-child(even) { background: #f6fafb; }</code>
+                  <code>tr:nth-child(even) { background: #f6fafb; }</code>
                 </td>
               </tr>
               <tr id="structural-pseudos-item-first-of-type">
@@ -166,17 +193,21 @@
           </table>
         </div>
       </section>
-      <section aria-labelledby="functional-pseudos-title" class="reference-section" id="functional-pseudos">
+      <section
+        aria-labelledby="functional-pseudos-title"
+        class="reference-section"
+        id="functional-pseudos"
+      >
         <h2 class="section-title" id="functional-pseudos-title">
-        Functional &amp; Relational Pseudo-classes
+          Functional &amp; Relational Pseudo-classes
         </h2>
         <p class="section-description">
-        Functions that group, exclude, or select based on related elements.
+          Functions that group, exclude, or select based on related elements.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Functions that group, exclude, or select based on related elements.
+              Functions that group, exclude, or select based on related elements.
             </caption>
             <thead>
               <tr>
@@ -197,7 +228,7 @@
                 <th scope="row"><code>:is()</code></th>
                 <td>Selector grouping</td>
                 <td>
-                Matches if any selector in its list matches and adopts the most specific argument.
+                  Matches if any selector in its list matches and adopts the most specific argument.
                 </td>
                 <td class="example-cell"><code>:is(h1, h2, h3) { line-height: 1.2; }</code></td>
               </tr>
@@ -206,7 +237,7 @@
                 <td>Zero-specificity grouping</td>
                 <td>Groups selectors without adding specificity from its arguments.</td>
                 <td class="example-cell">
-                <code>:where(nav, footer) a { text-decoration: none; }</code>
+                  <code>:where(nav, footer) a { text-decoration: none; }</code>
                 </td>
               </tr>
               <tr id="functional-pseudos-item-has">
@@ -214,22 +245,26 @@
                 <td>Relational selector</td>
                 <td>Matches an element when a relative selector matches from it.</td>
                 <td class="example-cell">
-                <code>.field:has(:invalid) { border-color: crimson; }</code>
+                  <code>.field:has(:invalid) { border-color: crimson; }</code>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <section aria-labelledby="pseudo-elements-title" class="reference-section" id="pseudo-elements">
+      <section
+        aria-labelledby="pseudo-elements-title"
+        class="reference-section"
+        id="pseudo-elements"
+      >
         <h2 class="section-title" id="pseudo-elements-title">Common Pseudo-elements</h2>
         <p class="section-description">
-        Special generated boxes or portions of an element that can be styled.
+          Special generated boxes or portions of an element that can be styled.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Special generated boxes or portions of an element that can be styled.
+              Special generated boxes or portions of an element that can be styled.
             </caption>
             <thead>
               <tr>
@@ -245,7 +280,7 @@
                 <td>Generated first child</td>
                 <td>Creates a generated pseudo-element before element content.</td>
                 <td class="example-cell">
-                <code>.note::before { content: "Tip"; }</code>
+                  <code>.note::before { content: "Tip"; }</code>
                 </td>
               </tr>
               <tr id="pseudo-elements-item-after">
@@ -253,7 +288,7 @@
                 <td>Generated last child</td>
                 <td>Creates a generated pseudo-element after element content.</td>
                 <td class="example-cell">
-                <code>a.external::after { content: " ↗"; }</code>
+                  <code>a.external::after { content: " ↗"; }</code>
                 </td>
               </tr>
               <tr id="pseudo-elements-item-marker">
@@ -273,7 +308,7 @@
                 <td>Selected text</td>
                 <td>Styles user-selected text.</td>
                 <td class="example-cell">
-                <code>::selection { background: #baf553; color: #11191d; }</code>
+                  <code>::selection { background: #baf553; color: #11191d; }</code>
                 </td>
               </tr>
               <tr id="pseudo-elements-item-first-letter">
@@ -281,7 +316,7 @@
                 <td>First letter</td>
                 <td>Styles the first typographic letter of a block.</td>
                 <td class="example-cell">
-                <code>article p:first-of-type::first-letter { font-size: 2em; }</code>
+                  <code>article p:first-of-type::first-letter { font-size: 2em; }</code>
                 </td>
               </tr>
             </tbody>
@@ -290,14 +325,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

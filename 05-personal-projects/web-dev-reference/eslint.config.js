@@ -3,7 +3,7 @@ import globals from 'globals';
 
 export default [
   {
-    ignores: ['node_modules/**', 'assets/js/searchData.js']
+    ignores: ['node_modules/**', 'assets/js/search-data.js']
   },
   {
     files: ['assets/js/**/*.js'],
@@ -17,9 +17,9 @@ export default [
     rules: {
       ...js.configs.recommended.rules,
 
-      // These browser scripts share globals across files, so ESLint cannot see every definition.
+      // These browser scripts share globals across files, so ESLint cannot see every definition or usage.
       'no-undef': 'off',
-      'no-unused-vars': 'warn'
+      'no-unused-vars': 'off'
     }
   }
 ];

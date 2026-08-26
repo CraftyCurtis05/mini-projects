@@ -134,7 +134,9 @@
 .reveal-item.is-visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
 }
 
 /* Prose and accessibility pages */
@@ -599,7 +601,9 @@
   background: radial-gradient(circle at center, var(--surface-alt) 0%, var(--background) 68%);
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
 }
 
 .site-loader.is-hidden {

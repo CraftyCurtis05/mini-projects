@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My JavaScript reference for values, variables, control flow, functions, arrays, objects, modules, and modern syntax." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My JavaScript reference for values, variables, control flow, functions, arrays, objects, modules, and modern syntax."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>JavaScript Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="JavaScript Reference" property="og:title"/>
-    <meta content="My JavaScript reference for values, variables, control flow, functions, arrays, objects, modules, and modern syntax." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="JavaScript Reference" property="og:title" />
+    <meta
+      content="My JavaScript reference for values, variables, control flow, functions, arrays, objects, modules, and modern syntax."
+      property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="The JavaScript details I forget fastest are what mutates the original value and what returns a new one. I also check scope and the actual data type before assuming the function itself is wrong." data-category="JavaScript" data-footer="JavaScript Reference Cheat Sheet" data-level="Beginner–Intermediate" data-page="javascript" data-page-label="JavaScript Reference" data-related='[{"label":"DOM &amp; Events","href":"references/javascript/dom-events.html"},{"label":"HTTP &amp; APIs","href":"references/javascript/http-apis.html"},{"label":"Debugging","href":"references/tools/debugging.html"}]' data-search-placeholder="Try: const, map, function, destructuring..." data-toc="true">
+  <body
+    data-author-note="The JavaScript details I forget fastest are what mutates the original value and what returns a new one. I also check scope and the actual data type before assuming the function itself is wrong."
+    data-category="JavaScript"
+    data-footer="JavaScript Reference Cheat Sheet"
+    data-level="Beginner–Intermediate"
+    data-page="javascript"
+    data-page-label="JavaScript Reference"
+    data-related='[{"label":"DOM &amp; Events","href":"dom-events.html"},{"label":"HTTP &amp; APIs","href":"http-apis.html"},{"label":"Debugging","href":"../tools/debugging.html"}]'
+    data-search-placeholder="Try: const, map, function, destructuring..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -50,15 +69,19 @@
       </div>
     </header>
     <main id="main-content">
-      <section aria-labelledby="variables-types-title" class="reference-section" id="variables-types">
+      <section
+        aria-labelledby="variables-types-title"
+        class="reference-section"
+        id="variables-types"
+      >
         <h2 class="section-title" id="variables-types-title">Variables &amp; Data Types</h2>
         <p class="section-description">
-        Core JavaScript values and declarations used to store and work with data.
+          Core JavaScript values and declarations used to store and work with data.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Core JavaScript values and declarations used to store and work with data.
+              Core JavaScript values and declarations used to store and work with data.
             </caption>
             <thead>
               <tr>
@@ -124,12 +147,12 @@
       <section aria-labelledby="control-flow-title" class="reference-section" id="control-flow">
         <h2 class="section-title" id="control-flow-title">Operators &amp; Control Flow</h2>
         <p class="section-description">
-        Expressions and statements used to compare values, make decisions, and repeat work.
+          Expressions and statements used to compare values, make decisions, and repeat work.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Expressions and statements used to compare values, make decisions, and repeat work.
+              Expressions and statements used to compare values, make decisions, and repeat work.
             </caption>
             <thead>
               <tr>
@@ -175,7 +198,7 @@
                 <td>Conditional statement</td>
                 <td>Runs different blocks based on a condition.</td>
                 <td class="example-cell">
-                <code>if (score &gt;= 70) { pass(); } else { retry(); }</code>
+                  <code>if (score &gt;= 70) { pass(); } else { retry(); }</code>
                 </td>
               </tr>
               <tr id="control-flow-item-switch">
@@ -183,7 +206,7 @@
                 <td>Multi-branch conditional</td>
                 <td>Matches one expression against multiple cases.</td>
                 <td class="example-cell">
-                <code>switch (theme) { case "dark": applyDark(); break; }</code>
+                  <code>switch (theme) { case "dark": applyDark(); break; }</code>
                 </td>
               </tr>
               <tr id="control-flow-item-for-of">
@@ -191,7 +214,7 @@
                 <td>Iterable loop</td>
                 <td>Loops through iterable values such as arrays.</td>
                 <td class="example-cell">
-                <code>for (const item of items) { console.log(item); }</code>
+                  <code>for (const item of items) { console.log(item); }</code>
                 </td>
               </tr>
             </tbody>
@@ -201,12 +224,12 @@
       <section aria-labelledby="functions-title" class="reference-section" id="functions">
         <h2 class="section-title" id="functions-title">Functions</h2>
         <p class="section-description">
-        Reusable blocks of behavior for organizing logic and transforming values.
+          Reusable blocks of behavior for organizing logic and transforming values.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Reusable blocks of behavior for organizing logic and transforming values.
+              Reusable blocks of behavior for organizing logic and transforming values.
             </caption>
             <thead>
               <tr>
@@ -222,7 +245,7 @@
                 <td>Function declaration</td>
                 <td>Creates a named reusable function.</td>
                 <td class="example-cell">
-                <code>function greet(name) { return `Hi ${name}`; }</code>
+                  <code>function greet(name) { return `Hi ${name}`; }</code>
                 </td>
               </tr>
               <tr id="functions-item-item">
@@ -254,7 +277,7 @@
                 <td>Function argument</td>
                 <td>Passes a function to another function for later use.</td>
                 <td class="example-cell">
-                <code>items.forEach(item =&gt; console.log(item));</code>
+                  <code>items.forEach(item =&gt; console.log(item));</code>
                 </td>
               </tr>
             </tbody>
@@ -264,12 +287,12 @@
       <section aria-labelledby="arrays-objects-title" class="reference-section" id="arrays-objects">
         <h2 class="section-title" id="arrays-objects-title">Arrays &amp; Objects</h2>
         <p class="section-description">
-        Common structures for collections, records, transformation, and lookup.
+          Common structures for collections, records, transformation, and lookup.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Common structures for collections, records, transformation, and lookup.
+              Common structures for collections, records, transformation, and lookup.
             </caption>
             <thead>
               <tr>
@@ -285,7 +308,7 @@
                 <td>Array</td>
                 <td>Stores an ordered collection of values.</td>
                 <td class="example-cell">
-                <code>const skills = ["HTML", "CSS", "JavaScript"];</code>
+                  <code>const skills = ["HTML", "CSS", "JavaScript"];</code>
                 </td>
               </tr>
               <tr id="arrays-objects-item">
@@ -293,7 +316,7 @@
                 <td>Object</td>
                 <td>Stores key/value properties.</td>
                 <td class="example-cell">
-                <code>const user = { name: "Jennifer", role: "Developer" };</code>
+                  <code>const user = { name: "Jennifer", role: "Developer" };</code>
                 </td>
               </tr>
               <tr id="arrays-objects-item-map">
@@ -301,7 +324,7 @@
                 <td>Array mapping</td>
                 <td>Creates a new array by transforming each item.</td>
                 <td class="example-cell">
-                <code>const names = users.map(user =&gt; user.name);</code>
+                  <code>const names = users.map(user =&gt; user.name);</code>
                 </td>
               </tr>
               <tr id="arrays-objects-item-filter">
@@ -309,7 +332,7 @@
                 <td>Array filtering</td>
                 <td>Creates a new array containing matching items.</td>
                 <td class="example-cell">
-                <code>const active = users.filter(user =&gt; user.active);</code>
+                  <code>const active = users.filter(user =&gt; user.active);</code>
                 </td>
               </tr>
               <tr id="arrays-objects-item-find">
@@ -317,7 +340,7 @@
                 <td>Find item</td>
                 <td>Returns the first array item matching a condition.</td>
                 <td class="example-cell">
-                <code>const admin = users.find(user =&gt; user.role === "admin");</code>
+                  <code>const admin = users.find(user =&gt; user.role === "admin");</code>
                 </td>
               </tr>
               <tr id="arrays-objects-item-reduce">
@@ -325,7 +348,7 @@
                 <td>Reduce collection</td>
                 <td>Combines array values into one accumulated result.</td>
                 <td class="example-cell">
-                <code>const total = prices.reduce((sum, price) =&gt; sum + price, 0);</code>
+                  <code>const total = prices.reduce((sum, price) =&gt; sum + price, 0);</code>
                 </td>
               </tr>
               <tr id="arrays-objects-item-destructuring">
@@ -339,7 +362,7 @@
                 <td>Copy/merge syntax</td>
                 <td>Expands iterable items or object properties.</td>
                 <td class="example-cell">
-                <code>const updated = { ...user, active: true };</code>
+                  <code>const updated = { ...user, active: true };</code>
                 </td>
               </tr>
             </tbody>
@@ -349,12 +372,12 @@
       <section aria-labelledby="modern-js-title" class="reference-section" id="modern-js">
         <h2 class="section-title" id="modern-js-title">Modern JavaScript</h2>
         <p class="section-description">
-        Language features commonly used in modern front-end projects.
+          Language features commonly used in modern front-end projects.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Language features commonly used in modern front-end projects.
+              Language features commonly used in modern front-end projects.
             </caption>
             <thead>
               <tr>
@@ -394,7 +417,7 @@
                 <td>Error handling</td>
                 <td>Handles errors thrown during an operation.</td>
                 <td class="example-cell">
-                <code>try { parseData(); } catch (error) { console.error(error); }</code>
+                  <code>try { parseData(); } catch (error) { console.error(error); }</code>
                 </td>
               </tr>
               <tr id="modern-js-item-throw">
@@ -409,14 +432,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

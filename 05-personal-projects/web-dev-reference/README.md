@@ -130,15 +130,15 @@ Key implementation details include:
 
 ## Technology Stack
 
-| Category | Technologies |
-|---|---|
-| Structure | HTML5 |
-| Styling | CSS3 |
-| Interactivity | JavaScript |
-| Storage | Web Storage / `localStorage` |
-| Code Quality | ESLint, Prettier |
-| Local Development | http-server, npm |
-| Version Control | Git, GitHub |
+| Category          | Technologies                 |
+| ----------------- | ---------------------------- |
+| Structure         | HTML5                        |
+| Styling           | CSS3                         |
+| Interactivity     | JavaScript                   |
+| Storage           | Web Storage / `localStorage` |
+| Code Quality      | ESLint, Prettier             |
+| Local Development | http-server, npm             |
+| Version Control   | Git, GitHub                  |
 
 ---
 

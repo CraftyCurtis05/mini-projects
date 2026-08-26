@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My terminal reference for navigation, files, searching, pipes, redirection, environment variables, and common commands." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My terminal reference for navigation, files, searching, pipes, redirection, environment variables, and common commands."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>Terminal &amp; CLI Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="Terminal &amp; CLI Reference" property="og:title"/>
-    <meta content="My terminal reference for navigation, files, searching, pipes, redirection, environment variables, and common commands." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="Terminal &amp; CLI Reference" property="og:title" />
+    <meta
+      content="My terminal reference for navigation, files, searching, pipes, redirection, environment variables, and common commands."
+      property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="Before I move, copy, or delete files, I check pwd and ls. Relative paths start where I am now, ../ moves up one folder, and an absolute path starts from the root." data-category="Developer Tools" data-footer="Terminal &amp; CLI Cheat Sheet" data-level="Beginner" data-page="terminal" data-page-label="Terminal &amp; CLI" data-related='[{"label":"Git &amp; GitHub","href":"references/tools/git-github.html"},{"label":"Debugging","href":"references/tools/debugging.html"}]' data-search-placeholder="Try: cd, grep, pipe, env, mkdir..." data-toc="true">
+  <body
+    data-author-note="Before I move, copy, or delete files, I check pwd and ls. Relative paths start where I am now, ../ moves up one folder, and an absolute path starts from the root."
+    data-category="Developer Tools"
+    data-footer="Terminal &amp; CLI Cheat Sheet"
+    data-level="Beginner"
+    data-page="terminal"
+    data-page-label="Terminal &amp; CLI"
+    data-related='[{"label":"Git &amp; GitHub","href":"git-github.html"},{"label":"Debugging","href":"debugging.html"}]'
+    data-search-placeholder="Try: cd, grep, pipe, env, mkdir..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -53,12 +72,12 @@
       <section aria-labelledby="navigation-title" class="reference-section" id="navigation">
         <h2 class="section-title" id="navigation-title">Navigation</h2>
         <p class="section-description">
-        Commands for understanding and changing your location in the filesystem.
+          Commands for understanding and changing your location in the filesystem.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Commands for understanding and changing your location in the filesystem.
+              Commands for understanding and changing your location in the filesystem.
             </caption>
             <thead>
               <tr>
@@ -103,15 +122,19 @@
           </table>
         </div>
       </section>
-      <section aria-labelledby="files-directories-title" class="reference-section" id="files-directories">
+      <section
+        aria-labelledby="files-directories-title"
+        class="reference-section"
+        id="files-directories"
+      >
         <h2 class="section-title" id="files-directories-title">Files &amp; Directories</h2>
         <p class="section-description">
-        Common commands for creating, copying, moving, and removing filesystem entries.
+          Common commands for creating, copying, moving, and removing filesystem entries.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Common commands for creating, copying, moving, and removing filesystem entries.
+              Common commands for creating, copying, moving, and removing filesystem entries.
             </caption>
             <thead>
               <tr>
@@ -199,15 +222,19 @@
           </table>
         </div>
       </section>
-      <section aria-labelledby="pipes-redirects-title" class="reference-section" id="pipes-redirects">
+      <section
+        aria-labelledby="pipes-redirects-title"
+        class="reference-section"
+        id="pipes-redirects"
+      >
         <h2 class="section-title" id="pipes-redirects-title">Pipes &amp; Redirection</h2>
         <p class="section-description">
-        Shell operators for composing commands and controlling standard input/output.
+          Shell operators for composing commands and controlling standard input/output.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Shell operators for composing commands and controlling standard input/output.
+              Shell operators for composing commands and controlling standard input/output.
             </caption>
             <thead>
               <tr>
@@ -246,15 +273,19 @@
           </table>
         </div>
       </section>
-      <section aria-labelledby="environment-processes-title" class="reference-section" id="environment-processes">
+      <section
+        aria-labelledby="environment-processes-title"
+        class="reference-section"
+        id="environment-processes"
+      >
         <h2 class="section-title" id="environment-processes-title">Environment &amp; Processes</h2>
         <p class="section-description">
-        Commands and syntax for environment variables and running processes.
+          Commands and syntax for environment variables and running processes.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Commands and syntax for environment variables and running processes.
+              Commands and syntax for environment variables and running processes.
             </caption>
             <thead>
               <tr>
@@ -287,8 +318,8 @@
                 <th scope="row"><code>Ctrl+C</code></th>
                 <td>Interrupt process</td>
                 <td>
-                Common terminal shortcut for sending an interrupt signal to the foreground
-                process.
+                  Common terminal shortcut for sending an interrupt signal to the foreground
+                  process.
                 </td>
                 <td class="example-cell"><code>Press Ctrl+C</code></td>
               </tr>
@@ -304,14 +335,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

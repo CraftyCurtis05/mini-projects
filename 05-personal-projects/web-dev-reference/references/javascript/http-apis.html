@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My HTTP and API reference for methods, status codes, headers, JSON, fetch, async requests, errors, and CORS." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My HTTP and API reference for methods, status codes, headers, JSON, fetch, async requests, errors, and CORS."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>HTTP &amp; APIs Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="HTTP &amp; APIs Reference" property="og:title"/>
-    <meta content="My HTTP and API reference for methods, status codes, headers, JSON, fetch, async requests, errors, and CORS." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="HTTP &amp; APIs Reference" property="og:title" />
+    <meta
+      content="My HTTP and API reference for methods, status codes, headers, JSON, fetch, async requests, errors, and CORS."
+      property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="When fetch fails, I check the Network tab before rewriting code. I look at the URL, method, status, request body, and actual response. I also have to remember that fetch does not reject just because the server returned a 404 or 500." data-category="Web Platform" data-footer="HTTP &amp; APIs Cheat Sheet" data-level="Intermediate" data-page="http" data-page-label="HTTP &amp; APIs" data-related='[{"label":"JavaScript Reference","href":"references/javascript/javascript-reference.html"},{"label":"DOM &amp; Events","href":"references/javascript/dom-events.html"},{"label":"Web Security","href":"references/tools/web-security.html"}]' data-search-placeholder="Try: GET, 404, fetch, JSON, CORS..." data-toc="true">
+  <body
+    data-author-note="When fetch fails, I check the Network tab before rewriting code. I look at the URL, method, status, request body, and actual response. I also have to remember that fetch does not reject just because the server returned a 404 or 500."
+    data-category="Web Platform"
+    data-footer="HTTP &amp; APIs Cheat Sheet"
+    data-level="Intermediate"
+    data-page="http"
+    data-page-label="HTTP &amp; APIs"
+    data-related='[{"label":"JavaScript Reference","href":"javascript-reference.html"},{"label":"DOM &amp; Events","href":"dom-events.html"},{"label":"Web Security","href":"../tools/web-security.html"}]'
+    data-search-placeholder="Try: GET, 404, fetch, JSON, CORS..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -53,12 +72,12 @@
       <section aria-labelledby="http-methods-title" class="reference-section" id="http-methods">
         <h2 class="section-title" id="http-methods-title">HTTP Methods</h2>
         <p class="section-description">
-        Common request methods and the intent they usually communicate.
+          Common request methods and the intent they usually communicate.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Common request methods and the intent they usually communicate.
+              Common request methods and the intent they usually communicate.
             </caption>
             <thead>
               <tr>
@@ -85,7 +104,7 @@
                 <th scope="row"><code>PUT</code></th>
                 <td>Replace resource</td>
                 <td>
-                Commonly sends a complete replacement representation to a known resource URI.
+                  Commonly sends a complete replacement representation to a known resource URI.
                 </td>
                 <td class="example-cell"><code>PUT /api/users/42</code></td>
               </tr>
@@ -181,12 +200,12 @@
       <section aria-labelledby="headers-json-title" class="reference-section" id="headers-json">
         <h2 class="section-title" id="headers-json-title">Headers &amp; JSON</h2>
         <p class="section-description">
-        Common metadata and data formats used in API requests and responses.
+          Common metadata and data formats used in API requests and responses.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Common metadata and data formats used in API requests and responses.
+              Common metadata and data formats used in API requests and responses.
             </caption>
             <thead>
               <tr>
@@ -220,7 +239,7 @@
                 <td>Serialize JSON</td>
                 <td>Converts a JavaScript value to a JSON string.</td>
                 <td class="example-cell">
-                <code>body: JSON.stringify({ name: "Jennifer" })</code>
+                  <code>body: JSON.stringify({ name: "Jennifer" })</code>
                 </td>
               </tr>
               <tr id="headers-json-item-response-json">
@@ -236,12 +255,12 @@
       <section aria-labelledby="fetch-async-title" class="reference-section" id="fetch-async">
         <h2 class="section-title" id="fetch-async-title">Fetch &amp; Async Requests</h2>
         <p class="section-description">
-        Browser APIs and patterns for making asynchronous HTTP requests.
+          Browser APIs and patterns for making asynchronous HTTP requests.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Browser APIs and patterns for making asynchronous HTTP requests.
+              Browser APIs and patterns for making asynchronous HTTP requests.
             </caption>
             <thead>
               <tr>
@@ -257,7 +276,7 @@
                 <td>HTTP request</td>
                 <td>Starts a network request and returns a Promise for a Response.</td>
                 <td class="example-cell">
-                <code>const response = await fetch("/api/users");</code>
+                  <code>const response = await fetch("/api/users");</code>
                 </td>
               </tr>
               <tr id="fetch-async-item-async">
@@ -277,7 +296,7 @@
                 <td>Success-range check</td>
                 <td>True when the response status is in the 200–299 range.</td>
                 <td class="example-cell">
-                <code>if (!response.ok) throw new Error(`HTTP ${response.status}`);</code>
+                  <code>if (!response.ok) throw new Error(`HTTP ${response.status}`);</code>
                 </td>
               </tr>
               <tr id="fetch-async-item-abortcontroller">
@@ -290,11 +309,11 @@
                 <th scope="row"><code>CORS</code></th>
                 <td>Cross-origin policy</td>
                 <td>
-                HTTP-header mechanism controlling which cross-origin browser requests may access a
-                response.
+                  HTTP-header mechanism controlling which cross-origin browser requests may access a
+                  response.
                 </td>
                 <td class="example-cell">
-                <code>Access-Control-Allow-Origin: https://example.com</code>
+                  <code>Access-Control-Allow-Origin: https://example.com</code>
                 </td>
               </tr>
             </tbody>
@@ -303,14 +322,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

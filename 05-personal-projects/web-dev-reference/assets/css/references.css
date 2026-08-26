@@ -341,7 +341,10 @@ html[data-theme='dark'] .page-toc a:hover {
   color: var(--text-primary);
   text-decoration: none;
   box-shadow: 0 5px 16px var(--shadow);
-  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease,
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
@@ -536,7 +539,6 @@ html[data-theme='dark'] .favorite-button.is-saved {
   color: var(--lime);
   background: var(--highlight);
 }
-
 
 /* A small project summary gives visitors context without taking over the home page. */
 .project-links {

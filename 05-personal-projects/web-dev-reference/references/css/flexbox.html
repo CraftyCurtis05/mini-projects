@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My Flexbox reference for direction, alignment, wrapping, gaps, item sizing, ordering, and common layouts." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My Flexbox reference for direction, alignment, wrapping, gaps, item sizing, ordering, and common layouts."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>CSS Flexbox Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="CSS Flexbox Reference" property="og:title"/>
-    <meta content="My Flexbox reference for direction, alignment, wrapping, gaps, item sizing, ordering, and common layouts." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="CSS Flexbox Reference" property="og:title" />
+    <meta
+      content="My Flexbox reference for direction, alignment, wrapping, gaps, item sizing, ordering, and common layouts."
+      property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="I still check flex-direction before justify-content and align-items. justify-content follows the main axis and align-items follows the cross axis, so changing the direction changes how both feel." data-category="CSS" data-footer="Flexbox Cheat Sheet" data-level="Beginner–Intermediate" data-page="flexbox" data-page-label="Flexbox" data-related='[{"label":"CSS Properties","href":"references/css/css-properties.html#flexbox"},{"label":"CSS Grid","href":"references/css/css-grid.html"},{"label":"Responsive Design","href":"references/css/responsive-design.html"}]' data-search-placeholder="Try: justify-content, gap, flex-grow, wrap..." data-toc="true">
+  <body
+    data-author-note="I still check flex-direction before justify-content and align-items. justify-content follows the main axis and align-items follows the cross axis, so changing the direction changes how both feel."
+    data-category="CSS"
+    data-footer="Flexbox Cheat Sheet"
+    data-level="Beginner–Intermediate"
+    data-page="flexbox"
+    data-page-label="Flexbox"
+    data-related='[{"label":"CSS Properties","href":"css-properties.html#flexbox"},{"label":"CSS Grid","href":"css-grid.html"},{"label":"Responsive Design","href":"responsive-design.html"}]'
+    data-search-placeholder="Try: justify-content, gap, flex-grow, wrap..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -53,12 +72,12 @@
       <section aria-labelledby="flex-container-title" class="reference-section" id="flex-container">
         <h2 class="section-title" id="flex-container-title">Flex Container</h2>
         <p class="section-description">
-        Properties applied to the parent element that establish and control the flex layout.
+          Properties applied to the parent element that establish and control the flex layout.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Properties applied to the parent element that establish and control the flex layout.
+              Properties applied to the parent element that establish and control the flex layout.
             </caption>
             <thead>
               <tr>
@@ -106,12 +125,12 @@
       <section aria-labelledby="alignment-title" class="reference-section" id="alignment">
         <h2 class="section-title" id="alignment-title">Alignment</h2>
         <p class="section-description">
-        Properties for distributing items along the main and cross axes.
+          Properties for distributing items along the main and cross axes.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Properties for distributing items along the main and cross axes.
+              Properties for distributing items along the main and cross axes.
             </caption>
             <thead>
               <tr>
@@ -153,13 +172,13 @@
       <section aria-labelledby="flex-items-title" class="reference-section" id="flex-items">
         <h2 class="section-title" id="flex-items-title">Flex Item Sizing</h2>
         <p class="section-description">
-        Properties applied to flex items to control growth, shrinking, initial size, and ordering.
+          Properties applied to flex items to control growth, shrinking, initial size, and ordering.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Properties applied to flex items to control growth, shrinking, initial size, and
-            ordering.
+              Properties applied to flex items to control growth, shrinking, initial size, and
+              ordering.
             </caption>
             <thead>
               <tr>
@@ -204,15 +223,19 @@
           </table>
         </div>
       </section>
-      <section aria-labelledby="common-flex-patterns-title" class="reference-section" id="common-flex-patterns">
+      <section
+        aria-labelledby="common-flex-patterns-title"
+        class="reference-section"
+        id="common-flex-patterns"
+      >
         <h2 class="section-title" id="common-flex-patterns-title">Common Flexbox Patterns</h2>
         <p class="section-description">
-        Short patterns for frequently needed interface arrangements.
+          Short patterns for frequently needed interface arrangements.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Short patterns for frequently needed interface arrangements.
+              Short patterns for frequently needed interface arrangements.
             </caption>
             <thead>
               <tr>
@@ -228,7 +251,7 @@
                 <td>Center both axes</td>
                 <td>Centers one or more items horizontally and vertically in a row layout.</td>
                 <td class="example-cell">
-                <code>display: flex; justify-content: center; align-items: center;</code>
+                  <code>display: flex; justify-content: center; align-items: center;</code>
                 </td>
               </tr>
               <tr id="common-flex-patterns-item-split-nav">
@@ -236,7 +259,7 @@
                 <td>Split navigation</td>
                 <td>Pushes two groups to opposite ends of the main axis.</td>
                 <td class="example-cell">
-                <code>display: flex; justify-content: space-between; align-items: center;</code>
+                  <code>display: flex; justify-content: space-between; align-items: center;</code>
                 </td>
               </tr>
               <tr id="common-flex-patterns-item-wrapping-cards">
@@ -244,7 +267,7 @@
                 <td>Wrapping cards</td>
                 <td>Creates wrapping items with a preferred minimum width.</td>
                 <td class="example-cell">
-                <code>display: flex; flex-wrap: wrap; gap: 1rem;</code>
+                  <code>display: flex; flex-wrap: wrap; gap: 1rem;</code>
                 </td>
               </tr>
               <tr id="common-flex-patterns-item-push-item">
@@ -259,14 +282,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

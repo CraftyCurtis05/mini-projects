@@ -457,7 +457,10 @@
   background: var(--demo-background);
   color: var(--demo-text);
   box-shadow: 0 8px 22px var(--shadow);
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .demo-theme-card[data-demo-theme='dark'] {

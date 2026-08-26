@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My HTML tables reference for table structure, headers, cells, attributes, semantics, and examples." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My HTML tables reference for table structure, headers, cells, attributes, semantics, and examples."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>HTML Tables Reference | Web Dev Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="HTML Tables Reference | Web Dev Reference" property="og:title"/>
-    <meta content="My HTML tables reference for table structure, headers, cells, attributes, semantics, and examples." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="HTML Tables Reference | Web Dev Reference" property="og:title" />
+    <meta
+      content="My HTML tables reference for table structure, headers, cells, attributes, semantics, and examples."
+      property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="I have to think about what each header is describing, not just how the table looks. A th is for a real row or column header, and scope makes that relationship clearer." data-category="HTML" data-footer="HTML Tables Cheat Sheet" data-level="Beginner" data-page="tables" data-page-label="HTML Tables" data-related='[{"label":"HTML Tags","href":"references/html/html-tags.html"},{"label":"Accessible Table Pattern","href":"references/patterns/patterns.html#accessible-table"}]' data-search-placeholder="Try: table, colspan, scope..." data-toc="true">
+  <body
+    data-author-note="I have to think about what each header is describing, not just how the table looks. A th is for a real row or column header, and scope makes that relationship clearer."
+    data-category="HTML"
+    data-footer="HTML Tables Cheat Sheet"
+    data-level="Beginner"
+    data-page="tables"
+    data-page-label="HTML Tables"
+    data-related='[{"label":"HTML Tags","href":"html-tags.html"},{"label":"Accessible Table Pattern","href":"../patterns/patterns.html#accessible-table"}]'
+    data-search-placeholder="Try: table, colspan, scope..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -123,9 +142,9 @@
                 <th scope="row"><code>&lt;col&gt;</code></th>
                 <td>Table Column</td>
                 <td>
-                Defines properties for one or more columns within a
-                <code>&lt;colgroup&gt;</code>
-                .
+                  Defines properties for one or more columns within a
+                  <code>&lt;colgroup&gt;</code>
+                  .
                 </td>
                 <td class="example-cell"><code>&lt;col&gt;...&lt;/col&gt;</code></td>
               </tr>
@@ -133,15 +152,19 @@
           </table>
         </div>
       </section>
-      <section aria-labelledby="table-attributes-title" class="reference-section" id="table-attributes">
+      <section
+        aria-labelledby="table-attributes-title"
+        class="reference-section"
+        id="table-attributes"
+      >
         <h2 class="section-title" id="table-attributes-title">Table Attributes</h2>
         <p class="section-description">
-        HTML table attributes, their names, and how they affect table structure.
+          HTML table attributes, their names, and how they affect table structure.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            HTML table attributes, their names, and how they affect table structure.
+              HTML table attributes, their names, and how they affect table structure.
             </caption>
             <thead>
               <tr>
@@ -156,11 +179,11 @@
                 <th scope="row"><code>colspan</code></th>
                 <td>Column Span</td>
                 <td>
-                Specifies how many columns a
-                <code>&lt;td&gt;</code>
-                or
-                <code>&lt;th&gt;</code>
-                spans horizontally.
+                  Specifies how many columns a
+                  <code>&lt;td&gt;</code>
+                  or
+                  <code>&lt;th&gt;</code>
+                  spans horizontally.
                 </td>
                 <td class="example-cell"><code>&lt;td colspan="2"&gt;...&lt;/td&gt;</code></td>
               </tr>
@@ -168,11 +191,11 @@
                 <th scope="row"><code>rowspan</code></th>
                 <td>Row Span</td>
                 <td>
-                Specifies how many rows a
-                <code>&lt;td&gt;</code>
-                or
-                <code>&lt;th&gt;</code>
-                spans vertically.
+                  Specifies how many rows a
+                  <code>&lt;td&gt;</code>
+                  or
+                  <code>&lt;th&gt;</code>
+                  spans vertically.
                 </td>
                 <td class="example-cell"><code>&lt;td rowspan="3"&gt;...&lt;/td&gt;</code></td>
               </tr>
@@ -180,9 +203,9 @@
                 <th scope="row"><code>scope</code></th>
                 <td>Header Scope</td>
                 <td>
-                Identifies whether a
-                <code>&lt;th&gt;</code>
-                applies to a row, column, row group, or column group.
+                  Identifies whether a
+                  <code>&lt;th&gt;</code>
+                  applies to a row, column, row group, or column group.
                 </td>
                 <td class="example-cell"><code>&lt;th scope="col"&gt;...&lt;/th&gt;</code></td>
               </tr>
@@ -191,18 +214,18 @@
                 <td>Header Association</td>
                 <td>Associates a table cell with one or more header cells using header IDs.</td>
                 <td class="example-cell">
-                <code>&lt;td headers="header1 header2"&gt;...&lt;/td&gt;</code>
+                  <code>&lt;td headers="header1 header2"&gt;...&lt;/td&gt;</code>
                 </td>
               </tr>
               <tr id="table-attributes-item-span">
                 <th scope="row"><code>span</code></th>
                 <td>Column Span</td>
                 <td>
-                Specifies how many consecutive columns a
-                <code>&lt;col&gt;</code>
-                or
-                <code>&lt;colgroup&gt;</code>
-                represents.
+                  Specifies how many consecutive columns a
+                  <code>&lt;col&gt;</code>
+                  or
+                  <code>&lt;colgroup&gt;</code>
+                  represents.
                 </td>
                 <td class="example-cell"><code>&lt;col span="3"&gt;...&lt;/col&gt;</code></td>
               </tr>
@@ -212,14 +235,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

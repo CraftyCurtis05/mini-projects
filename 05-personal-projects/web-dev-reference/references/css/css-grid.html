@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My CSS Grid reference for tracks, template areas, placement, alignment, sizing, and responsive layouts." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My CSS Grid reference for tracks, template areas, placement, alignment, sizing, and responsive layouts."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>CSS Grid Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="CSS Grid Reference" property="og:title"/>
-    <meta content="My CSS Grid reference for tracks, template areas, placement, alignment, sizing, and responsive layouts." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="CSS Grid Reference" property="og:title" />
+    <meta
+      content="My CSS Grid reference for tracks, template areas, placement, alignment, sizing, and responsive layouts."
+      property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="Grid clicks again for me when I remember it works in two dimensions. I define the rows and columns first, then place items instead of trying to move everything with margins." data-category="CSS" data-footer="CSS Grid Cheat Sheet" data-level="Intermediate" data-page="grid" data-page-label="CSS Grid" data-related='[{"label":"CSS Properties","href":"references/css/css-properties.html#css-grid"},{"label":"Flexbox","href":"references/css/flexbox.html"},{"label":"Responsive Design","href":"references/css/responsive-design.html"}]' data-search-placeholder="Try: repeat, minmax, grid-area, auto-fit..." data-toc="true">
+  <body
+    data-author-note="Grid clicks again for me when I remember it works in two dimensions. I define the rows and columns first, then place items instead of trying to move everything with margins."
+    data-category="CSS"
+    data-footer="CSS Grid Cheat Sheet"
+    data-level="Intermediate"
+    data-page="grid"
+    data-page-label="CSS Grid"
+    data-related='[{"label":"CSS Properties","href":"css-properties.html#css-grid"},{"label":"Flexbox","href":"flexbox.html"},{"label":"Responsive Design","href":"responsive-design.html"}]'
+    data-search-placeholder="Try: repeat, minmax, grid-area, auto-fit..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -44,7 +63,7 @@
     <header class="hero">
       <h1>CSS Grid Reference</h1>
       <p class="subtitle">
-      My reference for Grid tracks, placement, sizing, and responsive layouts.
+        My reference for Grid tracks, placement, sizing, and responsive layouts.
       </p>
       <div class="hero-meta">
         <span class="badge badge-category">CSS</span>
@@ -55,12 +74,12 @@
       <section aria-labelledby="grid-container-title" class="reference-section" id="grid-container">
         <h2 class="section-title" id="grid-container-title">Grid Container</h2>
         <p class="section-description">
-        Properties that establish a grid and define its rows, columns, and gaps.
+          Properties that establish a grid and define its rows, columns, and gaps.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Properties that establish a grid and define its rows, columns, and gaps.
+              Properties that establish a grid and define its rows, columns, and gaps.
             </caption>
             <thead>
               <tr>
@@ -100,7 +119,7 @@
                 <td>Named layout</td>
                 <td>Defines a visual template using named areas.</td>
                 <td class="example-cell">
-                <code>grid-template-areas: "header header" "nav main";</code>
+                  <code>grid-template-areas: "header header" "nav main";</code>
                 </td>
               </tr>
             </tbody>
@@ -110,12 +129,12 @@
       <section aria-labelledby="grid-sizing-title" class="reference-section" id="grid-sizing">
         <h2 class="section-title" id="grid-sizing-title">Track Sizing Functions</h2>
         <p class="section-description">
-        Values and functions for creating flexible and responsive grid tracks.
+          Values and functions for creating flexible and responsive grid tracks.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Values and functions for creating flexible and responsive grid tracks.
+              Values and functions for creating flexible and responsive grid tracks.
             </caption>
             <thead>
               <tr>
@@ -143,7 +162,7 @@
                 <td>Track range</td>
                 <td>Allows a track to flex between minimum and maximum sizes.</td>
                 <td class="example-cell">
-                <code>grid-template-columns: minmax(16rem, 1fr) 2fr;</code>
+                  <code>grid-template-columns: minmax(16rem, 1fr) 2fr;</code>
                 </td>
               </tr>
               <tr id="grid-sizing-item-auto-fit">
@@ -165,12 +184,12 @@
       <section aria-labelledby="grid-placement-title" class="reference-section" id="grid-placement">
         <h2 class="section-title" id="grid-placement-title">Grid Item Placement</h2>
         <p class="section-description">
-        Properties for positioning items across rows, columns, and named areas.
+          Properties for positioning items across rows, columns, and named areas.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Properties for positioning items across rows, columns, and named areas.
+              Properties for positioning items across rows, columns, and named areas.
             </caption>
             <thead>
               <tr>
@@ -212,12 +231,12 @@
       <section aria-labelledby="grid-alignment-title" class="reference-section" id="grid-alignment">
         <h2 class="section-title" id="grid-alignment-title">Grid Alignment</h2>
         <p class="section-description">
-        Properties for aligning items and the entire grid within available space.
+          Properties for aligning items and the entire grid within available space.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Properties for aligning items and the entire grid within available space.
+              Properties for aligning items and the entire grid within available space.
             </caption>
             <thead>
               <tr>
@@ -264,14 +283,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

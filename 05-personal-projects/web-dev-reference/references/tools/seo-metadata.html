@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My reference for page titles, descriptions, canonical URLs, Open Graph, structured data, favicons, and web app metadata." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My reference for page titles, descriptions, canonical URLs, Open Graph, structured data, favicons, and web app metadata."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>SEO &amp; Metadata Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="SEO &amp; Metadata Reference" property="og:title"/>
-    <meta content="My reference for page titles, descriptions, canonical URLs, Open Graph, structured data, favicons, and web app metadata." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="SEO &amp; Metadata Reference" property="og:title" />
+    <meta
+      content="My reference for page titles, descriptions, canonical URLs, Open Graph, structured data, favicons, and web app metadata."
+      property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="I do not need every meta tag on every project. I keep the page title and description specific, add social metadata when I care about link previews, and remember that index, follow is already the normal crawler behavior." data-category="Web Platform" data-footer="SEO &amp; Metadata Cheat Sheet" data-level="Beginner–Intermediate" data-page="seo" data-page-label="SEO &amp; Metadata" data-related='[{"label":"HTML Tags","href":"references/html/html-tags.html#document-metadata"},{"label":"Web Performance","href":"references/tools/web-performance.html"}]' data-search-placeholder="Try: description, canonical, og:title, JSON-LD..." data-toc="true">
+  <body
+    data-author-note="I do not need every meta tag on every project. I keep the page title and description specific, add social metadata when I care about link previews, and remember that index, follow is already the normal crawler behavior."
+    data-category="Web Platform"
+    data-footer="SEO &amp; Metadata Cheat Sheet"
+    data-level="Beginner–Intermediate"
+    data-page="seo"
+    data-page-label="SEO &amp; Metadata"
+    data-related='[{"label":"HTML Tags","href":"../html/html-tags.html#document-metadata"},{"label":"Web Performance","href":"web-performance.html"}]'
+    data-search-placeholder="Try: description, canonical, og:title, JSON-LD..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -53,12 +72,12 @@
       <section aria-labelledby="core-metadata-title" class="reference-section" id="core-metadata">
         <h2 class="section-title" id="core-metadata-title">Core Document Metadata</h2>
         <p class="section-description">
-        Metadata every production page commonly needs to describe itself and render correctly.
+          Metadata every production page commonly needs to describe itself and render correctly.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Metadata every production page commonly needs to describe itself and render correctly.
+              Metadata every production page commonly needs to describe itself and render correctly.
             </caption>
             <thead>
               <tr>
@@ -74,19 +93,19 @@
                 <td>Document title</td>
                 <td>Sets the browser-tab title and is commonly used as the search-result title.</td>
                 <td class="example-cell">
-                <code>&lt;title&gt;CSS Grid Reference | Web Dev Reference&lt;/title&gt;</code>
+                  <code>&lt;title&gt;CSS Grid Reference | Web Dev Reference&lt;/title&gt;</code>
                 </td>
               </tr>
               <tr id="core-metadata-item-meta-name-description">
                 <th scope="row"><code>meta[name="description"]</code></th>
                 <td>Page description</td>
                 <td>
-                Provides a concise page summary used by search/social systems in some contexts.
+                  Provides a concise page summary used by search/social systems in some contexts.
                 </td>
                 <td class="example-cell">
-                <code>
-                &lt;meta name="description" content="A practical CSS Grid reference."&gt;
-                </code>
+                  <code>
+                    &lt;meta name="description" content="A practical CSS Grid reference."&gt;
+                  </code>
                 </td>
               </tr>
               <tr id="core-metadata-item-meta-name-viewport">
@@ -94,17 +113,17 @@
                 <td>Viewport configuration</td>
                 <td>Tells mobile browsers how to size the layout viewport.</td>
                 <td class="example-cell">
-                <code>
-                &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-                </code>
+                  <code>
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                  </code>
                 </td>
               </tr>
               <tr id="core-metadata-item-html-lang">
                 <th scope="row"><code>html[lang]</code></th>
                 <td>Document language</td>
                 <td>
-                Identifies the primary language for browsers, search systems, and assistive
-                technology.
+                  Identifies the primary language for browsers, search systems, and assistive
+                  technology.
                 </td>
                 <td class="example-cell"><code>&lt;html lang="en"&gt;</code></td>
               </tr>
@@ -113,22 +132,26 @@
                 <td>Crawler directives</td>
                 <td>Supplies indexing/following directives to compliant crawlers.</td>
                 <td class="example-cell">
-                <code>&lt;meta name="robots" content="index, follow"&gt;</code>
+                  <code>&lt;meta name="robots" content="index, follow"&gt;</code>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <section aria-labelledby="canonical-social-title" class="reference-section" id="canonical-social">
+      <section
+        aria-labelledby="canonical-social-title"
+        class="reference-section"
+        id="canonical-social"
+      >
         <h2 class="section-title" id="canonical-social-title">Canonical &amp; Social Metadata</h2>
         <p class="section-description">
-        Metadata used to identify preferred URLs and social-preview content.
+          Metadata used to identify preferred URLs and social-preview content.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Metadata used to identify preferred URLs and social-preview content.
+              Metadata used to identify preferred URLs and social-preview content.
             </caption>
             <thead>
               <tr>
@@ -144,7 +167,7 @@
                 <td>Canonical URL</td>
                 <td>Identifies the preferred URL for substantially duplicate pages.</td>
                 <td class="example-cell">
-                <code>&lt;link rel="canonical" href="https://example.com/css-grid"&gt;</code>
+                  <code>&lt;link rel="canonical" href="https://example.com/css-grid"&gt;</code>
                 </td>
               </tr>
               <tr id="canonical-social-item-og-title">
@@ -152,7 +175,7 @@
                 <td>Open Graph title</td>
                 <td>Sets the title used by many social preview systems.</td>
                 <td class="example-cell">
-                <code>&lt;meta property="og:title" content="CSS Grid Reference"&gt;</code>
+                  <code>&lt;meta property="og:title" content="CSS Grid Reference"&gt;</code>
                 </td>
               </tr>
               <tr id="canonical-social-item-og-description">
@@ -160,9 +183,9 @@
                 <td>Open Graph description</td>
                 <td>Sets the social-preview summary.</td>
                 <td class="example-cell">
-                <code>
-                &lt;meta property="og:description" content="A practical CSS Grid reference."&gt;
-                </code>
+                  <code>
+                    &lt;meta property="og:description" content="A practical CSS Grid reference."&gt;
+                  </code>
                 </td>
               </tr>
               <tr id="canonical-social-item-og-image">
@@ -170,9 +193,9 @@
                 <td>Open Graph image</td>
                 <td>Specifies the image used in supported social previews.</td>
                 <td class="example-cell">
-                <code>
-                &lt;meta property="og:image" content="https://example.com/share.png"&gt;
-                </code>
+                  <code>
+                    &lt;meta property="og:image" content="https://example.com/share.png"&gt;
+                  </code>
                 </td>
               </tr>
               <tr id="canonical-social-item-twitter-card">
@@ -180,22 +203,26 @@
                 <td>Twitter/X card type</td>
                 <td>Selects the general card layout supported by Twitter/X metadata.</td>
                 <td class="example-cell">
-                <code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code>
+                  <code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <section aria-labelledby="structured-data-title" class="reference-section" id="structured-data">
+      <section
+        aria-labelledby="structured-data-title"
+        class="reference-section"
+        id="structured-data"
+      >
         <h2 class="section-title" id="structured-data-title">Structured Data</h2>
         <p class="section-description">
-        Machine-readable schema markup for describing page entities and relationships.
+          Machine-readable schema markup for describing page entities and relationships.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Machine-readable schema markup for describing page entities and relationships.
+              Machine-readable schema markup for describing page entities and relationships.
             </caption>
             <thead>
               <tr>
@@ -211,7 +238,7 @@
                 <td>Linked-data script</td>
                 <td>Embeds structured data in a script block without changing visible content.</td>
                 <td class="example-cell">
-                <code>&lt;script type="application/ld+json"&gt;{ ... }&lt;/script&gt;</code>
+                  <code>&lt;script type="application/ld+json"&gt;{ ... }&lt;/script&gt;</code>
                 </td>
               </tr>
               <tr id="structured-data-item-website">
@@ -225,7 +252,7 @@
                 <td>Technical article schema</td>
                 <td>Describes technical/reference article content.</td>
                 <td class="example-cell">
-                <code>"@type": "TechArticle"</code>
+                  <code>"@type": "TechArticle"</code>
                 </td>
               </tr>
               <tr id="structured-data-item-author">
@@ -233,7 +260,7 @@
                 <td>Author entity</td>
                 <td>Associates the content with a Person or Organization.</td>
                 <td class="example-cell">
-                <code>"author": { "@type": "Person", "name": "Jennifer Curtis" }</code>
+                  <code>"author": { "@type": "Person", "name": "Jennifer Curtis" }</code>
                 </td>
               </tr>
             </tbody>
@@ -243,12 +270,12 @@
       <section aria-labelledby="icons-manifest-title" class="reference-section" id="icons-manifest">
         <h2 class="section-title" id="icons-manifest-title">Icons &amp; Web App Metadata</h2>
         <p class="section-description">
-        Files and links that provide browser icons and installable-web-app information.
+          Files and links that provide browser icons and installable-web-app information.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Files and links that provide browser icons and installable-web-app information.
+              Files and links that provide browser icons and installable-web-app information.
             </caption>
             <thead>
               <tr>
@@ -264,7 +291,7 @@
                 <td>Favicon</td>
                 <td>Provides an icon for browser tabs, bookmarks, and other UI.</td>
                 <td class="example-cell">
-                <code>&lt;link rel="icon" href="/favicon.png"&gt;</code>
+                  <code>&lt;link rel="icon" href="/favicon.png"&gt;</code>
                 </td>
               </tr>
               <tr id="icons-manifest-item-rel-apple-touch-icon">
@@ -272,7 +299,7 @@
                 <td>Apple touch icon</td>
                 <td>Provides an icon used for Apple home-screen shortcuts.</td>
                 <td class="example-cell">
-                <code>&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;</code>
+                  <code>&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;</code>
                 </td>
               </tr>
               <tr id="icons-manifest-item-rel-manifest">
@@ -280,7 +307,7 @@
                 <td>Web app manifest</td>
                 <td>Links metadata for an installable web experience.</td>
                 <td class="example-cell">
-                <code>&lt;link rel="manifest" href="/site.webmanifest"&gt;</code>
+                  <code>&lt;link rel="manifest" href="/site.webmanifest"&gt;</code>
                 </td>
               </tr>
               <tr id="icons-manifest-item-theme-color">
@@ -288,7 +315,7 @@
                 <td>Browser UI color</td>
                 <td>Suggests a color for supported browser/window UI.</td>
                 <td class="example-cell">
-                <code>&lt;meta name="theme-color" content="#3c88a3"&gt;</code>
+                  <code>&lt;meta name="theme-color" content="#3c88a3"&gt;</code>
                 </td>
               </tr>
             </tbody>
@@ -297,14 +324,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

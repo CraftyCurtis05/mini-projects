@@ -2,12 +2,13 @@
   "name": "web-development-reference",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "A personal web development reference built with HTML, CSS, and vanilla JavaScript.",
   "scripts": {
     "serve": "http-server . -p 8080 -c-1",
     "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
     "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
-    "lint": "eslint assets/js --ignore-pattern searchData.js",
+    "lint": "eslint assets/js --ignore-pattern search-data.js",
     "check": "npm run format:check && npm run lint"
   },
   "devDependencies": {

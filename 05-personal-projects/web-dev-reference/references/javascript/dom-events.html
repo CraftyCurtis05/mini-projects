@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My DOM and events reference for selecting elements, changing the page, creating elements, handling events, and forms." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My DOM and events reference for selecting elements, changing the page, creating elements, handling events, and forms."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>DOM &amp; Events Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="DOM &amp; Events Reference" property="og:title"/>
-    <meta content="My DOM and events reference for selecting elements, changing the page, creating elements, handling events, and forms." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="DOM &amp; Events Reference" property="og:title" />
+    <meta
+      content="My DOM and events reference for selecting elements, changing the page, creating elements, handling events, and forms."
+      property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="I have to remind myself that querySelector returns one match and querySelectorAll returns a NodeList. With events, I also check event.target versus event.currentTarget before blaming the wrong element." data-category="JavaScript" data-footer="DOM &amp; Events Cheat Sheet" data-level="Beginner–Intermediate" data-page="dom" data-page-label="DOM &amp; Events" data-related='[{"label":"JavaScript Reference","href":"references/javascript/javascript-reference.html"},{"label":"Forms &amp; Validation","href":"references/html/forms-validation.html"},{"label":"Debugging","href":"references/tools/debugging.html"}]' data-search-placeholder="Try: querySelector, classList, click, preventDefault..." data-toc="true">
+  <body
+    data-author-note="I have to remind myself that querySelector returns one match and querySelectorAll returns a NodeList. With events, I also check event.target versus event.currentTarget before blaming the wrong element."
+    data-category="JavaScript"
+    data-footer="DOM &amp; Events Cheat Sheet"
+    data-level="Beginner–Intermediate"
+    data-page="dom"
+    data-page-label="DOM &amp; Events"
+    data-related='[{"label":"JavaScript Reference","href":"javascript-reference.html"},{"label":"Forms &amp; Validation","href":"../html/forms-validation.html"},{"label":"Debugging","href":"../tools/debugging.html"}]'
+    data-search-placeholder="Try: querySelector, classList, click, preventDefault..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -44,7 +63,7 @@
     <header class="hero">
       <h1>DOM &amp; Events Reference</h1>
       <p class="subtitle">
-      My reference for selecting elements, changing the DOM, and handling events.
+        My reference for selecting elements, changing the DOM, and handling events.
       </p>
       <div class="hero-meta">
         <span class="badge badge-category">JavaScript</span>
@@ -52,15 +71,19 @@
       </div>
     </header>
     <main id="main-content">
-      <section aria-labelledby="selecting-elements-title" class="reference-section" id="selecting-elements">
+      <section
+        aria-labelledby="selecting-elements-title"
+        class="reference-section"
+        id="selecting-elements"
+      >
         <h2 class="section-title" id="selecting-elements-title">Selecting Elements</h2>
         <p class="section-description">
-        Browser APIs for locating elements before reading or changing them.
+          Browser APIs for locating elements before reading or changing them.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Browser APIs for locating elements before reading or changing them.
+              Browser APIs for locating elements before reading or changing them.
             </caption>
             <thead>
               <tr>
@@ -76,7 +99,7 @@
                 <td>First CSS match</td>
                 <td>Returns the first element matching a CSS selector.</td>
                 <td class="example-cell">
-                <code>const button = document.querySelector(".save-button");</code>
+                  <code>const button = document.querySelector(".save-button");</code>
                 </td>
               </tr>
               <tr id="selecting-elements-item-document-queryselectorall">
@@ -84,7 +107,7 @@
                 <td>All CSS matches</td>
                 <td>Returns a static NodeList of matching elements.</td>
                 <td class="example-cell">
-                <code>const cards = document.querySelectorAll(".card");</code>
+                  <code>const cards = document.querySelectorAll(".card");</code>
                 </td>
               </tr>
               <tr id="selecting-elements-item-document-getelementbyid">
@@ -92,7 +115,7 @@
                 <td>Element by ID</td>
                 <td>Returns the element with a matching id.</td>
                 <td class="example-cell">
-                <code>const main = document.getElementById("main-content");</code>
+                  <code>const main = document.getElementById("main-content");</code>
                 </td>
               </tr>
               <tr id="selecting-elements-item-closest">
@@ -100,7 +123,7 @@
                 <td>Closest ancestor</td>
                 <td>Finds the nearest matching element starting from the current element.</td>
                 <td class="example-cell">
-                <code>event.target.closest("[data-action]")</code>
+                  <code>event.target.closest("[data-action]")</code>
                 </td>
               </tr>
               <tr id="selecting-elements-item-matches">
@@ -113,15 +136,19 @@
           </table>
         </div>
       </section>
-      <section aria-labelledby="reading-changing-title" class="reference-section" id="reading-changing">
+      <section
+        aria-labelledby="reading-changing-title"
+        class="reference-section"
+        id="reading-changing"
+      >
         <h2 class="section-title" id="reading-changing-title">Reading &amp; Changing Elements</h2>
         <p class="section-description">
-        Properties and methods for changing text, classes, attributes, and styles.
+          Properties and methods for changing text, classes, attributes, and styles.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Properties and methods for changing text, classes, attributes, and styles.
+              Properties and methods for changing text, classes, attributes, and styles.
             </caption>
             <thead>
               <tr>
@@ -143,7 +170,7 @@
                 <td>HTML content</td>
                 <td>Reads or replaces parsed HTML; use carefully with untrusted input.</td>
                 <td class="example-cell">
-                <code>container.innerHTML = "&lt;strong&gt;Ready&lt;/strong&gt;";</code>
+                  <code>container.innerHTML = "&lt;strong&gt;Ready&lt;/strong&gt;";</code>
                 </td>
               </tr>
               <tr id="reading-changing-item-classlist-add">
@@ -151,7 +178,7 @@
                 <td>Add class</td>
                 <td>Adds one or more CSS classes.</td>
                 <td class="example-cell">
-                <code>card.classList.add("is-active");</code>
+                  <code>card.classList.add("is-active");</code>
                 </td>
               </tr>
               <tr id="reading-changing-item-classlist-toggle">
@@ -159,7 +186,7 @@
                 <td>Toggle class</td>
                 <td>Adds or removes a class based on its current or supplied state.</td>
                 <td class="example-cell">
-                <code>menu.classList.toggle("is-open");</code>
+                  <code>menu.classList.toggle("is-open");</code>
                 </td>
               </tr>
               <tr id="reading-changing-item-setattribute">
@@ -167,7 +194,7 @@
                 <td>Set attribute</td>
                 <td>Creates or updates an HTML attribute.</td>
                 <td class="example-cell">
-                <code>button.setAttribute("aria-expanded", "true");</code>
+                  <code>button.setAttribute("aria-expanded", "true");</code>
                 </td>
               </tr>
               <tr id="reading-changing-item-dataset">
@@ -180,13 +207,17 @@
           </table>
         </div>
       </section>
-      <section aria-labelledby="creating-elements-title" class="reference-section" id="creating-elements">
+      <section
+        aria-labelledby="creating-elements-title"
+        class="reference-section"
+        id="creating-elements"
+      >
         <h2 class="section-title" id="creating-elements-title">Creating &amp; Removing Elements</h2>
         <p class="section-description">Methods for constructing and changing document structure.</p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Methods for constructing and changing document structure.
+              Methods for constructing and changing document structure.
             </caption>
             <thead>
               <tr>
@@ -202,7 +233,7 @@
                 <td>Create element</td>
                 <td>Creates a new element without inserting it yet.</td>
                 <td class="example-cell">
-                <code>const li = document.createElement("li");</code>
+                  <code>const li = document.createElement("li");</code>
                 </td>
               </tr>
               <tr id="creating-elements-item-append">
@@ -234,7 +265,7 @@
                 <td>Batch DOM updates</td>
                 <td>Temporarily groups nodes before inserting them together.</td>
                 <td class="example-cell">
-                <code>const fragment = document.createDocumentFragment();</code>
+                  <code>const fragment = document.createDocumentFragment();</code>
                 </td>
               </tr>
             </tbody>
@@ -244,12 +275,12 @@
       <section aria-labelledby="events-title" class="reference-section" id="events">
         <h2 class="section-title" id="events-title">Events</h2>
         <p class="section-description">
-        APIs for responding to user interaction and browser activity.
+          APIs for responding to user interaction and browser activity.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            APIs for responding to user interaction and browser activity.
+              APIs for responding to user interaction and browser activity.
             </caption>
             <thead>
               <tr>
@@ -265,7 +296,7 @@
                 <td>Event listener</td>
                 <td>Runs a callback when the requested event occurs.</td>
                 <td class="example-cell">
-                <code>button.addEventListener("click", handleClick);</code>
+                  <code>button.addEventListener("click", handleClick);</code>
                 </td>
               </tr>
               <tr id="events-item-event-target">
@@ -297,9 +328,9 @@
                 <td>Parent listener pattern</td>
                 <td>Handles many child interactions from one stable ancestor.</td>
                 <td class="example-cell">
-                <code>
-                list.addEventListener("click", event =&gt; event.target.closest("button"));
-                </code>
+                  <code>
+                    list.addEventListener("click", event =&gt; event.target.closest("button"));
+                  </code>
                 </td>
               </tr>
             </tbody>
@@ -309,12 +340,12 @@
       <section aria-labelledby="forms-events-title" class="reference-section" id="forms-events">
         <h2 class="section-title" id="forms-events-title">Forms &amp; Input Events</h2>
         <p class="section-description">
-        Common events and values used with interactive form controls.
+          Common events and values used with interactive form controls.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Common events and values used with interactive form controls.
+              Common events and values used with interactive form controls.
             </caption>
             <thead>
               <tr>
@@ -330,7 +361,7 @@
                 <td>Live input event</td>
                 <td>Fires whenever a control's value changes through user input.</td>
                 <td class="example-cell">
-                <code>search.addEventListener("input", filterResults);</code>
+                  <code>search.addEventListener("input", filterResults);</code>
                 </td>
               </tr>
               <tr id="forms-events-item-change">
@@ -338,7 +369,7 @@
                 <td>Committed change</td>
                 <td>Fires when a value is committed, depending on the control.</td>
                 <td class="example-cell">
-                <code>select.addEventListener("change", updateView);</code>
+                  <code>select.addEventListener("change", updateView);</code>
                 </td>
               </tr>
               <tr id="forms-events-item-submit">
@@ -346,7 +377,7 @@
                 <td>Form submission</td>
                 <td>Fires on the form when submission is requested.</td>
                 <td class="example-cell">
-                <code>form.addEventListener("submit", handleSubmit);</code>
+                  <code>form.addEventListener("submit", handleSubmit);</code>
                 </td>
               </tr>
               <tr id="forms-events-item-formdata">
@@ -367,14 +398,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My forms reference for structure, input types, labels, autocomplete, validation, error messages, and submission." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My forms reference for structure, input types, labels, autocomplete, validation, error messages, and submission."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>HTML Forms &amp; Validation</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="HTML Forms &amp; Validation" property="og:title"/>
-    <meta content="My forms reference for structure, input types, labels, autocomplete, validation, error messages, and submission." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="HTML Forms &amp; Validation" property="og:title" />
+    <meta
+      content="My forms reference for structure, input types, labels, autocomplete, validation, error messages, and submission."
+      property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="A placeholder is not a label. I keep the label connected with for and id, use the right input type, and make error messages tell the user what actually needs to be fixed." data-category="HTML" data-footer="Forms &amp; Validation Cheat Sheet" data-level="Beginner–Intermediate" data-page="forms" data-page-label="Forms &amp; Validation" data-related='[{"label":"HTML Tags","href":"references/html/html-tags.html#forms-user-input"},{"label":"DOM &amp; Events","href":"references/javascript/dom-events.html#forms-events"},{"label":"Accessibility","href":"references/html/accessibility.html"}]' data-search-placeholder="Try: label, required, autocomplete, pattern..." data-toc="true">
+  <body
+    data-author-note="A placeholder is not a label. I keep the label connected with for and id, use the right input type, and make error messages tell the user what actually needs to be fixed."
+    data-category="HTML"
+    data-footer="Forms &amp; Validation Cheat Sheet"
+    data-level="Beginner–Intermediate"
+    data-page="forms"
+    data-page-label="Forms &amp; Validation"
+    data-related='[{"label":"HTML Tags","href":"html-tags.html#forms-user-input"},{"label":"DOM &amp; Events","href":"../javascript/dom-events.html#forms-events"},{"label":"Accessibility","href":"accessibility.html"}]'
+    data-search-placeholder="Try: label, required, autocomplete, pattern..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -53,12 +72,12 @@
       <section aria-labelledby="form-structure-title" class="reference-section" id="form-structure">
         <h2 class="section-title" id="form-structure-title">Form Structure</h2>
         <p class="section-description">
-        Semantic elements that organize controls and give them accessible names.
+          Semantic elements that organize controls and give them accessible names.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Semantic elements that organize controls and give them accessible names.
+              Semantic elements that organize controls and give them accessible names.
             </caption>
             <thead>
               <tr>
@@ -74,7 +93,7 @@
                 <td>Form container</td>
                 <td>Groups controls and defines how form data is submitted.</td>
                 <td class="example-cell">
-                <code>&lt;form action="/contact" method="post"&gt;...&lt;/form&gt;</code>
+                  <code>&lt;form action="/contact" method="post"&gt;...&lt;/form&gt;</code>
                 </td>
               </tr>
               <tr id="form-structure-item">
@@ -82,7 +101,7 @@
                 <td>Control label</td>
                 <td>Associates visible text with a specific form control.</td>
                 <td class="example-cell">
-                <code>&lt;label for="email"&gt;Email&lt;/label&gt;</code>
+                  <code>&lt;label for="email"&gt;Email&lt;/label&gt;</code>
                 </td>
               </tr>
               <tr id="form-structure-item-2">
@@ -96,7 +115,7 @@
                 <td>Group label</td>
                 <td>Provides the accessible name for a fieldset.</td>
                 <td class="example-cell">
-                <code>&lt;legend&gt;Contact preference&lt;/legend&gt;</code>
+                  <code>&lt;legend&gt;Contact preference&lt;/legend&gt;</code>
                 </td>
               </tr>
               <tr id="form-structure-item-4">
@@ -104,7 +123,7 @@
                 <td>Form action</td>
                 <td>Creates a native keyboard-accessible button.</td>
                 <td class="example-cell">
-                <code>&lt;button type="submit"&gt;Send&lt;/button&gt;</code>
+                  <code>&lt;button type="submit"&gt;Send&lt;/button&gt;</code>
                 </td>
               </tr>
             </tbody>
@@ -114,12 +133,12 @@
       <section aria-labelledby="input-types-title" class="reference-section" id="input-types">
         <h2 class="section-title" id="input-types-title">Common Input Types</h2>
         <p class="section-description">
-        Input types that provide appropriate browser behavior, keyboards, and validation.
+          Input types that provide appropriate browser behavior, keyboards, and validation.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Input types that provide appropriate browser behavior, keyboards, and validation.
+              Input types that provide appropriate browser behavior, keyboards, and validation.
             </caption>
             <thead>
               <tr>
@@ -147,7 +166,7 @@
                 <td>Password</td>
                 <td>Masks entered characters.</td>
                 <td class="example-cell">
-                <code>&lt;input type="password" name="password"&gt;</code>
+                  <code>&lt;input type="password" name="password"&gt;</code>
                 </td>
               </tr>
               <tr id="input-types-item-type-number">
@@ -155,7 +174,7 @@
                 <td>Number</td>
                 <td>Accepts numeric values with optional min, max, and step.</td>
                 <td class="example-cell">
-                <code>&lt;input type="number" min="1" max="10"&gt;</code>
+                  <code>&lt;input type="number" min="1" max="10"&gt;</code>
                 </td>
               </tr>
               <tr id="input-types-item-type-date">
@@ -163,7 +182,7 @@
                 <td>Date</td>
                 <td>Provides a date-oriented control where supported.</td>
                 <td class="example-cell">
-                <code>&lt;input type="date" name="start-date"&gt;</code>
+                  <code>&lt;input type="date" name="start-date"&gt;</code>
                 </td>
               </tr>
               <tr id="input-types-item-type-checkbox">
@@ -171,7 +190,7 @@
                 <td>Checkbox</td>
                 <td>Represents an independent on/off choice.</td>
                 <td class="example-cell">
-                <code>&lt;input type="checkbox" id="updates" name="updates"&gt;</code>
+                  <code>&lt;input type="checkbox" id="updates" name="updates"&gt;</code>
                 </td>
               </tr>
               <tr id="input-types-item-type-radio">
@@ -179,22 +198,26 @@
                 <td>Radio button</td>
                 <td>Represents one choice within a same-name group.</td>
                 <td class="example-cell">
-                <code>&lt;input type="radio" name="contact" value="email"&gt;</code>
+                  <code>&lt;input type="radio" name="contact" value="email"&gt;</code>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <section aria-labelledby="form-attributes-title" class="reference-section" id="form-attributes">
+      <section
+        aria-labelledby="form-attributes-title"
+        class="reference-section"
+        id="form-attributes"
+      >
         <h2 class="section-title" id="form-attributes-title">Useful Form Attributes</h2>
         <p class="section-description">
-        Attributes that improve browser behavior, usability, and accessible input.
+          Attributes that improve browser behavior, usability, and accessible input.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Attributes that improve browser behavior, usability, and accessible input.
+              Attributes that improve browser behavior, usability, and accessible input.
             </caption>
             <thead>
               <tr>
@@ -240,22 +263,26 @@
                 <td>Related instructions</td>
                 <td>Associates a control with supporting instructions or an error message.</td>
                 <td class="example-cell">
-                <code>&lt;input aria-describedby="email-help email-error"&gt;</code>
+                  <code>&lt;input aria-describedby="email-help email-error"&gt;</code>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <section aria-labelledby="validation-feedback-title" class="reference-section" id="validation-feedback">
+      <section
+        aria-labelledby="validation-feedback-title"
+        class="reference-section"
+        id="validation-feedback"
+      >
         <h2 class="section-title" id="validation-feedback-title">Validation &amp; Feedback</h2>
         <p class="section-description">
-        Patterns for validating input while keeping errors understandable and accessible.
+          Patterns for validating input while keeping errors understandable and accessible.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Patterns for validating input while keeping errors understandable and accessible.
+              Patterns for validating input while keeping errors understandable and accessible.
             </caption>
             <thead>
               <tr>
@@ -289,17 +316,17 @@
                 <td>Custom message</td>
                 <td>Sets or clears a custom constraint-validation error.</td>
                 <td class="example-cell">
-                <code>email.setCustomValidity("Enter a valid email.");</code>
+                  <code>email.setCustomValidity("Enter a valid email.");</code>
                 </td>
               </tr>
               <tr id="validation-feedback-item-aria-live">
                 <th scope="row"><code>aria-live</code></th>
                 <td>Dynamic error announcement</td>
                 <td>
-                Allows newly added status or error text to be announced without moving focus.
+                  Allows newly added status or error text to be announced without moving focus.
                 </td>
                 <td class="example-cell">
-                <code>&lt;p aria-live="polite" id="form-status"&gt;&lt;/p&gt;</code>
+                  <code>&lt;p aria-live="polite" id="form-status"&gt;&lt;/p&gt;</code>
                 </td>
               </tr>
             </tbody>
@@ -308,14 +335,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

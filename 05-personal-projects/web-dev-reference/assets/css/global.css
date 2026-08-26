@@ -139,7 +139,9 @@ pre::-webkit-scrollbar {
 
 @media (pointer: fine) {
   body {
-    cursor: url('../cursors/cursor-default.svg') 4 2, default;
+    cursor:
+      url('../cursors/cursor-default.svg') 4 2,
+      default;
   }
 
   a,
@@ -148,7 +150,9 @@ pre::-webkit-scrollbar {
   [role='button'],
   .reference-card,
   .favorite-button {
-    cursor: url('../cursors/cursor-pointer.svg') 6 2, pointer;
+    cursor:
+      url('../cursors/cursor-pointer.svg') 6 2,
+      pointer;
   }
 
   input,
@@ -189,7 +193,9 @@ pre::-webkit-scrollbar {
 .reference-card .card-link {
   display: inline-flex;
   align-items: center;
-  transition: color 180ms ease, transform 180ms ease;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
 }
 
 .reference-card:hover .card-link,
@@ -234,7 +240,9 @@ pre::-webkit-scrollbar {
 .reference-search:focus-visible,
 .dialog-search:focus-visible {
   border-color: var(--blue);
-  box-shadow: 0 0 0 4px rgba(186, 245, 83, 0.28), 0 8px 22px var(--shadow);
+  box-shadow:
+    0 0 0 4px rgba(186, 245, 83, 0.28),
+    0 8px 22px var(--shadow);
 }
 
 details[open] > summary {
@@ -242,7 +250,10 @@ details[open] > summary {
 }
 
 details > summary {
-  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
 }
 
 /* Motion preferences */

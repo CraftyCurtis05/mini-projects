@@ -45,16 +45,16 @@ function renderNavigation() {
     <nav class="site-nav" aria-label="Main navigation">
       <a
         class="nav-brand"
-        href="index.html"
+        href="/index.html"
         aria-label="Web Development Reference home"
       >
         <img
-          src="assets/images/logo-black.png"
+          src="/assets/images/logo-black.png"
           alt=""
           class="nav-logo logo-light"
         >
         <img
-          src="assets/images/logo-white.png"
+          src="/assets/images/logo-white.png"
           alt=""
           class="nav-logo logo-dark"
         >
@@ -175,7 +175,7 @@ function renderBreadcrumbs() {
     `
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li aria-hidden="true">›</li>
           <li>
             <span aria-current="page">${escapeHtml(currentPageLabel())}</span>
@@ -216,8 +216,8 @@ function renderFooter() {
         </p>
 
         <nav class="footer-links" aria-label="Footer navigation">
-          <a href="accessibility.html">Accessibility</a>
-          <a href="sitemap.html">Site Map</a>
+          <a href="/accessibility.html">Accessibility</a>
+          <a href="/sitemap.html">Site Map</a>
           <a
             href="${portfolioUrl}"
             target="_blank"
@@ -236,12 +236,12 @@ function renderFooter() {
         aria-label="Visit Jennifer Curtis portfolio, opens in a new tab"
       >
         <img
-          src="assets/images/logo-black.png"
+          src="/assets/images/logo-black.png"
           alt=""
           class="footer-logo logo-light"
         >
         <img
-          src="assets/images/logo-white.png"
+          src="/assets/images/logo-white.png"
           alt=""
           class="footer-logo logo-dark"
         >

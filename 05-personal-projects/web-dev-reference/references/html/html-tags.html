@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
     <!-- Core document metadata -->
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="My reference for common HTML elements used for document structure, text, media, lists, forms, and semantic layout." name="description"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="My reference for common HTML elements used for document structure, text, media, lists, forms, and semantic layout."
+      name="description"
+    />
 
-    <meta content="light dark" name="color-scheme"/>
-    <script src="assets/js/loader.js" defer></script>
+    <meta content="light dark" name="color-scheme" />
+    <script src="../../assets/js/loader.js" defer></script>
     <title>HTML Tags Reference | Web Dev Reference</title>
     <!-- Browser and installed-app appearance -->
-    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color"/>
-    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <meta content="website" property="og:type"/>
+    <meta content="website" property="og:type" />
 
-    <meta content="HTML Tags Reference | Web Dev Reference" property="og:title"/>
-    <meta content="My reference for common HTML elements used for document structure, text, media, lists, forms, and semantic layout." property="og:description"/>
-    <meta content="assets/images/app-icon-512.png" property="og:image"/>
+    <meta content="HTML Tags Reference | Web Dev Reference" property="og:title" />
+    <meta
+      content="My reference for common HTML elements used for document structure, text, media, lists, forms, and semantic layout."
+      property="og:description"
+    />
+    <meta content="assets/images/app-icon-512.png" property="og:image" />
 
     <!-- App manifest and icons -->
-    <link href="site.webmanifest" rel="manifest"/>
-    <link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- Shared site styles and fonts -->
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body data-author-note="When I notice a lot of divs, I stop and ask what the content actually is. nav, main, section, article, button, and the heading levels usually make the structure clearer." data-category="HTML" data-footer="HTML Tags Cheat Sheet" data-level="Beginner" data-page="tags" data-page-label="HTML Tags" data-related='[{"label":"HTML Tables","href":"references/html/html-tables.html"},{"label":"Semantic Page Pattern","href":"references/patterns/patterns.html#semantic-page"}]' data-search-placeholder="Try: semantic, form, image..." data-toc="true">
+  <body
+    data-author-note="When I notice a lot of divs, I stop and ask what the content actually is. nav, main, section, article, button, and the heading levels usually make the structure clearer."
+    data-category="HTML"
+    data-footer="HTML Tags Cheat Sheet"
+    data-level="Beginner"
+    data-page="tags"
+    data-page-label="HTML Tags"
+    data-related='[{"label":"HTML Tables","href":"html-tables.html"},{"label":"Semantic Page Pattern","href":"../patterns/patterns.html#semantic-page"}]'
+    data-search-placeholder="Try: semantic, form, image..."
+    data-toc="true"
+  >
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -50,15 +69,19 @@
       </div>
     </header>
     <main id="main-content">
-      <section aria-labelledby="document-metadata-title" class="reference-section" id="document-metadata">
+      <section
+        aria-labelledby="document-metadata-title"
+        class="reference-section"
+        id="document-metadata"
+      >
         <h2 class="section-title" id="document-metadata-title">Document &amp; Metadata</h2>
         <p class="section-description">
-        HTML document and metadata elements, their names, and their purposes.
+          HTML document and metadata elements, their names, and their purposes.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            HTML document and metadata elements, their names, and their purposes.
+              HTML document and metadata elements, their names, and their purposes.
             </caption>
             <thead>
               <tr>
@@ -104,7 +127,7 @@
                 <td>External Resource</td>
                 <td>Links external resources such as stylesheets and icons.</td>
                 <td class="example-cell">
-                <code>&lt;link rel="stylesheet" href="styles.css"/&gt;</code>
+                  <code>&lt;link rel="stylesheet" href="styles.css"/&gt;</code>
                 </td>
               </tr>
               <tr id="document-metadata-item-style">
@@ -123,15 +146,19 @@
           </table>
         </div>
       </section>
-      <section aria-labelledby="semantic-layout-title" class="reference-section" id="semantic-layout">
+      <section
+        aria-labelledby="semantic-layout-title"
+        class="reference-section"
+        id="semantic-layout"
+      >
         <h2 class="section-title" id="semantic-layout-title">Semantic Layout</h2>
         <p class="section-description">
-        Semantic HTML layout elements, their names, and their purposes.
+          Semantic HTML layout elements, their names, and their purposes.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            Semantic HTML layout elements, their names, and their purposes.
+              Semantic HTML layout elements, their names, and their purposes.
             </caption>
             <thead>
               <tr>
@@ -197,12 +224,12 @@
       <section aria-labelledby="text-content-title" class="reference-section" id="text-content">
         <h2 class="section-title" id="text-content-title">Text Content</h2>
         <p class="section-description">
-        HTML text content elements, their names, and their purposes.
+          HTML text content elements, their names, and their purposes.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            HTML text content elements, their names, and their purposes.
+              HTML text content elements, their names, and their purposes.
             </caption>
             <thead>
               <tr>
@@ -286,12 +313,12 @@
       <section aria-labelledby="links-media-title" class="reference-section" id="links-media">
         <h2 class="section-title" id="links-media-title">Links &amp; Media</h2>
         <p class="section-description">
-        HTML link and media elements, their names, and their purposes.
+          HTML link and media elements, their names, and their purposes.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            HTML link and media elements, their names, and their purposes.
+              HTML link and media elements, their names, and their purposes.
             </caption>
             <thead>
               <tr>
@@ -369,12 +396,12 @@
       <section aria-labelledby="lists-grouping-title" class="reference-section" id="lists-grouping">
         <h2 class="section-title" id="lists-grouping-title">Lists &amp; Grouping</h2>
         <p class="section-description">
-        HTML list and content-grouping elements, their names, and their purposes.
+          HTML list and content-grouping elements, their names, and their purposes.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            HTML list and content-grouping elements, their names, and their purposes.
+              HTML list and content-grouping elements, their names, and their purposes.
             </caption>
             <thead>
               <tr>
@@ -440,12 +467,12 @@
       <section aria-labelledby="forms-input-title" class="reference-section" id="forms-input">
         <h2 class="section-title" id="forms-input-title">Forms &amp; User Input</h2>
         <p class="section-description">
-        HTML form and user input elements, their names, and their purposes.
+          HTML form and user input elements, their names, and their purposes.
         </p>
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">
-            HTML form and user input elements, their names, and their purposes.
+              HTML form and user input elements, their names, and their purposes.
             </caption>
             <thead>
               <tr>
@@ -534,14 +561,14 @@
       </section>
     </main>
     <div data-site-footer=""></div>
-    <script src="assets/js/searchData.js" defer></script>
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/layout.js" defer></script>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/search.js" defer></script>
-    <script src="assets/js/references.js" defer></script>
-    <script src="assets/js/dialogs.js" defer></script>
-    <script src="assets/js/utilities.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/references.js" defer></script>
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>
