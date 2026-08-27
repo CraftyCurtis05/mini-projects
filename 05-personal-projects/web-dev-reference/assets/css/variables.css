@@ -1,7 +1,13 @@
-/* Shared colors, fonts, and theme values. */
+/* ==========================================================================
+   Design Tokens
+   Shared colors, typography, theme values, and interface variables.
+   ========================================================================== */
 
 :root {
-  /* Brand colors */
+  /* --------------------------------------------------------------------------
+     Brand Colors
+     -------------------------------------------------------------------------- */
+
   --teal: #3c88a3;
   --blue: #4eabcc;
   --green: #8bcc45;
@@ -10,32 +16,54 @@
   --lime: #baf553;
   --white: #ffffff;
 
-  /* Typography */
+  /* --------------------------------------------------------------------------
+     Typography
+     -------------------------------------------------------------------------- */
+
   --font-body: 'Inter', sans-serif;
   --font-ui: 'Montserrat', sans-serif;
   --font-code: 'Source Code Pro', monospace;
-  /* Light theme */
+
+  /* --------------------------------------------------------------------------
+     Light Theme
+     -------------------------------------------------------------------------- */
+
+  /* Page and surface colors */
   --background: #f6fafb;
   --surface: #ffffff;
   --surface-alt: #eef7fa;
+
+  /* Text and borders */
   --text-primary: #1c2529;
   --text-secondary: #526168;
   --border: #b9dce5;
 
+  /* Navigation */
   --nav-background: #ffffff;
   --nav-text: #263b43;
   --nav-hover: #eef7fa;
+
+  /* Tables */
   --table-header-background: #3c88a3;
   --table-header-text: #ffffff;
+
+  /* Code */
   --code-background: #e3f5f8;
   --code-text: #276a80;
+
+  /* Highlights and section headings */
   --highlight: #bfffcd;
   --section-heading-background: #bfffcd;
   --section-heading-text: #276a80;
+
+  /* Footer */
   --footer-background: #f1f7f8;
   --footer-text: #263b43;
+
+  /* Focus and shadows */
   --focus-ring: #276a80;
   --shadow: rgba(0, 0, 0, 0.08);
+
   /* Interface polish */
   --scrollbar-track: #e7f1f4;
   --scrollbar-thumb: #3c88a3;
@@ -45,26 +73,44 @@
   --progress-track: rgba(60, 136, 163, 0.14);
 }
 
+/* ==========================================================================
+   Dark Theme
+   Overrides theme-dependent values when dark mode is active.
+   ========================================================================== */
+
 html[data-theme='dark'] {
+  /* Page and surface colors */
   --background: #11191d;
   --surface: #182329;
   --surface-alt: #1e2e35;
+
+  /* Text and borders */
   --text-primary: #f4f8f9;
   --text-secondary: #b8c7cc;
   --border: #315a68;
 
+  /* Navigation */
   --nav-background: #10181c;
   --nav-text: #f4f8f9;
   --nav-hover: #1e2e35;
+
+  /* Code */
   --code-background: #203a43;
   --code-text: #69d4f5;
+
+  /* Highlights and section headings */
   --highlight: #294d3b;
   --section-heading-background: #203a43;
   --section-heading-text: #bfffcd;
+
+  /* Footer */
   --footer-background: #10181c;
   --footer-text: #d8e4e8;
+
+  /* Focus and shadows */
   --focus-ring: #baf553;
   --shadow: rgba(0, 0, 0, 0.35);
+
   /* Interface polish */
   --scrollbar-track: #10181c;
   --scrollbar-thumb: #4eabcc;

@@ -1,6 +1,17 @@
-/* Global page styles, accessibility helpers, and small visual details. */
+/* ========================================
+   Global Styles
+======================================== */
 
-/* Base and accessibility */
+/*
+ * Global page styles, accessibility helpers
+ * and small visual details used throughout
+ * the reference.
+ */
+
+
+/* ========================================
+   Base Styles
+======================================== */
 
 *,
 *::before,
@@ -10,15 +21,24 @@
 
 html {
   font-size: 16px;
+
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
+
   margin: 0;
-  background: var(--background);
-  color: var(--text-primary);
-  font-family: var(--font-body);
+
+  background:
+    var(--background);
+
+  color:
+    var(--text-primary);
+
+  font-family:
+    var(--font-body);
+
   font-size: 1rem;
   line-height: 1.65;
 }
@@ -29,6 +49,7 @@ a {
 
 img {
   display: block;
+
   max-width: 100%;
 }
 
@@ -37,77 +58,161 @@ input {
   font: inherit;
 }
 
+
+/* ========================================
+   Focus
+======================================== */
+
 :focus-visible {
-  outline: 3px solid var(--focus-ring);
+  outline:
+    3px solid
+    var(--focus-ring);
+
   outline-offset: 3px;
 }
+
+
+/* ========================================
+   Hidden Content
+======================================== */
 
 [hidden] {
   display: none !important;
 }
 
+
+/* ========================================
+   Screen Reader Text
+======================================== */
+
 .sr-only {
   position: absolute;
+
   width: 1px;
   height: 1px;
+
   padding: 0;
   margin: -1px;
+
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+
+  clip:
+    rect(0, 0, 0, 0);
+
   white-space: nowrap;
+
   border: 0;
 }
 
+
+/* ========================================
+   Skip Link
+======================================== */
+
 .skip-link {
   position: fixed;
+
   top: 1rem;
   left: 1rem;
+
   z-index: 3000;
-  padding: 0.75rem 1rem;
-  border-radius: 0.4rem;
-  background: var(--teal);
-  color: var(--white);
+
+  padding:
+    .75rem
+    1rem;
+
+  background:
+    var(--teal);
+
+  color:
+    var(--white);
+
+  border-radius: .4rem;
+
   font-weight: 700;
+
   text-decoration: none;
-  transform: translateY(-200%);
+
+  transform:
+    translateY(-200%);
 }
 
 .skip-link:focus {
-  transform: translateY(0);
+  transform:
+    translateY(0);
 }
+
+
+/* ========================================
+   Code & Keyboard Text
+======================================== */
 
 code,
 kbd {
-  font-family: var(--font-code);
+  font-family:
+    var(--font-code);
 }
 
 code {
-  padding: 0.1rem 0.35rem;
-  border-radius: 0.25rem;
-  background: var(--code-background);
-  color: var(--code-text);
+  padding:
+    .1rem
+    .35rem;
+
+  background:
+    var(--code-background);
+
+  color:
+    var(--code-text);
+
+  border-radius: .25rem;
+
   font-weight: 600;
 }
 
 kbd {
-  padding: 0.08rem 0.35rem;
-  border: 1px solid var(--border);
-  border-radius: 0.25rem;
-  background: var(--code-background);
-  color: var(--code-text);
-  font-size: 0.75rem;
+  padding:
+    .08rem
+    .35rem;
+
+  background:
+    var(--code-background);
+
+  color:
+    var(--code-text);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: .25rem;
+
+  font-size: .75rem;
   font-weight: 600;
 }
 
-/* Small interface details */
+
+/* ========================================
+   Text Selection
+======================================== */
 
 ::selection {
-  background: var(--selection-background);
-  color: var(--selection-text);
+  background:
+    var(--selection-background);
+
+  color:
+    var(--selection-text);
 }
 
+
+/* ========================================
+   Scrollbars
+======================================== */
+
 html {
-  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-color:
+    var(--scrollbar-thumb)
+    var(--scrollbar-track);
+
   scrollbar-width: thin;
 }
 
@@ -117,17 +222,24 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
+  background:
+    var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 3px solid var(--scrollbar-track);
+  background:
+    var(--scrollbar-thumb);
+
+  border:
+    3px solid
+    var(--scrollbar-track);
+
   border-radius: 999px;
-  background: var(--scrollbar-thumb);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-thumb-hover);
+  background:
+    var(--scrollbar-thumb-hover);
 }
 
 .table-wrapper::-webkit-scrollbar,
@@ -135,12 +247,21 @@ pre::-webkit-scrollbar {
   height: 10px;
 }
 
-/* I only use the custom cursor when the device actually has a precise pointer. */
+
+/* ========================================
+   Custom Cursors
+======================================== */
+
+/*
+ * I only use the custom cursor when the
+ * device actually has a precise pointer.
+ */
 
 @media (pointer: fine) {
   body {
     cursor:
-      url('../cursors/cursor-default.svg') 4 2,
+      url('../cursors/cursor-default.svg')
+      4 2,
       default;
   }
 
@@ -151,7 +272,8 @@ pre::-webkit-scrollbar {
   .reference-card,
   .favorite-button {
     cursor:
-      url('../cursors/cursor-pointer.svg') 6 2,
+      url('../cursors/cursor-pointer.svg')
+      6 2,
       pointer;
   }
 
@@ -162,91 +284,178 @@ pre::-webkit-scrollbar {
   }
 }
 
+
+/* ========================================
+   Scroll Progress
+======================================== */
+
 .scroll-progress {
   position: absolute;
+
   right: 0;
   bottom: -1px;
   left: 0;
+
   height: 3px;
+
   overflow: hidden;
-  background: var(--progress-track);
+
+  background:
+    var(--progress-track);
+
   pointer-events: none;
 }
 
 .scroll-progress-bar {
   display: block;
+
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, var(--lime), var(--sky), var(--lime));
-  transform: scaleX(0);
-  transform-origin: left center;
-  will-change: transform;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--lime),
+      var(--sky),
+      var(--lime)
+    );
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    left center;
+
+  will-change:
+    transform;
 }
 
-/* I use the lime accent here so the home cards tie back to the logo. */
+
+/* ========================================
+   Reference Cards
+======================================== */
+
+/*
+ * I use the lime accent here so the home
+ * cards tie back to the logo.
+ */
 
 .reference-card {
   position: relative;
+
   overflow: hidden;
 }
 
-.reference-card .card-link {
+.reference-card
+.card-link {
   display: inline-flex;
   align-items: center;
+
   transition:
     color 180ms ease,
     transform 180ms ease;
 }
 
-.reference-card:hover .card-link,
-.reference-card:focus-visible .card-link {
-  transform: translateX(3px);
+.reference-card:hover
+.card-link,
+.reference-card:focus-visible
+.card-link {
+  transform:
+    translateX(3px);
 }
+
+
+/* ========================================
+   Navigation Logo
+======================================== */
 
 .nav-logo {
-  transition: transform 200ms ease;
+  transition:
+    transform 200ms ease;
 }
 
-.nav-brand:hover .nav-logo,
-.nav-brand:focus-visible .nav-logo {
-  transform: translateY(-2px);
+.nav-brand:hover
+.nav-logo,
+.nav-brand:focus-visible
+.nav-logo {
+  transform:
+    translateY(-2px);
 }
+
+
+/* ========================================
+   Navigation Links
+======================================== */
 
 .nav-links a {
   position: relative;
 }
 
-.nav-links a:not([aria-current='page'])::after {
+.nav-links
+a:not([aria-current='page'])::after {
   content: '';
+
   position: absolute;
-  right: 0.65rem;
-  bottom: 0.25rem;
-  left: 0.65rem;
+
+  right: .65rem;
+  bottom: .25rem;
+  left: .65rem;
+
   height: 2px;
+
+  background:
+    var(--lime);
+
   border-radius: 999px;
-  background: var(--lime);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 180ms ease;
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    center;
+
+  transition:
+    transform 180ms ease;
 }
 
-.nav-links a:not([aria-current='page']):hover::after,
-.nav-links a:not([aria-current='page']):focus-visible::after {
-  transform: scaleX(1);
+.nav-links
+a:not([aria-current='page']):hover::after,
+.nav-links
+a:not([aria-current='page']):focus-visible::after {
+  transform:
+    scaleX(1);
 }
 
-/* I keep keyboard focus obvious without changing the rest of the color system. */
+
+/* ========================================
+   Search Focus
+======================================== */
+
+/*
+ * I keep keyboard focus obvious without
+ * changing the rest of the color system.
+ */
 
 .reference-search:focus-visible,
 .dialog-search:focus-visible {
-  border-color: var(--blue);
+  border-color:
+    var(--blue);
+
   box-shadow:
-    0 0 0 4px rgba(186, 245, 83, 0.28),
-    0 8px 22px var(--shadow);
+    0 0 0 4px
+      rgba(186, 245, 83, .28),
+    0 8px 22px
+      var(--shadow);
 }
 
+
+/* ========================================
+   Details & Summary
+======================================== */
+
 details[open] > summary {
-  color: var(--teal);
+  color:
+    var(--teal);
 }
 
 details > summary {
@@ -256,20 +465,102 @@ details > summary {
     border-color 180ms ease;
 }
 
-/* Motion preferences */
+
+/* ========================================
+   Static Reference Sections
+======================================== */
+
+/*
+ * I keep the long reference sections still
+ * because they are easier to scan that way.
+ */
+
+.hero,
+.hero::before,
+.hero::after {
+  animation: none;
+}
+
+.reference-section.is-visible {
+  opacity: 1;
+
+  transform: none;
+}
+
+
+/* ========================================
+   Brand Dots
+======================================== */
+
+.brand-dots {
+  display: inline-flex;
+  align-items: center;
+
+  gap: .35rem;
+}
+
+.brand-dot {
+  display: inline-block;
+
+  width: .48rem;
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+}
+
+.brand-dot:nth-child(1) {
+  background:
+    var(--teal);
+}
+
+.brand-dot:nth-child(2) {
+  background:
+    var(--blue);
+}
+
+.brand-dot:nth-child(3) {
+  background:
+    var(--green);
+}
+
+
+/* ========================================
+   Reviewed Date
+======================================== */
+
+.reviewed-date {
+  margin-top: .75rem;
+
+  color:
+    var(--text-secondary);
+
+  font-size: .82rem;
+}
+
+
+/* ========================================
+   Reduced Motion
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
   .reference-card {
     animation: none !important;
   }
 
-  .reference-card .card-link,
+  .reference-card
+  .card-link,
   .nav-logo,
   .nav-links a::after,
   .scroll-progress-bar {
     transition: none !important;
   }
 }
+
+
+/* ========================================
+   Increased Contrast
+======================================== */
 
 @media (prefers-contrast: more) {
   .reference-card,
@@ -282,48 +573,4 @@ details > summary {
   .scroll-progress {
     height: 4px;
   }
-}
-
-/* I keep the long reference sections still because they are easier to scan that way. */
-
-.hero,
-.hero::before,
-.hero::after {
-  animation: none;
-}
-
-.reference-section.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-.brand-dots {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.brand-dot {
-  display: inline-block;
-  width: 0.48rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-}
-
-.brand-dot:nth-child(1) {
-  background: var(--teal);
-}
-
-.brand-dot:nth-child(2) {
-  background: var(--blue);
-}
-
-.brand-dot:nth-child(3) {
-  background: var(--green);
-}
-
-.reviewed-date {
-  margin-top: 0.75rem;
-  color: var(--text-secondary);
-  font-size: 0.82rem;
 }

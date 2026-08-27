@@ -1,6 +1,8 @@
 /* Pattern examples, code blocks, dialogs, and live demo styles. */
 
-/* Pattern layout and code examples */
+/* ========================================
+   Pattern Layout
+   ======================================== */
 
 .pattern-section {
   position: relative;
@@ -47,6 +49,17 @@
   top: 0;
   right: 0;
 }
+
+.pattern-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+/* ========================================
+   Pattern Code Examples
+   ======================================== */
 
 .pattern-example {
   margin-top: 1rem;
@@ -96,6 +109,10 @@
   white-space: pre;
 }
 
+/* ========================================
+   Code Blocks and Copy Controls
+   ======================================== */
+
 .code-block {
   position: relative;
 }
@@ -133,12 +150,12 @@
   transform: translateY(-1px);
 }
 
-.copy-button:active {
-  transform: translateY(0);
-}
-
 .copy-button:hover {
   border-color: var(--teal);
+}
+
+.copy-button:active {
+  transform: translateY(0);
 }
 
 .copy-button.is-copied {
@@ -146,7 +163,9 @@
   background: var(--mint);
 }
 
-/* Dialogs and global search */
+/* ========================================
+   Dialogs and Global Search
+   ======================================== */
 
 .site-dialog {
   width: min(760px, calc(100% - 2rem));
@@ -254,14 +273,9 @@
   text-align: center;
 }
 
-/* Live pattern demonstrations */
-
-.pattern-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: 1rem;
-}
+/* ========================================
+   Live Pattern Demonstrations
+   ======================================== */
 
 .pattern-live-demo {
   margin: 1.25rem 0;
@@ -288,6 +302,16 @@
   min-height: 110px;
 }
 
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+/* ========================================
+   Demo Buttons and Inputs
+   ======================================== */
+
 .demo-button {
   display: inline-flex;
   align-items: center;
@@ -305,8 +329,8 @@
 }
 
 .demo-button:hover {
-  background: var(--blue);
   border-color: var(--blue);
+  background: var(--blue);
 }
 
 .demo-button-secondary {
@@ -331,11 +355,9 @@
   outline-offset: 2px;
 }
 
-.demo-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-}
+/* ========================================
+   Dialog Demo
+   ======================================== */
 
 .demo-dialog {
   width: min(420px, calc(100% - 2rem));
@@ -356,6 +378,10 @@
   margin-top: 0;
   color: var(--teal);
 }
+
+/* ========================================
+   API Results Demo
+   ======================================== */
 
 .demo-api-status {
   min-height: 90px;
@@ -382,6 +408,10 @@
   background: var(--code-background);
   color: var(--text-primary);
 }
+
+/* ========================================
+   Filter Demo
+   ======================================== */
 
 .demo-filter {
   max-width: 560px;
@@ -416,6 +446,10 @@
   background: var(--surface);
 }
 
+/* ========================================
+   Accordion Demo
+   ======================================== */
+
 .demo-accordion {
   display: grid;
   gap: 0.65rem;
@@ -440,6 +474,10 @@
   color: var(--text-secondary);
 }
 
+/* ========================================
+   Theme Demo
+   ======================================== */
+
 .demo-theme-card {
   /* I keep this demo theme separate so testing it does not change the whole site. */
   --demo-background: #ffffff;
@@ -449,6 +487,7 @@
   --demo-border: #b9dce5;
   --demo-accent: #3c88a3;
   --demo-highlight: #baf553;
+
   max-width: 560px;
   padding: 1.25rem;
   border: 1px solid var(--demo-border);
@@ -538,6 +577,10 @@
   border-color: var(--demo-highlight);
 }
 
+/* ========================================
+   Toast Demo
+   ======================================== */
+
 .demo-toast {
   position: static;
   max-width: 340px;
@@ -555,8 +598,17 @@ html[data-theme='dark'] .demo-toast {
   color: var(--mint);
 }
 
+/* ========================================
+   Loading and Skeleton Demo
+   ======================================== */
+
 .demo-loading-card {
   max-width: 520px;
+}
+
+.demo-loading-region {
+  min-height: 96px;
+  margin-bottom: 1rem;
 }
 
 .demo-skeleton {
@@ -582,11 +634,26 @@ html[data-theme='dark'] .demo-toast {
   color: var(--text-primary);
 }
 
+.demo-loading-content h3 {
+  margin: 0 0 0.45rem;
+  color: var(--teal);
+}
+
+.demo-loading-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
 @keyframes demo-skeleton-shift {
   to {
     background-position: -200% 0;
   }
 }
+
+/* ========================================
+   Empty State Demo
+   ======================================== */
 
 .demo-empty-state {
   max-width: 560px;
@@ -619,6 +686,10 @@ html[data-theme='dark'] .demo-toast {
   color: var(--text-secondary);
 }
 
+/* ========================================
+   Form Validation Demo
+   ======================================== */
+
 .demo-form {
   max-width: 520px;
 }
@@ -634,6 +705,10 @@ html[data-theme='dark'] .demo-toast {
 html[data-theme='dark'] .demo-field-message {
   color: #ffaaaa;
 }
+
+/* ========================================
+   Breadcrumb Demo
+   ======================================== */
 
 .demo-breadcrumb ol {
   display: flex;
@@ -662,6 +737,10 @@ html[data-theme='dark'] .demo-field-message {
   font-weight: 700;
 }
 
+/* ========================================
+   Pattern Accessibility Notes
+   ======================================== */
+
 .pattern-accessibility-note {
   margin-top: 1.25rem;
   padding: 1rem 1.1rem;
@@ -689,6 +768,10 @@ html[data-theme='dark'] .demo-field-message {
 .pattern-accessibility-note li + li {
   margin-top: 0.35rem;
 }
+
+/* ========================================
+   Related Patterns
+   ======================================== */
 
 .pattern-related {
   margin-top: 1rem;
@@ -722,24 +805,12 @@ html[data-theme='dark'] .demo-field-message {
   color: #1c2529;
 }
 
+/* ========================================
+   Reduced Motion
+   ======================================== */
+
 @media (prefers-reduced-motion: reduce) {
   .demo-skeleton {
     animation: none;
   }
-}
-
-.demo-loading-region {
-  min-height: 96px;
-  margin-bottom: 1rem;
-}
-
-.demo-loading-content h3 {
-  margin: 0 0 0.45rem;
-  color: var(--teal);
-}
-
-.demo-loading-content p {
-  margin: 0;
-  color: var(--text-secondary);
-  line-height: 1.6;
 }

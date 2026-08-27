@@ -1,5 +1,9 @@
 /* Site search and saved-reference dialogs. */
 
+/* =========================================================
+   Dialog setup
+   ========================================================= */
+
 /* Dialog markup */
 function renderDialogs() {
   document.body.insertAdjacentHTML(
@@ -85,21 +89,26 @@ function renderDialogs() {
     `
   );
 
+  /* Dialog controls */
   document.querySelectorAll('[data-close-dialog]').forEach(button => {
     button.addEventListener('click', () => {
       button.closest('dialog')?.close();
     });
   });
 
+  /* Global search button */
   document.getElementById('global-search-button')?.addEventListener('click', openSearchDialog);
 
+  /* Saved references button */
   document.getElementById('saved-button')?.addEventListener('click', () => {
     renderSavedResults();
     document.getElementById('saved-dialog')?.showModal();
   });
 
+  /* Global search input */
   document.getElementById('global-search-input')?.addEventListener('input', updateGlobalSearch);
 
+  /* Ctrl/Cmd + K search shortcut */
   document.addEventListener('keydown', event => {
     const usesSearchShortcut = (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k';
 
@@ -112,7 +121,11 @@ function renderDialogs() {
   });
 }
 
-/* Global search */
+/* =========================================================
+   Global search
+   ========================================================= */
+
+/* Open search dialog */
 function openSearchDialog() {
   const dialog = document.getElementById('global-search-dialog');
   const input = document.getElementById('global-search-input');
@@ -128,6 +141,7 @@ function openSearchDialog() {
   requestAnimationFrame(() => input.focus());
 }
 
+/* Search reference index */
 function updateGlobalSearch() {
   const input = document.getElementById('global-search-input');
   const results = document.getElementById('global-search-results');
@@ -190,7 +204,11 @@ function updateGlobalSearch() {
     .join('');
 }
 
-/* Saved references dialog */
+/* =========================================================
+   Saved references
+   ========================================================= */
+
+/* Render saved references */
 function renderSavedResults() {
   const results = document.getElementById('saved-results');
 

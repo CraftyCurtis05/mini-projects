@@ -6,13 +6,14 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta
-      content="My notes on semantic HTML, keyboard access, focus, contrast, responsive layouts, and reduced motion."
+      content="My notes on semantic HTML, keyboard access, focus, forms, contrast, responsive layouts, and reduced motion."
       name="description"
     />
 
     <meta content="light dark" name="color-scheme" />
     <script src="../../assets/js/loader.js" defer></script>
     <title>Accessibility | Web Dev Reference</title>
+
     <!-- Browser and installed-app appearance -->
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
@@ -21,7 +22,7 @@
 
     <meta content="Accessibility | Web Dev Reference" property="og:title" />
     <meta
-      content="My notes on semantic HTML, keyboard access, focus, contrast, responsive layouts, and reduced motion."
+      content="My notes on semantic HTML, keyboard access, focus, forms, contrast, responsive layouts, and reduced motion."
       property="og:description"
     />
     <meta content="../../assets/images/app-icon-512.png" property="og:image" />
@@ -30,6 +31,7 @@
     <link href="../../site.webmanifest" rel="manifest" />
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
+
     <!-- Shared site styles and fonts -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
     <link
@@ -37,6 +39,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body
     data-author-note="I have to remind myself that accessibility is more than alt text. I check keyboard use, visible focus, labels, heading order, contrast, and reduced motion too."
     data-category="Accessibility"
@@ -52,61 +55,321 @@
           <span class="loader-dot loader-dot-blue"></span>
           <span class="loader-dot loader-dot-green"></span>
         </div>
+
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
+
     <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <div data-site-nav=""></div>
+
     <header class="hero">
       <h1>Accessibility</h1>
+
       <p class="subtitle">The accessibility checks and reminders I use while building.</p>
+
       <div class="hero-meta">
         <span class="badge badge-category">Accessibility</span>
         <span class="badge badge-level">Site Standard</span>
       </div>
     </header>
+
     <main class="prose-page" id="main-content">
+      <!-- Accessibility Approach -->
       <section aria-labelledby="approach-title">
         <h2 class="section-title" id="approach-title">Accessibility approach</h2>
+
         <p>
           This project treats accessibility as part of the interface architecture. Native HTML
           semantics are preferred first, with ARIA used only when it adds information that native
           elements do not provide.
         </p>
+
         <p>
           The site is designed around keyboard access, visible focus states, descriptive table
           relationships, responsive reflow, reduced-motion preferences, readable color contrast,
           light and dark themes, and clear navigation landmarks.
         </p>
       </section>
+
+      <!-- Semantic HTML and ARIA -->
+      <section aria-labelledby="semantics-title">
+        <h2 class="section-title" id="semantics-title">Semantic HTML and ARIA</h2>
+
+        <p>
+          Start with native HTML elements that already communicate meaning and behavior. Use ARIA
+          when additional information is needed and a native element does not provide it.
+        </p>
+
+        <ul class="feature-list">
+          <li>
+            Use landmarks such as <code>header</code>, <code>nav</code>, <code>main</code>, and
+            <code>footer</code> to organize the page.
+          </li>
+
+          <li>
+            Use real <code>button</code> elements for actions and links for navigation.
+          </li>
+
+          <li>
+            Connect sections and controls to descriptive labels with attributes such as
+            <code>aria-labelledby</code> when appropriate.
+          </li>
+
+          <li>
+            Use <code>aria-expanded</code>, <code>aria-controls</code>, and other ARIA states when
+            they communicate information that is not already available through native HTML.
+          </li>
+
+          <li>Avoid adding ARIA when native HTML already provides the required semantics.</li>
+        </ul>
+      </section>
+
+      <!-- Keyboard Access and Focus -->
+      <section aria-labelledby="keyboard-title">
+        <h2 class="section-title" id="keyboard-title">Keyboard access and focus</h2>
+
+        <p>
+          Interactive controls should be reachable and usable without a mouse, with a visible focus
+          state that makes the user's current position clear.
+        </p>
+
+        <ul class="feature-list">
+          <li>Keep interactive elements in a logical keyboard navigation order.</li>
+
+          <li>
+            Use native interactive elements whenever possible so expected keyboard behavior is
+            provided automatically.
+          </li>
+
+          <li>
+            Avoid positive <code>tabindex</code> values that manually reorder keyboard navigation.
+          </li>
+
+          <li>
+            Use <code>:focus-visible</code> to provide clear keyboard focus indicators without
+            removing useful browser behavior.
+          </li>
+
+          <li>
+            Make custom dialogs, disclosures, search controls, and other interactive components
+            keyboard operable.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Forms and Accessible Names -->
+      <section aria-labelledby="forms-title">
+        <h2 class="section-title" id="forms-title">Forms and accessible names</h2>
+
+        <p>
+          Form controls need clear names and instructions so their purpose can be understood
+          visually and by assistive technology.
+        </p>
+
+        <ul class="feature-list">
+          <li>
+            Associate visible <code>label</code> elements with their form controls.
+          </li>
+
+          <li>
+            Use descriptive button and link text instead of relying only on surrounding context.
+          </li>
+
+          <li>
+            Communicate required fields, instructions, and validation messages clearly.
+          </li>
+
+          <li>
+            Use ARIA labels only when a visible label is not appropriate or additional context is
+            necessary.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Images and Alternative Text -->
+      <section aria-labelledby="images-title">
+        <h2 class="section-title" id="images-title">Images and alternative text</h2>
+
+        <p>
+          Alternative text should communicate the purpose of meaningful images without repeating
+          information that is already available nearby.
+        </p>
+
+        <ul class="feature-list">
+          <li>Give meaningful images concise, useful alternative text.</li>
+
+          <li>
+            Use an empty <code>alt=""</code> value for decorative images that do not add
+            information.
+          </li>
+
+          <li>
+            Avoid beginning alternative text with phrases such as "image of" when the image type is
+            already communicated by assistive technology.
+          </li>
+
+          <li>
+            Do not place important information only inside an image when it can also be provided as
+            text.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Color and Contrast -->
+      <section aria-labelledby="contrast-title">
+        <h2 class="section-title" id="contrast-title">Color and contrast</h2>
+
+        <p>
+          Text, controls, focus states, and other meaningful interface elements should remain
+          readable and distinguishable across the site's themes and states.
+        </p>
+
+        <ul class="feature-list">
+          <li>Maintain readable contrast between text and its background.</li>
+
+          <li>
+            Keep links, controls, and focus indicators visually distinguishable from surrounding
+            content.
+          </li>
+
+          <li>
+            Do not use color as the only way to communicate meaning, status, or required action.
+          </li>
+
+          <li>
+            Check contrast in both light and dark themes instead of assuming one set of colors works
+            equally well in both.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Reduced Motion -->
+      <section aria-labelledby="motion-title">
+        <h2 class="section-title" id="motion-title">Reduced motion</h2>
+
+        <p>
+          Respect the user's motion preference when animations and transitions are not necessary
+          for understanding or operating the interface.
+        </p>
+
+        <p>
+          Use <code>prefers-reduced-motion</code> to remove or reduce nonessential movement while
+          preserving the information and functionality the interface provides.
+        </p>
+      </section>
+
+      <!-- Responsive Reflow -->
+      <section aria-labelledby="reflow-title">
+        <h2 class="section-title" id="reflow-title">Responsive reflow</h2>
+
+        <p>
+          Content should remain readable and usable as the viewport changes instead of depending on
+          a fixed screen size or orientation.
+        </p>
+
+        <ul class="feature-list">
+          <li>Allow text and interface content to wrap naturally.</li>
+
+          <li>
+            Avoid fixed dimensions when they prevent content from adapting to available space.
+          </li>
+
+          <li>
+            Make navigation and interactive controls usable at smaller viewport widths.
+          </li>
+
+          <li>
+            Test layouts at multiple widths and with increased text size to catch clipping,
+            overlapping, and horizontal scrolling.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Tables -->
+      <section aria-labelledby="tables-title">
+        <h2 class="section-title" id="tables-title">Accessible tables</h2>
+
+        <p>
+          Data tables should communicate the relationships between their headings and values so the
+          information remains understandable when it is read with assistive technology.
+        </p>
+
+        <ul class="feature-list">
+          <li>Use tables for tabular data rather than page layout.</li>
+
+          <li>
+            Provide a <code>caption</code> when the table needs a clear accessible description.
+          </li>
+
+          <li>
+            Use <code>th</code> elements for headers and identify their relationship with
+            <code>scope</code> when appropriate.
+          </li>
+
+          <li>
+            Keep the table structure as simple as possible while preserving the relationships in
+            the data.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Live Regions -->
+      <section aria-labelledby="live-regions-title">
+        <h2 class="section-title" id="live-regions-title">Live regions</h2>
+
+        <p>
+          Dynamic interface updates sometimes need to be announced when they happen without moving
+          keyboard focus away from what the user is doing.
+        </p>
+
+        <p>
+          A polite live region can communicate non-urgent updates, such as changing search result
+          counts, while allowing the user's current interaction to continue.
+        </p>
+      </section>
+
+      <!-- Site Accessibility Features -->
       <section aria-labelledby="features-title">
-        <h2 class="section-title" id="features-title">Supported features</h2>
+        <h2 class="section-title" id="features-title">Site accessibility features</h2>
+
         <ul class="feature-list">
           <li>Skip navigation to move directly to the main content.</li>
+
           <li>
             Keyboard-operable navigation, dialogs, disclosures, search, favorites, and copy
             controls.
           </li>
+
           <li>Semantic tables using captions, column headers, and row headers.</li>
+
           <li>Visible focus indicators that remain distinct in light and dark themes.</li>
+
           <li>
             Reduced-motion support through
-            <code>prefers-reduced-motion</code>
-            .
+            <code>prefers-reduced-motion</code>.
           </li>
+
           <li>Search result status messages announced through a polite live region.</li>
+
           <li>Text and layouts that reflow instead of depending on fixed viewport dimensions.</li>
         </ul>
       </section>
+
+      <!-- Accessibility Feedback -->
       <section aria-labelledby="feedback-title">
         <h2 class="section-title" id="feedback-title">Accessibility feedback</h2>
+
         <p>
           If you encounter an accessibility problem, please use the portfolio link in the site
-          header or footer to contact Jennifer Curtis with the page and feature involved.
+          header or footer to contact me and include the page and feature involved.
         </p>
       </section>
     </main>
+
     <div data-site-footer=""></div>
+
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
     <script src="../../assets/js/layout.js" defer></script>

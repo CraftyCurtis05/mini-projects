@@ -1,6 +1,9 @@
 /* Shared components, responsive rules, and utility page styles. */
 
-/* Footer */
+
+/* =========================================================
+   Footer
+   ========================================================= */
 
 .site-footer {
   position: relative;
@@ -58,7 +61,10 @@
   height: auto;
 }
 
-/* Utility controls */
+
+/* =========================================================
+   Utility controls
+   ========================================================= */
 
 /* This stays attached to the viewport so it is available anywhere on a long page. */
 
@@ -96,6 +102,7 @@
 }
 
 /* I use the lime background on hover so the button feels connected to the rest of the site. */
+
 .back-to-top.is-visible:hover,
 .back-to-top.is-visible:focus-visible {
   background: color-mix(in srgb, var(--lime) 72%, var(--surface));
@@ -112,19 +119,10 @@
   transform: translateY(-1px);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .back-to-top {
-    transition:
-      opacity 0.2s ease,
-      background-color 0.2s ease,
-      border-color 0.2s ease;
-  }
 
-  .back-to-top.is-visible:hover,
-  .back-to-top.is-visible:active {
-    transform: none;
-  }
-}
+/* =========================================================
+   Reveal animation
+   ========================================================= */
 
 .reveal-item {
   opacity: 0;
@@ -139,7 +137,10 @@
     transform 0.35s ease;
 }
 
-/* Prose and accessibility pages */
+
+/* =========================================================
+   Prose and accessibility pages
+   ========================================================= */
 
 .prose-page {
   max-width: 900px;
@@ -163,200 +164,10 @@
   margin-top: 0.55rem;
 }
 
-/* Responsive layout */
 
-@media (max-width: 1100px) {
-  .site-nav {
-    grid-template-columns: 1fr auto;
-  }
-
-  .nav-links {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-}
-
-@media (max-width: 760px) {
-  .site-nav {
-    padding: 0.7rem 1rem;
-  }
-
-  .nav-brand {
-    font-size: 0.88rem;
-  }
-
-  .nav-links {
-    justify-content: flex-start;
-  }
-
-  .nav-links a {
-    padding: 0.42rem 0.52rem;
-    font-size: 0.76rem;
-  }
-
-  .nav-action-label,
-  .nav-action kbd {
-    display: none;
-  }
-
-  .hero {
-    padding: 3rem 1rem 2.5rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.25rem, 10vw, 3.25rem);
-  }
-
-  .breadcrumbs,
-  main {
-    width: 94%;
-  }
-
-  main {
-    margin: 3rem auto;
-  }
-
-  .reference-grid,
-  .reference-legend ul {
-    grid-template-columns: 1fr;
-  }
-
-  .reference-section {
-    margin-bottom: 3.5rem;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-  }
-
-  .page-toc {
-    padding: 1.15rem;
-  }
-
-  .page-toc ul {
-    flex-direction: column;
-  }
-
-  .page-toc a {
-    display: block;
-    width: 100%;
-  }
-
-  .reference-table th,
-  .reference-table td {
-    padding: 0.8rem;
-    font-size: 0.88rem;
-  }
-
-  .reference-table thead th {
-    font-size: 0.78rem;
-  }
-
-  .reference-table tbody th[scope='row'] {
-    min-width: 135px;
-    white-space: normal;
-  }
-
-  .site-footer {
-    min-height: 175px;
-    margin-top: 3rem;
-    padding: 2.5rem 9rem 2.5rem 1.5rem;
-  }
-
-  .footer-logo-link {
-    right: 1.25rem;
-  }
-
-  .footer-logo {
-    width: 115px;
-  }
-
-  .back-to-top span:last-child {
-    display: none;
-  }
-}
-
-@media (max-width: 520px) {
-  .theme-icon {
-    display: none;
-  }
-
-  .nav-brand span {
-    display: none;
-  }
-
-  .site-footer {
-    padding-right: 7.5rem;
-  }
-
-  .footer-logo {
-    width: 100px;
-  }
-
-  .author-note,
-  .pattern-section,
-  .intro-panel {
-    padding: 1.25rem;
-  }
-}
-
-/* User preferences and print */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .reveal-item {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@media print {
-  .site-nav,
-  .reference-tools,
-  .page-toc,
-  .site-footer,
-  .skip-link,
-  .breadcrumbs,
-  .back-to-top,
-  .favorite-button,
-  .copy-button,
-  .related-references,
-  .author-note {
-    display: none !important;
-  }
-
-  body {
-    background: #fff;
-    color: #000;
-  }
-
-  main {
-    width: 100%;
-    margin: 0;
-  }
-
-  .table-wrapper {
-    overflow: visible;
-    box-shadow: none;
-  }
-
-  .reference-section {
-    break-inside: avoid;
-  }
-}
-
-/* Home reference cards */
+/* =========================================================
+   Home reference cards
+   ========================================================= */
 
 .home-reference-section {
   margin-top: 4rem;
@@ -385,44 +196,15 @@
   line-height: 1.7;
 }
 
-@media (max-width: 1100px) {
-  .nav-links-grouped {
-    order: 3;
-    width: 100%;
-  }
 
-  .nav-submenu {
-    left: auto;
-    right: 0;
-  }
-}
+/* =========================================================
+   Special pages
+   ========================================================= */
 
-@media (max-width: 700px) {
-  .nav-links-grouped {
-    align-items: stretch;
-  }
 
-  .nav-group {
-    width: 100%;
-  }
-
-  .nav-group summary {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .nav-submenu {
-    position: static;
-    width: 100%;
-    min-width: 0;
-    margin-top: 0.3rem;
-    box-shadow: none;
-  }
-}
-
-/* Special pages */
-
-/* 404 page */
+/* ---------------------------------------------------------
+   404 page
+   --------------------------------------------------------- */
 
 .not-found-main {
   display: grid;
@@ -574,17 +356,10 @@
   overflow-wrap: anywhere;
 }
 
-@media (max-width: 560px) {
-  .not-found-actions {
-    flex-direction: column;
-  }
 
-  .button-link {
-    width: 100%;
-  }
-}
-
-/* Loading screen */
+/* ---------------------------------------------------------
+   Loading screen
+   --------------------------------------------------------- */
 
 /* The loader only appears when JavaScript is available, so it cannot trap a no-JS page. */
 
@@ -668,7 +443,10 @@
   }
 }
 
-/* Site map */
+
+/* ---------------------------------------------------------
+   Site map
+   --------------------------------------------------------- */
 
 .sitemap-intro {
   max-width: 70ch;
@@ -742,12 +520,269 @@
   color: var(--text-secondary);
 }
 
+
+/* =========================================================
+   Responsive layout
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .site-nav {
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .nav-links-grouped {
+    order: 3;
+    width: 100%;
+  }
+
+  .nav-submenu {
+    left: auto;
+    right: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-nav {
+    padding: 0.7rem 1rem;
+  }
+
+  .nav-brand {
+    font-size: 0.88rem;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+  }
+
+  .nav-links a {
+    padding: 0.42rem 0.52rem;
+    font-size: 0.76rem;
+  }
+
+  .nav-action-label,
+  .nav-action kbd {
+    display: none;
+  }
+
+  .hero {
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 10vw, 3.25rem);
+  }
+
+  .breadcrumbs,
+  main {
+    width: 94%;
+  }
+
+  main {
+    margin: 3rem auto;
+  }
+
+  .reference-grid,
+  .reference-legend ul {
+    grid-template-columns: 1fr;
+  }
+
+  .reference-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .page-toc {
+    padding: 1.15rem;
+  }
+
+  .page-toc ul {
+    flex-direction: column;
+  }
+
+  .page-toc a {
+    display: block;
+    width: 100%;
+  }
+
+  .reference-table th,
+  .reference-table td {
+    padding: 0.8rem;
+    font-size: 0.88rem;
+  }
+
+  .reference-table thead th {
+    font-size: 0.78rem;
+  }
+
+  .reference-table tbody th[scope='row'] {
+    min-width: 135px;
+    white-space: normal;
+  }
+
+  .site-footer {
+    min-height: 175px;
+    margin-top: 3rem;
+    padding: 2.5rem 9rem 2.5rem 1.5rem;
+  }
+
+  .footer-logo-link {
+    right: 1.25rem;
+  }
+
+  .footer-logo {
+    width: 115px;
+  }
+
+  .back-to-top span:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-links-grouped {
+    align-items: stretch;
+  }
+
+  .nav-group {
+    width: 100%;
+  }
+
+  .nav-group summary {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-submenu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    margin-top: 0.3rem;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .not-found-actions {
+    flex-direction: column;
+  }
+
+  .button-link {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .theme-icon {
+    display: none;
+  }
+
+  .nav-brand span {
+    display: none;
+  }
+
+  .site-footer {
+    padding-right: 7.5rem;
+  }
+
+  .footer-logo {
+    width: 100px;
+  }
+
+  .author-note,
+  .pattern-section,
+  .intro-panel {
+    padding: 1.25rem;
+  }
+}
+
+
+/* =========================================================
+   User preferences
+   ========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .back-to-top {
+    transition:
+      opacity 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .back-to-top.is-visible:hover,
+  .back-to-top.is-visible:active {
+    transform: none;
+  }
+
+  .reveal-item {
+    opacity: 1;
+    transform: none;
+  }
+
   .loader-dot {
     animation: none;
   }
 
   .js .site-loader {
     transition: none;
+  }
+}
+
+
+/* =========================================================
+   Print
+   ========================================================= */
+
+@media print {
+  .site-nav,
+  .reference-tools,
+  .page-toc,
+  .site-footer,
+  .skip-link,
+  .breadcrumbs,
+  .back-to-top,
+  .favorite-button,
+  .copy-button,
+  .related-references,
+  .author-note {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  main {
+    width: 100%;
+    margin: 0;
+  }
+
+  .table-wrapper {
+    overflow: visible;
+    box-shadow: none;
+  }
+
+  .reference-section {
+    break-inside: avoid;
   }
 }

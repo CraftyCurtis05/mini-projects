@@ -70,231 +70,354 @@
         <span class="badge badge-level">Practical</span>
       </div>
     </header>
-    <main id="main-content">
-      <section aria-labelledby="semantic-page-title" class="pattern-section" id="semantic-page">
-        <div class="pattern-heading">
-          <p class="pattern-number">Pattern 01</p>
-          <h2 id="semantic-page-title">Semantic Page Structure</h2>
-          <p>
-            A basic page structure using header, navigation, main content, sections, and footer.
-          </p>
-        </div>
-        <details class="pattern-example">
-          <summary>View complete example</summary>
-          <pre><code>&lt;body&gt;
-        &lt;header&gt;
-          &lt;h1&gt;Page Title&lt;/h1&gt;
-        &lt;/header&gt;
+<main id="main-content">
 
-        &lt;nav aria-label="Main navigation"&gt;
-          &lt;a href="/"&gt;Home&lt;/a&gt;
-          &lt;a href="/about"&gt;About&lt;/a&gt;
-        &lt;/nav&gt;
+  <!-- Semantic Page Structure -->
+  <section
+    aria-labelledby="semantic-page-title"
+    class="pattern-section"
+    id="semantic-page"
+  >
+    <div class="pattern-heading">
+      <p class="pattern-number">
+        Pattern 01
+      </p>
 
-        &lt;main&gt;
-          &lt;section&gt;
-            &lt;h2&gt;Featured Content&lt;/h2&gt;
-            &lt;p&gt;Page content...&lt;/p&gt;
-          &lt;/section&gt;
-        &lt;/main&gt;
+      <h2 id="semantic-page-title">
+        Semantic Page Structure
+      </h2>
 
-        &lt;footer&gt;
-          &lt;p&gt;Copyright 2026&lt;/p&gt;
-        &lt;/footer&gt;
-      &lt;/body&gt;</code></pre>
-        </details>
-      </section>
-      <section
-        aria-labelledby="accessible-table-title"
-        class="pattern-section"
-        id="accessible-table"
-      >
-        <div class="pattern-heading">
-          <p class="pattern-number">Pattern 02</p>
-          <h2 id="accessible-table-title">Accessible Data Table</h2>
-          <p>A table with a caption, column headers, and row headers.</p>
-        </div>
-        <details class="pattern-example">
-          <summary>View complete example</summary>
-          <pre><code>&lt;table&gt;
-        &lt;caption&gt;
-          Monthly project hours
-        &lt;/caption&gt;
+      <p>
+        A basic page structure using header, navigation, main content,
+        sections, and footer.
+      </p>
+    </div>
 
-        &lt;thead&gt;
-          &lt;tr&gt;
-            &lt;th scope="col"&gt;Project&lt;/th&gt;
-            &lt;th scope="col"&gt;Hours&lt;/th&gt;
-            &lt;th scope="col"&gt;Status&lt;/th&gt;
-          &lt;/tr&gt;
-        &lt;/thead&gt;
+    <details class="pattern-example">
+      <summary>
+        View complete example
+      </summary>
 
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;th scope="row"&gt;Portfolio&lt;/th&gt;
-            &lt;td&gt;12&lt;/td&gt;
-            &lt;td&gt;Complete&lt;/td&gt;
-          &lt;/tr&gt;
+      <!-- prettier-ignore -->
+      <pre><code>&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Page Title&lt;/h1&gt;
+  &lt;/header&gt;
 
-          &lt;tr&gt;
-            &lt;th scope="row"&gt;Reference Site&lt;/th&gt;
-            &lt;td&gt;18&lt;/td&gt;
-            &lt;td&gt;In Progress&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;</code></pre>
-        </details>
-      </section>
-      <section aria-labelledby="accessible-form-title" class="pattern-section" id="accessible-form">
-        <div class="pattern-heading">
-          <p class="pattern-number">Pattern 03</p>
-          <h2 id="accessible-form-title">Accessible Contact Form</h2>
-          <p>A simple form with labels, useful input types, and required fields.</p>
-        </div>
-        <details class="pattern-example">
-          <summary>View complete example</summary>
-          <pre><code>&lt;form&gt;
-        &lt;div&gt;
-          &lt;label for="name"&gt;
-            Name
-          &lt;/label&gt;
+  &lt;nav aria-label="Main navigation"&gt;
+    &lt;a href="/"&gt;Home&lt;/a&gt;
+    &lt;a href="/about"&gt;About&lt;/a&gt;
+  &lt;/nav&gt;
 
-          &lt;input
-            type="text"
-            id="name"
-            name="name"
-            autocomplete="name"
-            required
-          /&gt;
-        &lt;/div&gt;
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Featured Content&lt;/h2&gt;
+      &lt;p&gt;Page content...&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
 
-        &lt;div&gt;
-          &lt;label for="email"&gt;
-            Email
-          &lt;/label&gt;
+  &lt;footer&gt;
+    &lt;p&gt;Copyright 2026&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+    </details>
+  </section>
 
-          &lt;input
-            type="email"
-            id="email"
-            name="email"
-            autocomplete="email"
-            required
-          /&gt;
-        &lt;/div&gt;
 
-        &lt;div&gt;
-          &lt;label for="message"&gt;
-            Message
-          &lt;/label&gt;
+  <!-- Accessible Data Table -->
+  <section
+    aria-labelledby="accessible-table-title"
+    class="pattern-section"
+    id="accessible-table"
+  >
+    <div class="pattern-heading">
+      <p class="pattern-number">
+        Pattern 02
+      </p>
 
-          &lt;textarea
-            id="message"
-            name="message"
-            rows="5"
-          &gt;&lt;/textarea&gt;
-        &lt;/div&gt;
+      <h2 id="accessible-table-title">
+        Accessible Data Table
+      </h2>
 
-        &lt;button type="submit"&gt;
-          Send Message
-        &lt;/button&gt;
-      &lt;/form&gt;</code></pre>
-        </details>
-      </section>
-      <section aria-labelledby="flexbox-layout-title" class="pattern-section" id="flexbox-layout">
-        <div class="pattern-heading">
-          <p class="pattern-number">Pattern 04</p>
-          <h2 id="flexbox-layout-title">Responsive Flexbox Navigation</h2>
-          <p>A Flexbox navigation that can wrap when the page gets narrow.</p>
-        </div>
-        <details class="pattern-example">
-          <summary>View complete example</summary>
-          <pre><code>.navigation {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      <p>
+        A table with a caption, column headers, and row headers.
+      </p>
+    </div>
 
-        gap: 1rem;
+    <details class="pattern-example">
+      <summary>
+        View complete example
+      </summary>
 
-        padding: 1rem 2rem;
-      }
+      <!-- prettier-ignore -->
+      <pre><code>&lt;table&gt;
+  &lt;caption&gt;
+    Monthly project hours
+  &lt;/caption&gt;
 
-      .navigation ul {
-        display: flex;
-        flex-wrap: wrap;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Project&lt;/th&gt;
+      &lt;th scope="col"&gt;Hours&lt;/th&gt;
+      &lt;th scope="col"&gt;Status&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
 
-        gap: 0.75rem;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Portfolio&lt;/th&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;Complete&lt;/td&gt;
+    &lt;/tr&gt;
 
-        margin: 0;
-        padding: 0;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Reference Site&lt;/th&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;In Progress&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+    </details>
+  </section>
 
-        list-style: none;
-      }</code></pre>
-        </details>
-      </section>
-      <section aria-labelledby="grid-layout-title" class="pattern-section" id="grid-layout">
-        <div class="pattern-heading">
-          <p class="pattern-number">Pattern 05</p>
-          <h2 id="grid-layout-title">Responsive CSS Grid</h2>
-          <p>A Grid layout that changes the number of columns based on the available space.</p>
-        </div>
-        <details class="pattern-example">
-          <summary>View complete example</summary>
-          <pre><code>.card-grid {
-        display: grid;
 
-        grid-template-columns:
-          repeat(
-            auto-fit,
-            minmax(250px, 1fr)
-          );
+  <!-- Accessible Contact Form -->
+  <section
+    aria-labelledby="accessible-form-title"
+    class="pattern-section"
+    id="accessible-form"
+  >
+    <div class="pattern-heading">
+      <p class="pattern-number">
+        Pattern 03
+      </p>
 
-        gap: 1.5rem;
-      }</code></pre>
-        </details>
-      </section>
-      <section aria-labelledby="responsive-card-title" class="pattern-section" id="responsive-card">
-        <div class="pattern-heading">
-          <p class="pattern-number">Pattern 06</p>
-          <h2 id="responsive-card-title">Responsive Reference Card</h2>
-          <p>A reusable card using the same spacing, borders, and colors as this site.</p>
-        </div>
-        <details class="pattern-example">
-          <summary>View HTML</summary>
-          <pre><code>&lt;article class="card"&gt;
-        &lt;h3&gt;CSS Grid&lt;/h3&gt;
+      <h2 id="accessible-form-title">
+        Accessible Contact Form
+      </h2>
 
-        &lt;p&gt;
-          Learn how grid tracks, gaps,
-          and placement work together.
-        &lt;/p&gt;
+      <p>
+        A simple form with labels, useful input types, and required fields.
+      </p>
+    </div>
 
-        &lt;a href="#"&gt;
-          View Reference
-        &lt;/a&gt;
-      &lt;/article&gt;</code></pre>
-        </details>
-        <details class="pattern-example">
-          <summary>View CSS</summary>
-          <pre><code>.card {
-        padding: 1.5rem;
+    <details class="pattern-example">
+      <summary>
+        View complete example
+      </summary>
 
-        background: #ffffff;
+      <!-- prettier-ignore -->
+      <pre><code>&lt;form&gt;
+  &lt;div&gt;
+    &lt;label for="name"&gt;
+      Name
+    &lt;/label&gt;
 
-        border: 1px solid #b9dce5;
-        border-top: 5px solid #3c88a3;
-        border-radius: 0.75rem;
-      }
+    &lt;input
+      type="text"
+      id="name"
+      name="name"
+      autocomplete="name"
+      required
+    /&gt;
+  &lt;/div&gt;
 
-      .card h3 {
-        color: #3c88a3;
-      }
+  &lt;div&gt;
+    &lt;label for="email"&gt;
+      Email
+    &lt;/label&gt;
 
-      .card a {
-        color: #4eabcc;
-        font-weight: 600;
-      }</code></pre>
-        </details>
-      </section>
+    &lt;input
+      type="email"
+      id="email"
+      name="email"
+      autocomplete="email"
+      required
+    /&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;label for="message"&gt;
+      Message
+    &lt;/label&gt;
+
+    &lt;textarea
+      id="message"
+      name="message"
+      rows="5"
+    &gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+
+  &lt;button type="submit"&gt;
+    Send Message
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+    </details>
+  </section>
+
+
+  <!-- Responsive Flexbox Navigation -->
+  <section
+    aria-labelledby="flexbox-layout-title"
+    class="pattern-section"
+    id="flexbox-layout"
+  >
+    <div class="pattern-heading">
+      <p class="pattern-number">
+        Pattern 04
+      </p>
+
+      <h2 id="flexbox-layout-title">
+        Responsive Flexbox Navigation
+      </h2>
+
+      <p>
+        A Flexbox navigation that can wrap when the page gets narrow.
+      </p>
+    </div>
+
+    <details class="pattern-example">
+      <summary>
+        View complete example
+      </summary>
+
+      <!-- prettier-ignore -->
+      <pre><code>.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 1rem 2rem;
+}
+
+.navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.75rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}</code></pre>
+    </details>
+  </section>
+
+
+  <!-- Responsive CSS Grid -->
+  <section
+    aria-labelledby="grid-layout-title"
+    class="pattern-section"
+    id="grid-layout"
+  >
+    <div class="pattern-heading">
+      <p class="pattern-number">
+        Pattern 05
+      </p>
+
+      <h2 id="grid-layout-title">
+        Responsive CSS Grid
+      </h2>
+
+      <p>
+        A Grid layout that changes the number of columns based on the
+        available space.
+      </p>
+    </div>
+
+    <details class="pattern-example">
+      <summary>
+        View complete example
+      </summary>
+
+      <!-- prettier-ignore -->
+      <pre><code>.card-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    );
+
+  gap: 1.5rem;
+}</code></pre>
+    </details>
+  </section>
+
+
+  <!-- Responsive Reference Card -->
+  <section
+    aria-labelledby="responsive-card-title"
+    class="pattern-section"
+    id="responsive-card"
+  >
+    <div class="pattern-heading">
+      <p class="pattern-number">
+        Pattern 06
+      </p>
+
+      <h2 id="responsive-card-title">
+        Responsive Reference Card
+      </h2>
+
+      <p>
+        A reusable card using the same spacing, borders, and colors as this
+        site.
+      </p>
+    </div>
+
+    <details class="pattern-example">
+      <summary>
+        View HTML
+      </summary>
+
+      <!-- prettier-ignore -->
+      <pre><code>&lt;article class="card"&gt;
+  &lt;h3&gt;CSS Grid&lt;/h3&gt;
+
+  &lt;p&gt;
+    Learn how grid tracks, gaps,
+    and placement work together.
+  &lt;/p&gt;
+
+  &lt;a href="#"&gt;
+    View Reference
+  &lt;/a&gt;
+&lt;/article&gt;</code></pre>
+    </details>
+
+    <details class="pattern-example">
+      <summary>
+        View CSS
+      </summary>
+
+      <!-- prettier-ignore -->
+      <pre><code>.card {
+  padding: 1.5rem;
+
+  background: #ffffff;
+
+  border: 1px solid #b9dce5;
+  border-top: 5px solid #3c88a3;
+  border-radius: 0.75rem;
+}
+
+.card h3 {
+  color: #3c88a3;
+}
+
+.card a {
+  color: #4eabcc;
+  font-weight: 600;
+}</code></pre>
+    </details>
+  </section>
+
+  <!-- Accessible Navigation -->
       <section
         aria-labelledby="accessible-navigation-title"
         class="pattern-section"

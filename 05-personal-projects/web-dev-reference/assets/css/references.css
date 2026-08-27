@@ -1,6 +1,8 @@
 /* Search, reference tables, page navigation, notes, and saved items. */
 
-/* Search controls */
+/* =========================================================
+   Search Controls
+   ========================================================= */
 
 .reference-tools {
   padding: 1.75rem 5%;
@@ -89,7 +91,9 @@
   font-weight: 700;
 }
 
-/* Main content and page navigation */
+/* =========================================================
+   Main Content
+   ========================================================= */
 
 main {
   width: min(1100px, 90%);
@@ -130,6 +134,10 @@ main {
   color: var(--text-secondary);
   line-height: 1.7;
 }
+
+/* =========================================================
+   Page Navigation
+   ========================================================= */
 
 .page-toc {
   margin-bottom: 2rem;
@@ -190,7 +198,9 @@ html[data-theme='dark'] .page-toc a:hover {
   background: var(--highlight);
 }
 
-/* Notes and related references */
+/* =========================================================
+   Notes and Related References
+   ========================================================= */
 
 .author-note {
   max-width: 850px;
@@ -271,7 +281,11 @@ html[data-theme='dark'] .page-toc a:hover {
   transform: translateY(-1px);
 }
 
-/* Home page */
+/* =========================================================
+   Home Page
+   ========================================================= */
+
+/* Introduction */
 
 .intro-panel {
   margin-bottom: 3rem;
@@ -287,6 +301,8 @@ html[data-theme='dark'] .page-toc a:hover {
   margin: 0 0 1rem;
   color: var(--text-secondary);
 }
+
+/* Reference legend */
 
 .reference-legend {
   margin-top: 1.5rem;
@@ -322,6 +338,8 @@ html[data-theme='dark'] .page-toc a:hover {
   font-family: var(--font-code);
   font-weight: 700;
 }
+
+/* Reference cards */
 
 .reference-grid {
   display: grid;
@@ -392,7 +410,63 @@ html[data-theme='dark'] .page-toc a:hover {
   color: var(--teal);
 }
 
-/* Reference tables */
+/* Project summary */
+
+.project-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--lime);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.project-links h2 {
+  margin: 0.15rem 0 0.4rem;
+}
+
+.project-links p {
+  max-width: 65ch;
+  margin-bottom: 0;
+}
+
+.project-link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--teal);
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  border-color: var(--lime);
+  background: var(--highlight);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   Reference Tables
+   ========================================================= */
 
 .table-wrapper {
   width: 100%;
@@ -493,6 +567,10 @@ html[data-theme='dark'] .page-toc a:hover {
   overflow-wrap: anywhere;
 }
 
+/* =========================================================
+   Saved Items
+   ========================================================= */
+
 .favorite-button {
   position: absolute;
   top: 0.45rem;
@@ -540,58 +618,9 @@ html[data-theme='dark'] .favorite-button.is-saved {
   background: var(--highlight);
 }
 
-/* A small project summary gives visitors context without taking over the home page. */
-.project-links {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  padding: 1.25rem;
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--lime);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-
-.project-links h2 {
-  margin: 0.15rem 0 0.4rem;
-}
-
-.project-links p {
-  max-width: 65ch;
-  margin-bottom: 0;
-}
-
-.project-link-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  flex-shrink: 0;
-}
-
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 40px;
-  padding: 0.55rem 0.8rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--teal);
-  font-weight: 700;
-  text-decoration: none;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.project-link:hover,
-.project-link:focus-visible {
-  border-color: var(--lime);
-  background: var(--highlight);
-  transform: translateY(-1px);
-}
+/* =========================================================
+   Responsive Styles
+   ========================================================= */
 
 @media (max-width: 720px) {
   .project-links {

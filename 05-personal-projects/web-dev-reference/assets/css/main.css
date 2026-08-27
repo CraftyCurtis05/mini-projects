@@ -1,5 +1,11 @@
-/* Shared stylesheet entry point.
-   Import order matters because later files can override earlier styles. */
+/* ========================================
+   Shared Stylesheet Entry Point
+======================================== */
+
+/*
+ * Import order matters because later files
+ * can override styles loaded earlier.
+ */
 
 @import url('./variables.css');
 @import url('./global.css');

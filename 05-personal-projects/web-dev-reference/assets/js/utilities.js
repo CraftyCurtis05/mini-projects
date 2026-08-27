@@ -1,6 +1,9 @@
 /* Shared page utilities. */
 
-/* Copy code buttons */
+/* ========================================
+   Copy Code Buttons
+======================================== */
+
 function initializeCopyButtons() {
   document.querySelectorAll('pre > code').forEach((code, index) => {
     const pre = code.parentElement;
@@ -34,7 +37,9 @@ function initializeCopyButtons() {
       } catch {
         // This keeps copy working if the newer Clipboard API is not available.
         const textarea = document.createElement('textarea');
+
         textarea.value = code.textContent;
+
         document.body.append(textarea);
         textarea.select();
         document.execCommand('copy');
@@ -54,7 +59,10 @@ function initializeCopyButtons() {
   });
 }
 
-/* Loading screen */
+/* ========================================
+   Loading Screen
+======================================== */
+
 function initializeSiteLoader() {
   const loader = document.getElementById('site-loader');
 
@@ -80,7 +88,10 @@ function initializeSiteLoader() {
   window.setTimeout(hideLoader, 2200);
 }
 
-/* 404 page */
+/* ========================================
+   404 Page
+======================================== */
+
 function initializeNotFoundPage() {
   if (bodyElement.dataset.page !== '404') {
     return;
@@ -104,18 +115,20 @@ function initializeNotFoundPage() {
   });
 }
 
-/* Scroll progress */
+/* ========================================
+   Scroll Progress
+======================================== */
+
 function initializeScrollProgress() {
-  // I calculate this from the actual scroll position so the bar always matches the page.
   const progressBar = document.getElementById('scroll-progress-bar');
 
   if (!progressBar) {
     return;
   }
 
+  // I calculate this from the actual scroll position so the bar always matches the page.
   const updateProgress = () => {
     const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-
     const progress = scrollableHeight > 0 ? Math.min(window.scrollY / scrollableHeight, 1) : 0;
 
     progressBar.style.transform = `scaleX(${progress})`;
@@ -127,7 +140,10 @@ function initializeScrollProgress() {
   updateProgress();
 }
 
-/* Back to top */
+/* ========================================
+   Back to Top
+======================================== */
+
 function initializeBackToTop() {
   const backToTopButton = document.createElement('button');
 
@@ -156,10 +172,14 @@ function initializeBackToTop() {
   });
 
   window.addEventListener('scroll', updateBackToTopButton, { passive: true });
+
   updateBackToTopButton();
 }
 
-/* Scroll reveal */
+/* ========================================
+   Scroll Reveal
+======================================== */
+
 function initializeRevealAnimations() {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
