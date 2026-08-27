@@ -10,15 +10,14 @@
       name="description"
     />
 
-    <meta content="light dark" name="color-scheme" />
-    <script src="../../assets/js/loader.js" defer></script>
-    <title>HTML Tags Reference | Web Dev Reference</title>
+    <title>HTML Tags Reference</title>
+
     <!-- Browser and installed-app appearance -->
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
+    <!-- Social sharing metadata -->
     <meta content="website" property="og:type" />
-
     <meta content="HTML Tags Reference | Web Dev Reference" property="og:title" />
     <meta
       content="My reference for common HTML elements used for document structure, text, media, lists, forms, and semantic layout."
@@ -30,13 +29,18 @@
     <link href="../../site.webmanifest" rel="manifest" />
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
+
     <!-- Shared site styles and fonts -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
+
+    <!-- Initial page loader -->
+    <script src="../../assets/js/loader.js" defer></script>    
   </head>
+
   <body
     data-author-note="When I notice a lot of divs, I stop and ask what the content actually is. nav, main, section, article, button, and the heading levels usually make the structure clearer."
     data-category="HTML"
@@ -48,6 +52,7 @@
     data-search-placeholder="Try: semantic, form, image..."
     data-toc="true"
   >
+  <!-- Initial loading screen -->
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -58,31 +63,35 @@
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
+
+    <!-- Accessibility navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared site navigation -->
     <div data-site-nav=""></div>
+
+    <!-- Page introduction -->
     <header class="hero">
       <h1>HTML Tags Reference</h1>
       <p class="subtitle">Common HTML elements grouped by what I use them for.</p>
+
       <div class="hero-meta">
         <span class="badge badge-category">HTML</span>
         <span class="badge badge-level">Beginner</span>
       </div>
     </header>
+
+    <!-- Main reference content -->
     <main id="main-content">
-      <section
-        aria-labelledby="document-metadata-title"
-        class="reference-section"
-        id="document-metadata"
-      >
+      <!-- Document & Metadata -->
+      <section aria-labelledby="document-metadata-title" class="reference-section" id="document-metadata">
         <h2 class="section-title" id="document-metadata-title">Document &amp; Metadata</h2>
-        <p class="section-description">
-          HTML document and metadata elements, their names, and their purposes.
-        </p>
+        <p class="section-description">HTML document and metadata elements, their names, and their purposes.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              HTML document and metadata elements, their names, and their purposes.
-            </caption>
+            <caption class="sr-only">HTML document and metadata elements, their names, and their purposes.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Tag</th>
@@ -91,6 +100,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="document-metadata-item-doctype-html">
                 <th scope="row"><code>&lt;!DOCTYPE html&gt;</code></th>
@@ -98,44 +108,49 @@
                 <td>Declares an HTML5 document.</td>
                 <td class="example-cell"><code>&lt;!DOCTYPE html&gt;</code></td>
               </tr>
+
               <tr id="document-metadata-item-html">
                 <th scope="row"><code>&lt;html&gt;</code></th>
                 <td>HTML Root</td>
                 <td>Wraps the entire HTML document.</td>
                 <td class="example-cell"><code>&lt;html lang="en"&gt;</code></td>
               </tr>
+
               <tr id="document-metadata-item-head">
                 <th scope="row"><code>&lt;head&gt;</code></th>
                 <td>Document Head</td>
                 <td>Contains metadata and external resources.</td>
                 <td class="example-cell"><code>&lt;head&gt;...&lt;/head&gt;</code></td>
               </tr>
+
               <tr id="document-metadata-item-title">
                 <th scope="row"><code>&lt;title&gt;</code></th>
                 <td>Document Title</td>
                 <td>Sets the title shown in the browser tab.</td>
                 <td class="example-cell"><code>&lt;title&gt;My Website&lt;/title&gt;</code></td>
               </tr>
+
               <tr id="document-metadata-item-meta">
                 <th scope="row"><code>&lt;meta&gt;</code></th>
                 <td>Metadata</td>
                 <td>Provides metadata such as character encoding and viewport settings.</td>
                 <td class="example-cell"><code>&lt;meta charset="UTF-8"/&gt;</code></td>
               </tr>
+
               <tr id="document-metadata-item-link">
                 <th scope="row"><code>&lt;link&gt;</code></th>
                 <td>External Resource</td>
                 <td>Links external resources such as stylesheets and icons.</td>
-                <td class="example-cell">
-                  <code>&lt;link rel="stylesheet" href="styles.css"/&gt;</code>
-                </td>
+                <td class="example-cell"><code>&lt;link rel="stylesheet" href="styles.css"/&gt;</code></td>
               </tr>
+
               <tr id="document-metadata-item-style">
                 <th scope="row"><code>&lt;style&gt;</code></th>
                 <td>Embedded CSS</td>
                 <td>Contains CSS written directly inside the HTML document.</td>
                 <td class="example-cell"><code>&lt;style&gt;...&lt;/style&gt;</code></td>
               </tr>
+
               <tr id="document-metadata-item-script">
                 <th scope="row"><code>&lt;script&gt;</code></th>
                 <td>Script</td>
@@ -146,20 +161,16 @@
           </table>
         </div>
       </section>
-      <section
-        aria-labelledby="semantic-layout-title"
-        class="reference-section"
-        id="semantic-layout"
-      >
+
+      <!-- Semantic layout -->
+      <section aria-labelledby="semantic-layout-title" class="reference-section" id="semantic-layout">
         <h2 class="section-title" id="semantic-layout-title">Semantic Layout</h2>
-        <p class="section-description">
-          Semantic HTML layout elements, their names, and their purposes.
-        </p>
+        <p class="section-description">Semantic HTML layout elements, their names, and their purposes.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Semantic HTML layout elements, their names, and their purposes.
-            </caption>
+            <caption class="sr-only">Semantic HTML layout elements, their names, and their purposes.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Tag</th>
@@ -168,6 +179,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="semantic-layout-item-header">
                 <th scope="row"><code>&lt;header&gt;</code></th>
@@ -175,42 +187,49 @@
                 <td>Contains introductory content for a page or section.</td>
                 <td class="example-cell"><code>&lt;header&gt;...&lt;/header&gt;</code></td>
               </tr>
+
               <tr id="semantic-layout-item-nav">
                 <th scope="row"><code>&lt;nav&gt;</code></th>
                 <td>Navigation</td>
                 <td>Contains major navigation links.</td>
                 <td class="example-cell"><code>&lt;nav&gt;...&lt;/nav&gt;</code></td>
               </tr>
+
               <tr id="semantic-layout-item-main">
                 <th scope="row"><code>&lt;main&gt;</code></th>
                 <td>Main Content</td>
                 <td>Contains the dominant content of the page.</td>
                 <td class="example-cell"><code>&lt;main&gt;...&lt;/main&gt;</code></td>
               </tr>
+
               <tr id="semantic-layout-item-section">
                 <th scope="row"><code>&lt;section&gt;</code></th>
                 <td>Section</td>
                 <td>Groups thematically related content.</td>
                 <td class="example-cell"><code>&lt;section&gt;...&lt;/section&gt;</code></td>
               </tr>
+
               <tr id="semantic-layout-item-article">
                 <th scope="row"><code>&lt;article&gt;</code></th>
                 <td>Article</td>
                 <td>Represents self-contained content.</td>
                 <td class="example-cell"><code>&lt;article&gt;...&lt;/article&gt;</code></td>
               </tr>
+
               <tr id="semantic-layout-item-aside">
                 <th scope="row"><code>&lt;aside&gt;</code></th>
                 <td>Aside</td>
                 <td>Contains complementary or secondary content.</td>
                 <td class="example-cell"><code>&lt;aside&gt;...&lt;/aside&gt;</code></td>
               </tr>
+
               <tr id="semantic-layout-item-footer">
                 <th scope="row"><code>&lt;footer&gt;</code></th>
                 <td>Footer</td>
                 <td>Contains footer information for a page or section.</td>
                 <td class="example-cell"><code>&lt;footer&gt;...&lt;/footer&gt;</code></td>
               </tr>
+
               <tr id="semantic-layout-item-address">
                 <th scope="row"><code>&lt;address&gt;</code></th>
                 <td>Contact Information</td>
@@ -221,16 +240,16 @@
           </table>
         </div>
       </section>
+
+      <!-- Text content -->
       <section aria-labelledby="text-content-title" class="reference-section" id="text-content">
         <h2 class="section-title" id="text-content-title">Text Content</h2>
-        <p class="section-description">
-          HTML text content elements, their names, and their purposes.
-        </p>
+        <p class="section-description">HTML text content elements, their names, and their purposes.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              HTML text content elements, their names, and their purposes.
-            </caption>
+            <caption class="sr-only">HTML text content elements, their names, and their purposes.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Tag</th>
@@ -239,6 +258,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="text-content-item-h1-h6">
                 <th scope="row"><code>&lt;h1&gt;–&lt;h6&gt;</code></th>
@@ -246,60 +266,70 @@
                 <td>Define six levels of document headings.</td>
                 <td class="example-cell"><code>&lt;h1&gt;...&lt;/h1&gt;</code></td>
               </tr>
+
               <tr id="text-content-item-p">
                 <th scope="row"><code>&lt;p&gt;</code></th>
                 <td>Paragraph</td>
                 <td>Defines a paragraph.</td>
                 <td class="example-cell"><code>&lt;p&gt;...&lt;/p&gt;</code></td>
               </tr>
+
               <tr id="text-content-item-strong">
                 <th scope="row"><code>&lt;strong&gt;</code></th>
                 <td>Strong Importance</td>
                 <td>Marks content as strongly important.</td>
                 <td class="example-cell"><code>&lt;strong&gt;...&lt;/strong&gt;</code></td>
               </tr>
+
               <tr id="text-content-item-em">
                 <th scope="row"><code>&lt;em&gt;</code></th>
                 <td>Emphasis</td>
                 <td>Provides semantic emphasis.</td>
                 <td class="example-cell"><code>&lt;em&gt;...&lt;/em&gt;</code></td>
               </tr>
+
               <tr id="text-content-item-br">
                 <th scope="row"><code>&lt;br&gt;</code></th>
                 <td>Line Break</td>
                 <td>Creates a line break.</td>
                 <td class="example-cell"><code>&lt;br&gt;</code></td>
               </tr>
+
               <tr id="text-content-item-hr">
                 <th scope="row"><code>&lt;hr&gt;</code></th>
                 <td>Thematic Break</td>
                 <td>Represents a thematic division between sections.</td>
                 <td class="example-cell"><code>&lt;hr&gt;</code></td>
               </tr>
+
               <tr id="text-content-item-code">
                 <th scope="row"><code>&lt;code&gt;</code></th>
                 <td>Inline Code</td>
                 <td>Represents a short fragment of computer code.</td>
                 <td class="example-cell"><code>&lt;code&gt;...&lt;/code&gt;</code></td>
               </tr>
+
               <tr id="text-content-item-pre">
                 <th scope="row"><code>&lt;pre&gt;</code></th>
                 <td>Preformatted Text</td>
                 <td>Preserves whitespace and line breaks.</td>
                 <td class="example-cell"><code>&lt;pre&gt;...&lt;/pre&gt;</code></td>
               </tr>
+
               <tr id="text-content-item-blockquote">
                 <th scope="row"><code>&lt;blockquote&gt;</code></th>
                 <td>Block Quotation</td>
                 <td>Represents a longer quotation from another source.</td>
                 <td class="example-cell"><code>&lt;blockquote&gt;...&lt;/blockquote&gt;</code></td>
               </tr>
+
               <tr id="text-content-item-q">
                 <th scope="row"><code>&lt;q&gt;</code></th>
                 <td>Inline Quotation</td>
                 <td>Represents a short inline quotation.</td>
                 <td class="example-cell"><code>&lt;q&gt;...&lt;/q&gt;</code></td>
               </tr>
+
               <tr id="text-content-item-abbr">
                 <th scope="row"><code>&lt;abbr&gt;</code></th>
                 <td>Abbreviation</td>
@@ -310,16 +340,16 @@
           </table>
         </div>
       </section>
+
+      <!-- Links & Media -->
       <section aria-labelledby="links-media-title" class="reference-section" id="links-media">
         <h2 class="section-title" id="links-media-title">Links &amp; Media</h2>
-        <p class="section-description">
-          HTML link and media elements, their names, and their purposes.
-        </p>
+        <p class="section-description">HTML link and media elements, their names, and their purposes.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              HTML link and media elements, their names, and their purposes.
-            </caption>
+            <caption class="sr-only">HTML link and media elements, their names, and their purposes.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Tag</th>
@@ -328,6 +358,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="links-media-item-a">
                 <th scope="row"><code>&lt;a&gt;</code></th>
@@ -335,54 +366,63 @@
                 <td>Creates a hyperlink.</td>
                 <td class="example-cell"><code>&lt;a&gt;...&lt;/a&gt;</code></td>
               </tr>
+
               <tr id="links-media-item-img">
                 <th scope="row"><code>&lt;img&gt;</code></th>
                 <td>Image</td>
                 <td>Embeds an image.</td>
                 <td class="example-cell"><code>&lt;img.../&gt;</code></td>
               </tr>
+
               <tr id="links-media-item-picture">
                 <th scope="row"><code>&lt;picture&gt;</code></th>
                 <td>Responsive Picture</td>
                 <td>Provides multiple image sources for responsive images.</td>
                 <td class="example-cell"><code>&lt;picture&gt;...&lt;/picture&gt;</code></td>
               </tr>
+
               <tr id="links-media-item-source">
                 <th scope="row"><code>&lt;source&gt;</code></th>
                 <td>Media Source</td>
                 <td>Defines alternative sources for picture, audio, or video.</td>
                 <td class="example-cell"><code>&lt;source&gt;...&lt;/source&gt;</code></td>
               </tr>
+
               <tr id="links-media-item-figure">
                 <th scope="row"><code>&lt;figure&gt;</code></th>
                 <td>Figure</td>
                 <td>Groups self-contained media or illustrative content.</td>
                 <td class="example-cell"><code>&lt;figure&gt;...&lt;/figure&gt;</code></td>
               </tr>
+
               <tr id="links-media-item-figcaption">
                 <th scope="row"><code>&lt;figcaption&gt;</code></th>
                 <td>Figure Caption</td>
                 <td>Provides a caption for a figure.</td>
                 <td class="example-cell"><code>&lt;figcaption&gt;...&lt;/figcaption&gt;</code></td>
               </tr>
+
               <tr id="links-media-item-audio">
                 <th scope="row"><code>&lt;audio&gt;</code></th>
                 <td>Audio</td>
                 <td>Embeds audio content.</td>
                 <td class="example-cell"><code>&lt;audio&gt;...&lt;/audio&gt;</code></td>
               </tr>
+
               <tr id="links-media-item-video">
                 <th scope="row"><code>&lt;video&gt;</code></th>
                 <td>Video</td>
                 <td>Embeds video content.</td>
                 <td class="example-cell"><code>&lt;video&gt;...&lt;/video&gt;</code></td>
               </tr>
+
               <tr id="links-media-item-iframe">
                 <th scope="row"><code>&lt;iframe&gt;</code></th>
                 <td>Inline Frame</td>
                 <td>Embeds another page or external resource.</td>
                 <td class="example-cell"><code>&lt;iframe&gt;...&lt;/iframe&gt;</code></td>
               </tr>
+
               <tr id="links-media-item-svg">
                 <th scope="row"><code>&lt;svg&gt;</code></th>
                 <td>Scalable Vector Graphics</td>
@@ -393,16 +433,16 @@
           </table>
         </div>
       </section>
+
+      <!-- Lists & Grouping -->
       <section aria-labelledby="lists-grouping-title" class="reference-section" id="lists-grouping">
         <h2 class="section-title" id="lists-grouping-title">Lists &amp; Grouping</h2>
-        <p class="section-description">
-          HTML list and content-grouping elements, their names, and their purposes.
-        </p>
+        <p class="section-description">HTML list and content-grouping elements, their names, and their purposes.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              HTML list and content-grouping elements, their names, and their purposes.
-            </caption>
+            <caption class="sr-only">HTML list and content-grouping elements, their names, and their purposes.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Tag</th>
@@ -411,6 +451,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="lists-grouping-item-ul">
                 <th scope="row"><code>&lt;ul&gt;</code></th>
@@ -418,42 +459,49 @@
                 <td>Creates a list whose order is not significant.</td>
                 <td class="example-cell"><code>&lt;ul&gt;...&lt;/ul&gt;</code></td>
               </tr>
+
               <tr id="lists-grouping-item-ol">
                 <th scope="row"><code>&lt;ol&gt;</code></th>
                 <td>Ordered List</td>
                 <td>Creates an ordered or numbered list.</td>
                 <td class="example-cell"><code>&lt;ol&gt;...&lt;/ol&gt;</code></td>
               </tr>
+
               <tr id="lists-grouping-item-li">
                 <th scope="row"><code>&lt;li&gt;</code></th>
                 <td>List Item</td>
                 <td>Defines an item inside an ordered or unordered list.</td>
                 <td class="example-cell"><code>&lt;li&gt;...&lt;/li&gt;</code></td>
               </tr>
+
               <tr id="lists-grouping-item-dl">
                 <th scope="row"><code>&lt;dl&gt;</code></th>
                 <td>Description List</td>
                 <td>Creates a list of terms and descriptions.</td>
                 <td class="example-cell"><code>&lt;dl&gt;...&lt;/dl&gt;</code></td>
               </tr>
+
               <tr id="lists-grouping-item-dt">
                 <th scope="row"><code>&lt;dt&gt;</code></th>
                 <td>Description Term</td>
                 <td>Defines a term in a description list.</td>
                 <td class="example-cell"><code>&lt;dt&gt;...&lt;/dt&gt;</code></td>
               </tr>
+
               <tr id="lists-grouping-item-dd">
                 <th scope="row"><code>&lt;dd&gt;</code></th>
                 <td>Description Details</td>
                 <td>Defines the description for a term.</td>
                 <td class="example-cell"><code>&lt;dd&gt;...&lt;/dd&gt;</code></td>
               </tr>
+
               <tr id="lists-grouping-item-div">
                 <th scope="row"><code>&lt;div&gt;</code></th>
                 <td>Block Container</td>
                 <td>Groups block-level content when no semantic element fits.</td>
                 <td class="example-cell"><code>&lt;div&gt;...&lt;/div&gt;</code></td>
               </tr>
+
               <tr id="lists-grouping-item-span">
                 <th scope="row"><code>&lt;span&gt;</code></th>
                 <td>Inline Container</td>
@@ -464,16 +512,16 @@
           </table>
         </div>
       </section>
+
+      <!-- Forms & User input -->
       <section aria-labelledby="forms-input-title" class="reference-section" id="forms-input">
         <h2 class="section-title" id="forms-input-title">Forms &amp; User Input</h2>
-        <p class="section-description">
-          HTML form and user input elements, their names, and their purposes.
-        </p>
+        <p class="section-description">HTML form and user input elements, their names, and their purposes.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              HTML form and user input elements, their names, and their purposes.
-            </caption>
+            <caption class="sr-only">HTML form and user input elements, their names, and their purposes.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Tag</th>
@@ -482,6 +530,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="forms-input-item-form">
                 <th scope="row"><code>&lt;form&gt;</code></th>
@@ -489,66 +538,77 @@
                 <td>Groups controls used to submit user input.</td>
                 <td class="example-cell"><code>&lt;form&gt;...&lt;/form&gt;</code></td>
               </tr>
+
               <tr id="forms-input-item-label">
                 <th scope="row"><code>&lt;label&gt;</code></th>
                 <td>Label</td>
                 <td>Provides an accessible label for a form control.</td>
                 <td class="example-cell"><code>&lt;label&gt;...&lt;/label&gt;</code></td>
               </tr>
+
               <tr id="forms-input-item-input">
                 <th scope="row"><code>&lt;input&gt;</code></th>
                 <td>Input</td>
                 <td>Creates an input control.</td>
                 <td class="example-cell"><code>&lt;input&gt;...&lt;/input&gt;</code></td>
               </tr>
+
               <tr id="forms-input-item-textarea">
                 <th scope="row"><code>&lt;textarea&gt;</code></th>
                 <td>Text Area</td>
                 <td>Creates a multi-line text input.</td>
                 <td class="example-cell"><code>&lt;textarea&gt;...&lt;/textarea&gt;</code></td>
               </tr>
+
               <tr id="forms-input-item-button">
                 <th scope="row"><code>&lt;button&gt;</code></th>
                 <td>Button</td>
                 <td>Creates a clickable button.</td>
                 <td class="example-cell"><code>&lt;button&gt;...&lt;/button&gt;</code></td>
               </tr>
+
               <tr id="forms-input-item-select">
                 <th scope="row"><code>&lt;select&gt;</code></th>
                 <td>Select Menu</td>
                 <td>Creates a drop-down list.</td>
                 <td class="example-cell"><code>&lt;select&gt;...&lt;/select&gt;</code></td>
               </tr>
+
               <tr id="forms-input-item-option">
                 <th scope="row"><code>&lt;option&gt;</code></th>
                 <td>Option</td>
                 <td>Defines an option inside a select menu.</td>
                 <td class="example-cell"><code>&lt;option&gt;...&lt;/option&gt;</code></td>
               </tr>
+
               <tr id="forms-input-item-optgroup">
                 <th scope="row"><code>&lt;optgroup&gt;</code></th>
                 <td>Option Group</td>
                 <td>Groups related options inside a select menu.</td>
                 <td class="example-cell"><code>&lt;optgroup&gt;...&lt;/optgroup&gt;</code></td>
               </tr>
+
               <tr id="forms-input-item-fieldset">
                 <th scope="row"><code>&lt;fieldset&gt;</code></th>
                 <td>Field Set</td>
                 <td>Groups related form controls.</td>
                 <td class="example-cell"><code>&lt;fieldset&gt;...&lt;/fieldset&gt;</code></td>
               </tr>
+
               <tr id="forms-input-item-legend">
                 <th scope="row"><code>&lt;legend&gt;</code></th>
                 <td>Field Set Caption</td>
                 <td>Provides a caption for a fieldset.</td>
                 <td class="example-cell"><code>&lt;legend&gt;...&lt;/legend&gt;</code></td>
               </tr>
+
               <tr id="forms-input-item-datalist">
                 <th scope="row"><code>&lt;datalist&gt;</code></th>
                 <td>Data List</td>
                 <td>Provides suggested values for a compatible input.</td>
                 <td class="example-cell"><code>&lt;datalist&gt;...&lt;/datalist&gt;</code></td>
               </tr>
+
               <tr id="forms-input-item-output">
                 <th scope="row"><code>&lt;output&gt;</code></th>
                 <td>Output</td>
@@ -560,15 +620,27 @@
         </div>
       </section>
     </main>
+
+    <!-- Shared site footer -->
     <div data-site-footer=""></div>
+
+    <!-- Shared site data and utilities -->
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
+
+    <!-- Shared layout and interface behavior -->
     <script src="../../assets/js/layout.js" defer></script>
     <script src="../../assets/js/theme.js" defer></script>
     <script src="../../assets/js/search.js" defer></script>
+
+    <!-- Reference page behavior -->
     <script src="../../assets/js/references.js" defer></script>
+
+    <!-- Shared interactive utilities -->
     <script src="../../assets/js/dialogs.js" defer></script>
     <script src="../../assets/js/utilities.js" defer></script>
+
+    <!-- Site initialization -->
     <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>
