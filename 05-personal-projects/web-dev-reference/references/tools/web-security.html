@@ -10,15 +10,14 @@
       name="description"
     />
 
-    <meta content="light dark" name="color-scheme" />
-    <script src="../../assets/js/loader.js" defer></script>
     <title>Web Security Basics</title>
+
     <!-- Browser and installed-app appearance -->
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
+    <!-- Social sharing metadata -->
     <meta content="website" property="og:type" />
-
     <meta content="Web Security Basics" property="og:title" />
     <meta
       content="My front-end security reference for XSS, safe DOM updates, HTTPS, cookies, storage, CSP, secrets, and dependencies."
@@ -30,13 +29,18 @@
     <link href="../../site.webmanifest" rel="manifest" />
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
+
     <!-- Shared site styles and fonts -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
+
+    <!-- Initial page loader -->
+    <script src="../../assets/js/loader.js" defer></script>
   </head>
+
   <body
     data-author-note="The security reminder I keep coming back to is that outside input is just data. I do not trust it, turn it into HTML, or put secrets in front-end code where the browser can expose them."
     data-category="Web Platform"
@@ -48,6 +52,7 @@
     data-search-placeholder="Try: XSS, CSP, cookie, CSRF, localStorage..."
     data-toc="true"
   >
+    <!-- Initial loading screen -->
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -58,30 +63,35 @@
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
+
+    <!-- Accessibility navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared site navigation -->
     <div data-site-nav=""></div>
+
+    <!-- Page introduction -->
     <header class="hero">
       <h1>Web Security Basics</h1>
-      <p class="subtitle">
-        The front-end security basics I want in the back of my mind while building.
-      </p>
+      <p class="subtitle">The front-end security basics I want in the back of my mind while building.</p>
+
       <div class="hero-meta">
         <span class="badge badge-category">Web Platform</span>
         <span class="badge badge-level">Intermediate</span>
       </div>
     </header>
+
+    <!-- Main reference content -->
     <main id="main-content">
+      <!-- XSS & Safe Output -->
       <section aria-labelledby="xss-output-title" class="reference-section" id="xss-output">
         <h2 class="section-title" id="xss-output-title">XSS &amp; Safe Output</h2>
-        <p class="section-description">
-          Defensive concepts for keeping untrusted values from becoming executable markup or script.
-        </p>
+        <p class="section-description">Defensive concepts for keeping untrusted values from becoming executable markup or script.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Defensive concepts for keeping untrusted values from becoming executable markup or
-              script.
-            </caption>
+            <caption class="sr-only">Defensive concepts for keeping untrusted values from becoming executable markup or script.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -90,6 +100,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="xss-output-item-textcontent">
                 <th scope="row"><code>textContent</code></th>
@@ -97,44 +108,41 @@
                 <td>Inserts text without parsing it as HTML.</td>
                 <td class="example-cell"><code>message.textContent = userValue;</code></td>
               </tr>
+
               <tr id="xss-output-item-innerhtml">
                 <th scope="row"><code>innerHTML</code></th>
                 <td>HTML parser boundary</td>
                 <td>Parses a string as markup; avoid inserting untrusted strings.</td>
                 <td class="example-cell"><code>container.innerHTML = trustedTemplate;</code></td>
               </tr>
+
               <tr id="xss-output-item-escaping">
                 <th scope="row"><code>escaping</code></th>
                 <td>Context-aware output</td>
                 <td>Encodes special characters appropriately for the destination context.</td>
-                <td class="example-cell">
-                  <code>Render untrusted text as text, not concatenated HTML.</code>
-                </td>
+                <td class="example-cell"><code>Render untrusted text as text, not concatenated HTML.</code></td>
               </tr>
+
               <tr id="xss-output-item-sanitization">
                 <th scope="row"><code>sanitization</code></th>
                 <td>Remove unsafe markup</td>
-                <td>
-                  Uses a trusted sanitization approach when user-controlled HTML must be allowed.
-                </td>
+                <td>Uses a trusted sanitization approach when user-controlled HTML must be allowed.</td>
                 <td class="example-cell"><code>Sanitize allowed HTML before insertion.</code></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
+
+      <!-- Transport, Cookies & Authentication -->
       <section aria-labelledby="transport-auth-title" class="reference-section" id="transport-auth">
-        <h2 class="section-title" id="transport-auth-title">
-          Transport, Cookies &amp; Authentication
-        </h2>
-        <p class="section-description">
-          Browser concepts involved in protecting sessions and credentials.
-        </p>
+        <h2 class="section-title" id="transport-auth-title">Transport, Cookies &amp; Authentication</h2>
+        <p class="section-description">Browser concepts involved in protecting sessions and credentials.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Browser concepts involved in protecting sessions and credentials.
-            </caption>
+            <caption class="sr-only">Browser concepts involved in protecting sessions and credentials.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -143,6 +151,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="transport-auth-item-https">
                 <th scope="row"><code>HTTPS</code></th>
@@ -150,18 +159,21 @@
                 <td>Protects HTTP traffic in transit and authenticates the server using TLS.</td>
                 <td class="example-cell"><code>https://example.com</code></td>
               </tr>
+
               <tr id="transport-auth-item-secure-cookie">
                 <th scope="row"><code>Secure cookie</code></th>
                 <td>HTTPS-only cookie</td>
                 <td>Prevents a cookie from being sent over insecure HTTP.</td>
                 <td class="example-cell"><code>Set-Cookie: session=...; Secure</code></td>
               </tr>
+
               <tr id="transport-auth-item-httponly-cookie">
                 <th scope="row"><code>HttpOnly cookie</code></th>
                 <td>Script-inaccessible cookie</td>
                 <td>Prevents client-side JavaScript from reading the cookie.</td>
                 <td class="example-cell"><code>Set-Cookie: session=...; HttpOnly</code></td>
               </tr>
+
               <tr id="transport-auth-item-samesite">
                 <th scope="row"><code>SameSite</code></th>
                 <td>Cross-site cookie policy</td>
@@ -172,20 +184,16 @@
           </table>
         </div>
       </section>
-      <section
-        aria-labelledby="browser-security-title"
-        class="reference-section"
-        id="browser-security"
-      >
+
+      <!-- Browser Security Controls -->
+      <section aria-labelledby="browser-security-title" class="reference-section" id="browser-security">
         <h2 class="section-title" id="browser-security-title">Browser Security Controls</h2>
-        <p class="section-description">
-          Policies and browser boundaries that reduce common attack surfaces.
-        </p>
+        <p class="section-description">Policies and browser boundaries that reduce common attack surfaces.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Policies and browser boundaries that reduce common attack surfaces.
-            </caption>
+            <caption class="sr-only">Policies and browser boundaries that reduce common attack surfaces.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -194,62 +202,49 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="browser-security-item-csp">
                 <th scope="row"><code>CSP</code></th>
                 <td>Content Security Policy</td>
                 <td>Restricts which sources can load or execute content.</td>
-                <td class="example-cell">
-                  <code>Content-Security-Policy: default-src 'self'</code>
-                </td>
+                <td class="example-cell"><code>Content-Security-Policy: default-src 'self'</code></td>
               </tr>
+
               <tr id="browser-security-item-cors">
                 <th scope="row"><code>CORS</code></th>
                 <td>Cross-origin resource sharing</td>
                 <td>Controls which origins browser scripts may use to access a response.</td>
-                <td class="example-cell">
-                  <code>Access-Control-Allow-Origin: https://example.com</code>
-                </td>
+                <td class="example-cell"><code>Access-Control-Allow-Origin: https://example.com</code></td>
               </tr>
+
               <tr id="browser-security-item-csrf">
                 <th scope="row"><code>CSRF</code></th>
                 <td>Cross-site request forgery</td>
-                <td>
-                  An attack where a user's authenticated browser is tricked into sending an unwanted
-                  state-changing request.
-                </td>
-                <td class="example-cell">
-                  <code>Use appropriate SameSite cookies and server-side CSRF defenses.</code>
-                </td>
+                <td>An attack where a user's authenticated browser is tricked into sending an unwanted state-changing request.</td>
+                <td class="example-cell"><code>Use appropriate SameSite cookies and server-side CSRF defenses.</code></td>
               </tr>
+
               <tr id="browser-security-item-rel-noopener">
                 <th scope="row"><code>rel=noopener</code></th>
                 <td>Opener isolation</td>
-                <td>
-                  Prevents a newly opened page from receiving a reference to the opening window.
-                </td>
-                <td class="example-cell">
-                  <code>target="_blank" rel="noopener noreferrer"</code>
-                </td>
+                <td>Prevents a newly opened page from receiving a reference to the opening window.</td>
+                <td class="example-cell"><code>target="_blank" rel="noopener noreferrer"</code></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <section
-        aria-labelledby="storage-secrets-title"
-        class="reference-section"
-        id="storage-secrets"
-      >
-        <h2 class="section-title" id="storage-secrets-title">
-          Storage, Secrets &amp; Dependencies
-        </h2>
+
+      <!-- Storage, Secrets & Dependencies -->
+      <section aria-labelledby="storage-secrets-title" class="reference-section" id="storage-secrets">
+        <h2 class="section-title" id="storage-secrets-title">Storage, Secrets &amp; Dependencies</h2>
         <p class="section-description">Rules of thumb for data stored or shipped to the browser.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Rules of thumb for data stored or shipped to the browser.
-            </caption>
+            <caption class="sr-only">Rules of thumb for data stored or shipped to the browser.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -258,34 +253,29 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="storage-secrets-item-localstorage">
                 <th scope="row"><code>localStorage</code></th>
                 <td>Persistent origin storage</td>
-                <td>
-                  Stores strings accessible to JavaScript on the origin; do not treat it as secret
-                  storage.
-                </td>
-                <td class="example-cell">
-                  <code>localStorage.setItem("theme", "dark");</code>
-                </td>
+                <td>Stores strings accessible to JavaScript on the origin; do not treat it as secret storage.</td>
+                <td class="example-cell"><code>localStorage.setItem("theme", "dark");</code></td>
               </tr>
+
               <tr id="storage-secrets-item-sessionstorage">
                 <th scope="row"><code>sessionStorage</code></th>
                 <td>Tab-scoped storage</td>
                 <td>Stores strings for the lifetime of the browser tab/session.</td>
-                <td class="example-cell">
-                  <code>sessionStorage.setItem("draft", value);</code>
-                </td>
+                <td class="example-cell"><code>sessionStorage.setItem("draft", value);</code></td>
               </tr>
+
               <tr id="storage-secrets-item-api-secret">
                 <th scope="row"><code>API secret</code></th>
                 <td>Server-side secret</td>
                 <td>Private credentials must not be embedded in browser-delivered source code.</td>
-                <td class="example-cell">
-                  <code>Keep private API keys on trusted server-side infrastructure.</code>
-                </td>
+                <td class="example-cell"><code>Keep private API keys on trusted server-side infrastructure.</code></td>
               </tr>
+
               <tr id="storage-secrets-item-dependency-audit">
                 <th scope="row"><code>dependency audit</code></th>
                 <td>Dependency hygiene</td>
@@ -297,15 +287,27 @@
         </div>
       </section>
     </main>
+
+    <!-- Shared site footer -->
     <div data-site-footer=""></div>
+
+    <!-- Shared site data and utilities -->
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
+
+    <!-- Shared layout and interface behavior -->
     <script src="../../assets/js/layout.js" defer></script>
     <script src="../../assets/js/theme.js" defer></script>
     <script src="../../assets/js/search.js" defer></script>
+
+    <!-- Reference page behavior -->
     <script src="../../assets/js/references.js" defer></script>
+
+    <!-- Shared interactive utilities -->
     <script src="../../assets/js/dialogs.js" defer></script>
     <script src="../../assets/js/utilities.js" defer></script>
+
+    <!-- Site initialization -->
     <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

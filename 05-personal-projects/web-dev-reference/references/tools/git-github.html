@@ -10,15 +10,14 @@
       name="description"
     />
 
-    <meta content="light dark" name="color-scheme" />
-    <script src="../../assets/js/loader.js" defer></script>
-    <title>Git &amp; GitHub Reference</title>
+    <title>Git &amp; GitHub</title>
+
     <!-- Browser and installed-app appearance -->
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
+    <!-- Social sharing metadata -->
     <meta content="website" property="og:type" />
-
     <meta content="Git &amp; GitHub Reference" property="og:title" />
     <meta
       content="My Git and GitHub reference for commits, branches, remotes, syncing, history, recovery, and everyday commands."
@@ -30,13 +29,18 @@
     <link href="../../site.webmanifest" rel="manifest" />
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
+
     <!-- Shared site styles and fonts -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
+
+    <!-- Initial page loader -->
+    <script src="../../assets/js/loader.js" defer></script>    
   </head>
+
   <body
     data-author-note="I start with git status because it tells me what state I am actually in. I also keep commit, push, and pull separate in my head: commit saves locally, push sends commits up, and pull brings remote changes down."
     data-category="Developer Tools"
@@ -48,6 +52,7 @@
     data-search-placeholder="Try: commit, branch, pull, restore, rebase..."
     data-toc="true"
   >
+    <!-- Initial loading screen -->
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -58,33 +63,36 @@
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
+
+    <!-- Accessibility navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared site navigation -->
     <div data-site-nav=""></div>
+
+    <!-- Page introduction -->
     <header class="hero">
       <h1>Git &amp; GitHub Reference</h1>
-      <p class="subtitle">
-        The Git and GitHub commands I am most likely to forget between projects.
-      </p>
+      <p class="subtitle">The Git and GitHub commands I am most likely to forget between projects.</p>
+
       <div class="hero-meta">
         <span class="badge badge-category">Developer Tools</span>
         <span class="badge badge-level">Beginner–Intermediate</span>
       </div>
     </header>
+
+    <!-- Main reference content -->
     <main id="main-content">
+      <!-- Repository Basics -->
       <section
-        aria-labelledby="repository-basics-title"
-        class="reference-section"
-        id="repository-basics"
-      >
+        aria-labelledby="repository-basics-title" class="reference-section" id="repository-basics">
         <h2 class="section-title" id="repository-basics-title">Repository Basics</h2>
-        <p class="section-description">
-          Commands for creating, inspecting, and recording changes in a repository.
-        </p>
+        <p class="section-description">Commands for creating, inspecting, and recording changes in a repository.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Commands for creating, inspecting, and recording changes in a repository.
-            </caption>
+            <caption class="sr-only">Commands for creating, inspecting, and recording changes in a repository.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -93,6 +101,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="repository-basics-item-git-init">
                 <th scope="row"><code>git init</code></th>
@@ -100,32 +109,35 @@
                 <td>Creates a new local Git repository in the current directory.</td>
                 <td class="example-cell"><code>git init</code></td>
               </tr>
+
               <tr id="repository-basics-item-git-status">
                 <th scope="row"><code>git status</code></th>
                 <td>Working tree status</td>
                 <td>Shows tracked, modified, staged, and untracked files.</td>
                 <td class="example-cell"><code>git status</code></td>
               </tr>
+
               <tr id="repository-basics-item-git-add">
                 <th scope="row"><code>git add</code></th>
                 <td>Stage changes</td>
                 <td>Adds changes to the staging area for the next commit.</td>
                 <td class="example-cell"><code>git add src/app.js</code></td>
               </tr>
+
               <tr id="repository-basics-item-git-commit">
                 <th scope="row"><code>git commit</code></th>
                 <td>Create commit</td>
                 <td>Records the staged snapshot with a message.</td>
-                <td class="example-cell">
-                  <code>git commit -m "Add search filter"</code>
-                </td>
+                <td class="example-cell"><code>git commit -m "Add search filter"</code></td>
               </tr>
+
               <tr id="repository-basics-item-git-diff">
                 <th scope="row"><code>git diff</code></th>
                 <td>Inspect changes</td>
                 <td>Shows unstaged differences by default.</td>
                 <td class="example-cell"><code>git diff</code></td>
               </tr>
+
               <tr id="repository-basics-item-git-diff-staged">
                 <th scope="row"><code>git diff --staged</code></th>
                 <td>Inspect staged changes</td>
@@ -136,16 +148,16 @@
           </table>
         </div>
       </section>
+
+      <!-- Branches -->
       <section aria-labelledby="branches-title" class="reference-section" id="branches">
         <h2 class="section-title" id="branches-title">Branches</h2>
-        <p class="section-description">
-          Commands for creating, switching, merging, and cleaning up branches.
-        </p>
+        <p class="section-description">Commands for creating, switching, merging, and cleaning up branches.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Commands for creating, switching, merging, and cleaning up branches.
-            </caption>
+            <caption class="sr-only">Commands for creating, switching, merging, and cleaning up branches.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -154,6 +166,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="branches-item-git-branch">
                 <th scope="row"><code>git branch</code></th>
@@ -161,24 +174,28 @@
                 <td>Lists local branches or creates a new branch when given a name.</td>
                 <td class="example-cell"><code>git branch feature/search</code></td>
               </tr>
+
               <tr id="branches-item-git-switch">
                 <th scope="row"><code>git switch</code></th>
                 <td>Switch branch</td>
                 <td>Changes the current branch.</td>
                 <td class="example-cell"><code>git switch main</code></td>
               </tr>
+
               <tr id="branches-item-git-switch-c">
                 <th scope="row"><code>git switch -c</code></th>
                 <td>Create and switch</td>
                 <td>Creates a new branch and switches to it.</td>
                 <td class="example-cell"><code>git switch -c feature/search</code></td>
               </tr>
+
               <tr id="branches-item-git-merge">
                 <th scope="row"><code>git merge</code></th>
                 <td>Merge branch</td>
                 <td>Integrates the named branch into the current branch.</td>
                 <td class="example-cell"><code>git merge feature/search</code></td>
               </tr>
+
               <tr id="branches-item-git-branch-d">
                 <th scope="row"><code>git branch -d</code></th>
                 <td>Delete merged branch</td>
@@ -189,16 +206,16 @@
           </table>
         </div>
       </section>
+
+      <!-- Remotes & Syncing -->
       <section aria-labelledby="remotes-sync-title" class="reference-section" id="remotes-sync">
         <h2 class="section-title" id="remotes-sync-title">Remotes &amp; Syncing</h2>
-        <p class="section-description">
-          Commands for connecting local work with remote repositories such as GitHub.
-        </p>
+        <p class="section-description">Commands for connecting local work with remote repositories such as GitHub.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Commands for connecting local work with remote repositories such as GitHub.
-            </caption>
+            <caption class="sr-only">Commands for connecting local work with remote repositories such as GitHub.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -207,6 +224,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="remotes-sync-item-git-remote-v">
                 <th scope="row"><code>git remote -v</code></th>
@@ -214,32 +232,35 @@
                 <td>Shows configured remote names and URLs.</td>
                 <td class="example-cell"><code>git remote -v</code></td>
               </tr>
+
               <tr id="remotes-sync-item-git-remote-add">
                 <th scope="row"><code>git remote add</code></th>
                 <td>Add remote</td>
                 <td>Connects a named remote repository.</td>
-                <td class="example-cell">
-                  <code>git remote add origin https://github.com/user/repo.git</code>
-                </td>
+                <td class="example-cell"><code>git remote add origin https://github.com/user/repo.git</code></td>
               </tr>
+
               <tr id="remotes-sync-item-git-fetch">
                 <th scope="row"><code>git fetch</code></th>
                 <td>Fetch remote history</td>
                 <td>Downloads remote commits and refs without merging them.</td>
                 <td class="example-cell"><code>git fetch origin</code></td>
               </tr>
+
               <tr id="remotes-sync-item-git-pull">
                 <th scope="row"><code>git pull</code></th>
                 <td>Fetch + integrate</td>
                 <td>Fetches from a remote branch and integrates according to configuration.</td>
                 <td class="example-cell"><code>git pull origin main</code></td>
               </tr>
+
               <tr id="remotes-sync-item-git-push">
                 <th scope="row"><code>git push</code></th>
                 <td>Push commits</td>
                 <td>Uploads local commits to a remote branch.</td>
                 <td class="example-cell"><code>git push origin main</code></td>
               </tr>
+
               <tr id="remotes-sync-item-git-push-u">
                 <th scope="row"><code>git push -u</code></th>
                 <td>Set upstream</td>
@@ -250,20 +271,17 @@
           </table>
         </div>
       </section>
+
+      <!-- History & Recovery -->
       <section
-        aria-labelledby="history-recovery-title"
-        class="reference-section"
-        id="history-recovery"
-      >
+        aria-labelledby="history-recovery-title" class="reference-section" id="history-recovery">
         <h2 class="section-title" id="history-recovery-title">History &amp; Recovery</h2>
-        <p class="section-description">
-          Commands for inspecting history and safely undoing common local changes.
-        </p>
+        <p class="section-description">Commands for inspecting history and safely undoing common local changes.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Commands for inspecting history and safely undoing common local changes.
-            </caption>
+            <caption class="sr-only">Commands for inspecting history and safely undoing common local changes.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -272,6 +290,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="history-recovery-item-git-log">
                 <th scope="row"><code>git log</code></th>
@@ -279,30 +298,35 @@
                 <td>Shows commit history; options can make it more compact or graphical.</td>
                 <td class="example-cell"><code>git log --oneline --graph --decorate</code></td>
               </tr>
+
               <tr id="history-recovery-item-git-restore">
                 <th scope="row"><code>git restore</code></th>
                 <td>Restore working file</td>
                 <td>Restores file contents from another Git state, commonly HEAD.</td>
                 <td class="example-cell"><code>git restore src/app.js</code></td>
               </tr>
+
               <tr id="history-recovery-item-git-restore-staged">
                 <th scope="row"><code>git restore --staged</code></th>
                 <td>Unstage file</td>
                 <td>Removes a file from the staging area without discarding working changes.</td>
                 <td class="example-cell"><code>git restore --staged src/app.js</code></td>
               </tr>
+
               <tr id="history-recovery-item-git-revert">
                 <th scope="row"><code>git revert</code></th>
                 <td>Reverse commit</td>
                 <td>Creates a new commit that reverses a previous commit.</td>
                 <td class="example-cell"><code>git revert abc1234</code></td>
               </tr>
+
               <tr id="history-recovery-item-git-stash">
                 <th scope="row"><code>git stash</code></th>
                 <td>Temporarily store changes</td>
                 <td>Saves uncommitted changes so the working tree can be cleaned temporarily.</td>
                 <td class="example-cell"><code>git stash push -m "WIP search"</code></td>
               </tr>
+
               <tr id="history-recovery-item-git-stash-pop">
                 <th scope="row"><code>git stash pop</code></th>
                 <td>Restore stash</td>
@@ -314,15 +338,27 @@
         </div>
       </section>
     </main>
+
+    <!-- Shared site footer -->
     <div data-site-footer=""></div>
+
+    <!-- Shared site data and utilities -->
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
+
+    <!-- Shared layout and interface behavior -->
     <script src="../../assets/js/layout.js" defer></script>
     <script src="../../assets/js/theme.js" defer></script>
     <script src="../../assets/js/search.js" defer></script>
+
+    <!-- Reference page behavior -->
     <script src="../../assets/js/references.js" defer></script>
+
+    <!-- Shared interactive utilities -->
     <script src="../../assets/js/dialogs.js" defer></script>
     <script src="../../assets/js/utilities.js" defer></script>
+
+    <!-- Site initialization -->
     <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

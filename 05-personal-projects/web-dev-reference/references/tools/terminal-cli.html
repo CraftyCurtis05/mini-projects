@@ -10,15 +10,14 @@
       name="description"
     />
 
-    <meta content="light dark" name="color-scheme" />
-    <script src="../../assets/js/loader.js" defer></script>
-    <title>Terminal &amp; CLI Reference</title>
+    <title>Terminal &amp; CLI</title>
+
     <!-- Browser and installed-app appearance -->
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
+    <!-- Social sharing metadata -->
     <meta content="website" property="og:type" />
-
     <meta content="Terminal &amp; CLI Reference" property="og:title" />
     <meta
       content="My terminal reference for navigation, files, searching, pipes, redirection, environment variables, and common commands."
@@ -30,13 +29,18 @@
     <link href="../../site.webmanifest" rel="manifest" />
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
+
     <!-- Shared site styles and fonts -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
+
+    <!-- Initial page loader -->
+    <script src="../../assets/js/loader.js" defer></script>    
   </head>
+
   <body
     data-author-note="Before I move, copy, or delete files, I check pwd and ls. Relative paths start where I am now, ../ moves up one folder, and an absolute path starts from the root."
     data-category="Developer Tools"
@@ -48,6 +52,7 @@
     data-search-placeholder="Try: cd, grep, pipe, env, mkdir..."
     data-toc="true"
   >
+    <!-- Initial loading screen -->
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -58,27 +63,35 @@
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
+
+    <!-- Accessibility navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared site navigation -->
     <div data-site-nav=""></div>
+
+    <!-- Page introduction -->
     <header class="hero">
       <h1>Terminal &amp; CLI Reference</h1>
       <p class="subtitle">The terminal commands and path reminders I use most.</p>
+
       <div class="hero-meta">
         <span class="badge badge-category">Developer Tools</span>
         <span class="badge badge-level">Beginner</span>
       </div>
     </header>
+
+    <!-- Main reference content -->
     <main id="main-content">
+      <!-- Navigation -->
       <section aria-labelledby="navigation-title" class="reference-section" id="navigation">
         <h2 class="section-title" id="navigation-title">Navigation</h2>
-        <p class="section-description">
-          Commands for understanding and changing your location in the filesystem.
-        </p>
+        <p class="section-description">Commands for understanding and changing your location in the filesystem.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Commands for understanding and changing your location in the filesystem.
-            </caption>
+            <caption class="sr-only">Commands for understanding and changing your location in the filesystem.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -87,6 +100,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="navigation-item-pwd">
                 <th scope="row"><code>pwd</code></th>
@@ -94,24 +108,28 @@
                 <td>Displays the current directory path.</td>
                 <td class="example-cell"><code>pwd</code></td>
               </tr>
+
               <tr id="navigation-item-ls">
                 <th scope="row"><code>ls</code></th>
                 <td>List directory</td>
                 <td>Lists files and directories.</td>
                 <td class="example-cell"><code>ls -la</code></td>
               </tr>
+
               <tr id="navigation-item-cd">
                 <th scope="row"><code>cd</code></th>
                 <td>Change directory</td>
                 <td>Moves the shell to another directory.</td>
                 <td class="example-cell"><code>cd projects/reference-site</code></td>
               </tr>
+
               <tr id="navigation-cd">
                 <th scope="row"><code>cd ..</code></th>
                 <td>Parent directory</td>
                 <td>Moves one level up the directory tree.</td>
                 <td class="example-cell"><code>cd ..</code></td>
               </tr>
+
               <tr id="navigation-item-item">
                 <th scope="row"><code>~</code></th>
                 <td>Home directory</td>
@@ -122,20 +140,16 @@
           </table>
         </div>
       </section>
-      <section
-        aria-labelledby="files-directories-title"
-        class="reference-section"
-        id="files-directories"
-      >
+
+      <!-- Files & Directories -->
+      <section aria-labelledby="files-directories-title" class="reference-section" id="files-directories">
         <h2 class="section-title" id="files-directories-title">Files &amp; Directories</h2>
-        <p class="section-description">
-          Common commands for creating, copying, moving, and removing filesystem entries.
-        </p>
+        <p class="section-description">Common commands for creating, copying, moving, and removing filesystem entries.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Common commands for creating, copying, moving, and removing filesystem entries.
-            </caption>
+            <caption class="sr-only">Common commands for creating, copying, moving, and removing filesystem entries.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -144,6 +158,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="files-directories-item-mkdir">
                 <th scope="row"><code>mkdir</code></th>
@@ -151,24 +166,28 @@
                 <td>Creates a directory.</td>
                 <td class="example-cell"><code>mkdir assets</code></td>
               </tr>
+
               <tr id="files-directories-item-touch">
                 <th scope="row"><code>touch</code></th>
                 <td>Create/update file</td>
                 <td>Creates an empty file or updates timestamps on many Unix-like systems.</td>
                 <td class="example-cell"><code>touch README.md</code></td>
               </tr>
+
               <tr id="files-directories-item-cp">
                 <th scope="row"><code>cp</code></th>
                 <td>Copy</td>
                 <td>Copies files or directories when used with appropriate options.</td>
                 <td class="example-cell"><code>cp index.html index.backup.html</code></td>
               </tr>
+
               <tr id="files-directories-item-mv">
                 <th scope="row"><code>mv</code></th>
                 <td>Move/rename</td>
                 <td>Moves or renames files and directories.</td>
                 <td class="example-cell"><code>mv old-name.js app.js</code></td>
               </tr>
+
               <tr id="files-directories-item-rm">
                 <th scope="row"><code>rm</code></th>
                 <td>Remove file</td>
@@ -179,12 +198,16 @@
           </table>
         </div>
       </section>
+
+      <!-- Inspecting & Searching -->
       <section aria-labelledby="inspect-search-title" class="reference-section" id="inspect-search">
         <h2 class="section-title" id="inspect-search-title">Inspecting &amp; Searching</h2>
         <p class="section-description">Commands for reading files and searching text/output.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
             <caption class="sr-only">Commands for reading files and searching text/output.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -193,6 +216,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="inspect-search-item-cat">
                 <th scope="row"><code>cat</code></th>
@@ -200,18 +224,21 @@
                 <td>Writes file contents to standard output.</td>
                 <td class="example-cell"><code>cat README.md</code></td>
               </tr>
+
               <tr id="inspect-search-item-less">
                 <th scope="row"><code>less</code></th>
                 <td>Paged viewer</td>
                 <td>Displays text one screen at a time with navigation/search.</td>
                 <td class="example-cell"><code>less server.log</code></td>
               </tr>
+
               <tr id="inspect-search-item-grep">
                 <th scope="row"><code>grep</code></th>
                 <td>Search text</td>
                 <td>Searches input for lines matching a pattern.</td>
                 <td class="example-cell"><code>grep -n "error" server.log</code></td>
               </tr>
+
               <tr id="inspect-search-item-find">
                 <th scope="row"><code>find</code></th>
                 <td>Find files</td>
@@ -222,20 +249,16 @@
           </table>
         </div>
       </section>
-      <section
-        aria-labelledby="pipes-redirects-title"
-        class="reference-section"
-        id="pipes-redirects"
-      >
+
+      <!-- Pipes & Redirection -->
+      <section aria-labelledby="pipes-redirects-title" class="reference-section" id="pipes-redirects">
         <h2 class="section-title" id="pipes-redirects-title">Pipes &amp; Redirection</h2>
-        <p class="section-description">
-          Shell operators for composing commands and controlling standard input/output.
-        </p>
+        <p class="section-description">Shell operators for composing commands and controlling standard input/output.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Shell operators for composing commands and controlling standard input/output.
-            </caption>
+            <caption class="sr-only">Shell operators for composing commands and controlling standard input/output.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -244,6 +267,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="pipes-redirects-item-item">
                 <th scope="row"><code>|</code></th>
@@ -251,18 +275,21 @@
                 <td>Sends one command's standard output to another command's standard input.</td>
                 <td class="example-cell"><code>cat app.log | grep "ERROR"</code></td>
               </tr>
+
               <tr id="pipes-redirects-item">
                 <th scope="row"><code>&gt;</code></th>
                 <td>Overwrite redirect</td>
                 <td>Writes standard output to a file, replacing its existing contents.</td>
                 <td class="example-cell"><code>npm test &gt; test-output.txt</code></td>
               </tr>
+
               <tr id="pipes-redirects-item-2">
                 <th scope="row"><code>&gt;&gt;</code></th>
                 <td>Append redirect</td>
                 <td>Appends standard output to a file.</td>
                 <td class="example-cell"><code>echo "done" &gt;&gt; build.log</code></td>
               </tr>
+
               <tr id="pipes-redirects-2">
                 <th scope="row"><code>2&gt;</code></th>
                 <td>Error redirect</td>
@@ -273,20 +300,16 @@
           </table>
         </div>
       </section>
-      <section
-        aria-labelledby="environment-processes-title"
-        class="reference-section"
-        id="environment-processes"
-      >
+
+      <!-- Environment & Processes -->
+      <section aria-labelledby="environment-processes-title" class="reference-section" id="environment-processes">
         <h2 class="section-title" id="environment-processes-title">Environment &amp; Processes</h2>
-        <p class="section-description">
-          Commands and syntax for environment variables and running processes.
-        </p>
+        <p class="section-description">Commands and syntax for environment variables and running processes.</p>
+
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">
-              Commands and syntax for environment variables and running processes.
-            </caption>
+            <caption class="sr-only">Commands and syntax for environment variables and running processes.</caption>
+
             <thead>
               <tr>
                 <th scope="col">Term / Syntax</th>
@@ -295,6 +318,7 @@
                 <th scope="col">Example</th>
               </tr>
             </thead>
+
             <tbody>
               <tr id="environment-processes-item-env">
                 <th scope="row"><code>env</code></th>
@@ -302,27 +326,28 @@
                 <td>Displays environment variables in many Unix-like shells.</td>
                 <td class="example-cell"><code>env</code></td>
               </tr>
+
               <tr id="environment-processes-item-export">
                 <th scope="row"><code>export</code></th>
                 <td>Set exported variable</td>
                 <td>Sets a shell variable for child processes in many shells.</td>
                 <td class="example-cell"><code>export NODE_ENV=development</code></td>
               </tr>
+
               <tr id="environment-processes-item-echo">
                 <th scope="row"><code>echo</code></th>
                 <td>Print value</td>
                 <td>Prints text or expanded shell values.</td>
                 <td class="example-cell"><code>echo "$PATH"</code></td>
               </tr>
+
               <tr id="environment-processes-item-ctrl-c">
                 <th scope="row"><code>Ctrl+C</code></th>
                 <td>Interrupt process</td>
-                <td>
-                  Common terminal shortcut for sending an interrupt signal to the foreground
-                  process.
-                </td>
+                <td>Common terminal shortcut for sending an interrupt signal to the foreground process.</td>
                 <td class="example-cell"><code>Press Ctrl+C</code></td>
               </tr>
+
               <tr id="environment-processes-item-npm-scripts">
                 <th scope="row"><code>npm scripts</code></th>
                 <td>Project commands</td>
@@ -334,15 +359,27 @@
         </div>
       </section>
     </main>
+
+    <!-- Shared site footer -->
     <div data-site-footer=""></div>
+
+    <!-- Shared site data and utilities -->
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
+
+    <!-- Shared layout and interface behavior -->
     <script src="../../assets/js/layout.js" defer></script>
     <script src="../../assets/js/theme.js" defer></script>
     <script src="../../assets/js/search.js" defer></script>
+
+    <!-- Reference page behavior -->
     <script src="../../assets/js/references.js" defer></script>
+
+    <!-- Shared interactive utilities -->
     <script src="../../assets/js/dialogs.js" defer></script>
     <script src="../../assets/js/utilities.js" defer></script>
+
+    <!-- Site initialization -->
     <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>
