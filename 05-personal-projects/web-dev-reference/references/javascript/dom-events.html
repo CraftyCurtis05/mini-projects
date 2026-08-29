@@ -5,20 +5,25 @@
     <!-- Core Document Metadata -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Initial Page Setup and Theme -->
+    <script src="../../assets/js/loader.js"></script>
+
+    <title>DOM &amp; Events | Web Dev Reference</title>
+    
     <meta
       content="My DOM and events reference for selecting elements, changing the page, creating elements, handling events, and forms."
       name="description"
     />
 
-    <title>DOM &amp; Events</title>
-
     <!-- Browser and Installed-App Appearance -->
+    <meta content="light dark" name="color-scheme" />
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
     <!-- Social Sharing Metadata -->
     <meta content="website" property="og:type" />
-    <meta content="DOM &amp; Events Reference" property="og:title" />
+    <meta content="DOM &amp; Events | Web Dev Reference" property="og:title" />
     <meta
       content="My DOM and events reference for selecting elements, changing the page, creating elements, handling events, and forms."
       property="og:description"
@@ -30,15 +35,16 @@
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Shared Site Styles and Fonts -->
+    <!-- Shared Site Styles -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
-
-    <!-- Initial Page Loader -->
-    <script src="../../assets/js/loader.js" defer></script>
   </head>
 
   <body
@@ -46,7 +52,7 @@
     data-category="JavaScript"
     data-footer="DOM &amp; Events Cheat Sheet"
     data-level="Beginner–Intermediate"
-    data-page="dom"
+    data-page="dom-events"
     data-page-label="DOM &amp; Events"
     data-related='[{"label":"JavaScript Reference","href":"javascript-reference.html"},{"label":"Forms &amp; Validation","href":"../html/forms-validation.html"},{"label":"Debugging","href":"../tools/debugging.html"}]'
     data-search-placeholder="Try: querySelector, classList, click, preventDefault..."
@@ -83,7 +89,6 @@
 
     <!-- Main Reference Content -->
     <main id="main-content">
-
       <!----------------------------------------------------------
         Selecting Elements
         ---------------------------------------------------------->
@@ -107,35 +112,35 @@
             <tbody>
               <tr id="selecting-elements-item-document-queryselector">
                 <th scope="row"><code>document.querySelector()</code></th>
-                <td>First CSS match</td>
+                <td>First CSS Match</td>
                 <td>Returns the first element matching a CSS selector.</td>
                 <td class="example-cell"><code>const button = document.querySelector(".save-button");</code></td>
               </tr>
 
               <tr id="selecting-elements-item-document-queryselectorall">
                 <th scope="row"><code>document.querySelectorAll()</code></th>
-                <td>All CSS matches</td>
+                <td>All CSS Matches</td>
                 <td>Returns a static NodeList of matching elements.</td>
                 <td class="example-cell"><code>const cards = document.querySelectorAll(".card");</code></td>
               </tr>
 
               <tr id="selecting-elements-item-document-getelementbyid">
                 <th scope="row"><code>document.getElementById()</code></th>
-                <td>Element by ID</td>
+                <td>Element By ID</td>
                 <td>Returns the element with a matching id.</td>
                 <td class="example-cell"><code>const main = document.getElementById("main-content");</code></td>
               </tr>
 
               <tr id="selecting-elements-item-closest">
                 <th scope="row"><code>.closest()</code></th>
-                <td>Closest ancestor</td>
-                <td>Finds the nearest matching element starting from the current element.</td>
+                <td>Closest Ancestor</td>
+                <td>Finds the nearest matching element, including the element itself or one of its ancestors.</td>
                 <td class="example-cell"><code>event.target.closest("[data-action]")</code></td>
               </tr>
 
               <tr id="selecting-elements-item-matches">
                 <th scope="row"><code>.matches()</code></th>
-                <td>Selector test</td>
+                <td>Selector Test</td>
                 <td>Checks whether an element matches a CSS selector.</td>
                 <td class="example-cell"><code>element.matches(".active")</code></td>
               </tr>
@@ -145,15 +150,15 @@
       </section>
 
       <!----------------------------------------------------------
-        Reading & Changing Elements
+        Reading and Changing Elements
         ---------------------------------------------------------->
       <section aria-labelledby="reading-changing-title" class="reference-section" id="reading-changing">
         <h2 class="section-title" id="reading-changing-title">Reading &amp; Changing Elements</h2>
-        <p class="section-description">Properties and methods for changing text, classes, attributes, and styles.</p>
+        <p class="section-description">Properties and methods for changing content, classes, and attributes.</p>
 
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Properties and methods for changing text, classes, attributes, and styles.</caption>
+            <caption class="sr-only">Properties and methods for changing content, classes, and attributes.</caption>
 
             <thead>
               <tr>
@@ -167,43 +172,43 @@
             <tbody>
               <tr id="reading-changing-item-textcontent">
                 <th scope="row"><code>.textContent</code></th>
-                <td>Text content</td>
+                <td>Text Content</td>
                 <td>Reads or replaces an element's text.</td>
                 <td class="example-cell"><code>status.textContent = "Saved";</code></td>
               </tr>
 
               <tr id="reading-changing-item-innerhtml">
                 <th scope="row"><code>.innerHTML</code></th>
-                <td>HTML content</td>
+                <td>HTML Content</td>
                 <td>Reads or replaces parsed HTML; use carefully with untrusted input.</td>
                 <td class="example-cell"><code>container.innerHTML = "&lt;strong&gt;Ready&lt;/strong&gt;";</code></td>
               </tr>
 
               <tr id="reading-changing-item-classlist-add">
                 <th scope="row"><code>.classList.add()</code></th>
-                <td>Add class</td>
+                <td>Add Class</td>
                 <td>Adds one or more CSS classes.</td>
                 <td class="example-cell"><code>card.classList.add("is-active");</code></td>
               </tr>
 
               <tr id="reading-changing-item-classlist-toggle">
                 <th scope="row"><code>.classList.toggle()</code></th>
-                <td>Toggle class</td>
-                <td>Adds or removes a class based on its current or supplied state.</td>
+                <td>Toggle Class</td>
+                <td>Adds a class if it is absent or removes it if it is present.</td>
                 <td class="example-cell"><code>menu.classList.toggle("is-open");</code></td>
               </tr>
 
               <tr id="reading-changing-item-setattribute">
                 <th scope="row"><code>.setAttribute()</code></th>
-                <td>Set attribute</td>
+                <td>Set Attribute</td>
                 <td>Creates or updates an HTML attribute.</td>
                 <td class="example-cell"><code>button.setAttribute("aria-expanded", "true");</code></td>
               </tr>
 
               <tr id="reading-changing-item-dataset">
                 <th scope="row"><code>.dataset</code></th>
-                <td>Data attributes</td>
-                <td>Reads or writes data-* attributes through a DOMStringMap.</td>
+                <td>Data Attributes</td>
+                <td>Reads or writes an element's <code>data-*</code> attributes.</td>
                 <td class="example-cell"><code>const id = button.dataset.itemId;</code></td>
               </tr>
             </tbody>
@@ -212,7 +217,7 @@
       </section>
 
       <!----------------------------------------------------------
-        Creating & Removing Elements
+        Creating and Removing Elements
         ---------------------------------------------------------->
       <section aria-labelledby="creating-elements-title" class="reference-section" id="creating-elements">
         <h2 class="section-title" id="creating-elements-title">Creating &amp; Removing Elements</h2>
@@ -234,42 +239,42 @@
             <tbody>
               <tr id="creating-elements-item-document-createelement">
                 <th scope="row"><code>document.createElement()</code></th>
-                <td>Create element</td>
+                <td>Create Element</td>
                 <td>Creates a new element without inserting it yet.</td>
                 <td class="example-cell"><code>const li = document.createElement("li");</code></td>
               </tr>
 
               <tr id="creating-elements-item-append">
                 <th scope="row"><code>.append()</code></th>
-                <td>Append nodes</td>
+                <td>Append Nodes</td>
                 <td>Adds nodes or strings at the end of an element.</td>
                 <td class="example-cell"><code>list.append(li);</code></td>
               </tr>
 
               <tr id="creating-elements-item-prepend">
                 <th scope="row"><code>.prepend()</code></th>
-                <td>Prepend nodes</td>
+                <td>Prepend Nodes</td>
                 <td>Adds nodes or strings at the beginning of an element.</td>
                 <td class="example-cell"><code>list.prepend(li);</code></td>
               </tr>
 
               <tr id="creating-elements-item-before">
                 <th scope="row"><code>.before()</code></th>
-                <td>Insert before</td>
-                <td>Inserts nodes before an element.</td>
+                <td>Insert Before</td>
+                <td>Inserts nodes or strings before an element.</td>
                 <td class="example-cell"><code>card.before(message);</code></td>
               </tr>
 
               <tr id="creating-elements-item-remove">
                 <th scope="row"><code>.remove()</code></th>
-                <td>Remove element</td>
+                <td>Remove Element</td>
                 <td>Removes an element from the document.</td>
                 <td class="example-cell"><code>notification.remove();</code></td>
               </tr>
 
               <tr id="creating-elements-item-documentfragment">
-                <th scope="row"><code>DocumentFragment</code></th>
-                <td>Batch DOM updates</td>
+                <th scope="row"><code>document.createDocumentFragment()</code></th>
+                <td>Batch DOM Updates</td>
                 <td>Temporarily groups nodes before inserting them together.</td>
                 <td class="example-cell"><code>const fragment = document.createDocumentFragment();</code></td>
               </tr>
@@ -301,44 +306,44 @@
             <tbody>
               <tr id="events-item-addeventlistener">
                 <th scope="row"><code>.addEventListener()</code></th>
-                <td>Event listener</td>
+                <td>Event Listener</td>
                 <td>Runs a callback when the requested event occurs.</td>
                 <td class="example-cell"><code>button.addEventListener("click", handleClick);</code></td>
               </tr>
 
               <tr id="events-item-event-target">
                 <th scope="row"><code>event.target</code></th>
-                <td>Event origin</td>
-                <td>References the element where the event started.</td>
+                <td>Event Origin</td>
+                <td>References the element that originally triggered the event.</td>
                 <td class="example-cell"><code>const clicked = event.target;</code></td>
               </tr>
 
               <tr id="events-item-event-currenttarget">
                 <th scope="row"><code>event.currentTarget</code></th>
-                <td>Listener element</td>
+                <td>Listener Element</td>
                 <td>References the element whose listener is currently running.</td>
                 <td class="example-cell"><code>const button = event.currentTarget;</code></td>
               </tr>
 
               <tr id="events-item-event-preventdefault">
                 <th scope="row"><code>event.preventDefault()</code></th>
-                <td>Prevent default</td>
-                <td>Stops the browser's default behavior when appropriate.</td>
+                <td>Prevent Default</td>
+                <td>Prevents the browser's default action for an event.</td>
                 <td class="example-cell"><code>event.preventDefault();</code></td>
               </tr>
 
               <tr id="events-item-event-stoppropagation">
                 <th scope="row"><code>event.stopPropagation()</code></th>
-                <td>Stop propagation</td>
+                <td>Stop Propagation</td>
                 <td>Stops an event from continuing through the event path.</td>
                 <td class="example-cell"><code>event.stopPropagation();</code></td>
               </tr>
 
               <tr id="events-item-event-delegation">
                 <th scope="row"><code>event delegation</code></th>
-                <td>Parent listener pattern</td>
+                <td>Parent Listener Pattern</td>
                 <td>Handles many child interactions from one stable ancestor.</td>
-                <td class="example-cell"><code>list.addEventListener("click", event =&gt; event.target.closest("button"));</code></td>
+                <td class="example-cell"><code>list.addEventListener("click", event =&gt; { const button = event.target.closest("button"); if (button) handleClick(button); });</code></td>
               </tr>
             </tbody>
           </table>
@@ -346,7 +351,7 @@
       </section>
 
       <!----------------------------------------------------------
-        Forms & Input Events
+        Forms and Input Events
         ---------------------------------------------------------->
       <section aria-labelledby="forms-events-title" class="reference-section" id="forms-events">
         <h2 class="section-title" id="forms-events-title">Forms &amp; Input Events</h2>
@@ -368,35 +373,35 @@
             <tbody>
               <tr id="forms-events-item-input">
                 <th scope="row"><code>input</code></th>
-                <td>Live input event</td>
-                <td>Fires whenever a control's value changes through user input.</td>
+                <td>Live Input Event</td>
+                <td>Fires when a control's value changes through user input.</td>
                 <td class="example-cell"><code>search.addEventListener("input", filterResults);</code></td>
               </tr>
 
               <tr id="forms-events-item-change">
                 <th scope="row"><code>change</code></th>
-                <td>Committed change</td>
+                <td>Committed Change</td>
                 <td>Fires when a value is committed, depending on the control.</td>
                 <td class="example-cell"><code>select.addEventListener("change", updateView);</code></td>
               </tr>
 
               <tr id="forms-events-item-submit">
                 <th scope="row"><code>submit</code></th>
-                <td>Form submission</td>
+                <td>Form Submission</td>
                 <td>Fires on the form when submission is requested.</td>
                 <td class="example-cell"><code>form.addEventListener("submit", handleSubmit);</code></td>
               </tr>
 
               <tr id="forms-events-item-formdata">
                 <th scope="row"><code>FormData</code></th>
-                <td>Form value collection</td>
-                <td>Collects successful form controls into key/value pairs.</td>
+                <td>Form Value Collection</td>
+                <td>Collects a form's submitted values into key/value pairs.</td>
                 <td class="example-cell"><code>const data = new FormData(form);</code></td>
               </tr>
 
               <tr id="forms-events-item-value">
                 <th scope="row"><code>.value</code></th>
-                <td>Control value</td>
+                <td>Control Value</td>
                 <td>Reads or sets the current value of many form controls.</td>
                 <td class="example-cell"><code>const email = emailInput.value.trim();</code></td>
               </tr>
@@ -409,7 +414,7 @@
     <!-- Shared Site Footer -->
     <div data-site-footer=""></div>
 
-    <!-- Shared Site Data and Utilities -->
+    <!-- Shared Site Data and Helpers -->
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
 
