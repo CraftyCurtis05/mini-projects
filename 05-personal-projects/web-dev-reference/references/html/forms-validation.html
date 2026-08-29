@@ -2,43 +2,49 @@
 
 <html lang="en">
   <head>
-    <!-- Core document metadata -->
+    <!-- Core Document Metadata -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Initial Page Setup and Theme -->
+    <script src="../../assets/js/loader.js"></script>
+
+    <title>HTML Forms &amp; Validation | Web Dev Reference</title>
+
     <meta
       content="My forms reference for structure, input types, labels, autocomplete, validation, error messages, and submission."
       name="description"
     />
 
-    <title>HTML Forms &amp; Validation</title>
-
-    <!-- Browser and installed-app appearance -->
+    <!-- Browser and Installed-App Appearance -->
+    <meta content="light dark" name="color-scheme" />
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <!-- Social sharing metadata -->
+    <!-- Social Sharing Metadata -->
     <meta content="website" property="og:type" />
-    <meta content="HTML Forms &amp; Validation" property="og:title" />
+    <meta content="HTML Forms &amp; Validation | Web Dev Reference" property="og:title" />
     <meta
       content="My forms reference for structure, input types, labels, autocomplete, validation, error messages, and submission."
       property="og:description"
     />
     <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
-    <!-- App manifest and icons -->
+    <!-- App Manifest and Icons -->
     <link href="../../site.webmanifest" rel="manifest" />
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Shared site styles and fonts -->
+    <!-- Shared Site Styles -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
-
-    <!-- Initial page loader -->
-    <script src="../../assets/js/loader.js" defer></script>
   </head>
 
   <body
@@ -52,7 +58,7 @@
     data-search-placeholder="Try: label, required, autocomplete, pattern..."
     data-toc="true"
   >
-    <!-- Initial loading screen -->
+    <!-- Initial Loading Screen -->
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -64,13 +70,13 @@
       </div>
     </div>
 
-    <!-- Accessibility navigation -->
+    <!-- Accessibility Navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    
-    <!-- Shared site navigation -->
+
+    <!-- Shared Site Navigation -->
     <div data-site-nav=""></div>
 
-    <!-- Page introduction -->
+    <!-- Page Introduction -->
     <header class="hero">
       <h1>HTML Forms &amp; Validation</h1>
       <p class="subtitle">My reference for forms, labels, inputs, validation, and useful errors.</p>
@@ -81,16 +87,18 @@
       </div>
     </header>
 
-    <!-- Main reference content -->
+    <!-- Main Reference Content -->
     <main id="main-content">
-      <!-- Form Structure -->
+      <!----------------------------------------------------------
+        Form Structure
+        ---------------------------------------------------------->
       <section aria-labelledby="form-structure-title" class="reference-section" id="form-structure">
         <h2 class="section-title" id="form-structure-title">Form Structure</h2>
-        <p class="section-description">Semantic elements that organize controls and give them accessible names.</p>
+        <p class="section-description">Semantic elements for structuring forms, labeling controls, and collecting user input.</p>
 
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Semantic elements that organize controls and give them accessible names.</caption>
+            <caption class="sr-only">Semantic elements for structuring forms, labeling controls, and collecting user input.</caption>
 
             <thead>
               <tr>
@@ -102,38 +110,59 @@
             </thead>
 
             <tbody>
-              <tr id="form-structure-item-item">
+              <tr id="form-structure-item-form">
                 <th scope="row"><code>&lt;form&gt;</code></th>
-                <td>Form container</td>
+                <td>Form Container</td>
                 <td>Groups controls and defines how form data is submitted.</td>
                 <td class="example-cell"><code>&lt;form action="/contact" method="post"&gt;...&lt;/form&gt;</code></td>
               </tr>
 
-              <tr id="form-structure-item">
+              <tr id="form-structure-item-label">
                 <th scope="row"><code>&lt;label&gt;</code></th>
-                <td>Control label</td>
+                <td>Control Label</td>
                 <td>Associates visible text with a specific form control.</td>
-                <td class="example-cell"><code>&lt;label for="email"&gt;Email&lt;/label&gt;</code></td>
+                <td class="example-cell"><code>&lt;label for="email"&gt;Email&lt;/label&gt; &lt;input id="email" type="email"&gt;</code></td>
               </tr>
 
-              <tr id="form-structure-item-2">
+              <tr id="form-structure-item-textarea">
+                <th scope="row"><code>&lt;textarea&gt;</code></th>
+                <td>Multiline Text</td>
+                <td>Accepts multiple lines of text.</td>
+                <td class="example-cell"><code>&lt;textarea name="message"&gt;&lt;/textarea&gt;</code></td>
+              </tr>
+
+              <tr id="form-structure-item-select">
+                <th scope="row"><code>&lt;select&gt;</code></th>
+                <td>Option Menu</td>
+                <td>Provides a control for choosing from a predefined list of options.</td>
+                <td class="example-cell"><code>&lt;select name="contact"&gt;...&lt;/select&gt;</code></td>
+              </tr>
+
+              <tr id="form-structure-item-option">
+                <th scope="row"><code>&lt;option&gt;</code></th>
+                <td>Menu Option</td>
+                <td>Defines a choice within a <code>&lt;select&gt;</code> control.</td>
+                <td class="example-cell"><code>&lt;option value="email"&gt;Email&lt;/option&gt;</code></td>
+              </tr>
+
+              <tr id="form-structure-item-fieldset">
                 <th scope="row"><code>&lt;fieldset&gt;</code></th>
-                <td>Control group</td>
+                <td>Control Group</td>
                 <td>Groups related controls, especially radios and checkboxes.</td>
-                <td class="example-cell"><code>&lt;fieldset&gt;...&lt;/fieldset&gt;</code></td>
+                <td class="example-cell"><code>&lt;fieldset&gt;&lt;legend&gt;Contact preference&lt;/legend&gt;...&lt;/fieldset&gt;</code></td>
               </tr>
 
-              <tr id="form-structure-item-3">
+              <tr id="form-structure-item-legend">
                 <th scope="row"><code>&lt;legend&gt;</code></th>
-                <td>Group label</td>
+                <td>Group Label</td>
                 <td>Provides the accessible name for a fieldset.</td>
                 <td class="example-cell"><code>&lt;legend&gt;Contact preference&lt;/legend&gt;</code></td>
               </tr>
 
-              <tr id="form-structure-item-4">
+              <tr id="form-structure-item-button">
                 <th scope="row"><code>&lt;button&gt;</code></th>
-                <td>Form action</td>
-                <td>Creates a native keyboard-accessible button.</td>
+                <td>Form Action</td>
+                <td>Creates a native button for submitting a form or triggering another action.</td>
                 <td class="example-cell"><code>&lt;button type="submit"&gt;Send&lt;/button&gt;</code></td>
               </tr>
             </tbody>
@@ -141,14 +170,16 @@
         </div>
       </section>
 
-      <!-- Common input types -->
+      <!----------------------------------------------------------
+        Common Input Types
+        ---------------------------------------------------------->
       <section aria-labelledby="input-types-title" class="reference-section" id="input-types">
         <h2 class="section-title" id="input-types-title">Common Input Types</h2>
-        <p class="section-description">Input types that provide appropriate browser behavior, keyboards, and validation.</p>
+        <p class="section-description">Input types that provide appropriate browser behavior, input methods, and validation.</p>
 
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Input types that provide appropriate browser behavior, keyboards, and validation.</caption>
+            <caption class="sr-only">Input types that provide appropriate browser behavior, input methods, and validation.</caption>
 
             <thead>
               <tr>
@@ -162,15 +193,15 @@
             <tbody>
               <tr id="input-types-item-type-text">
                 <th scope="row"><code>type="text"</code></th>
-                <td>Plain text</td>
+                <td>Plain Text</td>
                 <td>Accepts a single line of general text.</td>
                 <td class="example-cell"><code>&lt;input type="text" name="name"&gt;</code></td>
               </tr>
 
               <tr id="input-types-item-type-email">
                 <th scope="row"><code>type="email"</code></th>
-                <td>Email address</td>
-                <td>Provides email-aware input behavior and native validation.</td>
+                <td>Email Address</td>
+                <td>Accepts an email address and provides built-in format validation.</td>
                 <td class="example-cell"><code>&lt;input type="email" name="email"&gt;</code></td>
               </tr>
 
@@ -184,7 +215,7 @@
               <tr id="input-types-item-type-number">
                 <th scope="row"><code>type="number"</code></th>
                 <td>Number</td>
-                <td>Accepts numeric values with optional min, max, and step.</td>
+                <td>Accepts numeric values with optional <code>min</code>, <code>max</code>, and <code>step</code> constraints.</td>
                 <td class="example-cell"><code>&lt;input type="number" min="1" max="10"&gt;</code></td>
               </tr>
 
@@ -204,8 +235,8 @@
 
               <tr id="input-types-item-type-radio">
                 <th scope="row"><code>type="radio"</code></th>
-                <td>Radio button</td>
-                <td>Represents one choice within a same-name group.</td>
+                <td>Radio Button</td>
+                <td>Represents one choice in a group where only one option can be selected.</td>
                 <td class="example-cell"><code>&lt;input type="radio" name="contact" value="email"&gt;</code></td>
               </tr>
             </tbody>
@@ -213,14 +244,16 @@
         </div>
       </section>
 
-      <!-- Useful form attributes -->
+      <!----------------------------------------------------------
+        Useful Form Attributes
+        ---------------------------------------------------------->
       <section aria-labelledby="form-attributes-title" class="reference-section" id="form-attributes">
         <h2 class="section-title" id="form-attributes-title">Useful Form Attributes</h2>
-        <p class="section-description">Attributes that improve browser behavior, usability, and accessible input.</p>
+        <p class="section-description">Attributes that control submission, validation, browser behavior, and accessible input.</p>
 
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Attributes that improve browser behavior, usability, and accessible input.</caption>
+            <caption class="sr-only">Attributes that control submission, validation, browser behavior, and accessible input.</caption>
 
             <thead>
               <tr>
@@ -232,44 +265,72 @@
             </thead>
 
             <tbody>
+              <tr id="form-attributes-item-name">
+                <th scope="row"><code>name</code></th>
+                <td>Submission Name</td>
+                <td>Identifies a control's value when form data is submitted.</td>
+                <td class="example-cell"><code>&lt;input name="email"&gt;</code></td>
+              </tr>
+
+              <tr id="form-attributes-item-value">
+                <th scope="row"><code>value</code></th>
+                <td>Submitted Value</td>
+                <td>Defines the value associated with a form control when submitted.</td>
+                <td class="example-cell"><code>&lt;input name="contact" value="email"&gt;</code></td>
+              </tr>
+
+              <tr id="form-attributes-item-action">
+                <th scope="row"><code>action</code></th>
+                <td>Submission URL</td>
+                <td>Specifies where form data is sent when the form is submitted.</td>
+                <td class="example-cell"><code>&lt;form action="/contact"&gt;...&lt;/form&gt;</code></td>
+              </tr>
+
+              <tr id="form-attributes-item-method">
+                <th scope="row"><code>method</code></th>
+                <td>Submission Method</td>
+                <td>Specifies the HTTP method used to submit form data.</td>
+                <td class="example-cell"><code>&lt;form method="post"&gt;...&lt;/form&gt;</code></td>
+              </tr>
+
               <tr id="form-attributes-item-required">
                 <th scope="row"><code>required</code></th>
-                <td>Required field</td>
-                <td>Prevents native submission while the control is empty or invalid.</td>
+                <td>Required Field</td>
+                <td>Requires a value before the form can pass native constraint validation.</td>
                 <td class="example-cell"><code>&lt;input type="email" required&gt;</code></td>
               </tr>
 
               <tr id="form-attributes-item-autocomplete">
                 <th scope="row"><code>autocomplete</code></th>
-                <td>Autocomplete token</td>
+                <td>Autocomplete Token</td>
                 <td>Helps browsers and assistive technology understand expected personal data.</td>
                 <td class="example-cell"><code>&lt;input autocomplete="email"&gt;</code></td>
               </tr>
 
               <tr id="form-attributes-item-minlength">
                 <th scope="row"><code>minlength</code></th>
-                <td>Minimum length</td>
+                <td>Minimum Length</td>
                 <td>Sets the minimum number of characters accepted.</td>
                 <td class="example-cell"><code>&lt;input minlength="8"&gt;</code></td>
               </tr>
 
               <tr id="form-attributes-item-maxlength">
                 <th scope="row"><code>maxlength</code></th>
-                <td>Maximum length</td>
+                <td>Maximum Length</td>
                 <td>Sets the maximum number of characters accepted.</td>
                 <td class="example-cell"><code>&lt;input maxlength="100"&gt;</code></td>
               </tr>
 
               <tr id="form-attributes-item-pattern">
                 <th scope="row"><code>pattern</code></th>
-                <td>Pattern constraint</td>
+                <td>Pattern Constraint</td>
                 <td>Defines a regular-expression constraint for certain text-like inputs.</td>
                 <td class="example-cell"><code>&lt;input pattern="[A-Za-z]{3,}"&gt;</code></td>
               </tr>
 
               <tr id="form-attributes-item-aria-describedby">
                 <th scope="row"><code>aria-describedby</code></th>
-                <td>Related instructions</td>
+                <td>Related Instructions</td>
                 <td>Associates a control with supporting instructions or an error message.</td>
                 <td class="example-cell"><code>&lt;input aria-describedby="email-help email-error"&gt;</code></td>
               </tr>
@@ -278,7 +339,9 @@
         </div>
       </section>
 
-      <!-- Validation & Feedback -->
+      <!----------------------------------------------------------
+        Validation and Feedback
+        ---------------------------------------------------------->
       <section aria-labelledby="validation-feedback-title" class="reference-section" id="validation-feedback">
         <h2 class="section-title" id="validation-feedback-title">Validation &amp; Feedback</h2>
         <p class="section-description">Patterns for validating input while keeping errors understandable and accessible.</p>
@@ -299,35 +362,35 @@
             <tbody>
               <tr id="validation-feedback-item-validitystate">
                 <th scope="row"><code>ValidityState</code></th>
-                <td>Native validity state</td>
+                <td>Native Validity State</td>
                 <td>Exposes individual constraint-validation results on a form control.</td>
                 <td class="example-cell"><code>email.validity.typeMismatch</code></td>
               </tr>
 
               <tr id="validation-feedback-item-checkvalidity">
                 <th scope="row"><code>checkValidity()</code></th>
-                <td>Check validity</td>
+                <td>Check Validity</td>
                 <td>Returns whether a control or form currently satisfies constraints.</td>
                 <td class="example-cell"><code>form.checkValidity();</code></td>
               </tr>
 
               <tr id="validation-feedback-item-reportvalidity">
                 <th scope="row"><code>reportValidity()</code></th>
-                <td>Report validity</td>
+                <td>Report Validity</td>
                 <td>Runs constraint validation and asks the browser to show feedback.</td>
                 <td class="example-cell"><code>form.reportValidity();</code></td>
               </tr>
 
               <tr id="validation-feedback-item-setcustomvalidity">
                 <th scope="row"><code>setCustomValidity()</code></th>
-                <td>Custom message</td>
+                <td>Custom Message</td>
                 <td>Sets or clears a custom constraint-validation error.</td>
-                <td class="example-cell"><code>email.setCustomValidity("Enter a valid email.");</code></td>
+                <td class="example-cell"><code>email.setCustomValidity(isValid ? "" : "Enter a valid email.");</code></td>
               </tr>
 
               <tr id="validation-feedback-item-aria-live">
                 <th scope="row"><code>aria-live</code></th>
-                <td>Dynamic error announcement</td>
+                <td>Dynamic Error Announcement</td>
                 <td>Allows newly added status or error text to be announced without moving focus.</td>
                 <td class="example-cell"><code>&lt;p aria-live="polite" id="form-status"&gt;&lt;/p&gt;</code></td>
               </tr>
@@ -337,26 +400,26 @@
       </section>
     </main>
 
-    <!-- Shared site footer -->
+    <!-- Shared Site Footer -->
     <div data-site-footer=""></div>
 
-    <!-- Shared site data and utilities -->
+    <!-- Shared Site Data and Helpers -->
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
 
-    <!-- Shared layout and interface behavior -->
+    <!-- Shared Layout and Interface Behavior -->
     <script src="../../assets/js/layout.js" defer></script>
     <script src="../../assets/js/theme.js" defer></script>
     <script src="../../assets/js/search.js" defer></script>
 
-    <!-- Reference page behavior -->
+    <!-- Reference Page Behavior -->
     <script src="../../assets/js/references.js" defer></script>
 
-    <!-- Shared interactive utilities -->
+    <!-- Shared Interactive Utilities -->
     <script src="../../assets/js/dialogs.js" defer></script>
     <script src="../../assets/js/utilities.js" defer></script>
 
-    <!-- Site initialization -->
+    <!-- Site Initialization -->
     <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

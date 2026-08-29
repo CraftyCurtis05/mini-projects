@@ -5,15 +5,19 @@
     <!-- Core Document Metadata -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Initial Page Setup and Theme -->
+    <script src="../../assets/js/loader.js"></script>
+
+    <title>CSS Units &amp; Functions | Web Dev Reference</title>
+
     <meta
       content="My reference for CSS units, percentages, viewport and container units, fractions, and sizing functions."
       name="description"
     />
-    <meta content="light dark" name="color-scheme" />
-
-    <title>CSS Units &amp; Functions</title>
 
     <!-- Browser and Installed-App Appearance -->
+    <meta content="light dark" name="color-scheme" />
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
@@ -31,15 +35,16 @@
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Shared Site Styles and Fonts -->
+    <!-- Shared Site Styles -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />    
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
-
-    <!-- Initial Page Loader -->
-    <script src="../../assets/js/loader.js" defer></script>
   </head>
 
   <body
@@ -84,9 +89,8 @@
 
     <!-- Main Reference Content -->
     <main id="main-content">
-
       <!----------------------------------------------------------
-        Absolute & Font-relative Units
+        Absolute and Font-relative Units
         ---------------------------------------------------------->
       <section aria-labelledby="absolute-relative-title" class="reference-section" id="absolute-relative">
         <h2 class="section-title" id="absolute-relative-title">Absolute &amp; Font-relative Units</h2>
@@ -108,35 +112,35 @@
             <tbody>
               <tr id="absolute-relative-item-px">
                 <th scope="row"><code>px</code></th>
-                <td>CSS pixel</td>
+                <td>CSS Pixel</td>
                 <td>A fixed CSS reference unit useful for fine details and borders.</td>
                 <td class="example-cell"><code>border-width: 1px;</code></td>
               </tr>
 
               <tr id="absolute-relative-item-rem">
                 <th scope="row"><code>rem</code></th>
-                <td>Root-em unit</td>
+                <td>Root-em Unit</td>
                 <td>Relative to the root element's font size.</td>
                 <td class="example-cell"><code>padding: 1.5rem;</code></td>
               </tr>
 
               <tr id="absolute-relative-item-em">
                 <th scope="row"><code>em</code></th>
-                <td>Element-relative unit</td>
+                <td>Element-relative Unit</td>
                 <td>Relative to the current element's computed font size for most properties.</td>
                 <td class="example-cell"><code>margin-top: 1em;</code></td>
               </tr>
 
               <tr id="absolute-relative-item-ch">
                 <th scope="row"><code>ch</code></th>
-                <td>Character measure</td>
+                <td>Character Measure</td>
                 <td>Approximately the advance width of the 0 glyph in the current font.</td>
                 <td class="example-cell"><code>max-width: 65ch;</code></td>
               </tr>
 
               <tr id="absolute-relative-item-lh">
                 <th scope="row"><code>lh</code></th>
-                <td>Line-height unit</td>
+                <td>Line-height Unit</td>
                 <td>Relative to the element's computed line-height.</td>
                 <td class="example-cell"><code>margin-block: 1lh;</code></td>
               </tr>
@@ -146,7 +150,7 @@
       </section>
 
       <!----------------------------------------------------------
-        Layout & Percentage Units
+        Layout and Percentage Units
         ---------------------------------------------------------->
       <section aria-labelledby="layout-units-title" class="reference-section" id="layout-units">
         <h2 class="section-title" id="layout-units-title">Layout &amp; Percentage Units</h2>
@@ -175,16 +179,9 @@
 
               <tr id="layout-units-item-fr">
                 <th scope="row"><code>fr</code></th>
-                <td>Grid fraction</td>
+                <td>Grid Fraction</td>
                 <td>Allocates a fraction of remaining space in CSS Grid.</td>
                 <td class="example-cell"><code>grid-template-columns: 1fr 2fr;</code></td>
-              </tr>
-
-              <tr id="layout-units-item-auto">
-                <th scope="row"><code>auto</code></th>
-                <td>Automatic sizing</td>
-                <td>Lets the layout algorithm determine the value.</td>
-                <td class="example-cell"><code>margin-inline: auto;</code></td>
               </tr>
             </tbody>
           </table>
@@ -192,7 +189,7 @@
       </section>
 
       <!----------------------------------------------------------
-        Viewport & Container Units
+        Viewport and Container Units
         ---------------------------------------------------------->
       <section aria-labelledby="viewport-container-title" class="reference-section" id="viewport-container">
         <h2 class="section-title" id="viewport-container-title">Viewport &amp; Container Units</h2>
@@ -214,35 +211,42 @@
             <tbody>
               <tr id="viewport-container-item-vw">
                 <th scope="row"><code>vw</code></th>
-                <td>Viewport width</td>
+                <td>Viewport Width</td>
                 <td>Represents 1% of the viewport width.</td>
                 <td class="example-cell"><code>padding-inline: 4vw;</code></td>
               </tr>
 
               <tr id="viewport-container-item-vh">
                 <th scope="row"><code>vh</code></th>
-                <td>Viewport height</td>
+                <td>Viewport Height</td>
                 <td>Represents 1% of the default viewport height.</td>
                 <td class="example-cell"><code>min-height: 100vh;</code></td>
               </tr>
 
+              <tr id="viewport-container-item-dvw">
+                <th scope="row"><code>dvw</code></th>
+                <td>Dynamic Viewport Width</td>
+                <td>Tracks the dynamic viewport width as browser UI expands or retracts.</td>
+                <td class="example-cell"><code>width: 100dvw;</code></td>
+              </tr>
+
               <tr id="viewport-container-item-dvh">
                 <th scope="row"><code>dvh</code></th>
-                <td>Dynamic viewport height</td>
-                <td>Tracks the dynamic viewport as browser UI expands or retracts.</td>
+                <td>Dynamic Viewport Height</td>
+                <td>Tracks the dynamic viewport height as browser UI expands or retracts.</td>
                 <td class="example-cell"><code>min-height: 100dvh;</code></td>
               </tr>
 
               <tr id="viewport-container-item-svh">
                 <th scope="row"><code>svh</code></th>
-                <td>Small viewport height</td>
+                <td>Small Viewport Height</td>
                 <td>Uses the smaller viewport size, useful for avoiding UI overlap.</td>
                 <td class="example-cell"><code>min-height: 100svh;</code></td>
               </tr>
 
               <tr id="viewport-container-item-cqi">
                 <th scope="row"><code>cqi</code></th>
-                <td>Container inline size</td>
+                <td>Container Inline Size</td>
                 <td>Represents 1% of the query container's inline size.</td>
                 <td class="example-cell"><code>font-size: 5cqi;</code></td>
               </tr>
@@ -252,7 +256,7 @@
       </section>
 
       <!----------------------------------------------------------
-        Sizing & Calculation Functions
+        Sizing and Calculation Functions
         ---------------------------------------------------------->
       <section aria-labelledby="css-functions-title" class="reference-section" id="css-functions">
         <h2 class="section-title" id="css-functions-title">Sizing &amp; Calculation Functions</h2>
@@ -274,28 +278,28 @@
             <tbody>
               <tr id="css-functions-item-calc">
                 <th scope="row"><code>calc()</code></th>
-                <td>Calculate value</td>
+                <td>Calculate Value</td>
                 <td>Performs arithmetic using compatible CSS values.</td>
                 <td class="example-cell"><code>width: calc(100% - 2rem);</code></td>
               </tr>
 
               <tr id="css-functions-item-min">
                 <th scope="row"><code>min()</code></th>
-                <td>Minimum value</td>
+                <td>Minimum Value</td>
                 <td>Uses the smallest calculated argument.</td>
                 <td class="example-cell"><code>width: min(70rem, 92%);</code></td>
               </tr>
 
               <tr id="css-functions-item-max">
                 <th scope="row"><code>max()</code></th>
-                <td>Maximum value</td>
+                <td>Maximum Value</td>
                 <td>Uses the largest calculated argument.</td>
                 <td class="example-cell"><code>padding-inline: max(1rem, 3vw);</code></td>
               </tr>
 
               <tr id="css-functions-item-clamp">
                 <th scope="row"><code>clamp()</code></th>
-                <td>Bounded fluid value</td>
+                <td>Bounded Fluid Value</td>
                 <td>Constrains a preferred value between a minimum and maximum.</td>
                 <td class="example-cell"><code>font-size: clamp(1rem, 2vw, 1.5rem);</code></td>
               </tr>
@@ -308,7 +312,7 @@
     <!-- Shared Site Footer -->
     <div data-site-footer=""></div>
 
-    <!-- Shared Site Data and Utilities -->
+    <!-- Shared Site Data and Helpers -->
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
 

@@ -2,21 +2,26 @@
 
 <html lang="en">
   <head>
-    <!-- Core document metadata -->
+    <!-- Core Document Metadata -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    
+    <!-- Initial Page Setup and Theme -->
+    <script src="../../assets/js/loader.js"></script>
+
+    <title>Accessibility | Web Dev Reference</title>
+    
     <meta
       content="My notes on semantic HTML, keyboard access, focus, forms, contrast, responsive layouts, and reduced motion."
       name="description"
     />
 
-    <title>Accessibility</title>
-
-    <!-- Browser and installed-app appearance -->
+    <!-- Browser and Installed-App Appearance -->
+    <meta content="light dark" name="color-scheme" />
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
-    <!-- Social sharing metadata -->
+    <!-- Social Sharing Metadata -->
     <meta content="website" property="og:type" />
     <meta content="Accessibility | Web Dev Reference" property="og:title" />
     <meta
@@ -25,20 +30,21 @@
     />
     <meta content="../../assets/images/app-icon-512.png" property="og:image" />
 
-    <!-- App manifest and icons -->
+    <!-- App Manifest and Icons -->
     <link href="../../site.webmanifest" rel="manifest" />
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Shared site styles and fonts -->
+    <!-- Shared Site Styles -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
-
-    <!-- Initial page loader -->
-    <script src="../../assets/js/loader.js" defer></script>
   </head>
 
   <body
@@ -52,7 +58,7 @@
     data-search-placeholder="Try: keyboard, focus, ARIA, contrast..."
     data-toc="true"
   >
-  <!-- Initial loading screen -->
+    <!-- Initial Loading Screen -->
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -64,13 +70,13 @@
       </div>
     </div>
 
-    <!-- Accessibility navigation -->
+    <!-- Accessibility Navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Shared site navigation -->
+    <!-- Shared Site Navigation -->
     <div data-site-nav=""></div>
 
-    <!-- Page introduction -->
+    <!-- Page Introduction -->
     <header class="hero">
       <h1>Accessibility</h1>
       <p class="subtitle">The accessibility checks and reminders I use while building.</p>
@@ -81,12 +87,15 @@
       </div>
     </header>
 
-    <!-- Main reference content -->
+    <!-- Main Reference Content -->
     <main id="main-content">
-      <!-- Accessibility Approach -->
+      <!----------------------------------------------------------
+        Accessibility Approach
+        ---------------------------------------------------------->      
       <section aria-labelledby="approach-title" class="reference-section" id="approach">
-        <h2 class="section-title" id="approach-title">Accessibility approach</h2>
-        <p>This project treats accessibility as part of the interface architecture. Native HTML
+        <h2 class="section-title" id="approach-title">Accessibility Approach</h2>
+        <p>
+          This project treats accessibility as part of the interface architecture. Native HTML
           semantics are preferred first, with ARIA used only when it adds information that native
           elements do not provide.
         </p>
@@ -98,13 +107,16 @@
         </p>
       </section>
 
-      <!-- Semantic HTML and ARIA -->
+      <!----------------------------------------------------------
+        Semantic HTML and ARIA
+        ---------------------------------------------------------->
       <section aria-labelledby="semantics-title" class="reference-section" id="semantics">
         <h2 class="section-title" id="semantics-title">Semantic HTML and ARIA</h2>
 
         <p>
-          Start with native HTML elements that already communicate meaning and behavior. Use ARIA
-          when additional information is needed and a native element does not provide it.
+          Start with native HTML elements that already communicate meaning and behavior. Add ARIA
+          only when the interface needs semantics, relationships, or states that HTML does not
+          provide on its own.
         </p>
 
         <ul class="feature-list">
@@ -116,9 +128,11 @@
         </ul>
       </section>
 
-      <!-- Keyboard Access and Focus -->
+      <!----------------------------------------------------------
+        Keyboard Access and Focus
+        ---------------------------------------------------------->
       <section aria-labelledby="keyboard-title" class="reference-section" id="keyboard">
-        <h2 class="section-title" id="keyboard-title">Keyboard access and focus</h2>
+        <h2 class="section-title" id="keyboard-title">Keyboard Access and Focus</h2>
 
         <p>
           Interactive controls should be reachable and usable without a mouse, with a visible focus
@@ -126,7 +140,7 @@
         </p>
 
         <ul class="feature-list">
-          <li>Keep interactive elements in a logical keyboard navigation order.</li>
+          <li>Keep interactive elements in a logical focus order that follows the visual and reading order.</li>
           <li>Use native interactive elements whenever possible so expected keyboard behavior is provided automatically.</li>
           <li>Avoid positive <code>tabindex</code> values that manually reorder keyboard navigation.</li>
           <li>Use <code>:focus-visible</code> to provide clear keyboard focus indicators without removing useful browser behavior.</li>
@@ -134,9 +148,11 @@
         </ul>
       </section>
 
-      <!-- Forms and Accessible Names -->
+      <!----------------------------------------------------------
+        Forms and Accessible Names
+        ---------------------------------------------------------->
       <section aria-labelledby="forms-title" class="reference-section" id="forms">
-        <h2 class="section-title" id="forms-title">Forms and accessible names</h2>
+        <h2 class="section-title" id="forms-title">Forms and Accessible Names</h2>
 
         <p>
           Form controls need clear names and instructions so their purpose can be understood
@@ -147,13 +163,15 @@
           <li>Associate visible <code>label</code> elements with their form controls.</li>
           <li>Use descriptive button and link text instead of relying only on surrounding context.</li>
           <li>Communicate required fields, instructions, and validation messages clearly.</li>
-          <li>Use ARIA labels only when a visible label is not appropriate or additional context is necessary.</li>
+          <li>Use <code>aria-label</code> or <code>aria-labelledby</code> only when a visible label cannot provide the needed accessible name or context.</li>
         </ul>
       </section>
 
-      <!-- Images and Alternative Text -->
+      <!----------------------------------------------------------
+        Images and Alternative Text
+        ---------------------------------------------------------->
       <section aria-labelledby="images-title" class="reference-section" id="images">
-        <h2 class="section-title" id="images-title">Images and alternative text</h2>
+        <h2 class="section-title" id="images-title">Images and Alternative Text</h2>
 
         <p>
           Alternative text should communicate the purpose of meaningful images without repeating
@@ -161,16 +179,18 @@
         </p>
 
         <ul class="feature-list">
-          <li>Give meaningful images concise, useful alternative text.</li>
+          <li>Give meaningful images alternative text that communicates their purpose or important information.</li>
           <li>Use an empty <code>alt=""</code> value for decorative images that do not add information.</li>
           <li>Avoid beginning alternative text with phrases such as "image of" when the image type is already communicated by assistive technology.</li>
           <li>Do not place important information only inside an image when it can also be provided as text.</li>
         </ul>
       </section>
 
-      <!-- Color and Contrast -->
+      <!----------------------------------------------------------
+        Color and Contrast
+        ---------------------------------------------------------->
       <section aria-labelledby="contrast-title" class="reference-section" id="contrast">
-        <h2 class="section-title" id="contrast-title">Color and contrast</h2>
+        <h2 class="section-title" id="contrast-title">Color and Contrast</h2>
 
         <p>
           Text, controls, focus states, and other meaningful interface elements should remain
@@ -178,20 +198,22 @@
         </p>
 
         <ul class="feature-list">
-          <li>Maintain readable contrast between text and its background.</li>
+          <li>Maintain sufficient contrast between text and its background.</li>
           <li>Keep links, controls, and focus indicators visually distinguishable from surrounding content.</li>
           <li>Do not use color as the only way to communicate meaning, status, or required action.</li>
           <li>Check contrast in both light and dark themes instead of assuming one set of colors works equally well in both.</li>
         </ul>
       </section>
 
-      <!-- Reduced Motion -->
+      <!----------------------------------------------------------
+        Reduced Motion
+        ---------------------------------------------------------->
       <section aria-labelledby="motion-title" class="reference-section" id="motion">
-        <h2 class="section-title" id="motion-title">Reduced motion</h2>
+        <h2 class="section-title" id="motion-title">Reduced Motion</h2>
 
         <p>
-          Respect the user's motion preference when animations and transitions are not necessary
-          for understanding or operating the interface.
+          Respect the user's motion preference by reducing nonessential animations and transitions
+          without removing information or functionality.
         </p>
 
         <p>
@@ -200,13 +222,15 @@
         </p>
       </section>
 
-      <!-- Responsive Reflow -->
+      <!----------------------------------------------------------
+        Responsive Reflow
+        ---------------------------------------------------------->
       <section aria-labelledby="reflow-title" class="reference-section" id="reflow">
-        <h2 class="section-title" id="reflow-title">Responsive reflow</h2>
+        <h2 class="section-title" id="reflow-title">Responsive Reflow</h2>
 
         <p>
-          Content should remain readable and usable as the viewport changes instead of depending on
-          a fixed screen size or orientation.
+          Content should reflow and remain readable and usable as the viewport or text size changes
+          instead of depending on a fixed screen size or orientation.
         </p>
 
         <ul class="feature-list">
@@ -217,9 +241,11 @@
         </ul>
       </section>
 
-      <!-- Accessible Tables -->
+      <!----------------------------------------------------------
+        Accessible Tables
+        ---------------------------------------------------------->
       <section aria-labelledby="tables-title" class="reference-section" id="tables">
-        <h2 class="section-title" id="tables-title">Accessible tables</h2>
+        <h2 class="section-title" id="tables-title">Accessible Tables</h2>
 
         <p>
           Data tables should communicate the relationships between their headings and values so the
@@ -228,15 +254,17 @@
 
         <ul class="feature-list">
           <li>Use tables for tabular data rather than page layout.</li>
-          <li>Provide a <code>caption</code> when the table needs a clear accessible description.</li>
+          <li>Use a <code>caption</code> to identify or describe the table when its purpose is not already clear from context.</li>
           <li>Use <code>th</code> elements for headers and identify their relationship with <code>scope</code> when appropriate.</li>
           <li>Keep the table structure as simple as possible while preserving the relationships in the data.</li>
         </ul>
       </section>
 
-      <!-- Live Regions -->
+      <!----------------------------------------------------------
+        Live Regions
+        ---------------------------------------------------------->
       <section aria-labelledby="live-regions-title" class="reference-section" id="live-regions">
-        <h2 class="section-title" id="live-regions-title">Live regions</h2>
+        <h2 class="section-title" id="live-regions-title">Live Regions</h2>
 
         <p>
           Dynamic interface updates sometimes need to be announced when they happen without moving
@@ -244,14 +272,16 @@
         </p>
 
         <p>
-          A polite live region can communicate non-urgent updates, such as changing search result
-          counts, while allowing the user's current interaction to continue.
+          An <code>aria-live="polite"</code> region can communicate non-urgent updates, such as
+          changing search result counts, while allowing the user's current interaction to continue.
         </p>
       </section>
 
-      <!-- Site Accessibility Features -->
+      <!----------------------------------------------------------
+        Site Accessibility Features
+        ---------------------------------------------------------->
       <section aria-labelledby="features-title" class="reference-section" id="features">
-        <h2 class="section-title" id="features-title">Site accessibility features</h2>
+        <h2 class="section-title" id="features-title">Site Accessibility Features</h2>
 
         <ul class="feature-list">
           <li>Skip navigation to move directly to the main content.</li>
@@ -259,14 +289,16 @@
           <li>Semantic tables using captions, column headers, and row headers.</li>
           <li>Visible focus indicators that remain distinct in light and dark themes.</li>
           <li>Reduced-motion support through <code>prefers-reduced-motion</code>.</li>
-          <li>Search result status messages announced through a polite live region.</li>
+          <li>Search result status messages announced through <code>aria-live="polite"</code>.</li>
           <li>Text and layouts that reflow instead of depending on fixed viewport dimensions.</li>
         </ul>
       </section>
 
-      <!-- Accessibility Feedback -->
+      <!----------------------------------------------------------
+        Accessibility Feedback
+        ---------------------------------------------------------->
       <section aria-labelledby="feedback-title" class="reference-section" id="feedback">
-        <h2 class="section-title" id="feedback-title">Accessibility feedback</h2>
+        <h2 class="section-title" id="feedback-title">Accessibility Feedback</h2>
 
         <p>
           If you encounter an accessibility problem, please use the portfolio link in the site
@@ -275,26 +307,26 @@
       </section>
     </main>
 
-    <!-- Shared site footer -->
+    <!-- Shared Site Footer -->
     <div data-site-footer=""></div>
 
-    <!-- Shared site data and utilities -->
+    <!-- Shared Site Data and Helpers -->
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
 
-    <!-- Shared layout and interface behavior -->
+    <!-- Shared Layout and Interface Behavior -->
     <script src="../../assets/js/layout.js" defer></script>
     <script src="../../assets/js/theme.js" defer></script>
     <script src="../../assets/js/search.js" defer></script>
 
-    <!-- Reference page behavior -->
+    <!-- Reference Page Behavior -->
     <script src="../../assets/js/references.js" defer></script>
 
-    <!-- Shared interactive utilities -->
+    <!-- Shared Interactive Utilities -->
     <script src="../../assets/js/dialogs.js" defer></script>
     <script src="../../assets/js/utilities.js" defer></script>
 
-    <!-- Site initialization -->
+    <!-- Site Initialization -->
     <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

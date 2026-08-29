@@ -5,14 +5,19 @@
     <!-- Core Document Metadata -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Initial Page Setup and Theme -->
+    <script src="../../assets/js/loader.js"></script>
+    
+    <title>CSS Grid | Web Dev Reference</title>
+    
     <meta
       content="My CSS Grid reference for tracks, template areas, placement, alignment, sizing, and responsive layouts."
       name="description"
     />
 
-    <title>CSS Grid</title>
-
     <!-- Browser and Installed-App Appearance -->
+    <meta content="light dark" name="color-scheme" />
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
@@ -30,15 +35,16 @@
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Shared Site Styles and Fonts -->
+    <!-- Shared Site Styles -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
-
-    <!-- Initial Page Loader -->
-    <script src="../../assets/js/loader.js" defer></script>
   </head>
 
   <body
@@ -73,7 +79,7 @@
     <!-- Page Introduction -->
     <header class="hero">
       <h1>CSS Grid</h1>
-      <p class="subtitle">My reference for Grid tracks, placement, sizing, and responsive layouts.</p>
+      <p class="subtitle">My reference for grid tracks, placement, sizing, and responsive layouts.</p>
 
       <div class="hero-meta">
         <span class="badge badge-category">CSS</span>
@@ -83,7 +89,6 @@
 
     <!-- Main Reference Content -->
     <main id="main-content">
-
       <!----------------------------------------------------------
         Grid Container
         ---------------------------------------------------------->
@@ -107,35 +112,35 @@
             <tbody>
               <tr id="grid-container-item-display">
                 <th scope="row"><code>display</code></th>
-                <td>Create grid context</td>
+                <td>Grid Container</td>
                 <td>Turns direct children into grid items.</td>
                 <td class="example-cell"><code>display: grid;</code></td>
               </tr>
 
               <tr id="grid-container-item-grid-template-columns">
                 <th scope="row"><code>grid-template-columns</code></th>
-                <td>Column tracks</td>
+                <td>Column Tracks</td>
                 <td>Defines explicit column track sizes.</td>
                 <td class="example-cell"><code>grid-template-columns: repeat(3, 1fr);</code></td>
               </tr>
 
               <tr id="grid-container-item-grid-template-rows">
                 <th scope="row"><code>grid-template-rows</code></th>
-                <td>Row tracks</td>
+                <td>Row Tracks</td>
                 <td>Defines explicit row track sizes.</td>
                 <td class="example-cell"><code>grid-template-rows: auto 1fr auto;</code></td>
               </tr>
 
               <tr id="grid-container-item-gap">
                 <th scope="row"><code>gap</code></th>
-                <td>Track spacing</td>
+                <td>Track Spacing</td>
                 <td>Sets space between rows and columns.</td>
                 <td class="example-cell"><code>gap: 1.5rem;</code></td>
               </tr>
 
               <tr id="grid-container-item-grid-template-areas">
                 <th scope="row"><code>grid-template-areas</code></th>
-                <td>Named layout</td>
+                <td>Named Layout</td>
                 <td>Defines a visual template using named areas.</td>
                 <td class="example-cell"><code>grid-template-areas: "header header" "nav main";</code></td>
               </tr>
@@ -167,35 +172,35 @@
             <tbody>
               <tr id="grid-sizing-item-fr">
                 <th scope="row"><code>fr</code></th>
-                <td>Fractional unit</td>
+                <td>Fractional Unit</td>
                 <td>Allocates a fraction of available grid space.</td>
                 <td class="example-cell"><code>grid-template-columns: 1fr 2fr;</code></td>
               </tr>
 
               <tr id="grid-sizing-item-repeat">
                 <th scope="row"><code>repeat()</code></th>
-                <td>Repeat tracks</td>
+                <td>Repeat Tracks</td>
                 <td>Repeats a track pattern.</td>
                 <td class="example-cell"><code>grid-template-columns: repeat(4, 1fr);</code></td>
               </tr>
 
               <tr id="grid-sizing-item-minmax">
                 <th scope="row"><code>minmax()</code></th>
-                <td>Track range</td>
+                <td>Track Range</td>
                 <td>Allows a track to flex between minimum and maximum sizes.</td>
                 <td class="example-cell"><code>grid-template-columns: minmax(16rem, 1fr) 2fr;</code></td>
               </tr>
 
               <tr id="grid-sizing-item-auto-fit">
                 <th scope="row"><code>auto-fit</code></th>
-                <td>Fit existing tracks</td>
+                <td>Fit Existing Tracks</td>
                 <td>Collapses empty repeated tracks while fitting as many as possible.</td>
                 <td class="example-cell"><code>repeat(auto-fit, minmax(16rem, 1fr))</code></td>
               </tr>
 
               <tr id="grid-sizing-item-auto-fill">
                 <th scope="row"><code>auto-fill</code></th>
-                <td>Reserve track slots</td>
+                <td>Reserve Track Slots</td>
                 <td>Creates as many repeated tracks as fit, including empty ones.</td>
                 <td class="example-cell"><code>repeat(auto-fill, minmax(12rem, 1fr))</code></td>
               </tr>
@@ -227,29 +232,29 @@
             <tbody>
               <tr id="grid-placement-item-grid-column">
                 <th scope="row"><code>grid-column</code></th>
-                <td>Column placement</td>
+                <td>Column Placement</td>
                 <td>Controls an item's column start and end lines.</td>
                 <td class="example-cell"><code>grid-column: 1 / 3;</code></td>
               </tr>
 
               <tr id="grid-placement-item-grid-row">
                 <th scope="row"><code>grid-row</code></th>
-                <td>Row placement</td>
+                <td>Row Placement</td>
                 <td>Controls an item's row start and end lines.</td>
                 <td class="example-cell"><code>grid-row: 2 / 4;</code></td>
               </tr>
 
               <tr id="grid-placement-item-grid-area">
                 <th scope="row"><code>grid-area</code></th>
-                <td>Area placement</td>
+                <td>Area Placement</td>
                 <td>Places an item in a named area or sets row/column shorthand.</td>
                 <td class="example-cell"><code>grid-area: main;</code></td>
               </tr>
 
               <tr id="grid-placement-item-span">
                 <th scope="row"><code>span</code></th>
-                <td>Span tracks</td>
-                <td>Makes an item span a number of tracks.</td>
+                <td>Span Tracks</td>
+                <td>Makes an item span a specified number of tracks.</td>
                 <td class="example-cell"><code>grid-column: span 2;</code></td>
               </tr>
             </tbody>
@@ -280,35 +285,35 @@
             <tbody>
               <tr id="grid-alignment-item-justify-items">
                 <th scope="row"><code>justify-items</code></th>
-                <td>Inline item alignment</td>
+                <td>Inline Item Alignment</td>
                 <td>Aligns items inside their grid areas on the inline axis.</td>
                 <td class="example-cell"><code>justify-items: stretch;</code></td>
               </tr>
 
               <tr id="grid-alignment-item-align-items">
                 <th scope="row"><code>align-items</code></th>
-                <td>Block item alignment</td>
+                <td>Block Item Alignment</td>
                 <td>Aligns items inside their grid areas on the block axis.</td>
                 <td class="example-cell"><code>align-items: center;</code></td>
               </tr>
 
               <tr id="grid-alignment-item-place-items">
                 <th scope="row"><code>place-items</code></th>
-                <td>Item alignment shorthand</td>
-                <td>Combines align-items and justify-items.</td>
+                <td>Item Alignment Shorthand</td>
+                <td>Combines <code>align-items</code> and <code>justify-items</code>.</td>
                 <td class="example-cell"><code>place-items: center;</code></td>
               </tr>
 
               <tr id="grid-alignment-item-justify-content">
                 <th scope="row"><code>justify-content</code></th>
-                <td>Grid inline alignment</td>
+                <td>Grid Inline Alignment</td>
                 <td>Positions the grid tracks inside extra inline space.</td>
                 <td class="example-cell"><code>justify-content: center;</code></td>
               </tr>
 
               <tr id="grid-alignment-item-align-content">
                 <th scope="row"><code>align-content</code></th>
-                <td>Grid block alignment</td>
+                <td>Grid Block Alignment</td>
                 <td>Positions grid tracks inside extra block-axis space.</td>
                 <td class="example-cell"><code>align-content: start;</code></td>
               </tr>
@@ -321,7 +326,7 @@
     <!-- Shared Site Footer -->
     <div data-site-footer=""></div>
 
-    <!-- Shared Site Data and Utilities -->
+    <!-- Shared Site Data and Helpers -->
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
 

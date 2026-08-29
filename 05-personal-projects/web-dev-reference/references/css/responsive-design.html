@@ -5,15 +5,19 @@
     <!-- Core Document Metadata -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Initial Page Setup and Theme -->
+    <script src="../../assets/js/loader.js"></script>
+
+    <title>Responsive Design | Web Dev Reference</title>
+
     <meta
       content="My responsive design reference for media queries, container queries, fluid sizing, responsive images, and reflow."
       name="description"
     />
-    <meta content="light dark" name="color-scheme" />
-
-    <title>Responsive Design</title>
 
     <!-- Browser and Installed-App Appearance -->
+    <meta content="light dark" name="color-scheme" />
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
@@ -31,15 +35,16 @@
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Shared Site Styles and Fonts -->
+    <!-- Shared Site Styles -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
-
-    <!-- Initial Page Loader -->
-    <script src="../../assets/js/loader.js" defer></script>
   </head>
 
   <body
@@ -84,7 +89,6 @@
 
     <!-- Main Reference Content -->
     <main id="main-content">
-
       <!----------------------------------------------------------
         Responsive Foundations
         ---------------------------------------------------------->
@@ -107,36 +111,36 @@
 
             <tbody>
               <tr id="responsive-foundations-item-mobile-first">
-                <th scope="row"><code>mobile first</code></th>
-                <td>Progressive layout</td>
+                <th scope="row">Mobile-first</th>
+                <td>Progressive Layout</td>
                 <td>Starts with small-screen styles and adds enhancements as space becomes available.</td>
                 <td class="example-cell"><code>@media (min-width: 48rem) { ... }</code></td>
               </tr>
 
               <tr id="responsive-foundations-item-max-width">
                 <th scope="row"><code>max-width</code></th>
-                <td>Flexible media/content</td>
+                <td>Flexible Media/Content</td>
                 <td>Prevents an element from growing beyond a useful size.</td>
                 <td class="example-cell"><code>img { max-width: 100%; height: auto; }</code></td>
               </tr>
 
               <tr id="responsive-foundations-item-min">
                 <th scope="row"><code>min()</code></th>
-                <td>Choose smaller value</td>
+                <td>Choose Smaller Value</td>
                 <td>Uses the smallest value from a list.</td>
                 <td class="example-cell"><code>width: min(70rem, 92%);</code></td>
               </tr>
 
               <tr id="responsive-foundations-item-max">
                 <th scope="row"><code>max()</code></th>
-                <td>Choose larger value</td>
+                <td>Choose Larger Value</td>
                 <td>Uses the largest value from a list.</td>
                 <td class="example-cell"><code>padding-inline: max(1rem, 4vw);</code></td>
               </tr>
 
               <tr id="responsive-foundations-item-clamp">
                 <th scope="row"><code>clamp()</code></th>
-                <td>Fluid bounded value</td>
+                <td>Fluid Bounded Value</td>
                 <td>Lets a value grow fluidly between minimum and maximum limits.</td>
                 <td class="example-cell"><code>font-size: clamp(2rem, 5vw, 4rem);</code></td>
               </tr>
@@ -167,36 +171,36 @@
 
             <tbody>
               <tr id="media-queries-item-media-min-width">
-                <th scope="row"><code>@media (min-width)</code></th>
-                <td>Minimum width</td>
+                <th scope="row"><code>@media (min-width: ...)</code></th>
+                <td>Minimum Width</td>
                 <td>Applies styles when the viewport is at least the given width.</td>
                 <td class="example-cell"><code>@media (min-width: 60rem) { ... }</code></td>
               </tr>
 
               <tr id="media-queries-item-media-max-width">
-                <th scope="row"><code>@media (max-width)</code></th>
-                <td>Maximum width</td>
+                <th scope="row"><code>@media (max-width: ...)</code></th>
+                <td>Maximum Width</td>
                 <td>Applies styles while the viewport is no wider than the given width.</td>
                 <td class="example-cell"><code>@media (max-width: 42rem) { ... }</code></td>
               </tr>
 
               <tr id="media-queries-item-prefers-color-scheme">
                 <th scope="row"><code>prefers-color-scheme</code></th>
-                <td>Theme preference</td>
+                <td>Theme Preference</td>
                 <td>Detects the user's light/dark operating-system preference.</td>
                 <td class="example-cell"><code>@media (prefers-color-scheme: dark) { ... }</code></td>
               </tr>
 
               <tr id="media-queries-item-prefers-reduced-motion">
                 <th scope="row"><code>prefers-reduced-motion</code></th>
-                <td>Motion preference</td>
+                <td>Motion Preference</td>
                 <td>Detects a request to minimize nonessential motion.</td>
                 <td class="example-cell"><code>@media (prefers-reduced-motion: reduce) { ... }</code></td>
               </tr>
 
               <tr id="media-queries-item-prefers-contrast">
                 <th scope="row"><code>prefers-contrast</code></th>
-                <td>Contrast preference</td>
+                <td>Contrast Preference</td>
                 <td>Detects a preference for more or less contrast where supported.</td>
                 <td class="example-cell"><code>@media (prefers-contrast: more) { ... }</code></td>
               </tr>
@@ -228,28 +232,28 @@
             <tbody>
               <tr id="container-queries-item-container-type">
                 <th scope="row"><code>container-type</code></th>
-                <td>Establish query container</td>
+                <td>Establish Query Container</td>
                 <td>Makes an element eligible for size container queries.</td>
                 <td class="example-cell"><code>container-type: inline-size;</code></td>
               </tr>
 
               <tr id="container-queries-item-container-name">
                 <th scope="row"><code>container-name</code></th>
-                <td>Name container</td>
+                <td>Name Container</td>
                 <td>Assigns a reusable name to a query container.</td>
                 <td class="example-cell"><code>container-name: card-layout;</code></td>
               </tr>
 
               <tr id="container-queries-item-container">
                 <th scope="row"><code>@container</code></th>
-                <td>Container query</td>
+                <td>Container Query</td>
                 <td>Applies styles based on the query container's dimensions.</td>
-                <td class="example-cell"><code>@container (min-width: 32rem) { ... }</code></td>
+                <td class="example-cell"><code>@container card-layout (min-width: 32rem) { ... }</code></td>
               </tr>
 
               <tr id="container-queries-item-cqi">
                 <th scope="row"><code>cqi</code></th>
-                <td>Container inline unit</td>
+                <td>Container Inline Unit</td>
                 <td>Represents 1% of a query container's inline size.</td>
                 <td class="example-cell"><code>font-size: clamp(1rem, 4cqi, 2rem);</code></td>
               </tr>
@@ -281,35 +285,35 @@
             <tbody>
               <tr id="responsive-media-item-srcset">
                 <th scope="row"><code>srcset</code></th>
-                <td>Image candidates</td>
+                <td>Image Candidates</td>
                 <td>Provides multiple image sources and lets the browser choose.</td>
                 <td class="example-cell"><code>&lt;img srcset="small.jpg 480w, large.jpg 1200w" ...&gt;</code></td>
               </tr>
 
               <tr id="responsive-media-item-sizes">
                 <th scope="row"><code>sizes</code></th>
-                <td>Expected display size</td>
+                <td>Expected Display Size</td>
                 <td>Describes how much layout width an image will occupy at different conditions.</td>
                 <td class="example-cell"><code>sizes="(min-width: 60rem) 50vw, 100vw"</code></td>
               </tr>
 
-              <tr id="responsive-media-item-item">
+              <tr id="responsive-media-item-picture">
                 <th scope="row"><code>&lt;picture&gt;</code></th>
-                <td>Art direction</td>
+                <td>Art Direction</td>
                 <td>Lets different image sources be selected with source/media conditions.</td>
-                <td class="example-cell"><code>&lt;picture&gt;&lt;source media="(min-width: 60rem)"srcset="wide.jpg"&gt;...&lt;/picture&gt;</code></td>
+                <td class="example-cell"><code>&lt;picture&gt;&lt;source media="(min-width: 60rem)" srcset="wide.jpg"&gt;...&lt;/picture&gt;</code></td>
               </tr>
 
               <tr id="responsive-media-item-object-fit">
                 <th scope="row"><code>object-fit</code></th>
-                <td>Media fit</td>
+                <td>Media Fit</td>
                 <td>Controls how replaced content fits inside its box.</td>
                 <td class="example-cell"><code>object-fit: cover;</code></td>
               </tr>
 
               <tr id="responsive-media-item-aspect-ratio">
                 <th scope="row"><code>aspect-ratio</code></th>
-                <td>Stable ratio</td>
+                <td>Stable Ratio</td>
                 <td>Creates a preferred width-to-height relationship.</td>
                 <td class="example-cell"><code>aspect-ratio: 16 / 9;</code></td>
               </tr>
@@ -322,7 +326,7 @@
     <!-- Shared Site Footer -->
     <div data-site-footer=""></div>
 
-    <!-- Shared Site Data and Utilities -->
+    <!-- Shared Site Data and Helpers -->
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
 
