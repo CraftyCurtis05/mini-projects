@@ -95,6 +95,12 @@ const pages = [
       '/references/javascript/javascript-reference.html'
   },
   {
+    key: 'data-collections',
+    label: 'Data Collections',
+    href:
+      '/references/javascript/data-collections.html'
+  },
+  {
     key: 'dom',
     label: 'DOM & Events',
     href:
@@ -199,6 +205,7 @@ const navGroups = [
 
     pages: [
       'javascript',
+      'data-collections',
       'dom',
       'http'
     ]

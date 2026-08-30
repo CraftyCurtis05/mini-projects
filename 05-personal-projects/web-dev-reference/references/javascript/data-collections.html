@@ -1,0 +1,608 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+    <!-- Core Document Metadata -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Initial Page Setup and Theme -->
+    <script src="../../assets/js/loader.js"></script>
+
+    <title>JavaScript Data Collections | Web Dev Reference</title>
+
+    <meta
+        content="My JavaScript reference for arrays, objects, Maps, Sets, and common ways to store, access, transform, and work with collections of data."
+        name="description"
+    />
+
+    <!-- Browser and Installed-App Appearance -->
+    <meta content="light dark" name="color-scheme" />
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
+
+    <!-- Social Sharing Metadata -->
+    <meta content="website" property="og:type" />
+    <meta content="JavaScript Data Collections | Web Dev Reference" property="og:title" />
+    <meta
+        content="My JavaScript reference for arrays, objects, Maps, Sets, and common ways to store, access, transform, and work with collections of data."
+        property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
+
+    <!-- App Manifest and Icons -->
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Shared Site Styles -->
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+        rel="stylesheet"
+    />
+    </head>
+
+    <body
+        data-author-note="The collection details I check most often are which methods mutate the original value, which return something new, and which structure makes the most sense for the data I am working with."
+        data-category="JavaScript"
+        data-footer="JavaScript Data Collections Cheat Sheet"
+        data-level="Beginner–Intermediate"
+        data-page="data-collections"
+        data-page-label="Data Collections"
+        data-related='[{"label":"JavaScript","href":"javascript.html"},{"label":"DOM &amp; Events","href":"dom-events.html"},{"label":"HTTP &amp; APIs","href":"http-apis.html"}]'
+        data-search-placeholder="Try: array, map, filter, object, Set..."
+        data-toc="true"
+    >
+    <!-- Initial Loading Screen -->
+    <div aria-hidden="true" class="site-loader" id="site-loader">
+        <div class="site-loader-content">
+        <div aria-hidden="true" class="site-loader-mark">
+            <span class="loader-dot loader-dot-teal"></span>
+            <span class="loader-dot loader-dot-blue"></span>
+            <span class="loader-dot loader-dot-green"></span>
+        </div>
+        <p class="site-loader-label">Web Dev Reference</p>
+        </div>
+    </div>
+
+    <!-- Accessibility Navigation -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared Site Navigation -->
+    <div data-site-nav=""></div>
+
+    <!-- Page Introduction -->
+    <header class="hero">
+        <h1>JavaScript Data Collections</h1>
+        <p class="subtitle">My reference for storing, accessing, transforming, and working with collections of data.</p>
+
+        <div class="hero-meta">
+        <span class="badge badge-category">JavaScript</span>
+        <span class="badge badge-level">Beginner–Intermediate</span>
+        </div>
+    </header>
+
+    <!-- Main Reference Content -->
+    <main id="main-content">      
+      <!----------------------------------------------------------
+        Arrays
+        ---------------------------------------------------------->
+      <section aria-labelledby="arrays-title" class="reference-section" id="arrays">
+        <h2 class="section-title" id="arrays-title">Arrays</h2>
+        <p class="section-description">Ordered collections for storing, accessing, transforming, and working with groups of values.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Ordered collections for storing, accessing, transforming, and working with groups of values.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="arrays-item-array">
+                <th scope="row"><code>[]</code></th>
+                <td>Array</td>
+                <td>Stores an ordered collection of values.</td>
+                <td class="example-cell"><code>const skills = ["HTML", "CSS", "JavaScript"];</code></td>
+              </tr>
+
+              <tr id="arrays-item-array-from">
+                <th scope="row"><code>Array.from()</code></th>
+                <td>Create Array</td>
+                <td>Creates a new array from an iterable or array-like value.</td>
+                <td class="example-cell"><code>const cards = Array.from(elements);</code></td>
+              </tr>
+
+              <tr id="arrays-item-length">
+                <th scope="row"><code>array.length</code></th>
+                <td>Array Length</td>
+                <td>Returns the number of items in an array.</td>
+                <td class="example-cell"><code>skills.length;</code></td>
+              </tr>
+
+              <tr id="arrays-item-array-index">
+                <th scope="row"><code>array[index]</code></th>
+                <td>Array Item Access</td>
+                <td>Reads or updates an array item at a zero-based index.</td>
+                <td class="example-cell"><code>skills[0];</code></td>
+              </tr>
+
+              <tr id="arrays-item-destructuring">
+                <th scope="row"><code>destructuring</code></th>
+                <td>Extract Array Values</td>
+                <td>Extracts array values into variables by their position.</td>
+                <td class="example-cell"><code>const [first, second] = skills;</code></td>
+              </tr>
+
+              <tr id="arrays-item-spread">
+                <th scope="row"><code>spread</code></th>
+                <td>Copy/Expand Array</td>
+                <td>Expands array values into another array or iterable context.</td>
+                <td class="example-cell"><code>const copiedSkills = [...skills];</code></td>
+              </tr>
+
+              <tr id="arrays-item-with">
+                <th scope="row"><code>.with()</code></th>
+                <td>Non-Mutating Item Replacement</td>
+                <td>Returns a new array with the item at a specified index replaced without changing the original array.</td>
+                <td class="example-cell"><code>const updatedSkills = skills.with(0, "HTML5");</code></td>
+              </tr>
+
+              <tr id="arrays-item-push">
+                <th scope="row"><code>.push()</code></th>
+                <td>Add Array Item</td>
+                <td>Adds one or more items to the end of an array and mutates the original array.</td>
+                <td class="example-cell"><code>skills.push("Vue");</code></td>
+              </tr>
+
+              <tr id="arrays-item-pop">
+                <th scope="row"><code>.pop()</code></th>
+                <td>Remove Last Item</td>
+                <td>Removes and returns the last array item and mutates the original array.</td>
+                <td class="example-cell"><code>const lastSkill = skills.pop();</code></td>
+              </tr>
+
+              <tr id="arrays-item-unshift">
+                <th scope="row"><code>.unshift()</code></th>
+                <td>Add First Item</td>
+                <td>Adds one or more items to the beginning of an array and mutates the original array.</td>
+                <td class="example-cell"><code>skills.unshift("Git");</code></td>
+              </tr>
+
+              <tr id="arrays-item-shift">
+                <th scope="row"><code>.shift()</code></th>
+                <td>Remove First Item</td>
+                <td>Removes and returns the first array item and mutates the original array.</td>
+                <td class="example-cell"><code>const firstSkill = skills.shift();</code></td>
+              </tr>
+
+              <tr id="arrays-item-slice">
+                <th scope="row"><code>.slice()</code></th>
+                <td>Copy Array Portion</td>
+                <td>Returns a shallow copy of part of an array without changing the original array.</td>
+                <td class="example-cell"><code>const firstThree = items.slice(0, 3);</code></td>
+              </tr>
+
+              <tr id="arrays-item-concat">
+                <th scope="row"><code>.concat()</code></th>
+                <td>Combine Arrays</td>
+                <td>Returns a new array by combining values without changing the original arrays.</td>
+                <td class="example-cell"><code>const allSkills = frontend.concat(backend);</code></td>
+              </tr>
+
+              <tr id="arrays-item-flat">
+                <th scope="row"><code>.flat()</code></th>
+                <td>Flatten Array</td>
+                <td>Returns a new array with nested arrays flattened to a specified depth.</td>
+                <td class="example-cell"><code>nested.flat();</code></td>
+              </tr>
+
+              <tr id="arrays-item-splice">
+                <th scope="row"><code>.splice()</code></th>
+                <td>Change Array Items</td>
+                <td>Adds, removes, or replaces items and mutates the original array.</td>
+                <td class="example-cell"><code>items.splice(1, 1);</code></td>
+              </tr>
+
+              <tr id="arrays-item-to-spliced">
+                <th scope="row"><code>.toSpliced()</code></th>
+                <td>Non-Mutating Splice</td>
+                <td>Returns a new array with items added, removed, or replaced without changing the original array.</td>
+                <td class="example-cell"><code>const updatedItems = items.toSpliced(1, 1);</code></td>
+              </tr>
+
+              <tr id="arrays-item-sort">
+                <th scope="row"><code>.sort()</code></th>
+                <td>Sort Array</td>
+                <td>Sorts array items in place and mutates the original array.</td>
+                <td class="example-cell"><code>names.sort();</code></td>
+              </tr>
+
+              <tr id="arrays-item-to-sorted">
+                <th scope="row"><code>.toSorted()</code></th>
+                <td>Non-Mutating Sort</td>
+                <td>Returns a new sorted array without changing the original array.</td>
+                <td class="example-cell"><code>const sortedNames = names.toSorted();</code></td>
+              </tr>
+
+              <tr id="arrays-item-reverse">
+                <th scope="row"><code>.reverse()</code></th>
+                <td>Reverse Array</td>
+                <td>Reverses array items in place and mutates the original array.</td>
+                <td class="example-cell"><code>skills.reverse();</code></td>
+              </tr>
+
+              <tr id="arrays-item-to-reversed">
+                <th scope="row"><code>.toReversed()</code></th>
+                <td>Non-Mutating Reverse</td>
+                <td>Returns a new reversed array without changing the original array.</td>
+                <td class="example-cell"><code>const reversedSkills = skills.toReversed();</code></td>
+              </tr>
+
+              <tr id="arrays-item-fill">
+                <th scope="row"><code>.fill()</code></th>
+                <td>Fill Array</td>
+                <td>Replaces array items with a value and mutates the original array.</td>
+                <td class="example-cell"><code>scores.fill(0);</code></td>
+              </tr>
+
+              <tr id="arrays-item-join">
+                <th scope="row"><code>.join()</code></th>
+                <td>Join Array Items</td>
+                <td>Combines array items into a string using an optional separator.</td>
+                <td class="example-cell"><code>skills.join(", ");</code></td>
+              </tr>
+
+              <tr id="arrays-item-for-each">
+                <th scope="row"><code>.forEach()</code></th>
+                <td>Array Iteration</td>
+                <td>Calls a function once for each item in an array.</td>
+                <td class="example-cell"><code>items.forEach(item =&gt; console.log(item));</code></td>
+              </tr>
+
+              <tr id="arrays-item-map">
+                <th scope="row"><code>.map()</code></th>
+                <td>Array Mapping</td>
+                <td>Creates a new array by transforming each item.</td>
+                <td class="example-cell"><code>const names = users.map(user =&gt; user.name);</code></td>
+              </tr>
+
+              <tr id="arrays-item-filter">
+                <th scope="row"><code>.filter()</code></th>
+                <td>Array Filtering</td>
+                <td>Creates a new array containing matching items.</td>
+                <td class="example-cell"><code>const active = users.filter(user =&gt; user.active);</code></td>
+              </tr>
+
+              <tr id="arrays-item-includes">
+                <th scope="row"><code>.includes()</code></th>
+                <td>Value Check</td>
+                <td>Checks whether an array contains a specified value.</td>
+                <td class="example-cell"><code>skills.includes("JavaScript"); // true</code></td>
+              </tr>
+
+              <tr id="arrays-item-index-of">
+                <th scope="row"><code>.indexOf()</code></th>
+                <td>Value Index</td>
+                <td>Returns the index of the first matching value, or <code>-1</code> if the value is not found.</td>
+                <td class="example-cell"><code>skills.indexOf("JavaScript");</code></td>
+              </tr>
+
+              <tr id="arrays-item-some">
+                <th scope="row"><code>.some()</code></th>
+                <td>Condition Check</td>
+                <td>Checks whether at least one array item matches a condition.</td>
+                <td class="example-cell"><code>users.some(user =&gt; user.active);</code></td>
+              </tr>
+
+              <tr id="arrays-item-every">
+                <th scope="row"><code>.every()</code></th>
+                <td>All Items Check</td>
+                <td>Checks whether every array item matches a condition.</td>
+                <td class="example-cell"><code>users.every(user =&gt; user.active);</code></td>
+              </tr>
+
+              <tr id="arrays-item-find">
+                <th scope="row"><code>.find()</code></th>
+                <td>Find Item</td>
+                <td>Returns the first array item matching a condition.</td>
+                <td class="example-cell"><code>const admin = users.find(user =&gt; user.role === "admin");</code></td>
+              </tr>
+
+              <tr id="arrays-item-find-last">
+                <th scope="row"><code>.findLast()</code></th>
+                <td>Find Last Item</td>
+                <td>Returns the last array item matching a condition.</td>
+                <td class="example-cell"><code>const latestAdmin = users.findLast(user =&gt; user.role === "admin");</code></td>
+              </tr>
+
+              <tr id="arrays-item-reduce">
+                <th scope="row"><code>.reduce()</code></th>
+                <td>Reduce Collection</td>
+                <td>Combines array values into one accumulated result.</td>
+                <td class="example-cell"><code>const total = prices.reduce((sum, price) =&gt; sum + price, 0);</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
+      <!----------------------------------------------------------
+        Objects
+        ---------------------------------------------------------->
+      <section aria-labelledby="objects-title" class="reference-section" id="objects">
+        <h2 class="section-title" id="objects-title">Objects</h2>
+        <p class="section-description">Key/value structures for storing, accessing, and working with related data.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Key/value structures for storing, accessing, and working with related data.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="objects-item-object">
+                <th scope="row"><code>{}</code></th>
+                <td>Object</td>
+                <td>Stores key/value properties.</td>
+                <td class="example-cell"><code>const user = { name: "Jennifer", role: "Developer" };</code></td>
+              </tr>
+
+              <tr id="objects-item-property-access">
+                <th scope="row"><code>object.property</code></th>
+                <td>Property Access</td>
+                <td>Reads or updates an object property by its name.</td>
+                <td class="example-cell"><code>user.name</code></td>
+              </tr>
+
+              <tr id="objects-item-bracket-notation">
+                <th scope="row"><code>object[property]</code></th>
+                <td>Dynamic Property Access</td>
+                <td>Reads or updates an object property using a property name or expression.</td>
+                <td class="example-cell"><code>user[propertyName]</code></td>
+              </tr>
+
+              <tr id="objects-item-object-keys">
+                <th scope="row"><code>Object.keys()</code></th>
+                <td>Object Property Names</td>
+                <td>Returns an array containing an object's own enumerable property names.</td>
+                <td class="example-cell"><code>Object.keys(user);</code></td>
+              </tr>
+
+              <tr id="objects-item-object-values">
+                <th scope="row"><code>Object.values()</code></th>
+                <td>Object Property Values</td>
+                <td>Returns an array containing an object's own enumerable property values.</td>
+                <td class="example-cell"><code>Object.values(user);</code></td>
+              </tr>
+
+              <tr id="objects-item-object-entries">
+                <th scope="row"><code>Object.entries()</code></th>
+                <td>Object Property Entries</td>
+                <td>Returns an array containing an object's own enumerable key/value pairs.</td>
+                <td class="example-cell"><code>Object.entries(user);</code></td>
+              </tr>
+
+              <tr id="objects-item-object-from-entries">
+                <th scope="row"><code>Object.fromEntries()</code></th>
+                <td>Create Object from Entries</td>
+                <td>Creates an object from an iterable containing key/value pairs.</td>
+                <td class="example-cell"><code>const user = Object.fromEntries(entries);</code></td>
+              </tr>
+
+              <tr id="objects-item-object-has-own">
+                <th scope="row"><code>Object.hasOwn()</code></th>
+                <td>Own Property Check</td>
+                <td>Checks whether an object has a specified property as its own property.</td>
+                <td class="example-cell"><code>Object.hasOwn(user, "role"); // true</code></td>
+              </tr>
+
+              <tr id="objects-item-delete">
+                <th scope="row"><code>delete</code></th>
+                <td>Remove Property</td>
+                <td>Removes a property from an object and mutates the original object.</td>
+                <td class="example-cell"><code>delete user.active;</code></td>
+              </tr>
+
+              <tr id="objects-item-object-freeze">
+                <th scope="row"><code>Object.freeze()</code></th>
+                <td>Prevent Object Changes</td>
+                <td>Prevents properties from being added, removed, or changed on an object.</td>
+                <td class="example-cell"><code>Object.freeze(settings);</code></td>
+              </tr>
+
+              <tr id="objects-item-destructuring">
+                <th scope="row"><code>destructuring</code></th>
+                <td>Extract Values</td>
+                <td>Extracts object properties into variables.</td>
+                <td class="example-cell"><code>const { name, role } = user;</code></td>
+              </tr>
+
+              <tr id="objects-item-spread">
+                <th scope="row"><code>spread</code></th>
+                <td>Copy/Merge Syntax</td>
+                <td>Expands object properties into another object.</td>
+                <td class="example-cell"><code>const updated = { ...user, active: true };</code></td>
+              </tr>
+
+              <tr id="objects-item-structured-clone">
+                <th scope="row"><code>structuredClone()</code></th>
+                <td>Deep Clone</td>
+                <td>Creates a deep clone of a supported value, including nested objects and arrays.</td>
+                <td class="example-cell"><code>const copy = structuredClone(user);</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!----------------------------------------------------------
+        Maps
+        ---------------------------------------------------------->
+      <section aria-labelledby="maps-title" class="reference-section" id="maps">
+        <h2 class="section-title" id="maps-title">Maps</h2>
+        <p class="section-description">Keyed collections for storing and working with key/value pairs.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Keyed collections for storing and working with key/value pairs.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="maps-item-map">
+                <th scope="row"><code>Map</code></th>
+                <td>Keyed Collection</td>
+                <td>Stores key/value pairs and allows values of any type to be used as keys.</td>
+                <td class="example-cell"><code>const users = new Map();</code></td>
+              </tr>
+
+              <tr id="maps-item-set">
+                <th scope="row"><code>.set()</code></th>
+                <td>Add or Update Map Entry</td>
+                <td>Adds a key/value pair to a Map or updates the value for an existing key.</td>
+                <td class="example-cell"><code>users.set(1, "Jennifer");</code></td>
+              </tr>
+
+              <tr id="maps-item-get">
+                <th scope="row"><code>.get()</code></th>
+                <td>Get Map Value</td>
+                <td>Returns the value associated with a specified Map key, or <code>undefined</code> if the key is not found.</td>
+                <td class="example-cell"><code>const user = users.get(1);</code></td>
+              </tr>
+
+              <tr id="maps-item-has">
+                <th scope="row"><code>.has()</code></th>
+                <td>Map Key Check</td>
+                <td>Checks whether a Map contains a specified key.</td>
+                <td class="example-cell"><code>users.has(1); // true</code></td>
+              </tr>
+
+              <tr id="maps-item-delete">
+                <th scope="row"><code>.delete()</code></th>
+                <td>Remove Map Entry</td>
+                <td>Removes an entry by its key and returns whether the entry existed.</td>
+                <td class="example-cell"><code>users.delete(1); // true</code></td>
+              </tr>
+
+              <tr id="maps-item-size">
+                <th scope="row"><code>.size</code></th>
+                <td>Map Size</td>
+                <td>Returns the number of entries in a Map.</td>
+                <td class="example-cell"><code>users.size;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!----------------------------------------------------------
+        Sets
+        ---------------------------------------------------------->
+      <section aria-labelledby="sets-title" class="reference-section" id="sets">
+        <h2 class="section-title" id="sets-title">Sets</h2>
+        <p class="section-description">Unique-value collections for storing and working with values without duplicates.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Unique-value collections for storing and working with values without duplicates.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="sets-item-set">
+                <th scope="row"><code>Set</code></th>
+                <td>Unique Value Collection</td>
+                <td>Stores a collection of unique values without allowing duplicates.</td>
+                <td class="example-cell"><code>const skills = new Set(["HTML", "CSS", "JavaScript"]);</code></td>
+              </tr>
+
+              <tr id="sets-item-add">
+                <th scope="row"><code>.add()</code></th>
+                <td>Add Set Value</td>
+                <td>Adds a value to a Set if that value is not already present.</td>
+                <td class="example-cell"><code>skills.add("Vue");</code></td>
+              </tr>
+
+              <tr id="sets-item-has">
+                <th scope="row"><code>.has()</code></th>
+                <td>Set Value Check</td>
+                <td>Checks whether a Set contains a specified value.</td>
+                <td class="example-cell"><code>skills.has("JavaScript"); // true</code></td>
+              </tr>
+
+              <tr id="sets-item-delete">
+                <th scope="row"><code>.delete()</code></th>
+                <td>Remove Set Value</td>
+                <td>Removes a specified value from a Set and returns whether the value existed.</td>
+                <td class="example-cell"><code>skills.delete("CSS"); // true</code></td>
+              </tr>
+
+              <tr id="sets-item-size">
+                <th scope="row"><code>.size</code></th>
+                <td>Set Size</td>
+                <td>Returns the number of values in a Set.</td>
+                <td class="example-cell"><code>skills.size;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- Shared Site Footer -->
+    <div data-site-footer=""></div>
+
+    <!-- Shared Site Data and Helpers -->
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/shared.js" defer></script>
+
+    <!-- Shared Layout and Interface Behavior -->
+    <script src="../../assets/js/layout.js" defer></script>
+    <script src="../../assets/js/theme.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+
+    <!-- Reference Page Behavior -->
+    <script src="../../assets/js/references.js" defer></script>
+
+    <!-- Shared Interactive Utilities -->
+    <script src="../../assets/js/dialogs.js" defer></script>
+    <script src="../../assets/js/utilities.js" defer></script>
+
+    <!-- Site Initialization -->
+    <script src="../../assets/js/main.js" defer></script>
+  </body>
+</html>      

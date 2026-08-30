@@ -5,22 +5,27 @@
     <!-- Core Document Metadata -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Initial Page Setup and Theme -->
+    <script src="../../assets/js/loader.js"></script>
+
+    <title>JavaScript | Web Dev Reference</title>
+    
     <meta
-      content="My JavaScript reference for values, variables, control flow, functions, arrays, objects, modules, and modern syntax."
+      content="My JavaScript reference for values, variables, type conversion, control flow, functions, asynchronous code, modules, and modern syntax."
       name="description"
     />
 
-    <title>JavaScript</title>
-
     <!-- Browser and Installed-App Appearance -->
+    <meta content="light dark" name="color-scheme" />
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
     <!-- Social Sharing Metadata -->
     <meta content="website" property="og:type" />
-    <meta content="JavaScript Reference" property="og:title" />
+    <meta content="JavaScript | Web Dev Reference" property="og:title" />
     <meta
-      content="My JavaScript reference for values, variables, control flow, functions, arrays, objects, modules, and modern syntax."
+      content="My JavaScript reference for values, variables, type conversion, control flow, functions, asynchronous code, modules, and modern syntax."
       property="og:description"
     />
     <meta content="../../assets/images/app-icon-512.png" property="og:image" />
@@ -30,25 +35,26 @@
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Shared Site Styles and Fonts -->
+    <!-- Shared Site Styles -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
-
-    <!-- Initial Page Loader -->
-    <script src="../../assets/js/loader.js" defer></script>
   </head>
 
   <body
     data-author-note="The JavaScript details I forget fastest are what mutates the original value and what returns a new one. I also check scope and the actual data type before assuming the function itself is wrong."
     data-category="JavaScript"
-    data-footer="JavaScript Reference Cheat Sheet"
+    data-footer="JavaScript Cheat Sheet"
     data-level="Beginner–Intermediate"
     data-page="javascript"
-    data-page-label="JavaScript Reference"
-    data-related='[{"label":"DOM &amp; Events","href":"dom-events.html"},{"label":"HTTP &amp; APIs","href":"http-apis.html"},{"label":"Debugging","href":"../tools/debugging.html"}]'
+    data-page-label="JavaScript"
+    data-related='[{"label":"Data Collections","href":"data-collections.html"},{"label":"DOM &amp; Events","href":"dom-events.html"},{"label":"HTTP &amp; APIs","href":"http-apis.html"}]'
     data-search-placeholder="Try: const, map, function, destructuring..."
     data-toc="true"
   >
@@ -73,7 +79,7 @@
     <!-- Page Introduction -->
     <header class="hero">
       <h1>JavaScript</h1>
-      <p class="subtitle">The JavaScript syntax and concepts I am most likely to look up again.</p>
+      <p class="subtitle">My reference for JavaScript syntax, values, control flow, functions, and modern features.</p>
 
       <div class="hero-meta">
         <span class="badge badge-category">JavaScript</span>
@@ -83,9 +89,8 @@
 
     <!-- Main Reference Content -->
     <main id="main-content">
-
       <!----------------------------------------------------------
-        Variables & Data Types
+        Variables and Data Types
         ---------------------------------------------------------->
       <section aria-labelledby="variables-types-title" class="reference-section" id="variables-types">
         <h2 class="section-title" id="variables-types-title">Variables &amp; Data Types</h2>
@@ -107,58 +112,135 @@
             <tbody>
               <tr id="variables-types-item-let">
                 <th scope="row"><code>let</code></th>
-                <td>Block-scoped variable</td>
+                <td>Block-Scoped Variable</td>
                 <td>Declares a variable whose value can be reassigned.</td>
                 <td class="example-cell"><code>let count = 1;</code></td>
               </tr>
 
               <tr id="variables-types-item-const">
                 <th scope="row"><code>const</code></th>
-                <td>Block-scoped constant</td>
+                <td>Block-Scoped Binding</td>
                 <td>Declares a binding that cannot be reassigned.</td>
                 <td class="example-cell"><code>const siteName = "Web Dev Reference";</code></td>
               </tr>
 
+              <tr id="variables-types-item-var">
+                <th scope="row"><code>var</code></th>
+                <td>Function-Scoped Variable</td>
+                <td>Declares a variable scoped to its containing function rather than its block.</td>
+                <td class="example-cell"><code>var count = 1;</code></td>
+              </tr>
+
               <tr id="variables-types-item-string">
                 <th scope="row"><code>string</code></th>
-                <td>Text value</td>
+                <td>Text Value</td>
                 <td>Represents textual data.</td>
                 <td class="example-cell"><code>const name = "Jennifer";</code></td>
               </tr>
 
               <tr id="variables-types-item-number">
                 <th scope="row"><code>number</code></th>
-                <td>Numeric value</td>
-                <td>Represents integer and floating-point numbers.</td>
+                <td>Numeric Value</td>
+                <td>Represents numeric values, including integers and decimals.</td>
                 <td class="example-cell"><code>const score = 98.5;</code></td>
+              </tr>
+
+              <tr id="variables-types-item-bigint">
+                <th scope="row"><code>bigint</code></th>
+                <td>Large Integer Value</td>
+                <td>Represents integers larger than the safe range supported by <code>number</code>.</td>
+                <td class="example-cell"><code>const largeNumber = 9007199254740993n;</code></td>
               </tr>
 
               <tr id="variables-types-item-boolean">
                 <th scope="row"><code>boolean</code></th>
-                <td>True/false value</td>
+                <td>True/False Value</td>
                 <td>Represents one of two logical states.</td>
                 <td class="example-cell"><code>const isVisible = true;</code></td>
               </tr>
 
               <tr id="variables-types-item-null">
                 <th scope="row"><code>null</code></th>
-                <td>Intentional empty value</td>
+                <td>Intentional Empty Value</td>
                 <td>Represents the intentional absence of a value.</td>
                 <td class="example-cell"><code>const selectedItem = null;</code></td>
               </tr>
 
               <tr id="variables-types-item-undefined">
                 <th scope="row"><code>undefined</code></th>
-                <td>Missing value</td>
-                <td>Commonly represents a declared value that has not been assigned.</td>
+                <td>Missing Value</td>
+                <td>Represents a value that has not been assigned or is otherwise missing.</td>
                 <td class="example-cell"><code>let result;</code></td>
               </tr>
 
               <tr id="variables-types-item-typeof">
                 <th scope="row"><code>typeof</code></th>
-                <td>Type operator</td>
+                <td>Type Operator</td>
                 <td>Returns a string describing a value's JavaScript type.</td>
                 <td class="example-cell"><code>typeof 42; // "number"</code></td>
+              </tr>
+
+              <tr id="variables-types-item-array-is-array">
+                <th scope="row"><code>Array.isArray()</code></th>
+                <td>Array Type Check</td>
+                <td>Checks whether a value is an array.</td>
+                <td class="example-cell"><code>Array.isArray(items); // true</code></td>
+              </tr>
+
+              <tr id="variables-types-item-instanceof">
+                <th scope="row"><code>instanceof</code></th>
+                <td>Instance Check</td>
+                <td>Checks whether an object is an instance of a specified constructor or its inheritance chain.</td>
+                <td class="example-cell"><code>user instanceof User; // true</code></td>
+              </tr>
+
+              <tr id="variables-types-item-number-is-nan">
+                <th scope="row"><code>Number.isNaN()</code></th>
+                <td>NaN Check</td>
+                <td>Checks whether a value is the numeric value <code>NaN</code> without converting its type.</td>
+                <td class="example-cell"><code>Number.isNaN(result); // true</code></td>
+              </tr>
+
+              <tr id="variables-types-item-parse-int">
+                <th scope="row"><code>parseInt()</code></th>
+                <td>Integer Parsing</td>
+                <td>Parses a string and returns an integer.</td>
+                <td class="example-cell"><code>parseInt("42", 10); // 42</code></td>
+              </tr>
+
+              <tr id="variables-types-item-parse-float">
+                <th scope="row"><code>parseFloat()</code></th>
+                <td>Decimal Parsing</td>
+                <td>Parses a string and returns a number that can include a decimal.</td>
+                <td class="example-cell"><code>parseFloat("42.5"); // 42.5</code></td>
+              </tr>
+
+              <tr id="variables-types-item-number-conversion">
+                <th scope="row"><code>Number()</code></th>
+                <td>Number Conversion</td>
+                <td>Converts a value to a number.</td>
+                <td class="example-cell"><code>Number("42"); // 42</code></td>
+              </tr>
+
+              <tr id="variables-types-item-string-conversion">
+                <th scope="row"><code>String()</code></th>
+                <td>String Conversion</td>
+                <td>Converts a value to a string.</td>
+                <td class="example-cell"><code>String(42); // "42"</code></td>
+              </tr>
+
+              <tr id="variables-types-item-boolean-conversion">
+                <th scope="row"><code>Boolean()</code></th>
+                <td>Boolean Conversion</td>
+                <td>Converts a value to a boolean based on its truthiness.</td>
+                <td class="example-cell"><code>Boolean(1); // true</code></td>
+              </tr>
+
+              <tr id="variables-types-item-truthy-falsy">
+                <th scope="row"><code>truthy / falsy</code></th>
+                <td>Boolean Context</td>
+                <td>Describes how values are treated as <code>true</code> or <code>false</code> in a boolean context.</td>
+                <td class="example-cell"><code>Boolean(""); // false</code></td>
               </tr>
             </tbody>
           </table>
@@ -166,7 +248,7 @@
       </section>
 
       <!----------------------------------------------------------
-        Operators & Control Flow
+        Operators and Control Flow
         ---------------------------------------------------------->
       <section aria-labelledby="control-flow-title" class="reference-section" id="control-flow">
         <h2 class="section-title" id="control-flow-title">Operators &amp; Control Flow</h2>
@@ -177,6 +259,41 @@
             <caption class="sr-only">Expressions and statements used to compare values, make decisions, and repeat work.</caption>
 
             <thead>
+              <tr id="control-flow-item-arithmetic">
+                <th scope="row"><code>+ - * / % **</code></th>
+                <td>Arithmetic Operators</td>
+                <td>Performs addition, subtraction, multiplication, division, remainder, and exponentiation.</td>
+                <td class="example-cell"><code>total = price * quantity;</code></td>
+              </tr>
+
+              <tr id="control-flow-item-assignment">
+                <th scope="row"><code>=</code></th>
+                <td>Assignment</td>
+                <td>Assigns a value to a variable.</td>
+                <td class="example-cell"><code>count = 2;</code></td>
+              </tr>
+
+              <tr id="control-flow-item-compound-assignment">
+                <th scope="row"><code>+= -= *= /= %=</code></th>
+                <td>Compound Assignment</td>
+                <td>Performs an arithmetic operation and assigns the result back to the variable.</td>
+                <td class="example-cell"><code>total += price;</code></td>
+              </tr>
+
+              <tr id="control-flow-item-increment-decrement">
+                <th scope="row"><code>++ --</code></th>
+                <td>Increment / Decrement</td>
+                <td>Increases or decreases a numeric variable by one.</td>
+                <td class="example-cell"><code>count++;</code></td>
+              </tr>
+
+              <tr id="control-flow-item-strict-equality">
+                <th scope="row"><code>===</code></th>
+                <td>Strict Equality</td>
+                <td>Compares value and type without coercion.</td>
+                <td class="example-cell"><code>status === "ready"</code></td>
+              </tr>
+
               <tr>
                 <th scope="col">Term / Syntax</th>
                 <th scope="col">Name</th>
@@ -186,59 +303,122 @@
             </thead>
 
             <tbody>
-              <tr id="control-flow-item-item">
+              <tr id="control-flow-item-strict-equality">
                 <th scope="row"><code>===</code></th>
-                <td>Strict equality</td>
+                <td>Strict Equality</td>
                 <td>Compares value and type without coercion.</td>
                 <td class="example-cell"><code>status === "ready"</code></td>
               </tr>
 
-              <tr id="control-flow-item">
+              <tr id="control-flow-item-strict-inequality">
                 <th scope="row"><code>!==</code></th>
-                <td>Strict inequality</td>
+                <td>Strict Inequality</td>
                 <td>Returns true when value or type differs.</td>
                 <td class="example-cell"><code>count !== 0</code></td>
               </tr>
 
-              <tr id="control-flow-item-2">
+              <tr id="control-flow-item-relational-comparison">
+                <th scope="row"><code>&lt; &gt; &lt;= &gt;=</code></th>
+                <td>Relational Comparison</td>
+                <td>Compares whether one value is less than, greater than, or equal to another value.</td>
+                <td class="example-cell"><code>score &gt;= 70</code></td>
+              </tr>
+
+              <tr id="control-flow-item-logical-not">
+                <th scope="row"><code>!</code></th>
+                <td>Logical NOT</td>
+                <td>Converts a value to a boolean and returns the opposite boolean value.</td>
+                <td class="example-cell"><code>!isLoggedIn</code></td>
+              </tr>
+
+              <tr id="control-flow-item-logical-and">
                 <th scope="row"><code>&amp;&amp;</code></th>
                 <td>Logical AND</td>
-                <td>Returns truthy only when both operands are truthy.</td>
+                <td>Returns the first falsy operand, or the last operand if all are truthy.</td>
                 <td class="example-cell"><code>isLoggedIn &amp;&amp; isAdmin</code></td>
               </tr>
 
-              <tr id="control-flow-item-3">
+              <tr id="control-flow-item-logical-or">
                 <th scope="row"><code>||</code></th>
                 <td>Logical OR</td>
-                <td>Returns the first truthy operand.</td>
+                <td>Returns the first truthy operand, or the last operand if all are falsy.</td>
                 <td class="example-cell"><code>displayName || "Guest"</code></td>
               </tr>
 
-              <tr id="control-flow-item-4">
+              <tr id="control-flow-item-nullish-coalescing">
                 <th scope="row"><code>??</code></th>
-                <td>Nullish coalescing</td>
+                <td>Nullish Coalescing</td>
                 <td>Uses a fallback only when the left value is null or undefined.</td>
                 <td class="example-cell"><code>username ?? "Guest"</code></td>
               </tr>
 
+              <tr id="control-flow-item-ternary">
+                <th scope="row"><code>?:</code></th>
+                <td>Conditional Operator</td>
+                <td>Returns one of two expressions based on a condition.</td>
+                <td class="example-cell"><code>const label = isActive ? "Active" : "Inactive";</code></td>
+              </tr>
+
               <tr id="control-flow-item-if-else">
                 <th scope="row"><code>if / else</code></th>
-                <td>Conditional statement</td>
+                <td>Conditional Statement</td>
                 <td>Runs different blocks based on a condition.</td>
                 <td class="example-cell"><code>if (score &gt;= 70) { pass(); } else { retry(); }</code></td>
               </tr>
 
               <tr id="control-flow-item-switch">
                 <th scope="row"><code>switch</code></th>
-                <td>Multi-branch conditional</td>
+                <td>Multi-Branch Conditional</td>
                 <td>Matches one expression against multiple cases.</td>
                 <td class="example-cell"><code>switch (theme) { case "dark": applyDark(); break; }</code></td>
               </tr>
 
+              <tr id="control-flow-item-break">
+                <th scope="row"><code>break</code></th>
+                <td>Exit Statement</td>
+                <td>Exits the nearest loop or <code>switch</code> statement.</td>
+                <td class="example-cell"><code>if (item === target) { break; }</code></td>
+              </tr>
+
+              <tr id="control-flow-item-continue">
+                <th scope="row"><code>continue</code></th>
+                <td>Skip Iteration</td>
+                <td>Skips the rest of the current loop iteration and continues with the next one.</td>
+                <td class="example-cell"><code>if (!item.active) { continue; }</code></td>
+              </tr>
+
+              <tr id="control-flow-item-for">
+                <th scope="row"><code>for</code></th>
+                <td>Counted Loop</td>
+                <td>Repeats a block while a condition remains true, with optional setup and update expressions.</td>
+                <td class="example-cell"><code>for (let i = 0; i &lt; items.length; i++) { console.log(items[i]); }</code></td>
+              </tr>
+
+              <tr id="control-flow-item-while">
+                <th scope="row"><code>while</code></th>
+                <td>Conditional Loop</td>
+                <td>Repeats a block while a condition remains true.</td>
+                <td class="example-cell"><code>while (count &lt; 5) { count++; }</code></td>
+              </tr>
+
+              <tr id="control-flow-item-do-while">
+                <th scope="row"><code>do...while</code></th>
+                <td>Post-Test Loop</td>
+                <td>Runs a block at least once, then repeats it while a condition remains true.</td>
+                <td class="example-cell"><code>do { count++; } while (count &lt; 5);</code></td>
+              </tr>
+
+              <tr id="control-flow-item-for-in">
+                <th scope="row"><code>for...in</code></th>
+                <td>Object Property Loop</td>
+                <td>Loops through the enumerable property names of an object.</td>
+                <td class="example-cell"><code>for (const key in user) { console.log(key); }</code></td>
+              </tr>
+
               <tr id="control-flow-item-for-of">
                 <th scope="row"><code>for...of</code></th>
-                <td>Iterable loop</td>
-                <td>Loops through iterable values such as arrays.</td>
+                <td>Iterable Loop</td>
+                <td>Loops through the values of an iterable such as an array, Map, or Set.</td>
                 <td class="example-cell"><code>for (const item of items) { console.log(item); }</code></td>
               </tr>
             </tbody>
@@ -269,125 +449,72 @@
             <tbody>
               <tr id="functions-item-function">
                 <th scope="row"><code>function</code></th>
-                <td>Function declaration</td>
+                <td>Function Declaration</td>
                 <td>Creates a named reusable function.</td>
                 <td class="example-cell"><code>function greet(name) { return `Hi ${name}`; }</code></td>
               </tr>
 
-              <tr id="functions-item-item">
+              <tr id="functions-item-function-expression">
+                <th scope="row"><code>function expression</code></th>
+                <td>Function Expression</td>
+                <td>Creates a function as a value that can be assigned to a variable.</td>
+                <td class="example-cell"><code>const greet = function (name) { return `Hi ${name}`; };</code></td>
+              </tr>
+
+              <tr id="functions-item-arrow-function">
                 <th scope="row"><code>=&gt;</code></th>
-                <td>Arrow function</td>
-                <td>Provides concise function syntax and lexical this behavior.</td>
+                <td>Arrow Function</td>
+                <td>Provides concise function syntax and inherits <code>this</code> from the surrounding scope.</td>
                 <td class="example-cell"><code>const double = value =&gt; value * 2;</code></td>
               </tr>
 
               <tr id="functions-item-return">
                 <th scope="row"><code>return</code></th>
-                <td>Return value</td>
+                <td>Return Value</td>
                 <td>Ends a function and sends a value back to the caller.</td>
                 <td class="example-cell"><code>return total;</code></td>
               </tr>
 
+              <tr id="functions-item-scope">
+                <th scope="row"><code>scope</code></th>
+                <td>Variable Accessibility</td>
+                <td>Determines where variables and functions can be accessed in the code.</td>
+                <td class="example-cell"><code>function greet() { const message = "Hi"; }</code></td>
+              </tr>
+
+              <tr id="functions-item-this">
+                <th scope="row"><code>this</code></th>
+                <td>Function Context</td>
+                <td>References a value determined by how a regular function is called.</td>
+                <td class="example-cell"><code>const user = { name: "Jennifer", greet() { return this.name; } };</code></td>
+              </tr>
+
               <tr id="functions-item-default-parameter">
                 <th scope="row"><code>default parameter</code></th>
-                <td>Fallback argument</td>
+                <td>Fallback Argument</td>
                 <td>Provides a value when an argument is omitted or undefined.</td>
                 <td class="example-cell"><code>function greet(name = "Guest") { }</code></td>
               </tr>
 
               <tr id="functions-item-rest-parameter">
                 <th scope="row"><code>rest parameter</code></th>
-                <td>Collect arguments</td>
+                <td>Collect Arguments</td>
                 <td>Collects remaining arguments into an array.</td>
                 <td class="example-cell"><code>function sum(...numbers) { }</code></td>
               </tr>
 
               <tr id="functions-item-callback">
                 <th scope="row"><code>callback</code></th>
-                <td>Function argument</td>
-                <td>Passes a function to another function for later use.</td>
+                <td>Function Argument</td>
+                <td>A function passed to another function to be called later.</td>
                 <td class="example-cell"><code>items.forEach(item =&gt; console.log(item));</code></td>
               </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
 
-      <!----------------------------------------------------------
-        Arrays & Objects
-        ---------------------------------------------------------->
-      <section aria-labelledby="arrays-objects-title" class="reference-section" id="arrays-objects">
-        <h2 class="section-title" id="arrays-objects-title">Arrays &amp; Objects</h2>
-        <p class="section-description">Common structures for collections, records, transformation, and lookup.</p>
-
-        <div class="table-wrapper">
-          <table class="reference-table">
-            <caption class="sr-only">Common structures for collections, records, transformation, and lookup.</caption>
-
-            <thead>
-              <tr>
-                <th scope="col">Term / Syntax</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Example</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr id="arrays-objects-item-item">
-                <th scope="row"><code>[]</code></th>
-                <td>Array</td>
-                <td>Stores an ordered collection of values.</td>
-                <td class="example-cell"><code>const skills = ["HTML", "CSS", "JavaScript"];</code></td>
-              </tr>
-
-              <tr id="arrays-objects-item">
-                <th scope="row"><code>{}</code></th>
-                <td>Object</td>
-                <td>Stores key/value properties.</td>
-                <td class="example-cell"><code>const user = { name: "Jennifer", role: "Developer" };</code></td>
-              </tr>
-
-              <tr id="arrays-objects-item-map">
-                <th scope="row"><code>.map()</code></th>
-                <td>Array mapping</td>
-                <td>Creates a new array by transforming each item.</td>
-                <td class="example-cell"><code>const names = users.map(user =&gt; user.name);</code></td>
-              </tr>
-
-              <tr id="arrays-objects-item-filter">
-                <th scope="row"><code>.filter()</code></th>
-                <td>Array filtering</td>
-                <td>Creates a new array containing matching items.</td>
-                <td class="example-cell"><code>const active = users.filter(user =&gt; user.active);</code></td>
-              </tr>
-
-              <tr id="arrays-objects-item-find">
-                <th scope="row"><code>.find()</code></th>
-                <td>Find item</td>
-                <td>Returns the first array item matching a condition.</td>
-                <td class="example-cell"><code>const admin = users.find(user =&gt; user.role === "admin");</code></td>
-              </tr>
-
-              <tr id="arrays-objects-item-reduce">
-                <th scope="row"><code>.reduce()</code></th>
-                <td>Reduce collection</td>
-                <td>Combines array values into one accumulated result.</td>
-                <td class="example-cell"><code>const total = prices.reduce((sum, price) =&gt; sum + price, 0);</code></td>
-              </tr>
-
-              <tr id="arrays-objects-item-destructuring">
-                <th scope="row"><code>destructuring</code></th>
-                <td>Extract values</td>
-                <td>Pulls properties or items into variables.</td>
-                <td class="example-cell"><code>const { name, role } = user;</code></td>
-              </tr>
-
-              <tr id="arrays-objects-item-spread">
-                <th scope="row"><code>spread</code></th>
-                <td>Copy/merge syntax</td>
-                <td>Expands iterable items or object properties.</td>
-                <td class="example-cell"><code>const updated = { ...user, active: true };</code></td>
+              <tr id="functions-item-recursion">
+                <th scope="row"><code>recursion</code></th>
+                <td>Self-Calling Function</td>
+                <td>A function calling itself until a stopping condition is reached.</td>
+                <td class="example-cell"><code>function countdown(n) { if (n &lt;= 0) return; countdown(n - 1); }</code></td>
               </tr>
             </tbody>
           </table>
@@ -417,43 +544,120 @@
             <tbody>
               <tr id="modern-js-item-template-literal">
                 <th scope="row"><code>template literal</code></th>
-                <td>Interpolated string</td>
+                <td>Interpolated String</td>
                 <td>Creates strings with embedded expressions.</td>
                 <td class="example-cell"><code>const message = `Hello, ${name}!`;</code></td>
               </tr>
 
-              <tr id="modern-js-item-item">
+              <tr id="modern-js-item-optional-chaining">
                 <th scope="row"><code>?.</code></th>
-                <td>Optional chaining</td>
-                <td>Safely accesses nested properties that may be missing.</td>
+                <td>Optional Chaining</td>
+                <td>Safely accesses a property by returning <code>undefined</code> if the preceding value is <code>null</code> or <code>undefined</code>.</td>
                 <td class="example-cell"><code>user.profile?.avatar</code></td>
+              </tr>
+
+              <tr id="modern-js-item-class">
+                <th scope="row"><code>class</code></th>
+                <td>Class Declaration</td>
+                <td>Defines a template for creating objects with related properties and methods.</td>
+                <td class="example-cell"><code>class User { constructor(name) { this.name = name; } }</code></td>
+              </tr>
+
+              <tr id="modern-js-item-extends">
+                <th scope="row"><code>extends</code></th>
+                <td>Class Inheritance</td>
+                <td>Creates a class that inherits properties and methods from another class.</td>
+                <td class="example-cell"><code>class Admin extends User { }</code></td>
+              </tr>
+
+              <tr id="modern-js-item-super">
+                <th scope="row"><code>super</code></th>
+                <td>Parent Class Access</td>
+                <td>Calls the parent class constructor or accesses its methods.</td>
+                <td class="example-cell"><code>constructor(name) { super(name); }</code></td>
+              </tr>
+
+              <tr id="modern-js-item-promise">
+                <th scope="row"><code>Promise</code></th>
+                <td>Asynchronous Result</td>
+                <td>Represents the eventual completion or failure of an asynchronous operation.</td>
+                <td class="example-cell"><code>const promise = fetch(url);</code></td>
+              </tr>
+
+              <tr id="modern-js-item-then">
+                <th scope="row"><code>.then()</code></th>
+                <td>Promise Fulfillment Handler</td>
+                <td>Runs a function when a Promise is fulfilled and returns a new Promise.</td>
+                <td class="example-cell"><code>promise.then(value =&gt; console.log(value));</code></td>
+              </tr>
+
+              <tr id="modern-js-item-catch">
+                <th scope="row"><code>.catch()</code></th>
+                <td>Promise Rejection Handler</td>
+                <td>Runs a function when a Promise is rejected and returns a new Promise.</td>
+                <td class="example-cell"><code>promise.catch(error =&gt; console.error(error));</code></td>
+              </tr>
+
+              <tr id="modern-js-item-finally">
+                <th scope="row"><code>.finally()</code></th>
+                <td>Promise Completion Handler</td>
+                <td>Runs a function when a Promise settles, whether it is fulfilled or rejected.</td>
+                <td class="example-cell"><code>promise.finally(() =&gt; hideLoading());</code></td>
+              </tr>
+
+              <tr id="modern-js-item-promise-all">
+                <th scope="row"><code>Promise.all()</code></th>
+                <td>Wait for Multiple Promises</td>
+                <td>Waits for all provided Promises to fulfill and returns their values together, but rejects if any Promise rejects.</td>
+                <td class="example-cell"><code>const results = await Promise.all([first, second]);</code></td>
+              </tr>
+
+              <tr id="modern-js-item-promise-all-settled">
+                <th scope="row"><code>Promise.allSettled()</code></th>
+                <td>Wait for All Promise Results</td>
+                <td>Waits for all provided Promises to settle and returns the outcome of each one.</td>
+                <td class="example-cell"><code>const results = await Promise.allSettled([first, second]);</code></td>
+              </tr>
+
+              <tr id="modern-js-item-async">
+                <th scope="row"><code>async</code></th>
+                <td>Asynchronous Function</td>
+                <td>Declares a function that always returns a Promise and allows <code>await</code> inside it.</td>
+                <td class="example-cell"><code>async function loadData() { }</code></td>
+              </tr>
+
+              <tr id="modern-js-item-await">
+                <th scope="row"><code>await</code></th>
+                <td>Wait for Promise</td>
+                <td>Waits for a Promise to settle, returning its fulfilled value or throwing if it rejects.</td>
+                <td class="example-cell"><code>const data = await loadData();</code></td>
               </tr>
 
               <tr id="modern-js-item-export">
                 <th scope="row"><code>export</code></th>
-                <td>Module export</td>
+                <td>Module Export</td>
                 <td>Makes values available to another module.</td>
                 <td class="example-cell"><code>export function formatDate(date) { }</code></td>
               </tr>
 
               <tr id="modern-js-item-import">
                 <th scope="row"><code>import</code></th>
-                <td>Module import</td>
+                <td>Module Import</td>
                 <td>Loads exported values from another module.</td>
                 <td class="example-cell"><code>import { formatDate } from "./utils.js";</code></td>
               </tr>
 
               <tr id="modern-js-item-try-catch">
-                <th scope="row"><code>try / catch</code></th>
-                <td>Error handling</td>
-                <td>Handles errors thrown during an operation.</td>
+                <th scope="row"><code>try...catch</code></th>
+                <td>Error Handling</td>
+                <td>Runs code that may throw an error and handles the error if one occurs.</td>
                 <td class="example-cell"><code>try { parseData(); } catch (error) { console.error(error); }</code></td>
               </tr>
 
               <tr id="modern-js-item-throw">
                 <th scope="row"><code>throw</code></th>
-                <td>Throw error</td>
-                <td>Creates or rethrows an error condition.</td>
+                <td>Throw Error</td>
+                <td>Throws an error that can be handled by surrounding error-handling code.</td>
                 <td class="example-cell"><code>throw new Error("Invalid value");</code></td>
               </tr>
             </tbody>
@@ -465,7 +669,7 @@
     <!-- Shared Site Footer -->
     <div data-site-footer=""></div>
 
-    <!-- Shared Site Data and Utilities -->
+    <!-- Shared Site Data and Helpers -->
     <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/shared.js" defer></script>
 
