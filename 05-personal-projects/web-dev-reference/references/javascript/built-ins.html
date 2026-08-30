@@ -1,0 +1,647 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Core Document Metadata -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Initial Page Setup and Theme -->
+    <script src="../../assets/js/loader.js"></script>
+
+    <title>JavaScript Built-ins | Web Dev Reference</title>
+    
+    <meta
+      content="My JavaScript reference for strings, numbers, Math, dates, regular expressions, and JSON."
+      name="description"
+    />
+
+    <!-- Browser and Installed-App Appearance -->
+    <meta content="light dark" name="color-scheme" />
+    <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
+
+    <!-- Social Sharing Metadata -->
+    <meta content="website" property="og:type" />
+    <meta content="JavaScript Built-ins | Web Dev Reference" property="og:title" />
+    <meta
+      content="My JavaScript reference for strings, numbers, Math, dates, regular expressions, and JSON."
+      property="og:description"
+    />
+    <meta content="../../assets/images/app-icon-512.png" property="og:image" />
+
+    <!-- App Manifest and Icons -->
+    <link href="../../site.webmanifest" rel="manifest" />
+    <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
+    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Shared Site Styles -->
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    data-author-note="These are the built-in JavaScript tools I reach for most often when working with text, numbers, dates, patterns, and JSON data."
+    data-category="JavaScript"
+    data-footer="JavaScript Built-ins Cheat Sheet"
+    data-level="Beginner–Intermediate"
+    data-page="built-ins"
+    data-page-label="JavaScript Built-ins"
+    data-related='[{"label":"JavaScript Fundamentals","href":"fundamentals.html"},{"label":"Data Collections","href":"data-collections.html"},{"label":"DOM &amp; Events","href":"dom-events.html"}]'
+    data-search-placeholder="Try: includes, Math.round, Date, RegExp, JSON..."
+    data-toc="true"
+  >
+    <!-- Initial Loading Screen -->
+    <div aria-hidden="true" class="site-loader" id="site-loader">
+      <div class="site-loader-content">
+        <div aria-hidden="true" class="site-loader-mark">
+          <span class="loader-dot loader-dot-teal"></span>
+          <span class="loader-dot loader-dot-blue"></span>
+          <span class="loader-dot loader-dot-green"></span>
+        </div>
+        <p class="site-loader-label">Web Dev Reference</p>
+      </div>
+    </div>
+
+    <!-- Accessibility Navigation -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared Site Navigation -->
+    <div data-site-nav=""></div>
+
+    <!-- Page Introduction -->
+    <header class="hero">
+      <h1>JavaScript Built-ins</h1>
+      <p class="subtitle">My reference for working with strings, numbers, Math, dates, regular expressions, and JSON.</p>
+
+      <div class="hero-meta">
+        <span class="badge badge-category">JavaScript</span>
+        <span class="badge badge-level">Beginner–Intermediate</span>
+      </div>
+    </header>
+
+    <!-- Main Reference Content -->
+    <main id="main-content">
+      <!----------------------------------------------------------
+        Strings
+        ---------------------------------------------------------->
+      <section aria-labelledby="strings-title" class="reference-section" id="strings">
+        <h2 class="section-title" id="strings-title">Strings</h2>
+        <p class="section-description">Accessing, searching, extracting, replacing, and transforming text values.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Accessing, searching, extracting, replacing, and transforming text values.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="strings-item-length">
+                <th scope="row"><code>.length</code></th>
+                <td>String Length</td>
+                <td>Returns the number of characters in a string.</td>
+                <td class="example-cell"><code>"JavaScript".length; // 10</code></td>
+              </tr>
+
+              <tr id="strings-item-index">
+                <th scope="row"><code>string[index]</code></th>
+                <td>Character Access</td>
+                <td>Returns the character at a specified zero-based index.</td>
+                <td class="example-cell"><code>"JavaScript"[0]; // "J"</code></td>
+              </tr>
+
+              <tr id="strings-item-includes">
+                <th scope="row"><code>.includes()</code></th>
+                <td>Text Check</td>
+                <td>Checks whether a string contains specified text.</td>
+                <td class="example-cell"><code>"JavaScript".includes("Script"); // true</code></td>
+              </tr>
+
+              <tr id="strings-item-index-of">
+                <th scope="row"><code>.indexOf()</code></th>
+                <td>Text Position</td>
+                <td>Returns the index of the first occurrence of specified text, or <code>-1</code> if it is not found.</td>
+                <td class="example-cell"><code>"JavaScript".indexOf("Script"); // 4</code></td>
+              </tr>
+
+              <tr id="strings-item-starts-with">
+                <th scope="row"><code>.startsWith()</code></th>
+                <td>Beginning Check</td>
+                <td>Checks whether a string begins with specified text.</td>
+                <td class="example-cell"><code>"JavaScript".startsWith("Java"); // true</code></td>
+              </tr>
+
+              <tr id="strings-item-ends-with">
+                <th scope="row"><code>.endsWith()</code></th>
+                <td>Ending Check</td>
+                <td>Checks whether a string ends with specified text.</td>
+                <td class="example-cell"><code>"JavaScript".endsWith("Script"); // true</code></td>
+              </tr>
+
+              <tr id="strings-item-slice">
+                <th scope="row"><code>.slice()</code></th>
+                <td>Extract Text</td>
+                <td>Returns part of a string between specified indexes without changing the original string.</td>
+                <td class="example-cell"><code>"JavaScript".slice(0, 4); // "Java"</code></td>
+              </tr>
+
+              <tr id="strings-item-substring">
+                <th scope="row"><code>.substring()</code></th>
+                <td>Extract Substring</td>
+                <td>Returns part of a string between specified indexes.</td>
+                <td class="example-cell"><code>"JavaScript".substring(4, 10); // "Script"</code></td>
+              </tr>
+
+              <tr id="strings-item-replace">
+                <th scope="row"><code>.replace()</code></th>
+                <td>Replace Text</td>
+                <td>Returns a new string with text matching a string or regular expression replaced.</td>
+                <td class="example-cell"><code>"Hello world".replace("world", "Jennifer");</code></td>
+              </tr>
+
+              <tr id="strings-item-replace-all">
+                <th scope="row"><code>.replaceAll()</code></th>
+                <td>Replace All Matches</td>
+                <td>Returns a new string with all matching values replaced.</td>
+                <td class="example-cell"><code>"one one".replaceAll("one", "two");</code></td>
+              </tr>
+
+              <tr id="strings-item-trim">
+                <th scope="row"><code>.trim()</code></th>
+                <td>Remove Outer Whitespace</td>
+                <td>Returns a new string with whitespace removed from both ends.</td>
+                <td class="example-cell"><code>"  hello  ".trim(); // "hello"</code></td>
+              </tr>
+
+              <tr id="strings-item-repeat">
+                <th scope="row"><code>.repeat()</code></th>
+                <td>Repeat String</td>
+                <td>Returns a new string containing the original string repeated a specified number of times.</td>
+                <td class="example-cell"><code>"Hi ".repeat(3); // "Hi Hi Hi "</code></td>
+              </tr>
+
+              <tr id="strings-item-to-upper-case">
+                <th scope="row"><code>.toUpperCase()</code></th>
+                <td>Uppercase Text</td>
+                <td>Returns a new string with alphabetic characters converted to uppercase.</td>
+                <td class="example-cell"><code>"hello".toUpperCase(); // "HELLO"</code></td>
+              </tr>
+
+              <tr id="strings-item-to-lower-case">
+                <th scope="row"><code>.toLowerCase()</code></th>
+                <td>Lowercase Text</td>
+                <td>Returns a new string with alphabetic characters converted to lowercase.</td>
+                <td class="example-cell"><code>"HELLO".toLowerCase(); // "hello"</code></td>
+              </tr>
+
+              <tr id="strings-item-split">
+                <th scope="row"><code>.split()</code></th>
+                <td>Split String</td>
+                <td>Splits a string around a specified separator and returns the parts in an array.</td>
+                <td class="example-cell"><code>"HTML,CSS,JavaScript".split(",");</code></td>
+              </tr>
+
+              <tr id="strings-item-char-at">
+                <th scope="row"><code>.charAt()</code></th>
+                <td>Character at Index</td>
+                <td>Returns the character at a specified zero-based index.</td>
+                <td class="example-cell"><code>"JavaScript".charAt(0); // "J"</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!----------------------------------------------------------
+        Numbers and Math
+        ---------------------------------------------------------->
+      <section aria-labelledby="numbers-math-title" class="reference-section" id="numbers-math">
+        <h2 class="section-title" id="numbers-math-title">Numbers &amp; Math</h2>
+        <p class="section-description">Formatting numbers and performing common rounding, comparison, randomization, and mathematical operations.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Formatting numbers and performing common rounding, comparison, randomization, and mathematical operations.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="numbers-math-item-to-fixed">
+                <th scope="row"><code>.toFixed()</code></th>
+                <td>Fixed Decimal Places</td>
+                <td>Formats a number using a specified number of decimal places and returns the result as a string.</td>
+                <td class="example-cell"><code>(12.5).toFixed(2); // "12.50"</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-number-is-integer">
+                <th scope="row"><code>Number.isInteger()</code></th>
+                <td>Integer Check</td>
+                <td>Checks whether a value is a number with no fractional part.</td>
+                <td class="example-cell"><code>Number.isInteger(42); // true</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-round">
+                <th scope="row"><code>Math.round()</code></th>
+                <td>Round Number</td>
+                <td>Rounds a number to the nearest integer.</td>
+                <td class="example-cell"><code>Math.round(4.6); // 5</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-floor">
+                <th scope="row"><code>Math.floor()</code></th>
+                <td>Round Down</td>
+                <td>Rounds a number down to the nearest integer.</td>
+                <td class="example-cell"><code>Math.floor(4.9); // 4</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-ceil">
+                <th scope="row"><code>Math.ceil()</code></th>
+                <td>Round Up</td>
+                <td>Rounds a number up to the nearest integer.</td>
+                <td class="example-cell"><code>Math.ceil(4.1); // 5</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-trunc">
+                <th scope="row"><code>Math.trunc()</code></th>
+                <td>Remove Decimal Portion</td>
+                <td>Returns the integer portion of a number by removing its fractional digits.</td>
+                <td class="example-cell"><code>Math.trunc(4.9); // 4</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-abs">
+                <th scope="row"><code>Math.abs()</code></th>
+                <td>Absolute Value</td>
+                <td>Returns the absolute value of a number.</td>
+                <td class="example-cell"><code>Math.abs(-10); // 10</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-min">
+                <th scope="row"><code>Math.min()</code></th>
+                <td>Minimum Value</td>
+                <td>Returns the smallest number from the provided values.</td>
+                <td class="example-cell"><code>Math.min(4, 8, 2); // 2</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-max">
+                <th scope="row"><code>Math.max()</code></th>
+                <td>Maximum Value</td>
+                <td>Returns the largest number from the provided values.</td>
+                <td class="example-cell"><code>Math.max(4, 8, 2); // 8</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-random">
+                <th scope="row"><code>Math.random()</code></th>
+                <td>Random Number</td>
+                <td>Returns a pseudorandom number greater than or equal to <code>0</code> and less than <code>1</code>.</td>
+                <td class="example-cell"><code>Math.random();</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-random-integer">
+                <th scope="row"><code>Math.floor(Math.random() * max)</code></th>
+                <td>Random Integer</td>
+                <td>Creates a random integer from <code>0</code> up to, but not including, a specified maximum.</td>
+                <td class="example-cell"><code>Math.floor(Math.random() * 10); // 0–9</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-pow">
+                <th scope="row"><code>Math.pow()</code></th>
+                <td>Exponent</td>
+                <td>Raises a number to a specified power.</td>
+                <td class="example-cell"><code>Math.pow(2, 3); // 8</code></td>
+              </tr>
+
+              <tr id="numbers-math-item-sqrt">
+                <th scope="row"><code>Math.sqrt()</code></th>
+                <td>Square Root</td>
+                <td>Returns the square root of a number.</td>
+                <td class="example-cell"><code>Math.sqrt(64); // 8</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!----------------------------------------------------------
+        Dates and Time
+        ---------------------------------------------------------->
+      <section aria-labelledby="dates-time-title" class="reference-section" id="dates-time">
+        <h2 class="section-title" id="dates-time-title">Dates &amp; Time</h2>
+        <p class="section-description">Creating, reading, updating, formatting, and comparing dates and times.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Creating, reading, updating, formatting, and comparing dates and times.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="dates-time-item-date">
+                <th scope="row"><code>new Date()</code></th>
+                <td>Date Object</td>
+                <td>Creates a Date object representing a specific date and time or the current moment.</td>
+                <td class="example-cell"><code>const now = new Date();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-date-now">
+                <th scope="row"><code>Date.now()</code></th>
+                <td>Current Timestamp</td>
+                <td>Returns the current timestamp as milliseconds since January 1, 1970 UTC.</td>
+                <td class="example-cell"><code>const timestamp = Date.now();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-get-full-year">
+                <th scope="row"><code>.getFullYear()</code></th>
+                <td>Year</td>
+                <td>Returns the four-digit year of a Date.</td>
+                <td class="example-cell"><code>date.getFullYear();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-get-month">
+                <th scope="row"><code>.getMonth()</code></th>
+                <td>Month</td>
+                <td>Returns the zero-based month of a Date, where January is <code>0</code> and December is <code>11</code>.</td>
+                <td class="example-cell"><code>date.getMonth();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-get-date">
+                <th scope="row"><code>.getDate()</code></th>
+                <td>Day of Month</td>
+                <td>Returns the day of the month as a number from <code>1</code> through <code>31</code>.</td>
+                <td class="example-cell"><code>date.getDate();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-get-day">
+                <th scope="row"><code>.getDay()</code></th>
+                <td>Day of Week</td>
+                <td>Returns the zero-based day of the week, where Sunday is <code>0</code> and Saturday is <code>6</code>.</td>
+                <td class="example-cell"><code>date.getDay();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-get-hours">
+                <th scope="row"><code>.getHours()</code></th>
+                <td>Hour</td>
+                <td>Returns the hour of a Date as a number from <code>0</code> through <code>23</code>.</td>
+                <td class="example-cell"><code>date.getHours();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-get-minutes">
+                <th scope="row"><code>.getMinutes()</code></th>
+                <td>Minutes</td>
+                <td>Returns the minutes of a Date as a number from <code>0</code> through <code>59</code>.</td>
+                <td class="example-cell"><code>date.getMinutes();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-get-seconds">
+                <th scope="row"><code>.getSeconds()</code></th>
+                <td>Seconds</td>
+                <td>Returns the seconds of a Date as a number from <code>0</code> through <code>59</code>.</td>
+                <td class="example-cell"><code>date.getSeconds();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-get-time">
+                <th scope="row"><code>.getTime()</code></th>
+                <td>Date Timestamp</td>
+                <td>Returns a Date's timestamp as milliseconds since January 1, 1970 UTC.</td>
+                <td class="example-cell"><code>date.getTime();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-comparison">
+                <th scope="row"><code>&lt; &gt;</code></th>
+                <td>Compare Dates</td>
+                <td>Compares Date objects chronologically to determine whether one occurs before or after another.</td>
+                <td class="example-cell"><code>startDate &lt; endDate; // true</code></td>
+              </tr>
+
+              <tr id="dates-time-item-set-full-year">
+                <th scope="row"><code>.setFullYear()</code></th>
+                <td>Set Year</td>
+                <td>Changes the year of a Date and mutates the original Date object.</td>
+                <td class="example-cell"><code>date.setFullYear(2027);</code></td>
+              </tr>
+
+              <tr id="dates-time-item-set-month">
+                <th scope="row"><code>.setMonth()</code></th>
+                <td>Set Month</td>
+                <td>Changes the zero-based month of a Date and mutates the original Date object.</td>
+                <td class="example-cell"><code>date.setMonth(5);</code></td>
+              </tr>
+
+              <tr id="dates-time-item-set-date">
+                <th scope="row"><code>.setDate()</code></th>
+                <td>Set Day of Month</td>
+                <td>Changes the day of the month and mutates the original Date object.</td>
+                <td class="example-cell"><code>date.setDate(15);</code></td>
+              </tr>
+
+              <tr id="dates-time-item-to-iso-string">
+                <th scope="row"><code>.toISOString()</code></th>
+                <td>ISO Date String</td>
+                <td>Returns a Date as a standardized ISO 8601 string in UTC.</td>
+                <td class="example-cell"><code>date.toISOString();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-to-locale-date-string">
+                <th scope="row"><code>.toLocaleDateString()</code></th>
+                <td>Localized Date</td>
+                <td>Returns a locale-sensitive string representing the date portion of a Date.</td>
+                <td class="example-cell"><code>date.toLocaleDateString();</code></td>
+              </tr>
+
+              <tr id="dates-time-item-to-locale-time-string">
+                <th scope="row"><code>.toLocaleTimeString()</code></th>
+                <td>Localized Time</td>
+                <td>Returns a locale-sensitive string representing the time portion of a Date.</td>
+                <td class="example-cell"><code>date.toLocaleTimeString();</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!----------------------------------------------------------
+        Regular Expressions
+        ---------------------------------------------------------->
+      <section aria-labelledby="regular-expressions-title" class="reference-section" id="regular-expressions">
+        <h2 class="section-title" id="regular-expressions-title">Regular Expressions</h2>
+        <p class="section-description">Create patterns for searching, matching and replacing text in strings.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Common regular expression syntax and methods.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="regular-expressions-item-regexp">
+                <th scope="row"><code>/pattern/flags</code></th>
+                <td>Regular Expression Literal</td>
+                <td>Creates a regular expression using literal syntax.</td>
+                <td class="example-cell"><code>const pattern = /javascript/i;</code></td>
+              </tr>
+
+              <tr id="regular-expressions-item-regexp-constructor">
+                <th scope="row"><code>new RegExp()</code></th>
+                <td>Regular Expression Constructor</td>
+                <td>Creates a regular expression from a string pattern and optional flags.</td>
+                <td class="example-cell"><code>const pattern = new RegExp("javascript", "i");</code></td>
+              </tr>
+
+              <tr id="regular-expressions-item-test">
+                <th scope="row"><code>.test()</code></th>
+                <td>Pattern Check</td>
+                <td>Checks whether a regular expression matches part of a string.</td>
+                <td class="example-cell"><code>/javascript/i.test("JavaScript"); // true</code></td>
+              </tr>
+
+              <tr id="regular-expressions-item-match">
+                <th scope="row"><code>.match()</code></th>
+                <td>Find Matches</td>
+                <td>Returns matches between a string and a regular expression.</td>
+                <td class="example-cell"><code>"JavaScript".match(/script/i);</code></td>
+              </tr>
+
+              <tr id="regular-expressions-item-replace">
+                <th scope="row"><code>.replace()</code></th>
+                <td>Replace Pattern Match</td>
+                <td>Returns a new string with text matching a regular expression replaced.</td>
+                <td class="example-cell"><code>"hello world".replace(/world/i, "Jennifer");</code></td>
+              </tr>
+
+              <tr id="regular-expressions-item-search">
+                <th scope="row"><code>.search()</code></th>
+                <td>Find Match Position</td>
+                <td>Returns the index of the first regular expression match, or <code>-1</code> if no match is found.</td>
+                <td class="example-cell"><code>"JavaScript".search(/script/i); // 4</code></td>
+              </tr>
+
+              <tr id="regular-expressions-item-flags">
+                <th scope="row"><code>g i m</code></th>
+                <td>Common Flags</td>
+                <td>Changes how a regular expression searches, including global, case-insensitive and multiline matching.</td>
+                <td class="example-cell"><code>const pattern = /javascript/gi;</code></td>
+              </tr>
+
+              <tr id="regular-expressions-item-character-classes">
+                <th scope="row"><code>\d \w \s</code></th>
+                <td>Character Classes</td>
+                <td>Matches common character groups such as digits, word characters and whitespace.</td>
+                <td class="example-cell"><code>/\d+/.test("Order 42"); // true</code></td>
+              </tr>
+
+              <tr id="regular-expressions-item-anchors">
+                <th scope="row"><code>^ $</code></th>
+                <td>String Anchors</td>
+                <td>Matches the beginning or end of a string.</td>
+                <td class="example-cell"><code>/^Hello/.test("Hello Jennifer"); // true</code></td>
+              </tr>
+
+              <tr id="regular-expressions-item-quantifiers">
+                <th scope="row"><code>* + ? { }</code></th>
+                <td>Quantifiers</td>
+                <td>Controls how many times part of a pattern may repeat.</td>
+                <td class="example-cell"><code>/\d{5}/.test("43016"); // true</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!----------------------------------------------------------
+        JSON
+        ---------------------------------------------------------->
+      <section aria-labelledby="json-title" class="reference-section" id="json">
+        <h2 class="section-title" id="json-title">JSON</h2>
+        <p class="section-description">Converting between JSON text and JavaScript values.</p>
+
+        <div class="table-wrapper">
+          <table class="reference-table">
+            <caption class="sr-only">Converting between JSON text and JavaScript values.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="json-item-parse">
+                <th scope="row"><code>JSON.parse()</code></th>
+                <td>Parse JSON</td>
+                <td>Parses JSON text and returns the corresponding JavaScript value.</td>
+                <td class="example-cell"><code>const user = JSON.parse(json);</code></td>
+              </tr>
+
+              <tr id="json-item-stringify">
+                <th scope="row"><code>JSON.stringify()</code></th>
+                <td>Create JSON</td>
+                <td>Converts a JavaScript value into a JSON string.</td>
+                <td class="example-cell"><code>const json = JSON.stringify(user);</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- Shared Site Footer -->
+    <div data-site-footer=""></div>
+
+    <!-- Shared Site Scripts -->
+    <script src="../../assets/js/shared.js"></script>
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+
+    <!-- Search Data Must Load Before Search Features -->
+    <script src="../../assets/js/search-data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+
+    <!-- Reference Page Features -->
+    <script src="../../assets/js/references.js"></script>
+
+    <!-- Shared Dialogs and Interactive Examples -->
+    <script src="../../assets/js/dialogs.js"></script>
+    <script src="../../assets/js/patterns.js"></script>
+
+    <!-- Shared Utilities and Site Initialization -->
+    <script src="../../assets/js/utilities.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>

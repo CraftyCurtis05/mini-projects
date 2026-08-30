@@ -9,10 +9,10 @@
     <!-- Initial Page Setup and Theme -->
     <script src="../../assets/js/loader.js"></script>
 
-    <title>JavaScript | Web Dev Reference</title>
+    <title>JavaScript Fundamentals | Web Dev Reference</title>
     
     <meta
-      content="My JavaScript reference for values, variables, type conversion, control flow, functions, asynchronous code, modules, and modern syntax."
+      content="My JavaScript fundamentals reference for variables, data types, operators, control flow, loops, and functions."
       name="description"
     />
 
@@ -23,9 +23,9 @@
 
     <!-- Social Sharing Metadata -->
     <meta content="website" property="og:type" />
-    <meta content="JavaScript | Web Dev Reference" property="og:title" />
+    <meta content="JavaScript Fundamentals | Web Dev Reference" property="og:title" />
     <meta
-      content="My JavaScript reference for values, variables, type conversion, control flow, functions, asynchronous code, modules, and modern syntax."
+      content="My JavaScript fundamentals reference for variables, data types, operators, control flow, loops, and functions."
       property="og:description"
     />
     <meta content="../../assets/images/app-icon-512.png" property="og:image" />
@@ -48,14 +48,14 @@
   </head>
 
   <body
-    data-author-note="The JavaScript details I forget fastest are what mutates the original value and what returns a new one. I also check scope and the actual data type before assuming the function itself is wrong."
+    data-author-note="The JavaScript fundamentals I check most often are scope, data types, control flow, and how values move through functions. When something behaves unexpectedly, I usually check the value and its type before assuming the function itself is wrong."
     data-category="JavaScript"
-    data-footer="JavaScript Cheat Sheet"
+    data-footer="JavaScript Fundamentals Cheat Sheet"
     data-level="Beginner–Intermediate"
-    data-page="javascript"
-    data-page-label="JavaScript"
-    data-related='[{"label":"Data Collections","href":"data-collections.html"},{"label":"DOM &amp; Events","href":"dom-events.html"},{"label":"HTTP &amp; APIs","href":"http-apis.html"}]'
-    data-search-placeholder="Try: const, map, function, destructuring..."
+    data-page="javascript-fundamentals"
+    data-page-label="JavaScript Fundamentals"
+    data-related='[{"label":"JavaScript Built-ins","href":"built-ins.html"},{"label":"Modern &amp; Async JavaScript","href":"modern-async.html"},{"label":"Data Collections","href":"data-collections.html"}]'
+    data-search-placeholder="Try: const, typeof, if, for, function..."
     data-toc="true"
   >
     <!-- Initial Loading Screen -->
@@ -78,8 +78,8 @@
 
     <!-- Page Introduction -->
     <header class="hero">
-      <h1>JavaScript</h1>
-      <p class="subtitle">My reference for JavaScript syntax, values, control flow, functions, and modern features.</p>
+      <h1>JavaScript Fundamentals</h1>
+      <p class="subtitle">My reference for JavaScript values, variables, operators, control flow, loops, and functions.</p>
 
       <div class="hero-meta">
         <span class="badge badge-category">JavaScript</span>
@@ -148,7 +148,7 @@
               <tr id="variables-types-item-bigint">
                 <th scope="row"><code>bigint</code></th>
                 <td>Large Integer Value</td>
-                <td>Represents integers larger than the safe range supported by <code>number</code>.</td>
+                <td>Represents integer values of arbitrary size without losing integer precision.</td>
                 <td class="example-cell"><code>const largeNumber = 9007199254740993n;</code></td>
               </tr>
 
@@ -252,13 +252,22 @@
         ---------------------------------------------------------->
       <section aria-labelledby="control-flow-title" class="reference-section" id="control-flow">
         <h2 class="section-title" id="control-flow-title">Operators &amp; Control Flow</h2>
-        <p class="section-description">Expressions and statements used to compare values, make decisions, and repeat work.</p>
+        <p class="section-description">Operators and statements used to calculate and assign values, compare conditions, make decisions, and repeat work.</p>
 
         <div class="table-wrapper">
           <table class="reference-table">
-            <caption class="sr-only">Expressions and statements used to compare values, make decisions, and repeat work.</caption>
+            <caption class="sr-only">Operators and statements used to calculate and assign values, compare conditions, make decisions, and repeat work.</caption>
 
             <thead>
+              <tr>
+                <th scope="col">Term / Syntax</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
               <tr id="control-flow-item-arithmetic">
                 <th scope="row"><code>+ - * / % **</code></th>
                 <td>Arithmetic Operators</td>
@@ -287,22 +296,6 @@
                 <td class="example-cell"><code>count++;</code></td>
               </tr>
 
-              <tr id="control-flow-item-strict-equality">
-                <th scope="row"><code>===</code></th>
-                <td>Strict Equality</td>
-                <td>Compares value and type without coercion.</td>
-                <td class="example-cell"><code>status === "ready"</code></td>
-              </tr>
-
-              <tr>
-                <th scope="col">Term / Syntax</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Example</th>
-              </tr>
-            </thead>
-
-            <tbody>
               <tr id="control-flow-item-strict-equality">
                 <th scope="row"><code>===</code></th>
                 <td>Strict Equality</td>
@@ -492,7 +485,7 @@
               <tr id="functions-item-default-parameter">
                 <th scope="row"><code>default parameter</code></th>
                 <td>Fallback Argument</td>
-                <td>Provides a value when an argument is omitted or undefined.</td>
+                <td>Provides a fallback value when an argument is omitted or <code>undefined</code>.</td>
                 <td class="example-cell"><code>function greet(name = "Guest") { }</code></td>
               </tr>
 
@@ -506,7 +499,7 @@
               <tr id="functions-item-callback">
                 <th scope="row"><code>callback</code></th>
                 <td>Function Argument</td>
-                <td>A function passed to another function to be called later.</td>
+                <td>A function passed to another function so that function can call it.</td>
                 <td class="example-cell"><code>items.forEach(item =&gt; console.log(item));</code></td>
               </tr>
 
@@ -520,172 +513,29 @@
           </table>
         </div>
       </section>
-
-      <!----------------------------------------------------------
-        Modern JavaScript
-        ---------------------------------------------------------->
-      <section aria-labelledby="modern-js-title" class="reference-section" id="modern-js">
-        <h2 class="section-title" id="modern-js-title">Modern JavaScript</h2>
-        <p class="section-description">Language features commonly used in modern front-end projects.</p>
-
-        <div class="table-wrapper">
-          <table class="reference-table">
-            <caption class="sr-only">Language features commonly used in modern front-end projects.</caption>
-
-            <thead>
-              <tr>
-                <th scope="col">Term / Syntax</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Example</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr id="modern-js-item-template-literal">
-                <th scope="row"><code>template literal</code></th>
-                <td>Interpolated String</td>
-                <td>Creates strings with embedded expressions.</td>
-                <td class="example-cell"><code>const message = `Hello, ${name}!`;</code></td>
-              </tr>
-
-              <tr id="modern-js-item-optional-chaining">
-                <th scope="row"><code>?.</code></th>
-                <td>Optional Chaining</td>
-                <td>Safely accesses a property by returning <code>undefined</code> if the preceding value is <code>null</code> or <code>undefined</code>.</td>
-                <td class="example-cell"><code>user.profile?.avatar</code></td>
-              </tr>
-
-              <tr id="modern-js-item-class">
-                <th scope="row"><code>class</code></th>
-                <td>Class Declaration</td>
-                <td>Defines a template for creating objects with related properties and methods.</td>
-                <td class="example-cell"><code>class User { constructor(name) { this.name = name; } }</code></td>
-              </tr>
-
-              <tr id="modern-js-item-extends">
-                <th scope="row"><code>extends</code></th>
-                <td>Class Inheritance</td>
-                <td>Creates a class that inherits properties and methods from another class.</td>
-                <td class="example-cell"><code>class Admin extends User { }</code></td>
-              </tr>
-
-              <tr id="modern-js-item-super">
-                <th scope="row"><code>super</code></th>
-                <td>Parent Class Access</td>
-                <td>Calls the parent class constructor or accesses its methods.</td>
-                <td class="example-cell"><code>constructor(name) { super(name); }</code></td>
-              </tr>
-
-              <tr id="modern-js-item-promise">
-                <th scope="row"><code>Promise</code></th>
-                <td>Asynchronous Result</td>
-                <td>Represents the eventual completion or failure of an asynchronous operation.</td>
-                <td class="example-cell"><code>const promise = fetch(url);</code></td>
-              </tr>
-
-              <tr id="modern-js-item-then">
-                <th scope="row"><code>.then()</code></th>
-                <td>Promise Fulfillment Handler</td>
-                <td>Runs a function when a Promise is fulfilled and returns a new Promise.</td>
-                <td class="example-cell"><code>promise.then(value =&gt; console.log(value));</code></td>
-              </tr>
-
-              <tr id="modern-js-item-catch">
-                <th scope="row"><code>.catch()</code></th>
-                <td>Promise Rejection Handler</td>
-                <td>Runs a function when a Promise is rejected and returns a new Promise.</td>
-                <td class="example-cell"><code>promise.catch(error =&gt; console.error(error));</code></td>
-              </tr>
-
-              <tr id="modern-js-item-finally">
-                <th scope="row"><code>.finally()</code></th>
-                <td>Promise Completion Handler</td>
-                <td>Runs a function when a Promise settles, whether it is fulfilled or rejected.</td>
-                <td class="example-cell"><code>promise.finally(() =&gt; hideLoading());</code></td>
-              </tr>
-
-              <tr id="modern-js-item-promise-all">
-                <th scope="row"><code>Promise.all()</code></th>
-                <td>Wait for Multiple Promises</td>
-                <td>Waits for all provided Promises to fulfill and returns their values together, but rejects if any Promise rejects.</td>
-                <td class="example-cell"><code>const results = await Promise.all([first, second]);</code></td>
-              </tr>
-
-              <tr id="modern-js-item-promise-all-settled">
-                <th scope="row"><code>Promise.allSettled()</code></th>
-                <td>Wait for All Promise Results</td>
-                <td>Waits for all provided Promises to settle and returns the outcome of each one.</td>
-                <td class="example-cell"><code>const results = await Promise.allSettled([first, second]);</code></td>
-              </tr>
-
-              <tr id="modern-js-item-async">
-                <th scope="row"><code>async</code></th>
-                <td>Asynchronous Function</td>
-                <td>Declares a function that always returns a Promise and allows <code>await</code> inside it.</td>
-                <td class="example-cell"><code>async function loadData() { }</code></td>
-              </tr>
-
-              <tr id="modern-js-item-await">
-                <th scope="row"><code>await</code></th>
-                <td>Wait for Promise</td>
-                <td>Waits for a Promise to settle, returning its fulfilled value or throwing if it rejects.</td>
-                <td class="example-cell"><code>const data = await loadData();</code></td>
-              </tr>
-
-              <tr id="modern-js-item-export">
-                <th scope="row"><code>export</code></th>
-                <td>Module Export</td>
-                <td>Makes values available to another module.</td>
-                <td class="example-cell"><code>export function formatDate(date) { }</code></td>
-              </tr>
-
-              <tr id="modern-js-item-import">
-                <th scope="row"><code>import</code></th>
-                <td>Module Import</td>
-                <td>Loads exported values from another module.</td>
-                <td class="example-cell"><code>import { formatDate } from "./utils.js";</code></td>
-              </tr>
-
-              <tr id="modern-js-item-try-catch">
-                <th scope="row"><code>try...catch</code></th>
-                <td>Error Handling</td>
-                <td>Runs code that may throw an error and handles the error if one occurs.</td>
-                <td class="example-cell"><code>try { parseData(); } catch (error) { console.error(error); }</code></td>
-              </tr>
-
-              <tr id="modern-js-item-throw">
-                <th scope="row"><code>throw</code></th>
-                <td>Throw Error</td>
-                <td>Throws an error that can be handled by surrounding error-handling code.</td>
-                <td class="example-cell"><code>throw new Error("Invalid value");</code></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
     </main>
 
     <!-- Shared Site Footer -->
     <div data-site-footer=""></div>
 
-    <!-- Shared Site Data and Helpers -->
-    <script src="../../assets/js/search-data.js" defer></script>
-    <script src="../../assets/js/shared.js" defer></script>
+    <!-- Shared Site Scripts -->
+    <script src="../../assets/js/shared.js"></script>
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/theme.js"></script>
 
-    <!-- Shared Layout and Interface Behavior -->
-    <script src="../../assets/js/layout.js" defer></script>
-    <script src="../../assets/js/theme.js" defer></script>
-    <script src="../../assets/js/search.js" defer></script>
+    <!-- Search Data Must Load Before Search Features -->
+    <script src="../../assets/js/search-data.js"></script>
+    <script src="../../assets/js/search.js"></script>
 
-    <!-- Reference Page Behavior -->
-    <script src="../../assets/js/references.js" defer></script>
+    <!-- Reference Page Features -->
+    <script src="../../assets/js/references.js"></script>
 
-    <!-- Shared Interactive Utilities -->
-    <script src="../../assets/js/dialogs.js" defer></script>
-    <script src="../../assets/js/utilities.js" defer></script>
+    <!-- Shared Dialogs and Interactive Examples -->
+    <script src="../../assets/js/dialogs.js"></script>
+    <script src="../../assets/js/patterns.js"></script>
 
-    <!-- Site Initialization -->
-    <script src="../../assets/js/main.js" defer></script>
+    <!-- Shared Utilities and Site Initialization -->
+    <script src="../../assets/js/utilities.js"></script>
+    <script src="../../assets/js/main.js"></script>
   </body>
 </html>

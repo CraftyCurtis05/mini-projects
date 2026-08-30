@@ -14,12 +14,15 @@ const bodyElement =
 ======================================== */
 
 const pages = [
+
+  /* Home */
   {
     key: 'home',
     label: 'Home',
     href: '/index.html'
   },
 
+  /* HTML */
   {
     key: 'tables',
     label: 'HTML Tables',
@@ -45,6 +48,7 @@ const pages = [
       '/references/html/accessibility.html'
   },
 
+  /* CSS */
   {
     key: 'selectors',
     label: 'CSS Selectors',
@@ -88,11 +92,24 @@ const pages = [
       '/references/css/pseudo-classes-elements.html'
   },
 
+  /* JavaScript */
   {
-    key: 'javascript',
-    label: 'JavaScript Reference',
+    key: 'javascript-fundamentals',
+    label: 'JavaScript Fundamentals',
     href:
-      '/references/javascript/javascript-reference.html'
+      '/references/javascript/fundamentals.html'
+  },
+  {
+    key: 'built-ins',
+    label: 'JavaScript Built-ins',
+    href:
+      '/references/javascript/built-ins.html'
+  },
+  {
+    key: 'modern-async',
+    label: 'Modern & Async JavaScript',
+    href:
+      '/references/javascript/modern-async.html'
   },
   {
     key: 'data-collections',
@@ -101,18 +118,25 @@ const pages = [
       '/references/javascript/data-collections.html'
   },
   {
-    key: 'dom',
+    key: 'dom-events',
     label: 'DOM & Events',
     href:
       '/references/javascript/dom-events.html'
   },
   {
-    key: 'http',
+    key: 'browser-apis',
+    label: 'Browser APIs',
+    href:
+      '/references/javascript/browser-apis.html'
+  },
+  {
+    key: 'http-apis',
     label: 'HTTP & APIs',
     href:
       '/references/javascript/http-apis.html'
   },
 
+  /* Tools */
   {
     key: 'git',
     label: 'Git & GitHub',
@@ -156,6 +180,7 @@ const pages = [
       '/references/tools/developer-notes.html'
   },
 
+  /* Patterns */
   {
     key: 'patterns',
     label: 'Patterns',
@@ -163,6 +188,7 @@ const pages = [
       '/references/patterns/patterns.html'
   },
 
+  /* Site Map */
   {
     key: 'sitemap',
     label: 'Site Map',
@@ -204,10 +230,13 @@ const navGroups = [
     label: 'JavaScript',
 
     pages: [
-      'javascript',
+      'javascript-fundamentals',
+      'built-ins',
+      'modern-async',
       'data-collections',
-      'dom',
-      'http'
+      'dom-events',
+      'browser-apis',
+      'http-apis'
     ]
   },
   {
