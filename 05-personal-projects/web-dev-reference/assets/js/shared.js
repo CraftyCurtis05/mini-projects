@@ -87,7 +87,7 @@ const pages = [
   },
   {
     key: 'pseudos',
-    label: 'Pseudo-classes & Elements',
+    label: 'Pseudo-classes & Pseudo-elements',
     href:
       '/references/css/pseudo-classes-elements.html'
   },
