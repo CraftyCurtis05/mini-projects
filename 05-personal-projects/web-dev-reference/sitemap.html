@@ -2,29 +2,42 @@
 
 <html lang="en">
   <head>
-    <!-- Core document metadata -->
+    <!-- Core Document Metadata -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Initial Page Setup and Theme -->
+    <script src="assets/js/loader.js"></script>
+
+    <title>Site Map | Web Dev Reference</title>
+
     <meta
       content="All pages in my Web Development Reference, grouped by HTML, CSS, JavaScript, tools, patterns, and accessibility."
       name="description"
     />
 
+    <!-- Browser and Installed-App Appearance -->
     <meta content="light dark" name="color-scheme" />
-    <!-- Initial Page Setup and Theme -->
-    <script src="assets/js/loader.js"></script>
-    <title>Site Map | Web Dev Reference</title>
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
+
+    <!-- App Manifest and Icons -->
     <link href="site.webmanifest" rel="manifest" />
     <link href="assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Shared Site Styles -->
     <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body
     data-category="Navigation"
     data-footer="Web Development Reference"
@@ -32,6 +45,7 @@
     data-page="sitemap"
     data-page-label="Site Map"
   >
+    <!-- Initial Loading Screen -->
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -42,8 +56,14 @@
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
+
+    <!-- Accessibility Navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared Site Navigation -->
     <div data-site-nav=""></div>
+
+    <!-- Page Introduction -->
     <header class="hero">
       <h1>Site Map</h1>
       <p class="subtitle">Every reference page in one place.</p>
@@ -52,12 +72,15 @@
         <span class="badge badge-level">All References</span>
       </div>
     </header>
+
+    <!-- Main Reference Content -->
     <main id="main-content">
-      <p class="sitemap-intro">
-        This site map provides a direct path to every major reference, pattern, accessibility guide,
-        and developer-tool page in the project.
-      </p>
+      <!----------------------------------------------------------
+        Site Map Links
+        ---------------------------------------------------------->
+      <p class="sitemap-intro">This site map provides a direct path to every major reference, pattern, accessibility guide, and developer-tool page in the project.</p>
       <div class="sitemap-grid">
+
         <section aria-labelledby="sitemap-core" class="sitemap-group">
           <h2 id="sitemap-core">Core Reference</h2>
           <ul>
@@ -68,6 +91,7 @@
             <li><a href="references/html/accessibility.html">Accessibility</a></li>
           </ul>
         </section>
+
         <section aria-labelledby="sitemap-css" class="sitemap-group">
           <h2 id="sitemap-css">CSS</h2>
           <ul>
@@ -77,13 +101,11 @@
             <li><a href="references/css/css-grid.html">CSS Grid</a></li>
             <li><a href="references/css/responsive-design.html">Responsive Design</a></li>
             <li><a href="references/css/css-units-functions.html">CSS Units &amp; Functions</a></li>
-            <li>
-              <a href="references/css/pseudo-classes-elements.html">
-                Pseudo-classes &amp; Pseudo-elements
-              </a>
+            <li><a href="references/css/pseudo-classes-elements.html">Pseudo-classes &amp; Pseudo-elements</a>
             </li>
           </ul>
         </section>
+
         <section aria-labelledby="sitemap-js" class="sitemap-group">
           <h2 id="sitemap-js">JavaScript &amp; Browser APIs</h2>
           <ul>
@@ -96,6 +118,7 @@
             <li><a href="references/javascript/http-apis.html">HTTP &amp; APIs</a></li>
           </ul>
         </section>
+
         <section aria-labelledby="sitemap-tools" class="sitemap-group">
           <h2 id="sitemap-tools">Developer Toolkit</h2>
           <ul>
@@ -108,32 +131,40 @@
             <li><a href="references/tools/developer-notes.html">Jennifer's Developer Notes</a></li>
           </ul>
         </section>
+
         <section aria-labelledby="sitemap-patterns" class="sitemap-group">
           <h2 id="sitemap-patterns">Patterns &amp; Utilities</h2>
           <ul>
-            <li>
-              <a href="references/patterns/patterns.html">HTML, CSS &amp; JavaScript Patterns</a>
-            </li>
+            <li><a href="references/patterns/patterns.html">HTML, CSS &amp; JavaScript Patterns</a></li>
             <li><a href="404.html">404 Page Preview</a></li>
           </ul>
         </section>
       </div>
       <aside class="sitemap-utility">
-        <p>
-          Need something specific? Use the site-wide Search control in the navigation to search
-          every indexed reference entry.
-        </p>
+        <p>Need something specific? Use the site-wide Search control in the navigation to search every indexed reference entry.</p>
       </aside>
     </main>
+
+    <!-- Shared Site Footer -->
     <div data-site-footer=""></div>
+
+    <!-- Shared Site Data and Helpers -->
     <script src="assets/js/search-data.js" defer></script>
     <script src="assets/js/shared.js" defer></script>
+
+    <!-- Shared Layout and Interface Behavior -->
     <script src="assets/js/layout.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
     <script src="assets/js/search.js" defer></script>
+
+    <!-- Reference Page Behavior -->
     <script src="assets/js/references.js" defer></script>
+
+    <!-- Shared Interactive Utilities -->
     <script src="assets/js/dialogs.js" defer></script>
     <script src="assets/js/utilities.js" defer></script>
+
+    <!-- Site Initialization -->
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>

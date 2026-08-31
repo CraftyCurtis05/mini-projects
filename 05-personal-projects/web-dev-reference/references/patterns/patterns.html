@@ -5,20 +5,25 @@
     <!-- Core Document Metadata -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Initial Page Setup and Theme -->
+    <script src="../../assets/js/loader.js"></script>
+
+    <title>Web Development Patterns | Web Dev Reference</title>
+
     <meta
       content="Working HTML, CSS, and JavaScript examples for layouts, forms, dialogs, search, loading states, themes, and accessibility."
       name="description"
     />
 
-    <title>Web Development Patterns</title>
-
     <!-- Browser and Installed-App Appearance -->
+    <meta content="light dark" name="color-scheme" />
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
     <!-- Social Sharing Metadata -->
     <meta content="website" property="og:type" />
-    <meta content="Web Development Patterns | Web Dev Reference" property="og:title" />
+    <meta content="Patterns | Web Dev Reference" property="og:title" />
     <meta
       content="Working HTML, CSS, and JavaScript examples for layouts, forms, dialogs, search, loading states, themes, and accessibility."
       property="og:description"
@@ -30,15 +35,16 @@
     <link href="../../assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Shared Site Styles and Fonts -->
+    <!-- Shared Site Styles -->
     <link href="../../assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
-
-    <!-- Initial Page Loader -->
-    <script src="../../assets/js/loader.js" defer></script>
   </head>
 
   <body
@@ -83,7 +89,6 @@
 
     <!-- Main Reference Content -->
     <main id="main-content">
-
       <!----------------------------------------------------------
         Semantic Page Structure
         ---------------------------------------------------------->
@@ -97,8 +102,6 @@
         <details class="pattern-example">
           <summary>View complete example</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code>&lt;body&gt;
   &lt;header&gt;
     &lt;h1&gt;Page Title&lt;/h1&gt;
@@ -137,8 +140,6 @@
         <details class="pattern-example">
           <summary>View complete example</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code>&lt;table&gt;
   &lt;caption&gt;
     Monthly project hours
@@ -183,8 +184,6 @@
         <details class="pattern-example">
           <summary>View complete example</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code>&lt;form&gt;
   &lt;div&gt;
     &lt;label for="name"&gt;
@@ -247,8 +246,6 @@
         <details class="pattern-example">
           <summary>View complete example</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code>.navigation {
   display: flex;
   align-items: center;
@@ -287,8 +284,6 @@
         <details class="pattern-example">
           <summary>View complete example</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code>.card-grid {
   display: grid;
 
@@ -317,8 +312,6 @@
         <details class="pattern-example">
           <summary>View HTML</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code>&lt;article class="card"&gt;
   &lt;h3&gt;CSS Grid&lt;/h3&gt;
 
@@ -337,8 +330,6 @@
         <details class="pattern-example">
           <summary>View CSS</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code>.card {
   padding: 1.5rem;
 
@@ -374,8 +365,6 @@
         <details class="pattern-example">
           <summary>View complete example</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code>&lt;nav aria-label="Main navigation"&gt;
   &lt;ul&gt;
     &lt;li&gt;
@@ -405,8 +394,6 @@
         <details class="pattern-example">
           <summary>View complete example</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code>&lt;a class="skip-link" href="#main-content"&gt;
   Skip to main content
 &lt;/a&gt;
@@ -431,8 +418,6 @@
         <details class="pattern-example">
           <summary>View complete example</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code>:focus-visible {
   outline: 3px solid #276a80;
   outline-offset: 3px;
@@ -460,8 +445,6 @@
         <details class="pattern-example">
           <summary>View complete example</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code>@media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -537,8 +520,6 @@
         <details class="pattern-example">
           <summary>View HTML</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="HTML">&lt;button type="button" id="open-dialog"&gt;
   Open dialog
 &lt;/button&gt;
@@ -554,8 +535,6 @@
         <details class="pattern-example">
           <summary>View JavaScript</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="JavaScript">const dialog = document.querySelector("#confirm-dialog");
 
 document.querySelector("#open-dialog").addEventListener("click", () =&gt; {
@@ -566,7 +545,6 @@ document.querySelector("#close-dialog").addEventListener("click", () =&gt; {
   dialog.close();
 });</code></pre>
         </details>
-
 
         <!-- Accessibility notes -->
         <aside class="pattern-accessibility-note">
@@ -637,8 +615,6 @@ document.querySelector("#close-dialog").addEventListener("click", () =&gt; {
         <details class="pattern-example">
           <summary>View JavaScript</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="JavaScript">async function loadProjects() {
   setStatus("Loading…");
 
@@ -725,8 +701,6 @@ document.querySelector("#close-dialog").addEventListener("click", () =&gt; {
         <details class="pattern-example">
           <summary>View JavaScript</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="JavaScript">const input = document.querySelector("#skill-filter");
 const items = [...document.querySelectorAll(".skill-list li")];
 const status = document.querySelector("#filter-status");
@@ -800,8 +774,6 @@ input.addEventListener("input", () =&gt; {
         <details class="pattern-example">
           <summary>View HTML</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="HTML">&lt;details&gt;
   &lt;summary&gt;What does semantic HTML mean?&lt;/summary&gt;
   &lt;p&gt;
@@ -874,8 +846,6 @@ input.addEventListener("input", () =&gt; {
         <details class="pattern-example">
           <summary>View JavaScript</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="JavaScript">const toggle = document.querySelector("#theme-toggle");
 const root = document.documentElement;
 
@@ -888,12 +858,9 @@ toggle.addEventListener("click", () =&gt; {
 });</code></pre>
         </details>
 
-
         <details class="pattern-example">
           <summary>View CSS</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="CSS">:root {
   --background: #ffffff;
   --text: #1c2529;
@@ -965,8 +932,6 @@ body {
         <details class="pattern-example">
           <summary>View HTML</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="HTML">&lt;button type="button" id="save-button"&gt;
   Save changes
 &lt;/button&gt;
@@ -974,12 +939,9 @@ body {
 &lt;div id="save-status" role="status" aria-live="polite"&gt;&lt;/div&gt;</code></pre>
         </details>
 
-        
         <details class="pattern-example">
           <summary>View JavaScript</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="JavaScript">saveButton.addEventListener("click", async () =&gt; {
   await saveChanges();
   saveStatus.textContent = "Changes saved.";
@@ -1043,8 +1005,6 @@ body {
         <details class="pattern-example">
           <summary>View CSS</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="CSS">.skeleton {
   border-radius: 0.35rem;
   background: linear-gradient(
@@ -1113,8 +1073,6 @@ body {
         <details class="pattern-example">
           <summary>View HTML</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="HTML">&lt;section class="empty-state" aria-labelledby="empty-title"&gt;
   &lt;h2 id="empty-title"&gt;No saved references yet&lt;/h2&gt;
   &lt;p&gt;
@@ -1188,8 +1146,6 @@ body {
         <details class="pattern-example">
           <summary>View JavaScript</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="JavaScript">form.addEventListener("submit", (event) =&gt; {
   event.preventDefault();
 
@@ -1203,7 +1159,6 @@ body {
   formStatus.textContent = "Form submitted successfully.";
 });</code></pre>
         </details>
-
 
         <!-- Accessibility notes -->
         <aside class="pattern-accessibility-note">
@@ -1252,12 +1207,9 @@ body {
           </nav>
         </div>
 
-        
         <details class="pattern-example">
           <summary>View HTML</summary>
 
-
-<!-- prettier-ignore -->
 <pre><code data-language="HTML">&lt;nav aria-label="Breadcrumb"&gt;
   &lt;ol&gt;
     &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;

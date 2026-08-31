@@ -2,43 +2,33 @@
 
 ### HTML, CSS, JavaScript & Front-End Development Reference
 
-This is a multi-page web development reference I built with HTML, CSS,
-and vanilla JavaScript for the concepts, syntax, patterns, and tools I
-regularly look up while working on other projects.
+A multi-page web development reference I built with HTML, CSS, and vanilla JavaScript for the concepts, syntax, patterns, and tools I regularly look up while working on other projects.
 
-It started as an HTML tables cheat sheet because I kept looking up the
-same things. As I continued learning and building projects, it grew into
-a larger reference organized around the topics I found myself returning
-to most often.
+It started as an HTML tables cheat sheet because I kept looking up the same things. As I continued learning and building projects, it grew into a larger reference organized around the topics I found myself returning to most often.
 
-I intentionally kept the project framework-free so the reference remains
-easy to open, read, maintain, and understand without requiring a build
-step.
+I intentionally kept the project framework-free so the reference remains easy to open, understand, maintain, and expand without requiring a build step.
 
 ---
 
 ## Project Overview
 
-The reference brings together notes, examples, and interactive
-demonstrations covering:
+The reference brings together notes, examples, and interactive demonstrations covering:
 
 - HTML
 - CSS
 - JavaScript
 - Responsive design
 - Accessibility
+- HTTP and APIs
 - Web performance
 - Web security
-- HTTP and APIs
 - Git and GitHub
 - Terminal and CLI commands
 - SEO and metadata
 - Debugging
 - Reusable front-end patterns
 
-The project serves two purposes: it gives me a practical reference I can
-use while developing, and gives me a place to reinforce concepts by
-organizing and explaining them in my own way.
+The project serves two purposes: it gives me a practical reference I can use while developing, and it gives me a place to reinforce concepts by organizing and explaining them in my own way.
 
 ---
 
@@ -47,40 +37,45 @@ organizing and explaining them in my own way.
 ### Development References
 
 - Topic-specific reference pages
-- Syntax and code examples
-- HTML, CSS, and JavaScript references
-- Git, terminal, API, security, and debugging references
+- Searchable syntax, concepts, and code examples
+- Dedicated HTML, CSS, and JavaScript references
+- Git, terminal, API, security, performance, and debugging references
 - Responsive design and accessibility guidance
+- Reusable front-end patterns
 
 ### Search & Saved References
 
-- Page search
-- Site-wide search
+- Page-level search
+- Site-wide reference search
 - Saved references using `localStorage`
 - Search data separated from search behavior
+- Direct links to individual reference entries
 
 ### Interactive Examples
 
-- Interactive examples on the Patterns page
-- Copy buttons for code examples
+- Interactive demonstrations on the Patterns page
+- Copy controls for code examples
 - Dialog and interface demonstrations
 - Reusable JavaScript utilities
+- Examples designed to demonstrate concepts in the context where they are used
 
 ### Accessibility & User Experience
 
 - Semantic HTML
 - Keyboard-accessible controls
 - Visible focus states
-- Reduced-motion support
 - Accessible labels and status messages
-- Light and dark themes
+- Reduced-motion support
 - Responsive layouts
+- Persistent light and dark themes
 
 ---
 
 ## Application Architecture
 
-### Frontend
+The site is a framework-free, multi-page application built with shared styles, reusable JavaScript behavior, and topic-specific reference pages.
+
+### Front End
 
 - HTML5
 - CSS3
@@ -90,39 +85,39 @@ organizing and explaining them in my own way.
 
 - npm
 - ESLint
-- Prettier
 - http-server
 - Git
 - GitHub
 
-### Design
+### Design & UX
 
 - Responsive Web Design
 - Semantic HTML
 - Accessibility
 - Reusable CSS
-- Light / Dark Theme System
+- CSS custom properties
+- Light and Dark Theme System
 
 ---
 
 ## Technical Implementation
 
-The reference is built as a framework-free multi-page website with
-shared CSS and JavaScript organized by responsibility.
+The project is organized so content, presentation, search data, and interactive behavior remain separate and maintainable as the reference grows.
 
 Key implementation details include:
 
-- Organized reference content into topic-specific pages
+- Organized reference content into focused topic-specific pages
 - Created reusable CSS variables and shared component styles
-- Separated shared and page-specific JavaScript
+- Separated shared utilities from page-specific JavaScript behavior
 - Implemented persistent light and dark themes
 - Built page-level and site-wide search
+- Created a centralized search data index for reference content
 - Used `localStorage` for saved references and theme preferences
 - Added copy controls for code examples
 - Created interactive examples for common front-end patterns
 - Added keyboard navigation and visible focus states
 - Added reduced-motion support
-- Created responsive layouts using Flexbox, Grid, and media queries
+- Built responsive layouts with Flexbox, Grid, and media queries
 - Added custom 404 and site map pages
 - Added development tooling for formatting and linting
 
@@ -130,52 +125,100 @@ Key implementation details include:
 
 ## Technology Stack
 
-| Category          | Technologies                 |
-| ----------------- | ---------------------------- |
-| Structure         | HTML5                        |
-| Styling           | CSS3                         |
-| Interactivity     | JavaScript                   |
-| Storage           | Web Storage / `localStorage` |
-| Code Quality      | ESLint, Prettier             |
-| Local Development | http-server, npm             |
-| Version Control   | Git, GitHub                  |
+| Category | Technologies |
+| --- | --- |
+| Structure | HTML5 |
+| Styling | CSS3 |
+| Interactivity | Vanilla JavaScript |
+| Storage | Web Storage / `localStorage` |
+| Layout | Flexbox, CSS Grid, Media Queries |
+| Code Quality | ESLint |
+| Local Development | http-server, npm |
+| Version Control | Git, GitHub |
 
 ---
 
 ## Project Structure
 
-[updated tree here]
+```text
+web-development-reference/
+├── assets/
+│   ├── css/
+│   ├── images/
+│   └── js/
+├── references/
+│   ├── css/
+│   ├── html/
+│   ├── javascript/
+|   ├── patterns/
+│   └── tools/
+├── 404.html
+├── index.html
+├── sitemap.html
+├── sitemap.xml
+├── site.webmanifest
+├── package.json
+├── eslint.config.js
+├── .editorconfig
+├── .gitignore
+└── README.md
+```
+
+Reference content is grouped by subject while shared CSS, JavaScript, images, search data, and interface behavior remain centralized under `assets/`.
 
 ---
 
 ## Running the Project
 
-The easiest way to run the project locally is with VS Code Live Server.
+The site can be opened with a local development server such as VS Code Live Server.
 
-If Node.js is installed:
+If Node.js is installed, install the development dependencies:
 
-\```bash
+```bash
 npm install
+```
+
+Then start the included local server:
+
+```bash
 npm run serve
-\```
+```
+
+The project does not require a framework, bundler, or production build step.
 
 ---
 
 ## Development Commands
 
-\```bash
-npm run format
+Start the local development server:
+
+```bash
+npm run serve
+```
+
+Check formatting without changing files:
+
+```bash
+npm run format:check
+```
+
+Run ESLint against the JavaScript source:
+
+```bash
 npm run lint
+```
+
+Run the complete formatting and linting check:
+
+```bash
 npm run check
-\```
+```
 
 ---
 
 ## Performance & Quality Checks
 
-Before publishing a new version, I check the deployed site in Lighthouse
-and look for problems that affect the actual experience rather than
-optimizing only for a score.
+Before publishing a new version, I check the deployed site in Lighthouse and look for problems that affect the actual experience rather than optimizing only for a score.
 
 My main checks include:
 
@@ -185,19 +228,29 @@ My main checks include:
 - SEO
 - Image dimensions and file sizes
 - Unexpected layout movement
-- Render-blocking scripts
+- Render-blocking resources
 - Keyboard navigation
 - Visible focus states
 - Reduced-motion behavior
 - Broken links
 - Console errors
 
+I also review the reference content itself for broken anchors, inconsistent terminology, duplicate IDs, missing search entries, and outdated internal links as the site grows.
+
+---
+
+## Why I Built It
+
+This project started because I wanted a reference that worked the way I naturally look for information while developing.
+
+Building it also became part of the learning process. Instead of only saving links or isolated notes, I have to decide how concepts relate to one another, explain them clearly, create useful examples, and organize them so I can find them again later.
+
+As the site has grown, maintaining it has become an exercise in application structure, consistency, accessibility, search design, reusable front-end behavior, and keeping a larger codebase understandable without introducing a framework just for the sake of using one.
+
 ---
 
 ## AI Assistance
 
-I used AI as a development assistant for brainstorming, debugging,
-accessibility checks, code review, and cleanup.
+I used AI as a development assistant for brainstorming, debugging, accessibility checks, code review, and cleanup.
 
-I went back through the project, changed what did not sound or feel like
-me, and made sure I understand the code I am publishing.
+I went back through the project, changed what did not sound or feel like me, verified changes against the project itself, and made sure I understand the code I am publishing.

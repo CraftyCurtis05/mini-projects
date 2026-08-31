@@ -5,23 +5,25 @@
     <!-- Core Document Metadata -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Initial Page Setup and Theme -->
+    <script src="assets/js/loader.js"></script>
+
+    <title>Home | Web Development Reference</title>
+
     <meta
       content="My web development reference for HTML, CSS, JavaScript, accessibility, Git, APIs, debugging, performance, and other topics I keep looking up."
       name="description"
     />
 
-    <title>Web Development Reference</title>
-
-    <!-- Initial Page Loader -->
-    <script src="assets/js/loader.js"></script>
-    
     <!-- Browser and Installed-App Appearance -->
+    <meta content="light dark" name="color-scheme" />
     <meta content="#3c88a3" media="(prefers-color-scheme: light)" name="theme-color" />
     <meta content="#10181c" media="(prefers-color-scheme: dark)" name="theme-color" />
 
     <!-- Social Sharing Metadata -->
     <meta content="website" property="og:type" />
-    <meta content="Web Development Reference" property="og:title" />
+    <meta content="Home | Web Development Reference" property="og:title" />
     <meta
       content="My web development reference for HTML, CSS, JavaScript, accessibility, Git, APIs, debugging, performance, and other topics I keep looking up."
       property="og:description"
@@ -33,13 +35,18 @@
     <link href="assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Shared Site Styles and Fonts -->
+    <!-- Shared Site Styles -->
     <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- Shared Site Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body
     data-category="Reference Library"
     data-footer="Web Development Reference"
@@ -47,6 +54,7 @@
     data-page="home"
     data-page-label="Home"
   >
+    <!-- Initial Loading Screen -->
     <div aria-hidden="true" class="site-loader" id="site-loader">
       <div class="site-loader-content">
         <div aria-hidden="true" class="site-loader-mark">
@@ -57,69 +65,65 @@
         <p class="site-loader-label">Web Dev Reference</p>
       </div>
     </div>
+
+    <!-- Accessibility Navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared Site Navigation -->
     <div data-site-nav=""></div>
+
+    <!-- Page Introduction -->
     <header class="hero">
       <h1>Web Development Reference</h1>
       <p class="subtitle">The web development notes and references I keep coming back to.</p>
     </header>
+
+    <!-- Main Reference Content -->
     <main id="main-content">
+      <!----------------------------------------------------------
+        Introduction
+        ---------------------------------------------------------->
       <section class="intro-panel">
         <h2 class="section-title">Welcome</h2>
-        <p>
-          I started this as an HTML tables cheat sheet because I kept looking up the same things. I
-          kept adding pages as I learned more and found other topics I wanted to keep in one place.
-        </p>
-        <p>
-          I use it as a quick place to check syntax, examples, and reminders while I am working on
-          other projects.
-        </p>
+        <p>I started this as an HTML tables cheat sheet because I kept looking up the same things. I kept adding pages as I learned more and found other topics I wanted to keep in one place.</p>
+        <p>I use it as a quick place to check syntax, examples, and reminders while I am working on other projects.</p>
+
         <div aria-label="How to use this reference" class="reference-legend">
           <h3>How to use this reference</h3>
           <ul>
             <li>
               <span aria-hidden="true" class="legend-icon">⌕</span>
-              <span>
-                <strong>Search</strong>
-                : Find a term on a page or across the entire reference.
-              </span>
+              <span><strong>Search</strong>: Find a term on a page or across the entire reference.</span>
             </li>
             <li>
               <span aria-hidden="true" class="legend-icon">&lt;/&gt;</span>
-              <span>
-                <strong>Code</strong>
-                : Examples use a dedicated monospace style for fast scanning.
-              </span>
+              <span><strong>Code</strong>: Examples use a dedicated monospace style for fast scanning.</span>
             </li>
             <li>
               <span aria-hidden="true" class="legend-icon">▤</span>
-              <span>
-                <strong>Reference</strong>
-                : Tables provide concise definitions and examples.
-              </span>
+              <span><strong>Reference</strong>: Tables provide concise definitions and examples.</span>
             </li>
             <li>
               <span aria-hidden="true" class="legend-icon">◇</span>
-              <span>
-                <strong>Patterns</strong>
-                : Complete examples show concepts working together.
-              </span>
+              <span><strong>Patterns</strong>: Complete examples show concepts working together.</span>
             </li>
             <li>
               <span aria-hidden="true" class="legend-icon">★</span>
-              <span>
-                <strong>Jennifer's Note</strong>
-                : Things I learned while building and debugging.
-              </span>
+              <span><strong>Jennifer's Note</strong>: Things I learned while building and debugging.</span>
             </li>
           </ul>
         </div>
       </section>
+
+      <!----------------------------------------------------------
+        Reference Section 1
+        ---------------------------------------------------------->
       <section class="home-reference-section">
         <div class="home-reference-heading">
           <h2>HTML &amp; CSS Basics</h2>
           <p>The HTML and CSS topics I come back to the most.</p>
         </div>
+
         <div class="reference-grid">
           <a class="reference-card" href="references/html/html-tables.html">
             <div class="card-number">01</div>
@@ -127,30 +131,35 @@
             <p>Table structure, cells, headers, columns, and table attributes.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/html/html-tags.html">
             <div class="card-number">02</div>
             <h2>HTML Tags</h2>
             <p>Common HTML elements for structure, text, media, lists, and forms.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/css/css-selectors.html">
             <div class="card-number">03</div>
             <h2>CSS Selectors</h2>
             <p>Selectors, combinators, pseudo selectors, specificity, and the cascade.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/css/css-properties.html">
             <div class="card-number">04</div>
             <h2>CSS Properties</h2>
             <p>Common properties for text, color, spacing, layout, positioning, and effects.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/patterns/patterns.html">
             <div class="card-number">05</div>
             <h2>Patterns</h2>
             <p>Complete examples that show HTML, CSS, and JavaScript working together.</p>
             <span class="card-link">View Patterns →</span>
           </a>
+
           <a class="reference-card" href="references/html/accessibility.html">
             <div class="card-number">06</div>
             <h2>Accessibility</h2>
@@ -159,11 +168,16 @@
           </a>
         </div>
       </section>
+
+      <!----------------------------------------------------------
+        Reference Section 2
+        ---------------------------------------------------------->
       <section class="home-reference-section">
         <div class="home-reference-heading">
           <h2>More HTML &amp; CSS</h2>
           <p>Layout, forms, responsive design, sizing, and selectors.</p>
         </div>
+
         <div class="reference-grid">
           <a class="reference-card" href="references/html/forms-validation.html">
             <div class="card-number">07</div>
@@ -171,30 +185,35 @@
             <p>Inputs, labels, grouping, autocomplete, validation, and error messages.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/css/flexbox.html">
             <div class="card-number">08</div>
             <h2>Flexbox</h2>
             <p>Axes, alignment, wrapping, gaps, sizing, and common Flexbox layouts.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/css/css-grid.html">
             <div class="card-number">09</div>
             <h2>CSS Grid</h2>
             <p>Tracks, areas, placement, sizing functions, and responsive Grid layouts.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/css/responsive-design.html">
             <div class="card-number">10</div>
             <h2>Responsive Design</h2>
             <p>Media queries, fluid sizing, responsive images, and flexible layouts.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/css/css-units-functions.html">
             <div class="card-number">11</div>
             <h2>CSS Units &amp; Functions</h2>
             <p>Common units plus calc(), min(), max(), and clamp().</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/css/pseudo-classes-elements.html">
             <div class="card-number">12</div>
             <h2>Pseudo-classes &amp; Elements</h2>
@@ -203,11 +222,16 @@
           </a>
         </div>
       </section>
+
+      <!----------------------------------------------------------
+        Reference Section 3
+        ---------------------------------------------------------->
       <section class="home-reference-section">
         <div class="home-reference-heading">
           <h2>JavaScript &amp; APIs</h2>
           <p>JavaScript fundamentals, built-ins, modern syntax, data collections, browser features, and API requests.</p>
         </div>
+
         <div class="reference-grid">
           <a class="reference-card" href="references/javascript/fundamentals.html">
             <div class="card-number">13</div>
@@ -215,36 +239,42 @@
             <p>Values, variables, data types, operators, control flow, loops, and functions.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/javascript/built-ins.html">
             <div class="card-number">14</div>
             <h2>JavaScript Built-ins</h2>
             <p>Strings, numbers, Math, dates, regular expressions, and JSON.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/javascript/modern-async.html">
             <div class="card-number">15</div>
             <h2>Modern &amp; Async JavaScript</h2>
             <p>Modern syntax, classes, Promises, async code, modules, and error handling.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/javascript/data-collections.html">
             <div class="card-number">16</div>
             <h2>Data Collections</h2>
             <p>Arrays, objects, Maps, Sets, and common ways to store, access, and transform data.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/javascript/dom-events.html">
             <div class="card-number">17</div>
             <h2>DOM &amp; Events</h2>
             <p>Selecting elements, updating the DOM, handling events, and working with forms.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/javascript/browser-apis.html">
             <div class="card-number">18</div>
             <h2>Browser APIs</h2>
             <p>Storage, timers, navigation, viewport information, and other browser-provided features.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/javascript/http-apis.html">
             <div class="card-number">19</div>
             <h2>HTTP &amp; APIs</h2>
@@ -253,14 +283,16 @@
           </a>
         </div>
       </section>
+
+      <!----------------------------------------------------------
+        Reference Section 4
+        ---------------------------------------------------------->
       <section class="home-reference-section">
         <div class="home-reference-heading">
           <h2>Tools &amp; Notes</h2>
-          <p>
-            Git, terminal commands, debugging, performance, security, and notes I want to keep
-            handy.
-          </p>
+          <p>Git, terminal commands, debugging, performance, security, and notes I want to keep handy.</p>
         </div>
+
         <div class="reference-grid">
           <a class="reference-card" href="references/tools/git-github.html">
             <div class="card-number">20</div>
@@ -268,40 +300,42 @@
             <p>The repository, branch, remote, history, and recovery commands I use most.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/tools/terminal-cli.html">
             <div class="card-number">21</div>
             <h2>Terminal &amp; CLI</h2>
-            <p>
-              File navigation, shell commands, searching, redirection, and environment variables.
-            </p>
+            <p>File navigation, shell commands, searching, redirection, and environment variables.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/tools/debugging.html">
             <div class="card-number">22</div>
             <h2>Debugging</h2>
             <p>A repeatable way to narrow down HTML, CSS, JavaScript, and API problems.</p>
             <span class="card-link">Start Debugging →</span>
           </a>
+
           <a class="reference-card" href="references/tools/web-performance.html">
             <div class="card-number">23</div>
             <h2>Web Performance</h2>
             <p>Loading, images, fonts, rendering, JavaScript, caching, and measurement.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/tools/seo-metadata.html">
             <div class="card-number">24</div>
             <h2>SEO &amp; Metadata</h2>
             <p>Page titles, descriptions, social previews, favicons, and manifests.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/tools/web-security.html">
             <div class="card-number">25</div>
             <h2>Web Security Basics</h2>
-            <p>
-              XSS, output handling, HTTPS, cookies, CORS, storage, and basic security reminders.
-            </p>
+            <p>XSS, output handling, HTTPS, cookies, CORS, storage, and basic security reminders.</p>
             <span class="card-link">View Reference →</span>
           </a>
+
           <a class="reference-card" href="references/tools/developer-notes.html">
             <div class="card-number">26</div>
             <h2>Jennifer's Developer Notes</h2>
@@ -310,35 +344,44 @@
           </a>
         </div>
       </section>
+
+      <!----------------------------------------------------------
+        Project Links
+        ---------------------------------------------------------->
       <section class="project-links" aria-labelledby="project-links-title">
         <div>
           <p class="eyebrow">About this project</p>
           <h2 id="project-links-title">Built as a reference I actually use</h2>
-          <p>
-            I made this site to keep the web development topics I look up most in one place while
-            also practicing accessible, responsive HTML, CSS, and vanilla JavaScript.
-          </p>
+          <p>I made this site to keep the web development topics I look up most in one place while also practicing accessible, responsive HTML, CSS, and vanilla JavaScript.</p>
         </div>
+
         <div class="project-link-list">
           <a class="project-link" href="https://jennifercurtis.me">Portfolio</a>
-          <a
-            class="project-link"
-            href="https://github.com/CraftyCurtis05/mini-projects/tree/main/05-personal-projects/web-dev-reference"
-          >
-            GitHub / Source
-          </a>
+          <a class="project-link" href="https://github.com/CraftyCurtis05/mini-projects/tree/main/05-personal-projects/web-dev-reference">GitHub / Source</a>
         </div>
       </section>
     </main>
+
+    <!-- Shared Site Footer -->
     <div data-site-footer=""></div>
+
+    <!-- Shared Site Data and Helpers -->
     <script src="assets/js/search-data.js" defer></script>
     <script src="assets/js/shared.js" defer></script>
+
+    <!-- Shared Layout and Interface Behavior -->
     <script src="assets/js/layout.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
     <script src="assets/js/search.js" defer></script>
+
+    <!-- Reference Page Behavior -->
     <script src="assets/js/references.js" defer></script>
+
+    <!-- Shared Interactive Utilities -->
     <script src="assets/js/dialogs.js" defer></script>
     <script src="assets/js/utilities.js" defer></script>
+
+    <!-- Site Initialization -->
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>
