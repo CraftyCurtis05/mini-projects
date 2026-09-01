@@ -167,12 +167,7 @@ function favoriteRecordForElement(
       page,
 
     href:
-      `${
-        location.pathname
-          .split('/')
-          .pop() ||
-        'index.html'
-      }#${element.id}`
+      `${location.pathname}#${element.id}`
   };
 }
 

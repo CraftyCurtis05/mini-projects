@@ -47,12 +47,25 @@ function initializeCopyButtons() {
       }
 
       const originalLabel = button.textContent;
+      const originalAriaLabel = button.getAttribute('aria-label');
 
       button.textContent = 'Copied!';
+      button.setAttribute(
+        'aria-label',
+        `Copied code example ${index + 1}`
+      );
       button.classList.add('is-copied');
 
       window.setTimeout(() => {
         button.textContent = originalLabel;
+
+        if (originalAriaLabel) {
+          button.setAttribute(
+            'aria-label',
+            originalAriaLabel
+          );
+        }
+
         button.classList.remove('is-copied');
       }, 1600);
     });

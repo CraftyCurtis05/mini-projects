@@ -22,10 +22,10 @@
     <link rel="canonical" href="https://reference.jennifercurtis.me/references/patterns/patterns.html" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Patterns | Web Dev Reference" />
+    <meta property="og:title" content="Web Development Patterns | Web Dev Reference" />
     <meta property="og:description" content="Working HTML, CSS, and JavaScript examples for layouts, forms, dialogs, search, loading states, themes, and accessibility." />
     <meta property="og:url" content="https://reference.jennifercurtis.me/references/patterns/patterns.html" />
-    <meta property="og:image" content="../../assets/images/app-icon-512.png" />
+    <meta property="og:image" content="https://reference.jennifercurtis.me/assets/images/app-icon-512.png" />
 
     <!-- App Manifest and Icons -->
     <link rel="manifest" href="../../site.webmanifest" />
@@ -469,7 +469,7 @@
           </div>
         </div>
 
-        <div aria-label="Accessible Modal Dialog live demonstration" class="pattern-live-demo">
+        <div aria-label="Accessible Modal Dialog live demonstration" class="pattern-live-demo" role="region">
           <p class="pattern-demo-label">Live result</p>
           <div class="demo-centered">
 
@@ -576,7 +576,7 @@ document.querySelector("#close-dialog").addEventListener("click", () =&gt; {
           </div>
         </div>
 
-        <div aria-label="Fetch + API Results live demonstration" class="pattern-live-demo">
+        <div aria-label="Fetch + API Results live demonstration" class="pattern-live-demo" role="region">
           <p class="pattern-demo-label">Live result</p>
           <div class="demo-api" data-demo-api="">
             <div class="demo-actions">
@@ -609,27 +609,57 @@ document.querySelector("#close-dialog").addEventListener("click", () =&gt; {
         <details class="pattern-example">
           <summary>View JavaScript</summary>
 
-<pre><code data-language="JavaScript">async function loadProjects() {
+<pre><code data-language="JavaScript">let controller;
+
+async function loadProjects() {
+  controller?.abort();
+
+  controller =
+    new AbortController();
+
   setStatus("Loading…");
 
   try {
-    const response = await fetch("/api/projects");
+    const response = await fetch(
+      "/api/projects",
+      {
+        signal: controller.signal
+      }
+    );
 
     if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
+      throw new Error(
+        `HTTP ${response.status}`
+      );
     }
 
-    const projects = await response.json();
+    const projects =
+      await response.json();
 
     if (!projects.length) {
-      setStatus("No projects found.");
+      setStatus(
+        "No projects found."
+      );
       return;
     }
 
     renderProjects(projects);
   } catch (error) {
-    setStatus("Projects could not be loaded.");
+    if (error.name === "AbortError") {
+      setStatus(
+        "Request cancelled."
+      );
+      return;
+    }
+
+    setStatus(
+      "Projects could not be loaded."
+    );
   }
+}
+
+function cancelRequest() {
+  controller?.abort();
 }</code></pre>
         </details>
 
@@ -640,6 +670,7 @@ document.querySelector("#close-dialog").addEventListener("click", () =&gt; {
             <li>Expose loading and error states as text, not only animation or color.</li>
             <li>Use a status region for important asynchronous updates.</li>
             <li>Do not treat every non-2xx response as valid data; check response.ok.</li>
+            <li>Use AbortController when an in-progress request may need to be cancelled or replaced.</li>
             <li>Provide an understandable empty state when the request succeeds but returns no items.</li>
           </ul>
         </aside>
@@ -669,7 +700,7 @@ document.querySelector("#close-dialog").addEventListener("click", () =&gt; {
           </div>
         </div>
 
-        <div aria-label="Searchable / Filterable List live demonstration" class="pattern-live-demo">
+        <div aria-label="Searchable / Filterable List live demonstration" class="pattern-live-demo" role="region">
           <p class="pattern-demo-label">Live result</p>
           <div class="demo-filter" data-demo-filter="">
             <label for="demo-filter-input">Filter skills</label>
@@ -713,14 +744,15 @@ input.addEventListener("input", () =&gt; {
 });</code></pre>
         </details>
 
-        <!-- Accessibility notes -->
+        <!-- Things to remember -->
         <aside class="pattern-accessibility-note">
-          <h3>Accessibility notes</h3>
+          <h3>Things to remember</h3>
           <ul>
             <li>Associate the search field with a visible label.</li>
             <li>Announce changing result counts through a polite live region.</li>
             <li>Use the hidden attribute for nonmatching items so assistive technology receives the same filtered result set.</li>
             <li>Keep filtering immediate for small local lists; debounce only when the work is genuinely expensive.</li>
+            <li>For expensive filtering or API-backed search, debounce input so the work does not run on every keystroke.</li>
           </ul>
         </aside>
 
@@ -749,7 +781,7 @@ input.addEventListener("input", () =&gt; {
           </div>
         </div>
 
-        <div aria-label="Accordion / FAQ live demonstration" class="pattern-live-demo">
+        <div aria-label="Accordion / FAQ live demonstration" class="pattern-live-demo" role="region">
           <p class="pattern-demo-label">Live result</p>
           <div class="demo-accordion">
 
@@ -813,7 +845,7 @@ input.addEventListener("input", () =&gt; {
           </div>
         </div>
 
-        <div aria-label="Accessible Theme Toggle live demonstration" class="pattern-live-demo">
+        <div aria-label="Accessible Theme Toggle live demonstration" class="pattern-live-demo" role="region">
           <p class="pattern-demo-label">Live result</p>
 
           <div class="demo-theme-card" data-demo-theme="light" data-demo-theme-card="">
@@ -907,7 +939,7 @@ body {
           </div>
         </div>
 
-        <div aria-label="Toast / Status Message live demonstration" class="pattern-live-demo">
+        <div aria-label="Toast / Status Message live demonstration" class="pattern-live-demo" role="region">
           <p class="pattern-demo-label">Live result</p>
           <div class="demo-centered">
 
@@ -978,7 +1010,7 @@ body {
           </div>
         </div>
 
-        <div aria-label="Loading State / Skeleton live demonstration" class="pattern-live-demo">
+        <div aria-label="Loading State / Skeleton live demonstration" class="pattern-live-demo" role="region">
           <p class="pattern-demo-label">Live result</p>
           <div class="demo-loading-card" data-demo-loading-card="" data-demo-loading-state="loading">
             <div aria-live="polite" class="demo-loading-region" data-demo-loading-region="">
@@ -1054,7 +1086,7 @@ body {
           </div>
         </div>
 
-        <div aria-label="Empty State live demonstration" class="pattern-live-demo">
+        <div aria-label="Empty State live demonstration" class="pattern-live-demo" role="region">
           <p class="pattern-demo-label">Live result</p>
           <div class="demo-empty-state">
             <span aria-hidden="true" class="demo-empty-icon">◇</span>
@@ -1113,7 +1145,7 @@ body {
           </div>
         </div>
 
-        <div aria-label="Form Success &amp; Error Feedback live demonstration" class="pattern-live-demo">
+        <div aria-label="Form Success &amp; Error Feedback live demonstration" class="pattern-live-demo" role="region">
           <p class="pattern-demo-label">Live result</p>
           <form class="demo-form" data-demo-form="" novalidate="">
             <label for="demo-email">Email</label>
@@ -1190,7 +1222,7 @@ body {
           </div>
         </div>
 
-        <div aria-label="Breadcrumb Navigation live demonstration" class="pattern-live-demo">
+        <div aria-label="Breadcrumb Navigation live demonstration" class="pattern-live-demo" role="region">
           <p class="pattern-demo-label">Live result</p>
           <nav aria-label="Breadcrumb" class="demo-breadcrumb">
             <ol>
@@ -1234,6 +1266,492 @@ body {
           </ul>
         </nav>
       </section>
+
+      <!----------------------------------------------------------
+        Persistent UI State
+        ---------------------------------------------------------->
+      <section aria-labelledby="persistent-state-title" class="pattern-section" id="persistent-state">
+        <div class="pattern-heading">
+          <p class="pattern-number">Pattern 21</p>
+          <h2 id="persistent-state-title">Persistent UI State</h2>
+          <p>A user preference saved in local storage so it can stay available after the page reloads.</p>
+          <div class="pattern-meta">
+            <span class="badge badge-category">JavaScript + Browser API</span>
+            <span class="badge badge-level">Intermediate</span>
+          </div>
+        </div>
+
+        <div aria-label="Persistent UI State live demonstration" class="pattern-live-demo" role="region">
+          <p class="pattern-demo-label">Live result</p>
+
+          <div class="demo-setting" data-demo-persistent-setting>
+            <p>Compact view: <strong data-persistent-state>Off</strong></p>
+
+            <button
+              class="demo-button"
+              type="button"
+              data-persistent-toggle
+            >Turn compact view on
+            </button>
+          </div>
+        </div>
+
+        <details class="pattern-example">
+          <summary>View JavaScript</summary>
+
+<pre><code data-language="JavaScript">const savedSetting =
+  localStorage.getItem(
+    'pattern-compact-view'
+  );
+
+if (savedSetting === 'true') {
+  setting.classList.add(
+    'is-compact'
+  );
+}
+
+toggle.addEventListener(
+  'click',
+  () =&gt; {
+    const compact =
+      setting.classList.toggle(
+        'is-compact'
+      );
+
+    localStorage.setItem(
+      'pattern-compact-view',
+      String(compact)
+    );
+  }
+);</code></pre>
+        </details>
+
+        <!-- Things to remember -->
+        <aside class="pattern-accessibility-note">
+          <h3>Things to remember</h3>
+          <ul>
+            <li>localStorage keeps string values between browser sessions.</li>
+            <li>Convert values when the application needs a Boolean, number, array, or object.</li>
+            <li>Use JSON.stringify() and JSON.parse() when saving structured data.</li>
+            <li>Do not use local storage for passwords, secrets, or other sensitive information.</li>
+          </ul>
+        </aside>
+
+        <!-- Related references -->
+        <nav aria-label="Related references for Persistent UI State" class="pattern-related">
+          <h3>Related references</h3>
+          <ul>
+            <li><a href="../javascript/browser-apis.html">Browser APIs →</a></li>
+            <li><a href="../javascript/dom-events.html">DOM &amp; Events →</a></li>
+            <li><a href="../javascript/data-collections.html">Data Collections →</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!----------------------------------------------------------
+        Event Delegation
+        ---------------------------------------------------------->
+      <section aria-labelledby="event-delegation-title" class="pattern-section" id="event-delegation">
+        <div class="pattern-heading">
+          <p class="pattern-number">Pattern 22</p>
+          <h2 id="event-delegation-title">Event Delegation</h2>
+          <p>One event listener on a parent element handles actions from its child elements, including items added later.</p>
+          <div class="pattern-meta">
+            <span class="badge badge-category">JavaScript + DOM</span>
+            <span class="badge badge-level">Intermediate</span>
+          </div>
+        </div>
+
+        <div aria-label="Event Delegation live demonstration" class="pattern-live-demo" role="region">
+          <p class="pattern-demo-label">Live result</p>
+
+          <div class="demo-delegation" data-demo-delegation>
+            <div class="demo-actions">
+              <button
+                class="demo-button"
+                data-delegation-add
+                type="button"
+              >Add item
+              </button>
+            </div>
+
+            <ul class="demo-delegation-list" data-delegation-list>
+              <li>
+                <span>HTML semantics</span>
+                <button
+                  class="demo-button demo-button-secondary"
+                  data-remove-item
+                  type="button"
+                >Remove
+                </button>
+              </li>
+
+              <li>
+                <span>CSS Grid</span>
+                <button
+                  class="demo-button demo-button-secondary"
+                  data-remove-item
+                  type="button"
+                >Remove
+                </button>
+              </li>
+
+              <li>
+                <span>JavaScript events</span>
+                <button
+                  class="demo-button demo-button-secondary"
+                  data-remove-item
+                  type="button"
+                >Remove
+                </button>
+              </li>
+            </ul>
+
+            <p
+              aria-live="polite"
+              class="demo-status"
+              data-delegation-status
+            >3 items
+            </p>
+          </div>
+        </div>
+
+        <details class="pattern-example">
+          <summary>View JavaScript</summary>
+
+<pre><code data-language="JavaScript">const list =
+  document.querySelector(
+    '[data-delegation-list]'
+  );
+
+list.addEventListener(
+  'click',
+  event =&gt; {
+    const button =
+      event.target.closest(
+        '[data-remove-item]'
+      );
+
+    if (!button) {
+      return;
+    }
+
+    button.closest('li')?.remove();
+  }
+);</code></pre>
+        </details>
+
+        <!-- Things to remember -->
+        <aside class="pattern-accessibility-note">
+          <h3>Things to remember</h3>
+          <ul>
+            <li>The listener is attached to the parent instead of every individual child.</li>
+            <li>Use event.target and closest() to find the element that triggered the action.</li>
+            <li>Check that the expected target exists before changing anything.</li>
+            <li>Delegation also works for matching child elements added after the listener was created.</li>
+          </ul>
+        </aside>
+
+        <!-- Related references -->
+        <nav aria-label="Related references for Event Delegation" class="pattern-related">
+          <h3>Related references</h3>
+          <ul>
+            <li><a href="../javascript/dom-events.html">DOM &amp; Events →</a></li>
+            <li><a href="../javascript/fundamentals.html">JavaScript Fundamentals →</a></li>
+            <li><a href="../html/accessibility.html">Accessibility →</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!----------------------------------------------------------
+        Container Query Component
+        ---------------------------------------------------------->
+      <section aria-labelledby="container-query-title" class="pattern-section" id="container-query">
+        <div class="pattern-heading">
+          <p class="pattern-number">Pattern 23</p>
+          <h2 id="container-query-title">Container Query Component</h2>
+          <p>A reusable card that changes its layout based on the space available inside its container.</p>
+          <div class="pattern-meta">
+            <span class="badge badge-category">HTML + CSS</span>
+            <span class="badge badge-level">Intermediate</span>
+          </div>
+        </div>
+
+        <div aria-label="Container Query Component live demonstration" class="pattern-live-demo" role="region">
+          <p class="pattern-demo-label">Live result</p>
+
+          <div class="demo-container-query">
+            <article class="demo-container-card">
+              <div class="demo-container-card-icon" aria-hidden="true">CSS</div>
+
+              <div class="demo-container-card-content">
+                <h3>Responsive component</h3>
+                <p>This card changes from a stacked layout to a side-by-side layout when its container becomes wide enough.</p>
+                <a href="#container-query">View pattern</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <details class="pattern-example">
+          <summary>View HTML</summary>
+
+<pre><code data-language="HTML">&lt;div class="card-container"&gt;
+  &lt;article class="responsive-card"&gt;
+    &lt;div class="card-icon"&gt;
+      CSS
+    &lt;/div&gt;
+
+    &lt;div class="card-content"&gt;
+      &lt;h3&gt;Responsive component&lt;/h3&gt;
+      &lt;p&gt;
+        Component content...
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+        </details>
+
+        <details class="pattern-example">
+          <summary>View CSS</summary>
+
+<pre><code data-language="CSS">.card-container {
+  container-type: inline-size;
+}
+
+.responsive-card {
+  display: grid;
+  gap: 1rem;
+}
+
+@container (min-width: 30rem) {
+  .responsive-card {
+    grid-template-columns:
+      auto 1fr;
+    align-items: center;
+  }
+}</code></pre>
+        </details>
+
+        <!-- Things to remember -->
+        <aside class="pattern-accessibility-note">
+          <h3>Things to remember</h3>
+          <ul>
+            <li>Container queries respond to the size of a containing element instead of the viewport.</li>
+            <li>Use container-type: inline-size when the component needs to react to available inline width.</li>
+            <li>They are useful for reusable components that may appear in different page layouts.</li>
+            <li>Use media queries for page-level changes and container queries when the component itself should adapt.</li>
+          </ul>
+        </aside>
+
+        <!-- Related references -->
+        <nav aria-label="Related references for Container Query Component" class="pattern-related">
+          <h3>Related references</h3>
+          <ul>
+            <li><a href="../css/responsive-design.html">Responsive Design →</a></li>
+            <li><a href="../css/css-grid.html">CSS Grid →</a></li>
+            <li><a href="../css/css-units-functions.html">CSS Units &amp; Functions →</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!----------------------------------------------------------
+        Responsive Image / Media
+        ---------------------------------------------------------->
+      <section aria-labelledby="responsive-image-title" class="pattern-section" id="responsive-image">
+        <div class="pattern-heading">
+          <p class="pattern-number">Pattern 24</p>
+          <h2 id="responsive-image-title">Responsive Image / Media</h2>
+          <p>A responsive image that can provide different sources, sizes, and cropping behavior for different layouts.</p>
+          <div class="pattern-meta">
+            <span class="badge badge-category">HTML + CSS</span>
+            <span class="badge badge-level">Intermediate</span>
+          </div>
+        </div>
+
+        <div aria-label="Responsive Image live demonstration" class="pattern-live-demo" role="region">
+          <p class="pattern-demo-label">Live result</p>
+
+          <figure class="demo-responsive-media">
+            <picture>
+              <source media="(min-width: 48rem)" srcset="../../assets/images/logo-black.webp" />
+              <img src="../../assets/images/logo-black.webp" alt="Web Development Reference logo" loading="lazy" width="200" height="155" />
+            </picture>
+
+            <figcaption>The image stays inside a responsive frame while preserving a consistent aspect ratio.</figcaption>
+          </figure>
+        </div>
+
+        <details class="pattern-example">
+          <summary>View HTML</summary>
+
+<pre><code data-language="HTML">&lt;picture&gt;
+  &lt;source
+    media="(min-width: 60rem)"
+    srcset="wide-image.webp"
+  /&gt;
+
+  &lt;img
+    src="small-image.webp"
+    srcset="
+      small-image.webp 480w,
+      large-image.webp 1200w
+    "
+    sizes="
+      (min-width: 60rem) 50vw,
+      100vw
+    "
+    alt="Descriptive alternative text"
+    loading="lazy"
+    width="1200"
+    height="675"
+  /&gt;
+&lt;/picture&gt;</code></pre>
+        </details>
+
+        <details class="pattern-example">
+          <summary>View CSS</summary>
+
+<pre><code data-language="CSS">.responsive-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}</code></pre>
+        </details>
+
+        <!-- Things to remember -->
+        <aside class="pattern-accessibility-note">
+          <h3>Things to remember</h3>
+          <ul>
+            <li>Use srcset and sizes when the browser should choose the most appropriate image size.</li>
+            <li>Use picture and source when the image itself should change for different conditions or layouts.</li>
+            <li>Provide useful alternative text when the image communicates information.</li>
+            <li>Width and height attributes help reserve space before the image finishes loading.</li>
+            <li>Use loading="lazy" for images that do not need to load immediately.</li>
+          </ul>
+        </aside>
+
+        <!-- Related references -->
+        <nav aria-label="Related references for Responsive Image" class="pattern-related">
+          <h3>Related references</h3>
+          <ul>
+            <li><a href="../css/responsive-design.html">Responsive Design →</a></li>
+            <li><a href="../html/html-tags.html">HTML Tags →</a></li>
+            <li><a href="../tools/web-performance.html">Web Performance →</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!----------------------------------------------------------
+        Accessible Choice Group
+        ---------------------------------------------------------->
+      <section aria-labelledby="choice-group-title" class="pattern-section" id="choice-group">
+        <div class="pattern-heading">
+          <p class="pattern-number">Pattern 25</p>
+          <h2 id="choice-group-title">Accessible Choice Group</h2>
+          <p>A related set of choices grouped with a fieldset and legend so the options have shared context.</p>
+          <div class="pattern-meta">
+            <span class="badge badge-category">HTML + Accessibility</span>
+            <span class="badge badge-level">Beginner</span>
+          </div>
+        </div>
+
+        <div aria-label="Accessible Choice Group live demonstration" class="pattern-live-demo" role="region">
+          <p class="pattern-demo-label">Live result</p>
+
+          <form class="demo-choice-form">
+            <fieldset class="demo-choice-group" aria-describedby="contact-method-help">
+              <legend>Preferred contact method</legend>
+
+              <p class="demo-choice-help" id="contact-method-help">Choose the method you would prefer me to use first.</p>
+
+              <label class="demo-choice-option">
+                <input
+                  name="contact-method"
+                  type="radio"
+                  value="email"
+                />
+                <span>Email</span>
+              </label>
+
+              <label class="demo-choice-option">
+                <input
+                  name="contact-method"
+                  type="radio"
+                  value="phone"
+                />
+                <span>Phone</span>
+              </label>
+
+              <label class="demo-choice-option">
+                <input
+                  name="contact-method"
+                  type="radio"
+                  value="text"
+                />
+                <span>Text message</span>
+              </label>
+            </fieldset>
+          </form>
+        </div>
+
+        <details class="pattern-example">
+          <summary>View HTML</summary>
+
+<pre><code data-language="HTML">&lt;fieldset
+  aria-describedby="contact-help"
+&gt;
+  &lt;legend&gt;
+    Preferred contact method
+  &lt;/legend&gt;
+
+  &lt;p id="contact-help"&gt;
+    Choose one option.
+  &lt;/p&gt;
+
+  &lt;label&gt;
+    &lt;input
+      type="radio"
+      name="contact-method"
+      value="email"
+    /&gt;
+    Email
+  &lt;/label&gt;
+
+  &lt;label&gt;
+    &lt;input
+      type="radio"
+      name="contact-method"
+      value="phone"
+    /&gt;
+    Phone
+  &lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+        </details>
+
+        <!-- Things to remember -->
+        <aside class="pattern-accessibility-note">
+          <h3>Things to remember</h3>
+          <ul>
+            <li>Use fieldset and legend when several form controls belong to the same question.</li>
+            <li>Radio buttons with the same name belong to one selection group.</li>
+            <li>Associate every option with a visible label.</li>
+            <li>Use aria-describedby when extra instructions or context should be announced with the group.</li>
+            <li>Use checkboxes instead when the user may choose more than one option.</li>
+          </ul>
+        </aside>
+
+        <!-- Related references -->
+        <nav aria-label="Related references for Accessible Choice Group" class="pattern-related">
+          <h3>Related references</h3>
+          <ul>
+            <li><a href="../html/forms-validation.html">Forms &amp; Validation →</a></li>
+            <li><a href="../html/accessibility.html">Accessibility →</a></li>
+            <li><a href="../html/html-tags.html">HTML Tags →</a></li>
+          </ul>
+        </nav>
+      </section>
     </main>
 
     <!-- Shared Site Footer -->
@@ -1254,6 +1772,9 @@ body {
     <!-- Shared Interactive Utilities -->
     <script src="../../assets/js/dialogs.js" defer></script>
     <script src="../../assets/js/utilities.js" defer></script>
+
+    <!-- Pattern Demonstrations -->
+    <script src="../../assets/js/patterns.js" defer></script>
 
     <!-- Site Initialization -->
     <script src="../../assets/js/main.js" defer></script>

@@ -1,8 +1,8 @@
 /* Site search and saved-reference dialogs. */
 
-/* =========================================================
+/* ========================================
    Dialog setup
-   ========================================================= */
+   ======================================== */
 
 /* Dialog markup */
 function renderDialogs() {
@@ -121,9 +121,9 @@ function renderDialogs() {
   });
 }
 
-/* =========================================================
+/* ========================================
    Global search
-   ========================================================= */
+   ======================================== */
 
 /* Open search dialog */
 function openSearchDialog() {
@@ -162,7 +162,7 @@ function updateGlobalSearch() {
   }
 
   // I use one search index here so the dialog can search the whole site instead of just this page.
-  const matches = searchIndex
+  const allMatches = searchIndex
     .filter(item => {
       const searchableText = [
         item.title,
@@ -176,11 +176,14 @@ function updateGlobalSearch() {
         .toLowerCase();
 
       return searchableText.includes(query);
-    })
-    .slice(0, 40);
+    });
+
+  const matches = allMatches.slice(0, 40);
 
   status.textContent =
-    `${matches.length} result${matches.length === 1 ? '' : 's'} ` + `shown for “${rawQuery}”.`;
+    allMatches.length > matches.length
+      ? `Showing the first ${matches.length} of ${allMatches.length} results for “${rawQuery}”.`
+      : `${matches.length} result${matches.length === 1 ? '' : 's'} shown for “${rawQuery}”.`;
 
   if (!matches.length) {
     results.innerHTML = '<li class="empty-state">No matching references found.</li>';
@@ -204,9 +207,9 @@ function updateGlobalSearch() {
     .join('');
 }
 
-/* =========================================================
+/* ========================================
    Saved references
-   ========================================================= */
+   ======================================== */
 
 /* Render saved references */
 function renderSavedResults() {

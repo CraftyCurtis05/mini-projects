@@ -303,7 +303,8 @@ function initializeGroupedNavigation() {
 
   /*
    * Close open dropdowns with the
-   * Escape key.
+   * Escape key and return focus to
+   * the dropdown toggle.
    */
   document.addEventListener(
     'keydown',
@@ -317,8 +318,16 @@ function initializeGroupedNavigation() {
 
       navMenus.forEach(
         menu => {
+          if (!menu.open) {
+            return;
+          }
+
           menu.open =
             false;
+
+          menu.querySelector(
+            'summary'
+          )?.focus();
         }
       );
     }
