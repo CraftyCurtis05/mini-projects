@@ -16,6 +16,25 @@
   --lime: #baf553;
   --white: #ffffff;
 
+   /* Shape */
+  --radius-sm: 0.4rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-pill: 999px;
+
+  /* Depth */
+  --shadow-sm:
+    0 4px 14px
+    rgba(28, 37, 41, 0.06);
+
+  --shadow-md:
+    0 10px 28px
+    rgba(28, 37, 41, 0.1);
+
+  --shadow-lg:
+    0 18px 48px
+    rgba(28, 37, 41, 0.14);
+
   /* ========================================
      Typography
      ======================================== */
@@ -52,8 +71,8 @@
   --code-text: #276a80;
 
   /* Highlights and section headings */
-  --highlight: #bfffcd;
-  --section-heading-background: #bfffcd;
+  --highlight: #e7f7ed;
+  --section-heading-background: #e7f7ed;
   --section-heading-text: #276a80;
 
   /* Footer */
