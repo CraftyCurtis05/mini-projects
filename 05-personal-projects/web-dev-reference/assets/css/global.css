@@ -1,6 +1,6 @@
 /* ========================================
    Global Styles
-======================================== */
+   ======================================== */
 
 /*
  * Global page styles, accessibility helpers
@@ -11,7 +11,7 @@
 
 /* ========================================
    Base Styles
-  ======================================== */
+   ======================================== */
 
 *,
 *::before,
@@ -58,10 +58,24 @@ input {
   font: inherit;
 }
 
+a,
+button,
+summary {
+  -webkit-tap-highlight-color:
+    rgba(60, 136, 163, 0.14);
+}
+
+button,
+summary,
+[role='button'] {
+  touch-action:
+    manipulation;
+}
+
 
 /* ========================================
    Focus
-  ======================================== */
+   ======================================== */
 
 :focus-visible {
   outline:
@@ -74,7 +88,7 @@ input {
 
 /* ========================================
    Hidden Content
-  ======================================== */
+   ======================================== */
 
 [hidden] {
   display: none !important;
@@ -83,7 +97,7 @@ input {
 
 /* ========================================
    Screen Reader Text
-  ======================================== */
+   ======================================== */
 
 .sr-only {
   position: absolute;
@@ -107,7 +121,7 @@ input {
 
 /* ========================================
    Skip Link
-  ======================================== */
+   ======================================== */
 
 .skip-link {
   position: fixed;
@@ -127,7 +141,7 @@ input {
   color:
     var(--white);
 
-  border-radius: .4rem;
+  border-radius: var(--radius-sm);
 
   font-weight: 700;
 
@@ -145,7 +159,7 @@ input {
 
 /* ========================================
    Code & Keyboard Text
-  ======================================== */
+   ======================================== */
 
 code,
 kbd {
@@ -193,7 +207,7 @@ kbd {
 
 /* ========================================
    Text Selection
-  ======================================== */
+   ======================================== */
 
 ::selection {
   background:
@@ -204,53 +218,12 @@ kbd {
 }
 
 
-/* ========================================
-   Scrollbars
-  ======================================== */
 
-html {
-  scrollbar-color:
-    var(--scrollbar-thumb)
-    var(--scrollbar-track);
-
-  scrollbar-width: thin;
-}
-
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background:
-    var(--scrollbar-track);
-}
-
-::-webkit-scrollbar-thumb {
-  background:
-    var(--scrollbar-thumb);
-
-  border:
-    3px solid
-    var(--scrollbar-track);
-
-  border-radius: 999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background:
-    var(--scrollbar-thumb-hover);
-}
-
-.table-wrapper::-webkit-scrollbar,
-pre::-webkit-scrollbar {
-  height: 10px;
-}
 
 
 /* ========================================
    Custom Cursors
-  ======================================== */
+   ======================================== */
 
 /*
  * I only use the custom cursor when the
@@ -260,8 +233,8 @@ pre::-webkit-scrollbar {
 @media (pointer: fine) {
   body {
     cursor:
-      url('../cursors/cursor-default.svg')
-      4 2,
+      url('../cursors/cursor-default-light.svg')
+      4 3,
       default;
   }
 
@@ -272,68 +245,128 @@ pre::-webkit-scrollbar {
   .reference-card,
   .favorite-button {
     cursor:
-      url('../cursors/cursor-pointer.svg')
-      6 2,
+      url('../cursors/cursor-pointer-light.svg')
+      11 3,
+      pointer;
+  }
+
+  html[data-theme='dark']
+  body {
+    cursor:
+      url('../cursors/cursor-default-dark.svg')
+      4 3,
+      default;
+  }
+
+  html[data-theme='dark']
+  a,
+  html[data-theme='dark']
+  button,
+  html[data-theme='dark']
+  summary,
+  html[data-theme='dark']
+  [role='button'],
+  html[data-theme='dark']
+  .reference-card,
+  html[data-theme='dark']
+  .favorite-button {
+    cursor:
+      url('../cursors/cursor-pointer-dark.svg')
+      11 3,
       pointer;
   }
 
   input,
   textarea,
   [contenteditable='true'] {
-    cursor: text;
+    cursor:
+      text;
   }
 }
 
 
 /* ========================================
-   Scroll Progress
-  ======================================== */
+   Scrollbars
+   ======================================== */
 
-.scroll-progress {
-  position: absolute;
+/*
+ * Firefox uses the standard scrollbar
+ * properties while Chrome and Edge use the
+ * custom scrollbar rules below.
+ */
 
-  right: 0;
-  bottom: -1px;
-  left: 0;
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color:
+      var(--teal)
+      var(--scrollbar-track);
 
-  height: 3px;
-
-  overflow: hidden;
-
-  background:
-    var(--progress-track);
-
-  pointer-events: none;
+    scrollbar-width:
+      thin;
+  }
 }
 
-.scroll-progress-bar {
-  display: block;
+::-webkit-scrollbar {
+  width:
+    12px;
 
-  width: 100%;
-  height: 100%;
+  height:
+    12px;
+}
 
+::-webkit-scrollbar-track {
+  background:
+    var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
   background:
     linear-gradient(
-      90deg,
-      var(--lime),
-      var(--sky),
-      var(--lime)
+      180deg,
+      var(--spectrum-teal),
+      var(--spectrum-blue),
+      var(--spectrum-sky),
+      var(--spectrum-green),
+      var(--spectrum-lime),
+      var(--spectrum-coral)
     );
 
-  transform:
-    scaleX(0);
+  border:
+    3px solid
+    var(--scrollbar-track);
 
-  transform-origin:
-    left center;
+  border-radius:
+    var(--radius-pill);
 
-  will-change:
-    transform;
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(255, 255, 255, 0.18);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  ::-webkit-scrollbar-thumb:hover {
+    box-shadow:
+      inset 0 0 0 1px
+      rgba(255, 255, 255, .28);
+  }
+}
+
+::-webkit-scrollbar-thumb:active {
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(255, 255, 255, .34);
+}
+
+.table-wrapper::-webkit-scrollbar,
+pre::-webkit-scrollbar {
+  height:
+    10px;
 }
 
 
 /* ========================================
    Reference Cards
-  ======================================== */
+   ======================================== */
 
 /*
  * I use the lime accent here so the home
@@ -356,106 +389,30 @@ pre::-webkit-scrollbar {
     transform 180ms ease;
 }
 
-.reference-card:hover
-.card-link,
-.reference-card:focus-visible
+@media (hover: hover) and (pointer: fine) {
+  .reference-card:hover
+  .card-link,
+  .reference-card:focus-within
+  .card-link {
+    transform:
+      translateX(2px);
+  }
+}
+
+.reference-card:active
 .card-link {
   transform:
-    translateX(3px);
-}
-
-
-/* ========================================
-   Navigation Logo
-  ======================================== */
-
-.nav-logo {
-  transition:
-    transform 200ms ease;
-}
-
-.nav-brand:hover
-.nav-logo,
-.nav-brand:focus-visible
-.nav-logo {
-  transform:
-    translateY(-2px);
-}
-
-
-/* ========================================
-   Navigation Links
-  ======================================== */
-
-.nav-links a {
-  position: relative;
-}
-
-.nav-links
-a:not([aria-current='page'])::after {
-  content: '';
-
-  position: absolute;
-
-  right: .65rem;
-  bottom: .25rem;
-  left: .65rem;
-
-  height: 2px;
-
-  background:
-    var(--lime);
-
-  border-radius: 999px;
-
-  transform:
-    scaleX(0);
-
-  transform-origin:
-    center;
-
-  transition:
-    transform 180ms ease;
-}
-
-.nav-links
-a:not([aria-current='page']):hover::after,
-.nav-links
-a:not([aria-current='page']):focus-visible::after {
-  transform:
-    scaleX(1);
-}
-
-
-/* ========================================
-   Search Focus
-  ======================================== */
-
-/*
- * I keep keyboard focus obvious without
- * changing the rest of the color system.
- */
-
-.reference-search:focus-visible,
-.dialog-search:focus-visible {
-  border-color:
-    var(--blue);
-
-  box-shadow:
-    0 0 0 4px
-      rgba(186, 245, 83, .28),
-    0 8px 22px
-      var(--shadow);
+    translateX(1px);
 }
 
 
 /* ========================================
    Details & Summary
-  ======================================== */
+   ======================================== */
 
 details[open] > summary {
   color:
-    var(--teal);
+    var(--accent-text);
 }
 
 details > summary {
@@ -468,18 +425,12 @@ details > summary {
 
 /* ========================================
    Static Reference Sections
-  ======================================== */
+   ======================================== */
 
 /*
  * I keep the long reference sections still
  * because they are easier to scan that way.
  */
-
-.hero,
-.hero::before,
-.hero::after {
-  animation: none;
-}
 
 .reference-section.is-visible {
   opacity: 1;
@@ -490,44 +441,52 @@ details > summary {
 
 /* ========================================
    Brand Dots
-  ======================================== */
+   ======================================== */
+
+/*
+ * I use the same three-dot detail anywhere
+ * I want a small, repeated brand signature.
+ */
 
 .brand-dots {
   display: inline-flex;
   align-items: center;
 
-  gap: .35rem;
+  gap: .55rem;
 }
 
 .brand-dot {
   display: inline-block;
 
-  width: .48rem;
-
-  aspect-ratio: 1;
+  width: 13px;
+  height: 13px;
 
   border-radius: 50%;
+
+  box-shadow:
+    0 4px 12px
+    rgba(0, 0, 0, .16);
 }
 
 .brand-dot:nth-child(1) {
   background:
-    var(--teal);
+    var(--spectrum-teal);
 }
 
 .brand-dot:nth-child(2) {
   background:
-    var(--blue);
+    var(--spectrum-sky);
 }
 
 .brand-dot:nth-child(3) {
   background:
-    var(--green);
+    var(--spectrum-lime);
 }
 
 
 /* ========================================
    Reviewed Date
-  ======================================== */
+   ======================================== */
 
 .reviewed-date {
   margin-top: .75rem;
@@ -541,7 +500,7 @@ details > summary {
 
 /* ========================================
    Reduced Motion
-  ======================================== */
+   ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
   .reference-card {
@@ -560,7 +519,7 @@ details > summary {
 
 /* ========================================
    Increased Contrast
-  ======================================== */
+   ======================================== */
 
 @media (prefers-contrast: more) {
   .reference-card,

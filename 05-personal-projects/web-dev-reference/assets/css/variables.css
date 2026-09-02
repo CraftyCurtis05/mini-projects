@@ -8,32 +8,71 @@
      Brand Colors
      ======================================== */
 
+  --black: #000000;
+  --white: #ffffff;
+
   --teal: #3c88a3;
   --blue: #4eabcc;
   --green: #8bcc45;
+
   --mint: #bfffcd;
   --sky: #69d4f5;
   --lime: #baf553;
-  --white: #ffffff;
 
-   /* Shape */
+  /* A small warm accent keeps the cool palette
+     from feeling too blue or too predictable. */
+
+  --coral: #d97962;
+
+  /*
+   * These softer versions are used when several
+   * brand colors appear together. The original
+   * colors stay available for stronger accents.
+   */
+
+  --spectrum-teal: #679baa;
+  --spectrum-blue: #7bb2c4;
+  --spectrum-sky: #94ceda;
+  --spectrum-green: #a5ca88;
+  --spectrum-lime: #cadf94;
+  --spectrum-coral: #d69a8c;
+
+  /*
+   * Shared deep colors keep the hero, selected
+   * navigation, footer, loader, and dialogs related.
+   */
+
+  --deep-start: #243238;
+  --deep-mid: #3b6875;
+  --deep-end: #5a8b98;
+
+
+  /* ========================================
+     Shape
+     ======================================== */
+
   --radius-sm: 0.4rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
   --radius-pill: 999px;
 
-  /* Depth */
+
+  /* ========================================
+     Depth
+     ======================================== */
+
   --shadow-sm:
-    0 4px 14px
-    rgba(28, 37, 41, 0.06);
+    0 3px 8px
+    rgba(20, 32, 36, 0.08);
 
   --shadow-md:
-    0 10px 28px
-    rgba(28, 37, 41, 0.1);
+    0 8px 20px
+    rgba(20, 32, 36, 0.11);
 
   --shadow-lg:
-    0 18px 48px
-    rgba(28, 37, 41, 0.14);
+    0 16px 38px
+    rgba(20, 32, 36, 0.15);
+
 
   /* ========================================
      Typography
@@ -43,98 +82,149 @@
   --font-ui: 'Montserrat', sans-serif;
   --font-code: 'Source Code Pro', monospace;
 
+
   /* ========================================
      Light Theme
      ======================================== */
 
   /* Page and surface colors */
-  --background: #f6fafb;
-  --surface: #ffffff;
-  --surface-alt: #eef7fa;
+
+  --background: #edf1ef;
+  --surface: #fafbfa;
+  --surface-alt: #f0f4f2;
+  --surface-raised: #ffffff;
 
   /* Text and borders */
-  --text-primary: #1c2529;
-  --text-secondary: #526168;
-  --border: #b9dce5;
+
+  --text-primary: #172126;
+  --text-secondary: #46545a;
+  --accent-text: #326f82;
+
+  --border: #c1cbca;
+  --border-strong: #98aaac;
 
   /* Navigation */
-  --nav-background: #ffffff;
-  --nav-text: #263b43;
-  --nav-hover: #eef7fa;
+
+  --nav-background: #f7f9f8;
+  --nav-text: #172126;
+  --nav-hover: #e9eeec;
 
   /* Tables */
-  --table-header-background: #3c88a3;
+
+  --table-header-background: #172126;
   --table-header-text: #ffffff;
 
   /* Code */
-  --code-background: #e3f5f8;
-  --code-text: #276a80;
+
+  --code-background: #e8eeec;
+  --code-text: #215f73;
 
   /* Highlights and section headings */
-  --highlight: #e7f7ed;
-  --section-heading-background: #e7f7ed;
-  --section-heading-text: #276a80;
+
+  --highlight: #edf2e9;
+  --section-heading-background: #e5ece8;
+  --section-heading-text: #172126;
 
   /* Footer */
-  --footer-background: #f1f7f8;
-  --footer-text: #263b43;
+
+  --footer-background: #e1e8e5;
+  --footer-text: #172126;
 
   /* Focus and shadows */
-  --focus-ring: #276a80;
-  --shadow: rgba(0, 0, 0, 0.08);
+
+  --focus-ring: #3c88a3;
+  --shadow: rgba(20, 32, 36, 0.14);
 
   /* Interface polish */
-  --scrollbar-track: #e7f1f4;
+
+  --scrollbar-track: #e0e7e4;
   --scrollbar-thumb: #3c88a3;
-  --scrollbar-thumb-hover: #4eabcc;
+  --scrollbar-thumb-hover: #8bcc45;
+
   --selection-background: #baf553;
-  --selection-text: #1c2529;
-  --progress-track: rgba(60, 136, 163, 0.14);
+  --selection-text: #172126;
+
+  --progress-track: rgba(60, 136, 163, 0.12);
 }
+
 
 /* ========================================
    Dark Theme
-   Overrides theme-dependent values when dark mode is active.
    ======================================== */
 
 html[data-theme='dark'] {
   /* Page and surface colors */
-  --background: #11191d;
-  --surface: #182329;
-  --surface-alt: #1e2e35;
+
+  --background: #101416;
+  --surface: #181f22;
+  --surface-alt: #1f292d;
+  --surface-raised: #253136;
 
   /* Text and borders */
-  --text-primary: #f4f8f9;
-  --text-secondary: #b8c7cc;
-  --border: #315a68;
+
+  --text-primary: #ffffff;
+  --text-secondary: #b9c5ca;
+  --accent-text: #69d4f5;
+
+  --border: #3d535a;
+  --border-strong: #526a72;
 
   /* Navigation */
-  --nav-background: #10181c;
-  --nav-text: #f4f8f9;
-  --nav-hover: #1e2e35;
+
+  --nav-background: #101416;
+  --nav-text: #ffffff;
+  --nav-hover: #1f292d;
+
+  /* Tables */
+
+  --table-header-background: #3c88a3;
+  --table-header-text: #ffffff;
 
   /* Code */
-  --code-background: #203a43;
+
+  --code-background: #182b33;
   --code-text: #69d4f5;
 
   /* Highlights and section headings */
-  --highlight: #294d3b;
-  --section-heading-background: #203a43;
-  --section-heading-text: #bfffcd;
+
+  --highlight: #243129;
+  --section-heading-background: #182b33;
+  --section-heading-text: #ffffff;
 
   /* Footer */
-  --footer-background: #10181c;
-  --footer-text: #d8e4e8;
+
+  --footer-background: #121a1d;
+  --footer-text: #ffffff;
 
   /* Focus and shadows */
-  --focus-ring: #baf553;
-  --shadow: rgba(0, 0, 0, 0.35);
+
+  --focus-ring: #8bcc45;
+  --shadow: rgba(0, 0, 0, 0.42);
+
+  /*
+   * Dark mode keeps the same order, but slightly
+   * richer colors stay visible against deep surfaces.
+   */
+
+  --spectrum-teal: #568fa2;
+  --spectrum-blue: #6ba8bd;
+  --spectrum-sky: #83c5d4;
+  --spectrum-green: #98c478;
+  --spectrum-lime: #bedb82;
+  --spectrum-coral: #d18b7d;
+
+  --deep-start: #11191c;
+  --deep-mid: #284852;
+  --deep-end: #3f6d79;
 
   /* Interface polish */
-  --scrollbar-track: #10181c;
+
+  --scrollbar-track: #101416;
   --scrollbar-thumb: #4eabcc;
-  --scrollbar-thumb-hover: #69d4f5;
-  --selection-background: #baf553;
-  --selection-text: #11191d;
-  --progress-track: rgba(105, 212, 245, 0.14);
+  --scrollbar-thumb-hover: #8bcc45;
+
+  --selection-background: #8bcc45;
+  --selection-text: #000000;
+
+  --progress-track: rgba(78, 171, 204, 0.13);
 }
