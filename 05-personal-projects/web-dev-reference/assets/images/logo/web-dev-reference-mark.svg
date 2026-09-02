@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 380 220"
+     role="img"
+     aria-labelledby="title desc">
+  <title id="title">Web Development Reference mark</title>
+  <desc id="desc">A colorful code symbol made from left angle, vertical bar and right angle shapes.</desc>
+
+  <defs>
+    <linearGradient id="leftMark" x1="58" y1="52" x2="178" y2="168" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#69d4f5"/>
+      <stop offset=".55" stop-color="#679baa"/>
+      <stop offset="1" stop-color="#a5ca88"/>
+    </linearGradient>
+    <linearGradient id="centerMark" x1="190" y1="36" x2="190" y2="184" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cadf94"/>
+      <stop offset=".55" stop-color="#baf553"/>
+      <stop offset="1" stop-color="#8bcc45"/>
+    </linearGradient>
+    <linearGradient id="rightMark" x1="202" y1="52" x2="322" y2="168" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cadf94"/>
+      <stop offset=".38" stop-color="#e4c76f"/>
+      <stop offset=".72" stop-color="#d97962"/>
+      <stop offset="1" stop-color="#d69a8c"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="385" y1="0" x2="885" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#679baa"/>
+      <stop offset=".5" stop-color="#a5ca88"/>
+      <stop offset=".78" stop-color="#cadf94"/>
+      <stop offset="1" stop-color="#d69a8c"/>
+    </linearGradient>
+  </defs>
+
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M150 55 82 110l68 55" stroke="url(#leftMark)" stroke-width="28"/>
+    <path d="M190 44v132" stroke="url(#centerMark)" stroke-width="28"/>
+    <path d="m230 55 68 55-68 55" stroke="url(#rightMark)" stroke-width="28"/>
+  </g>
+
+</svg>

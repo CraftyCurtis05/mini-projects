@@ -143,25 +143,11 @@
     var(--text-primary);
 
   background:
-    linear-gradient(
-      var(--surface-raised),
-      var(--surface-raised)
-    )
-    padding-box,
-    linear-gradient(
-      90deg,
-      var(--spectrum-teal),
-      var(--spectrum-blue),
-      var(--spectrum-sky),
-      var(--spectrum-green),
-      var(--spectrum-lime),
-      var(--spectrum-coral)
-    )
-    border-box;
+    var(--surface-raised);
 
   border:
     1px solid
-    transparent;
+    var(--border-strong);
 
   border-radius:
     var(--radius-pill);
@@ -170,7 +156,7 @@
     var(--shadow-sm);
 
   transition:
-    transform .2s ease,
+    border-color .2s ease,
     box-shadow .2s ease;
 }
 
@@ -184,17 +170,20 @@
 
 @media (hover: hover) and (pointer: fine) {
   .reference-search:hover {
+    border-color:
+      var(--spectrum-teal);
+
     box-shadow:
       var(--shadow-md);
-
-    transform:
-      translateY(-1px);
   }
 }
 
 .reference-search:focus-visible {
   outline:
     none;
+
+  border-color:
+    var(--spectrum-sky);
 
   box-shadow:
     0 0 0 4px
@@ -954,7 +943,7 @@ main {
 
 .reference-card:active {
   transform:
-    translateY(1px);
+    translateY(0);
 }
 
 .reference-card h2 {
@@ -1272,12 +1261,14 @@ main {
   width: 16%;
   min-width: 150px;
   padding-right: 2.5rem;
+
   background:
-  color-mix(
-    in srgb,
-    var(--code-background) 82%,
-    var(--surface)
-  );
+    color-mix(
+      in srgb,
+      var(--code-background) 82%,
+      var(--surface)
+    );
+
   color: var(--code-text);
   font-family: var(--font-code);
   font-size: 0.88rem;
@@ -1353,8 +1344,6 @@ main {
     50%;
 
   font-size: 1rem;
-
-  cursor: pointer;
 
   box-shadow:
     var(--shadow-sm);

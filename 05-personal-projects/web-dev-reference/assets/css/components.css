@@ -88,46 +88,6 @@ html[data-theme='dark']
   font-size: .88rem;
 }
 
-
-/* ========================================
-   Footer Brand Dots
-   ======================================== */
-
-/*
- * These use the same soft colors and simple
- * dot shape as the loading screen.
- */
-
-.site-footer .brand-dots {
-  gap: .55rem;
-}
-
-.site-footer .brand-dot {
-  width: 13px;
-  height: 13px;
-
-  border-radius: 50%;
-
-  box-shadow:
-    0 4px 12px
-    rgba(0, 0, 0, .16);
-}
-
-.site-footer .brand-dot:nth-child(1) {
-  background:
-    var(--spectrum-teal);
-}
-
-.site-footer .brand-dot:nth-child(2) {
-  background:
-    var(--spectrum-sky);
-}
-
-.site-footer .brand-dot:nth-child(3) {
-  background:
-    var(--spectrum-lime);
-}
-
 .footer-links {
   display: flex;
   flex-wrap: wrap;
@@ -190,12 +150,22 @@ html[data-theme='dark']
 
 @media (hover: hover) and (pointer: fine) {
   .footer-logo-link:hover
-  .footer-logo,
-  .footer-logo-link:focus-visible
   .footer-logo {
     transform:
       scale(1.025);
   }
+}
+
+.footer-logo-link:focus-visible {
+  outline:
+    3px solid
+    var(--lime);
+
+  outline-offset:
+    4px;
+
+  border-radius:
+    var(--radius-sm);
 }
 
 .footer-logo-link:active
@@ -251,8 +221,6 @@ html[data-theme='dark']
 
   font-weight: 700;
 
-  cursor: pointer;
-
   opacity: 0;
 
   transform:
@@ -300,19 +268,10 @@ html[data-theme='dark']
     var(--deep-start);
 
   background:
-    linear-gradient(
-      135deg,
-      var(--spectrum-lime),
-      var(--spectrum-green),
-      var(--spectrum-sky)
-    );
+    var(--spectrum-lime);
 
-  border:
-    2px solid
-    var(--lime);
-
-  transform:
-    translateY(1px);
+  border-color:
+    var(--green);
 
   box-shadow:
     var(--shadow-sm);
@@ -720,9 +679,6 @@ html[data-theme='dark']
   text-decoration:
     none;
 
-  cursor:
-    pointer;
-
   box-shadow:
     var(--shadow-sm);
 
@@ -751,8 +707,7 @@ html[data-theme='dark']
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .button-link-primary:hover,
-  .button-link-primary:focus-visible {
+  .button-link-primary:hover {
     border-color:
       var(--blue);
 
@@ -766,8 +721,7 @@ html[data-theme='dark']
       var(--shadow-md);
   }
 
-  .button-link-secondary:hover,
-  .button-link-secondary:focus-visible {
+  .button-link-secondary:hover {
     border-color:
       var(--green);
 
@@ -783,6 +737,31 @@ html[data-theme='dark']
     box-shadow:
       var(--shadow-md);
   }
+}
+
+.button-link-primary:focus-visible {
+  border-color:
+    var(--blue);
+
+  background:
+    var(--blue);
+
+  box-shadow:
+    var(--shadow-md);
+}
+
+.button-link-secondary:focus-visible {
+  border-color:
+    var(--green);
+
+  background:
+    var(--highlight);
+
+  color:
+    var(--text-primary);
+
+  box-shadow:
+    var(--shadow-md);
 }
 
 .button-link:active {
@@ -915,8 +894,7 @@ html[data-theme='dark']
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .not-found-links a:hover,
-  .not-found-links a:focus-visible {
+  .not-found-links a:hover {
     border-color:
       var(--green);
 
@@ -929,6 +907,17 @@ html[data-theme='dark']
     transform:
       translateY(-1px);
   }
+}
+
+.not-found-links a:focus-visible {
+  border-color:
+    var(--green);
+
+  background:
+    var(--highlight);
+
+  color:
+    var(--text-primary);
 }
 
 .not-found-links a:active {
@@ -1375,8 +1364,7 @@ html[data-theme='dark']
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .sitemap-group a:hover,
-  .sitemap-group a:focus-visible {
+  .sitemap-group a:hover {
     background:
       var(--highlight);
 
@@ -1386,6 +1374,14 @@ html[data-theme='dark']
     transform:
       translateX(2px);
   }
+}
+
+.sitemap-group a:focus-visible {
+  background:
+    var(--highlight);
+
+  border-color:
+    var(--border);
 }
 
 .sitemap-group a:active {

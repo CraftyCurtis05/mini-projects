@@ -139,9 +139,6 @@
   font-weight:
     700;
 
-  cursor:
-    pointer;
-
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
@@ -202,11 +199,7 @@
     var(--border);
 
   background:
-    color-mix(
-      in srgb,
-      var(--surface-alt) 82%,
-      var(--code-background)
-    );
+    var(--surface-alt);
 
   color:
     var(--text-secondary);
@@ -242,18 +235,13 @@
   font-weight:
     700;
 
-  cursor:
-    pointer;
-
   box-shadow:
-    0 2px 6px
-    var(--shadow);
+    var(--shadow-sm);
 
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
     color 0.2s ease,
-    transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
@@ -268,14 +256,8 @@
   color:
     var(--accent-text);
 
-  
-
   box-shadow:
     var(--shadow-sm);
-}
-
-.copy-button:active {
-  transform: translateY(0);
 }
 
 .copy-button.is-copied {
@@ -514,9 +496,6 @@ html[data-theme='dark']
 
   line-height:
     1;
-
-  cursor:
-    pointer;
 
   transition:
     background-color .2s ease,
@@ -758,9 +737,7 @@ html[data-theme='dark']
   .search-result:hover {
     border-color:
       var(--teal);
-
-    
-
+  
     box-shadow:
       var(--shadow-md);
   }
@@ -784,10 +761,6 @@ html[data-theme='dark']
 .search-result:focus-visible::before {
   background-position:
     right center;
-}
-
-.search-result:active {
-  
 }
 
 .search-result strong {
@@ -941,16 +914,8 @@ html[data-theme='dark']
   text-decoration:
     none;
 
-  cursor:
-    pointer;
-
   box-shadow:
-    0 2px 6px
-    color-mix(
-      in srgb,
-      var(--shadow) 45%,
-      transparent
-    );
+    var(--shadow-sm);
 
   transition:
     background-color 0.2s ease,
@@ -966,8 +931,6 @@ html[data-theme='dark']
 
     background:
       var(--blue);
-
-    
 
     box-shadow:
       var(--shadow-sm);
@@ -994,8 +957,6 @@ html[data-theme='dark']
 
   color:
     var(--black);
-
-  
 
   box-shadow:
     none;
@@ -1209,12 +1170,7 @@ html[data-theme='dark']
     var(--text-primary);
 
   box-shadow:
-    0 2px 6px
-    color-mix(
-      in srgb,
-      var(--shadow) 40%,
-      transparent
-    );
+    var(--shadow-sm);
 }
 
 /* ========================================
@@ -1296,12 +1252,7 @@ html[data-theme='dark']
     var(--text-primary);
 
   box-shadow:
-    0 2px 6px
-    color-mix(
-      in srgb,
-      var(--shadow) 35%,
-      transparent
-    );
+    var(--shadow-sm);
 }
 
 /* ========================================
@@ -1327,12 +1278,7 @@ html[data-theme='dark']
     var(--surface);
 
   box-shadow:
-    0 2px 6px
-    color-mix(
-      in srgb,
-      var(--shadow) 35%,
-      transparent
-    );
+    var(--shadow-sm);
 }
 
 .demo-accordion summary {
@@ -1348,9 +1294,6 @@ html[data-theme='dark']
 
   font-weight:
     700;
-
-  cursor:
-    pointer;
 
   transition:
     background-color 0.2s ease,
@@ -1994,12 +1937,7 @@ html[data-theme='dark'] .demo-field-message {
     var(--surface);
 
   box-shadow:
-    0 2px 6px
-    color-mix(
-      in srgb,
-      var(--shadow) 35%,
-      transparent
-    );
+    var(--shadow-sm);
 }
 
 .demo-delegation-list span {
@@ -2242,9 +2180,6 @@ html[data-theme='dark'] .demo-field-message {
   color:
     var(--text-primary);
 
-  cursor:
-    pointer;
-
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
@@ -2411,12 +2346,7 @@ html[data-theme='dark'] .demo-field-message {
     none;
 
   box-shadow:
-    0 2px 6px
-    color-mix(
-      in srgb,
-      var(--shadow) 40%,
-      transparent
-    );
+    var(--shadow-sm);
 
   transition:
     background-color 0.2s ease,

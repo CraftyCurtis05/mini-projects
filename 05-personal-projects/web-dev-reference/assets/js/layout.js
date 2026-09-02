@@ -113,20 +113,16 @@ function renderNavigation() {
         aria-label="Web Development Reference home"
       >
         <img
-          src="/assets/images/logo-light-theme.webp"
+          src="/assets/images/logo/web-dev-reference-logo.svg"
           alt=""
           class="nav-logo logo-light"
         >
 
         <img
-          src="/assets/images/logo-dark-theme.webp"
+          src="/assets/images/logo/web-dev-reference-logo-dark.svg"
           alt=""
           class="nav-logo logo-dark"
         >
-
-        <span>
-          Web Dev Reference
-        </span>
       </a>
 
 

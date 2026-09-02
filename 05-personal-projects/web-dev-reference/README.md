@@ -119,7 +119,7 @@ Key implementation details include:
 - Added reduced-motion support
 - Built responsive layouts with Flexbox, Grid, and media queries
 - Added custom 404 and site map pages
-- Added development tooling for formatting and linting
+- Added development tooling for consistent formatting and linting
 
 ---
 
@@ -144,19 +144,30 @@ Key implementation details include:
 web-development-reference/
 ├── assets/
 │   ├── css/
+│   ├── cursors/
 │   ├── images/
+│   │   ├── logo/
+│   │   │   ├── web-dev-reference-logo.svg
+│   │   │   ├── web-dev-reference-logo-dark.svg
+│   │   │   └── web-dev-reference-mark.svg
+│   │   ├── social/
+│   │   │   └── web-dev-reference-social.png
+│   │   ├── logo-light-theme.webp
+│   │   └── logo-dark-theme.webp
 │   └── js/
 ├── references/
 │   ├── css/
 │   ├── html/
 │   ├── javascript/
-|   ├── patterns/
+│   ├── patterns/
 │   └── tools/
 ├── 404.html
+├── apple-touch-icon.png
+├── favicon.ico
+├── favicon.svg
 ├── index.html
 ├── sitemap.html
 ├── sitemap.xml
-├── site.webmanifest
 ├── package.json
 ├── eslint.config.js
 ├── .editorconfig
@@ -196,20 +207,13 @@ Start the local development server:
 npm run serve
 ```
 
-Check formatting without changing files:
-
-```bash
-npm run format:check
-```
-
 Run ESLint against the JavaScript source:
 
 ```bash
 npm run lint
 ```
 
-Run the complete formatting and linting check:
-
+Run the complete project check:
 ```bash
 npm run check
 ```
