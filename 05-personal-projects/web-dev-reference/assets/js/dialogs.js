@@ -224,7 +224,7 @@ function renderSavedResults() {
   if (!favorites.length) {
     results.innerHTML =
       '<li class="empty-state">' +
-      'No saved references yet. Use the ☆ buttons beside terms and patterns.' +
+      'No saved references yet. Use the ✩ buttons beside terms and patterns.' +
       '</li>';
     return;
   }

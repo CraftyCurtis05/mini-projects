@@ -53,16 +53,36 @@ img {
   max-width: 100%;
 }
 
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+p,
+li,
+dd,
+td,
+th,
+a,
+button {
+  overflow-wrap: break-word;
+}
+
 button,
-input {
-  font: inherit;
+input,
+select,
+textarea {
+  font:
+    inherit;
 }
 
 a,
 button,
 summary {
   -webkit-tap-highlight-color:
-    rgba(60, 136, 163, 0.14);
+    var(--accent-glow-soft);
 }
 
 button,
@@ -135,23 +155,38 @@ summary,
     .75rem
     1rem;
 
-  background:
-    var(--teal);
-
   color:
     var(--white);
 
-  border-radius: var(--radius-sm);
+  background:
+    var(--obsidian);
 
-  font-weight: 700;
+  border:
+    1px solid
+    var(--accent-primary);
 
-  text-decoration: none;
+  border-radius:
+    var(--radius-sm);
+
+  box-shadow:
+    var(--shadow-md);
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
 
   transform:
     translateY(-200%);
 }
 
 .skip-link:focus {
+  box-shadow:
+    0 0 0 3px
+    var(--accent-glow),
+    var(--shadow-md);
+
   transform:
     translateY(0);
 }
@@ -298,7 +333,7 @@ kbd {
 @supports not selector(::-webkit-scrollbar) {
   html {
     scrollbar-color:
-      var(--teal)
+      var(--accent-primary)
       var(--scrollbar-track);
 
     scrollbar-width:
@@ -321,15 +356,7 @@ kbd {
 
 ::-webkit-scrollbar-thumb {
   background:
-    linear-gradient(
-      180deg,
-      var(--spectrum-teal),
-      var(--spectrum-blue),
-      var(--spectrum-sky),
-      var(--spectrum-green),
-      var(--spectrum-lime),
-      var(--spectrum-coral)
-    );
+    var(--iridescent-gradient-vertical);
 
   border:
     3px solid
@@ -340,21 +367,21 @@ kbd {
 
   box-shadow:
     inset 0 0 0 1px
-    rgba(255, 255, 255, 0.18);
+    var(--light-reflection-soft);
 }
 
 @media (hover: hover) and (pointer: fine) {
   ::-webkit-scrollbar-thumb:hover {
     box-shadow:
       inset 0 0 0 1px
-      rgba(255, 255, 255, .28);
+      var(--light-reflection);
   }
 }
 
 ::-webkit-scrollbar-thumb:active {
   box-shadow:
     inset 0 0 0 1px
-    rgba(255, 255, 255, .34);
+    var(--light-reflection);
 }
 
 .table-wrapper::-webkit-scrollbar,
@@ -369,8 +396,9 @@ pre::-webkit-scrollbar {
    ======================================== */
 
 /*
- * I use the lime accent here so the home
- * cards tie back to the logo.
+ * Reference cards stay structurally neutral
+ * so their iridescent accents can carry the
+ * site's reflected-light detail.
  */
 
 .reference-card {
@@ -475,12 +503,12 @@ details > summary {
 
 .brand-dot:nth-child(2) {
   background:
-    var(--spectrum-sky);
+    var(--spectrum-magenta);
 }
 
 .brand-dot:nth-child(3) {
   background:
-    var(--spectrum-lime);
+    var(--spectrum-amber);
 }
 
 
@@ -499,20 +527,60 @@ details > summary {
 
 
 /* ========================================
+   Iridescent Sheen Animation
+   ======================================== */
+
+/*
+ * The base color shifts only slightly while
+ * the brighter reflection travels farther.
+ * This makes the movement feel like light
+ * catching polished obsidian.
+ */
+
+@keyframes obsidian-sheen {
+  0% {
+    background-position:
+      -140% center,
+      center;
+  }
+
+  50% {
+    background-position:
+      35% center,
+      center;
+  }
+
+  100% {
+    background-position:
+      140% center,
+      center;
+  }
+}
+
+
+/* ========================================
    Reduced Motion
    ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .reference-card {
-    animation: none !important;
+  .reference-card,
+  .favorite-button,
+  .search-result,
+  .site-loader-content,
+  .loader-dot {
+    animation:
+      none !important;
   }
 
   .reference-card
   .card-link,
   .nav-logo,
   .nav-links a::after,
-  .scroll-progress-bar {
-    transition: none !important;
+  .scroll-progress-bar,
+  .favorite-button,
+  .search-result::before {
+    transition:
+      none !important;
   }
 }
 

@@ -4,47 +4,140 @@
    ========================================================================== */
 
 :root {
-  /* ========================================
-     Brand Colors
-     ======================================== */
+/* ========================================
+   Brand Colors
+   ======================================== */
 
-  --black: #000000;
-  --white: #ffffff;
+   --black: #000000;
+   --white: #ffffff;
 
-  --teal: #3c88a3;
-  --blue: #4eabcc;
-  --green: #8bcc45;
-
-  --mint: #bfffcd;
-  --sky: #69d4f5;
-  --lime: #baf553;
-
-  /* A small warm accent keeps the cool palette
-     from feeling too blue or too predictable. */
-
-  --coral: #d97962;
-
-  /*
-   * These softer versions are used when several
-   * brand colors appear together. The original
-   * colors stay available for stronger accents.
+   /*
+   * These colors are retained for the
+   * educational live demos in patterns.css.
    */
 
-  --spectrum-teal: #679baa;
-  --spectrum-blue: #7bb2c4;
-  --spectrum-sky: #94ceda;
-  --spectrum-green: #a5ca88;
-  --spectrum-lime: #cadf94;
-  --spectrum-coral: #d69a8c;
+   --teal: #087f84;
+   --blue: #176da3;
+   --green: #188069;
+   --lime: #8b9f28;
 
-  /*
-   * Shared deep colors keep the hero, selected
-   * navigation, footer, loader, and dialogs related.
+   /*
+   * Saturated jewel tones replace the softer
+   * palette and create the site's polished,
+   * obsidian-inspired color accents.
    */
 
-  --deep-start: #243238;
-  --deep-mid: #3b6875;
-  --deep-end: #5a8b98;
+   --spectrum-teal: #0f8f95;
+   --spectrum-blue: #1f75b5;
+   --spectrum-violet: #6848b8;
+   --spectrum-magenta: #b52c7f;
+   --spectrum-amber: #c7832f;
+   --spectrum-green: #21846d;
+   --spectrum-lime: #8d9d2c;
+   --spectrum-coral: #c14f3a;
+
+   /*
+   * The color stops intentionally move in and
+   * out of spectral order with dark areas
+   * between them. This keeps the effect closer
+   * to reflected light in polished obsidian
+   * than a traditional rainbow.
+   */
+
+   --iridescent-stops:
+   #071112 0%,
+   var(--spectrum-teal) 9%,
+   #103249 17%,
+   var(--spectrum-violet) 27%,
+   var(--spectrum-magenta) 36%,
+   #3b1729 43%,
+   var(--spectrum-amber) 52%,
+   #515617 60%,
+   var(--spectrum-green) 69%,
+   #073d47 77%,
+   var(--spectrum-blue) 86%,
+   var(--spectrum-coral) 94%,
+   #140c0c 100%;
+
+   --iridescent-gradient:
+   linear-gradient(
+      105deg,
+      var(--iridescent-stops)
+   );
+
+   --iridescent-gradient-vertical:
+   linear-gradient(
+      180deg,
+      var(--iridescent-stops)
+   );
+
+   --iridescent-gradient-diagonal:
+   linear-gradient(
+      135deg,
+      var(--iridescent-stops)
+   );
+
+   /*
+   * This translucent highlight moves over the
+   * color rather than moving the color itself.
+   */
+
+   --iridescent-sheen:
+   linear-gradient(
+      105deg,
+      transparent 38%,
+      rgba(255, 255, 255, .03) 43%,
+      rgba(255, 255, 255, .42) 49%,
+      rgba(255, 255, 255, .12) 53%,
+      transparent 60%
+   );
+
+   --iridescent-background:
+   var(--iridescent-sheen),
+   var(--iridescent-gradient);
+
+   /*
+   * Near-black obsidian surfaces give selected
+   * areas depth without introducing another
+   * colored background system.
+   */
+
+   --obsidian: #050607;
+   --obsidian-raised: #0b0e10;
+
+   --deep-start: #111619;
+   --deep-mid: #172226;
+   --deep-end: #203036;
+
+   /*
+   * Shared interaction colors keep ordinary UI
+   * mostly neutral while iridescent color stays
+   * reserved for reflected-light accents.
+   */
+
+   --accent-primary:
+   var(--spectrum-teal);
+
+   --accent-secondary:
+   var(--spectrum-magenta);
+
+   --accent-warm:
+   var(--spectrum-amber);
+
+   --accent-glow:
+   rgba(15, 143, 149, .22);
+
+   --accent-glow-soft:
+   rgba(15, 143, 149, .12);
+
+   --obsidian-glow:
+   rgba(0, 0, 0, .28);
+
+   --light-reflection:
+   rgba(255, 255, 255, .42);
+
+   --light-reflection-soft:
+   rgba(255, 255, 255, .14);
 
 
   /* ========================================
@@ -89,62 +182,62 @@
 
   /* Page and surface colors */
 
-  --background: #edf1ef;
-  --surface: #fafbfa;
-  --surface-alt: #f0f4f2;
-  --surface-raised: #ffffff;
+   --background: #f2f4f5;
+   --surface: #fafbfc;
+   --surface-alt: #eceff1;
+   --surface-raised: #ffffff;
 
-  /* Text and borders */
+   /* Text and borders */
 
-  --text-primary: #172126;
-  --text-secondary: #46545a;
-  --accent-text: #326f82;
+   --text-primary: #151a1d;
+   --text-secondary: #4c565c;
+   --accent-text: #0b6770;
 
-  --border: #c1cbca;
-  --border-strong: #98aaac;
+   --border: #c5ccd0;
+   --border-strong: #929da3;
 
-  /* Navigation */
+   /* Navigation */
 
-  --nav-background: #f7f9f8;
-  --nav-text: #172126;
-  --nav-hover: #e9eeec;
+   --nav-background: #f8f9fa;
+   --nav-text: #151a1d;
+   --nav-hover: #e9edef;
 
-  /* Tables */
+   /* Tables */
 
-  --table-header-background: #172126;
-  --table-header-text: #ffffff;
+   --table-header-background: #111416;
+   --table-header-text: #ffffff;
 
-  /* Code */
+   /* Code */
 
-  --code-background: #e8eeec;
-  --code-text: #215f73;
+   --code-background: #e8edef;
+   --code-text: #145d71;
 
-  /* Highlights and section headings */
+   /* Highlights and section headings */
 
-  --highlight: #edf2e9;
-  --section-heading-background: #e5ece8;
-  --section-heading-text: #172126;
+   --highlight: #e4ebeb;
+   --section-heading-background: #e6eaec;
+   --section-heading-text: #151a1d;
 
-  /* Footer */
+   /* Footer */
 
-  --footer-background: #e1e8e5;
-  --footer-text: #172126;
+   --footer-background: #000000;
+   --footer-text: #ffffff;
 
-  /* Focus and shadows */
+   /* Focus and shadows */
 
-  --focus-ring: #3c88a3;
-  --shadow: rgba(20, 32, 36, 0.14);
+   --focus-ring: #087f84;
+   --shadow: rgba(17, 23, 26, .15);
 
-  /* Interface polish */
+   /* Interface polish */
 
-  --scrollbar-track: #e0e7e4;
-  --scrollbar-thumb: #3c88a3;
-  --scrollbar-thumb-hover: #8bcc45;
+   --scrollbar-track: #dce1e3;
+   --scrollbar-thumb: #087f84;
+   --scrollbar-thumb-hover: #188069;
 
-  --selection-background: #baf553;
-  --selection-text: #172126;
+   --selection-background: #c7832f;
+   --selection-text: #111416;
 
-  --progress-track: rgba(60, 136, 163, 0.12);
+   --progress-track: rgba(8, 127, 132, .14);
 }
 
 
@@ -155,76 +248,66 @@
 html[data-theme='dark'] {
   /* Page and surface colors */
 
-  --background: #101416;
-  --surface: #181f22;
-  --surface-alt: #1f292d;
-  --surface-raised: #253136;
+  --background: #0d0f10;
+  --surface: #141719;
+  --surface-alt: #1b1f22;
+  --surface-raised: #22272a;
 
   /* Text and borders */
 
   --text-primary: #ffffff;
-  --text-secondary: #b9c5ca;
-  --accent-text: #69d4f5;
+  --text-secondary: #b8c0c4;
+  --accent-text: #48b7ba;
 
-  --border: #3d535a;
-  --border-strong: #526a72;
+  --border: #343b3f;
+  --border-strong: #515b60;
 
   /* Navigation */
 
-  --nav-background: #101416;
+  --nav-background: #0d0f10;
   --nav-text: #ffffff;
-  --nav-hover: #1f292d;
+  --nav-hover: #1b1f22;
 
   /* Tables */
 
-  --table-header-background: #3c88a3;
+  --table-header-background: #111416;
   --table-header-text: #ffffff;
 
   /* Code */
 
-  --code-background: #182b33;
-  --code-text: #69d4f5;
+  --code-background: #111a1e;
+  --code-text: #50b4c2;
 
   /* Highlights and section headings */
 
-  --highlight: #243129;
-  --section-heading-background: #182b33;
+  --highlight: #1a2929;
+  --section-heading-background: #171d20;
   --section-heading-text: #ffffff;
 
   /* Footer */
 
-  --footer-background: #121a1d;
+  --footer-background: #000000;
   --footer-text: #ffffff;
 
   /* Focus and shadows */
 
-  --focus-ring: #8bcc45;
-  --shadow: rgba(0, 0, 0, 0.42);
+  --focus-ring: #0f8f95;
+  --shadow: rgba(0, 0, 0, .46);
 
-  /*
-   * Dark mode keeps the same order, but slightly
-   * richer colors stay visible against deep surfaces.
-   */
+  /* Deep surfaces */
 
-  --spectrum-teal: #568fa2;
-  --spectrum-blue: #6ba8bd;
-  --spectrum-sky: #83c5d4;
-  --spectrum-green: #98c478;
-  --spectrum-lime: #bedb82;
-  --spectrum-coral: #d18b7d;
-
-  --deep-start: #11191c;
-  --deep-mid: #284852;
-  --deep-end: #3f6d79;
+  --deep-start: #07090a;
+  --deep-mid: #101517;
+  --deep-end: #182125;
 
   /* Interface polish */
 
-  --scrollbar-track: #101416;
-  --scrollbar-thumb: #4eabcc;
-  --scrollbar-thumb-hover: #8bcc45;
+  --scrollbar-track: #0d0f10;
+  --scrollbar-thumb: #0f8f95;
+  --scrollbar-thumb-hover: #21846d;
 
-  --selection-background: #8bcc45;
+  --selection-background: #c7832f;
   --selection-text: #000000;
 
-  --progress-track: rgba(78, 171, 204, 0.13);
+  --progress-track: rgba(15, 143, 149, .16);
 }

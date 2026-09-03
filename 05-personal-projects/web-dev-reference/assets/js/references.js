@@ -350,8 +350,8 @@ function refreshFavoriteButtons() {
 
         button.textContent =
           saved
-            ? '★'
-            : '☆';
+            ? '✦'
+            : '✩';
 
         button.setAttribute(
           'aria-pressed',

@@ -326,7 +326,7 @@ function initializeGroupedNavigation() {
 
 
   /*
-   * Close open dropdowns with the
+   * Close the active dropdown with the
    * Escape key and return focus to
    * the dropdown toggle.
    */
@@ -340,20 +340,24 @@ function initializeGroupedNavigation() {
         return;
       }
 
-      navMenus.forEach(
-        menu => {
-          if (!menu.open) {
-            return;
-          }
+      const activeMenu =
+        event.target.closest(
+          '.nav-group details'
+        );
 
-          menu.open =
-            false;
+      if (
+        !activeMenu ||
+        !activeMenu.open
+      ) {
+        return;
+      }
 
-          menu.querySelector(
-            'summary'
-          )?.focus();
-        }
-      );
+      activeMenu.open =
+        false;
+
+      activeMenu.querySelector(
+        'summary'
+      )?.focus();
     }
   );
 }
@@ -626,15 +630,9 @@ function renderFooter() {
         aria-label="Visit Jennifer Curtis portfolio, opens in a new tab"
       >
         <img
-          src="/assets/images/logo-light-theme.webp"
-          alt=""
-          class="footer-logo logo-light"
-        >
-
-        <img
           src="/assets/images/logo-dark-theme.webp"
           alt=""
-          class="footer-logo logo-dark"
+          class="footer-logo"
         >
       </a>
 

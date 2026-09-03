@@ -20,15 +20,11 @@
     var(--border-strong);
 
   background:
-    linear-gradient(
-      180deg,
-      var(--surface-raised),
-      var(--surface-alt)
-    );
+    var(--surface-alt);
 
   box-shadow:
     0 8px 20px
-    rgba(20, 32, 36, .08);
+    rgba(0, 0, 0, .08);
 }
 
 .reference-tools::before {
@@ -51,15 +47,7 @@
     4px;
 
   background:
-    linear-gradient(
-      90deg,
-      var(--spectrum-teal),
-      var(--spectrum-blue),
-      var(--spectrum-sky),
-      var(--spectrum-green),
-      var(--spectrum-lime),
-      var(--spectrum-coral)
-    );
+    var(--iridescent-gradient);
 }
 
 .search-container {
@@ -114,7 +102,7 @@
     1;
 
   color:
-    var(--teal);
+    var(--accent-primary);
 
   font-size:
     1.05rem;
@@ -183,11 +171,11 @@
     none;
 
   border-color:
-    var(--spectrum-sky);
+    var(--accent-primary);
 
   box-shadow:
     0 0 0 4px
-    rgba(105, 212, 245, .18),
+    var(--accent-glow-soft),
     var(--shadow-md);
 }
 
@@ -216,10 +204,14 @@
     .18rem;
 
   background:
-    var(--lime);
+    var(--obsidian);
 
   color:
-    var(--deep-start);
+    var(--white);
+
+  box-shadow:
+    inset 0 -2px 0
+    var(--accent-warm);
 
   font-weight:
     700;
@@ -231,8 +223,15 @@
    ======================================== */
 
 main {
-  width: min(1100px, 90%);
-  margin: 4rem auto;
+  width:
+    min(
+      1100px,
+      calc(100% - 2rem)
+    );
+
+  margin:
+    4rem
+    auto;
 }
 
 .reference-section,
@@ -297,7 +296,7 @@ main {
 
   box-shadow:
     3px 3px 0
-    rgba(60, 136, 163, 0.08);
+    var(--accent-glow-soft);
 }
 
 .section-title::before {
@@ -345,7 +344,7 @@ main {
 
   border-left:
     4px solid
-    var(--spectrum-green);
+    var(--accent-primary);
 
   border-radius:
     var(--radius-md);
@@ -361,7 +360,7 @@ main {
   display: inline-flex;
   align-items: center;
 
-  min-height: 40px;
+  min-height: 44px;
 
   padding:
     .45rem
@@ -443,7 +442,7 @@ main {
 
 .page-toc a:focus-visible {
   border-color:
-    var(--green);
+    var(--accent-primary);
 
   background:
     var(--surface);
@@ -453,7 +452,7 @@ main {
 
   box-shadow:
     0 0 0 3px
-    rgba(139, 204, 69, .14);
+    var(--accent-glow-soft);
 }
 
 .page-toc a:active {
@@ -463,17 +462,17 @@ main {
 
 .page-toc a[aria-current='location'] {
   border-color:
-    var(--green);
+    var(--border-strong);
 
   background:
-    var(--highlight);
+    var(--obsidian);
 
   color:
-    var(--text-primary);
+    var(--white);
 
   box-shadow:
     inset 3px 0 0
-    var(--green);
+    var(--accent-primary);
 }
 
 
@@ -514,24 +513,26 @@ main {
 }
 
 .author-note::before {
-  content: '';
+  content:
+    '';
 
-  position: absolute;
+  position:
+    absolute;
 
-  top: 0;
-  bottom: 0;
-  left: 0;
+  top:
+    0;
 
-  width: 5px;
+  bottom:
+    0;
+
+  left:
+    0;
+
+  width:
+    5px;
 
   background:
-    linear-gradient(
-      180deg,
-      var(--spectrum-teal),
-      var(--spectrum-green),
-      var(--spectrum-lime),
-      var(--spectrum-coral)
-    );
+    var(--iridescent-gradient-vertical);
 }
 
 .author-note-label {
@@ -554,7 +555,8 @@ main {
 }
 
 .author-note-label span {
-  color: var(--green);
+  color:
+    var(--accent-primary);
 }
 
 .author-note p {
@@ -575,7 +577,7 @@ main {
 
   border-left:
     5px solid
-    var(--green);
+    var(--accent-primary);
 
   border-radius:
     var(--radius-md);
@@ -607,7 +609,7 @@ main {
   display: inline-flex;
   align-items: center;
 
-  min-height: 42px;
+  min-height: 44px;
 
   padding:
     0.5rem
@@ -647,10 +649,10 @@ main {
 @media (hover: hover) and (pointer: fine) {
   .related-references a:hover {
     border-color:
-      var(--green);
+      var(--accent-primary);
 
     background:
-      var(--highlight);
+      var(--surface);
 
     color:
       var(--text-primary);
@@ -662,16 +664,17 @@ main {
 
 .related-references a:focus-visible {
   border-color:
-    var(--green);
+    var(--accent-primary);
 
   background:
-    var(--highlight);
+    var(--surface);
 
   color:
     var(--text-primary);
 
   box-shadow:
-    var(--shadow-sm);
+    0 0 0 3px
+    var(--accent-glow-soft);
 }
 
 .related-references a:active {
@@ -708,28 +711,6 @@ main {
 
   box-shadow:
     var(--shadow-md);
-}
-
-.intro-panel::before {
-  content: '';
-
-  position: absolute;
-
-  top: -5rem;
-  right: -4rem;
-
-  width: 12rem;
-  height: 12rem;
-
-  border:
-    2px dotted
-    rgba(217, 121, 98, 0.34);
-
-  border-radius:
-    50%;
-
-  pointer-events:
-    none;
 }
 
 .intro-panel > * {
@@ -775,9 +756,14 @@ main {
 }
 
 .legend-icon {
-  color: var(--green);
-  font-family: var(--font-code);
-  font-weight: 700;
+  color:
+    var(--accent-primary);
+
+  font-family:
+    var(--font-code);
+
+  font-weight:
+    700;
 }
 
 /* Reference cards */
@@ -861,22 +847,19 @@ main {
   height:
     5px;
 
-  background:
-    linear-gradient(
-      90deg,
-      var(--spectrum-teal),
-      var(--spectrum-green),
-      var(--spectrum-lime)
-    );
+  background-image:
+    var(--iridescent-background);
 
   background-size:
-    160% 100%;
+    220% 100%,
+    180% 100%;
 
   background-position:
+    -140% center,
     left center;
 
   transition:
-    background-position .35s ease;
+    background-position .55s ease;
 }
 
 .reference-card::after {
@@ -899,7 +882,7 @@ main {
     1px;
 
   background:
-    rgba(255, 255, 255, .5);
+    var(--light-reflection-soft);
 
   pointer-events:
     none;
@@ -908,7 +891,7 @@ main {
 @media (hover: hover) and (pointer: fine) {
   .reference-card:hover {
     border-color:
-      var(--spectrum-teal);
+      var(--accent-primary);
 
     box-shadow:
       var(--shadow-md);
@@ -919,22 +902,24 @@ main {
 
   .reference-card:hover::before {
     background-position:
+      140% center,
       right center;
   }
 }
 
 .reference-card:focus-visible {
   border-color:
-    var(--green);
+    var(--accent-primary);
 
   box-shadow:
     0 0 0 3px
-    rgba(139, 204, 69, .18),
+    var(--accent-glow-soft),
     var(--shadow-lg);
 }
 
 .reference-card:focus-visible::before {
   background-position:
+    140% center,
     right center;
 }
 
@@ -1011,7 +996,7 @@ main {
 
   border-bottom:
     2px solid
-    var(--lime);
+    var(--accent-primary);
 
   font-family:
     var(--font-ui);
@@ -1030,7 +1015,7 @@ main {
       var(--text-primary);
 
     border-bottom-color:
-      var(--coral);
+      var(--accent-primary);
   }
 }
 
@@ -1056,7 +1041,11 @@ main {
 
   border-top:
     4px solid
-    var(--coral);
+    transparent;
+
+  border-image:
+    var(--iridescent-gradient)
+    1;
 
   border-radius:
     var(--radius-md);
@@ -1088,7 +1077,7 @@ main {
   display: inline-flex;
   align-items: center;
 
-  min-height: 42px;
+  min-height: 44px;
 
   padding:
     0.55rem
@@ -1127,10 +1116,10 @@ main {
 @media (hover: hover) and (pointer: fine) {
   .project-link:hover {
     border-color:
-      var(--green);
+      var(--accent-primary);
 
     background:
-      var(--highlight);
+      var(--surface);
 
     color:
       var(--text-primary);
@@ -1142,16 +1131,17 @@ main {
 
 .project-link:focus-visible {
   border-color:
-    var(--green);
+    var(--accent-primary);
 
   background:
-    var(--highlight);
+    var(--surface);
 
   color:
     var(--text-primary);
 
   box-shadow:
-    var(--shadow-sm);
+    0 0 0 3px
+    var(--accent-glow-soft);
 }
 
 .project-link:active {
@@ -1166,7 +1156,14 @@ main {
 .table-wrapper {
   width: 100%;
 
-  overflow-x: auto;
+  overflow-x:
+    auto;
+
+  overscroll-behavior-inline:
+    contain;
+
+  scrollbar-width:
+    thin;
 
   border:
     1px solid
@@ -1230,7 +1227,7 @@ main {
 .reference-table thead th {
   border-bottom:
     4px solid
-    var(--lime);
+    var(--accent-primary);
 
   background:
     var(--table-header-background);
@@ -1242,13 +1239,13 @@ main {
     var(--font-ui);
 
   font-size:
-    0.82rem;
+    .82rem;
 
   font-weight:
     700;
 
   letter-spacing:
-    0.035em;
+    .035em;
 }
 
 .reference-table tbody th[scope='row'] {
@@ -1306,114 +1303,123 @@ main {
   overflow-wrap: anywhere;
 }
 
+
 /* ========================================
    Saved Items
    ======================================== */
 
 .favorite-button {
-  position: absolute;
+  position:
+    absolute;
 
-  top: .55rem;
-  right: .55rem;
+  top:
+    .55rem;
+  right:
+    .55rem;
 
-  display: inline-grid;
+  display:
+    inline-grid;
 
-  place-items: center;
+  place-items:
+    center;
 
-  width: 42px;
-  height: 42px;
+  width:
+    44px;
 
-  padding: 0;
+  height:
+    44px;
+
+  padding:
+    0;
 
   color:
-    var(--accent-text);
+    var(--accent-primary);
 
   background:
-    var(--surface-raised);
+    transparent;
 
   border:
-    1px solid
-    var(--spectrum-teal);
+    0;
 
-  border-radius:
-    50%;
+  font-size:
+    1.1rem;
 
-  font-size: 1rem;
+  line-height:
+    1;
 
-  box-shadow:
-    var(--shadow-sm);
+  text-shadow:
+    0 2px 6px
+    var(--accent-glow-soft);
 
   transition:
-    background-color .2s ease,
-    border-color .2s ease,
     color .2s ease,
-    box-shadow .2s ease;
+    transform .2s ease,
+    text-shadow .2s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .favorite-button:hover {
     color:
-      var(--text-primary);
+      var(--accent-primary);
 
-    background:
-      var(--surface-alt);
+    text-shadow:
+      0 3px 8px
+      var(--accent-glow);
 
-    border-color:
-      var(--green);
-
-    box-shadow:
-      var(--shadow-md);
+    transform:
+      rotate(-6deg)
+      scale(1.1);
   }
 }
 
 .favorite-button:focus-visible {
   color:
-    var(--text-primary);
+    var(--accent-primary);
 
-  border-color:
-    var(--green);
+  outline:
+    2px solid
+    var(--accent-primary);
 
-  box-shadow:
-    0 0 0 3px
-    rgba(139, 204, 69, .14),
-    var(--shadow-sm);
+  outline-offset:
+    2px;
 }
 
 .favorite-button:active {
-  background:
-    var(--highlight);
+  transform:
+    scale(.95);
 }
+
 
 .favorite-button.is-saved {
   color:
-    var(--deep-start);
+    transparent;
 
-  background:
-    var(--spectrum-lime);
+  background-image:
+    var(--iridescent-background);
 
-  border:
-    1px solid
-    var(--green);
+  background-size:
+    220% 100%,
+    180% 100%;
 
-  box-shadow:
-    0 0 0 2px
-    rgba(139, 204, 69, .12),
-    var(--shadow-sm);
-}
+  background-position:
+    -140% center,
+    left center;
 
-html[data-theme='dark']
-.favorite-button {
-  color:
-    var(--white);
-}
+  background-clip:
+    text;
 
-html[data-theme='dark']
-.favorite-button.is-saved {
-  color:
-    var(--black);
+  -webkit-background-clip:
+    text;
 
-  background:
-    var(--spectrum-lime);
+  transform:
+    scale(1.04);
+
+  animation:
+    obsidian-sheen
+    5.5s
+    ease-in-out
+    infinite
+    alternate;
 }
 
 
@@ -1422,9 +1428,72 @@ html[data-theme='dark']
    ================================= */
 
 @media (max-width: 720px) {
+  main {
+    margin:
+      2.75rem
+      auto;
+  }
+
+  .table-wrapper {
+    background:
+      linear-gradient(
+        to right,
+        var(--surface-raised) 30%,
+        transparent
+      )
+      left center / 1rem 100%
+      no-repeat,
+      var(--surface-raised);
+  }
+
+  .reference-card {
+    min-height:
+      0;
+
+    padding:
+      1.6rem
+      1.5rem;
+  }
+
+  .reference-section {
+    margin-bottom:
+      3.75rem;
+  }
+
+  .reference-grid,
+  .reference-legend ul {
+    grid-template-columns:
+      1fr;
+  }
+
   .project-links {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .reference-table {
+    min-width:
+      680px;
+  }
+
+  .reference-table th,
+  .reference-table td {
+    padding:
+      .8rem
+      .9rem;
+  }
+
+  .reference-table
+  tbody
+  th[scope='row'] {
+    min-width:
+      130px;
+
+    white-space:
+      normal;
+
+    overflow-wrap:
+      anywhere;
   }
 
   .reference-tools {
