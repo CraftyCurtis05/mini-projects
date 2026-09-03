@@ -123,11 +123,39 @@ function renderNavigation() {
           alt=""
           class="nav-logo logo-dark"
         >
+
+        <img
+          src="/assets/images/logo/web-dev-reference-mark.svg"
+          alt=""
+          class="nav-logo nav-logo-mark"
+        >
       </a>
 
+      <!-- Mobile Navigation Toggle -->
+      <button
+        class="nav-menu-toggle"
+        id="nav-menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-nav-links"
+      >
+        <span
+          class="nav-menu-icon"
+          aria-hidden="true"
+        >
+          ☰
+        </span>
+
+        <span>
+          Menu
+        </span>
+      </button>
 
       <!-- Navigation Links -->
-      <ul class="nav-links nav-links-grouped">
+      <ul
+        class="nav-links nav-links-grouped"
+        id="main-nav-links"
+      >
         ${createPageLink(homePage)}
 
         ${groupedLinks}
@@ -328,6 +356,123 @@ function initializeGroupedNavigation() {
       );
     }
   );
+}
+
+
+/* ========================================
+   Mobile Navigation
+======================================== */
+
+function initializeMobileNavigation() {
+  const siteNav =
+    document.querySelector(
+      '.site-nav'
+    );
+
+  const menuToggle =
+    document.querySelector(
+      '#nav-menu-toggle'
+    );
+
+  const navLinks =
+    document.querySelector(
+      '#main-nav-links'
+    );
+
+  if (
+    !siteNav ||
+    !menuToggle ||
+    !navLinks
+  ) {
+    return;
+  }
+
+
+  /* Close Mobile Navigation */
+  const closeMenu = () => {
+    siteNav.classList.remove(
+      'is-menu-open'
+    );
+
+    menuToggle.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+  };
+
+
+  /* Toggle Mobile Navigation */
+  menuToggle.addEventListener(
+    'click',
+    () => {
+      const menuIsOpen =
+        siteNav.classList.toggle(
+          'is-menu-open'
+        );
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        String(menuIsOpen)
+      );
+    }
+  );
+
+
+  /*
+   * Close the mobile navigation with
+   * the Escape key and return focus
+   * to the menu toggle.
+   */
+  document.addEventListener(
+    'keydown',
+    event => {
+      if (
+        event.key !==
+          'Escape' ||
+        !siteNav.classList.contains(
+          'is-menu-open'
+        )
+      ) {
+        return;
+      }
+
+
+      /*
+      * Let grouped navigation handle Escape
+      * first when focus is inside a group.
+      */
+      if (
+        event.target.closest(
+          '.nav-group'
+        )
+      ) {
+        return;
+      }
+
+
+      closeMenu();
+
+      menuToggle.focus();
+    }
+  );
+
+
+  /*
+   * Reset the mobile menu when returning
+   * to the larger navigation layout.
+   */
+  window
+    .matchMedia(
+      '(min-width: 601px)'
+    )
+    .addEventListener(
+      'change',
+      event => {
+        if (event.matches) {
+          closeMenu();
+        }
+      }
+    );
 }
 
 

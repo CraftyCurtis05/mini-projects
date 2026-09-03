@@ -82,12 +82,22 @@ html[data-theme='dark']
 
 @media (hover: hover) and (pointer: fine) {
   .nav-brand:hover
-  .nav-logo,
-  .nav-brand:focus-visible
   .nav-logo {
     transform:
       scale(1.02);
   }
+}
+
+.nav-brand:focus-visible {
+  outline:
+    3px solid
+    var(--lime);
+
+  outline-offset:
+    4px;
+
+  border-radius:
+    var(--radius-sm);
 }
 
 .nav-brand:active
@@ -298,6 +308,122 @@ html[data-theme='dark']
       var(--deep-mid) 58%,
       var(--teal)
     );
+}
+
+
+/* ========================================
+   Mobile Navigation Toggle
+   ======================================== */
+
+.nav-menu-toggle {
+  display:
+    none;
+
+  align-items:
+    center;
+
+  gap:
+    .4rem;
+
+  min-height:
+    44px;
+
+  padding:
+    .4rem
+    .75rem;
+
+  color:
+    var(--nav-text);
+
+  background:
+    var(--surface-raised);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-pill);
+
+  box-shadow:
+    0 2px 6px
+    rgba(20, 32, 36, .06);
+
+  font-size:
+    .8rem;
+
+  font-weight:
+    700;
+
+  transition:
+    background-color .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    box-shadow .2s ease;
+}
+
+.nav-menu-toggle[aria-expanded='true'] {
+  color:
+    var(--text-primary);
+
+  background:
+    var(--highlight);
+
+  border-color:
+    var(--green);
+
+  box-shadow:
+    var(--shadow-sm);
+}
+
+.nav-menu-toggle[aria-expanded='true']
+.nav-menu-icon {
+  transform:
+    rotate(90deg);
+}
+
+.nav-menu-icon {
+  font-size:
+    1rem;
+
+  line-height:
+    1;
+
+  transition:
+    transform .2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-menu-toggle:hover {
+    color:
+      var(--text-primary);
+
+    background:
+      var(--surface-alt);
+
+    border-color:
+      var(--spectrum-teal);
+
+    box-shadow:
+      var(--shadow-sm);
+  }
+}
+
+.nav-menu-toggle:focus-visible {
+  color:
+    var(--text-primary);
+
+  border-color:
+    var(--green);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(139, 204, 69, .14);
+}
+
+.nav-menu-toggle:active {
+  background:
+    var(--highlight);
 }
 
 
@@ -545,6 +671,11 @@ html[data-theme='dark']
 html[data-theme='dark']
 .logo-dark {
   display: block;
+}
+
+.nav-logo-mark {
+  display:
+    none;
 }
 
 
@@ -1453,6 +1584,308 @@ a[aria-current='page'] {
 
 
 /* ========================================
+   Responsive Navigation
+   ======================================== */
+
+@media (max-width: 900px) {
+  .site-nav {
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto;
+
+    gap:
+      .65rem
+      1rem;
+
+    padding:
+      .65rem
+      1rem;
+  }
+
+  .nav-brand {
+    min-width:
+      0;
+  }
+
+  .nav-logo {
+    width:
+      clamp(
+        210px,
+        48vw,
+        275px
+      );
+  }
+
+  .nav-links {
+    grid-column:
+      1 / -1;
+
+    justify-content:
+      center;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-nav {
+    grid-template-columns:
+      auto
+      1fr
+      auto;
+
+    gap:
+      .5rem;
+
+    padding:
+      .6rem
+      .75rem;
+  }
+
+  /* Product Mark */
+
+  .nav-logo.logo-light,
+  .nav-logo.logo-dark,
+  html[data-theme='dark']
+  .nav-logo.logo-dark {
+    display:
+      none;
+  }
+
+  .nav-logo-mark,
+  html[data-theme='dark']
+  .nav-logo-mark {
+    display:
+      block;
+
+    width:
+      48px;
+  }
+
+  /* Mobile Menu Toggle */
+
+  .nav-menu-toggle {
+    display:
+      inline-flex;
+
+    justify-self:
+      start;
+  }
+
+  /* Navigation Actions */
+
+  .nav-actions {
+    justify-self:
+      end;
+
+    gap:
+      .3rem;
+  }
+
+  .nav-action kbd {
+    display:
+      none;
+  }
+
+  /* Collapsed Navigation */
+
+  .nav-links {
+    display:
+      none;
+
+    grid-column:
+      1 / -1;
+
+    width:
+      100%;
+
+    padding-top:
+      .6rem;
+
+    border-top:
+      1px solid
+      var(--border);
+  }
+
+  .site-nav.is-menu-open
+  .nav-links {
+    display:
+      flex;
+  }
+
+    /* Mobile Navigation Links */
+
+  .site-nav.is-menu-open
+  .nav-links {
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    gap:
+      .35rem;
+  }
+
+  .nav-links > li {
+    width:
+      100%;
+  }
+
+  .nav-links > li > a,
+  .nav-group summary {
+    width:
+      100%;
+
+    min-height:
+      44px;
+  }
+
+  .nav-links > li > a {
+    padding:
+      .6rem
+      .8rem;
+  }
+
+  /* Mobile Grouped Navigation */
+
+  .nav-group details {
+    width:
+      100%;
+  }
+
+  .nav-group summary {
+    justify-content:
+      space-between;
+
+    padding:
+      .6rem
+      .8rem;
+  }
+
+  .nav-submenu {
+    position:
+      static;
+
+    width:
+      100%;
+
+    min-width:
+      0;
+
+    margin-top:
+      .35rem;
+
+    padding:
+      .45rem;
+
+    border-top:
+      1px solid
+      var(--border-strong);
+
+    border-left:
+      3px solid
+      var(--spectrum-teal);
+
+    box-shadow:
+      var(--shadow-sm);
+  }
+
+  /* Mobile Navigation Scrolling */
+
+  .site-nav.is-menu-open
+  .nav-links {
+    max-height:
+      calc(100dvh - 5.5rem);
+
+    overflow-y:
+      auto;
+
+    overscroll-behavior:
+      contain;
+
+    scrollbar-width:
+      thin;
+  }
+}
+
+@media (max-width: 400px) {
+  .site-nav {
+    padding:
+      .55rem
+      .65rem;
+  }
+
+  /* Product Mark */
+
+  .nav-logo-mark,
+  html[data-theme='dark']
+  .nav-logo-mark {
+    width:
+      42px;
+  }
+
+  /* Navigation Actions */
+
+  .nav-actions {
+    gap:
+      .2rem;
+  }
+
+  .nav-action {
+    justify-content:
+      center;
+
+    width:
+      44px;
+
+    padding:
+      0;
+  }
+
+  .nav-action-label {
+    position:
+      absolute;
+
+    width:
+      1px;
+
+    height:
+      1px;
+
+    padding:
+      0;
+
+    overflow:
+      hidden;
+
+    clip:
+      rect(0, 0, 0, 0);
+
+    white-space:
+      nowrap;
+
+    border:
+      0;
+  }
+
+  /* Theme Toggle */
+
+  .theme-toggle {
+    gap:
+      0;
+
+    padding:
+      .35rem
+      .45rem;
+  }
+
+  .theme-icon {
+    display:
+      none;
+  }
+}
+
+
+/* ========================================
    Touch Interaction
    ======================================== */
 
@@ -1466,6 +1899,7 @@ a[aria-current='page'] {
   .nav-brand,
   .nav-links a,
   .nav-action,
+  .nav-menu-toggle,
   .theme-toggle,
   .nav-group summary,
   .nav-submenu a {
@@ -1493,6 +1927,7 @@ a[aria-current='page'] {
   .nav-logo,
   .nav-links a,
   .nav-action,
+  .nav-menu-icon,
   .theme-toggle,
   .theme-thumb,
   .nav-group summary,

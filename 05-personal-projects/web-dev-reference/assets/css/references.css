@@ -655,9 +655,6 @@ main {
     color:
       var(--text-primary);
 
-    transform:
-      translateY(-1px);
-
     box-shadow:
       var(--shadow-sm);
   }
@@ -678,8 +675,8 @@ main {
 }
 
 .related-references a:active {
-  transform:
-    translateY(1px);
+  background:
+    var(--highlight);
 }
 
 /* ========================================
@@ -1124,7 +1121,6 @@ main {
     background-color 0.2s ease,
     border-color 0.2s ease,
     color 0.2s ease,
-    transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
@@ -1138,9 +1134,6 @@ main {
 
     color:
       var(--text-primary);
-
-    transform:
-      translateY(-1px);
 
     box-shadow:
       var(--shadow-sm);
@@ -1162,8 +1155,8 @@ main {
 }
 
 .project-link:active {
-  transform:
-    translateY(1px);
+  background:
+    var(--highlight);
 }
 
 /* ========================================
@@ -1222,14 +1215,16 @@ main {
     var(--surface-alt);
 }
 
-.reference-table tbody tr {
-  transition:
-    background-color 0.18s ease;
-}
+@media (hover: hover) and (pointer: fine) {
+  .reference-table tbody tr {
+    transition:
+      background-color 0.18s ease;
+  }
 
-.reference-table tbody tr:hover {
-  background:
-    var(--highlight);
+  .reference-table tbody tr:hover {
+    background:
+      var(--highlight);
+  }
 }
 
 .reference-table thead th {

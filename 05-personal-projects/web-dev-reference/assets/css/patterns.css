@@ -144,7 +144,16 @@
     color 0.2s ease;
 }
 
-.pattern-example summary:hover,
+@media (hover: hover) and (pointer: fine) {
+  .pattern-example summary:hover {
+    background:
+      var(--highlight);
+
+    color:
+      var(--accent-text);
+  }
+}
+
 .pattern-example summary:focus-visible {
   background:
     var(--highlight);
@@ -245,7 +254,22 @@
     box-shadow 0.2s ease;
 }
 
-.copy-button:hover,
+@media (hover: hover) and (pointer: fine) {
+  .copy-button:hover {
+    border-color:
+      var(--green);
+
+    background:
+      var(--highlight);
+
+    color:
+      var(--accent-text);
+
+    box-shadow:
+      var(--shadow-sm);
+  }
+}
+
 .copy-button:focus-visible {
   border-color:
     var(--green);
@@ -599,8 +623,6 @@ html[data-theme='dark']
   .dialog-search:hover {
     box-shadow:
       var(--shadow-md);
-
-    
   }
 }
 
@@ -737,7 +759,7 @@ html[data-theme='dark']
   .search-result:hover {
     border-color:
       var(--teal);
-  
+
     box-shadow:
       var(--shadow-md);
   }
@@ -1300,7 +1322,16 @@ html[data-theme='dark']
     color 0.2s ease;
 }
 
-.demo-accordion summary:hover,
+@media (hover: hover) and (pointer: fine) {
+  .demo-accordion summary:hover {
+    background:
+      var(--highlight);
+
+    color:
+      var(--accent-text);
+  }
+}
+
 .demo-accordion summary:focus-visible {
   background:
     var(--highlight);
@@ -1468,10 +1499,18 @@ html[data-theme='dark']
   color: var(--deep-start);
 }
 
-.demo-theme-card .demo-button:hover,
-.demo-theme-card .demo-button:focus-visible {
-  border-color: var(--demo-highlight);
+@media (hover: hover) and (pointer: fine) {
+  .demo-theme-card .demo-button:hover {
+    border-color:
+      var(--demo-highlight);
+  }
 }
+
+.demo-theme-card .demo-button:focus-visible {
+  border-color:
+    var(--demo-highlight);
+}
+
 
 /* ========================================
    Toast Demo
@@ -1809,7 +1848,16 @@ html[data-theme='dark'] .demo-field-message {
     color 0.2s ease;
 }
 
-.demo-breadcrumb a:hover,
+@media (hover: hover) and (pointer: fine) {
+  .demo-breadcrumb a:hover {
+    background:
+      var(--highlight);
+
+    color:
+      var(--accent-text);
+  }
+}
+
 .demo-breadcrumb a:focus-visible {
   background:
     var(--highlight);
@@ -2352,11 +2400,25 @@ html[data-theme='dark'] .demo-field-message {
     background-color 0.2s ease,
     border-color 0.2s ease,
     color 0.2s ease,
-    transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
-.pattern-related a:hover,
+@media (hover: hover) and (pointer: fine) {
+  .pattern-related a:hover {
+    border-color:
+      var(--green);
+
+    background:
+      var(--highlight);
+
+    color:
+      var(--accent-text);
+
+    box-shadow:
+      var(--shadow-sm);
+  }
+}
+
 .pattern-related a:focus-visible {
   border-color:
     var(--green);
@@ -2367,11 +2429,10 @@ html[data-theme='dark'] .demo-field-message {
   color:
     var(--accent-text);
 
-  
-
   box-shadow:
     var(--shadow-sm);
 }
+
 
 /* ========================================
    Touch Interaction

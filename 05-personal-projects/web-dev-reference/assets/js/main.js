@@ -14,6 +14,7 @@ function initializeSite() {
 
   renderNavigation();
   initializeGroupedNavigation();
+  initializeMobileNavigation();
   renderBreadcrumbs();
   renderFooter();
   renderDialogs();
