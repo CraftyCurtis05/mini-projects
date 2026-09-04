@@ -268,46 +268,24 @@ kbd {
 @media (pointer: fine) {
   body {
     cursor:
-      url('../cursors/cursor-default-light.svg')
-      4 3,
-      default;
+      url('../cursors/cursor.svg') 3 2,
+      auto;
   }
 
   a,
   button,
   summary,
-  [role='button'],
-  .reference-card,
-  .favorite-button {
+  select,
+  label[for],
+  input[type='checkbox'],
+  input[type='radio'],
+  input[type='button'],
+  input[type='submit'],
+  input[type='reset'],
+  input[type='file'],
+  [role='button'] {
     cursor:
-      url('../cursors/cursor-pointer-light.svg')
-      11 3,
-      pointer;
-  }
-
-  html[data-theme='dark']
-  body {
-    cursor:
-      url('../cursors/cursor-default-dark.svg')
-      4 3,
-      default;
-  }
-
-  html[data-theme='dark']
-  a,
-  html[data-theme='dark']
-  button,
-  html[data-theme='dark']
-  summary,
-  html[data-theme='dark']
-  [role='button'],
-  html[data-theme='dark']
-  .reference-card,
-  html[data-theme='dark']
-  .favorite-button {
-    cursor:
-      url('../cursors/cursor-pointer-dark.svg')
-      11 3,
+      url('../cursors/pointer.svg') 8 2,
       pointer;
   }
 
@@ -356,7 +334,7 @@ kbd {
 
 ::-webkit-scrollbar-thumb {
   background:
-    var(--iridescent-gradient-vertical);
+    var(--iridescent-accent-gradient-vertical);
 
   border:
     3px solid
@@ -413,8 +391,8 @@ pre::-webkit-scrollbar {
   align-items: center;
 
   transition:
-    color 180ms ease,
-    transform 180ms ease;
+    color var(--transition-ui),
+    transform var(--transition-ui);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -445,9 +423,9 @@ details[open] > summary {
 
 details > summary {
   transition:
-    color 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease;
+    color var(--transition-ui),
+    background-color var(--transition-ui),
+    border-color var(--transition-ui);
 }
 
 
@@ -498,7 +476,7 @@ details > summary {
 
 .brand-dot:nth-child(1) {
   background:
-    var(--spectrum-teal);
+    var(--accent-primary);
 }
 
 .brand-dot:nth-child(2) {

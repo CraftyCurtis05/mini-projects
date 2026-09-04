@@ -133,24 +133,68 @@ function initializeNotFoundPage() {
 ======================================== */
 
 function initializeScrollProgress() {
-  const progressBar = document.getElementById('scroll-progress-bar');
+  const progressBar =
+    document.getElementById(
+      'scroll-progress-bar'
+    );
 
-  if (!progressBar) {
+  const siteNav =
+    document.querySelector(
+      '.site-nav'
+    );
+
+  if (
+    !progressBar &&
+    !siteNav
+  ) {
     return;
   }
 
-  // I calculate this from the actual scroll position so the bar always matches the page.
-  const updateProgress = () => {
-    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = scrollableHeight > 0 ? Math.min(window.scrollY / scrollableHeight, 1) : 0;
 
-    progressBar.style.transform = `scaleX(${progress})`;
+  /*
+   * I update the progress bar and navigation
+   * state together so I only need one scroll
+   * listener for both effects.
+   */
+  const updateScrollState = () => {
+    if (progressBar) {
+      const scrollableHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+      const progress =
+        scrollableHeight > 0
+          ? Math.min(
+              window.scrollY /
+              scrollableHeight,
+              1
+            )
+          : 0;
+
+      progressBar.style.transform =
+        `scaleX(${progress})`;
+    }
+
+    siteNav?.classList.toggle(
+      'is-scrolled',
+      window.scrollY > 32
+    );
   };
 
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  window.addEventListener('resize', updateProgress);
+  window.addEventListener(
+    'scroll',
+    updateScrollState,
+    {
+      passive: true
+    }
+  );
 
-  updateProgress();
+  window.addEventListener(
+    'resize',
+    updateScrollState
+  );
+
+  updateScrollState();
 }
 
 /* ========================================

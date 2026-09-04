@@ -197,7 +197,7 @@ function renderNavigation() {
           aria-haspopup="dialog"
           aria-controls="saved-dialog"
         >
-          <span aria-hidden="true">
+          <span class="nav-action-icon" aria-hidden="true">
             ★
           </span>
 

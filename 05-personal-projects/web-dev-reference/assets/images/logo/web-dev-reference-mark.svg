@@ -3,38 +3,44 @@
      role="img"
      aria-labelledby="title desc">
   <title id="title">Web Development Reference mark</title>
-  <desc id="desc">A colorful code symbol made from left angle, vertical bar and right angle shapes.</desc>
+  <desc id="desc">An iridescent obsidian code symbol formed from a left angle, vertical bar, and right angle.</desc>
 
   <defs>
-    <linearGradient id="leftMark" x1="58" y1="52" x2="178" y2="168" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#69d4f5"/>
-      <stop offset=".55" stop-color="#679baa"/>
-      <stop offset="1" stop-color="#a5ca88"/>
+    <linearGradient id="markLeft" x1="58" y1="52" x2="178" y2="168" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f8f95"/>
+      <stop offset=".52" stop-color="#1f75b5"/>
+      <stop offset="1" stop-color="#6848b8"/>
     </linearGradient>
-    <linearGradient id="centerMark" x1="190" y1="36" x2="190" y2="184" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#cadf94"/>
-      <stop offset=".55" stop-color="#baf553"/>
-      <stop offset="1" stop-color="#8bcc45"/>
+
+    <linearGradient id="markCenter" x1="190" y1="36" x2="190" y2="184" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8d9d2c"/>
+      <stop offset=".36" stop-color="#21846d"/>
+      <stop offset=".72" stop-color="#0f8f95"/>
+      <stop offset="1" stop-color="#1f75b5"/>
     </linearGradient>
-    <linearGradient id="rightMark" x1="202" y1="52" x2="322" y2="168" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#cadf94"/>
-      <stop offset=".38" stop-color="#e4c76f"/>
-      <stop offset=".72" stop-color="#d97962"/>
-      <stop offset="1" stop-color="#d69a8c"/>
+
+    <linearGradient id="markRight" x1="202" y1="52" x2="322" y2="168" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c7832f"/>
+      <stop offset=".52" stop-color="#c14f3a"/>
+      <stop offset="1" stop-color="#b52c7f"/>
     </linearGradient>
-    <linearGradient id="accentLine" x1="385" y1="0" x2="885" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#679baa"/>
-      <stop offset=".5" stop-color="#a5ca88"/>
-      <stop offset=".78" stop-color="#cadf94"/>
-      <stop offset="1" stop-color="#d69a8c"/>
+
+    <linearGradient id="accentLine" x1="372" y1="0" x2="892" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#071112"/>
+      <stop offset=".18" stop-color="#0f8f95"/>
+      <stop offset=".38" stop-color="#6848b8"/>
+      <stop offset=".56" stop-color="#b52c7f"/>
+      <stop offset=".74" stop-color="#c7832f"/>
+      <stop offset=".90" stop-color="#1f75b5"/>
+      <stop offset="1" stop-color="#140c0c"/>
     </linearGradient>
   </defs>
 
 
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M150 55 82 110l68 55" stroke="url(#leftMark)" stroke-width="28"/>
-    <path d="M190 44v132" stroke="url(#centerMark)" stroke-width="28"/>
-    <path d="m230 55 68 55-68 55" stroke="url(#rightMark)" stroke-width="28"/>
+    <path d="M150 55 82 110l68 55" stroke="url(#markLeft)" stroke-width="28"/>
+    <path d="M190 44v132" stroke="url(#markCenter)" stroke-width="28"/>
+    <path d="m230 55 68 55-68 55" stroke="url(#markRight)" stroke-width="28"/>
   </g>
 
 </svg>

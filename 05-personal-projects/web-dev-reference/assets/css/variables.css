@@ -12,16 +12,6 @@
    --white: #ffffff;
 
    /*
-   * These colors are retained for the
-   * educational live demos in patterns.css.
-   */
-
-   --teal: #087f84;
-   --blue: #176da3;
-   --green: #188069;
-   --lime: #8b9f28;
-
-   /*
    * Saturated jewel tones replace the softer
    * palette and create the site's polished,
    * obsidian-inspired color accents.
@@ -75,6 +65,54 @@
    linear-gradient(
       135deg,
       var(--iridescent-stops)
+   );
+   
+
+   /*
+   * Smaller iridescent accents use fewer,
+   * wider color transitions so the reflected
+   * color does not look compressed or striped.
+   */
+
+   --iridescent-accent-stops:
+   #071112 0%,
+   var(--spectrum-teal) 18%,
+   var(--spectrum-violet) 38%,
+   var(--spectrum-magenta) 56%,
+   var(--spectrum-amber) 74%,
+   var(--spectrum-blue) 90%,
+   #140c0c 100%;
+
+   --iridescent-accent-gradient:
+   linear-gradient(
+      105deg,
+      var(--iridescent-accent-stops)
+   );
+
+   --iridescent-accent-gradient-vertical:
+   linear-gradient(
+      180deg,
+      var(--iridescent-accent-stops)
+   );
+
+   /*
+   * Very small vertical accents use only a few
+   * broad color fields so the obsidian effect
+   * stays visible without becoming striped.
+   */
+
+   --iridescent-section-gradient-vertical:
+   linear-gradient(
+      180deg,
+      #071112 0%,
+      #071112 12%,
+      var(--spectrum-teal) 27%,
+      #103249 38%,
+      var(--spectrum-violet) 52%,
+      #3b1729 64%,
+      var(--spectrum-amber) 78%,
+      var(--spectrum-blue) 91%,
+      #140c0c 100%
    );
 
    /*
@@ -166,6 +204,27 @@
     0 16px 38px
     rgba(20, 32, 36, 0.15);
 
+   /*
+   * A restrained inner reflection gives raised
+   * surfaces the polished look of smooth stone.
+   */
+
+   --surface-reflection:
+   inset 0 1px 0
+   rgba(255, 255, 255, .55);
+
+   /*
+   * Shared motion keeps interactive controls
+   * feeling consistent without looking animated.
+   */
+
+   --ease-ui:
+   cubic-bezier(.2, .7, .2, 1);
+
+   --transition-ui:
+   .2s
+   var(--ease-ui);
+
 
   /* ========================================
      Typography
@@ -198,30 +257,16 @@
 
    /* Navigation */
 
-   --nav-background: #f8f9fa;
    --nav-text: #151a1d;
-   --nav-hover: #e9edef;
-
-   /* Tables */
-
-   --table-header-background: #111416;
-   --table-header-text: #ffffff;
 
    /* Code */
 
    --code-background: #e8edef;
    --code-text: #145d71;
 
-   /* Highlights and section headings */
+   /* Highlights */
 
    --highlight: #e4ebeb;
-   --section-heading-background: #e6eaec;
-   --section-heading-text: #151a1d;
-
-   /* Footer */
-
-   --footer-background: #000000;
-   --footer-text: #ffffff;
 
    /* Focus and shadows */
 
@@ -231,13 +276,11 @@
    /* Interface polish */
 
    --scrollbar-track: #dce1e3;
-   --scrollbar-thumb: #087f84;
-   --scrollbar-thumb-hover: #188069;
 
    --selection-background: #c7832f;
    --selection-text: #111416;
 
-   --progress-track: rgba(8, 127, 132, .14);
+   --progress-track: rgba(17, 23, 26, .08);
 }
 
 
@@ -264,30 +307,20 @@ html[data-theme='dark'] {
 
   /* Navigation */
 
-  --nav-background: #0d0f10;
   --nav-text: #ffffff;
-  --nav-hover: #1b1f22;
-
-  /* Tables */
-
-  --table-header-background: #111416;
-  --table-header-text: #ffffff;
 
   /* Code */
 
   --code-background: #111a1e;
   --code-text: #50b4c2;
 
-  /* Highlights and section headings */
+  /* Highlights */
 
   --highlight: #1a2929;
-  --section-heading-background: #171d20;
-  --section-heading-text: #ffffff;
 
-  /* Footer */
-
-  --footer-background: #000000;
-  --footer-text: #ffffff;
+  --surface-reflection:
+      inset 0 1px 0
+      rgba(255, 255, 255, .08);
 
   /* Focus and shadows */
 
@@ -303,11 +336,9 @@ html[data-theme='dark'] {
   /* Interface polish */
 
   --scrollbar-track: #0d0f10;
-  --scrollbar-thumb: #0f8f95;
-  --scrollbar-thumb-hover: #21846d;
 
   --selection-background: #c7832f;
   --selection-text: #000000;
 
-  --progress-track: rgba(15, 143, 149, .16);
+  --progress-track: rgba(255, 255, 255, .08);
 }
