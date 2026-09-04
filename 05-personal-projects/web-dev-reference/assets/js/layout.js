@@ -467,7 +467,7 @@ function initializeMobileNavigation() {
    */
   window
     .matchMedia(
-      '(min-width: 601px)'
+      '(min-width: 921px)'
     )
     .addEventListener(
       'change',
@@ -574,19 +574,19 @@ function renderFooter() {
 
         <!-- Brand Dots -->
         <div
-          class="brand-dots"
+          class="dots footer-dots"
           aria-hidden="true"
         >
-          <span class="brand-dot"></span>
-          <span class="brand-dot"></span>
-          <span class="brand-dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
         </div>
 
 
         <!-- Reviewed Date -->
         <p class="reviewed-date">
-          <time datetime="2026-08">
-            Last reviewed August 2026
+          <time datetime="2026-09">
+            Last reviewed September 2026
           </time>
         </p>
 
@@ -607,30 +607,32 @@ function renderFooter() {
           </a>
 
           <a
+            class="footer-portfolio-link"
             href="${portfolioUrl}"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Portfolio
-            <span aria-hidden="true">
-              ↗
-            </span>
+            <span>My Portfolio</span>
+            <img
+              class="footer-portfolio-logo"
+              src="/assets/images/logo-dark-theme.webp"
+              alt=""
+              aria-hidden="true"
+            >
           </a>
         </nav>
 
       </div>
 
 
-      <!-- Portfolio Logo -->
+      <!-- Reference Logo -->
       <a
         class="footer-logo-link"
-        href="${portfolioUrl}"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit Jennifer Curtis portfolio, opens in a new tab"
+        href="/index.html"
+        aria-label="Web Development Reference home"
       >
         <img
-          src="/assets/images/logo-dark-theme.webp"
+          src="/assets/images/logo/web-dev-reference-mark.svg"
           alt=""
           class="footer-logo"
         >

@@ -138,7 +138,7 @@ Key implementation details include:
 
 ---
 
-## Project Structure
+## Simplified Project Structure
 
 ```text
 web-development-reference/

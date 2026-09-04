@@ -4,29 +4,34 @@
    ========================================================================== */
 
 :root {
-/* ========================================
-   Brand Colors
-   ======================================== */
+  /* ========================================
+     Brand Colors
+     ======================================== */
 
-   --black: #000000;
-   --white: #ffffff;
+  --black: #000000;
+  --white: #ffffff;
 
-   /*
+  /*
    * Saturated jewel tones replace the softer
    * palette and create the site's polished,
    * obsidian-inspired color accents.
    */
 
-   --spectrum-teal: #0f8f95;
-   --spectrum-blue: #1f75b5;
-   --spectrum-violet: #6848b8;
-   --spectrum-magenta: #b52c7f;
-   --spectrum-amber: #c7832f;
-   --spectrum-green: #21846d;
-   --spectrum-lime: #8d9d2c;
-   --spectrum-coral: #c14f3a;
+  --spectrum-teal: #0f8f95;
+  --spectrum-blue: #1f75b5;
+  --spectrum-violet: #6848b8;
+  --spectrum-magenta: #b52c7f;
+  --spectrum-amber: #c7832f;
+  --spectrum-green: #21846d;
+  --spectrum-lime: #8d9d2c;
+  --spectrum-coral: #c14f3a;
 
-   /*
+
+  /* ========================================
+     Iridescent Colors
+     ======================================== */
+
+  /*
    * The color stops intentionally move in and
    * out of spectral order with dark areas
    * between them. This keeps the effect closer
@@ -34,156 +39,158 @@
    * than a traditional rainbow.
    */
 
-   --iridescent-stops:
-   #071112 0%,
-   var(--spectrum-teal) 9%,
-   #103249 17%,
-   var(--spectrum-violet) 27%,
-   var(--spectrum-magenta) 36%,
-   #3b1729 43%,
-   var(--spectrum-amber) 52%,
-   #515617 60%,
-   var(--spectrum-green) 69%,
-   #073d47 77%,
-   var(--spectrum-blue) 86%,
-   var(--spectrum-coral) 94%,
-   #140c0c 100%;
+  --iridescent-stops:
+    #071112 0%,
+    var(--spectrum-teal) 9%,
+    #103249 17%,
+    var(--spectrum-violet) 27%,
+    var(--spectrum-magenta) 36%,
+    #3b1729 43%,
+    var(--spectrum-amber) 52%,
+    #515617 60%,
+    var(--spectrum-green) 69%,
+    #073d47 77%,
+    var(--spectrum-blue) 86%,
+    var(--spectrum-coral) 94%,
+    #140c0c 100%;
 
-   --iridescent-gradient:
-   linear-gradient(
+  --iridescent-gradient:
+    linear-gradient(
       105deg,
       var(--iridescent-stops)
-   );
+    );
 
-   --iridescent-gradient-vertical:
-   linear-gradient(
+  --iridescent-gradient-vertical:
+    linear-gradient(
       180deg,
-      var(--iridescent-stops)
-   );
+      var(--spectrum-teal) 0%,
+      var(--spectrum-violet) 25%,
+      var(--spectrum-magenta) 50%,
+      var(--spectrum-amber) 75%,
+      var(--spectrum-blue) 100%
+    );
 
-   --iridescent-gradient-diagonal:
-   linear-gradient(
+  --iridescent-gradient-diagonal:
+    linear-gradient(
       135deg,
       var(--iridescent-stops)
-   );
-   
+    );
 
-   /*
+  /*
    * Smaller iridescent accents use fewer,
    * wider color transitions so the reflected
    * color does not look compressed or striped.
    */
 
-   --iridescent-accent-stops:
-   #071112 0%,
-   var(--spectrum-teal) 18%,
-   var(--spectrum-violet) 38%,
-   var(--spectrum-magenta) 56%,
-   var(--spectrum-amber) 74%,
-   var(--spectrum-blue) 90%,
-   #140c0c 100%;
+  --iridescent-accent-stops:
+    #071112 0%,
+    var(--spectrum-teal) 18%,
+    var(--spectrum-violet) 38%,
+    var(--spectrum-magenta) 56%,
+    var(--spectrum-amber) 74%,
+    var(--spectrum-blue) 90%,
+    #140c0c 100%;
 
-   --iridescent-accent-gradient:
-   linear-gradient(
+  --iridescent-accent-gradient:
+    linear-gradient(
       105deg,
       var(--iridescent-accent-stops)
-   );
+    );
 
-   --iridescent-accent-gradient-vertical:
-   linear-gradient(
-      180deg,
-      var(--iridescent-accent-stops)
-   );
-
-   /*
-   * Very small vertical accents use only a few
-   * broad color fields so the obsidian effect
-   * stays visible without becoming striped.
+  /*
+   * Short horizontal accents use broad,
+   * continuous transitions so the colors
+   * stay smooth at smaller widths.
    */
 
-   --iridescent-section-gradient-vertical:
-   linear-gradient(
-      180deg,
-      #071112 0%,
-      #071112 12%,
-      var(--spectrum-teal) 27%,
-      #103249 38%,
-      var(--spectrum-violet) 52%,
-      #3b1729 64%,
-      var(--spectrum-amber) 78%,
-      var(--spectrum-blue) 91%,
-      #140c0c 100%
-   );
+  --iridescent-short-gradient:
+    linear-gradient(
+      90deg,
+      var(--spectrum-teal) 0%,
+      var(--spectrum-violet) 25%,
+      var(--spectrum-magenta) 50%,
+      var(--spectrum-amber) 75%,
+      var(--spectrum-blue) 100%
+    );
 
-   /*
-   * This translucent highlight moves over the
-   * color rather than moving the color itself.
+
+  /* ========================================
+     Reflections
+     ======================================== */
+
+  /*
+   * A broad translucent reflection can move
+   * across iridescent surfaces without moving
+   * the underlying color itself.
    */
 
-   --iridescent-sheen:
-   linear-gradient(
+  --iridescent-sheen:
+    linear-gradient(
       105deg,
-      transparent 38%,
-      rgba(255, 255, 255, .03) 43%,
-      rgba(255, 255, 255, .42) 49%,
+      transparent 34%,
+      rgba(255, 255, 255, .02) 40%,
+      rgba(255, 255, 255, .16) 48%,
+      rgba(255, 255, 255, .28) 50%,
       rgba(255, 255, 255, .12) 53%,
-      transparent 60%
-   );
+      rgba(255, 255, 255, .02) 60%,
+      transparent 66%
+    );
 
-   --iridescent-background:
-   var(--iridescent-sheen),
-   var(--iridescent-gradient);
+  --iridescent-background:
+    var(--iridescent-sheen),
+    var(--iridescent-gradient);
 
-   /*
+  --light-reflection:
+    rgba(255, 255, 255, .42);
+
+  --light-reflection-soft:
+    rgba(255, 255, 255, .14);
+
+
+  /* ========================================
+     Obsidian Surfaces
+     ======================================== */
+
+  /*
    * Near-black obsidian surfaces give selected
    * areas depth without introducing another
    * colored background system.
    */
 
-   --obsidian: #050607;
-   --obsidian-raised: #0b0e10;
+  --obsidian: #050607;
+  --obsidian-raised: #0b0e10;
 
-   --deep-start: #111619;
-   --deep-mid: #172226;
-   --deep-end: #203036;
 
-   /*
+  /* ========================================
+     Shared Interaction Colors
+     ======================================== */
+
+  /*
    * Shared interaction colors keep ordinary UI
    * mostly neutral while iridescent color stays
    * reserved for reflected-light accents.
    */
 
-   --accent-primary:
-   var(--spectrum-teal);
+  --accent-primary: #e052a0;
 
-   --accent-secondary:
-   var(--spectrum-magenta);
+  --accent-warm:
+    var(--spectrum-amber);
 
-   --accent-warm:
-   var(--spectrum-amber);
+  --accent-glow:
+    rgba(224, 82, 160, .28);
 
-   --accent-glow:
-   rgba(15, 143, 149, .22);
+  --accent-glow-soft:
+    rgba(224, 82, 160, .15);
 
-   --accent-glow-soft:
-   rgba(15, 143, 149, .12);
-
-   --obsidian-glow:
-   rgba(0, 0, 0, .28);
-
-   --light-reflection:
-   rgba(255, 255, 255, .42);
-
-   --light-reflection-soft:
-   rgba(255, 255, 255, .14);
+  --focus-ring: #e052a0;
 
 
   /* ========================================
      Shape
      ======================================== */
 
-  --radius-sm: 0.4rem;
-  --radius-md: 0.75rem;
+  --radius-sm: .4rem;
+  --radius-md: .75rem;
   --radius-lg: 1rem;
   --radius-pill: 999px;
 
@@ -194,45 +201,58 @@
 
   --shadow-sm:
     0 3px 8px
-    rgba(20, 32, 36, 0.08);
+    rgba(20, 32, 36, .08);
 
   --shadow-md:
     0 8px 20px
-    rgba(20, 32, 36, 0.11);
+    rgba(20, 32, 36, .11);
 
   --shadow-lg:
     0 16px 38px
-    rgba(20, 32, 36, 0.15);
+    rgba(20, 32, 36, .15);
 
-   /*
+  /*
    * A restrained inner reflection gives raised
    * surfaces the polished look of smooth stone.
    */
 
-   --surface-reflection:
-   inset 0 1px 0
-   rgba(255, 255, 255, .55);
+  --surface-reflection:
+    inset 0 1px 0
+    rgba(255, 255, 255, .55);
 
-   /*
+
+  /* ========================================
+     Motion
+     ======================================== */
+
+  /*
    * Shared motion keeps interactive controls
    * feeling consistent without looking animated.
    */
 
-   --ease-ui:
-   cubic-bezier(.2, .7, .2, 1);
+  --ease-ui:
+    cubic-bezier(.2, .7, .2, 1);
 
-   --transition-ui:
-   .2s
-   var(--ease-ui);
+  --transition-ui:
+    .2s
+    var(--ease-ui);
 
 
   /* ========================================
      Typography
      ======================================== */
 
-  --font-body: 'Inter', sans-serif;
-  --font-ui: 'Montserrat', sans-serif;
-  --font-code: 'Source Code Pro', monospace;
+  --font-body:
+    'Inter',
+    sans-serif;
+
+  --font-ui:
+    'Montserrat',
+    sans-serif;
+
+  --font-code:
+    'Source Code Pro',
+    monospace;
 
 
   /* ========================================
@@ -241,46 +261,53 @@
 
   /* Page and surface colors */
 
-   --background: #f2f4f5;
-   --surface: #fafbfc;
-   --surface-alt: #eceff1;
-   --surface-raised: #ffffff;
+  --background: #f2f4f5;
+  --surface: #fafbfc;
+  --surface-alt: #eceff1;
+  --surface-raised: #ffffff;
 
-   /* Text and borders */
 
-   --text-primary: #151a1d;
-   --text-secondary: #4c565c;
-   --accent-text: #0b6770;
+  /* Text and borders */
 
-   --border: #c5ccd0;
-   --border-strong: #929da3;
+  --text-primary: #151a1d;
+  --text-secondary: #4c565c;
+  --accent-text: #525252;
 
-   /* Navigation */
+  --border: #c5ccd0;
+  --border-strong: #929da3;
 
-   --nav-text: #151a1d;
 
-   /* Code */
+  /* Navigation */
 
-   --code-background: #e8edef;
-   --code-text: #145d71;
+  --nav-text: #151a1d;
 
-   /* Highlights */
 
-   --highlight: #e4ebeb;
+  /* Code */
 
-   /* Focus and shadows */
+  --code-background: #e8edef;
+  --code-text: #145d71;
 
-   --focus-ring: #087f84;
-   --shadow: rgba(17, 23, 26, .15);
 
-   /* Interface polish */
+  /* Highlights */
 
-   --scrollbar-track: #dce1e3;
+  --highlight: #e4ebeb;
 
-   --selection-background: #c7832f;
-   --selection-text: #111416;
 
-   --progress-track: rgba(17, 23, 26, .08);
+  /* Shadows */
+
+  --shadow:
+    rgba(17, 23, 26, .15);
+
+
+  /* Interface Polish */
+
+  --scrollbar-track: #dce1e3;
+
+  --selection-background: #c7832f;
+  --selection-text: #111416;
+
+  --progress-track:
+    rgba(17, 23, 26, .08);
 }
 
 
@@ -296,49 +323,53 @@ html[data-theme='dark'] {
   --surface-alt: #1b1f22;
   --surface-raised: #22272a;
 
+
   /* Text and borders */
 
   --text-primary: #ffffff;
   --text-secondary: #b8c0c4;
-  --accent-text: #48b7ba;
+  --accent-text: #cbcbcb;
 
   --border: #343b3f;
   --border-strong: #515b60;
 
+
   /* Navigation */
 
   --nav-text: #ffffff;
+
 
   /* Code */
 
   --code-background: #111a1e;
   --code-text: #50b4c2;
 
+
   /* Highlights */
 
   --highlight: #1a2929;
 
+
+  /* Reflections */
+
   --surface-reflection:
-      inset 0 1px 0
-      rgba(255, 255, 255, .08);
+    inset 0 1px 0
+    rgba(255, 255, 255, .08);
 
-  /* Focus and shadows */
 
-  --focus-ring: #0f8f95;
-  --shadow: rgba(0, 0, 0, .46);
+  /* Shadows */
 
-  /* Deep surfaces */
+  --shadow:
+    rgba(0, 0, 0, .46);
 
-  --deep-start: #07090a;
-  --deep-mid: #101517;
-  --deep-end: #182125;
 
-  /* Interface polish */
+  /* Interface Polish */
 
   --scrollbar-track: #0d0f10;
 
   --selection-background: #c7832f;
   --selection-text: #000000;
 
-  --progress-track: rgba(255, 255, 255, .08);
+  --progress-track:
+    rgba(255, 255, 255, .08);
 }

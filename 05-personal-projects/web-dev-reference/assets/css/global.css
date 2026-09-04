@@ -21,13 +21,11 @@
 
 html {
   font-size: 16px;
-
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
-
   margin: 0;
 
   background:
@@ -49,7 +47,6 @@ a {
 
 img {
   display: block;
-
   max-width: 100%;
 }
 
@@ -102,7 +99,8 @@ summary,
     3px solid
     var(--focus-ring);
 
-  outline-offset: 3px;
+  outline-offset:
+    3px;
 }
 
 
@@ -193,7 +191,7 @@ summary,
 
 
 /* ========================================
-   Code & Keyboard Text
+   Code and Keyboard Text
    ======================================== */
 
 code,
@@ -213,9 +211,11 @@ code {
   color:
     var(--code-text);
 
-  border-radius: .25rem;
+  border-radius:
+    .25rem;
 
-  font-weight: 600;
+  font-weight:
+    600;
 }
 
 kbd {
@@ -233,10 +233,14 @@ kbd {
     1px solid
     var(--border);
 
-  border-radius: .25rem;
+  border-radius:
+    .25rem;
 
-  font-size: .75rem;
-  font-weight: 600;
+  font-size:
+    .75rem;
+
+  font-weight:
+    600;
 }
 
 
@@ -251,9 +255,6 @@ kbd {
   color:
     var(--selection-text);
 }
-
-
-
 
 
 /* ========================================
@@ -334,7 +335,7 @@ kbd {
 
 ::-webkit-scrollbar-thumb {
   background:
-    var(--iridescent-accent-gradient-vertical);
+    var(--iridescent-gradient-vertical);
 
   border:
     3px solid
@@ -380,19 +381,63 @@ pre::-webkit-scrollbar {
  */
 
 .reference-card {
-  position: relative;
+  position:
+    relative;
 
-  overflow: hidden;
+  overflow:
+    hidden;
 }
 
 .reference-card
 .card-link {
-  display: inline-flex;
-  align-items: center;
+  position:
+    relative;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  padding-bottom:
+    .18rem;
+
+  text-decoration:
+    none;
 
   transition:
     color var(--transition-ui),
     transform var(--transition-ui);
+}
+
+.reference-card
+.card-link::after {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  right:
+    0;
+
+  bottom:
+    0;
+
+  left:
+    0;
+
+  height:
+    2px;
+
+  background:
+    var(--accent-primary);
+
+  border-radius:
+    var(--radius-pill);
+
+  transition:
+    background var(--transition-ui);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -403,6 +448,37 @@ pre::-webkit-scrollbar {
     transform:
       translateX(2px);
   }
+
+  .reference-card:hover
+  .card-link::after,
+  .reference-card:focus-within
+  .card-link::after {
+    background-image:
+      var(--iridescent-short-gradient);
+
+    background-size:
+      180% 100%;
+
+    animation:
+      reference-link-shine
+      4s
+      var(--ease-ui)
+      infinite;
+  }
+}
+
+.card-link:focus-visible::after {
+  background-image:
+    var(--iridescent-short-gradient);
+
+  background-size:
+    180% 100%;
+
+  animation:
+    reference-link-shine
+    4s
+    var(--ease-ui)
+    infinite;
 }
 
 .reference-card:active
@@ -413,7 +489,7 @@ pre::-webkit-scrollbar {
 
 
 /* ========================================
-   Details & Summary
+   Details and Summary
    ======================================== */
 
 details[open] > summary {
@@ -439,54 +515,149 @@ details > summary {
  */
 
 .reference-section.is-visible {
-  opacity: 1;
+  opacity:
+    1;
 
-  transform: none;
+  transform:
+    none;
 }
 
 
 /* ========================================
-   Brand Dots
+   Dots
    ======================================== */
 
 /*
  * I use the same three-dot detail anywhere
  * I want a small, repeated brand signature.
+ * Size and spacing can change by context.
  */
 
-.brand-dots {
-  display: inline-flex;
-  align-items: center;
+.dots {
+  --dot-size:
+    11px;
 
-  gap: .55rem;
+  --dot-gap:
+    .45rem;
+
+  position:
+    relative;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    var(--dot-gap);
+
+  isolation:
+    isolate;
 }
 
-.brand-dot {
-  display: inline-block;
+.dot {
+  position:
+    relative;
 
-  width: 13px;
-  height: 13px;
+  width:
+    var(--dot-size);
 
-  border-radius: 50%;
+  height:
+    var(--dot-size);
+
+  flex:
+    0 0 auto;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    50%;
+
+  background:
+    transparent;
 
   box-shadow:
-    0 4px 12px
+    0 2px 8px
     rgba(0, 0, 0, .16);
 }
 
-.brand-dot:nth-child(1) {
+.dot::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  top:
+    0;
+
+  bottom:
+    0;
+
+  width:
+    calc(
+      (var(--dot-size) * 3) +
+      (var(--dot-gap) * 2)
+    );
+
   background:
-    var(--accent-primary);
+    linear-gradient(
+      90deg,
+      var(--spectrum-teal) 0%,
+      var(--spectrum-violet) 12.5%,
+      var(--spectrum-magenta) 25%,
+      var(--spectrum-amber) 37.5%,
+      var(--spectrum-blue) 50%,
+      var(--spectrum-amber) 62.5%,
+      var(--spectrum-magenta) 75%,
+      var(--spectrum-violet) 87.5%,
+      var(--spectrum-teal) 100%
+    );
+
+  background-size:
+    200% 100%;
+
+  background-position:
+    0 center;
+
+  animation:
+    dot-gradient
+    var(--dot-animation-duration, 8s)
+    linear
+    infinite;
 }
 
-.brand-dot:nth-child(2) {
-  background:
-    var(--spectrum-magenta);
+.dot:nth-child(1)::before {
+  left:
+    0;
 }
 
-.brand-dot:nth-child(3) {
-  background:
-    var(--spectrum-amber);
+.dot:nth-child(2)::before {
+  left:
+    calc(
+      (var(--dot-size) + var(--dot-gap)) * -1
+    );
+}
+
+.dot:nth-child(3)::before {
+  left:
+    calc(
+      ((var(--dot-size) * 2) + (var(--dot-gap) * 2)) * -1
+    );
+}
+
+@keyframes dot-gradient {
+  from {
+    background-position:
+      0 center;
+  }
+
+  to {
+    background-position:
+      200% center;
+  }
 }
 
 
@@ -495,17 +666,19 @@ details > summary {
    ======================================== */
 
 .reviewed-date {
-  margin-top: .75rem;
+  margin-top:
+    .75rem;
 
   color:
     var(--text-secondary);
 
-  font-size: .82rem;
+  font-size:
+    .82rem;
 }
 
 
 /* ========================================
-   Iridescent Sheen Animation
+   Iridescent Animations
    ======================================== */
 
 /*
@@ -535,6 +708,34 @@ details > summary {
   }
 }
 
+@keyframes iridescent-shine {
+  0%,
+  18% {
+    background-position:
+      -180% center,
+      center;
+  }
+
+  62%,
+  100% {
+    background-position:
+      180% center,
+      center;
+  }
+}
+
+@keyframes footer-dot-gradient {
+  from {
+    background-position:
+      0 center;
+  }
+
+  to {
+    background-position:
+      200% center;
+  }
+}
+
 
 /* ========================================
    Reduced Motion
@@ -545,7 +746,13 @@ details > summary {
   .favorite-button,
   .search-result,
   .site-loader-content,
-  .loader-dot {
+  .loader-dot,
+  .pattern-section::before,
+  .pattern-live-demo::before,
+  .dialog-header::after,
+  .reference-tools::before,
+  .hero h1::after,
+  .back-to-top {
     animation:
       none !important;
   }
@@ -572,10 +779,12 @@ details > summary {
   .table-wrapper,
   .pattern-section,
   .intro-panel {
-    border-width: 2px;
+    border-width:
+      2px;
   }
 
   .scroll-progress {
-    height: 4px;
+    height:
+      4px;
   }
 }

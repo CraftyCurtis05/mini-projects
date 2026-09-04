@@ -4,7 +4,6 @@
    Dialog setup
    ======================================== */
 
-/* Dialog markup */
 function renderDialogs() {
   document.body.insertAdjacentHTML(
     'beforeend',
@@ -125,7 +124,6 @@ function renderDialogs() {
    Global search
    ======================================== */
 
-/* Open search dialog */
 function openSearchDialog() {
   const dialog = document.getElementById('global-search-dialog');
   const input = document.getElementById('global-search-input');
@@ -211,7 +209,6 @@ function updateGlobalSearch() {
    Saved references
    ======================================== */
 
-/* Render saved references */
 function renderSavedResults() {
   const results = document.getElementById('saved-results');
 

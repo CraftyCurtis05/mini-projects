@@ -55,8 +55,22 @@
   height:
     4px;
 
-  background:
-    var(--iridescent-gradient);
+  background-image:
+    var(--iridescent-background);
+
+  background-size:
+    220% 100%,
+    100% 100%;
+
+  background-position:
+    -180% center,
+    center;
+
+  animation:
+    iridescent-shine
+    6s
+    var(--ease-ui)
+    infinite;
 }
 
 .pattern-heading {
@@ -172,7 +186,7 @@
 
   transition:
     background-color var(--transition-ui),
-    color .2s ease;
+    color var(--transition-ui);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -496,8 +510,22 @@
   height:
     4px;
 
-  background:
-    var(--iridescent-gradient);
+  background-image:
+    var(--iridescent-background);
+
+  background-size:
+    220% 100%,
+    100% 100%;
+
+  background-position:
+    -180% center,
+    center;
+
+  animation:
+    iridescent-shine
+    6s
+    var(--ease-ui)
+    infinite;
 }
 
 .dialog-header h2 {
@@ -597,15 +625,14 @@
     border-color:
       var(--white);
 
-    transform:
-      rotate(4deg);
-
     box-shadow:
       0 0 0 3px
       var(--light-reflection-soft);
+
+    transform:
+      rotate(4deg);
   }
 }
-
 
 .dialog-close:focus-visible {
   background:
@@ -664,7 +691,6 @@
     var(--shadow-sm);
 
   transition:
-    transform var(--transition-ui),
     box-shadow var(--transition-ui);
 }
 
@@ -770,7 +796,6 @@
     var(--shadow-sm);
 
   transition:
-    transform var(--transition-ui),
     border-color var(--transition-ui),
     box-shadow var(--transition-ui);
 }
@@ -937,8 +962,22 @@
   height:
     3px;
 
-  background:
-    var(--iridescent-gradient);
+  background-image:
+    var(--iridescent-background);
+
+  background-size:
+    220% 100%,
+    100% 100%;
+
+  background-position:
+    -180% center,
+    center;
+
+  animation:
+    iridescent-shine
+    6s
+    var(--ease-ui)
+    infinite;
 
   pointer-events:
     none;
@@ -1133,9 +1172,9 @@
     );
 
   transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    background-color var(--transition-ui),
+    border-color var(--transition-ui),
+    box-shadow var(--transition-ui);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1173,7 +1212,7 @@
     calc(100dvh - 2rem);
 
   overflow-y:
-    auto;  
+    auto;
 
   padding:
     1.5rem;
@@ -1432,8 +1471,8 @@
     700;
 
   transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+    background-color var(--transition-ui),
+    color var(--transition-ui);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1485,7 +1524,11 @@
    ======================================== */
 
 .demo-theme-card {
-  /* I keep this demo theme separate so testing it does not change the whole site. */
+  /*
+   * I keep this demo theme separate so
+   * testing it does not change the whole site.
+   */
+
   --demo-background: #ffffff;
   --demo-surface: #eceff1;
   --demo-text: #151a1d;
@@ -1493,11 +1536,17 @@
   --demo-border: #929da3;
   --demo-accent: #0b6770;
 
+  position:
+    relative;
+
   max-width:
     560px;
 
   padding:
     1.35rem;
+
+  overflow:
+    hidden;
 
   border:
     1px solid
@@ -1530,14 +1579,6 @@
   --demo-text-secondary: #b8c0c4;
   --demo-border: #515b60;
   --demo-accent: #48b7ba;
-}
-
-.demo-theme-card {
-  position:
-    relative;
-
-  overflow:
-    hidden;
 }
 
 .demo-theme-card::before {
@@ -1702,9 +1743,6 @@
 html[data-theme='dark'] .demo-toast {
   background:
     var(--highlight);
-
-  color:
-    var(--text-primary);
 }
 
 /* ========================================
@@ -1992,8 +2030,8 @@ html[data-theme='dark'] .demo-field-message {
     0.2em;
 
   transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+    background-color var(--transition-ui),
+    color var(--transition-ui);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -2373,9 +2411,9 @@ html[data-theme='dark'] .demo-field-message {
     var(--text-primary);
 
   transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    background-color var(--transition-ui),
+    border-color var(--transition-ui),
+    box-shadow var(--transition-ui);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -2565,10 +2603,10 @@ html[data-theme='dark'] .demo-field-message {
     var(--shadow-sm);
 
   transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    box-shadow 0.2s ease;
+    background-color var(--transition-ui),
+    border-color var(--transition-ui),
+    color var(--transition-ui),
+    box-shadow var(--transition-ui);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -2615,8 +2653,6 @@ html[data-theme='dark'] .demo-field-message {
   .pattern-related a:active {
     background:
       var(--highlight);
-
-    
   }
 
   .demo-choice-option:active {
@@ -2656,11 +2692,6 @@ html[data-theme='dark'] .demo-field-message {
   .pattern-section {
     padding:
       1.35rem;
-  }
-
-  .pattern-heading {
-    padding-right:
-      2.25rem;
   }
 
   .pattern-heading h2 {

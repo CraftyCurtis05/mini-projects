@@ -2,7 +2,11 @@
   Site-wide Search Data
 ======================================== */
 
-/* Update this when reference content changes. */
+/*
+ * Update this when reference content changes
+ * so site-wide search stays in sync with the
+ * reference pages and pattern sections.
+ */
 
 window.SEARCH_INDEX = [
 
@@ -10161,6 +10165,91 @@ window.SEARCH_INDEX = [
     example:
       '<nav aria-label="Breadcrumb">\n  <ol>\n    <li><a href="/">Home</a></li>\n    <li><a href="/css">CSS</a></li>\n    <li aria-current="page">Grid</li>\n  </ol>\n</nav>',
     href: '/references/patterns/patterns.html#breadcrumb-pattern',
+    category: 'HTML + CSS + JavaScript',
+    level: 'Practical'
+  },
+
+  /* patterns/patterns.html#persistent-state */
+  {
+    id: 'patterns:persistent-state',
+    page: 'Patterns',
+    pageKey: 'patterns',
+    section: 'Patterns',
+    title: 'Persistent UI State',
+    subtitle: '',
+    description:
+      'A user preference saved in local storage so it can stay available after the page reloads.',
+    example:
+      "const savedSetting = localStorage.getItem('pattern-compact-view');",
+    href: '/references/patterns/patterns.html#persistent-state',
+    category: 'HTML + CSS + JavaScript',
+    level: 'Practical'
+  },
+
+  /* patterns/patterns.html#event-delegation */
+  {
+    id: 'patterns:event-delegation',
+    page: 'Patterns',
+    pageKey: 'patterns',
+    section: 'Patterns',
+    title: 'Event Delegation',
+    subtitle: '',
+    description:
+      'One event listener on a parent element handles actions from its child elements, including items added later.',
+    example:
+      "list.addEventListener('click', event => { ... });",
+    href: '/references/patterns/patterns.html#event-delegation',
+    category: 'HTML + CSS + JavaScript',
+    level: 'Practical'
+  },
+
+  /* patterns/patterns.html#container-query */
+  {
+    id: 'patterns:container-query',
+    page: 'Patterns',
+    pageKey: 'patterns',
+    section: 'Patterns',
+    title: 'Container Query Component',
+    subtitle: '',
+    description:
+      'A reusable card that changes its layout based on the space available inside its container.',
+    example:
+      '<article class="responsive-card">...</article>',
+    href: '/references/patterns/patterns.html#container-query',
+    category: 'HTML + CSS + JavaScript',
+    level: 'Practical'
+  },
+
+  /* patterns/patterns.html#responsive-image */
+  {
+    id: 'patterns:responsive-image',
+    page: 'Patterns',
+    pageKey: 'patterns',
+    section: 'Patterns',
+    title: 'Responsive Image / Media',
+    subtitle: '',
+    description:
+      'A responsive image that can provide different sources, sizes, and cropping behavior for different layouts.',
+    example:
+      '<picture>...</picture>',
+    href: '/references/patterns/patterns.html#responsive-image',
+    category: 'HTML + CSS + JavaScript',
+    level: 'Practical'
+  },
+
+  /* patterns/patterns.html#choice-group */
+  {
+    id: 'patterns:choice-group',
+    page: 'Patterns',
+    pageKey: 'patterns',
+    section: 'Patterns',
+    title: 'Accessible Choice Group',
+    subtitle: '',
+    description:
+      'A related set of choices grouped with a fieldset and legend so the options have shared context.',
+    example:
+      '<fieldset>...</fieldset>',
+    href: '/references/patterns/patterns.html#choice-group',
     category: 'HTML + CSS + JavaScript',
     level: 'Practical'
   }

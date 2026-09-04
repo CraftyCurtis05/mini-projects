@@ -1,5 +1,5 @@
 /* ========================================
-   Navigation, Breadcrumbs & Page Header
+   Navigation, Breadcrumbs and Page Header
    ======================================== */
 
 
@@ -53,7 +53,7 @@
 html[data-theme='dark']
 .site-nav {
   background:
-    rgba(13, 17, 19, 0.94);
+    rgba(13, 17, 19, .94);
 }
 
 /*
@@ -636,8 +636,31 @@ html[data-theme='dark']
 /* Keyboard Shortcut */
 
 .nav-action kbd {
+  padding:
+    .08rem
+    .3rem;
+
+  color:
+    var(--text-secondary);
+
+  background:
+    var(--surface-alt);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    .25rem;
+
   font-size:
     .65rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.2;
 }
 
 
@@ -1175,7 +1198,8 @@ html[data-theme='dark']
 }
 
 .hero h1::after {
-  content: '';
+  content:
+    '';
 
   display:
     block;
@@ -1195,14 +1219,23 @@ html[data-theme='dark']
     auto
     0;
 
-  background:
+  background-image:
+    var(--iridescent-sheen),
     var(--iridescent-accent-gradient);
 
   background-size:
+    220% 100%,
     160% 100%;
 
   background-position:
+    -180% center,
     center;
+
+  animation:
+    iridescent-shine
+    6s
+    var(--ease-ui)
+    infinite;
 
   border-radius:
     var(--radius-pill);
@@ -1815,16 +1848,13 @@ a[aria-current='page']::after {
       var(--border);
   }
 
-  .site-nav.is-menu-open
-  .nav-links {
-    display:
-      flex;
-  }
-
   /* Mobile Navigation Links */
 
   .site-nav.is-menu-open
   .nav-links {
+    display:
+      flex;
+
     flex-direction:
       column;
 

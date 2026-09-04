@@ -306,7 +306,6 @@ function escapeHtml(
    Saved References
 ======================================== */
 
-/* Get Saved References */
 function getFavorites() {
   try {
     return (
@@ -328,8 +327,6 @@ function getFavorites() {
   }
 }
 
-
-/* Save References */
 function saveFavorites(
   favorites
 ) {
@@ -353,7 +350,6 @@ function saveFavorites(
    Page Helpers
 ======================================== */
 
-/* Get Current Page Label */
 function currentPageLabel() {
   const currentPage =
     pages.find(

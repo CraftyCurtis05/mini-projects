@@ -208,8 +208,10 @@ function initializeBackToTop() {
   backToTopButton.className = 'back-to-top';
   backToTopButton.setAttribute('aria-label', 'Back to top');
   backToTopButton.innerHTML = `
-    <span aria-hidden="true">↑</span>
-    <span>Top</span>
+    <span
+      class="back-to-top-icon"
+      aria-hidden="true"
+    ></span>
   `;
 
   // I create this once here so I do not have to repeat it on every page.

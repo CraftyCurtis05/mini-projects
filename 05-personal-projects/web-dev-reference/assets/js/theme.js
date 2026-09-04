@@ -2,35 +2,78 @@
    Theme
 ======================================== */
 
-/* Initialize Theme */
 function initializeTheme() {
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  let savedTheme = null;
 
-  // Use the saved theme when available,
-  // otherwise use the browser preference.
-  if (savedTheme === 'light' || savedTheme === 'dark') {
-    rootElement.dataset.theme = savedTheme;
-  } else {
-    rootElement.dataset.theme = prefersDarkTheme ? 'dark' : 'light';
+  try {
+    savedTheme =
+      localStorage.getItem(
+        'theme'
+      );
+  } catch {
+    /*
+     * If storage is unavailable, I fall back
+     * to the browser theme preference.
+     */
   }
 
-  const themeToggle = document.getElementById('theme-toggle');
+  const prefersDarkTheme =
+    window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+
+  if (
+    savedTheme === 'light' ||
+    savedTheme === 'dark'
+  ) {
+    rootElement.dataset.theme =
+      savedTheme;
+  } else {
+    rootElement.dataset.theme =
+      prefersDarkTheme
+        ? 'dark'
+        : 'light';
+  }
+
+  const themeToggle =
+    document.getElementById(
+      'theme-toggle'
+    );
 
   if (!themeToggle) {
     return;
   }
 
-  updateThemeButton(themeToggle);
+  updateThemeButton(
+    themeToggle
+  );
 
-  // Toggle and save the selected theme.
-  themeToggle.addEventListener('click', () => {
-    rootElement.dataset.theme = rootElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  themeToggle.addEventListener(
+    'click',
+    () => {
+      rootElement.dataset.theme =
+        rootElement.dataset.theme ===
+        'dark'
+          ? 'light'
+          : 'dark';
 
-    localStorage.setItem('theme', rootElement.dataset.theme);
+      try {
+        localStorage.setItem(
+          'theme',
+          rootElement.dataset.theme
+        );
+      } catch {
+        /*
+         * The theme can still change for this
+         * visit even when storage is blocked.
+         */
+      }
 
-    updateThemeButton(themeToggle);
-  });
+      updateThemeButton(
+        themeToggle
+      );
+    }
+  );
 }
 
 
@@ -38,7 +81,6 @@ function initializeTheme() {
    Theme Button
 ======================================== */
 
-/* Update Theme Button */
 function updateThemeButton(themeToggle) {
   const isDarkTheme = rootElement.dataset.theme === 'dark';
 

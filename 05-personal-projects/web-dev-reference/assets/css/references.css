@@ -46,8 +46,22 @@
   height:
     4px;
 
-  background:
-    var(--iridescent-gradient);
+  background-image:
+    var(--iridescent-background);
+
+  background-size:
+    220% 100%,
+    100% 100%;
+
+  background-position:
+    -180% center,
+    center;
+
+  animation:
+    iridescent-shine
+    6s
+    var(--ease-ui)
+    infinite;
 }
 
 .search-container {
@@ -308,7 +322,7 @@ main {
     4px;
 
   background:
-    var(--iridescent-section-gradient-vertical);
+    var(--iridescent-gradient-vertical);
 
   border-radius:
     var(--radius-pill);
@@ -606,15 +620,28 @@ main {
   list-style: none;
 }
 
-.related-references a {
-  display: inline-flex;
-  align-items: center;
+/* Shared Reference Links */
 
-  min-height: 44px;
+.related-references a,
+.project-link {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  min-height:
+    44px;
 
   padding:
-    0.5rem
-    0.8rem;
+    .5rem
+    .8rem;
+
+  color:
+    var(--accent-text);
+
+  background:
+    var(--surface-alt);
 
   border:
     1px solid
@@ -623,11 +650,9 @@ main {
   border-radius:
     var(--radius-pill);
 
-  background:
-    var(--surface-alt);
-
-  color:
-    var(--accent-text);
+  box-shadow:
+    0 2px 5px
+    rgba(20, 32, 36, .08);
 
   font-weight:
     700;
@@ -635,53 +660,66 @@ main {
   text-decoration:
     none;
 
-  box-shadow:
-    0 2px 5px
-    rgba(20, 32, 36, 0.08);
-
   transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    background-color var(--transition-ui),
+    border-color var(--transition-ui),
+    color var(--transition-ui),
+    transform var(--transition-ui),
+    box-shadow var(--transition-ui);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .related-references a:hover {
-    border-color:
-      var(--accent-primary);
+  .related-references a:hover,
+  .project-link:hover {
+    color:
+      var(--text-primary);
 
     background:
       var(--surface);
 
-    color:
-      var(--text-primary);
+    border-color:
+      var(--accent-primary);
 
     box-shadow:
       var(--shadow-sm);
   }
+
+  .project-link:hover {
+    transform:
+      translateY(-1px);
+  }
 }
 
-.related-references a:focus-visible {
-  border-color:
-    var(--accent-primary);
+.related-references a:focus-visible,
+.project-link:focus-visible {
+  color:
+    var(--text-primary);
 
   background:
     var(--surface);
 
-  color:
-    var(--text-primary);
+  border-color:
+    var(--accent-primary);
 
   box-shadow:
     0 0 0 3px
     var(--accent-glow-soft);
 }
 
-.related-references a:active {
+.related-references a:active,
+.project-link:active {
   background:
     var(--highlight);
 }
+
+.project-link:active {
+  box-shadow:
+    none;
+
+  transform:
+    translateY(1px);
+}
+
 
 /* ========================================
    Home Page
@@ -993,15 +1031,8 @@ main {
   margin-top:
     1.5rem;
 
-  padding-bottom:
-    .2rem;
-
   color:
     var(--accent-text);
-
-  border-bottom:
-    2px solid
-    var(--accent-primary);
 
   font-family:
     var(--font-ui);
@@ -1018,9 +1049,6 @@ main {
   .card-link {
     color:
       var(--text-primary);
-
-    border-bottom-color:
-      var(--accent-primary);
   }
 }
 
@@ -1079,98 +1107,14 @@ main {
   flex-shrink: 0;
 }
 
-.project-link {
-  display: inline-flex;
-  align-items: center;
-
-  min-height: 44px;
-
-  padding:
-    0.55rem
-    0.85rem;
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    var(--radius-pill);
-
-  background:
-    var(--surface-alt);
-
-  color:
-    var(--accent-text);
-
-  font-weight:
-    700;
-
-  text-decoration:
-    none;
-
-  box-shadow:
-    0 2px 5px
-    rgba(20, 32, 36, 0.08);
-
-  transition:
-    background-color var(--transition-ui),
-    border-color var(--transition-ui),
-    color var(--transition-ui),
-    transform var(--transition-ui),
-    box-shadow var(--transition-ui);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .project-link:hover {
-    border-color:
-      var(--accent-primary);
-
-    background:
-      var(--surface);
-
-    color:
-      var(--text-primary);
-
-    box-shadow:
-      var(--shadow-sm);
-
-    transform:
-      translateY(-1px);  
-  }
-}
-
-.project-link:focus-visible {
-  border-color:
-    var(--accent-primary);
-
-  background:
-    var(--surface);
-
-  color:
-    var(--text-primary);
-
-  box-shadow:
-    0 0 0 3px
-    var(--accent-glow-soft);
-}
-
-.project-link:active {
-  background:
-    var(--highlight);
-
-  transform:
-    translateY(1px);
-
-  box-shadow:
-    none;
-}
 
 /* ========================================
    Reference Tables
    ======================================== */
 
 .table-wrapper {
-  width: 100%;
+  width:
+    100%;
 
   overflow-x:
     auto;
@@ -1181,25 +1125,35 @@ main {
   scrollbar-width:
     thin;
 
+  background:
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient-diagonal)
+    border-box;
+
   border:
-    1px solid
-    var(--border-strong);
+    2px solid
+    transparent;
 
   border-radius:
     var(--radius-md);
-
-  background:
-    var(--surface-raised);
 
   box-shadow:
     var(--shadow-md);
 }
 
 .reference-table {
-  width: 100%;
+  width:
+    100%;
 
-  border-collapse: collapse;
-  table-layout: auto;
+  border-collapse:
+    collapse;
+
+  table-layout:
+    auto;
 
   background:
     var(--surface-raised);
@@ -1231,12 +1185,27 @@ main {
 @media (hover: hover) and (pointer: fine) {
   .reference-table tbody tr {
     transition:
-      background-color 0.18s ease;
+      background-color
+      var(--transition-ui);
   }
 
   .reference-table tbody tr:hover {
     background:
-      var(--highlight);
+      color-mix(
+        in srgb,
+        var(--surface-raised) 90%,
+        var(--accent-primary) 10%
+      );
+  }
+
+  html[data-theme='dark']
+  .reference-table tbody tr:hover {
+    background:
+      color-mix(
+        in srgb,
+        var(--surface-raised) 84%,
+        var(--accent-primary) 16%
+      );
   }
 }
 
@@ -1269,24 +1238,46 @@ main {
 }
 
 .reference-table tbody th[scope='row'] {
-  position: relative;
-  width: 16%;
-  min-width: 150px;
-  padding-right: 2.5rem;
+  position:
+    relative;
+
+  width:
+    16%;
+
+  min-width:
+    150px;
+
+  padding-right:
+    2.5rem;
 
   background:
-    color-mix(
-      in srgb,
-      var(--code-background) 82%,
-      var(--surface)
-    );
+    var(--surface);
 
-  color: var(--code-text);
-  font-family: var(--font-code);
-  font-size: 0.88rem;
-  font-weight: 600;
-  text-align: center;
-  white-space: nowrap;
+  color:
+    var(--text-primary);
+
+  font-family:
+    var(--font-code);
+
+  font-size:
+    .88rem;
+
+  font-weight:
+    600;
+
+  text-align:
+    center;
+
+  white-space:
+    nowrap;
+}
+
+.reference-table code {
+  color:
+    var(--text-primary);
+
+  background:
+    var(--surface-alt);
 }
 
 .reference-table td:nth-child(2) {
@@ -1352,8 +1343,14 @@ main {
   padding:
     0;
 
+  font-size:
+    1.1rem;
+
+  line-height:
+    1;
+
   color:
-    var(--accent-primary);
+    var(--text-secondary);
 
   background:
     transparent;
@@ -1361,15 +1358,8 @@ main {
   border:
     0;
 
-  font-size:
-    1.1rem;
-
-  line-height:
-    1;
-
   text-shadow:
-    0 2px 6px
-    var(--accent-glow-soft);
+    none;
 
   transition:
     color var(--transition-ui),
@@ -1380,11 +1370,10 @@ main {
 @media (hover: hover) and (pointer: fine) {
   .favorite-button:hover {
     color:
-      var(--accent-primary);
+      var(--text-primary);
 
     text-shadow:
-      0 3px 8px
-      var(--accent-glow);
+      none;
 
     transform:
       rotate(-6deg)
@@ -1394,11 +1383,11 @@ main {
 
 .favorite-button:focus-visible {
   color:
-    var(--accent-primary);
+    var(--text-primary);
 
   outline:
     2px solid
-    var(--accent-primary);
+    var(--focus-ring);
 
   outline-offset:
     2px;
@@ -1452,18 +1441,6 @@ main {
     margin:
       2.75rem
       auto;
-  }
-
-  .table-wrapper {
-    background:
-      linear-gradient(
-        to right,
-        var(--surface-raised) 30%,
-        transparent
-      )
-      left center / 1rem 100%
-      no-repeat,
-      var(--surface-raised);
   }
 
   .reference-card {
@@ -1531,14 +1508,6 @@ main {
   .intro-panel {
     padding:
       1.5rem;
-  }
-
-  .intro-panel::before {
-    width: 9rem;
-    height: 9rem;
-
-    top: -5rem;
-    right: -4rem;
   }
 
   .section-title {
