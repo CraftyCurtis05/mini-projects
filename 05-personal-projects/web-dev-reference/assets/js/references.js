@@ -172,7 +172,6 @@ function favoriteRecordForElement(
 }
 
 
-/* Toggle Saved Reference */
 function toggleFavorite(record) {
   const favorites =
     getFavorites();
@@ -203,7 +202,6 @@ function toggleFavorite(record) {
 }
 
 
-/* Create Saved Reference Button */
 function createFavoriteButton(
   record,
   extraClass = ''
@@ -221,6 +219,9 @@ function createFavoriteButton(
 
   button.dataset.favoriteId =
     record.id;
+
+  button.dataset.favoriteTitle =
+    record.title;
 
   button.setAttribute(
     'aria-label',
@@ -240,7 +241,6 @@ function createFavoriteButton(
 }
 
 
-/* Add Saved Reference Buttons */
 function addFavoriteButtons() {
   document
     .querySelectorAll(
@@ -317,7 +317,6 @@ function addFavoriteButtons() {
 }
 
 
-/* Refresh Saved Reference Buttons */
 function refreshFavoriteButtons() {
   /*
    * I turn the saved IDs into a Set
@@ -356,6 +355,17 @@ function refreshFavoriteButtons() {
         button.setAttribute(
           'aria-pressed',
           String(saved)
+        );
+
+        const title =
+          button.dataset.favoriteTitle ||
+          'reference';
+
+        button.setAttribute(
+          'aria-label',
+          saved
+            ? `Remove ${title} from saved references`
+            : `Save ${title}`
         );
 
         button.setAttribute(

@@ -21,8 +21,6 @@ function renderNavigation() {
     bodyElement.dataset.page ||
     'home';
 
-
-  /* Build Navigation Link */
   const createPageLink = page => {
     const currentPage =
       page.key === currentPageKey
@@ -41,8 +39,6 @@ function renderNavigation() {
     `;
   };
 
-
-  /* Build Grouped Navigation */
   const groupedLinks =
     navGroups
       .map(group => {
@@ -86,8 +82,6 @@ function renderNavigation() {
       })
       .join('');
 
-
-  /* Get Main Navigation Pages */
   const homePage =
     pages.find(
       page =>
@@ -100,8 +94,6 @@ function renderNavigation() {
         page.key === 'patterns'
     );
 
-
-  /* Render Navigation */
   navTarget.innerHTML = `
     <nav
       class="site-nav"
@@ -441,7 +433,7 @@ function initializeMobileNavigation() {
       }
 
 
-      /*
+     /*
       * Let grouped navigation handle Escape
       * first when focus is inside a group.
       */

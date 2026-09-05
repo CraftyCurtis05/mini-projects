@@ -1,12 +1,16 @@
 # Web Development Reference
 
-### HTML, CSS, JavaScript & Front-End Development Reference
+### HTML, CSS, JavaScript and Front-End Development Reference
 
 A multi-page web development reference I built with HTML, CSS, and vanilla JavaScript for the concepts, syntax, patterns, and tools I regularly look up while working on other projects.
 
 It started as an HTML tables cheat sheet because I kept looking up the same things. As I continued learning and building projects, it grew into a larger reference organized around the topics I found myself returning to most often.
 
 I intentionally kept the project framework-free so the reference remains easy to open, understand, maintain, and expand without requiring a build step.
+
+**Live Site:** https://reference.jennifercurtis.me
+
+![Web Development Reference home page](screenshots/01-home.png)
 
 ---
 
@@ -71,6 +75,105 @@ The project serves two purposes: it gives me a practical reference I can use whi
 
 ---
 
+## Project Screenshots
+
+### Reference Home
+
+The home page organizes the reference into the major areas I use while developing and provides direct paths into each topic.
+
+<p align="center">
+  <img
+    src="screenshots/01-home.png"
+    alt="Web Development Reference home page"
+    width="800"
+  >
+</p>
+
+### Reference Pages
+
+Reference pages use a shared structure for navigation, page-level search, topic navigation, reference tables, saved entries, and related references.
+
+<p align="center">
+  <img
+    src="screenshots/02-js-modern-async.png"
+    alt="Modern and Async JavaScript reference page"
+    width="800"
+  >
+</p>
+
+### Interactive Patterns
+
+The Patterns section includes working demonstrations alongside implementation details, accessibility considerations, and related references.
+
+<p align="center">
+  <img
+    src="screenshots/03-patterns-skeleton.png"
+    alt="Interactive loading state and skeleton pattern"
+    width="800"
+  >
+</p>
+
+### Site-Wide Search
+
+The global search uses the centralized reference index to find entries across the entire site rather than only the current page.
+
+<p align="center">
+  <img
+    src="screenshots/04-global-search.png"
+    alt="Site-wide search showing semantic HTML results"
+    width="800"
+  >
+</p>
+
+### Responsive Layout
+
+Navigation, reference content, tables, and shared interface controls adapt for smaller screens.
+
+<p align="center">
+  <img
+    src="screenshots/05-mobile-view.png"
+    alt="Web Development Reference mobile layout"
+    width="300"
+  >
+</p>
+
+### Light and Dark Themes
+
+The shared theme system applies across navigation, reference content, controls, code examples, and supporting interface elements.
+
+<p align="center">
+  <img
+    src="screenshots/06-dark-theme.png"
+    alt="Accessibility reference displayed in dark theme"
+    width="800"
+  >
+</p>
+
+### Saved References
+
+Individual reference entries can be saved in the browser with `localStorage` and accessed from the shared navigation.
+
+<p align="center">
+  <img
+    src="screenshots/07-saved-references.png"
+    alt="Saved references dialog with several saved entries"
+    width="800"
+  >
+</p>
+
+### Site Map
+
+The site map provides another view of the project's information architecture and direct access to each major reference area.
+
+<p align="center">
+  <img
+    src="screenshots/08-site-map.png"
+    alt="Web Development Reference site map"
+    width="800"
+  >
+</p>
+
+---
 ## Application Architecture
 
 The site is a framework-free, multi-page application built with shared styles, reusable JavaScript behavior, and topic-specific reference pages.
@@ -119,7 +222,7 @@ Key implementation details include:
 - Added reduced-motion support
 - Built responsive layouts with Flexbox, Grid, and media queries
 - Added custom 404 and site map pages
-- Added development tooling for consistent formatting and linting
+- Added lightweight development tooling for consistent editor settings and JavaScript linting
 
 ---
 
@@ -189,33 +292,20 @@ If Node.js is installed, install the development dependencies:
 npm install
 ```
 
-Then start the included local server:
-
-```bash
-npm run serve
-```
-
-The project does not require a framework, bundler, or production build step.
-
----
-
-## Development Commands
-
 Start the local development server:
 
 ```bash
 npm run serve
 ```
 
+---
+
+## Code Quality
+
 Run ESLint against the JavaScript source:
 
 ```bash
 npm run lint
-```
-
-Run the complete project check:
-```bash
-npm run check
 ```
 
 ---
@@ -258,3 +348,9 @@ As the site has grown, maintaining it has become an exercise in application stru
 I used AI as a development assistant for brainstorming, debugging, accessibility checks, code review, and cleanup.
 
 I went back through the project, changed what did not sound or feel like me, verified changes against the project itself, and made sure I understand the code I am publishing.
+
+---
+
+## Creator
+
+**Portfolio:** https://jennifercurtis.me

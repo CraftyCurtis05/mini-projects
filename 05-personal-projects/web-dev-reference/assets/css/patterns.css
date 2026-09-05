@@ -137,7 +137,7 @@
 .pattern-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: .45rem;
   margin-top: 1rem;
 }
 
@@ -223,7 +223,7 @@
   padding: 1.1rem 1.25rem;
   background: transparent;
   color: var(--code-text);
-  font-size: 0.86rem;
+  font-size: .86rem;
   font-weight: 500;
   line-height: 1.65;
   white-space: pre;
@@ -245,8 +245,8 @@
   gap: 1rem;
 
   padding:
-    0.5rem
-    0.7rem;
+    .5rem
+    .7rem;
 
   border-bottom:
     1px solid
@@ -259,7 +259,7 @@
     var(--text-secondary);
 
   font-size:
-    0.72rem;
+    .72rem;
 }
 
 .copy-button {
@@ -270,8 +270,8 @@
   min-height: 40px;
 
   padding:
-    0.3rem
-    0.6rem;
+    .3rem
+    .6rem;
 
   border:
     1px solid
@@ -987,7 +987,7 @@
   display: inline-flex;
   align-items: center;
 
-  gap: 0.4rem;
+  gap: .4rem;
 
   margin:
     0
@@ -1001,13 +1001,13 @@
     var(--font-code);
 
   font-size:
-    0.76rem;
+    .76rem;
 
   font-weight:
     700;
 
   letter-spacing:
-    0.07em;
+    .07em;
 
   text-transform:
     uppercase;
@@ -1023,7 +1023,7 @@
 .demo-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: .65rem;
 }
 
 /* ========================================
@@ -1144,8 +1144,8 @@
   min-height: 44px;
 
   padding:
-    0.7rem
-    0.85rem;
+    .7rem
+    .85rem;
 
   border:
     1px solid
@@ -1244,7 +1244,7 @@
       8,
       16,
       20,
-      0.62
+      .62
     );
 
   backdrop-filter:
@@ -1258,7 +1258,7 @@
   margin:
     0
     0
-    0.75rem;
+    .75rem;
 
   color:
     var(--accent-text);
@@ -1310,7 +1310,7 @@
   display: grid;
 
   gap:
-    0.65rem;
+    .65rem;
 
   margin:
     0;
@@ -1324,8 +1324,8 @@
 
 .demo-api-result-list li {
   padding:
-    0.7rem
-    0.85rem;
+    .7rem
+    .85rem;
 
   border:
     1px solid
@@ -1362,7 +1362,7 @@
     block;
 
   margin-bottom:
-    0.45rem;
+    .45rem;
 
   color:
     var(--text-primary);
@@ -1376,7 +1376,7 @@
 
 .demo-status {
   margin:
-    0.6rem
+    .6rem
     0
     0;
 
@@ -1384,7 +1384,7 @@
     var(--text-secondary);
 
   font-size:
-    0.86rem;
+    .86rem;
 
   font-weight:
     500;
@@ -1394,7 +1394,7 @@
   display: grid;
 
   gap:
-    0.6rem;
+    .6rem;
 
   margin:
     1rem
@@ -1410,8 +1410,8 @@
 
 .demo-filter-list li {
   padding:
-    0.7rem
-    0.85rem;
+    .7rem
+    .85rem;
 
   border:
     1px solid
@@ -1436,7 +1436,7 @@
 
 .demo-accordion {
   display: grid;
-  gap: 0.65rem;
+  gap: .65rem;
 }
 
 .demo-accordion details {
@@ -1458,8 +1458,8 @@
 
 .demo-accordion summary {
   padding:
-    0.8rem
-    0.95rem;
+    .8rem
+    .95rem;
 
   background:
     var(--surface);
@@ -1511,8 +1511,8 @@
     0;
 
   padding:
-    0.9rem
-    0.95rem
+    .9rem
+    .95rem
     1rem;
 
   color:
@@ -1612,7 +1612,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: .6rem;
 }
 
 .demo-theme-header strong {
@@ -1620,13 +1620,13 @@
 }
 
 .demo-theme-state {
-  padding: 0.2rem 0.55rem;
+  padding: .2rem .55rem;
   border: 1px solid var(--demo-border);
   border-radius: var(--radius-pill);
   background: var(--demo-surface);
   color: var(--demo-text);
   font-family: var(--font-code);
-  font-size: 0.76rem;
+  font-size: .76rem;
   font-weight: 600;
 }
 
@@ -1639,13 +1639,13 @@
   display: grid;
 
   gap:
-    0.25rem;
+    .25rem;
 
   margin-bottom:
     1rem;
 
   padding:
-    0.95rem;
+    .95rem;
 
   border:
     1px solid
@@ -1669,7 +1669,7 @@
 
 .demo-theme-sample-copy {
   color: var(--demo-text-secondary);
-  font-size: 0.9rem;
+  font-size: .9rem;
   line-height: 1.55;
 }
 
@@ -1712,7 +1712,7 @@
     340px;
 
   padding:
-    0.8rem
+    .8rem
     1rem;
 
   border:
@@ -1811,7 +1811,7 @@ html[data-theme='dark'] .demo-toast {
 }
 
 .demo-loading-content h3 {
-  margin: 0 0 0.45rem;
+  margin: 0 0 .45rem;
   color: var(--accent-text);
 }
 
@@ -1879,7 +1879,7 @@ html[data-theme='dark'] .demo-toast {
     54px;
 
   margin-bottom:
-    0.85rem;
+    .85rem;
 
   border:
     1px solid
@@ -1906,7 +1906,7 @@ html[data-theme='dark'] .demo-toast {
 }
 
 .demo-empty-state h3 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 .5rem;
   color: var(--accent-text);
 }
 
@@ -1939,15 +1939,15 @@ html[data-theme='dark'] .demo-toast {
     1.4em;
 
   margin:
-    0.4rem
+    .4rem
     0
-    0.85rem;
+    .85rem;
 
   color:
     #a32929;
 
   font-size:
-    0.86rem;
+    .86rem;
 
   font-weight:
     600;
@@ -1975,7 +1975,7 @@ html[data-theme='dark'] .demo-field-message {
     center;
 
   gap:
-    0.35rem;
+    .35rem;
 
   margin:
     0;
@@ -1995,7 +1995,7 @@ html[data-theme='dark'] .demo-field-message {
     center;
 
   gap:
-    0.35rem;
+    .35rem;
 }
 
 .demo-breadcrumb li:not(:last-child)::after {
@@ -2011,8 +2011,8 @@ html[data-theme='dark'] .demo-field-message {
 
 .demo-breadcrumb a {
   padding:
-    0.25rem
-    0.4rem;
+    .25rem
+    .4rem;
 
   border-radius:
     var(--radius-sm);
@@ -2027,7 +2027,7 @@ html[data-theme='dark'] .demo-field-message {
     1px;
 
   text-underline-offset:
-    0.2em;
+    .2em;
 
   transition:
     background-color var(--transition-ui),
@@ -2107,10 +2107,10 @@ html[data-theme='dark'] .demo-field-message {
 
 .demo-setting.is-compact {
   gap:
-    0.5rem;
+    .5rem;
 
   padding:
-    0.75rem;
+    .75rem;
 
   box-shadow:
     none;
@@ -2129,7 +2129,7 @@ html[data-theme='dark'] .demo-field-message {
     grid;
 
   gap:
-    0.65rem;
+    .65rem;
 
   margin:
     1rem
@@ -2157,8 +2157,8 @@ html[data-theme='dark'] .demo-field-message {
     1rem;
 
   padding:
-    0.8rem
-    0.9rem;
+    .8rem
+    .9rem;
 
   border:
     1px solid
@@ -2257,12 +2257,12 @@ html[data-theme='dark'] .demo-field-message {
 }
 
 .demo-container-card-content h3 {
-  margin: 0 0 0.45rem;
+  margin: 0 0 .45rem;
   color: var(--accent-text);
 }
 
 .demo-container-card-content p {
-  margin: 0 0 0.75rem;
+  margin: 0 0 .75rem;
   color: var(--text-secondary);
   line-height: 1.6;
 }
@@ -2319,13 +2319,13 @@ html[data-theme='dark'] .demo-field-message {
 
 .demo-responsive-media figcaption {
   margin-top:
-    0.75rem;
+    .75rem;
 
   color:
     var(--text-secondary);
 
   font-size:
-    0.86rem;
+    .86rem;
 
   line-height:
     1.6;
@@ -2344,7 +2344,7 @@ html[data-theme='dark'] .demo-field-message {
     grid;
 
   gap:
-    0.75rem;
+    .75rem;
 
   margin:
     0;
@@ -2371,15 +2371,15 @@ html[data-theme='dark'] .demo-field-message {
 }
 
 .demo-choice-group legend {
-  padding: 0 0.35rem;
+  padding: 0 .35rem;
   color: var(--accent-text);
   font-weight: 700;
 }
 
 .demo-choice-help {
-  margin: 0 0 0.25rem;
+  margin: 0 0 .25rem;
   color: var(--text-secondary);
-  font-size: 0.88rem;
+  font-size: .88rem;
   line-height: 1.6;
 }
 
@@ -2391,11 +2391,11 @@ html[data-theme='dark'] .demo-field-message {
     center;
 
   gap:
-    0.65rem;
+    .65rem;
 
   padding:
-    0.75rem
-    0.85rem;
+    .75rem
+    .85rem;
 
   border:
     1px solid
@@ -2543,7 +2543,7 @@ html[data-theme='dark'] .demo-field-message {
 }
 
 .pattern-accessibility-note li + li {
-  margin-top: 0.35rem;
+  margin-top: .35rem;
 }
 
 /* ========================================
@@ -2557,7 +2557,7 @@ html[data-theme='dark'] .demo-field-message {
 .pattern-related ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  gap: .55rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -2574,8 +2574,8 @@ html[data-theme='dark'] .demo-field-message {
     44px;
 
   padding:
-    0.45rem
-    0.7rem;
+    .45rem
+    .7rem;
 
   border:
     1px solid
@@ -2591,7 +2591,7 @@ html[data-theme='dark'] .demo-field-message {
     var(--accent-text);
 
   font-size:
-    0.84rem;
+    .84rem;
 
   font-weight:
     700;
@@ -2720,7 +2720,7 @@ html[data-theme='dark'] .demo-field-message {
 
   .pattern-accessibility-note {
     padding:
-      0.95rem
+      .95rem
       1rem;
   }
 
@@ -2745,22 +2745,22 @@ html[data-theme='dark'] .demo-field-message {
       column;
 
     gap:
-      0.5rem;
+      .5rem;
   }
 
   .pattern-example summary {
     padding:
-      0.75rem
-      0.85rem;
+      .75rem
+      .85rem;
   }
 
   .pattern-example pre code {
     padding:
-      0.9rem
+      .9rem
       1rem;
 
     font-size:
-      0.82rem;
+      .82rem;
   }
 
   .code-toolbar {
@@ -2771,7 +2771,7 @@ html[data-theme='dark'] .demo-field-message {
       column;
 
     gap:
-      0.5rem;
+      .5rem;
   }
 
   .copy-button {
@@ -2786,7 +2786,7 @@ html[data-theme='dark'] .demo-field-message {
     padding:
       1rem
       1rem
-      0.75rem;
+      .75rem;
   }
 
   .dialog-header h2 {
@@ -2805,15 +2805,15 @@ html[data-theme='dark'] .demo-field-message {
 
   .dialog-status {
     margin:
-      0.65rem
+      .65rem
       1rem;
   }
 
   .search-results {
     padding:
-      0.5rem
-      0.75rem
-      0.75rem;
+      .5rem
+      .75rem
+      .75rem;
   }
 
   .demo-choice-group {

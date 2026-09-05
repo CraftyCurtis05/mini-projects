@@ -6,8 +6,7 @@
   "description": "A personal web development reference built with HTML, CSS, and vanilla JavaScript.",
   "scripts": {
     "serve": "http-server . -p 8080 -c-1",
-    "lint": "eslint assets/js --ignore-pattern search-data.js",
-    "check": "npm run lint"
+    "lint": "eslint assets/js --ignore-pattern search-data.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",

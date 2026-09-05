@@ -299,7 +299,7 @@ main {
     1.15;
 
   letter-spacing:
-    -0.02em;
+    -.02em;
 }
 
 .section-title::before {
@@ -552,17 +552,17 @@ main {
   display: inline-flex;
   align-items: center;
 
-  gap: 0.35rem;
+  gap: .35rem;
 
-  margin-bottom: 0.55rem;
+  margin-bottom: .55rem;
 
   color: var(--accent-text);
 
   font-family: var(--font-code);
 
-  font-size: 0.78rem;
+  font-size: .78rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: .06em;
 
   text-transform: uppercase;
 }
@@ -614,7 +614,7 @@ main {
 .related-references ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: .65rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -773,7 +773,7 @@ main {
 }
 
 .reference-legend h3 {
-  margin: 0 0 0.85rem;
+  margin: 0 0 .85rem;
   color:
     var(--text-primary);
   font-family: var(--font-ui);
@@ -783,7 +783,7 @@ main {
 .reference-legend ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem 1.25rem;
+  gap: .75rem 1.25rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -791,9 +791,9 @@ main {
 
 .reference-legend li {
   display: flex;
-  gap: 0.65rem;
+  gap: .65rem;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: .9rem;
 }
 
 .legend-icon {
@@ -1092,7 +1092,7 @@ main {
 }
 
 .project-links h2 {
-  margin: 0.15rem 0 0.4rem;
+  margin: .15rem 0 .4rem;
 }
 
 .project-links p {
@@ -1103,7 +1103,7 @@ main {
 .project-link-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: .65rem;
   flex-shrink: 0;
 }
 
@@ -1304,7 +1304,7 @@ main {
   min-width: 170px;
   color: var(--text-primary);
   font-family: var(--font-code);
-  font-size: 0.86rem;
+  font-size: .86rem;
 }
 
 .example-cell code {

@@ -281,7 +281,6 @@ function initializeReferenceSearch() {
     patternSections.length;
 
 
-  /* Update Search Status */
   function setStatus(message) {
     if (visibleStatus) {
       visibleStatus.textContent =
@@ -295,10 +294,12 @@ function initializeReferenceSearch() {
   }
 
 
-  /* Filter Current Reference */
   function filterReference() {
     const query =
       input.value.trim();
+
+    const normalizedQuery =
+      query.toLowerCase();
 
     clearSearchHighlights(
       document.getElementById(
@@ -325,7 +326,7 @@ function initializeReferenceSearch() {
                   row.textContent
                     .toLowerCase()
                     .includes(
-                      query.toLowerCase()
+                      normalizedQuery
                     );
 
                 row.hidden =
@@ -334,9 +335,7 @@ function initializeReferenceSearch() {
                 if (matches) {
                   sectionHasMatch =
                     true;
-                }
 
-                if (matches) {
                   visible += 1;
 
                   highlightText(
@@ -359,7 +358,7 @@ function initializeReferenceSearch() {
             section.textContent
               .toLowerCase()
               .includes(
-                query.toLowerCase()
+                normalizedQuery
               );
 
           section.hidden =
@@ -393,14 +392,12 @@ function initializeReferenceSearch() {
   }
 
 
-  /* Search Input */
   input.addEventListener(
     'input',
     filterReference
   );
 
 
-  /* Search Keyboard Shortcut */
   document.addEventListener(
     'keydown',
     event => {
@@ -422,7 +419,6 @@ function initializeReferenceSearch() {
   );
 
 
-  /* Initial Search Status */
   setStatus(
     `Showing all ${count} entries`
   );

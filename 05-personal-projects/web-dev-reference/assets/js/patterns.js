@@ -298,10 +298,19 @@ function initializePersistentStateDemo() {
 
 
   /* Restore the preference when the page loads. */
-  const savedSetting =
-    localStorage.getItem(
-      storageKey
-    );
+  let savedSetting = null;
+
+  try {
+    savedSetting =
+      localStorage.getItem(
+        storageKey
+      );
+  } catch {
+    /*
+    * If storage is unavailable, the demo
+    * can still use its default state.
+    */
+  }
 
   updateDemo(
     savedSetting === 'true'
@@ -317,10 +326,17 @@ function initializePersistentStateDemo() {
           'is-compact'
         );
 
-      localStorage.setItem(
-        storageKey,
-        String(compact)
-      );
+      try {
+        localStorage.setItem(
+          storageKey,
+          String(compact)
+        );
+      } catch {
+        /*
+        * The demo can still update for this
+        * visit when storage is unavailable.
+        */
+      }
 
       updateDemo(compact);
     }

@@ -10,12 +10,39 @@ document.documentElement.classList.add('js');
    Initial Theme
 ======================================== */
 
-/* Apply the saved theme before the page renders to prevent a theme flash. */
-const savedTheme = localStorage.getItem('theme');
-const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+/*
+ * Apply the saved theme before the page
+ * renders to prevent a theme flash.
+ */
 
-if (savedTheme === 'light' || savedTheme === 'dark') {
-  document.documentElement.dataset.theme = savedTheme;
+let savedTheme = null;
+
+try {
+  savedTheme =
+    localStorage.getItem(
+      'theme'
+    );
+} catch {
+  /*
+   * If storage is unavailable, I fall back
+   * to the browser theme preference.
+   */
+}
+
+const prefersDarkTheme =
+  window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
+
+if (
+  savedTheme === 'light' ||
+  savedTheme === 'dark'
+) {
+  document.documentElement.dataset.theme =
+    savedTheme;
 } else {
-  document.documentElement.dataset.theme = prefersDarkTheme ? 'dark' : 'light';
+  document.documentElement.dataset.theme =
+    prefersDarkTheme
+      ? 'dark'
+      : 'light';
 }
