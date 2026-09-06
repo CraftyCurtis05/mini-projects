@@ -141,6 +141,28 @@
   margin-top: 1rem;
 }
 
+.pattern-meta .badge {
+  color:
+    var(--text-primary);
+
+  background:
+    var(--surface-alt);
+
+  border-color:
+    var(--border-strong);
+
+  box-shadow:
+    var(--shadow-sm);
+}
+
+.pattern-meta
+.badge-category::before,
+.pattern-meta
+.badge-level::before {
+  color:
+    var(--spectrum-teal);
+}
+
 /* ========================================
    Pattern Code Examples
    ======================================== */

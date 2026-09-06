@@ -79,7 +79,7 @@ a,
 button,
 summary {
   -webkit-tap-highlight-color:
-    var(--accent-glow-soft);
+    transparent;
 }
 
 button,
@@ -369,6 +369,27 @@ pre::-webkit-scrollbar {
     10px;
 }
 
+@media (max-width: 920px) {
+  .table-wrapper::-webkit-scrollbar,
+  pre::-webkit-scrollbar {
+    height:
+      8px;
+  }
+
+  .table-wrapper::-webkit-scrollbar-thumb,
+  pre::-webkit-scrollbar-thumb {
+    background:
+      var(--iridescent-gradient);
+
+    border:
+      2px solid
+      var(--scrollbar-track);
+
+    border-radius:
+      var(--radius-pill);
+  }
+}
+
 
 /* ========================================
    Reference Cards
@@ -602,19 +623,8 @@ details > summary {
       (var(--dot-gap) * 2)
     );
 
-  background:
-    linear-gradient(
-      90deg,
-      var(--spectrum-teal) 0%,
-      var(--spectrum-violet) 12.5%,
-      var(--spectrum-magenta) 25%,
-      var(--spectrum-amber) 37.5%,
-      var(--spectrum-blue) 50%,
-      var(--spectrum-amber) 62.5%,
-      var(--spectrum-magenta) 75%,
-      var(--spectrum-violet) 87.5%,
-      var(--spectrum-teal) 100%
-    );
+  background-image:
+    var(--iridescent-gradient);
 
   background-size:
     200% 100%;
@@ -623,8 +633,8 @@ details > summary {
     0 center;
 
   animation:
-    dot-gradient
-    var(--dot-animation-duration, 8s)
+    dot-spectrum-shift
+    var(--dot-animation-duration, 10s)
     linear
     infinite;
 }
@@ -648,18 +658,6 @@ details > summary {
     );
 }
 
-@keyframes dot-gradient {
-  from {
-    background-position:
-      0 center;
-  }
-
-  to {
-    background-position:
-      200% center;
-  }
-}
-
 
 /* ========================================
    Reviewed Date
@@ -681,12 +679,12 @@ details > summary {
    Iridescent Animations
    ======================================== */
 
-/*
- * The base color shifts only slightly while
- * the brighter reflection travels farther.
- * This makes the movement feel like light
- * catching polished obsidian.
- */
+  /*
+  * The spectrum stays still while a brighter
+  * reflection travels across it. This makes
+  * the movement feel like light catching
+  * polished obsidian.
+  */
 
 @keyframes obsidian-sheen {
   0% {
@@ -709,22 +707,20 @@ details > summary {
 }
 
 @keyframes iridescent-shine {
-  0%,
-  18% {
+  from {
     background-position:
       -180% center,
       center;
   }
 
-  62%,
-  100% {
+  to {
     background-position:
       180% center,
       center;
   }
 }
 
-@keyframes footer-dot-gradient {
+@keyframes dot-spectrum-shift {
   from {
     background-position:
       0 center;
@@ -750,7 +746,6 @@ details > summary {
   .pattern-section::before,
   .pattern-live-demo::before,
   .dialog-header::after,
-  .reference-tools::before,
   .hero h1::after,
   .back-to-top {
     animation:
@@ -766,6 +761,11 @@ details > summary {
   .search-result::before {
     transition:
       none !important;
+  }
+
+  .nav-group.has-more-right::after {
+    animation:
+      none;
   }
 }
 

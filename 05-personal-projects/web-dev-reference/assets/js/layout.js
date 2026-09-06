@@ -384,11 +384,52 @@ function initializeMobileNavigation() {
   }
 
 
+  /*
+   * Show a visual cue when more grouped
+   * navigation is available to the right.
+   */
+  const updateSubmenuScrollCue =
+    submenu => {
+      const group =
+        submenu.closest(
+          '.nav-group'
+        );
+
+      if (!group) {
+        return;
+      }
+
+      const hasMoreRight =
+        submenu.scrollWidth >
+          submenu.clientWidth &&
+        submenu.scrollLeft +
+          submenu.clientWidth <
+          submenu.scrollWidth - 2;
+
+      group.classList.toggle(
+        'has-more-right',
+        hasMoreRight
+      );
+    };
+
+
   /* Close Mobile Navigation */
   const closeMenu = () => {
     siteNav.classList.remove(
       'is-menu-open'
     );
+
+    document
+      .querySelectorAll(
+        '.nav-group.has-more-right'
+      )
+      .forEach(
+        group => {
+          group.classList.remove(
+            'has-more-right'
+          );
+        }
+      );
 
     menuToggle.setAttribute(
       'aria-expanded',
@@ -410,7 +451,84 @@ function initializeMobileNavigation() {
         'aria-expanded',
         String(menuIsOpen)
       );
+
+      if (!menuIsOpen) {
+        document
+          .querySelectorAll(
+            '.nav-group.has-more-right'
+          )
+          .forEach(
+            group => {
+              group.classList.remove(
+                'has-more-right'
+              );
+            }
+          );
+      }
     }
+  );
+
+
+    /*
+   * Update the cue as the user moves through
+   * the mobile navigation.
+   */
+  const navSubmenus = [
+    ...navLinks.querySelectorAll(
+      '.nav-submenu'
+    )
+  ];
+
+  navSubmenus.forEach(
+    submenu => {
+      submenu.addEventListener(
+        'scroll',
+        () => {
+          updateSubmenuScrollCue(
+            submenu
+          );
+        },
+        {
+          passive:
+            true
+        }
+      );
+    }
+  );
+
+  navLinks.addEventListener(
+    'toggle',
+    event => {
+      const details =
+        event.target;
+
+      if (
+        !details.matches(
+          '.nav-group details'
+        ) ||
+        !details.open
+      ) {
+        return;
+      }
+
+      const submenu =
+        details.querySelector(
+          '.nav-submenu'
+        );
+
+      if (!submenu) {
+        return;
+      }
+
+      requestAnimationFrame(
+        () => {
+          updateSubmenuScrollCue(
+            submenu
+          );
+        }
+      );
+    },
+    true
   );
 
 

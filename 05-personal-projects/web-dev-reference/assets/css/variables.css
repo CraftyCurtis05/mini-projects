@@ -27,32 +27,28 @@
   --spectrum-coral: #c14f3a;
 
 
-  /* ========================================
-     Iridescent Colors
-     ======================================== */
+/* ========================================
+   Iridescent Colors
+   ======================================== */
 
   /*
-   * The color stops intentionally move in and
-   * out of spectral order with dark areas
-   * between them. This keeps the effect closer
-   * to reflected light in polished obsidian
-   * than a traditional rainbow.
-   */
+  * One shared spectrum defines every
+  * iridescent treatment across the site.
+  * Each color appears once so gradients stay
+  * smooth instead of becoming striped.
+  */
 
   --iridescent-stops:
-    #071112 0%,
-    var(--spectrum-teal) 9%,
-    #103249 17%,
-    var(--spectrum-violet) 27%,
-    var(--spectrum-magenta) 36%,
-    #3b1729 43%,
-    var(--spectrum-amber) 52%,
-    #515617 60%,
-    var(--spectrum-green) 69%,
-    #073d47 77%,
-    var(--spectrum-blue) 86%,
-    var(--spectrum-coral) 94%,
-    #140c0c 100%;
+    var(--spectrum-teal) 0%,
+    var(--spectrum-violet) 15%,
+    var(--spectrum-magenta) 30%,
+    var(--spectrum-amber) 45%,
+    var(--spectrum-lime) 60%,
+    var(--spectrum-green) 75%,
+    var(--spectrum-blue) 100%;
+
+
+  /* Base Gradients */
 
   --iridescent-gradient:
     linear-gradient(
@@ -63,11 +59,7 @@
   --iridescent-gradient-vertical:
     linear-gradient(
       180deg,
-      var(--spectrum-teal) 0%,
-      var(--spectrum-violet) 25%,
-      var(--spectrum-magenta) 50%,
-      var(--spectrum-amber) 75%,
-      var(--spectrum-blue) 100%
+      var(--iridescent-stops)
     );
 
   --iridescent-gradient-diagonal:
@@ -76,69 +68,79 @@
       var(--iridescent-stops)
     );
 
-  /*
-   * Smaller iridescent accents use fewer,
-   * wider color transitions so the reflected
-   * color does not look compressed or striped.
-   */
-
-  --iridescent-accent-stops:
-    #071112 0%,
-    var(--spectrum-teal) 18%,
-    var(--spectrum-violet) 38%,
-    var(--spectrum-magenta) 56%,
-    var(--spectrum-amber) 74%,
-    var(--spectrum-blue) 90%,
-    #140c0c 100%;
-
-  --iridescent-accent-gradient:
-    linear-gradient(
-      105deg,
-      var(--iridescent-accent-stops)
-    );
-
-  /*
-   * Short horizontal accents use broad,
-   * continuous transitions so the colors
-   * stay smooth at smaller widths.
-   */
-
   --iridescent-short-gradient:
     linear-gradient(
       90deg,
-      var(--spectrum-teal) 0%,
-      var(--spectrum-violet) 25%,
-      var(--spectrum-magenta) 50%,
-      var(--spectrum-amber) 75%,
-      var(--spectrum-blue) 100%
+      var(--iridescent-stops)
     );
 
+  /*
+  * Accent gradients use the same spectrum.
+  * Keeping the alias lets existing components
+  * continue using their semantic token.
+  */
 
-  /* ========================================
-     Reflections
-     ======================================== */
+  --iridescent-accent-gradient:
+    var(--iridescent-gradient);
+
+
+  /* Reflected Light */
 
   /*
-   * A broad translucent reflection can move
-   * across iridescent surfaces without moving
-   * the underlying color itself.
-   */
+  * The colors stay still while this narrow,
+  * translucent highlight travels across them.
+  */
 
   --iridescent-sheen:
     linear-gradient(
       105deg,
-      transparent 34%,
-      rgba(255, 255, 255, .02) 40%,
-      rgba(255, 255, 255, .16) 48%,
-      rgba(255, 255, 255, .28) 50%,
-      rgba(255, 255, 255, .12) 53%,
-      rgba(255, 255, 255, .02) 60%,
-      transparent 66%
+      transparent 36%,
+      rgba(255, 255, 255, .02) 42%,
+      rgba(255, 255, 255, .12) 47%,
+      rgba(255, 255, 255, .38) 50%,
+      rgba(255, 255, 255, .14) 53%,
+      rgba(255, 255, 255, .02) 58%,
+      transparent 64%
     );
+
+
+  /* Animated Iridescent Surface */
 
   --iridescent-background:
     var(--iridescent-sheen),
     var(--iridescent-gradient);
+
+  --iridescent-background-size:
+    220% 100%,
+    100% 100%;
+
+  --iridescent-background-position:
+    -180% center,
+    center;
+
+
+  /*
+  * Small iridescent details show a cropped
+  * portion of the same shared spectrum rather
+  * than compressing every color into the icon.
+  */
+
+  --iridescent-small-size:
+    300% 100%;
+
+  --iridescent-small-position:
+    center;
+
+
+  /* Soft Iridescent Glow */
+
+  --iridescent-glow:
+    0 0 10px
+    rgba(15, 143, 149, .10),
+    0 0 16px
+    rgba(104, 72, 184, .10),
+    0 0 22px
+    rgba(181, 44, 127, .08);
 
   --light-reflection:
     rgba(255, 255, 255, .42);

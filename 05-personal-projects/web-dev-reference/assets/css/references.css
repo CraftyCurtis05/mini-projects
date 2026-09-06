@@ -27,43 +27,6 @@
     rgba(0, 0, 0, .08);
 }
 
-.reference-tools::before {
-  content:
-    '';
-
-  position:
-    absolute;
-
-  top:
-    0;
-
-  right:
-    0;
-
-  left:
-    0;
-
-  height:
-    4px;
-
-  background-image:
-    var(--iridescent-background);
-
-  background-size:
-    220% 100%,
-    100% 100%;
-
-  background-position:
-    -180% center,
-    center;
-
-  animation:
-    iridescent-shine
-    6s
-    var(--ease-ui)
-    infinite;
-}
-
 .search-container {
   width:
     min(700px, 100%);
@@ -892,17 +855,16 @@ main {
     var(--iridescent-background);
 
   background-size:
-    220% 100%,
-    180% 100%;
+    var(--iridescent-background-size);
 
   background-position:
-    -140% center,
-    center;
+    var(--iridescent-background-position);
 
-  transition:
-    background-position
-    .55s
-    var(--ease-ui);
+  animation:
+    iridescent-shine
+    6s
+    var(--ease-ui)
+    infinite;
 }
 
 .reference-card::after {
@@ -942,12 +904,6 @@ main {
     transform:
       translateY(-2px);
   }
-
-  .reference-card:hover::before {
-    background-position:
-      140% center,
-      center;
-  }
 }
 
 .reference-card:focus-visible {
@@ -958,12 +914,6 @@ main {
     0 0 0 3px
     var(--accent-glow-soft),
     var(--shadow-lg);
-}
-
-.reference-card:focus-visible::before {
-  background-position:
-    140% center,
-    center;
 }
 
 .reference-card:active {
@@ -1404,15 +1354,13 @@ main {
     transparent;
 
   background-image:
-    var(--iridescent-background);
+    var(--iridescent-short-gradient);
 
   background-size:
-    220% 100%,
-    180% 100%;
+    var(--iridescent-small-size);
 
   background-position:
-    -140% center,
-    center;
+    var(--iridescent-small-position);
 
   background-clip:
     text;
@@ -1422,13 +1370,6 @@ main {
 
   transform:
     scale(1.04);
-
-  animation:
-    obsidian-sheen
-    4.5s
-    ease-in-out
-    infinite
-    alternate;
 }
 
 
