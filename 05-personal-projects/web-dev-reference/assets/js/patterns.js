@@ -1,7 +1,12 @@
-/* =========================================================
-   DIALOG DEMONSTRATION
-   Opens and closes the accessible modal dialog example.
-   ========================================================= */
+/* ==========================================================================
+   Pattern Demonstrations
+   Interactive examples used throughout the Patterns page.
+   ========================================================================== */
+
+
+/* ========================================
+   Dialog Demonstration
+   ======================================== */
 
 function initializeDialogDemo() {
   const dialog = document.querySelector('[data-demo-dialog]');
@@ -12,11 +17,17 @@ function initializeDialogDemo() {
     return;
   }
 
+
+  /* Open Dialog */
+
   openButton.addEventListener('click', () => {
     dialog.showModal();
   });
 
-  closeButtons.forEach((button) => {
+
+  /* Close Dialog */
+
+  closeButtons.forEach(button => {
     button.addEventListener('click', () => {
       dialog.close(button.value);
     });
@@ -24,15 +35,15 @@ function initializeDialogDemo() {
 }
 
 
-/* =========================================================
-   FILTER DEMONSTRATION
-   Filters the example skill list as the user types.
-   ========================================================= */
+/* ========================================
+   Filter Demonstration
+   ======================================== */
 
 function initializeFilterDemo() {
   const filter = document.querySelector('[data-demo-filter]');
   const input = filter?.querySelector('[data-filter-input]');
   const status = filter?.querySelector('[data-filter-status]');
+
   const items = filter
     ? [...filter.querySelectorAll('[data-filter-list] li')]
     : [];
@@ -41,11 +52,14 @@ function initializeFilterDemo() {
     return;
   }
 
+
+  /* Filter Items */
+
   input.addEventListener('input', () => {
     const query = input.value.trim().toLowerCase();
     let visibleItems = 0;
 
-    items.forEach((item) => {
+    items.forEach(item => {
       const matches = item.textContent
         .toLowerCase()
         .includes(query);
@@ -63,10 +77,9 @@ function initializeFilterDemo() {
 }
 
 
-/* =========================================================
-   THEME PREVIEW DEMONSTRATION
-   Switches the example card between light and dark themes.
-   ========================================================= */
+/* ========================================
+   Theme Preview Demonstration
+   ======================================== */
 
 function initializeThemePreviewDemo() {
   const card = document.querySelector('[data-demo-theme-card]');
@@ -77,13 +90,22 @@ function initializeThemePreviewDemo() {
     return;
   }
 
+
+  /* Toggle Preview Theme */
+
   toggle.addEventListener('click', () => {
     const currentTheme = card.dataset.demoTheme;
-    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const nextTheme =
+      currentTheme === 'dark'
+        ? 'light'
+        : 'dark';
 
     card.dataset.demoTheme = nextTheme;
+
     state.textContent =
-      nextTheme === 'dark' ? 'Dark' : 'Light';
+      nextTheme === 'dark'
+        ? 'Dark'
+        : 'Light';
 
     toggle.textContent =
       nextTheme === 'dark'
@@ -99,16 +121,17 @@ function initializeThemePreviewDemo() {
 
     toggle.setAttribute(
       'aria-pressed',
-      nextTheme === 'dark' ? 'true' : 'false'
+      nextTheme === 'dark'
+        ? 'true'
+        : 'false'
     );
   });
 }
 
 
-/* =========================================================
-   TOAST DEMONSTRATION
-   Shows a short status message after the example action.
-   ========================================================= */
+/* ========================================
+   Toast Demonstration
+   ======================================== */
 
 function initializeToastDemo() {
   const button = document.querySelector('[data-demo-toast-button]');
@@ -117,6 +140,9 @@ function initializeToastDemo() {
   if (!button || !toast) {
     return;
   }
+
+
+  /* Show Toast */
 
   button.addEventListener('click', () => {
     toast.hidden = false;
@@ -128,10 +154,9 @@ function initializeToastDemo() {
 }
 
 
-/* =========================================================
-   LOADING DEMONSTRATION
-   Switches the example between loading and loaded states.
-   ========================================================= */
+/* ========================================
+   Loading Demonstration
+   ======================================== */
 
 function initializeLoadingDemo() {
   const card = document.querySelector('[data-demo-loading-card]');
@@ -141,6 +166,9 @@ function initializeLoadingDemo() {
   if (!card || !region || !toggle) {
     return;
   }
+
+
+  /* Toggle Loading State */
 
   toggle.addEventListener('click', () => {
     const isLoading =
@@ -155,6 +183,7 @@ function initializeLoadingDemo() {
       `;
 
       toggle.textContent = 'Show loading state';
+
       return;
     }
 
@@ -171,10 +200,9 @@ function initializeLoadingDemo() {
 }
 
 
-/* =========================================================
-   FORM FEEDBACK DEMONSTRATION
-   Shows validation feedback and a success message.
-   ========================================================= */
+/* ========================================
+   Form Feedback Demonstration
+   ======================================== */
 
 function initializeFormFeedbackDemo() {
   const form = document.querySelector('[data-demo-form]');
@@ -186,13 +214,17 @@ function initializeFormFeedbackDemo() {
     return;
   }
 
-  form.addEventListener('submit', (event) => {
+
+  /* Validate Form */
+
+  form.addEventListener('submit', event => {
     event.preventDefault();
 
     if (!email.validity.valid) {
       emailError.textContent = 'Enter a valid email address.';
       status.textContent = '';
       email.focus();
+
       return;
     }
 
@@ -202,14 +234,14 @@ function initializeFormFeedbackDemo() {
 }
 
 
-/* =========================================================
-   API DEMONSTRATION
-   Previews success, empty, and error states for an API request.
-   ========================================================= */
+/* ========================================
+   API Demonstration
+   ======================================== */
 
 function initializeApiDemo() {
   const demo = document.querySelector('[data-demo-api]');
   const status = demo?.querySelector('[data-api-status]');
+
   const buttons = demo
     ? [...demo.querySelectorAll('[data-api-state]')]
     : [];
@@ -218,21 +250,55 @@ function initializeApiDemo() {
     return;
   }
 
-  buttons.forEach((button) => {
+
+  /* Change API State */
+
+  buttons.forEach(button => {
     button.addEventListener('click', () => {
       const state = button.dataset.apiState;
+
+
+      /*
+       * I keep only the button for the current
+       * API state selected.
+       */
+
+      buttons.forEach(item => {
+        const isSelected = item === button;
+
+        item.classList.toggle(
+          'is-selected',
+          isSelected
+        );
+
+        item.setAttribute(
+          'aria-pressed',
+          String(isSelected)
+        );
+      });
+
+
+      /* Success State */
 
       if (state === 'success') {
         status.textContent =
           '3 projects loaded successfully.';
+
         return;
       }
+
+
+      /* Empty State */
 
       if (state === 'empty') {
         status.textContent =
           'No projects found.';
+
         return;
       }
+
+
+      /* Error State */
 
       if (state === 'error') {
         status.textContent =
@@ -243,216 +309,195 @@ function initializeApiDemo() {
 }
 
 
-/* =========================================================
-   PERSISTENT STATE DEMONSTRATION
-   Saves a small interface preference so it stays after a reload.
-   ========================================================= */
+/* ========================================
+   Persistent State Demonstration
+   ======================================== */
 
 function initializePersistentStateDemo() {
-  const demo =
-    document.querySelector(
-      '[data-demo-persistent-setting]'
-    );
+  const demo = document.querySelector(
+    '[data-demo-persistent-setting]'
+  );
 
-  const state =
-    demo?.querySelector(
-      '[data-persistent-state]'
-    );
+  const state = demo?.querySelector(
+    '[data-persistent-state]'
+  );
 
-  const toggle =
-    demo?.querySelector(
-      '[data-persistent-toggle]'
-    );
+  const toggle = demo?.querySelector(
+    '[data-persistent-toggle]'
+  );
 
   if (!demo || !state || !toggle) {
     return;
   }
 
-  const storageKey =
-    'pattern-compact-view';
+  const storageKey = 'pattern-compact-view';
 
 
-  /* Update the demo to match the saved setting. */
-  const updateDemo =
-    compact => {
-      demo.classList.toggle(
-        'is-compact',
-        compact
-      );
+  /*
+   * I keep the visible state, button text,
+   * and pressed state together so they always
+   * match the current compact-view setting.
+   */
 
-      state.textContent =
-        compact
-          ? 'On'
-          : 'Off';
+  const updateDemo = compact => {
+    demo.classList.toggle(
+      'is-compact',
+      compact
+    );
 
-      toggle.textContent =
-        compact
-          ? 'Turn compact view off'
-          : 'Turn compact view on';
+    state.textContent =
+      compact
+        ? 'On'
+        : 'Off';
 
-      toggle.setAttribute(
-        'aria-pressed',
-        String(compact)
-      );
-    };
+    toggle.textContent =
+      compact
+        ? 'Turn compact view off'
+        : 'Turn compact view on';
+
+    toggle.setAttribute(
+      'aria-pressed',
+      String(compact)
+    );
+  };
 
 
-  /* Restore the preference when the page loads. */
+  /* Restore Saved Setting */
+
   let savedSetting = null;
 
   try {
-    savedSetting =
-      localStorage.getItem(
-        storageKey
-      );
+    savedSetting = localStorage.getItem(storageKey);
   } catch {
     /*
-    * If storage is unavailable, the demo
-    * can still use its default state.
-    */
+     * If storage is unavailable, the demo
+     * can still use its default state.
+     */
   }
 
-  updateDemo(
-    savedSetting === 'true'
-  );
+  updateDemo(savedSetting === 'true');
 
 
-  /* Save the preference each time it changes. */
-  toggle.addEventListener(
-    'click',
-    () => {
-      const compact =
-        !demo.classList.contains(
-          'is-compact'
-        );
+  /* Save Setting */
 
-      try {
-        localStorage.setItem(
-          storageKey,
-          String(compact)
-        );
-      } catch {
-        /*
-        * The demo can still update for this
-        * visit when storage is unavailable.
-        */
-      }
+  toggle.addEventListener('click', () => {
+    const compact =
+      !demo.classList.contains('is-compact');
 
-      updateDemo(compact);
+    try {
+      localStorage.setItem(
+        storageKey,
+        String(compact)
+      );
+    } catch {
+      /*
+       * The demo can still update for this
+       * visit when storage is unavailable.
+       */
     }
-  );
+
+    updateDemo(compact);
+  });
 }
 
 
-/* =========================================================
-   EVENT DELEGATION DEMONSTRATION
-   Uses one parent listener to handle remove buttons in the list.
-   ========================================================= */
+/* ========================================
+   Event Delegation Demonstration
+   ======================================== */
 
 function initializeEventDelegationDemo() {
-  const demo =
-    document.querySelector(
-      '[data-demo-delegation]'
-    );
+  const demo = document.querySelector(
+    '[data-demo-delegation]'
+  );
 
-  const list =
-    demo?.querySelector(
-      '[data-delegation-list]'
-    );
+  const list = demo?.querySelector(
+    '[data-delegation-list]'
+  );
 
-  const addButton =
-    demo?.querySelector(
-      '[data-delegation-add]'
-    );
+  const addButton = demo?.querySelector(
+    '[data-delegation-add]'
+  );
 
-  const status =
-    demo?.querySelector(
-      '[data-delegation-status]'
-    );
+  const status = demo?.querySelector(
+    '[data-delegation-status]'
+  );
 
   if (!demo || !list || !addButton || !status) {
     return;
   }
 
-  let itemNumber =
-    list.children.length;
+  let itemNumber = list.children.length;
 
 
-  /* Keep the visible item count updated after each change. */
+  /* Update Item Count */
+
   const updateStatus = () => {
-    const itemCount =
-      list.children.length;
+    const itemCount = list.children.length;
 
     status.textContent =
       `${itemCount} item${itemCount === 1 ? '' : 's'}`;
   };
 
 
-  /* The parent handles clicks from every current or future remove button. */
-  list.addEventListener(
-    'click',
-    (event) => {
-      const button =
-        event.target.closest(
-          '[data-remove-item]'
-        );
+  /*
+   * I listen for remove-button clicks on the
+   * parent list so newly added items work
+   * without needing another event listener.
+   */
 
-      if (!button || !list.contains(button)) {
-        return;
-      }
+  list.addEventListener('click', event => {
+    const button = event.target.closest(
+      '[data-remove-item]'
+    );
 
-      button.closest('li')?.remove();
-      updateStatus();
+    if (!button || !list.contains(button)) {
+      return;
     }
-  );
+
+    button.closest('li')?.remove();
+    updateStatus();
+  });
 
 
-  /* New items work without adding another remove listener. */
-  addButton.addEventListener(
-    'click',
-    () => {
-      itemNumber += 1;
+  /* Add New Item */
 
-      const item =
-        document.createElement('li');
+  addButton.addEventListener('click', () => {
+    itemNumber += 1;
 
-      const label =
-        document.createElement('span');
+    const item = document.createElement('li');
+    const label = document.createElement('span');
+    const removeButton = document.createElement('button');
 
-      const removeButton =
-        document.createElement('button');
+    label.textContent =
+      `New reference item ${itemNumber}`;
 
-      label.textContent =
-        `New reference item ${itemNumber}`;
+    removeButton.className =
+      'demo-button demo-button-secondary';
 
-      removeButton.className =
-        'demo-button demo-button-secondary';
+    removeButton.type = 'button';
+    removeButton.dataset.removeItem = '';
+    removeButton.textContent = 'Remove';
 
-      removeButton.type =
-        'button';
+    item.append(
+      label,
+      removeButton
+    );
 
-      removeButton.dataset.removeItem =
-        '';
-
-      removeButton.textContent =
-        'Remove';
-
-      item.append(
-        label,
-        removeButton
-      );
-
-      list.append(item);
-      updateStatus();
-    }
-  );
+    list.append(item);
+    updateStatus();
+  });
 }
 
 
-/* =========================================================
-   INITIALIZATION
-   Starts every interactive example used on the Patterns page.
-   ========================================================= */
+/* ========================================
+   Pattern Initialization
+   ======================================== */
+
+/*
+ * I keep the Pattern page demonstrations
+ * together here so main.js only needs one
+ * function to start all of them.
+ */
 
 function initializePatternDemos() {
   initializeDialogDemo();

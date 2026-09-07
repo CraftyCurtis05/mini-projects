@@ -12,31 +12,29 @@
   --white: #ffffff;
 
   /*
-   * Saturated jewel tones replace the softer
-   * palette and create the site's polished,
-   * obsidian-inspired color accents.
+   * Saturated jewel tones create the site's
+   * polished, obsidian-inspired color accents.
    */
 
   --spectrum-teal: #0f8f95;
-  --spectrum-blue: #1f75b5;
   --spectrum-violet: #6848b8;
   --spectrum-magenta: #b52c7f;
   --spectrum-amber: #c7832f;
-  --spectrum-green: #21846d;
   --spectrum-lime: #8d9d2c;
-  --spectrum-coral: #c14f3a;
+  --spectrum-green: #21846d;
+  --spectrum-blue: #1f75b5;
 
 
-/* ========================================
-   Iridescent Colors
-   ======================================== */
+  /* ========================================
+     Iridescent Colors
+     ======================================== */
 
   /*
-  * One shared spectrum defines every
-  * iridescent treatment across the site.
-  * Each color appears once so gradients stay
-  * smooth instead of becoming striped.
-  */
+   * One shared spectrum defines every
+   * iridescent treatment across the site.
+   * Each color appears once so gradients stay
+   * smooth instead of becoming striped.
+   */
 
   --iridescent-stops:
     var(--spectrum-teal) 0%,
@@ -75,10 +73,10 @@
     );
 
   /*
-  * Accent gradients use the same spectrum.
-  * Keeping the alias lets existing components
-  * continue using their semantic token.
-  */
+   * Accent gradients use the same spectrum.
+   * Keeping this alias allows components to use
+   * a more descriptive semantic token.
+   */
 
   --iridescent-accent-gradient:
     var(--iridescent-gradient);
@@ -87,9 +85,9 @@
   /* Reflected Light */
 
   /*
-  * The colors stay still while this narrow,
-  * translucent highlight travels across them.
-  */
+   * The base colors stay still while this narrow,
+   * translucent highlight travels across them.
+   */
 
   --iridescent-sheen:
     linear-gradient(
@@ -119,11 +117,13 @@
     center;
 
 
+  /* Small Iridescent Details */
+
   /*
-  * Small iridescent details show a cropped
-  * portion of the same shared spectrum rather
-  * than compressing every color into the icon.
-  */
+   * Small details show a cropped portion of the
+   * shared spectrum instead of compressing every
+   * color into a small icon or shape.
+   */
 
   --iridescent-small-size:
     300% 100%;
@@ -149,7 +149,12 @@
     rgba(255, 255, 255, .14);
 
 
-  /* Reusable iridescent glow */
+  /* Reusable Gradient Glow */
+
+  /*
+   * These tokens create true gradient glows
+   * through blurred pseudo-elements.
+   */
 
   --iridescent-glow-gradient:
     var(--iridescent-gradient);
@@ -173,9 +178,8 @@
      ======================================== */
 
   /*
-   * Near-black obsidian surfaces give selected
-   * areas depth without introducing another
-   * colored background system.
+   * Near-black surfaces give selected areas
+   * depth without adding another color system.
    */
 
   --obsidian: #050607;
@@ -248,7 +252,7 @@
 
   /*
    * Shared motion keeps interactive controls
-   * feeling consistent without looking animated.
+   * feeling consistent across the site.
    */
 
   --ease-ui:
@@ -280,7 +284,7 @@
      Light Theme
      ======================================== */
 
-  /* Page and surface colors */
+  /* Page and Surface Colors */
 
   --background: #f2f4f5;
   --surface: #fafbfc;
@@ -288,7 +292,7 @@
   --surface-raised: #ffffff;
 
 
-  /* Text and borders */
+  /* Text and Borders */
 
   --text-primary: #151a1d;
   --text-secondary: #4c565c;
@@ -337,7 +341,7 @@
    ======================================== */
 
 html[data-theme='dark'] {
-  /* Page and surface colors */
+  /* Page and Surface Colors */
 
   --background: #0d0f10;
   --surface: #141719;
@@ -345,7 +349,7 @@ html[data-theme='dark'] {
   --surface-raised: #22272a;
 
 
-  /* Text and borders */
+  /* Text and Borders */
 
   --text-primary: #ffffff;
   --text-secondary: #b8c0c4;

@@ -1,12 +1,7 @@
-/* ========================================
+/* ==========================================================================
    Global Styles
-   ======================================== */
-
-/*
- * Global page styles, accessibility helpers
- * and small visual details used throughout
- * the reference.
- */
+   Base styles, accessibility helpers, shared details, and global animations.
+   ========================================================================== */
 
 
 /* ========================================
@@ -27,16 +22,9 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-
-  background:
-    var(--background);
-
-  color:
-    var(--text-primary);
-
-  font-family:
-    var(--font-body);
-
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.65;
 }
@@ -71,22 +59,19 @@ button,
 input,
 select,
 textarea {
-  font:
-    inherit;
+  font: inherit;
 }
 
 a,
 button,
 summary {
-  -webkit-tap-highlight-color:
-    transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button,
 summary,
 [role='button'] {
-  touch-action:
-    manipulation;
+  touch-action: manipulation;
 }
 
 
@@ -95,12 +80,8 @@ summary,
    ======================================== */
 
 :focus-visible {
-  outline:
-    3px solid
-    var(--focus-ring);
-
-  outline-offset:
-    3px;
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
 }
 
 
@@ -119,20 +100,13 @@ summary,
 
 .sr-only {
   position: absolute;
-
   width: 1px;
   height: 1px;
-
   padding: 0;
   margin: -1px;
-
   overflow: hidden;
-
-  clip:
-    rect(0, 0, 0, 0);
-
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
-
   border: 0;
 }
 
@@ -143,40 +117,18 @@ summary,
 
 .skip-link {
   position: fixed;
-
   top: 1rem;
   left: 1rem;
-
   z-index: 3000;
-
-  padding:
-    .75rem
-    1rem;
-
-  color:
-    var(--white);
-
-  background:
-    var(--obsidian);
-
-  border:
-    1px solid
-    var(--accent-primary);
-
-  border-radius:
-    var(--radius-sm);
-
-  box-shadow:
-    var(--shadow-md);
-
-  font-weight:
-    700;
-
-  text-decoration:
-    none;
-
-  transform:
-    translateY(-200%);
+  padding: .75rem 1rem;
+  color: var(--white);
+  background: var(--obsidian);
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-200%);
 }
 
 .skip-link:focus {
@@ -184,9 +136,7 @@ summary,
     0 0 0 3px
     var(--accent-glow),
     var(--shadow-md);
-
-  transform:
-    translateY(0);
+  transform: translateY(0);
 }
 
 
@@ -196,51 +146,25 @@ summary,
 
 code,
 kbd {
-  font-family:
-    var(--font-code);
+  font-family: var(--font-code);
 }
 
 code {
-  padding:
-    .1rem
-    .35rem;
-
-  background:
-    var(--code-background);
-
-  color:
-    var(--code-text);
-
-  border-radius:
-    .25rem;
-
-  font-weight:
-    600;
+  padding: .1rem .35rem;
+  background: var(--code-background);
+  color: var(--code-text);
+  border-radius: .25rem;
+  font-weight: 600;
 }
 
 kbd {
-  padding:
-    .08rem
-    .35rem;
-
-  background:
-    var(--code-background);
-
-  color:
-    var(--code-text);
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    .25rem;
-
-  font-size:
-    .75rem;
-
-  font-weight:
-    600;
+  padding: .08rem .35rem;
+  background: var(--code-background);
+  color: var(--code-text);
+  border: 1px solid var(--border);
+  border-radius: .25rem;
+  font-size: .75rem;
+  font-weight: 600;
 }
 
 
@@ -249,11 +173,8 @@ kbd {
    ======================================== */
 
 ::selection {
-  background:
-    var(--selection-background);
-
-  color:
-    var(--selection-text);
+  background: var(--selection-background);
+  color: var(--selection-text);
 }
 
 
@@ -293,8 +214,7 @@ kbd {
   input,
   textarea,
   [contenteditable='true'] {
-    cursor:
-      text;
+    cursor: text;
   }
 }
 
@@ -314,36 +234,23 @@ kbd {
     scrollbar-color:
       var(--accent-primary)
       var(--scrollbar-track);
-
-    scrollbar-width:
-      thin;
+    scrollbar-width: thin;
   }
 }
 
 ::-webkit-scrollbar {
-  width:
-    12px;
-
-  height:
-    12px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background:
-    var(--scrollbar-track);
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background:
-    var(--iridescent-gradient-vertical);
-
-  border:
-    3px solid
-    var(--scrollbar-track);
-
-  border-radius:
-    var(--radius-pill);
-
+  background: var(--iridescent-gradient-vertical);
+  border: 3px solid var(--scrollbar-track);
+  border-radius: var(--radius-pill);
   box-shadow:
     inset 0 0 0 1px
     var(--light-reflection-soft);
@@ -365,28 +272,20 @@ kbd {
 
 .table-wrapper::-webkit-scrollbar,
 pre::-webkit-scrollbar {
-  height:
-    10px;
+  height: 10px;
 }
 
 @media (max-width: 920px) {
   .table-wrapper::-webkit-scrollbar,
   pre::-webkit-scrollbar {
-    height:
-      8px;
+    height: 8px;
   }
 
   .table-wrapper::-webkit-scrollbar-thumb,
   pre::-webkit-scrollbar-thumb {
-    background:
-      var(--iridescent-gradient);
-
-    border:
-      2px solid
-      var(--scrollbar-track);
-
-    border-radius:
-      var(--radius-pill);
+    background: var(--iridescent-gradient);
+    border: 2px solid var(--scrollbar-track);
+    border-radius: var(--radius-pill);
   }
 }
 
@@ -402,84 +301,46 @@ pre::-webkit-scrollbar {
  */
 
 .reference-card {
-  position:
-    relative;
-
-  overflow:
-    hidden;
+  position: relative;
+  overflow: hidden;
 }
 
-.reference-card
-.card-link {
-  position:
-    relative;
-
-  display:
-    inline-flex;
-
-  align-items:
-    center;
-
-  padding-bottom:
-    .18rem;
-
-  text-decoration:
-    none;
-
+.reference-card .card-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: .18rem;
+  text-decoration: none;
   transition:
     color var(--transition-ui),
     transform var(--transition-ui);
 }
 
-.reference-card
-.card-link::after {
-  content:
-    '';
-
-  position:
-    absolute;
-
-  right:
-    0;
-
-  bottom:
-    0;
-
-  left:
-    0;
-
-  height:
-    2px;
-
-  background:
-    var(--accent-primary);
-
-  border-radius:
-    var(--radius-pill);
-
-  transition:
-    background var(--transition-ui);
+.reference-card .card-link::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent-primary);
+  border-radius: var(--radius-pill);
+  transition: background var(--transition-ui);
 }
 
+
+/* Desktop Hover */
+
 @media (hover: hover) and (pointer: fine) {
-  .reference-card:hover
-  .card-link,
-  .reference-card:focus-within
-  .card-link {
-    transform:
-      translateX(2px);
+  .reference-card:hover .card-link,
+  .reference-card:focus-within .card-link {
+    transform: translateX(2px);
   }
 
-  .reference-card:hover
-  .card-link::after,
-  .reference-card:focus-within
-  .card-link::after {
-    background-image:
-      var(--iridescent-short-gradient);
-
-    background-size:
-      180% 100%;
-
+  .reference-card:hover .card-link::after,
+  .reference-card:focus-within .card-link::after {
+    background-image: var(--iridescent-short-gradient);
+    background-size: 180% 100%;
     animation:
       reference-link-shine
       4s
@@ -488,13 +349,12 @@ pre::-webkit-scrollbar {
   }
 }
 
+
+/* Keyboard Focus */
+
 .card-link:focus-visible::after {
-  background-image:
-    var(--iridescent-short-gradient);
-
-  background-size:
-    180% 100%;
-
+  background-image: var(--iridescent-short-gradient);
+  background-size: 180% 100%;
   animation:
     reference-link-shine
     4s
@@ -502,10 +362,11 @@ pre::-webkit-scrollbar {
     infinite;
 }
 
-.reference-card:active
-.card-link {
-  transform:
-    translateX(1px);
+
+/* Pressed State */
+
+.reference-card:active .card-link {
+  transform: translateX(1px);
 }
 
 
@@ -514,8 +375,7 @@ pre::-webkit-scrollbar {
    ======================================== */
 
 details[open] > summary {
-  color:
-    var(--accent-text);
+  color: var(--accent-text);
 }
 
 details > summary {
@@ -536,11 +396,8 @@ details > summary {
  */
 
 .reference-section.is-visible {
-  opacity:
-    1;
-
-  transform:
-    none;
+  opacity: 1;
+  transform: none;
 }
 
 
@@ -555,83 +412,40 @@ details > summary {
  */
 
 .dots {
-  --dot-size:
-    11px;
+  --dot-size: 11px;
+  --dot-gap: .45rem;
 
-  --dot-gap:
-    .45rem;
-
-  position:
-    relative;
-
-  display:
-    inline-flex;
-
-  align-items:
-    center;
-
-  gap:
-    var(--dot-gap);
-
-  isolation:
-    isolate;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dot-gap);
+  isolation: isolate;
 }
 
 .dot {
-  position:
-    relative;
-
-  width:
-    var(--dot-size);
-
-  height:
-    var(--dot-size);
-
-  flex:
-    0 0 auto;
-
-  overflow:
-    hidden;
-
-  border-radius:
-    50%;
-
-  background:
-    transparent;
-
-  box-shadow:
-    0 2px 8px
-    rgba(0, 0, 0, .16);
+  position: relative;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .16);
 }
 
 .dot::before {
-  content:
-    '';
-
-  position:
-    absolute;
-
-  top:
-    0;
-
-  bottom:
-    0;
-
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
   width:
     calc(
       (var(--dot-size) * 3) +
       (var(--dot-gap) * 2)
     );
-
-  background-image:
-    var(--iridescent-gradient);
-
-  background-size:
-    200% 100%;
-
-  background-position:
-    0 center;
-
+  background-image: var(--iridescent-gradient);
+  background-size: 200% 100%;
+  background-position: 0 center;
   animation:
     dot-spectrum-shift
     var(--dot-animation-duration, 10s)
@@ -640,8 +454,7 @@ details > summary {
 }
 
 .dot:nth-child(1)::before {
-  left:
-    0;
+  left: 0;
 }
 
 .dot:nth-child(2)::before {
@@ -664,14 +477,9 @@ details > summary {
    ======================================== */
 
 .reviewed-date {
-  margin-top:
-    .75rem;
-
-  color:
-    var(--text-secondary);
-
-  font-size:
-    .82rem;
+  margin-top: .75rem;
+  color: var(--text-secondary);
+  font-size: .82rem;
 }
 
 
@@ -679,12 +487,12 @@ details > summary {
    Iridescent Animations
    ======================================== */
 
-  /*
-  * The spectrum stays still while a brighter
-  * reflection travels across it. This makes
-  * the movement feel like light catching
-  * polished obsidian.
-  */
+/*
+ * The spectrum stays still while a brighter
+ * reflection travels across it. This makes
+ * the movement feel like light catching
+ * polished obsidian.
+ */
 
 @keyframes obsidian-sheen {
   0% {
@@ -722,25 +530,21 @@ details > summary {
 
 @keyframes dot-spectrum-shift {
   from {
-    background-position:
-      0 center;
+    background-position: 0 center;
   }
 
   to {
-    background-position:
-      200% center;
+    background-position: 200% center;
   }
 }
 
 @keyframes iridescent-flow {
   from {
-    background-position:
-      0 center;
+    background-position: 0 center;
   }
 
   to {
-    background-position:
-      200% center;
+    background-position: 200% center;
   }
 }
 
@@ -760,24 +564,20 @@ details > summary {
   .dialog-header::after,
   .hero h1::after,
   .back-to-top {
-    animation:
-      none !important;
+    animation: none !important;
   }
 
-  .reference-card
-  .card-link,
+  .reference-card .card-link,
   .nav-logo,
   .nav-links a::after,
   .scroll-progress-bar,
   .favorite-button,
   .search-result::before {
-    transition:
-      none !important;
+    transition: none !important;
   }
 
   .nav-group.has-more-right::after {
-    animation:
-      none;
+    animation: none;
   }
 }
 
@@ -791,12 +591,10 @@ details > summary {
   .table-wrapper,
   .pattern-section,
   .intro-panel {
-    border-width:
-      2px;
+    border-width: 2px;
   }
 
   .scroll-progress {
-    height:
-      4px;
+    height: 4px;
   }
 }

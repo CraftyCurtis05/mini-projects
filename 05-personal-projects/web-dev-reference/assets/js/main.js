@@ -1,16 +1,26 @@
-/* ========================================
+/* ==========================================================================
    Site Initialization
-======================================== */
+   Starts shared website features and page-specific functionality.
+   ========================================================================== */
 
-/* Start shared website features in one place. */
+
+/* ========================================
+   Initialize Site
+   ======================================== */
 
 function initializeSite() {
+  /*
+   * I start the site loader first so it can
+   * handle the page while everything else
+   * finishes initializing.
+   */
+
   initializeSiteLoader();
 
 
   /* ========================================
      Shared Page Layout
-  ======================================== */
+     ======================================== */
 
   renderNavigation();
   initializeGroupedNavigation();
@@ -22,7 +32,7 @@ function initializeSite() {
 
   /* ========================================
      Shared Page Behavior
-  ======================================== */
+     ======================================== */
 
   initializeTheme();
   renderReferenceSearch();
@@ -33,7 +43,7 @@ function initializeSite() {
 
   /* ========================================
      Reference Tools
-  ======================================== */
+     ======================================== */
 
   initializeReferenceSearch();
   initializeActiveToc();
@@ -43,9 +53,14 @@ function initializeSite() {
 
   /* ========================================
      Pattern Demonstrations
-  ======================================== */
+     ======================================== */
 
-  // Patterns only exist on this page.
+  /*
+   * Pattern demonstrations only exist on
+   * the Patterns page, so I initialize them
+   * only when that page is loaded.
+   */
+
   if (bodyElement.dataset.page === 'patterns') {
     initializePatternDemos();
   }
@@ -53,7 +68,7 @@ function initializeSite() {
 
   /* ========================================
      Page Utilities
-  ======================================== */
+     ======================================== */
 
   initializeNotFoundPage();
   initializeScrollProgress();
@@ -63,7 +78,7 @@ function initializeSite() {
 
 
 /* ========================================
-   Initialize Website
-======================================== */
+   Start Website
+   ======================================== */
 
 initializeSite();

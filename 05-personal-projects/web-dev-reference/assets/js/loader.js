@@ -1,27 +1,35 @@
-/* ========================================
+/* ==========================================================================
    Initial Page Setup
-======================================== */
+   Early JavaScript and theme setup before the page finishes loading.
+   ========================================================================== */
 
-/* Add the JS class early so JavaScript-only styling does not flash on load. */
+
+/* ========================================
+   JavaScript Class
+   ======================================== */
+
+/*
+ * I add the JavaScript class early so
+ * JavaScript-only styling does not flash
+ * while the page loads.
+ */
+
 document.documentElement.classList.add('js');
 
 
 /* ========================================
    Initial Theme
-======================================== */
+   ======================================== */
 
 /*
- * Apply the saved theme before the page
+ * I apply the saved theme before the page
  * renders to prevent a theme flash.
  */
 
 let savedTheme = null;
 
 try {
-  savedTheme =
-    localStorage.getItem(
-      'theme'
-    );
+  savedTheme = localStorage.getItem('theme');
 } catch {
   /*
    * If storage is unavailable, I fall back
@@ -29,17 +37,15 @@ try {
    */
 }
 
-const prefersDarkTheme =
-  window.matchMedia(
-    '(prefers-color-scheme: dark)'
-  ).matches;
+const prefersDarkTheme = window.matchMedia(
+  '(prefers-color-scheme: dark)'
+).matches;
 
 if (
   savedTheme === 'light' ||
   savedTheme === 'dark'
 ) {
-  document.documentElement.dataset.theme =
-    savedTheme;
+  document.documentElement.dataset.theme = savedTheme;
 } else {
   document.documentElement.dataset.theme =
     prefersDarkTheme

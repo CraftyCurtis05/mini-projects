@@ -1,25 +1,24 @@
-/* ========================================
+/* ==========================================================================
    Shared Layout
-======================================== */
+   Main navigation, mobile controls, breadcrumbs, and footer.
+   ========================================================================== */
 
 
 /* ========================================
    Main Navigation
-======================================== */
+   ======================================== */
 
 function renderNavigation() {
-  const navTarget =
-    document.querySelector(
-      '[data-site-nav]'
-    );
+  const navTarget = document.querySelector('[data-site-nav]');
 
   if (!navTarget) {
     return;
   }
 
-  const currentPageKey =
-    bodyElement.dataset.page ||
-    'home';
+  const currentPageKey = bodyElement.dataset.page || 'home';
+
+
+  /* Page Links */
 
   const createPageLink = page => {
     const currentPage =
@@ -39,60 +38,55 @@ function renderNavigation() {
     `;
   };
 
-  const groupedLinks =
-    navGroups
-      .map(group => {
-        const groupPages =
-          group.pages
-            .map(pageKey =>
-              pages.find(
-                page =>
-                  page.key === pageKey
-              )
-            )
-            .filter(Boolean);
 
-        const hasCurrentPage =
-          groupPages.some(
-            page =>
-              page.key ===
-              currentPageKey
-          );
+  /* Grouped Navigation Links */
 
-        const currentPageClass =
-          hasCurrentPage
-            ? ' has-current-page'
-            : '';
+  const groupedLinks = navGroups
+    .map(group => {
+      const groupPages = group.pages
+        .map(pageKey =>
+          pages.find(page => page.key === pageKey)
+        )
+        .filter(Boolean);
 
-        return `
-          <li class="nav-group${currentPageClass}">
-            <details>
-              <summary>
-                ${escapeHtml(group.label)}
-              </summary>
+      const hasCurrentPage = groupPages.some(
+        page => page.key === currentPageKey
+      );
 
-              <ul class="nav-submenu">
-                ${groupPages
-                  .map(createPageLink)
-                  .join('')}
-              </ul>
-            </details>
-          </li>
-        `;
-      })
-      .join('');
+      const currentPageClass =
+        hasCurrentPage
+          ? ' has-current-page'
+          : '';
 
-  const homePage =
-    pages.find(
-      page =>
-        page.key === 'home'
-    );
+      return `
+        <li class="nav-group${currentPageClass}">
+          <details>
+            <summary>
+              ${escapeHtml(group.label)}
+            </summary>
 
-  const patternsPage =
-    pages.find(
-      page =>
-        page.key === 'patterns'
-    );
+            <ul class="nav-submenu">
+              ${groupPages
+                .map(createPageLink)
+                .join('')}
+            </ul>
+          </details>
+        </li>
+      `;
+    })
+    .join('');
+
+
+  /* Standalone Navigation Links */
+
+  const homePage = pages.find(page => page.key === 'home');
+
+  const patternsPage = pages.find(
+    page => page.key === 'patterns'
+  );
+
+
+  /* Render Navigation */
 
   navTarget.innerHTML = `
     <nav
@@ -123,7 +117,9 @@ function renderNavigation() {
         >
       </a>
 
+
       <!-- Mobile Navigation Toggle -->
+
       <button
         class="nav-menu-toggle"
         id="nav-menu-toggle"
@@ -143,7 +139,9 @@ function renderNavigation() {
         </span>
       </button>
 
+
       <!-- Navigation Links -->
+
       <ul
         class="nav-links nav-links-grouped"
         id="main-nav-links"
@@ -157,9 +155,11 @@ function renderNavigation() {
 
 
       <!-- Navigation Actions -->
+
       <div class="nav-actions">
 
         <!-- Global Search -->
+
         <button
           class="nav-action"
           id="global-search-button"
@@ -167,7 +167,10 @@ function renderNavigation() {
           aria-haspopup="dialog"
           aria-controls="global-search-dialog"
         >
-          <span class="nav-action-icon" aria-hidden="true">
+          <span
+            class="nav-action-icon"
+            aria-hidden="true"
+          >
             ⌕
           </span>
 
@@ -182,6 +185,7 @@ function renderNavigation() {
 
 
         <!-- Saved References -->
+
         <button
           class="nav-action"
           id="saved-button"
@@ -189,7 +193,10 @@ function renderNavigation() {
           aria-haspopup="dialog"
           aria-controls="saved-dialog"
         >
-          <span class="nav-action-icon" aria-hidden="true">
+          <span
+            class="nav-action-icon"
+            aria-hidden="true"
+          >
             ★
           </span>
 
@@ -200,6 +207,7 @@ function renderNavigation() {
 
 
         <!-- Theme Toggle -->
+
         <button
           class="theme-toggle"
           id="theme-toggle"
@@ -234,6 +242,7 @@ function renderNavigation() {
 
 
       <!-- Scroll Progress -->
+
       <div
         class="scroll-progress"
         aria-hidden="true"
@@ -243,7 +252,6 @@ function renderNavigation() {
           id="scroll-progress-bar"
         ></span>
       </div>
-
     </nav>
   `;
 }
@@ -251,13 +259,11 @@ function renderNavigation() {
 
 /* ========================================
    Navigation Dropdowns
-======================================== */
+   ======================================== */
 
 function initializeGroupedNavigation() {
   const navMenus = [
-    ...document.querySelectorAll(
-      '.nav-group details'
-    )
+    ...document.querySelectorAll('.nav-group details')
   ];
 
   if (!navMenus.length) {
@@ -266,170 +272,114 @@ function initializeGroupedNavigation() {
 
 
   /*
-   * Keep only one navigation dropdown
+   * I keep only one navigation dropdown
    * open at a time.
    */
-  navMenus.forEach(menu => {
-    menu.addEventListener(
-      'toggle',
-      () => {
-        if (!menu.open) {
-          return;
-        }
 
-        navMenus.forEach(
-          otherMenu => {
-            if (
-              otherMenu !== menu
-            ) {
-              otherMenu.open =
-                false;
-            }
-          }
-        );
+  navMenus.forEach(menu => {
+    menu.addEventListener('toggle', () => {
+      if (!menu.open) {
+        return;
       }
-    );
+
+      navMenus.forEach(otherMenu => {
+        if (otherMenu !== menu) {
+          otherMenu.open = false;
+        }
+      });
+    });
   });
 
 
   /*
-   * Close open dropdowns when clicking
-   * outside the navigation groups.
+   * I close open dropdowns when the user
+   * clicks outside the navigation groups.
    */
-  document.addEventListener(
-    'click',
-    event => {
-      if (
-        event.target.closest(
-          '.nav-group'
-        )
-      ) {
-        return;
-      }
 
-      navMenus.forEach(
-        menu => {
-          menu.open =
-            false;
-        }
-      );
+  document.addEventListener('click', event => {
+    if (event.target.closest('.nav-group')) {
+      return;
     }
-  );
+
+    navMenus.forEach(menu => {
+      menu.open = false;
+    });
+  });
 
 
   /*
-   * Close the active dropdown with the
-   * Escape key and return focus to
-   * the dropdown toggle.
+   * Escape closes the active dropdown and
+   * returns focus to its summary button.
    */
-  document.addEventListener(
-    'keydown',
-    event => {
-      if (
-        event.key !==
-        'Escape'
-      ) {
-        return;
-      }
 
-      const activeMenu =
-        event.target.closest(
-          '.nav-group details'
-        );
-
-      if (
-        !activeMenu ||
-        !activeMenu.open
-      ) {
-        return;
-      }
-
-      activeMenu.open =
-        false;
-
-      activeMenu.querySelector(
-        'summary'
-      )?.focus();
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') {
+      return;
     }
-  );
+
+    const activeMenu = event.target.closest(
+      '.nav-group details'
+    );
+
+    if (!activeMenu || !activeMenu.open) {
+      return;
+    }
+
+    activeMenu.open = false;
+
+    activeMenu.querySelector('summary')?.focus();
+  });
 }
 
 
 /* ========================================
    Mobile Navigation
-======================================== */
+   ======================================== */
 
 function initializeMobileNavigation() {
-  const siteNav =
-    document.querySelector(
-      '.site-nav'
-    );
+  const siteNav = document.querySelector('.site-nav');
+  const menuToggle = document.querySelector('#nav-menu-toggle');
+  const navLinks = document.querySelector('#main-nav-links');
 
-  const menuToggle =
-    document.querySelector(
-      '#nav-menu-toggle'
-    );
-
-  const navLinks =
-    document.querySelector(
-      '#main-nav-links'
-    );
-
-  if (
-    !siteNav ||
-    !menuToggle ||
-    !navLinks
-  ) {
+  if (!siteNav || !menuToggle || !navLinks) {
     return;
   }
 
 
   /*
-   * Show a visual cue when more grouped
-   * navigation is available to the right.
+   * I show a visual cue when a mobile
+   * submenu has more links off to the right.
    */
-  const updateSubmenuScrollCue =
-    submenu => {
-      const group =
-        submenu.closest(
-          '.nav-group'
-        );
 
-      if (!group) {
-        return;
-      }
+  const updateSubmenuScrollCue = submenu => {
+    const group = submenu.closest('.nav-group');
 
-      const hasMoreRight =
-        submenu.scrollWidth >
-          submenu.clientWidth &&
-        submenu.scrollLeft +
-          submenu.clientWidth <
-          submenu.scrollWidth - 2;
+    if (!group) {
+      return;
+    }
 
-      group.classList.toggle(
-        'has-more-right',
-        hasMoreRight
-      );
-    };
+    const hasMoreRight =
+      submenu.scrollWidth > submenu.clientWidth &&
+      submenu.scrollLeft + submenu.clientWidth <
+        submenu.scrollWidth - 2;
+
+    group.classList.toggle(
+      'has-more-right',
+      hasMoreRight
+    );
+  };
 
 
   /* Close Mobile Navigation */
+
   const closeMenu = () => {
-    siteNav.classList.remove(
-      'is-menu-open'
-    );
+    siteNav.classList.remove('is-menu-open');
 
     document
-      .querySelectorAll(
-        '.nav-group.has-more-right'
-      )
-      .forEach(
-        group => {
-          group.classList.remove(
-            'has-more-right'
-          );
-        }
-      );
+      .querySelectorAll('.nav-group.has-more-right')
+      .forEach(group => {
+        group.classList.remove('has-more-right');
+      });
 
     menuToggle.setAttribute(
       'aria-expanded',
@@ -439,173 +389,134 @@ function initializeMobileNavigation() {
 
 
   /* Toggle Mobile Navigation */
-  menuToggle.addEventListener(
-    'click',
-    () => {
-      const menuIsOpen =
-        siteNav.classList.toggle(
-          'is-menu-open'
-        );
 
-      menuToggle.setAttribute(
-        'aria-expanded',
-        String(menuIsOpen)
-      );
+  menuToggle.addEventListener('click', () => {
+    const menuIsOpen = siteNav.classList.toggle(
+      'is-menu-open'
+    );
 
-      if (!menuIsOpen) {
-        document
-          .querySelectorAll(
-            '.nav-group.has-more-right'
-          )
-          .forEach(
-            group => {
-              group.classList.remove(
-                'has-more-right'
-              );
-            }
-          );
-      }
+    menuToggle.setAttribute(
+      'aria-expanded',
+      String(menuIsOpen)
+    );
+
+    if (!menuIsOpen) {
+      document
+        .querySelectorAll('.nav-group.has-more-right')
+        .forEach(group => {
+          group.classList.remove('has-more-right');
+        });
     }
-  );
+  });
 
 
-    /*
-   * Update the cue as the user moves through
-   * the mobile navigation.
+  /*
+   * I update the scroll cue as the user
+   * moves through each mobile submenu.
    */
+
   const navSubmenus = [
-    ...navLinks.querySelectorAll(
-      '.nav-submenu'
-    )
+    ...navLinks.querySelectorAll('.nav-submenu')
   ];
 
-  navSubmenus.forEach(
-    submenu => {
-      submenu.addEventListener(
-        'scroll',
-        () => {
-          updateSubmenuScrollCue(
-            submenu
-          );
-        },
-        {
-          passive:
-            true
-        }
-      );
-    }
-  );
+  navSubmenus.forEach(submenu => {
+    submenu.addEventListener(
+      'scroll',
+      () => {
+        updateSubmenuScrollCue(submenu);
+      },
+      {
+        passive: true
+      }
+    );
+  });
+
+
+  /*
+   * When a grouped menu opens, I check
+   * whether its submenu needs the scroll cue.
+   */
 
   navLinks.addEventListener(
     'toggle',
     event => {
-      const details =
-        event.target;
+      const details = event.target;
 
       if (
-        !details.matches(
-          '.nav-group details'
-        ) ||
+        !details.matches('.nav-group details') ||
         !details.open
       ) {
         return;
       }
 
-      const submenu =
-        details.querySelector(
-          '.nav-submenu'
-        );
+      const submenu = details.querySelector(
+        '.nav-submenu'
+      );
 
       if (!submenu) {
         return;
       }
 
-      requestAnimationFrame(
-        () => {
-          updateSubmenuScrollCue(
-            submenu
-          );
-        }
-      );
+      requestAnimationFrame(() => {
+        updateSubmenuScrollCue(submenu);
+      });
     },
     true
   );
 
 
   /*
-   * Close the mobile navigation with
-   * the Escape key and return focus
-   * to the menu toggle.
+   * Escape closes the mobile navigation and
+   * returns focus to the menu toggle.
    */
-  document.addEventListener(
-    'keydown',
-    event => {
-      if (
-        event.key !==
-          'Escape' ||
-        !siteNav.classList.contains(
-          'is-menu-open'
-        )
-      ) {
-        return;
-      }
 
-
-     /*
-      * Let grouped navigation handle Escape
-      * first when focus is inside a group.
-      */
-      if (
-        event.target.closest(
-          '.nav-group'
-        )
-      ) {
-        return;
-      }
-
-
-      closeMenu();
-
-      menuToggle.focus();
+  document.addEventListener('keydown', event => {
+    if (
+      event.key !== 'Escape' ||
+      !siteNav.classList.contains('is-menu-open')
+    ) {
+      return;
     }
-  );
+
+    /*
+     * I let grouped navigation handle Escape
+     * first when focus is inside a group.
+     */
+
+    if (event.target.closest('.nav-group')) {
+      return;
+    }
+
+    closeMenu();
+    menuToggle.focus();
+  });
 
 
   /*
-   * Reset the mobile menu when returning
-   * to the larger navigation layout.
+   * I reset the mobile menu when the layout
+   * returns to the larger desktop navigation.
    */
+
   window
-    .matchMedia(
-      '(min-width: 921px)'
-    )
-    .addEventListener(
-      'change',
-      event => {
-        if (event.matches) {
-          closeMenu();
-        }
+    .matchMedia('(min-width: 921px)')
+    .addEventListener('change', event => {
+      if (event.matches) {
+        closeMenu();
       }
-    );
+    });
 }
 
 
 /* ========================================
    Breadcrumbs
-======================================== */
+   ======================================== */
 
 function renderBreadcrumbs() {
-  if (
-    bodyElement.dataset.page ===
-    'home'
-  ) {
+  if (bodyElement.dataset.page === 'home') {
     return;
   }
 
-  const heroElement =
-    document.querySelector(
-      '.hero'
-    );
+  const heroElement = document.querySelector('.hero');
 
   if (!heroElement) {
     return;
@@ -613,9 +524,10 @@ function renderBreadcrumbs() {
 
 
   /*
-   * Insert breadcrumbs directly before
-   * the page hero.
+   * Breadcrumbs sit directly before the
+   * page hero on every page except home.
    */
+
   heroElement.insertAdjacentHTML(
     'beforebegin',
     `
@@ -648,13 +560,12 @@ function renderBreadcrumbs() {
 
 /* ========================================
    Footer
-======================================== */
+   ======================================== */
 
 function renderFooter() {
-  const footerTarget =
-    document.querySelector(
-      '[data-site-footer]'
-    );
+  const footerTarget = document.querySelector(
+    '[data-site-footer]'
+  );
 
   if (!footerTarget) {
     return;
@@ -666,12 +577,13 @@ function renderFooter() {
 
 
   /* Render Shared Footer */
+
   footerTarget.innerHTML = `
     <footer class="site-footer">
 
       <!-- Footer Copy -->
-      <div class="footer-copy">
 
+      <div class="footer-copy">
         <strong>
           ${escapeHtml(footerLabel)}
         </strong>
@@ -683,6 +595,7 @@ function renderFooter() {
 
 
         <!-- Brand Dots -->
+
         <div
           class="dots footer-dots"
           aria-hidden="true"
@@ -694,6 +607,7 @@ function renderFooter() {
 
 
         <!-- Reviewed Date -->
+
         <p class="reviewed-date">
           <time datetime="2026-09">
             Last reviewed September 2026
@@ -702,13 +616,12 @@ function renderFooter() {
 
 
         <!-- Footer Navigation -->
+
         <nav
           class="footer-links"
           aria-label="Footer navigation"
         >
-          <a
-            href="/references/html/accessibility.html"
-          >
+          <a href="/references/html/accessibility.html">
             Accessibility
           </a>
 
@@ -723,6 +636,7 @@ function renderFooter() {
             rel="noopener noreferrer"
           >
             <span>My Portfolio</span>
+
             <img
               class="footer-portfolio-logo"
               src="/assets/images/logo-dark-theme.webp"
@@ -731,11 +645,11 @@ function renderFooter() {
             >
           </a>
         </nav>
-
       </div>
 
 
       <!-- Reference Logo -->
+
       <a
         class="footer-logo-link"
         href="/index.html"

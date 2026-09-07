@@ -1,7 +1,11 @@
-/* Site search and saved-reference dialogs. */
+/* ==========================================================================
+   Dialogs
+   Site-wide search and saved-reference dialog controls.
+   ========================================================================== */
+
 
 /* ========================================
-   Dialog setup
+   Dialog Setup
    ======================================== */
 
 function renderDialogs() {
@@ -29,7 +33,10 @@ function renderDialogs() {
           </button>
         </div>
 
-        <label class="sr-only" for="global-search-input">
+        <label
+          class="sr-only"
+          for="global-search-input"
+        >
           Search all references
         </label>
 
@@ -88,23 +95,44 @@ function renderDialogs() {
     `
   );
 
+
+  /* Close Buttons */
+
   document.querySelectorAll('[data-close-dialog]').forEach(button => {
     button.addEventListener('click', () => {
       button.closest('dialog')?.close();
     });
   });
 
-  document.getElementById('global-search-button')?.addEventListener('click', openSearchDialog);
+
+  /* Global Search Button */
+
+  document
+    .getElementById('global-search-button')
+    ?.addEventListener('click', openSearchDialog);
+
+
+  /* Saved References Button */
 
   document.getElementById('saved-button')?.addEventListener('click', () => {
     renderSavedResults();
     document.getElementById('saved-dialog')?.showModal();
   });
 
-  document.getElementById('global-search-input')?.addEventListener('input', updateGlobalSearch);
+
+  /* Global Search Input */
+
+  document
+    .getElementById('global-search-input')
+    ?.addEventListener('input', updateGlobalSearch);
+
+
+  /* Search Keyboard Shortcut */
 
   document.addEventListener('keydown', event => {
-    const usesSearchShortcut = (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k';
+    const usesSearchShortcut =
+      (event.ctrlKey || event.metaKey) &&
+      event.key.toLowerCase() === 'k';
 
     if (!usesSearchShortcut) {
       return;
@@ -115,8 +143,9 @@ function renderDialogs() {
   });
 }
 
+
 /* ========================================
-   Global search
+   Global Search
    ======================================== */
 
 function openSearchDialog() {
@@ -150,26 +179,37 @@ function updateGlobalSearch() {
   results.innerHTML = '';
 
   if (!query) {
-    status.textContent = `Start typing to search ${searchIndex.length} reference entries.`;
+    status.textContent =
+      `Start typing to search ${searchIndex.length} reference entries.`;
+
     return;
   }
 
-  // I use one search index here so the dialog can search the whole site instead of just this page.
-  const allMatches = searchIndex
-    .filter(item => {
-      const searchableText = [
-        item.title,
-        item.subtitle,
-        item.description,
-        item.example,
-        item.section,
-        item.page
-      ]
-        .join(' ')
-        .toLowerCase();
+  /*
+   * I use one search index here so the dialog
+   * can search the whole site instead of just
+   * the current page.
+   */
 
-      return searchableText.includes(query);
-    });
+  const allMatches = searchIndex.filter(item => {
+    const searchableText = [
+      item.title,
+      item.subtitle,
+      item.description,
+      item.example,
+      item.section,
+      item.page
+    ]
+      .join(' ')
+      .toLowerCase();
+
+    return searchableText.includes(query);
+  });
+
+  /*
+   * I limit the visible results so a broad
+   * search does not make the dialog too long.
+   */
 
   const matches = allMatches.slice(0, 40);
 
@@ -179,29 +219,39 @@ function updateGlobalSearch() {
       : `${matches.length} result${matches.length === 1 ? '' : 's'} shown for “${rawQuery}”.`;
 
   if (!matches.length) {
-    results.innerHTML = '<li class="empty-state">No matching references found.</li>';
+    results.innerHTML =
+      '<li class="empty-state">No matching references found.</li>';
+
     return;
   }
 
   results.innerHTML = matches
     .map(
       item => `
-      <li>
-        <a class="search-result" href="${item.href}">
-          <span class="result-meta">
-            ${escapeHtml(item.page)} · ${escapeHtml(item.section)}
-          </span>
-          <strong>${escapeHtml(item.title)}</strong>
-          <span>${escapeHtml(item.subtitle || item.description)}</span>
-        </a>
-      </li>
-    `
+        <li>
+          <a
+            class="search-result"
+            href="${item.href}"
+          >
+            <span class="result-meta">
+              ${escapeHtml(item.page)} · ${escapeHtml(item.section)}
+            </span>
+
+            <strong>${escapeHtml(item.title)}</strong>
+
+            <span>
+              ${escapeHtml(item.subtitle || item.description)}
+            </span>
+          </a>
+        </li>
+      `
     )
     .join('');
 }
 
+
 /* ========================================
-   Saved references
+   Saved References
    ======================================== */
 
 function renderSavedResults() {
@@ -218,21 +268,26 @@ function renderSavedResults() {
       '<li class="empty-state">' +
       'No saved references yet. Use the ✩ buttons beside terms and patterns.' +
       '</li>';
+
     return;
   }
 
   results.innerHTML = favorites
     .map(
       item => `
-      <li>
-        <a class="search-result" href="${item.href}">
-          <span class="result-meta">
-            ${escapeHtml(item.page)} · ${escapeHtml(item.section)}
-          </span>
-          <strong>${escapeHtml(item.title)}</strong>
-        </a>
-      </li>
-    `
+        <li>
+          <a
+            class="search-result"
+            href="${item.href}"
+          >
+            <span class="result-meta">
+              ${escapeHtml(item.page)} · ${escapeHtml(item.section)}
+            </span>
+
+            <strong>${escapeHtml(item.title)}</strong>
+          </a>
+        </li>
+      `
     )
     .join('');
 }

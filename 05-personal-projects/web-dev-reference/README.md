@@ -199,7 +199,7 @@ The site is a framework-free, multi-page application built with shared styles, r
 - Accessibility
 - Reusable CSS
 - CSS custom properties
-- Light and Dark Theme System
+- Light and dark theme system
 
 ---
 
@@ -211,7 +211,7 @@ Key implementation details include:
 
 - Organized reference content into focused topic-specific pages
 - Created reusable CSS variables and shared component styles
-- Separated shared utilities from page-specific JavaScript behavior
+- Organized JavaScript by responsibility across shared data, layout, search, dialogs, reference behavior, Pattern demonstrations, theme controls, and utilities
 - Implemented persistent light and dark themes
 - Built page-level and site-wide search
 - Created a centralized search data index for reference content
@@ -247,17 +247,31 @@ Key implementation details include:
 web-development-reference/
 ├── assets/
 │   ├── css/
+│   │   ├── components.css
+│   │   ├── global.css
+│   │   ├── main.css
+│   │   ├── navigation.css
+│   │   ├── patterns.css
+│   │   ├── references.css
+│   │   └── variables.css
 │   ├── cursors/
 │   ├── images/
 │   │   ├── logo/
-│   │   │   ├── web-dev-reference-logo.svg
-│   │   │   ├── web-dev-reference-logo-dark.svg
-│   │   │   └── web-dev-reference-mark.svg
 │   │   ├── social/
-│   │   │   └── web-dev-reference-social.png
 │   │   ├── logo-light-theme.webp
 │   │   └── logo-dark-theme.webp
 │   └── js/
+│       ├── dialogs.js
+│       ├── layout.js
+│       ├── loader.js
+│       ├── main.js
+│       ├── patterns.js
+│       ├── references.js
+│       ├── search-data.js
+│       ├── search.js
+│       ├── shared.js
+│       ├── theme.js
+│       └── utilities.js
 ├── references/
 │   ├── css/
 │   ├── html/
@@ -265,9 +279,6 @@ web-development-reference/
 │   ├── patterns/
 │   └── tools/
 ├── 404.html
-├── apple-touch-icon.png
-├── favicon.ico
-├── favicon.svg
 ├── index.html
 ├── sitemap.html
 ├── sitemap.xml
@@ -278,7 +289,7 @@ web-development-reference/
 └── README.md
 ```
 
-Reference content is grouped by subject while shared CSS, JavaScript, images, search data, and interface behavior remain centralized under `assets/`.
+Reference content is grouped by subject while shared styles, JavaScript behavior, images, search data, and interface components remain centralized under `assets/`.
 
 ---
 

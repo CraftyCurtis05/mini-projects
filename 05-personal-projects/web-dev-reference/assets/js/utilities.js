@@ -1,14 +1,21 @@
-/* Shared page utilities. */
+/* ==========================================================================
+   Shared Utilities
+   Copy controls, loading, scrolling, and other shared page utilities.
+   ========================================================================== */
+
 
 /* ========================================
    Copy Code Buttons
-======================================== */
+   ======================================== */
 
 function initializeCopyButtons() {
   document.querySelectorAll('pre > code').forEach((code, index) => {
     const pre = code.parentElement;
 
-    if (!pre || pre.parentElement?.classList.contains('code-block')) {
+    if (
+      !pre ||
+      pre.parentElement?.classList.contains('code-block')
+    ) {
       return;
     }
 
@@ -24,18 +31,30 @@ function initializeCopyButtons() {
     button.type = 'button';
     button.className = 'copy-button';
     button.textContent = 'Copy';
-    button.setAttribute('aria-label', `Copy code example ${index + 1}`);
+
+    button.setAttribute(
+      'aria-label',
+      `Copy code example ${index + 1}`
+    );
 
     pre.replaceWith(wrapper);
     wrapper.append(pre);
     toolbar.append(label, button);
     wrapper.prepend(toolbar);
 
+
+    /* Copy Code */
+
     button.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(code.textContent);
       } catch {
-        // This keeps copy working if the newer Clipboard API is not available.
+        /*
+         * I use a temporary textarea as a
+         * fallback when the newer Clipboard
+         * API is not available.
+         */
+
         const textarea = document.createElement('textarea');
 
         textarea.value = code.textContent;
@@ -50,11 +69,16 @@ function initializeCopyButtons() {
       const originalAriaLabel = button.getAttribute('aria-label');
 
       button.textContent = 'Copied!';
+
       button.setAttribute(
         'aria-label',
         `Copied code example ${index + 1}`
       );
+
       button.classList.add('is-copied');
+
+
+      /* Restore Copy Button */
 
       window.setTimeout(() => {
         button.textContent = originalLabel;
@@ -72,9 +96,10 @@ function initializeCopyButtons() {
   });
 }
 
+
 /* ========================================
    Loading Screen
-======================================== */
+   ======================================== */
 
 function initializeSiteLoader() {
   const loader = document.getElementById('site-loader');
@@ -83,27 +108,45 @@ function initializeSiteLoader() {
     return;
   }
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+
+  /* Hide Loader */
 
   const hideLoader = () => {
     loader.classList.add('is-hidden');
 
-    window.setTimeout(() => loader.remove(), prefersReducedMotion ? 0 : 420);
+    window.setTimeout(
+      () => loader.remove(),
+      prefersReducedMotion ? 0 : 420
+    );
   };
 
   if (document.readyState === 'complete') {
     hideLoader();
   } else {
-    window.addEventListener('load', hideLoader, { once: true });
+    window.addEventListener(
+      'load',
+      hideLoader,
+      { once: true }
+    );
   }
 
-  // I remove the loader after a short delay so it can never block the page.
+
+  /*
+   * I remove the loader after a short delay
+   * so it can never block the page.
+   */
+
   window.setTimeout(hideLoader, 2200);
 }
 
+
 /* ========================================
    404 Page
-======================================== */
+   ======================================== */
 
 function initializeNotFoundPage() {
   if (bodyElement.dataset.page !== '404') {
@@ -113,11 +156,23 @@ function initializeNotFoundPage() {
   const path = document.getElementById('not-found-path');
   const searchButton = document.getElementById('not-found-search');
 
-  if (path) {
-    const requestedPath = window.location.pathname + window.location.search + window.location.hash;
 
-    path.textContent = requestedPath ? `Requested path: ${requestedPath}` : '';
+  /* Requested Path */
+
+  if (path) {
+    const requestedPath =
+      window.location.pathname +
+      window.location.search +
+      window.location.hash;
+
+    path.textContent =
+      requestedPath
+        ? `Requested path: ${requestedPath}`
+        : '';
   }
+
+
+  /* Search Button */
 
   searchButton?.addEventListener('click', () => {
     document.getElementById('global-search-button')?.click();
@@ -128,25 +183,19 @@ function initializeNotFoundPage() {
   });
 }
 
+
 /* ========================================
    Scroll Progress
-======================================== */
+   ======================================== */
 
 function initializeScrollProgress() {
-  const progressBar =
-    document.getElementById(
-      'scroll-progress-bar'
-    );
+  const progressBar = document.getElementById(
+    'scroll-progress-bar'
+  );
 
-  const siteNav =
-    document.querySelector(
-      '.site-nav'
-    );
+  const siteNav = document.querySelector('.site-nav');
 
-  if (
-    !progressBar &&
-    !siteNav
-  ) {
+  if (!progressBar && !siteNav) {
     return;
   }
 
@@ -156,6 +205,7 @@ function initializeScrollProgress() {
    * state together so I only need one scroll
    * listener for both effects.
    */
+
   const updateScrollState = () => {
     if (progressBar) {
       const scrollableHeight =
@@ -165,14 +215,12 @@ function initializeScrollProgress() {
       const progress =
         scrollableHeight > 0
           ? Math.min(
-              window.scrollY /
-              scrollableHeight,
+              window.scrollY / scrollableHeight,
               1
             )
           : 0;
 
-      progressBar.style.transform =
-        `scaleX(${progress})`;
+      progressBar.style.transform = `scaleX(${progress})`;
     }
 
     siteNav?.classList.toggle(
@@ -184,9 +232,7 @@ function initializeScrollProgress() {
   window.addEventListener(
     'scroll',
     updateScrollState,
-    {
-      passive: true
-    }
+    { passive: true }
   );
 
   window.addEventListener(
@@ -197,9 +243,10 @@ function initializeScrollProgress() {
   updateScrollState();
 }
 
+
 /* ========================================
    Back to Top
-======================================== */
+   ======================================== */
 
 function initializeBackToTop() {
   const backToTopButton = document.createElement('button');
@@ -207,22 +254,41 @@ function initializeBackToTop() {
   backToTopButton.type = 'button';
   backToTopButton.className = 'back-to-top';
   backToTopButton.setAttribute('aria-label', 'Back to top');
+
   backToTopButton.innerHTML = `
     <span
       class="back-to-top-icon"
       aria-hidden="true"
-    >^</span>
+    >
+      ^
+    </span>
   `;
 
-  // I create this once here so I do not have to repeat it on every page.
+
+  /*
+   * I create the button once here so I do not
+   * have to repeat it on every page.
+   */
+
   document.body.append(backToTopButton);
 
+
+  /* Button Visibility */
+
   const updateBackToTopButton = () => {
-    backToTopButton.classList.toggle('is-visible', window.scrollY > 8);
+    backToTopButton.classList.toggle(
+      'is-visible',
+      window.scrollY > 8
+    );
   };
 
+
+  /* Scroll to Top */
+
   backToTopButton.addEventListener('click', () => {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
 
     window.scrollTo({
       top: 0,
@@ -230,20 +296,36 @@ function initializeBackToTop() {
     });
   });
 
-  window.addEventListener('scroll', updateBackToTopButton, { passive: true });
+  window.addEventListener(
+    'scroll',
+    updateBackToTopButton,
+    { passive: true }
+  );
 
   updateBackToTopButton();
 }
 
+
 /* ========================================
    Scroll Reveal
-======================================== */
+   ======================================== */
 
 function initializeRevealAnimations() {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
 
-  // If reduced motion is on, I would rather show the content normally than force an animation.
-  if (reducedMotion || !('IntersectionObserver' in window)) {
+
+  /*
+   * If reduced motion is on, I would rather
+   * show the content normally than force an
+   * animation.
+   */
+
+  if (
+    reducedMotion ||
+    !('IntersectionObserver' in window)
+  ) {
     return;
   }
 
@@ -251,7 +333,12 @@ function initializeRevealAnimations() {
     '.reference-card, .reference-section, .pattern-section, .intro-panel'
   );
 
-  items.forEach(item => item.classList.add('reveal-item'));
+  items.forEach(item => {
+    item.classList.add('reveal-item');
+  });
+
+
+  /* Reveal Visible Items */
 
   const observer = new IntersectionObserver(
     (entries, currentObserver) => {
@@ -264,8 +351,12 @@ function initializeRevealAnimations() {
         currentObserver.unobserve(entry.target);
       });
     },
-    { threshold: 0.08 }
+    {
+      threshold: 0.08
+    }
   );
 
-  items.forEach(item => observer.observe(item));
+  items.forEach(item => {
+    observer.observe(item);
+  });
 }

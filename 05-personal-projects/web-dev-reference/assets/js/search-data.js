@@ -1,18 +1,23 @@
-/* ========================================
-  Site-wide Search Data
-======================================== */
+/* ==========================================================================
+   Site-wide Search Data
+   Searchable reference entries used by the global site search.
+   ========================================================================== */
 
 /*
- * Update this when reference content changes
- * so site-wide search stays in sync with the
- * reference pages and pattern sections.
+ * I keep the search data in one place so
+ * site-wide search can find content across
+ * every reference page and Pattern.
+ *
+ * When reference content changes, I update
+ * this file so the search index stays in
+ * sync with the website.
  */
 
 window.SEARCH_INDEX = [
 
   /* ========================================
-    HTML Tables
-  ======================================== */
+     HTML Tables
+     ======================================== */
 
   /* html/html-tables.html#table-tags */
   {
@@ -215,8 +220,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-    Forms & Validation
-  ======================================== */
+     Forms & Validation
+     ======================================== */
 
   /* html/forms-validation.html#form-structure */
   {
@@ -618,8 +623,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   HTML Tags
-  ======================================== */
+     HTML Tags
+     ======================================== */
 
   /* html/html-tags.html#document-metadata */
   {
@@ -1376,8 +1381,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Accessibility
-  ======================================== */
+     Accessibility
+     ======================================== */
 
   /* html/accessibility.html */
   {
@@ -1551,8 +1556,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   CSS Selectors
-  ======================================== */
+     CSS Selectors
+     ======================================== */
 
   /* css/css-selectors.html#basic-selectors */
   {
@@ -2155,8 +2160,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   CSS Properties
-  ======================================== */
+     CSS Properties
+     ======================================== */
 
   /* css/css-properties.html#color-background */
   {
@@ -2662,8 +2667,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Flexbox
-  ======================================== */
+     Flexbox
+     ======================================== */
 
   /* css/css-properties.html#flexbox */
   {
@@ -2838,8 +2843,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   CSS Grid
-  ======================================== */
+     CSS Grid
+     ======================================== */
 
   /* css/css-properties.html#css-grid */
   {
@@ -3697,8 +3702,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Responsive Design
-  ======================================== */
+     Responsive Design
+     ======================================== */
 
   /* css/responsive-design.html#responsive-foundations */
   {
@@ -3958,8 +3963,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   CSS Units & Functions
-  ======================================== */
+     CSS Units & Functions
+     ======================================== */
 
   /* css/css-units-functions.html#absolute-relative */
   {
@@ -4192,8 +4197,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Pseudo-classes & Pseudo-elements
-  ======================================== */
+     Pseudo-classes & Pseudo-elements
+     ======================================== */
 
   /* css/pseudo-classes-elements.html#interaction-pseudos */
   {
@@ -4493,8 +4498,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   JavaScript Fundamentals
-  ======================================== */
+     JavaScript Fundamentals
+     ======================================== */
 
   /* javascript/fundamentals.html#variables-types */
   {
@@ -5154,8 +5159,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   JavaScript Built-ins
-  ======================================== */
+     JavaScript Built-ins
+     ======================================== */
 
   /* javascript/built-ins.html#strings */
   {
@@ -5923,8 +5928,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Modern & Async JavaScript
-  ======================================== */
+     Modern & Async JavaScript
+     ======================================== */
 
   /* javascript/modern-async.html#modern-syntax */
   {
@@ -6198,8 +6203,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Data Collections
-  ======================================== */
+     Data Collections
+     ======================================== */
 
   /* javascript/data-collections.html#arrays */
   {
@@ -6939,8 +6944,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   DOM & Events
-  ======================================== */
+     DOM & Events
+     ======================================== */
 
   /* javascript/dom-events.html#selecting-elements */
   {
@@ -7318,8 +7323,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Browser APIs
-  ======================================== */
+     Browser APIs
+     ======================================== */
 
   /* javascript/browser-apis.html#browser-storage */
   {
@@ -7604,8 +7609,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   HTTP & APIs
-  ======================================== */
+     HTTP & APIs
+     ======================================== */
 
   /* javascript/http-apis.html#http-methods */
   {
@@ -7955,8 +7960,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Git & GitHub
-  ======================================== */
+     Git & GitHub
+     ======================================== */
 
   /* tools/git-github.html#repository-basics */
   {
@@ -8267,8 +8272,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Terminal & CLI
-  ======================================== */
+     Terminal & CLI
+     ======================================== */
 
   /* tools/terminal-cli.html#navigation */
   {
@@ -8582,8 +8587,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Debugging
-  ======================================== */
+     Debugging
+     ======================================== */
 
   /* tools/debugging.html#html-css-debugging */
   {
@@ -8865,8 +8870,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Web Performance
-  ======================================== */
+     Web Performance
+     ======================================== */
 
   /* tools/web-performance.html#loading-resources */
   {
@@ -9127,8 +9132,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   SEO & Metadata
-  ======================================== */
+     SEO & Metadata
+     ======================================== */
 
   /* tools/seo-metadata.html#core-metadata */
   {
@@ -9376,8 +9381,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Web Security Basics
-  ======================================== */
+     Web Security Basics
+     ======================================== */
 
   /* tools/web-security.html#xss-output */
   {
@@ -9599,8 +9604,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Developer Notes
-  ======================================== */
+     Developer Notes
+     ======================================== */
 
   /* tools/developer-notes.html#html-notes */
   {
@@ -9844,8 +9849,8 @@ window.SEARCH_INDEX = [
 
 
   /* ========================================
-   Patterns
-  ======================================== */
+     Patterns
+     ======================================== */
 
   /* patterns/patterns.html#semantic-page */
   {

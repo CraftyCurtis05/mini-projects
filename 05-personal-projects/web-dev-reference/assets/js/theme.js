@@ -1,15 +1,18 @@
-/* ========================================
+/* ==========================================================================
    Theme
-======================================== */
+   Theme selection, saved preference, and theme toggle controls.
+   ========================================================================== */
+
+
+/* ========================================
+   Theme Setup
+   ======================================== */
 
 function initializeTheme() {
   let savedTheme = null;
 
   try {
-    savedTheme =
-      localStorage.getItem(
-        'theme'
-      );
+    savedTheme = localStorage.getItem('theme');
   } catch {
     /*
      * If storage is unavailable, I fall back
@@ -17,17 +20,15 @@ function initializeTheme() {
      */
   }
 
-  const prefersDarkTheme =
-    window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
+  const prefersDarkTheme = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
 
   if (
     savedTheme === 'light' ||
     savedTheme === 'dark'
   ) {
-    rootElement.dataset.theme =
-      savedTheme;
+    rootElement.dataset.theme = savedTheme;
   } else {
     rootElement.dataset.theme =
       prefersDarkTheme
@@ -35,54 +36,47 @@ function initializeTheme() {
         : 'light';
   }
 
-  const themeToggle =
-    document.getElementById(
-      'theme-toggle'
-    );
+  const themeToggle = document.getElementById('theme-toggle');
 
   if (!themeToggle) {
     return;
   }
 
-  updateThemeButton(
-    themeToggle
-  );
+  updateThemeButton(themeToggle);
 
-  themeToggle.addEventListener(
-    'click',
-    () => {
-      rootElement.dataset.theme =
-        rootElement.dataset.theme ===
-        'dark'
-          ? 'light'
-          : 'dark';
 
-      try {
-        localStorage.setItem(
-          'theme',
-          rootElement.dataset.theme
-        );
-      } catch {
-        /*
-         * The theme can still change for this
-         * visit even when storage is blocked.
-         */
-      }
+  /* Toggle Theme */
 
-      updateThemeButton(
-        themeToggle
+  themeToggle.addEventListener('click', () => {
+    rootElement.dataset.theme =
+      rootElement.dataset.theme === 'dark'
+        ? 'light'
+        : 'dark';
+
+    try {
+      localStorage.setItem(
+        'theme',
+        rootElement.dataset.theme
       );
+    } catch {
+      /*
+       * The theme can still change for this
+       * visit even when storage is blocked.
+       */
     }
-  );
+
+    updateThemeButton(themeToggle);
+  });
 }
 
 
 /* ========================================
    Theme Button
-======================================== */
+   ======================================== */
 
 function updateThemeButton(themeToggle) {
-  const isDarkTheme = rootElement.dataset.theme === 'dark';
+  const isDarkTheme =
+    rootElement.dataset.theme === 'dark';
 
   const buttonLabel =
     isDarkTheme

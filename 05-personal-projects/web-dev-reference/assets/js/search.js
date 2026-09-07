@@ -1,86 +1,76 @@
-/* ========================================
-   Page Search, Highlighting & Table of Contents
-======================================== */
+/* ==========================================================================
+   Page Search & Navigation
+   Page-level search, highlighting, table of contents, and active section state.
+   ========================================================================== */
 
 
 /* ========================================
-   Search Bar
-======================================== */
+   Reference Search
+   ======================================== */
 
 function renderReferenceSearch() {
-  const placeholder =
-    bodyElement.dataset.searchPlaceholder;
+  const placeholder = bodyElement.dataset.searchPlaceholder;
+  const hero = document.querySelector('.hero');
 
-  const hero =
-    document.querySelector(
-      '.hero'
-    );
-
-  if (
-    !placeholder ||
-    !hero
-  ) {
+  if (!placeholder || !hero) {
     return;
   }
+
+
+  /* Render Search Bar */
 
   hero.insertAdjacentHTML(
     'afterend',
     `
-    <search
-      class="reference-tools"
-      aria-label="Search this reference"
-    >
-      <div class="search-container">
-
-        <label
-          class="search-label"
-          for="reference-search"
-        >
-          Search this reference
-
-          <kbd class="search-shortcut">
-            /
-          </kbd>
-        </label>
-
-        <div class="search-input-wrapper">
-
-          <span
-            class="search-icon"
-            aria-hidden="true"
+      <search
+        class="reference-tools"
+        aria-label="Search this reference"
+      >
+        <div class="search-container">
+          <label
+            class="search-label"
+            for="reference-search"
           >
-            ⌕
-          </span>
+            Search this reference
 
-          <input
-            class="reference-search"
-            id="reference-search"
-            type="search"
-            placeholder="${escapeHtml(
-              placeholder
-            )}"
-            autocomplete="off"
-            spellcheck="false"
+            <kbd class="search-shortcut">
+              /
+            </kbd>
+          </label>
+
+          <div class="search-input-wrapper">
+            <span
+              class="search-icon"
+              aria-hidden="true"
+            >
+              ⌕
+            </span>
+
+            <input
+              class="reference-search"
+              id="reference-search"
+              type="search"
+              placeholder="${escapeHtml(placeholder)}"
+              autocomplete="off"
+              spellcheck="false"
+            >
+          </div>
+
+          <p
+            class="visible-search-status"
+            id="visible-search-status"
           >
+            Showing all entries
+          </p>
 
+          <p
+            class="sr-only"
+            id="search-status"
+            aria-live="polite"
+            aria-atomic="true"
+          ></p>
         </div>
-
-        <p
-          id="visible-search-status"
-          class="visible-search-status"
-        >
-          Showing all entries
-        </p>
-
-        <p
-          id="search-status"
-          class="sr-only"
-          aria-live="polite"
-          aria-atomic="true"
-        ></p>
-
-      </div>
-    </search>
+      </search>
     `
   );
 }
@@ -88,176 +78,130 @@ function renderReferenceSearch() {
 
 /* ========================================
    Search Highlighting
-======================================== */
+   ======================================== */
 
-function clearSearchHighlights(
-  scope = document
-) {
+function clearSearchHighlights(scope = document) {
   scope
-    .querySelectorAll(
-      'mark.search-match'
-    )
-    .forEach(
-      mark =>
-        mark.replaceWith(
-          document.createTextNode(
-            mark.textContent
-          )
-        )
-    );
+    .querySelectorAll('mark.search-match')
+    .forEach(mark => {
+      mark.replaceWith(
+        document.createTextNode(mark.textContent)
+      );
+    });
 
   scope.normalize();
 }
 
 
-function highlightText(
-  scope,
-  query
-) {
+function highlightText(scope, query) {
   if (!query) {
     return;
   }
+
 
   /*
    * I only replace the matching text so I
    * do not accidentally rebuild the HTML
    * around it.
    */
-  const walker =
-    document.createTreeWalker(
-      scope,
-      NodeFilter.SHOW_TEXT,
-      {
-        acceptNode(node) {
-          if (
-            !node.nodeValue.trim()
-          ) {
-            return NodeFilter.FILTER_REJECT;
-          }
 
-          if (
-            node.parentElement.closest(
-              'button, summary, .favorite-button'
-            )
-          ) {
-            return NodeFilter.FILTER_REJECT;
-          }
-
-          return NodeFilter.FILTER_ACCEPT;
+  const walker = document.createTreeWalker(
+    scope,
+    NodeFilter.SHOW_TEXT,
+    {
+      acceptNode(node) {
+        if (!node.nodeValue.trim()) {
+          return NodeFilter.FILTER_REJECT;
         }
+
+        if (
+          node.parentElement.closest(
+            'button, summary, .favorite-button'
+          )
+        ) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        return NodeFilter.FILTER_ACCEPT;
       }
-    );
+    }
+  );
 
   const nodes = [];
 
-  while (
-    walker.nextNode()
-  ) {
-    nodes.push(
-      walker.currentNode
-    );
+  while (walker.nextNode()) {
+    nodes.push(walker.currentNode);
   }
 
-  const lowerQuery =
-    query.toLowerCase();
+  const lowerQuery = query.toLowerCase();
 
-  nodes.forEach(
-    node => {
-      const text =
-        node.nodeValue;
 
-      const lower =
-        text.toLowerCase();
+  /* Highlight Matching Text */
 
-      let start = 0;
+  nodes.forEach(node => {
+    const text = node.nodeValue;
+    const lowerText = text.toLowerCase();
 
-      let index =
-        lower.indexOf(
-          lowerQuery
-        );
+    let start = 0;
+    let index = lowerText.indexOf(lowerQuery);
 
-      if (index === -1) {
-        return;
-      }
+    if (index === -1) {
+      return;
+    }
 
-      const fragment =
-        document.createDocumentFragment();
+    const fragment = document.createDocumentFragment();
 
-      while (
-        index !== -1
-      ) {
-        fragment.append(
-          text.slice(
-            start,
-            index
-          )
-        );
-
-        const mark =
-          document.createElement(
-            'mark'
-          );
-
-        mark.className =
-          'search-match';
-
-        mark.textContent =
-          text.slice(
-            index,
-            index + query.length
-          );
-
-        fragment.append(
-          mark
-        );
-
-        start =
-          index +
-          query.length;
-
-        index =
-          lower.indexOf(
-            lowerQuery,
-            start
-          );
-      }
-
+    while (index !== -1) {
       fragment.append(
-        text.slice(start)
+        text.slice(
+          start,
+          index
+        )
       );
 
-      node.replaceWith(
-        fragment
+      const mark = document.createElement('mark');
+
+      mark.className = 'search-match';
+
+      mark.textContent = text.slice(
+        index,
+        index + query.length
+      );
+
+      fragment.append(mark);
+
+      start = index + query.length;
+
+      index = lowerText.indexOf(
+        lowerQuery,
+        start
       );
     }
-  );
+
+    fragment.append(text.slice(start));
+
+    node.replaceWith(fragment);
+  });
 }
 
 
 /* ========================================
-   Page Filtering
-======================================== */
+   Reference Filtering
+   ======================================== */
 
 function initializeReferenceSearch() {
-  const input =
-    document.getElementById(
-      'reference-search'
-    );
+  const input = document.getElementById('reference-search');
 
   if (!input) {
     return;
   }
 
   const referenceSections = [
-    ...document.querySelectorAll(
-      '.reference-section'
-    )
+    ...document.querySelectorAll('.reference-section')
   ];
 
   const patternSections = [
-    ...document.querySelectorAll(
-      '.pattern-section'
-    )
+    ...document.querySelectorAll('.pattern-section')
   ];
 
   const rows = [
@@ -266,115 +210,94 @@ function initializeReferenceSearch() {
     )
   ];
 
-  const visibleStatus =
-    document.getElementById(
-      'visible-search-status'
-    );
+  const visibleStatus = document.getElementById(
+    'visible-search-status'
+  );
 
-  const liveStatus =
-    document.getElementById(
-      'search-status'
-    );
+  const liveStatus = document.getElementById(
+    'search-status'
+  );
 
   const count =
     rows.length ||
     patternSections.length;
 
 
+  /* Update Search Status */
+
   function setStatus(message) {
     if (visibleStatus) {
-      visibleStatus.textContent =
-        message;
+      visibleStatus.textContent = message;
     }
 
     if (liveStatus) {
-      liveStatus.textContent =
-        message;
+      liveStatus.textContent = message;
     }
   }
 
 
-  function filterReference() {
-    const query =
-      input.value.trim();
+  /* Filter Current Reference */
 
-    const normalizedQuery =
-      query.toLowerCase();
+  function filterReference() {
+    const query = input.value.trim();
 
     clearSearchHighlights(
-      document.getElementById(
-        'main-content'
-      )
+      document.getElementById('main-content')
     );
 
     let visible = 0;
 
     if (rows.length) {
-      referenceSections.forEach(
-        section => {
-          let sectionHasMatch =
-            false;
+      referenceSections.forEach(section => {
+        let sectionHasMatch = false;
 
-          section
-            .querySelectorAll(
-              'tbody tr'
-            )
-            .forEach(
-              row => {
-                const matches =
-                  !query ||
-                  row.textContent
-                    .toLowerCase()
-                    .includes(
-                      normalizedQuery
-                    );
+        section
+          .querySelectorAll('tbody tr')
+          .forEach(row => {
+            const matches =
+              !query ||
+              row.textContent
+                .toLowerCase()
+                .includes(query.toLowerCase());
 
-                row.hidden =
-                  !matches;
+            row.hidden = !matches;
 
-                if (matches) {
-                  sectionHasMatch =
-                    true;
+            if (matches) {
+              sectionHasMatch = true;
+              visible += 1;
 
-                  visible += 1;
-
-                  highlightText(
-                    row,
-                    query
-                  );
-                }
-              }
-            );
-
-          section.hidden =
-            !sectionHasMatch;
-        }
-      );
-    } else {
-      patternSections.forEach(
-        section => {
-          const matches =
-            !query ||
-            section.textContent
-              .toLowerCase()
-              .includes(
-                normalizedQuery
+              highlightText(
+                row,
+                query
               );
+            }
+          });
 
-          section.hidden =
-            !matches;
+        section.hidden = !sectionHasMatch;
+      });
+    } else {
+      patternSections.forEach(section => {
+        const matches =
+          !query ||
+          section.textContent
+            .toLowerCase()
+            .includes(query.toLowerCase());
 
-          if (matches) {
-            visible += 1;
+        section.hidden = !matches;
 
-            highlightText(
-              section,
-              query
-            );
-          }
+        if (matches) {
+          visible += 1;
+
+          highlightText(
+            section,
+            query
+          );
         }
-      );
+      });
     }
+
+
+    /* Search Results Status */
 
     if (!query) {
       setStatus(
@@ -392,32 +315,32 @@ function initializeReferenceSearch() {
   }
 
 
+  /* Search Input */
+
   input.addEventListener(
     'input',
     filterReference
   );
 
 
-  document.addEventListener(
-    'keydown',
-    event => {
-      const isTyping =
-        event.target instanceof
-          HTMLInputElement ||
-        event.target instanceof
-          HTMLTextAreaElement;
+  /* Search Keyboard Shortcut */
 
-      if (
-        event.key === '/' &&
-        !isTyping
-      ) {
-        event.preventDefault();
+  document.addEventListener('keydown', event => {
+    const isTyping =
+      event.target instanceof HTMLInputElement ||
+      event.target instanceof HTMLTextAreaElement;
 
-        input.focus();
-      }
+    if (
+      event.key === '/' &&
+      !isTyping
+    ) {
+      event.preventDefault();
+      input.focus();
     }
-  );
+  });
 
+
+  /* Initial Search Status */
 
   setStatus(
     `Showing all ${count} entries`
@@ -427,20 +350,14 @@ function initializeReferenceSearch() {
 
 /* ========================================
    Table of Contents
-======================================== */
+   ======================================== */
 
 function renderTableOfContents() {
-  if (
-    bodyElement.dataset.toc !==
-    'true'
-  ) {
+  if (bodyElement.dataset.toc !== 'true') {
     return;
   }
 
-  const main =
-    document.getElementById(
-      'main-content'
-    );
+  const main = document.getElementById('main-content');
 
   if (!main) {
     return;
@@ -456,45 +373,43 @@ function renderTableOfContents() {
     return;
   }
 
-  const links =
-    sections
-      .map(
-        section => {
-          const heading =
-            section.querySelector(
-              'h2'
-            );
 
-          return heading
-            ? `
-              <li>
-                <a href="#${section.id}">
-                  ${escapeHtml(
-                    heading.textContent.trim()
-                  )}
-                </a>
-              </li>
-            `
-            : '';
-        }
-      )
-      .join('');
+  /* Create Table of Contents Links */
+
+  const links = sections
+    .map(section => {
+      const heading = section.querySelector('h2');
+
+      return heading
+        ? `
+          <li>
+            <a href="#${section.id}">
+              ${escapeHtml(heading.textContent.trim())}
+            </a>
+          </li>
+        `
+        : '';
+    })
+    .join('');
+
+
+  /* Render Table of Contents */
 
   main.insertAdjacentHTML(
     'afterbegin',
     `
-    <nav
-      class="page-toc"
-      aria-labelledby="toc-title"
-    >
-      <h2 id="toc-title">
-        On this page
-      </h2>
+      <nav
+        class="page-toc"
+        aria-labelledby="toc-title"
+      >
+        <h2 id="toc-title">
+          On this page
+        </h2>
 
-      <ul>
-        ${links}
-      </ul>
-    </nav>
+        <ul>
+          ${links}
+        </ul>
+      </nav>
     `
   );
 }
@@ -502,93 +417,72 @@ function renderTableOfContents() {
 
 /* ========================================
    Active Table of Contents
-======================================== */
+   ======================================== */
 
 function initializeActiveToc() {
   const links = [
-    ...document.querySelectorAll(
-      '.page-toc a'
-    )
+    ...document.querySelectorAll('.page-toc a')
   ];
 
   if (
     !links.length ||
-    !(
-      'IntersectionObserver'
-      in window
-    )
+    !('IntersectionObserver' in window)
   ) {
     return;
   }
 
-  const map =
-    new Map(
-      links.map(
-        link => [
-          link
-            .getAttribute(
-              'href'
-            )
-            .slice(1),
+  const linkMap = new Map(
+    links.map(link => [
+      link.getAttribute('href').slice(1),
+      link
+    ])
+  );
 
-          link
-        ]
-      )
-    );
 
   /*
    * I watch which section is on screen so
-   * the TOC can follow along while I scroll.
+   * the table of contents can follow along
+   * while I scroll.
    */
-  const observer =
-    new IntersectionObserver(
-      entries => {
-        const visible =
-          entries
-            .filter(
-              entry =>
-                entry.isIntersecting
-            )
-            .sort(
-              (a, b) =>
-                a.boundingClientRect.top -
-                b.boundingClientRect.top
-            )[0];
 
-        if (!visible) {
-          return;
-        }
+  const observer = new IntersectionObserver(
+    entries => {
+      const visibleSection = entries
+        .filter(entry => entry.isIntersecting)
+        .sort(
+          (a, b) =>
+            a.boundingClientRect.top -
+            b.boundingClientRect.top
+        )[0];
 
-        links.forEach(
-          link =>
-            link.removeAttribute(
-              'aria-current'
-            )
-        );
-
-        map
-          .get(
-            visible.target.id
-          )
-          ?.setAttribute(
-            'aria-current',
-            'location'
-          );
-      },
-      {
-        rootMargin:
-          '-20% 0px -65% 0px'
+      if (!visibleSection) {
+        return;
       }
-    );
+
+      links.forEach(link => {
+        link.removeAttribute('aria-current');
+      });
+
+      linkMap
+        .get(visibleSection.target.id)
+        ?.setAttribute(
+          'aria-current',
+          'location'
+        );
+    },
+    {
+      rootMargin: '-20% 0px -65% 0px'
+    }
+  );
+
+
+  /* Watch Reference Sections */
 
   document
     .querySelectorAll(
       '.reference-section, .pattern-section'
     )
-    .forEach(
-      section =>
-        observer.observe(
-          section
-        )
-    );
+    .forEach(section => {
+      observer.observe(section);
+    });
 }

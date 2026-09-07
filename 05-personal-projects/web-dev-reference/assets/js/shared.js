@@ -1,211 +1,194 @@
-/* ========================================
+/* ==========================================================================
    Shared Data & Helper Functions
-======================================== */
+   Shared page data, navigation groups, configuration, and helper functions.
+   ========================================================================== */
 
-const rootElement =
-  document.documentElement;
-
-const bodyElement =
-  document.body;
+const rootElement = document.documentElement;
+const bodyElement = document.body;
 
 
 /* ========================================
    Page & Navigation Data
-======================================== */
+   ======================================== */
 
 const pages = [
 
   /* Home */
+
   {
     key: 'home',
     label: 'Home',
     href: '/index.html'
   },
 
+
   /* HTML */
+
   {
     key: 'tables',
-    label: 'HTML Tables',
-    href:
-      '/references/html/html-tables.html'
+    label: 'Tables',
+    href: '/references/html/html-tables.html'
   },
   {
     key: 'tags',
-    label: 'HTML Tags',
-    href:
-      '/references/html/html-tags.html'
+    label: 'Tags',
+    href: '/references/html/html-tags.html'
   },
   {
     key: 'forms',
     label: 'Forms & Validation',
-    href:
-      '/references/html/forms-validation.html'
+    href: '/references/html/forms-validation.html'
   },
   {
     key: 'accessibility',
     label: 'Accessibility',
-    href:
-      '/references/html/accessibility.html'
+    href: '/references/html/accessibility.html'
   },
 
+
   /* CSS */
+
   {
     key: 'selectors',
-    label: 'CSS Selectors',
-    href:
-      '/references/css/css-selectors.html'
+    label: 'Selectors',
+    href: '/references/css/css-selectors.html'
   },
   {
     key: 'properties',
-    label: 'CSS Properties',
-    href:
-      '/references/css/css-properties.html'
+    label: 'Properties',
+    href: '/references/css/css-properties.html'
   },
   {
     key: 'flexbox',
     label: 'Flexbox',
-    href:
-      '/references/css/flexbox.html'
+    href: '/references/css/flexbox.html'
   },
   {
     key: 'grid',
-    label: 'CSS Grid',
-    href:
-      '/references/css/css-grid.html'
+    label: 'Grid',
+    href: '/references/css/css-grid.html'
   },
   {
     key: 'responsive',
     label: 'Responsive Design',
-    href:
-      '/references/css/responsive-design.html'
+    href: '/references/css/responsive-design.html'
   },
   {
     key: 'units',
-    label: 'CSS Units & Functions',
-    href:
-      '/references/css/css-units-functions.html'
+    label: 'Units & Functions',
+    href: '/references/css/css-units-functions.html'
   },
   {
     key: 'pseudos',
     label: 'Pseudo-classes & Pseudo-elements',
-    href:
-      '/references/css/pseudo-classes-elements.html'
+    href: '/references/css/pseudo-classes-elements.html'
   },
 
+
   /* JavaScript */
+
   {
     key: 'javascript-fundamentals',
-    label: 'JavaScript Fundamentals',
-    href:
-      '/references/javascript/fundamentals.html'
+    label: 'Fundamentals',
+    href: '/references/javascript/fundamentals.html'
   },
   {
     key: 'built-ins',
-    label: 'JavaScript Built-ins',
-    href:
-      '/references/javascript/built-ins.html'
+    label: 'Built-ins',
+    href: '/references/javascript/built-ins.html'
   },
   {
     key: 'modern-async',
-    label: 'Modern & Async JavaScript',
-    href:
-      '/references/javascript/modern-async.html'
+    label: 'Modern & Async',
+    href: '/references/javascript/modern-async.html'
   },
   {
     key: 'data-collections',
     label: 'Data Collections',
-    href:
-      '/references/javascript/data-collections.html'
+    href: '/references/javascript/data-collections.html'
   },
   {
     key: 'dom-events',
     label: 'DOM & Events',
-    href:
-      '/references/javascript/dom-events.html'
+    href: '/references/javascript/dom-events.html'
   },
   {
     key: 'browser-apis',
     label: 'Browser APIs',
-    href:
-      '/references/javascript/browser-apis.html'
+    href: '/references/javascript/browser-apis.html'
   },
   {
     key: 'http-apis',
     label: 'HTTP & APIs',
-    href:
-      '/references/javascript/http-apis.html'
+    href: '/references/javascript/http-apis.html'
   },
 
+
   /* Tools */
+
   {
     key: 'git',
     label: 'Git & GitHub',
-    href:
-      '/references/tools/git-github.html'
+    href: '/references/tools/git-github.html'
   },
   {
     key: 'terminal',
     label: 'Terminal & CLI',
-    href:
-      '/references/tools/terminal-cli.html'
+    href: '/references/tools/terminal-cli.html'
   },
   {
     key: 'debugging',
     label: 'Debugging',
-    href:
-      '/references/tools/debugging.html'
+    href: '/references/tools/debugging.html'
   },
   {
     key: 'performance',
     label: 'Web Performance',
-    href:
-      '/references/tools/web-performance.html'
+    href: '/references/tools/web-performance.html'
   },
   {
     key: 'seo',
     label: 'SEO & Metadata',
-    href:
-      '/references/tools/seo-metadata.html'
+    href: '/references/tools/seo-metadata.html'
   },
   {
     key: 'security',
     label: 'Web Security Basics',
-    href:
-      '/references/tools/web-security.html'
+    href: '/references/tools/web-security.html'
   },
   {
     key: 'notes',
     label: 'Developer Notes',
-    href:
-      '/references/tools/developer-notes.html'
+    href: '/references/tools/developer-notes.html'
   },
 
+
   /* Patterns */
+
   {
     key: 'patterns',
     label: 'Patterns',
-    href:
-      '/references/patterns/patterns.html'
+    href: '/references/patterns/patterns.html'
   },
 
+
   /* Site Map */
+
   {
     key: 'sitemap',
     label: 'Site Map',
-    href:
-      '/sitemap.html'
+    href: '/sitemap.html'
   }
 ];
 
 
 /* ========================================
    Navigation Groups
-======================================== */
+   ======================================== */
 
 const navGroups = [
   {
     label: 'HTML',
-
     pages: [
       'tables',
       'tags',
@@ -215,7 +198,6 @@ const navGroups = [
   },
   {
     label: 'CSS',
-
     pages: [
       'selectors',
       'properties',
@@ -228,7 +210,6 @@ const navGroups = [
   },
   {
     label: 'JavaScript',
-
     pages: [
       'javascript-fundamentals',
       'built-ins',
@@ -241,7 +222,6 @@ const navGroups = [
   },
   {
     label: 'Tools',
-
     pages: [
       'git',
       'terminal',
@@ -257,31 +237,24 @@ const navGroups = [
 
 /* ========================================
    Shared Configuration
-======================================== */
+   ======================================== */
 
-const portfolioUrl =
-  'https://jennifercurtis.me';
-
-const favoritesKey =
-  'web-dev-reference:favorites';
-
-const searchIndex =
-  window.SEARCH_INDEX ||
-  [];
+const portfolioUrl = 'https://jennifercurtis.me';
+const favoritesKey = 'web-dev-reference:favorites';
+const searchIndex = window.SEARCH_INDEX || [];
 
 
 /* ========================================
    HTML Helpers
-======================================== */
+   ======================================== */
 
 /*
  * I use template strings in a few shared
  * components, so dynamic text is escaped
  * before it is inserted into the page.
  */
-function escapeHtml(
-  value = ''
-) {
+
+function escapeHtml(value = '') {
   const htmlCharacters = {
     '&': '&amp;',
     '<': '&lt;',
@@ -290,32 +263,20 @@ function escapeHtml(
     '"': '&quot;'
   };
 
-  return String(
-    value
-  ).replace(
+  return String(value).replace(
     /[&<>'"]/g,
-    character =>
-      htmlCharacters[
-        character
-      ]
+    character => htmlCharacters[character]
   );
 }
 
 
 /* ========================================
    Saved References
-======================================== */
+   ======================================== */
 
 function getFavorites() {
   try {
-    return (
-      JSON.parse(
-        localStorage.getItem(
-          favoritesKey
-        )
-      ) ||
-      []
-    );
+    return JSON.parse(localStorage.getItem(favoritesKey)) || [];
   } catch {
     /*
      * If storage is unavailable or contains
@@ -323,19 +284,17 @@ function getFavorites() {
      * so the rest of the reference can still
      * work normally.
      */
+
     return [];
   }
 }
 
-function saveFavorites(
-  favorites
-) {
+
+function saveFavorites(favorites) {
   try {
     localStorage.setItem(
       favoritesKey,
-      JSON.stringify(
-        favorites
-      )
+      JSON.stringify(favorites)
     );
   } catch {
     /*
@@ -348,15 +307,12 @@ function saveFavorites(
 
 /* ========================================
    Page Helpers
-======================================== */
+   ======================================== */
 
 function currentPageLabel() {
-  const currentPage =
-    pages.find(
-      page =>
-        page.key ===
-        bodyElement.dataset.page
-    );
+  const currentPage = pages.find(
+    page => page.key === bodyElement.dataset.page
+  );
 
   return (
     bodyElement.dataset.pageLabel ||

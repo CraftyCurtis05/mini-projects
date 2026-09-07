@@ -582,18 +582,21 @@ document.querySelector("#close-dialog").addEventListener("click", () =&gt; {
             <div class="demo-actions">
 
               <button
-                class="demo-button"
+                aria-pressed="false"
+                class="demo-button demo-button-secondary"
                 data-api-state="success"
                 type="button"
               >Load results</button>
 
               <button
+                aria-pressed="false"
                 class="demo-button demo-button-secondary"
                 data-api-state="empty"
                 type="button"
               >Show empty</button>
 
               <button
+                aria-pressed="false"
                 class="demo-button demo-button-secondary"
                 data-api-state="error"
                 type="button"
@@ -1228,7 +1231,7 @@ body {
             <ol>
               <li><a href="../../index.html">Home</a></li>
               <li><a href="../css/css-properties.html">CSS</a></li>
-              <li aria-current="page">Grid</li>
+              <li aria-current="page"><span>Grid</span></li>
             </ol>
           </nav>
         </div>
