@@ -149,6 +149,25 @@
     rgba(255, 255, 255, .14);
 
 
+  /* Reusable iridescent glow */
+
+  --iridescent-glow-gradient:
+    var(--iridescent-gradient);
+
+  --iridescent-glow-blur:
+    12px;
+
+  --iridescent-glow-opacity:
+    .38;
+
+  --iridescent-glow-inset:
+    -2px;
+
+  --iridescent-glow-transition:
+    opacity
+    var(--transition-ui);
+
+
   /* ========================================
      Obsidian Surfaces
      ======================================== */

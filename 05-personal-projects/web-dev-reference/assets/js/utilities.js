@@ -211,7 +211,7 @@ function initializeBackToTop() {
     <span
       class="back-to-top-icon"
       aria-hidden="true"
-    ></span>
+    >^</span>
   `;
 
   // I create this once here so I do not have to repeat it on every page.

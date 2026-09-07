@@ -187,12 +187,21 @@
 }
 
 .pattern-example summary {
+  position:
+    relative;
+
+  isolation:
+    isolate;
+
   padding:
     .85rem
     1rem;
 
   background:
     var(--surface-alt);
+
+  border-radius:
+    var(--radius-sm);
 
   color:
     var(--text-primary);
@@ -211,6 +220,40 @@
     color var(--transition-ui);
 }
 
+.pattern-example summary::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .pattern-example summary:hover {
     background:
@@ -219,6 +262,17 @@
     color:
       var(--text-primary);
   }
+
+  .pattern-example summary:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
+  }
+}
+
+.pattern-example summary:focus-visible::before,
+.pattern-example summary:active::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 .pattern-example summary:focus-visible {
@@ -227,10 +281,30 @@
 
   color:
     var(--text-primary);
+
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    -3px;
 }
 
 .pattern-example[open] summary {
-  border-bottom: 1px solid var(--border);
+  border-bottom:
+    1px solid
+    var(--border);
+
+  background:
+    var(--highlight);
+
+  color:
+    var(--text-primary);
+}
+
+.pattern-example[open] summary::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 .pattern-example pre {
@@ -285,6 +359,12 @@
 }
 
 .copy-button {
+  position:
+    relative;
+
+  isolation:
+    isolate;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -322,13 +402,53 @@
     box-shadow var(--transition-ui);
 }
 
+.copy-button::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .copy-button:hover {
     border-color:
-      var(--accent-primary);
+      transparent;
 
     background:
-      var(--surface-raised);
+      linear-gradient(
+        var(--surface-raised),
+        var(--surface-raised)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
 
     color:
       var(--text-primary);
@@ -339,25 +459,58 @@
     transform:
       translateY(-1px);
   }
+
+  .copy-button:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
+  }
 }
 
 .copy-button:focus-visible {
   border-color:
-    var(--accent-primary);
+    transparent;
 
   background:
-    var(--surface-raised);
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
 
   color:
     var(--text-primary);
 
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    3px;
+
   box-shadow:
-    0 0 0 3px
-    var(--accent-glow-soft),
     var(--shadow-sm);
 }
 
+.copy-button:focus-visible::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
+
 .copy-button:active {
+  border-color:
+    transparent;
+
+  background:
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
+
   transform:
     translateY(1px);
 
@@ -365,15 +518,31 @@
     none;
 }
 
+.copy-button:active::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
+
 .copy-button.is-copied {
   border-color:
-    var(--accent-primary);
+    transparent;
 
   background:
-    var(--obsidian);
+    linear-gradient(
+      var(--obsidian),
+      var(--obsidian)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
 
   color:
     var(--white);
+}
+
+.copy-button.is-copied::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 
@@ -595,6 +764,9 @@
 }
 
 .dialog-close {
+  position:
+    relative;
+
   display:
     inline-grid;
 
@@ -605,10 +777,13 @@
     0;
 
   width:
-    44px;
+    30px;
 
   height:
-    44px;
+    30px;
+
+  font-size:
+    1.4rem;
 
   padding:
     0;
@@ -617,61 +792,158 @@
     var(--white);
 
   background:
-    rgba(255, 255, 255, .1);
+    rgba(255, 255, 255, .08);
 
   border:
     1px solid
-    rgba(255, 255, 255, .4);
+    rgba(255, 255, 255, .3);
 
   border-radius:
-    50%;
-
-  font-size:
-    1.3rem;
+    var(--radius-sm);
 
   line-height:
-    1;
+    .5;
 
   transition:
-    background-color var(--transition-ui),
     border-color var(--transition-ui),
-    transform var(--transition-ui),
-    box-shadow var(--transition-ui);
+    transform var(--transition-ui);
+}
+
+.dialog-close::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    -5px;
+
+  z-index:
+    -1;
+
+  border-radius:
+    calc(
+      var(--radius-sm) + 3px
+    );
+
+  background:
+    var(--iridescent-gradient);
+
+  background-size:
+    200% 100%;
+
+  background-position:
+    0 center;
+
+  opacity:
+    0;
+
+  filter:
+    blur(7px);
+
+  transition:
+    opacity var(--transition-ui);
+
+  pointer-events:
+    none;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .dialog-close:hover {
-    background:
-      rgba(255, 255, 255, .16);
-
     border-color:
-      var(--white);
+      transparent;
 
-    box-shadow:
-      0 0 0 3px
-      var(--light-reflection-soft);
+    background-image:
+      var(--iridescent-gradient);
+
+    background-size:
+      200% 100%;
+
+    background-position:
+      0 center;
 
     transform:
-      rotate(4deg);
+      scale(1.06);
+
+    animation:
+      iridescent-flow
+      4s
+      linear
+      infinite;
+  }
+
+  .dialog-close:hover::before {
+    opacity:
+      .75;
+
+    animation:
+      iridescent-flow
+      4s
+      linear
+      infinite;
   }
 }
 
+.dialog-close:active::before {
+  opacity:
+    .5;
+
+  animation:
+    iridescent-flow
+    4s
+    linear
+    infinite;
+}
+
 .dialog-close:focus-visible {
-  background:
-    rgba(255, 255, 255, .16);
-
   border-color:
-    var(--white);
+    transparent;
 
-  box-shadow:
-    0 0 0 3px
-    var(--light-reflection-soft);
+  background-image:
+    var(--iridescent-gradient);
+
+  background-size:
+    200% 100%;
+
+  background-position:
+    0 center;
+
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    3px;
+
+  animation:
+    iridescent-flow
+    4s
+    linear
+    infinite;
 }
 
 .dialog-close:active {
+  border-color:
+    transparent;
+
+  background-image:
+    var(--iridescent-gradient);
+
+  background-size:
+    200% 100%;
+
+  background-position:
+    0 center;
+
   transform:
-    rotate(0)
-    scale(.96);
+    scale(.94);
+
+  animation:
+    iridescent-flow
+    4s
+    linear
+    infinite;
 }
 
 .dialog-search {
@@ -694,17 +966,11 @@
     var(--text-primary);
 
   background:
-    linear-gradient(
-      var(--surface-raised),
-      var(--surface-raised)
-    )
-    padding-box,
-    var(--iridescent-gradient)
-    border-box;
+    var(--surface-raised);
 
   border:
     1px solid
-    transparent;
+    var(--border-strong);
 
   border-radius:
     var(--radius-pill);
@@ -713,6 +979,7 @@
     var(--shadow-sm);
 
   transition:
+    border-color var(--transition-ui),
     box-shadow var(--transition-ui);
 }
 
@@ -725,20 +992,72 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .dialog-search:hover {
+  .dialog-search:hover:not(:focus) {
+    border-color:
+      transparent;
+
+    background:
+      linear-gradient(
+        var(--surface-raised),
+        var(--surface-raised)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
+
     box-shadow:
-      var(--shadow-md);
+      0 0 8px
+      rgba(15, 143, 149, .3),
+
+      0 0 12px
+      rgba(104, 72, 184, .24),
+
+      0 0 16px
+      rgba(181, 44, 127, .2),
+
+      0 0 20px
+      rgba(199, 131, 47, .14);
   }
 }
 
+.dialog-search:focus,
 .dialog-search:focus-visible {
   outline:
     none;
 
+  border-color:
+    var(--accent-primary);
+
+  background:
+    var(--surface-raised);
+
   box-shadow:
-    0 0 0 4px
-    var(--accent-glow-soft),
-    var(--shadow-md);
+    0 0 8px
+    rgba(15, 143, 149, .3),
+
+    0 0 12px
+    rgba(104, 72, 184, .24),
+
+    0 0 16px
+    rgba(181, 44, 127, .2),
+
+    0 0 20px
+    rgba(199, 131, 47, .14);
+}
+
+.dialog-search:active {
+  box-shadow:
+    0 0 8px
+    rgba(15, 143, 149, .3),
+
+    0 0 12px
+    rgba(104, 72, 184, .24),
+
+    0 0 16px
+    rgba(181, 44, 127, .2),
+
+    0 0 20px
+    rgba(199, 131, 47, .14);
 }
 
 .dialog-status {
@@ -781,6 +1100,9 @@
   position:
     relative;
 
+  isolation:
+    isolate;
+
   display:
     flex;
 
@@ -796,7 +1118,7 @@
     .85rem;
 
   overflow:
-    hidden;
+    visible;
 
   color:
     var(--text-primary);
@@ -841,6 +1163,12 @@
   height:
     3px;
 
+  border-radius:
+    var(--radius-md)
+    var(--radius-md)
+    0
+    0;
+
   background-image:
     var(--iridescent-background);
 
@@ -858,10 +1186,53 @@
     var(--ease-ui);
 }
 
+.search-result::after {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .search-result:hover {
     border-color:
-      var(--accent-primary);
+      transparent;
+
+    background:
+      linear-gradient(
+        var(--surface-raised),
+        var(--surface-raised)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
 
     box-shadow:
       var(--shadow-md);
@@ -872,15 +1243,34 @@
       140% center,
       center;
   }
+
+  .search-result:hover::after {
+    opacity:
+      var(--iridescent-glow-opacity);
+  }
 }
 
 .search-result:focus-visible {
   border-color:
-    var(--accent-primary);
+    transparent;
+
+  background:
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
+
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    3px;
 
   box-shadow:
-    0 0 0 3px
-    var(--accent-glow-soft),
     var(--shadow-md);
 }
 
@@ -888,6 +1278,30 @@
   background-position:
     140% center,
     center;
+}
+
+.search-result:focus-visible::after {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
+
+.search-result:active {
+  border-color:
+    transparent;
+
+  background:
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
+}
+
+.search-result:active::after {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 .search-result strong {
@@ -1053,6 +1467,12 @@
    ======================================== */
 
 .demo-button {
+  position:
+    relative;
+
+  isolation:
+    isolate;
+
   display:
     inline-flex;
 
@@ -1103,13 +1523,53 @@
     box-shadow var(--transition-ui);
 }
 
+.demo-button::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .demo-button:hover {
     border-color:
-      var(--accent-primary);
+      transparent;
 
     background:
-      var(--obsidian-raised);
+      linear-gradient(
+        var(--obsidian-raised),
+        var(--obsidian-raised)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
 
     box-shadow:
       var(--surface-reflection),
@@ -1118,27 +1578,54 @@
     transform:
       translateY(-1px);
   }
+
+  .demo-button:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
+  }
 }
 
 .demo-button:focus-visible {
   border-color:
-    var(--accent-primary);
+    transparent;
 
   background:
-    var(--obsidian);
+    linear-gradient(
+      var(--obsidian),
+      var(--obsidian)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
+
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    3px;
 
   box-shadow:
-    0 0 0 3px
-    var(--accent-glow-soft),
     var(--shadow-md);
+}
+
+.demo-button:focus-visible::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 .demo-button:active {
   border-color:
-    var(--accent-primary);
+    transparent;
 
   background:
-    var(--obsidian-raised);
+    linear-gradient(
+      var(--obsidian-raised),
+      var(--obsidian-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
 
   color:
     var(--white);
@@ -1148,6 +1635,11 @@
 
   transform:
     translateY(1px);
+}
+
+.demo-button:active::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 .demo-button-secondary {
@@ -1202,22 +1694,46 @@
 @media (hover: hover) and (pointer: fine) {
   .demo-input:hover {
     border-color:
-      var(--accent-primary);
+      transparent;
+
+    background:
+      linear-gradient(
+        var(--surface),
+        var(--surface)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
+
+    box-shadow:
+      var(--shadow-sm);
   }
 }
 
 .demo-input:focus-visible {
   border-color:
-    var(--accent-primary);
+    transparent;
+
+  background:
+    linear-gradient(
+      var(--surface),
+      var(--surface)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
 
   outline:
-    none;
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    3px;
 
   box-shadow:
-    0 0 0 3px
-    var(--accent-glow-soft),
     var(--shadow-sm);
 }
+
 
 /* ========================================
    Dialog Demo
@@ -1292,6 +1808,116 @@
 /* ========================================
    API Results Demo
    ======================================== */
+
+/* Light Theme API Demo Button Interactions */
+
+#api-results-pattern
+.demo-button {
+  position:
+    relative;
+
+  isolation:
+    isolate;
+}
+
+#api-results-pattern
+.demo-button::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
+
+/* Hover */
+
+@media (hover: hover) and (pointer: fine) {
+  html:not([data-theme='dark'])
+  #api-results-pattern
+  .demo-button:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
+  }
+}
+
+
+/* Keyboard Selection */
+
+html:not([data-theme='dark'])
+#api-results-pattern
+.demo-button:focus-visible {
+  color:
+    var(--white);
+
+  background:
+    var(--black);
+
+  border-color:
+    transparent;
+
+  box-shadow:
+    none;
+}
+
+html:not([data-theme='dark'])
+#api-results-pattern
+.demo-button:focus-visible::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
+
+
+/* Touch / Pressed State */
+
+html:not([data-theme='dark'])
+#api-results-pattern
+.demo-button:active {
+  color:
+    var(--white);
+
+  background:
+    var(--black);
+
+  border-color:
+    transparent;
+
+  box-shadow:
+    none;
+}
+
+html:not([data-theme='dark'])
+#api-results-pattern
+.demo-button:active::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
 
 .demo-api-status {
   min-height: 90px;
@@ -1479,6 +2105,12 @@
 }
 
 .demo-accordion summary {
+  position:
+    relative;
+
+  isolation:
+    isolate;
+
   padding:
     .8rem
     .95rem;
@@ -1497,6 +2129,40 @@
     color var(--transition-ui);
 }
 
+.demo-accordion summary::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .demo-accordion summary:hover {
     background:
@@ -1504,6 +2170,11 @@
 
     color:
       var(--accent-text);
+  }
+
+  .demo-accordion summary:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
   }
 }
 
@@ -1513,6 +2184,23 @@
 
   color:
     var(--accent-text);
+
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    -3px;
+}
+
+.demo-accordion summary:focus-visible::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
+
+.demo-accordion summary:active::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 .demo-accordion details[open] summary {
@@ -1526,6 +2214,11 @@
       var(--surface-alt) 80%,
       var(--surface)
     );
+}
+
+.demo-accordion details[open] summary::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 .demo-accordion details p {
@@ -1695,7 +2388,7 @@
   line-height: 1.55;
 }
 
-.demo-theme-card .demo-button {
+.demo-theme-card :where(.demo-button) {
   border-color:
     var(--demo-accent);
 
@@ -1704,21 +2397,6 @@
 
   color:
     var(--white);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .demo-theme-card .demo-button:hover {
-    border-color:
-      var(--demo-accent);
-
-    background:
-      var(--obsidian-raised);
-  }
-}
-
-.demo-theme-card .demo-button:focus-visible {
-  border-color:
-    var(--demo-accent);
 }
 
 
@@ -2032,6 +2710,12 @@ html[data-theme='dark'] .demo-field-message {
 }
 
 .demo-breadcrumb a {
+  position:
+    relative;
+
+  isolation:
+    isolate;
+
   padding:
     .25rem
     .4rem;
@@ -2056,6 +2740,40 @@ html[data-theme='dark'] .demo-field-message {
     color var(--transition-ui);
 }
 
+.demo-breadcrumb a::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .demo-breadcrumb a:hover {
     background:
@@ -2063,6 +2781,11 @@ html[data-theme='dark'] .demo-field-message {
 
     color:
       var(--accent-text);
+  }
+
+  .demo-breadcrumb a:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
   }
 }
 
@@ -2072,13 +2795,37 @@ html[data-theme='dark'] .demo-field-message {
 
   color:
     var(--accent-text);
+
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    2px;
 }
+
+.demo-breadcrumb a:focus-visible::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
+
+.demo-breadcrumb a:active::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
+
 
 /* ========================================
    Persistent State Demo
    ======================================== */
 
 .demo-setting {
+  position:
+    relative;
+
+  isolation:
+    isolate;
+
   display:
     grid;
 
@@ -2118,6 +2865,40 @@ html[data-theme='dark'] .demo-field-message {
     box-shadow var(--transition-ui);
 }
 
+.demo-setting::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
 .demo-setting p {
   margin: 0;
   color: var(--text-secondary);
@@ -2137,6 +2918,12 @@ html[data-theme='dark'] .demo-field-message {
   box-shadow:
     none;
 }
+
+.demo-setting.is-compact::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
+
 
 /* ========================================
    Event Delegation Demo
@@ -2290,8 +3077,73 @@ html[data-theme='dark'] .demo-field-message {
 }
 
 .demo-container-card-content a {
-  color: var(--accent-text);
-  font-weight: 700;
+  position:
+    relative;
+
+  isolation:
+    isolate;
+
+  color:
+    var(--accent-text);
+
+  font-weight:
+    700;
+}
+
+.demo-container-card-content a::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    var(--radius-sm);
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .demo-container-card-content a:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
+  }
+}
+
+.demo-container-card-content a:focus-visible {
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    2px;
+}
+
+.demo-container-card-content a:focus-visible::before,
+.demo-container-card-content a:active::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 @container (min-width: 30rem) {
@@ -2300,6 +3152,7 @@ html[data-theme='dark'] .demo-field-message {
     align-items: center;
   }
 }
+
 
 /* ========================================
    Responsive Image Demo
@@ -2406,6 +3259,12 @@ html[data-theme='dark'] .demo-field-message {
 }
 
 .demo-choice-option {
+  position:
+    relative;
+
+  isolation:
+    isolate;
+
   display:
     flex;
 
@@ -2438,6 +3297,40 @@ html[data-theme='dark'] .demo-field-message {
     box-shadow var(--transition-ui);
 }
 
+.demo-choice-option::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .demo-choice-option:hover {
     border-color:
@@ -2446,11 +3339,21 @@ html[data-theme='dark'] .demo-field-message {
     background:
       var(--highlight);
   }
+
+  .demo-choice-option:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
+  }
 }
 
 .demo-choice-option:active {
   background:
     var(--highlight);
+}
+
+.demo-choice-option:active::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 .demo-choice-option input {
@@ -2476,6 +3379,11 @@ html[data-theme='dark'] .demo-field-message {
     2px;
 }
 
+.demo-choice-option:has(input:focus-visible)::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
+
 .demo-choice-option:has(input:checked) {
   border-color:
     var(--accent-primary);
@@ -2490,6 +3398,11 @@ html[data-theme='dark'] .demo-field-message {
   box-shadow:
     inset 4px 0 0
     var(--accent-primary);
+}
+
+.demo-choice-option:has(input:checked)::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 .demo-choice-option span {
@@ -2586,6 +3499,12 @@ html[data-theme='dark'] .demo-field-message {
 }
 
 .pattern-related a {
+  position:
+    relative;
+
+  isolation:
+    isolate;
+
   display:
     inline-flex;
 
@@ -2631,6 +3550,40 @@ html[data-theme='dark'] .demo-field-message {
     box-shadow var(--transition-ui);
 }
 
+.pattern-related a::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .pattern-related a:hover {
     border-color:
@@ -2645,6 +3598,11 @@ html[data-theme='dark'] .demo-field-message {
     box-shadow:
       var(--shadow-sm);
   }
+
+  .pattern-related a:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
+  }
 }
 
 .pattern-related a:focus-visible {
@@ -2657,30 +3615,25 @@ html[data-theme='dark'] .demo-field-message {
   color:
     var(--text-primary);
 
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    3px;
+
   box-shadow:
-    0 0 0 3px
-    var(--accent-glow-soft),
     var(--shadow-sm);
 }
 
-/* ========================================
-   Touch Interaction
-   ======================================== */
+.pattern-related a:focus-visible::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
 
-/* I keep touch feedback visible without relying on hover. */
-
-@media (hover: none) {
-  .copy-button:active,
-  .search-result:active,
-  .pattern-related a:active {
-    background:
-      var(--highlight);
-  }
-
-  .demo-choice-option:active {
-    border-color:
-      var(--accent-primary);
-  }
+.pattern-related a:active::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 

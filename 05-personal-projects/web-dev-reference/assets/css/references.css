@@ -63,6 +63,51 @@
 .search-input-wrapper {
   position:
     relative;
+
+  isolation:
+    isolate;
+
+  border-radius:
+    var(--radius-pill);
+}
+
+.search-input-wrapper::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
+.search-input-wrapper:focus-within::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
 .search-icon {
@@ -136,10 +181,24 @@
 @media (hover: hover) and (pointer: fine) {
   .reference-search:hover {
     border-color:
-      var(--accent-primary);
+      transparent;
+
+    background:
+      linear-gradient(
+        var(--surface-raised),
+        var(--surface-raised)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
 
     box-shadow:
       var(--shadow-md);
+  }
+
+  .search-input-wrapper:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
   }
 }
 
@@ -150,9 +209,10 @@
   border-color:
     var(--accent-primary);
 
+  background:
+    var(--surface-raised);
+
   box-shadow:
-    0 0 0 4px
-    var(--accent-glow-soft),
     var(--shadow-md);
 }
 
@@ -332,6 +392,10 @@ main {
 }
 
 .page-toc a {
+  position: relative;
+
+  isolation: isolate;
+
   display: inline-flex;
   align-items: center;
 
@@ -370,6 +434,40 @@ main {
     box-shadow var(--transition-ui);
 }
 
+.page-toc a::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
 .page-toc h2 {
   margin:
     0
@@ -402,52 +500,132 @@ main {
 @media (hover: hover) and (pointer: fine) {
   .page-toc a:hover {
     border-color:
-      var(--accent-primary);
+      transparent;
 
     background:
-      var(--surface);
+      linear-gradient(
+        var(--surface-raised),
+        var(--surface-raised)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
 
     color:
       var(--text-primary);
+  }
 
-    box-shadow:
-      var(--shadow-sm);
+  .page-toc a:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
   }
 }
 
 .page-toc a:focus-visible {
   border-color:
-    var(--accent-primary);
+    transparent;
 
   background:
-    var(--surface);
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
+
+  color:
+    var(--text-primary);
+
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    3px;
+
+  box-shadow:
+    var(--shadow-sm);
+}
+
+.page-toc a:active {
+  border-color:
+    transparent;
+
+  background:
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
+}
+
+.page-toc a[aria-current='location'] {
+  border-color:
+    transparent;
+
+  background:
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
 
   color:
     var(--text-primary);
 
   box-shadow:
-    0 0 0 3px
-    var(--accent-glow-soft);
+    var(--shadow-sm);
 }
 
-.page-toc a:active {
-  background:
-    var(--highlight);
+.page-toc a[aria-current='location']::before {
+  opacity:
+    var(--iridescent-glow-opacity);
 }
 
-.page-toc a[aria-current='location'] {
-  border-color:
-    var(--border-strong);
+.page-toc a:focus-visible::before,
+.page-toc a:active::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
 
-  background:
-    var(--obsidian);
+html:not([data-theme='dark']) {
+  .page-toc a[aria-current='location'],
+  .page-toc a:focus-visible,
+  .page-toc a:active {
+    background:
+      linear-gradient(
+        var(--obsidian),
+        var(--obsidian)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
 
-  color:
-    var(--white);
+    color:
+      var(--white);
+  }
+}
 
-  box-shadow:
-    inset 3px 0 0
-    var(--accent-primary);
+@media (hover: hover) and (pointer: fine) {
+  html:not([data-theme='dark'])
+  .page-toc a:hover {
+    background:
+      linear-gradient(
+        var(--obsidian),
+        var(--obsidian)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
+
+    color:
+      var(--white);
+  }
 }
 
 
@@ -542,18 +720,21 @@ main {
 }
 
 .related-references {
-  margin-top: 4rem;
+  position:
+    relative;
+
+  margin-top:
+    4rem;
 
   padding:
     1.5rem;
 
+  overflow:
+    hidden;
+
   border:
     1px solid
     var(--border-strong);
-
-  border-left:
-    5px solid
-    var(--accent-primary);
 
   border-radius:
     var(--radius-md);
@@ -564,6 +745,32 @@ main {
   box-shadow:
     var(--surface-reflection),
     var(--shadow-md);
+}
+
+.related-references::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  top:
+    0;
+
+  bottom:
+    0;
+
+  left:
+    0;
+
+  width:
+    5px;
+
+  background:
+    var(--iridescent-gradient-vertical);
+
+  pointer-events:
+    none;
 }
 
 .related-references h2 {
@@ -587,6 +794,11 @@ main {
 
 .related-references a,
 .project-link {
+  position:
+    relative;
+
+  isolation:
+    isolate;
   display:
     inline-flex;
 
@@ -631,20 +843,64 @@ main {
     box-shadow var(--transition-ui);
 }
 
+.related-references a::before,
+.project-link::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    var(--iridescent-glow-inset);
+
+  z-index:
+    -1;
+
+  border-radius:
+    inherit;
+
+  background:
+    var(--iridescent-glow-gradient);
+
+  opacity:
+    0;
+
+  filter:
+    blur(
+      var(--iridescent-glow-blur)
+    );
+
+  transition:
+    var(--iridescent-glow-transition);
+
+  pointer-events:
+    none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .related-references a:hover,
   .project-link:hover {
-    color:
-      var(--text-primary);
+    border-color:
+      transparent;
 
     background:
-      var(--surface);
-
-    border-color:
-      var(--accent-primary);
+      linear-gradient(
+        var(--surface-raised),
+        var(--surface-raised)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
 
     box-shadow:
       var(--shadow-sm);
+  }
+
+  .related-references a:hover::before,
+  .project-link:hover::before {
+    opacity:
+      var(--iridescent-glow-opacity);
   }
 
   .project-link:hover {
@@ -653,26 +909,55 @@ main {
   }
 }
 
+.related-references a:focus-visible::before,
+.related-references a:active::before,
+.project-link:focus-visible::before,
+.project-link:active::before {
+  opacity:
+    var(--iridescent-glow-opacity);
+}
+
 .related-references a:focus-visible,
 .project-link:focus-visible {
   color:
     var(--text-primary);
 
   background:
-    var(--surface);
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
 
   border-color:
-    var(--accent-primary);
+    transparent;
+
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    3px;
 
   box-shadow:
-    0 0 0 3px
-    var(--accent-glow-soft);
+    var(--shadow-sm);
 }
 
 .related-references a:active,
 .project-link:active {
+  border-color:
+    transparent;
+
   background:
-    var(--highlight);
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
 }
 
 .project-link:active {
@@ -681,6 +966,48 @@ main {
 
   transform:
     translateY(1px);
+}
+
+/* Light Theme Related Reference Interactions */
+
+@media (hover: hover) and (pointer: fine) {
+  html:not([data-theme='dark'])
+  .related-references a:hover {
+    color:
+      var(--white);
+
+    background:
+      linear-gradient(
+        var(--obsidian),
+        var(--obsidian)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
+
+    border-color:
+      transparent;
+  }
+}
+
+html:not([data-theme='dark'])
+.related-references a:focus-visible,
+html:not([data-theme='dark'])
+.related-references a:active {
+  color:
+    var(--white);
+
+  background:
+    linear-gradient(
+      var(--obsidian),
+      var(--obsidian)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
+
+  border-color:
+    transparent;
 }
 
 
@@ -896,7 +1223,16 @@ main {
 @media (hover: hover) and (pointer: fine) {
   .reference-card:hover {
     border-color:
-      var(--accent-primary);
+      transparent;
+
+    background:
+      linear-gradient(
+        var(--surface-raised),
+        var(--surface-raised)
+      )
+      padding-box,
+      var(--iridescent-gradient)
+      border-box;
 
     box-shadow:
       var(--shadow-lg);
@@ -908,15 +1244,44 @@ main {
 
 .reference-card:focus-visible {
   border-color:
-    var(--accent-primary);
+    transparent;
+
+  background:
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
+
+  outline:
+    2px solid
+    var(--focus-ring);
+
+  outline-offset:
+    3px;
 
   box-shadow:
-    0 0 0 3px
-    var(--accent-glow-soft),
     var(--shadow-lg);
 }
 
 .reference-card:active {
+  border-color:
+    transparent;
+
+  background:
+    linear-gradient(
+      var(--surface-raised),
+      var(--surface-raised)
+    )
+    padding-box,
+    var(--iridescent-gradient)
+    border-box;
+
+  box-shadow:
+    var(--shadow-md);
+
   transform:
     translateY(0);
 }
@@ -1132,31 +1497,62 @@ main {
     var(--surface-alt);
 }
 
+.reference-table tbody tr {
+  transition:
+    background var(--transition-ui),
+    box-shadow var(--transition-ui);
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .reference-table tbody tr {
-    transition:
-      background-color
-      var(--transition-ui);
-  }
-
   .reference-table tbody tr:hover {
     background:
-      color-mix(
-        in srgb,
-        var(--surface-raised) 90%,
-        var(--accent-primary) 10%
-      );
+      linear-gradient(
+        105deg,
+        rgba(15, 143, 149, .12),
+        rgba(104, 72, 184, .14),
+        rgba(181, 44, 127, .13),
+        rgba(199, 131, 47, .11),
+        rgba(141, 157, 44, .10),
+        rgba(33, 132, 109, .12),
+        rgba(31, 117, 181, .13)
+      ),
+      var(--surface-raised);
+
+    box-shadow:
+      inset 0 0 18px
+      rgba(255, 255, 255, .08);
   }
 
-  html[data-theme='dark']
-  .reference-table tbody tr:hover {
+  .reference-table tbody tr:hover
+  th[scope='row'] {
     background:
-      color-mix(
-        in srgb,
-        var(--surface-raised) 84%,
-        var(--accent-primary) 16%
-      );
+      transparent;
   }
+}
+
+.reference-table tbody tr:active {
+  background:
+    linear-gradient(
+      105deg,
+      rgba(15, 143, 149, .12),
+      rgba(104, 72, 184, .14),
+      rgba(181, 44, 127, .13),
+      rgba(199, 131, 47, .11),
+      rgba(141, 157, 44, .10),
+      rgba(33, 132, 109, .12),
+      rgba(31, 117, 181, .13)
+    ),
+    var(--surface-raised);
+
+  box-shadow:
+    inset 0 0 18px
+    rgba(255, 255, 255, .08);
+}
+
+.reference-table tbody tr:active
+th[scope='row'] {
+  background:
+    transparent;
 }
 
 .reference-table thead th {
@@ -1273,8 +1669,12 @@ main {
   position:
     absolute;
 
+  isolation:
+    isolate;
+
   top:
     .55rem;
+
   right:
     .55rem;
 
@@ -1294,7 +1694,7 @@ main {
     0;
 
   font-size:
-    1.1rem;
+    1.2rem;
 
   line-height:
     1;
@@ -1307,6 +1707,9 @@ main {
 
   border:
     0;
+
+  border-radius:
+    var(--radius-pill);
 
   text-shadow:
     none;
@@ -1326,7 +1729,6 @@ main {
       none;
 
     transform:
-      rotate(-6deg)
       scale(1.1);
   }
 }
@@ -1348,19 +1750,18 @@ main {
     scale(.95);
 }
 
-
 .favorite-button.is-saved {
   color:
     transparent;
 
   background-image:
-    var(--iridescent-short-gradient);
+    var(--iridescent-gradient);
 
   background-size:
-    var(--iridescent-small-size);
+    200% 100%;
 
   background-position:
-    var(--iridescent-small-position);
+    0 center;
 
   background-clip:
     text;
@@ -1368,8 +1769,38 @@ main {
   -webkit-background-clip:
     text;
 
-  transform:
-    scale(1.04);
+  -webkit-text-fill-color:
+    transparent;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(255, 255, 255, .18)
+    );
+
+  animation:
+    favorite-star-spectrum
+    6s
+    linear
+    infinite;
+}
+
+@keyframes favorite-star-spectrum {
+  from {
+    background-position:
+      0 center;
+  }
+
+  to {
+    background-position:
+      200% center;
+  }
+}
+
+@media (max-width: 720px) {
+  .favorite-button {
+    font-size: 1rem;
+  }
 }
 
 
