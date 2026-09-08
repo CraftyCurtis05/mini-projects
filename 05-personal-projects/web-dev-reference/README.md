@@ -10,7 +10,7 @@ I intentionally kept the project framework-free so the reference remains easy to
 
 **Live Site:** https://reference.jennifercurtis.me
 
-![Web Development Reference home page](screenshots/01-home.png)
+![Web Development Reference home page](screenshots/01-thumbnail.png)
 
 ---
 
@@ -83,7 +83,7 @@ The home page organizes the reference into the major areas I use while developin
 
 <p align="center">
   <img
-    src="screenshots/01-home.png"
+    src="screenshots/02-home.png"
     alt="Web Development Reference home page"
     width="800"
   >
@@ -95,7 +95,7 @@ Reference pages use a shared structure for navigation, page-level search, topic 
 
 <p align="center">
   <img
-    src="screenshots/02-js-modern-async.png"
+    src="screenshots/03-js-modern-async.png"
     alt="Modern and Async JavaScript reference page"
     width="800"
   >
@@ -107,7 +107,7 @@ The Patterns section includes working demonstrations alongside implementation de
 
 <p align="center">
   <img
-    src="screenshots/03-patterns-skeleton.png"
+    src="screenshots/04-patterns-skeleton.png"
     alt="Interactive loading state and skeleton pattern"
     width="800"
   >
@@ -119,7 +119,7 @@ The global search uses the centralized reference index to find entries across th
 
 <p align="center">
   <img
-    src="screenshots/04-global-search.png"
+    src="screenshots/05-global-search.png"
     alt="Site-wide search showing semantic HTML results"
     width="800"
   >
@@ -131,7 +131,7 @@ Navigation, reference content, tables, and shared interface controls adapt for s
 
 <p align="center">
   <img
-    src="screenshots/05-mobile-view.png"
+    src="screenshots/06-mobile-view.png"
     alt="Web Development Reference mobile layout"
     width="300"
   >
@@ -143,7 +143,7 @@ The shared theme system applies across navigation, reference content, controls, 
 
 <p align="center">
   <img
-    src="screenshots/06-dark-theme.png"
+    src="screenshots/07-dark-theme.png"
     alt="Accessibility reference displayed in dark theme"
     width="800"
   >
@@ -155,7 +155,7 @@ Individual reference entries can be saved in the browser with `localStorage` and
 
 <p align="center">
   <img
-    src="screenshots/07-saved-references.png"
+    src="screenshots/08-saved-references.png"
     alt="Saved references dialog with several saved entries"
     width="800"
   >
@@ -167,7 +167,7 @@ The site map provides another view of the project's information architecture and
 
 <p align="center">
   <img
-    src="screenshots/08-site-map.png"
+    src="screenshots/09-site-map.png"
     alt="Web Development Reference site map"
     width="800"
   >
